@@ -8,16 +8,20 @@ from typing import Optional
 
 @dataclass
 class AccountConfig:
-    account_id: str
-    account_name: str
     aws_access_key_id: str
     aws_secret_access_key: str
     regions: list[str]
+    account_id: str = ""
+    account_name: str = ""
     aws_session_token: Optional[str] = None
 
     def __post_init__(self) -> None:
         if not self.regions:
-            raise ValueError(f"Account '{self.account_name}' must have at least one region.")
+            raise ValueError("AccountConfig must have at least one region.")
+
+    @property
+    def is_identity_resolved(self) -> bool:
+        return bool(self.account_id)
 
 
 @dataclass
@@ -28,14 +32,18 @@ class AppConfig:
 
     @classmethod
     def from_env(cls) -> AppConfig:
-        """Load a single account from environment variables."""
+        """Load a single account from environment variables.
+
+        AWS_ACCOUNT_ID and AWS_ACCOUNT_NAME are optional — if omitted they
+        are resolved automatically via STS GetCallerIdentity at runtime.
+        """
         account = AccountConfig(
-            account_id=os.environ["AWS_ACCOUNT_ID"],
-            account_name=os.environ.get("AWS_ACCOUNT_NAME", "default"),
             aws_access_key_id=os.environ["AWS_ACCESS_KEY_ID"],
             aws_secret_access_key=os.environ["AWS_SECRET_ACCESS_KEY"],
             aws_session_token=os.environ.get("AWS_SESSION_TOKEN"),
             regions=os.environ.get("AWS_REGIONS", "us-east-1").split(","),
+            account_id=os.environ.get("AWS_ACCOUNT_ID", ""),
+            account_name=os.environ.get("AWS_ACCOUNT_NAME", ""),
         )
         return cls(
             accounts=[account],

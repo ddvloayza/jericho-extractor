@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from config import AccountConfig, AppConfig
-from utils.aws_clients import get_ec2_client, get_elbv2_client, get_session
+from utils.aws_clients import get_ec2_client, get_elbv2_client, get_session, resolve_identity
 from utils.writer import OutputWriter
 
 from collectors.vpcs import VPCCollector
@@ -115,6 +115,15 @@ def run(config: AppConfig) -> None:
     summary: list[dict[str, Any]] = []
 
     for account in config.accounts:
+        if not account.is_identity_resolved:
+            session = get_session(account)
+            account_id, arn = resolve_identity(session)
+            account.account_id = account_id
+            if not account.account_name:
+                # Use the role/user name from the ARN as a readable label
+                account.account_name = account_id
+            logger.info("Resolved identity: %s → account %s", arn, account_id)
+
         logger.info(
             "━━ Account: %s (%s) ━━", account.account_name, account.account_id
         )

@@ -30,6 +30,13 @@ def get_session(account: AccountConfig) -> boto3.Session:
     return boto3.Session(**kwargs)
 
 
+def resolve_identity(session: boto3.Session) -> tuple[str, str]:
+    """Call STS GetCallerIdentity and return (account_id, arn)."""
+    sts = session.client("sts", config=_RETRY_CONFIG)
+    identity = sts.get_caller_identity()
+    return identity["Account"], identity["Arn"]
+
+
 def get_ec2_client(session: boto3.Session, region: str) -> BaseClient:
     return session.client("ec2", region_name=region, config=_RETRY_CONFIG)
 
