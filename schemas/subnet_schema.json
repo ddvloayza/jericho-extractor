@@ -1,1 +1,24 @@
-{}
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Subnet",
+  "type": "object",
+  "required": ["resource_type", "resource_id", "account_id", "account_name", "region"],
+  "properties": {
+    "resource_type":          { "type": "string", "const": "aws::ec2::subnet" },
+    "resource_id":            { "type": "string" },
+    "account_id":             { "type": "string" },
+    "account_name":           { "type": "string" },
+    "region":                 { "type": "string" },
+    "vpc_id":                 { "type": "string" },
+    "cidr_block":             { "type": "string" },
+    "availability_zone":      { "type": "string" },
+    "available_ip_count":     { "type": "integer" },
+    "state":                  { "type": "string" },
+    "is_default":             { "type": "boolean" },
+    "map_public_ip_on_launch":{ "type": "boolean" },
+    "subnet_type":            { "type": "string", "enum": ["public", "private", "isolated", "unknown"] },
+    "tags":                   { "type": "object" },
+    "relationships":          { "type": "array" },
+    "collected_at":           { "type": "string", "format": "date-time" }
+  }
+}

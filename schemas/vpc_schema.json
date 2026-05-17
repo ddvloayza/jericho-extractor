@@ -1,1 +1,23 @@
-{}
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "VPC",
+  "type": "object",
+  "required": ["resource_type", "resource_id", "account_id", "account_name", "region"],
+  "properties": {
+    "resource_type":            { "type": "string", "const": "aws::ec2::vpc" },
+    "resource_id":              { "type": "string" },
+    "account_id":               { "type": "string" },
+    "account_name":             { "type": "string" },
+    "region":                   { "type": "string" },
+    "cidr_block":               { "type": "string" },
+    "cidr_block_associations":  { "type": "array", "items": { "type": "string" } },
+    "ipv6_cidr_blocks":         { "type": "array", "items": { "type": "string" } },
+    "state":                    { "type": "string" },
+    "is_default":               { "type": "boolean" },
+    "dhcp_options_id":          { "type": "string" },
+    "instance_tenancy":         { "type": "string" },
+    "tags":                     { "type": "object" },
+    "relationships":            { "type": "array" },
+    "collected_at":             { "type": "string", "format": "date-time" }
+  }
+}
