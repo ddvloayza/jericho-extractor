@@ -51,12 +51,12 @@ def _icon(res_icon: str, fill: str) -> str:
         f"outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;"
         f"fillColor={fill};labelBackgroundColor=#ffffff;"
         f"align=center;verticalLabelPosition=bottom;verticalAlign=top;"
-        f"html=1;fontSize=10;fontStyle=0;aspect=fixed;"
+        f"html=1;fontSize=8;fontStyle=0;aspect=fixed;"
         f"shape=mxgraph.aws4.resourceIcon;resIcon={res_icon};"
     )
 
 
-def _group(gr_icon: str, fill: str, stroke: str, font_size: int = 11) -> str:
+def _group(gr_icon: str, fill: str, stroke: str, font_size: int = 9) -> str:
     return (
         f"points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],"
         f"[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];"
@@ -68,7 +68,7 @@ def _group(gr_icon: str, fill: str, stroke: str, font_size: int = 11) -> str:
 
 
 STYLES: dict[str, str] = {
-    "vpc":             _group("mxgraph.aws4.group_vpc",             "#E6F3FF", "#147EBA", 13),
+    "vpc":             _group("mxgraph.aws4.group_vpc",             "#E6F3FF", "#147EBA", 10),
     "subnet_public":   _group("mxgraph.aws4.group_public_subnet",   "#E8F5E9", "#2E7D32"),
     "subnet_private":  _group("mxgraph.aws4.group_private_subnet",  "#FFF9C4", "#F57F17"),
     "subnet_isolated": _group("mxgraph.aws4.group_private_subnet",  "#FFEBEE", "#C62828"),
@@ -86,7 +86,7 @@ STYLES: dict[str, str] = {
         "shape=mxgraph.aws4.internet_alt2;fillColor=#232F3E;strokeColor=none;"
         "fontColor=#232F3E;gradientColor=none;labelBackgroundColor=#ffffff;"
         "align=center;verticalLabelPosition=bottom;verticalAlign=top;"
-        "html=1;fontSize=12;fontStyle=1;aspect=fixed;"
+        "html=1;fontSize=8;fontStyle=1;aspect=fixed;"
     ),
     "edge_solid": (
         "edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;"
@@ -98,7 +98,33 @@ STYLES: dict[str, str] = {
         "edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;dashPattern=6 3;"
         "strokeColor=#888888;strokeWidth=1;"
     ),
+    "edge_k8s": (
+        "edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;dashPattern=4 2;"
+        "strokeColor=#3949AB;strokeWidth=1.5;fontColor=#3949AB;fontSize=7;"
+    ),
+    "k8s_cluster_group": (
+        "rounded=1;whiteSpace=wrap;arcSize=3;"
+        "fillColor=#E0F7FA;strokeColor=#00838F;strokeWidth=2;"
+        "fontStyle=1;fontSize=9;verticalAlign=top;spacingTop=4;html=1;"
+    ),
+    "k8s_namespace": (
+        "rounded=1;whiteSpace=wrap;arcSize=5;"
+        "fillColor=#E8EAF6;strokeColor=#3949AB;strokeWidth=1.5;"
+        "fontStyle=1;fontSize=8;verticalAlign=top;spacingTop=4;html=1;"
+    ),
+    "k8s_deploy": _icon("mxgraph.aws4.ec2",                       "#3949AB"),
+    "k8s_svc":    _icon("mxgraph.aws4.application_load_balancer", "#00838F"),
+    "k8s_ingress":_icon("mxgraph.aws4.application_load_balancer", "#6A1B9A"),
 }
+
+# ── Kubernetes layout constants ───────────────────────────────────────────────
+K8S_CLUSTER_PADDING  = 30
+K8S_CLUSTER_LABEL_H  = 50
+K8S_CLUSTER_GAP      = 60
+K8S_NS_W             = 280
+K8S_NS_LABEL_H       = 38
+K8S_NS_GAP           = 18
+K8S_RESOURCES_PER_ROW = 3
 
 
 # ── XML builder ───────────────────────────────────────────────────────────────
@@ -233,16 +259,17 @@ def place_resources(
 
 # ── Core diagram builder ──────────────────────────────────────────────────────
 def build_diagram(account_dir: Path, output_path: Path) -> None:
-    vpcs            = load_json(account_dir / "vpcs.json")
-    subnets         = load_json(account_dir / "subnets.json")
-    igws            = load_json(account_dir / "internet_gateways.json")
-    nat_gws         = load_json(account_dir / "nat_gateways.json")
-    tgw_attachments = load_json(account_dir / "transit_gateway_attachments.json")
-    ec2_instances   = load_json(account_dir / "ec2.json")
-    load_balancers  = load_json(account_dir / "load_balancers.json")
-    target_groups   = load_json(account_dir / "target_groups.json")
-    vpc_endpoints   = load_json(account_dir / "vpc_endpoints.json")
-    eks_resources   = load_json(account_dir / "eks.json")
+    vpcs                 = load_json(account_dir / "vpcs.json")
+    subnets              = load_json(account_dir / "subnets.json")
+    igws                 = load_json(account_dir / "internet_gateways.json")
+    nat_gws              = load_json(account_dir / "nat_gateways.json")
+    tgw_attachments      = load_json(account_dir / "transit_gateway_attachments.json")
+    ec2_instances        = load_json(account_dir / "ec2.json")
+    load_balancers       = load_json(account_dir / "load_balancers.json")
+    target_groups        = load_json(account_dir / "target_groups.json")
+    vpc_endpoints        = load_json(account_dir / "vpc_endpoints.json")
+    eks_resources        = load_json(account_dir / "eks.json")
+    kubernetes_workloads = load_json(account_dir / "kubernetes_workloads.json")
 
     builder = DrawioBuilder()
 
@@ -314,12 +341,25 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
         if att.get("attachment_type") == "vpc":
             tgw_by_vpc.setdefault(att.get("resource_id_ref", ""), []).append(att)
 
+    # ALB by dns_name (for ingress → ALB matching)
+    alb_by_dns: dict[str, str] = {}
+    for lb in load_balancers:
+        dns = lb.get("dns_name", "")
+        if dns:
+            alb_by_dns[dns] = lb["resource_id"]
+
+    # Kubernetes workloads indexed by cluster_arn and resource_type
+    k8s_by_cluster: dict[str, list[dict]] = {}
+    for w in kubernetes_workloads:
+        k8s_by_cluster.setdefault(w.get("cluster_arn", ""), []).append(w)
+
     # ── Internet node ─────────────────────────────────────────────────────────
     internet_id = "__internet__"
     builder.add_vertex(internet_id, "Internet", STYLES["internet"], CANVAS_X, CANVAS_Y, INTERNET_W, INTERNET_H)
 
     # ── Layout each VPC ───────────────────────────────────────────────────────
     cursor_x = CANVAS_X
+    max_vpc_bottom = CANVAS_Y
 
     for vpc in vpcs:
         vpc_id   = vpc["resource_id"]
@@ -438,6 +478,7 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
                 place_resources(builder, items, parent_id=sid)
                 row_y += sub_h + SUBNET_GAP
 
+        max_vpc_bottom = max(max_vpc_bottom, vpc_y + vpc_h)
         cursor_x += vpc_w + VPC_GAP
 
     # ── Edges: ALB → EC2 (instance targets) ──────────────────────────────────
@@ -450,7 +491,101 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
 
     # ── Edges: ALB → EKS cluster (kubernetes-managed ALBs) ────────────────────
     for lb_arn, cluster_arn in lb_to_eks.items():
-        builder.add_edge(lb_arn, cluster_arn, label="k8s ingress", style=STYLES["edge_dashed"])
+        builder.add_edge(lb_arn, cluster_arn, label="k8s", style=STYLES["edge_dashed"])
+
+    # ── Kubernetes workloads section ──────────────────────────────────────────
+    if kubernetes_workloads:
+        k8s_row_y = max_vpc_bottom + 120
+        k8s_cursor_x = CANVAS_X
+
+        for cluster in eks_clusters:
+            cluster_arn  = cluster["resource_id"]
+            cluster_name = cluster.get("cluster_name", full_name(cluster))
+            workloads    = k8s_by_cluster.get(cluster_arn, [])
+            if not workloads:
+                continue
+
+            # Separate by type
+            namespaces  = [w for w in workloads if w.get("resource_type") == "aws::eks::k8s_namespace"]
+            deployments = [w for w in workloads if w.get("resource_type") == "aws::eks::k8s_deployment"]
+            services    = [w for w in workloads if w.get("resource_type") == "aws::eks::k8s_service"]
+            ingresses   = [w for w in workloads if w.get("resource_type") == "aws::eks::k8s_ingress"]
+
+            # Group deployments/services/ingresses by namespace
+            ns_items: dict[str, list[tuple[str, str, str]]] = {}
+            for ns in namespaces:
+                ns_items[ns["resource_name"]] = []
+            for dep in deployments:
+                ns_items.setdefault(dep.get("namespace", "default"), []).append(
+                    (dep["resource_id"], dep.get("resource_name", ""), "k8s_deploy")
+                )
+            for svc in services:
+                if svc.get("service_type") != "ClusterIP":
+                    ns_items.setdefault(svc.get("namespace", "default"), []).append(
+                        (svc["resource_id"], svc.get("resource_name", ""), "k8s_svc")
+                    )
+            for ing in ingresses:
+                ns_items.setdefault(ing.get("namespace", "default"), []).append(
+                    (ing["resource_id"], ing.get("resource_name", ""), "k8s_ingress")
+                )
+
+            if not ns_items:
+                continue
+
+            # Calculate namespace heights
+            def _ns_h(items: list) -> int:
+                rows = max(1, math.ceil(len(items) / K8S_RESOURCES_PER_ROW)) if items else 0
+                return max(120, K8S_NS_LABEL_H + rows * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y) + RESOURCE_MARGIN_Y)
+
+            ns_list = sorted(ns_items.keys())
+            ns_heights = {ns: _ns_h(ns_items[ns]) for ns in ns_list}
+            max_ns_h   = max(ns_heights.values()) if ns_heights else 120
+
+            cluster_w = len(ns_list) * (K8S_NS_W + K8S_NS_GAP) - K8S_NS_GAP + 2 * K8S_CLUSTER_PADDING
+            cluster_h = max_ns_h + K8S_CLUSTER_LABEL_H + K8S_CLUSTER_PADDING
+
+            cg_id = f"__k8s_group_{cluster_arn}__"
+            builder.add_vertex(
+                cg_id,
+                f"EKS: {cluster_name}",
+                STYLES["k8s_cluster_group"],
+                k8s_cursor_x, k8s_row_y, cluster_w, cluster_h,
+            )
+            # Edge from EKS icon (in VPC) to this group
+            builder.add_edge(cluster_arn, cg_id, style=STYLES["edge_dashed"])
+
+            for ns_idx, ns_name in enumerate(ns_list):
+                ns_x = K8S_CLUSTER_PADDING + ns_idx * (K8S_NS_W + K8S_NS_GAP)
+                ns_y = K8S_CLUSTER_LABEL_H
+                ns_id = f"__k8s_ns_{cluster_arn}_{ns_name}__"
+                builder.add_vertex(
+                    ns_id,
+                    ns_name,
+                    STYLES["k8s_namespace"],
+                    ns_x, ns_y, K8S_NS_W, ns_heights[ns_name],
+                    parent_id=cg_id,
+                )
+                # Place resources inside namespace
+                items = ns_items[ns_name]
+                for i, (rid, label, sk) in enumerate(items):
+                    col = i % K8S_RESOURCES_PER_ROW
+                    row = i // K8S_RESOURCES_PER_ROW
+                    rx = RESOURCE_MARGIN_X + col * (RESOURCE_W + RESOURCE_MARGIN_X * 2)
+                    ry = K8S_NS_LABEL_H + row * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y)
+                    builder.add_vertex(rid, label, STYLES[sk], rx, ry, RESOURCE_W, RESOURCE_CELL_H, parent_id=ns_id)
+
+            k8s_cursor_x += cluster_w + K8S_CLUSTER_GAP
+
+        # ── Edges: Ingress → ALB (via alb_hostname) ───────────────────────────
+        for ing in [w for w in kubernetes_workloads if w.get("resource_type") == "aws::eks::k8s_ingress"]:
+            hostname = ing.get("alb_hostname", "")
+            if hostname and hostname in alb_by_dns:
+                lb_id = alb_by_dns[hostname]
+                builder.add_edge(
+                    ing["resource_id"], lb_id,
+                    label="routes to",
+                    style=STYLES["edge_k8s"],
+                )
 
     # ── Write ─────────────────────────────────────────────────────────────────
     xml_str = builder.to_xml()
