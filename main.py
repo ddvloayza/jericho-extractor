@@ -32,6 +32,8 @@ from collectors.kubernetes_workloads import KubernetesWorkloadsCollector
 from topology.subnet_classifier import SubnetClassifier
 from topology.dependency_mapper import DependencyMapper
 from topology.network_graph import NetworkGraph
+from topology.relationship_engine import RelationshipEngine
+from topology.security_analyzer import SecurityAnalyzer, critical_findings, public_exposure_summary
 
 logger = logging.getLogger(__name__)
 
@@ -132,9 +134,28 @@ def collect_region(
     writer.write(account.account_name, "ec2_topology_chains", chains)
 
     all_resources = [r for resources in collected.values() for r in resources]
+
+    # ── Capa 2: Relationship Engine ───────────────────────────────────────────
+    rel_engine = RelationshipEngine()
+    edges = rel_engine.build_all(collected)
+    writer.write(account.account_name, "relationships/all_relationships",
+                 [e.to_dict() for e in edges])
+
+    # ── Capa 2: Security Analysis ─────────────────────────────────────────────
+    sg_analyzer = SecurityAnalyzer()
+    sg_analysis = sg_analyzer.analyze_all(collected.get("security_groups", []), all_resources)
+    writer.write(account.account_name, "relationships/security_groups_analysis", sg_analysis)
+    writer.write(account.account_name, "relationships/security_critical_findings",
+                 critical_findings(sg_analysis))
+    writer.write(account.account_name, "relationships/security_summary",
+                 [public_exposure_summary(sg_analysis)])
+
+    # ── Capa 3: Network Graph (networkx) ──────────────────────────────────────
     graph = NetworkGraph()
     graph.build_from_inventory(all_resources)
-    writer.write(account.account_name, "network_graph", [graph.to_dict()])
+    graph.build_from_edges(edges)
+    writer.write(account.account_name, "topology/network_graph", [graph.to_dict()])
+    writer.write(account.account_name, "topology/graph_summary", [graph.summary()])
 
     return collected
 

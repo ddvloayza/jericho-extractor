@@ -25,6 +25,7 @@ class OutputWriter:
         account_dir.mkdir(parents=True, exist_ok=True)
 
         file_path = account_dir / f"{resource_type}.json"
+        file_path.parent.mkdir(parents=True, exist_ok=True)  # support nested paths
         with open(file_path, "w", encoding="utf-8") as fh:
             json.dump(data, fh, indent=2, default=str)
 
