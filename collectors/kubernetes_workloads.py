@@ -1,15 +1,12 @@
 from __future__ import annotations
 
-import base64
 import logging
-import tempfile
-import os
+import subprocess
 from typing import Any
 
-import boto3
 from kubernetes import client as k8s_client
+from kubernetes import config as k8s_config
 
-from utils.aws_clients import get_eks_bearer_token
 from utils.helpers import utc_now
 from utils.relationships import build_relationship
 
@@ -30,13 +27,11 @@ class KubernetesWorkloadsCollector:
     def __init__(
         self,
         cluster: dict[str, Any],
-        session: boto3.Session,
         account_id: str,
         account_name: str,
         region: str,
     ) -> None:
         self.cluster = cluster
-        self.session = session
         self.account_id = account_id
         self.account_name = account_name
         self.region = region
@@ -53,9 +48,9 @@ class KubernetesWorkloadsCollector:
         results: list[dict[str, Any]] = []
         try:
             api = self._build_api_client()
-            core_v1   = k8s_client.CoreV1Api(api)
-            apps_v1   = k8s_client.AppsV1Api(api)
-            net_v1    = k8s_client.NetworkingV1Api(api)
+            core_v1 = k8s_client.CoreV1Api(api)
+            apps_v1 = k8s_client.AppsV1Api(api)
+            net_v1  = k8s_client.NetworkingV1Api(api)
 
             results.extend(self._collect_namespaces(core_v1))
             results.extend(self._collect_deployments(apps_v1))
@@ -66,48 +61,27 @@ class KubernetesWorkloadsCollector:
                 "[%s][%s] Kubernetes workloads collection failed for %s: %s",
                 self.account_name, self.region, self.cluster_name, exc,
             )
-        finally:
-            try:
-                api.rest_client.pool_manager.clear()
-            except Exception:
-                pass
         return results
 
     # ── API client bootstrap ──────────────────────────────────────────────────
 
     def _build_api_client(self) -> k8s_client.ApiClient:
-        endpoint = self.cluster.get("endpoint", "")
-        ca_data   = self.cluster.get("certificate_authority", "")
-        if not endpoint or not ca_data:
-            raise ValueError(
-                f"Cluster {self.cluster_name} is missing endpoint or certificate_authority. "
-                "Re-run the EKS collector first."
+        # Update kubeconfig for this cluster so the k8s client can connect.
+        # Requires AWS CLI installed and credentials set in the environment.
+        cmd = [
+            "aws", "eks", "update-kubeconfig",
+            "--name", self.cluster_name,
+            "--region", self.region,
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        if result.returncode != 0:
+            raise RuntimeError(
+                f"aws eks update-kubeconfig failed for {self.cluster_name}: {result.stderr.strip()}"
             )
+        logger.debug("update-kubeconfig: %s", result.stdout.strip())
 
-        token = get_eks_bearer_token(self.cluster_name, self.session, self.region)
-
-        # Write CA cert to a temp file so the k8s client can verify TLS
-        ca_bytes = base64.b64decode(ca_data)
-        tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".crt")
-        try:
-            tmp.write(ca_bytes)
-            tmp.flush()
-            ca_path = tmp.name
-        finally:
-            tmp.close()
-
-        configuration = k8s_client.Configuration()
-        configuration.host = endpoint
-        configuration.verify_ssl = True
-        configuration.ssl_ca_cert = ca_path
-        configuration.api_key = {"authorization": f"Bearer {token}"}
-        configuration.api_key_prefix = {}
-
-        api = k8s_client.ApiClient(configuration)
-
-        # Schedule CA temp file cleanup after client is done
-        api._ca_temp_path = ca_path  # type: ignore[attr-defined]
-        return api
+        k8s_config.load_kube_config()
+        return k8s_client.ApiClient()
 
     # ── Read-only resource collectors ─────────────────────────────────────────
 

@@ -98,16 +98,9 @@ def collect_region(
             continue
         if cluster.get("status") != "ACTIVE":
             continue
-        if not cluster.get("endpoint_public_access", False):
-            logger.info(
-                "  Skipping k8s workloads for %s — public endpoint not enabled",
-                cluster.get("cluster_name"),
-            )
-            continue
         try:
             k8s_col = KubernetesWorkloadsCollector(
                 cluster=cluster,
-                session=session,
                 account_id=account.account_id,
                 account_name=account.account_name,
                 region=region,
