@@ -325,16 +325,23 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
                     lb_to_ec2.setdefault(lb_arn, []).append(tid)
 
     # ALB → EKS cluster (detect kubernetes-managed ALBs by tag)
+    # AWS LBC uses elbv2.k8s.aws/cluster=<name> or kubernetes.io/cluster/<name>=owned
     lb_to_eks: dict[str, str] = {}
+    eks_by_name = {c.get("cluster_name", ""): c["resource_id"] for c in eks_clusters}
     for lb in load_balancers:
         tags = lb.get("tags", {})
-        for tag_key, tag_val in tags.items():
-            if tag_key.startswith("kubernetes.io/cluster/"):
-                cluster_name = tag_key.split("/")[-1]
-                matching = [c for c in eks_clusters if c.get("cluster_name") == cluster_name]
-                if matching:
-                    lb_to_eks[lb["resource_id"]] = matching[0]["resource_id"]
-                break
+        cluster_name = ""
+        # New-style tag (AWS Load Balancer Controller)
+        if "elbv2.k8s.aws/cluster" in tags:
+            cluster_name = tags["elbv2.k8s.aws/cluster"]
+        else:
+            # Old-style tag: kubernetes.io/cluster/<name> = owned|shared
+            for tag_key in tags:
+                if tag_key.startswith("kubernetes.io/cluster/"):
+                    cluster_name = tag_key.split("/")[-1]
+                    break
+        if cluster_name and cluster_name in eks_by_name:
+            lb_to_eks[lb["resource_id"]] = eks_by_name[cluster_name]
 
     # TGW attachments per VPC
     tgw_by_vpc: dict[str, list[dict]] = {}
