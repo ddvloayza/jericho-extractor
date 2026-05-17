@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import logging
+import shutil
 import subprocess
 from typing import Any
 
@@ -66,14 +67,14 @@ class KubernetesWorkloadsCollector:
     # ── API client bootstrap ──────────────────────────────────────────────────
 
     def _build_api_client(self) -> k8s_client.ApiClient:
-        # Update kubeconfig for this cluster so the k8s client can connect.
-        # Requires AWS CLI installed and credentials set in the environment.
-        cmd = [
-            "aws", "eks", "update-kubeconfig",
-            "--name", self.cluster_name,
-            "--region", self.region,
-        ]
-        result = subprocess.run(cmd, capture_output=True, text=True)
+        aws_bin = shutil.which("aws")
+        if not aws_bin:
+            raise RuntimeError("AWS CLI not found in PATH — cannot run aws eks update-kubeconfig")
+
+        result = subprocess.run(
+            [aws_bin, "eks", "update-kubeconfig", "--name", self.cluster_name, "--region", self.region],
+            capture_output=True, text=True,
+        )
         if result.returncode != 0:
             raise RuntimeError(
                 f"aws eks update-kubeconfig failed for {self.cluster_name}: {result.stderr.strip()}"
