@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from config import AccountConfig, AppConfig
-from utils.aws_clients import get_ec2_client, get_elbv2_client, get_session, resolve_identity
+from utils.aws_clients import get_ec2_client, get_elbv2_client, get_eks_client, get_session, resolve_identity
 from utils.writer import OutputWriter
 
 from collectors.vpcs import VPCCollector
@@ -26,6 +26,7 @@ from collectors.vpc_endpoints import VPCEndpointCollector
 from collectors.ec2 import EC2Collector
 from collectors.load_balancers import LoadBalancerCollector
 from collectors.target_groups import TargetGroupCollector
+from collectors.eks import EKSCollector
 
 from topology.subnet_classifier import SubnetClassifier
 from topology.dependency_mapper import DependencyMapper
@@ -52,6 +53,7 @@ def collect_region(
     session = get_session(account)
     ec2 = get_ec2_client(session, region)
     elbv2 = get_elbv2_client(session, region)
+    eks = get_eks_client(session, region)
 
     ctx = {
         "account_id": account.account_id,
@@ -78,6 +80,7 @@ def collect_region(
         ("ec2", EC2Collector(ec2, **ctx)),
         ("load_balancers", LoadBalancerCollector(elbv2, **ctx)),
         ("target_groups", TargetGroupCollector(elbv2, **ctx)),
+        ("eks", EKSCollector(eks, **ctx)),
     ]
 
     collected: dict[str, list[dict[str, Any]]] = {}

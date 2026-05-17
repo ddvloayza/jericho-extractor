@@ -20,35 +20,38 @@ from xml.dom.minidom import parseString
 CANVAS_X          = 80
 CANVAS_Y          = 80
 VPC_PADDING_X     = 50
-VPC_PADDING_TOP   = 80   # room for IGW label above VPC border
+VPC_PADDING_TOP   = 90
 VPC_PADDING_BOT   = 40
-VPC_GAP           = 100  # horizontal gap between VPCs
+VPC_GAP           = 120
 
-AZ_GAP            = 16   # gap between AZ columns
-SUBNET_W          = 340
-SUBNET_GAP        = 14   # vertical gap between subnets in same AZ
-SUBNET_H_MIN      = 140
-SUBNET_LABEL_H    = 40   # reserved for subnet label at top
+AZ_GAP            = 20
+SUBNET_W          = 380       # wider to fit full names
+SUBNET_GAP        = 16
+SUBNET_H_MIN      = 160
+SUBNET_LABEL_H    = 46
 
-RESOURCE_W        = 52
-RESOURCE_H        = 52
-RESOURCE_LABEL_H  = 16
-RESOURCE_MARGIN_X = 16
-RESOURCE_MARGIN_Y = 10
-RESOURCES_PER_ROW = 4
+RESOURCE_W        = 56        # icon square
+RESOURCE_H        = 56
+RESOURCE_LABEL_H  = 0         # label goes BELOW via verticalLabelPosition
+RESOURCE_CELL_H   = 90        # total cell height (icon 56 + label area 34)
+RESOURCE_MARGIN_X = 18
+RESOURCE_MARGIN_Y = 14
+RESOURCES_PER_ROW = 3
 
-GATEWAY_W         = 56
-GATEWAY_H         = 56
+GATEWAY_W         = 60
+GATEWAY_H         = 60
 INTERNET_W        = 64
 INTERNET_H        = 64
 
 
 # ── AWS draw.io styles ────────────────────────────────────────────────────────
 def _icon(res_icon: str, fill: str) -> str:
+    """Icon with label rendered below the shape (not overlapping)."""
     return (
         f"outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;"
-        f"fillColor={fill};labelBackgroundColor=#ffffff;align=center;html=1;"
-        f"fontSize=11;fontStyle=0;aspect=fixed;"
+        f"fillColor={fill};labelBackgroundColor=#ffffff;"
+        f"align=center;verticalLabelPosition=bottom;verticalAlign=top;"
+        f"html=1;fontSize=10;fontStyle=0;aspect=fixed;"
         f"shape=mxgraph.aws4.resourceIcon;resIcon={res_icon};"
     )
 
@@ -77,10 +80,13 @@ STYLES: dict[str, str] = {
     "ec2":    _icon("mxgraph.aws4.ec2",                       "#ED7100"),
     "alb":    _icon("mxgraph.aws4.application_load_balancer", "#E7157B"),
     "nlb":    _icon("mxgraph.aws4.network_load_balancer",     "#E7157B"),
+    "eks":    _icon("mxgraph.aws4.eks",                       "#ED7100"),
+    "eks_ng": _icon("mxgraph.aws4.eks",                       "#F0A500"),
     "internet": (
         "shape=mxgraph.aws4.internet_alt2;fillColor=#232F3E;strokeColor=none;"
         "fontColor=#232F3E;gradientColor=none;labelBackgroundColor=#ffffff;"
-        "align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;"
+        "align=center;verticalLabelPosition=bottom;verticalAlign=top;"
+        "html=1;fontSize=12;fontStyle=1;aspect=fixed;"
     ),
     "edge_solid": (
         "edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;"
@@ -97,8 +103,6 @@ STYLES: dict[str, str] = {
 
 # ── XML builder ───────────────────────────────────────────────────────────────
 class DrawioBuilder:
-    """Thin wrapper around mxGraph XML construction."""
-
     def __init__(self) -> None:
         self._counter = 10
         self._id_map: dict[str, str] = {}
@@ -197,38 +201,34 @@ def load_json(path: Path) -> list[dict]:
         return json.load(f)
 
 
-def short_name(resource: dict, name_key: str = "resource_id") -> str:
-    """Return the Name tag, or a shortened resource ID."""
+def full_name(resource: dict, name_key: str = "resource_id") -> str:
+    """Return the Name tag (full, no truncation) or the resource identifier."""
     tag_name = resource.get("tags", {}).get("Name", "")
     if tag_name:
         return tag_name
-    rid = resource.get(name_key) or resource.get("resource_id", "")
-    parts = rid.split("-")
-    if len(parts) >= 3:
-        # e.g. subnet-0abc1234 → subnet-...234
-        return f"{parts[0]}-...{rid[-4:]}"
-    return rid
+    # For EKS/LB use resource_name field when available
+    rname = resource.get("resource_name", "")
+    if rname:
+        return rname
+    return resource.get(name_key) or resource.get("resource_id", "")
 
 
 def subnet_height(n_resources: int) -> int:
-    """Calculate subnet container height based on how many resources it holds."""
     rows = max(1, math.ceil(n_resources / RESOURCES_PER_ROW))
-    content_h = rows * (RESOURCE_H + RESOURCE_LABEL_H + RESOURCE_MARGIN_Y)
-    return max(SUBNET_H_MIN, SUBNET_LABEL_H + content_h + RESOURCE_MARGIN_Y)
+    return max(SUBNET_H_MIN, SUBNET_LABEL_H + rows * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y) + RESOURCE_MARGIN_Y)
 
 
 def place_resources(
     builder: DrawioBuilder,
-    items: list[tuple[str, str, str]],  # (resource_id, label, style_key)
+    items: list[tuple[str, str, str]],
     parent_id: str,
 ) -> None:
-    """Place resource icons in a grid inside a subnet container."""
     for i, (rid, label, sk) in enumerate(items):
         col = i % RESOURCES_PER_ROW
         row = i // RESOURCES_PER_ROW
-        x = RESOURCE_MARGIN_X + col * (RESOURCE_W + RESOURCE_MARGIN_X)
-        y = SUBNET_LABEL_H + row * (RESOURCE_H + RESOURCE_LABEL_H + RESOURCE_MARGIN_Y)
-        builder.add_vertex(rid, label, STYLES[sk], x, y, RESOURCE_W, RESOURCE_H, parent_id=parent_id)
+        x = RESOURCE_MARGIN_X + col * (RESOURCE_W + RESOURCE_MARGIN_X * 2)
+        y = SUBNET_LABEL_H + row * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y)
+        builder.add_vertex(rid, label, STYLES[sk], x, y, RESOURCE_W, RESOURCE_CELL_H, parent_id=parent_id)
 
 
 # ── Core diagram builder ──────────────────────────────────────────────────────
@@ -242,6 +242,7 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
     load_balancers  = load_json(account_dir / "load_balancers.json")
     target_groups   = load_json(account_dir / "target_groups.json")
     vpc_endpoints   = load_json(account_dir / "vpc_endpoints.json")
+    eks_resources   = load_json(account_dir / "eks.json")
 
     builder = DrawioBuilder()
 
@@ -272,7 +273,20 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
         for sid in ep.get("associated_subnet_ids", []):
             vpce_by_subnet.setdefault(sid, []).append(ep)
 
-    # ALB → EC2 via target groups
+    # EKS clusters (not nodegroups) per VPC
+    eks_clusters = [r for r in eks_resources if r.get("resource_type") == "aws::eks::cluster"]
+    eks_nodegroups = [r for r in eks_resources if r.get("resource_type") == "aws::eks::nodegroup"]
+
+    eks_by_vpc: dict[str, list[dict]] = {}
+    for cl in eks_clusters:
+        eks_by_vpc.setdefault(cl.get("vpc_id", ""), []).append(cl)
+
+    eks_ng_by_subnet: dict[str, list[dict]] = {}
+    for ng in eks_nodegroups:
+        for sid in ng.get("subnet_ids", []):
+            eks_ng_by_subnet.setdefault(sid, []).append(ng)
+
+    # ALB → EC2 via target groups (instance targets)
     ec2_ids_set = {i["resource_id"] for i in ec2_instances}
     lb_to_ec2: dict[str, list[str]] = {}
     for tg in target_groups:
@@ -282,34 +296,40 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
                 if tid in ec2_ids_set:
                     lb_to_ec2.setdefault(lb_arn, []).append(tid)
 
+    # ALB → EKS cluster (detect kubernetes-managed ALBs by tag)
+    lb_to_eks: dict[str, str] = {}
+    for lb in load_balancers:
+        tags = lb.get("tags", {})
+        for tag_key, tag_val in tags.items():
+            if tag_key.startswith("kubernetes.io/cluster/"):
+                cluster_name = tag_key.split("/")[-1]
+                matching = [c for c in eks_clusters if c.get("cluster_name") == cluster_name]
+                if matching:
+                    lb_to_eks[lb["resource_id"]] = matching[0]["resource_id"]
+                break
+
     # TGW attachments per VPC
     tgw_by_vpc: dict[str, list[dict]] = {}
     for att in tgw_attachments:
         if att.get("attachment_type") == "vpc":
             tgw_by_vpc.setdefault(att.get("resource_id_ref", ""), []).append(att)
 
-    # ── Internet node (centered above all VPCs) ────────────────────────────
+    # ── Internet node ─────────────────────────────────────────────────────────
     internet_id = "__internet__"
-    internet_x = CANVAS_X
-    internet_y = CANVAS_Y
-    builder.add_vertex(
-        internet_id, "Internet", STYLES["internet"],
-        internet_x, internet_y, INTERNET_W, INTERNET_H,
-    )
+    builder.add_vertex(internet_id, "Internet", STYLES["internet"], CANVAS_X, CANVAS_Y, INTERNET_W, INTERNET_H)
 
     # ── Layout each VPC ───────────────────────────────────────────────────────
     cursor_x = CANVAS_X
 
     for vpc in vpcs:
         vpc_id   = vpc["resource_id"]
-        vpc_name = short_name(vpc)
+        vpc_name = full_name(vpc)
         vpc_cidr = vpc.get("cidr_block", "")
 
         vpc_subnets = [s for s in subnets if s.get("vpc_id") == vpc_id]
         if not vpc_subnets:
             continue
 
-        # Group subnets by AZ, sort public → private → isolated within each AZ
         type_order = {"public": 0, "private": 1, "isolated": 2, "unknown": 3}
         az_map: dict[str, list[dict]] = {}
         for s in vpc_subnets:
@@ -319,110 +339,108 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
 
         num_azs = len(az_map)
 
-        # Pre-compute each subnet's height
-        def _sub_resources(sid: str) -> int:
+        def _res_count(sid: str) -> int:
             return (
                 len(nat_by_subnet.get(sid, []))
                 + len(alb_by_subnet.get(sid, []))
                 + len(ec2_by_subnet.get(sid, []))
                 + len(vpce_by_subnet.get(sid, []))
+                + len(eks_ng_by_subnet.get(sid, []))
             )
 
-        subnet_heights: dict[str, int] = {
-            s["resource_id"]: subnet_height(_sub_resources(s["resource_id"]))
-            for s in vpc_subnets
+        sub_heights = {s["resource_id"]: subnet_height(_res_count(s["resource_id"])) for s in vpc_subnets}
+
+        az_col_heights = {
+            az: sum(sub_heights[s["resource_id"]] for s in sl) + SUBNET_GAP * (len(sl) - 1)
+            for az, sl in az_map.items()
         }
-
-        # AZ column height = sum of its subnets + gaps
-        az_col_heights: dict[str, int] = {}
-        for az, slist in az_map.items():
-            az_col_heights[az] = (
-                sum(subnet_heights[s["resource_id"]] for s in slist)
-                + SUBNET_GAP * (len(slist) - 1)
-            )
-
         max_col_h = max(az_col_heights.values())
 
         vpc_inner_w = num_azs * SUBNET_W + (num_azs - 1) * AZ_GAP
         vpc_w = vpc_inner_w + 2 * VPC_PADDING_X
         vpc_h = max_col_h + VPC_PADDING_TOP + VPC_PADDING_BOT
 
-        # VPC sits below the internet+IGW area
-        igw_area_h = INTERNET_H + 60 + GATEWAY_H  # internet + space + igw
+        # Extra height for EKS cluster icons at top of VPC
+        n_eks = len(eks_by_vpc.get(vpc_id, []))
+        if n_eks:
+            vpc_h += RESOURCE_CELL_H + 20
+
+        igw_area_h = INTERNET_H + 50 + GATEWAY_H
         vpc_y = CANVAS_Y + igw_area_h + 20
 
         vpc_label = f"{vpc_name}\n{vpc_cidr}"
         builder.add_vertex(vpc_id, vpc_label, STYLES["vpc"], cursor_x, vpc_y, vpc_w, vpc_h)
 
-        # ── IGW(s) — centered above VPC ──────────────────────────────────────
+        # ── IGW(s) ────────────────────────────────────────────────────────────
         vpc_igws = igw_by_vpc.get(vpc_id, [])
-        igw_total_w = len(vpc_igws) * GATEWAY_W + (len(vpc_igws) - 1) * 20
+        igw_total_w = len(vpc_igws) * GATEWAY_W + max(0, len(vpc_igws) - 1) * 20
         igw_start_x = cursor_x + vpc_w / 2 - igw_total_w / 2
-        igw_y = vpc_y - GATEWAY_H - 18
+        igw_y = vpc_y - GATEWAY_H - 20
 
         for k, igw in enumerate(vpc_igws):
             igw_x = igw_start_x + k * (GATEWAY_W + 20)
-            builder.add_vertex(
-                igw["resource_id"], short_name(igw), STYLES["igw"],
-                igw_x, igw_y, GATEWAY_W, GATEWAY_H,
-            )
+            builder.add_vertex(igw["resource_id"], full_name(igw), STYLES["igw"], igw_x, igw_y, GATEWAY_W, GATEWAY_H)
             builder.add_edge(internet_id, igw["resource_id"], style=STYLES["edge_solid"])
             builder.add_edge(igw["resource_id"], vpc_id, style=STYLES["edge_solid"])
 
-        # ── TGW attachment — right side of VPC ───────────────────────────────
+        # ── TGW attachment ────────────────────────────────────────────────────
         for att in tgw_by_vpc.get(vpc_id, []):
-            tgw_id = att["resource_id"]
-            tgw_x  = cursor_x + vpc_w + 20
-            tgw_y  = vpc_y + vpc_h / 2 - GATEWAY_H / 2
+            tgw_x = cursor_x + vpc_w + 24
+            tgw_y = vpc_y + vpc_h / 2 - GATEWAY_H / 2
+            builder.add_vertex(att["resource_id"], f"TGW\n{full_name(att)}", STYLES["tgw"], tgw_x, tgw_y, GATEWAY_W, GATEWAY_H)
+            builder.add_edge(vpc_id, att["resource_id"], style=STYLES["edge_dashed"])
+
+        # ── EKS clusters at top of VPC (outside subnets) ──────────────────────
+        eks_in_vpc = eks_by_vpc.get(vpc_id, [])
+        for k, cluster in enumerate(eks_in_vpc):
+            eks_x = VPC_PADDING_X + k * (RESOURCE_W + 30)
+            eks_y = 10
             builder.add_vertex(
-                tgw_id,
-                f"TGW\n{short_name(att)}",
-                STYLES["tgw"],
-                tgw_x, tgw_y, GATEWAY_W, GATEWAY_H,
+                cluster["resource_id"],
+                f"EKS: {cluster.get('cluster_name', full_name(cluster))}",
+                STYLES["eks"],
+                eks_x, eks_y, RESOURCE_W, RESOURCE_CELL_H,
+                parent_id=vpc_id,
             )
-            builder.add_edge(vpc_id, tgw_id, style=STYLES["edge_dashed"])
 
         # ── Subnets — column per AZ ───────────────────────────────────────────
         for az_idx, (az_name, az_subnets) in enumerate(sorted(az_map.items())):
             col_x = VPC_PADDING_X + az_idx * (SUBNET_W + AZ_GAP)
-            row_y = VPC_PADDING_TOP
+            # Push down if EKS clusters take space at top
+            row_y = VPC_PADDING_TOP + (RESOURCE_CELL_H + 20 if n_eks else 0)
 
             for subnet in az_subnets:
-                sid         = subnet["resource_id"]
-                stype       = subnet.get("subnet_type", "unknown")
-                sname       = short_name(subnet)
-                scidr       = subnet.get("cidr_block", "")
-                # strip account-prefixed long AZ to just the zone letter
-                az_short    = az_name.split("-")[-1] if "-" in az_name else az_name
-                sub_label   = f"{sname}\n{scidr}  [{az_short}]"
-                sub_h       = subnet_heights[sid]
+                sid    = subnet["resource_id"]
+                stype  = subnet.get("subnet_type", "unknown")
+                scidr  = subnet.get("cidr_block", "")
+                sname  = full_name(subnet)
+                az_short = az_name.split("-")[-1] if "-" in az_name else az_name
+                sub_label = f"{sname}\n{scidr}  [{az_short}]"
+                sub_h  = sub_heights[sid]
 
-                builder.add_vertex(
-                    sid, sub_label, STYLES[f"subnet_{stype}"],
-                    col_x, row_y, SUBNET_W, sub_h,
-                    parent_id=vpc_id,
-                )
+                builder.add_vertex(sid, sub_label, STYLES[f"subnet_{stype}"], col_x, row_y, SUBNET_W, sub_h, parent_id=vpc_id)
 
-                # Resources inside subnet
                 items: list[tuple[str, str, str]] = []
                 for nat in nat_by_subnet.get(sid, []):
-                    items.append((nat["resource_id"], short_name(nat), "nat"))
+                    items.append((nat["resource_id"], full_name(nat), "nat"))
                 for lb in alb_by_subnet.get(sid, []):
-                    lb_type = lb.get("lb_type", "application")
-                    sk = "alb" if lb_type == "application" else "nlb"
-                    items.append((lb["resource_id"], short_name(lb, "resource_name"), sk))
+                    sk = "alb" if lb.get("lb_type", "application") == "application" else "nlb"
+                    items.append((lb["resource_id"], full_name(lb, "resource_name"), sk))
                 for inst in ec2_by_subnet.get(sid, []):
-                    items.append((inst["resource_id"], short_name(inst), "ec2"))
+                    items.append((inst["resource_id"], full_name(inst), "ec2"))
                 for ep in vpce_by_subnet.get(sid, []):
                     svc = ep.get("service_name", "").split(".")[-1]
-                    items.append((ep["resource_id"], svc or short_name(ep), "vpce"))
+                    items.append((ep["resource_id"], svc or full_name(ep), "vpce"))
+                for ng in eks_ng_by_subnet.get(sid, []):
+                    # Deduplicate: only show once per nodegroup (it spans multiple subnets)
+                    items.append((f"{ng['resource_id']}#{sid}", ng.get("nodegroup_name", full_name(ng)), "eks_ng"))
 
                 place_resources(builder, items, parent_id=sid)
                 row_y += sub_h + SUBNET_GAP
 
         cursor_x += vpc_w + VPC_GAP
 
-    # ── ALB → EC2 edges (dashed) ──────────────────────────────────────────────
+    # ── Edges: ALB → EC2 (instance targets) ──────────────────────────────────
     drawn: set[tuple[str, str]] = set()
     for lb_arn, targets in lb_to_ec2.items():
         for ec2_id in set(targets):
@@ -430,7 +448,11 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
                 builder.add_edge(lb_arn, ec2_id, style=STYLES["edge_dashed"])
                 drawn.add((lb_arn, ec2_id))
 
-    # ── Write file ────────────────────────────────────────────────────────────
+    # ── Edges: ALB → EKS cluster (kubernetes-managed ALBs) ────────────────────
+    for lb_arn, cluster_arn in lb_to_eks.items():
+        builder.add_edge(lb_arn, cluster_arn, label="k8s ingress", style=STYLES["edge_dashed"])
+
+    # ── Write ─────────────────────────────────────────────────────────────────
     xml_str = builder.to_xml()
     output_path.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w", encoding="utf-8") as f:
@@ -441,9 +463,7 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        description="Generate draw.io network diagram from jericho-extractor output"
-    )
+    parser = argparse.ArgumentParser(description="Generate draw.io diagram from jericho-extractor output")
     parser.add_argument("--account",    required=True, help="Account folder name inside output/")
     parser.add_argument("--output-dir", default="output", help="Base output directory (default: output)")
     args = parser.parse_args()

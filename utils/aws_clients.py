@@ -43,3 +43,7 @@ def get_ec2_client(session: boto3.Session, region: str) -> BaseClient:
 
 def get_elbv2_client(session: boto3.Session, region: str) -> BaseClient:
     return session.client("elbv2", region_name=region, config=_RETRY_CONFIG)
+
+
+def get_eks_client(session: boto3.Session, region: str) -> BaseClient:
+    return session.client("eks", region_name=region, config=_RETRY_CONFIG)

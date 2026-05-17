@@ -13,6 +13,7 @@ from collectors.vpc_endpoints import VPCEndpointCollector
 from collectors.ec2 import EC2Collector
 from collectors.load_balancers import LoadBalancerCollector
 from collectors.target_groups import TargetGroupCollector
+from collectors.eks import EKSCollector
 
 __all__ = [
     "VPCCollector",
@@ -30,4 +31,5 @@ __all__ = [
     "EC2Collector",
     "LoadBalancerCollector",
     "TargetGroupCollector",
+    "EKSCollector",
 ]
