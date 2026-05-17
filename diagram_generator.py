@@ -118,13 +118,14 @@ STYLES: dict[str, str] = {
 }
 
 # ── Kubernetes layout constants ───────────────────────────────────────────────
-K8S_CLUSTER_PADDING  = 30
-K8S_CLUSTER_LABEL_H  = 50
-K8S_CLUSTER_GAP      = 60
-K8S_NS_W             = 280
-K8S_NS_LABEL_H       = 38
-K8S_NS_GAP           = 18
-K8S_RESOURCES_PER_ROW = 3
+K8S_CLUSTER_PADDING   = 30
+K8S_CLUSTER_LABEL_H   = 50
+K8S_CLUSTER_GAP       = 60
+K8S_NS_W              = 400        # wider to fit more icons per row
+K8S_NS_LABEL_H        = 38
+K8S_NS_GAP            = 16
+K8S_RESOURCES_PER_ROW = 5          # more columns → shorter namespaces
+K8S_NS_PER_ROW        = 4          # max namespaces side-by-side in cluster group
 
 
 # ── XML builder ───────────────────────────────────────────────────────────────
@@ -529,20 +530,42 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
                     (ing["resource_id"], ing.get("resource_name", ""), "k8s_ingress")
                 )
 
+            # Drop empty system namespaces to reduce noise
+            SYSTEM_NS = {"kube-system", "kube-public", "kube-node-lease"}
+            ns_items = {k: v for k, v in ns_items.items() if v or k not in SYSTEM_NS}
+
             if not ns_items:
                 continue
 
-            # Calculate namespace heights
+            # Calculate namespace heights (5 icons per row → shorter boxes)
             def _ns_h(items: list) -> int:
                 rows = max(1, math.ceil(len(items) / K8S_RESOURCES_PER_ROW)) if items else 0
-                return max(120, K8S_NS_LABEL_H + rows * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y) + RESOURCE_MARGIN_Y)
+                return max(110, K8S_NS_LABEL_H + rows * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y) + RESOURCE_MARGIN_Y)
 
-            ns_list = sorted(ns_items.keys())
+            # Sort: namespaces with items first, then alphabetical
+            ns_list = sorted(ns_items.keys(), key=lambda n: (len(ns_items[n]) == 0, n))
             ns_heights = {ns: _ns_h(ns_items[ns]) for ns in ns_list}
-            max_ns_h   = max(ns_heights.values()) if ns_heights else 120
 
-            cluster_w = len(ns_list) * (K8S_NS_W + K8S_NS_GAP) - K8S_NS_GAP + 2 * K8S_CLUSTER_PADDING
-            cluster_h = max_ns_h + K8S_CLUSTER_LABEL_H + K8S_CLUSTER_PADDING
+            # Grid layout: K8S_NS_PER_ROW namespaces per row
+            ns_cols = min(K8S_NS_PER_ROW, len(ns_list))
+            ns_row_count = math.ceil(len(ns_list) / ns_cols)
+
+            # Cluster width = widest row of namespaces
+            cluster_inner_w = ns_cols * (K8S_NS_W + K8S_NS_GAP) - K8S_NS_GAP
+            cluster_w = cluster_inner_w + 2 * K8S_CLUSTER_PADDING
+
+            # Cluster height = sum of max-height per namespace row
+            def _row_max_h(row_idx: int) -> int:
+                start = row_idx * ns_cols
+                end   = min(start + ns_cols, len(ns_list))
+                return max(ns_heights[ns_list[i]] for i in range(start, end))
+
+            cluster_h = (
+                K8S_CLUSTER_LABEL_H
+                + sum(_row_max_h(r) for r in range(ns_row_count))
+                + (ns_row_count - 1) * K8S_NS_GAP
+                + K8S_CLUSTER_PADDING
+            )
 
             cg_id = f"__k8s_group_{cluster_arn}__"
             builder.add_vertex(
@@ -551,27 +574,29 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
                 STYLES["k8s_cluster_group"],
                 k8s_cursor_x, k8s_row_y, cluster_w, cluster_h,
             )
-            # Edge from EKS icon (in VPC) to this group
             builder.add_edge(cluster_arn, cg_id, style=STYLES["edge_dashed"])
 
             for ns_idx, ns_name in enumerate(ns_list):
-                ns_x = K8S_CLUSTER_PADDING + ns_idx * (K8S_NS_W + K8S_NS_GAP)
-                ns_y = K8S_CLUSTER_LABEL_H
+                col = ns_idx % ns_cols
+                row = ns_idx // ns_cols
+
+                # Absolute y inside cluster group: sum of previous rows' max heights
+                ns_y = K8S_CLUSTER_LABEL_H + sum(
+                    _row_max_h(r) + K8S_NS_GAP for r in range(row)
+                )
+                ns_x = K8S_CLUSTER_PADDING + col * (K8S_NS_W + K8S_NS_GAP)
+
                 ns_id = f"__k8s_ns_{cluster_arn}_{ns_name}__"
                 builder.add_vertex(
-                    ns_id,
-                    ns_name,
-                    STYLES["k8s_namespace"],
+                    ns_id, ns_name, STYLES["k8s_namespace"],
                     ns_x, ns_y, K8S_NS_W, ns_heights[ns_name],
                     parent_id=cg_id,
                 )
-                # Place resources inside namespace
-                items = ns_items[ns_name]
-                for i, (rid, label, sk) in enumerate(items):
-                    col = i % K8S_RESOURCES_PER_ROW
-                    row = i // K8S_RESOURCES_PER_ROW
-                    rx = RESOURCE_MARGIN_X + col * (RESOURCE_W + RESOURCE_MARGIN_X * 2)
-                    ry = K8S_NS_LABEL_H + row * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y)
+                for i, (rid, label, sk) in enumerate(ns_items[ns_name]):
+                    col_r = i % K8S_RESOURCES_PER_ROW
+                    row_r = i // K8S_RESOURCES_PER_ROW
+                    rx = RESOURCE_MARGIN_X + col_r * (RESOURCE_W + RESOURCE_MARGIN_X * 2)
+                    ry = K8S_NS_LABEL_H + row_r * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y)
                     builder.add_vertex(rid, label, STYLES[sk], rx, ry, RESOURCE_W, RESOURCE_CELL_H, parent_id=ns_id)
 
             k8s_cursor_x += cluster_w + K8S_CLUSTER_GAP
