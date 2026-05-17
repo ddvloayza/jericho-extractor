@@ -1,8 +1,11 @@
 from __future__ import annotations
 
+import base64
 import logging
 
 import boto3
+from botocore.auth import SigV4QueryAuth
+from botocore.awsrequest import AWSRequest
 from botocore.client import BaseClient
 from botocore.config import Config as BotocoreConfig
 
@@ -47,3 +50,20 @@ def get_elbv2_client(session: boto3.Session, region: str) -> BaseClient:
 
 def get_eks_client(session: boto3.Session, region: str) -> BaseClient:
     return session.client("eks", region_name=region, config=_RETRY_CONFIG)
+
+
+def get_eks_bearer_token(cluster_name: str, session: boto3.Session, region: str) -> str:
+    """Generate a bearer token for authenticating to an EKS cluster's Kubernetes API.
+
+    Uses a presigned STS GetCallerIdentity URL signed with SigV4, which EKS
+    validates server-side. Token is prefixed with 'k8s-aws-v1.' as required.
+    Token is valid for 60 seconds (EKS accepts up to 15 minutes).
+    """
+    credentials = session.get_credentials().get_frozen_credentials()
+    url = f"https://sts.{region}.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15"
+    request = AWSRequest(method="GET", url=url, headers={"x-k8s-aws-id": cluster_name})
+    SigV4QueryAuth(credentials, "sts", region, expires=60).add_auth(request)
+    token = "k8s-aws-v1." + base64.urlsafe_b64encode(
+        request.url.encode()
+    ).decode().rstrip("=")
+    return token

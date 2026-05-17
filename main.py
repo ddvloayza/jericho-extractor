@@ -27,6 +27,7 @@ from collectors.ec2 import EC2Collector
 from collectors.load_balancers import LoadBalancerCollector
 from collectors.target_groups import TargetGroupCollector
 from collectors.eks import EKSCollector
+from collectors.kubernetes_workloads import KubernetesWorkloadsCollector
 
 from topology.subnet_classifier import SubnetClassifier
 from topology.dependency_mapper import DependencyMapper
@@ -89,6 +90,37 @@ def collect_region(
         data = collector.collect()
         collected[resource_type] = data
         writer.write(account.account_name, resource_type, data)
+
+    # ── Kubernetes workloads (read-only describe) ─────────────────────────────
+    k8s_resources: list[dict] = []
+    for cluster in collected.get("eks", []):
+        if cluster.get("resource_type") != "aws::eks::cluster":
+            continue
+        if cluster.get("status") != "ACTIVE":
+            continue
+        if not cluster.get("endpoint_public_access", False):
+            logger.info(
+                "  Skipping k8s workloads for %s — public endpoint not enabled",
+                cluster.get("cluster_name"),
+            )
+            continue
+        try:
+            k8s_col = KubernetesWorkloadsCollector(
+                cluster=cluster,
+                session=session,
+                account_id=account.account_id,
+                account_name=account.account_name,
+                region=region,
+            )
+            k8s_resources.extend(k8s_col.collect())
+        except Exception as exc:
+            logger.error(
+                "  k8s workloads for cluster %s failed: %s",
+                cluster.get("cluster_name"), exc,
+            )
+    if k8s_resources:
+        collected["kubernetes_workloads"] = k8s_resources
+        writer.write(account.account_name, "kubernetes_workloads", k8s_resources)
 
     # ── Topology enrichment ───────────────────────────────────────────────────
     subnets_enriched = SubnetClassifier().classify_all(

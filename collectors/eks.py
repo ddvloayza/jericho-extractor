@@ -86,6 +86,8 @@ class EKSCollector:
             "cluster_name":     cluster.get("name", ""),
             "status":           cluster.get("status", ""),
             "kubernetes_version": cluster.get("version", ""),
+            "endpoint":         cluster.get("endpoint", ""),
+            "certificate_authority": cluster.get("certificateAuthority", {}).get("data", ""),
             "vpc_id":           vpc_id,
             "subnet_ids":       subnet_ids,
             "security_group_ids": sg_ids,

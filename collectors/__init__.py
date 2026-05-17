@@ -14,6 +14,7 @@ from collectors.ec2 import EC2Collector
 from collectors.load_balancers import LoadBalancerCollector
 from collectors.target_groups import TargetGroupCollector
 from collectors.eks import EKSCollector
+from collectors.kubernetes_workloads import KubernetesWorkloadsCollector
 
 __all__ = [
     "VPCCollector",
@@ -32,4 +33,5 @@ __all__ = [
     "LoadBalancerCollector",
     "TargetGroupCollector",
     "EKSCollector",
+    "KubernetesWorkloadsCollector",
 ]
