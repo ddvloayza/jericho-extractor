@@ -1,13 +1,14 @@
 from __future__ import annotations
 
+import base64
 import logging
-import shutil
-import subprocess
+import tempfile
 from typing import Any
 
+import boto3
 from kubernetes import client as k8s_client
-from kubernetes import config as k8s_config
 
+from utils.aws_clients import get_eks_bearer_token
 from utils.helpers import utc_now
 from utils.relationships import build_relationship
 
@@ -28,11 +29,13 @@ class KubernetesWorkloadsCollector:
     def __init__(
         self,
         cluster: dict[str, Any],
+        session: boto3.Session,
         account_id: str,
         account_name: str,
         region: str,
     ) -> None:
         self.cluster = cluster
+        self.session = session
         self.account_id = account_id
         self.account_name = account_name
         self.region = region
@@ -67,22 +70,33 @@ class KubernetesWorkloadsCollector:
     # ── API client bootstrap ──────────────────────────────────────────────────
 
     def _build_api_client(self) -> k8s_client.ApiClient:
-        aws_bin = shutil.which("aws")
-        if not aws_bin:
-            raise RuntimeError("AWS CLI not found in PATH — cannot run aws eks update-kubeconfig")
-
-        result = subprocess.run(
-            [aws_bin, "eks", "update-kubeconfig", "--name", self.cluster_name, "--region", self.region],
-            capture_output=True, text=True,
-        )
-        if result.returncode != 0:
-            raise RuntimeError(
-                f"aws eks update-kubeconfig failed for {self.cluster_name}: {result.stderr.strip()}"
+        endpoint = self.cluster.get("endpoint", "")
+        ca_data  = self.cluster.get("certificate_authority", "")
+        if not endpoint or not ca_data:
+            raise ValueError(
+                f"Cluster {self.cluster_name} missing endpoint or certificate_authority — "
+                "re-run EKS collector first."
             )
-        logger.debug("update-kubeconfig: %s", result.stdout.strip())
 
-        k8s_config.load_kube_config()
-        return k8s_client.ApiClient()
+        token    = get_eks_bearer_token(self.cluster_name, self.session, self.region)
+        ca_bytes = base64.b64decode(ca_data)
+
+        tmp = tempfile.NamedTemporaryFile(delete=False, suffix=".crt")
+        try:
+            tmp.write(ca_bytes)
+            tmp.flush()
+            ca_path = tmp.name
+        finally:
+            tmp.close()
+
+        cfg = k8s_client.Configuration()
+        cfg.host           = endpoint
+        cfg.verify_ssl     = True
+        cfg.ssl_ca_cert    = ca_path
+        cfg.api_key        = {"authorization": f"Bearer {token}"}
+        cfg.api_key_prefix = {}
+
+        return k8s_client.ApiClient(cfg)
 
     # ── Read-only resource collectors ─────────────────────────────────────────
 

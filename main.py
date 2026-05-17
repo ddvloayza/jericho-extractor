@@ -101,6 +101,7 @@ def collect_region(
         try:
             k8s_col = KubernetesWorkloadsCollector(
                 cluster=cluster,
+                session=session,
                 account_id=account.account_id,
                 account_name=account.account_name,
                 region=region,
