@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Generate PNG/SVG topology and security diagrams from jericho-extractor output.
+Generate topology and security diagrams from jericho-extractor output.
+
+Tries matplotlib (PNG) first; falls back to pure-Python HTML reports
+when matplotlib/numpy are unavailable (e.g. blocked by App Control).
 
 Usage:
     python visualize.py --account Portal-Prod
@@ -9,6 +12,8 @@ Usage:
     python visualize.py --account Portal-Prod --only vpc
     python visualize.py --account Portal-Prod --only graph
     python visualize.py --account Portal-Prod --only tgw
+    python visualize.py --account Portal-Prod --format html
+    python visualize.py --account Portal-Prod --format png
 """
 from __future__ import annotations
 
@@ -26,6 +31,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Detect matplotlib availability upfront
+try:
+    import matplotlib  # noqa: F401
+    _MPL_OK = True
+except Exception:
+    _MPL_OK = False
+
 
 def load(account_dir: Path, name: str) -> list[dict]:
     path = account_dir / f"{name}.json"
@@ -36,14 +48,14 @@ def load(account_dir: Path, name: str) -> list[dict]:
         return json.load(f)
 
 
-def generate(account_dir: Path, diagrams_dir: Path, only: str | None) -> None:
-    from visualization import VPCDiagram, GraphVisualizer, SecurityVisualizer, TGWDiagram
-    from topology.network_graph import NetworkGraph
-    from topology.relationship_engine import RelationshipEngine
-
+def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) -> None:
     diagrams_dir.mkdir(parents=True, exist_ok=True)
 
-    # ── Load inventory ────────────────────────────────────────────────────────
+    use_html = (fmt == "html") or (fmt == "auto" and not _MPL_OK)
+    if use_html and fmt == "auto":
+        logger.info("matplotlib unavailable — generating HTML reports instead of PNG")
+
+    # ── Load data ─────────────────────────────────────────────────────────────
     inventory = {
         "vpcs":                        load(account_dir, "vpcs"),
         "subnets":                     load(account_dir, "subnets"),
@@ -62,75 +74,120 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None) -> None:
         "vpc_peerings":                load(account_dir, "vpc_peerings"),
     }
 
-    sg_analysis = load(account_dir, "relationships/security_groups_analysis")
+    sg_analysis  = load(account_dir, "relationships/security_groups_analysis")
     all_resources = [r for resources in inventory.values() for r in resources]
+    account_name  = account_dir.name
 
-    # ── VPC topology diagram ──────────────────────────────────────────────────
+    # ── VPC ───────────────────────────────────────────────────────────────────
     if only in (None, "vpc"):
-        logger.info("Generating VPC topology diagram…")
-        VPCDiagram().render(
-            inventory,
-            diagrams_dir / "vpc_topology.png",
-            title="VPC Topology",
-        )
-
-    # ── Security exposure map ─────────────────────────────────────────────────
-    if only in (None, "security"):
-        if sg_analysis:
-            logger.info("Generating security diagrams…")
-            sec = SecurityVisualizer()
-            sec.render_exposure_map(
-                sg_analysis,
-                diagrams_dir / "security_exposure.png",
-                title="Security Group Exposure Map",
-            )
-            sec.render_summary_bar(
-                sg_analysis,
-                diagrams_dir / "security_posture.png",
-                title="Security Posture Summary",
-            )
-            sec.render_public_resources(
-                sg_analysis,
-                all_resources,
-                diagrams_dir / "public_resources.png",
-                title="Publicly Exposed Resources",
-            )
+        if use_html:
+            from visualization.html_renderer import render_vpc_report
+            out = diagrams_dir / "vpc_topology.html"
+            render_vpc_report(inventory, out, account_name)
+            logger.info("VPC topology report → %s", out)
         else:
-            logger.warning(
-                "No security_groups_analysis.json found — run main.py first, then re-run visualize.py"
-            )
+            from visualization.vpc_diagram import VPCDiagram
+            VPCDiagram().render(inventory, diagrams_dir / "vpc_topology.png", title="VPC Topology")
 
-    # ── Infrastructure dependency graph ───────────────────────────────────────
+    # ── Security ──────────────────────────────────────────────────────────────
+    if only in (None, "security"):
+        if not sg_analysis:
+            logger.warning("No security_groups_analysis.json — run main.py first")
+        elif use_html:
+            from visualization.html_renderer import render_security_report
+            out = diagrams_dir / "security_report.html"
+            render_security_report(sg_analysis, out, account_name)
+            logger.info("Security report → %s", out)
+        else:
+            from visualization.security_visualizer import SecurityVisualizer
+            sec = SecurityVisualizer()
+            sec.render_exposure_map(sg_analysis, diagrams_dir / "security_exposure.png")
+            sec.render_summary_bar(sg_analysis, diagrams_dir / "security_posture.png")
+            sec.render_public_resources(sg_analysis, all_resources, diagrams_dir / "public_resources.png")
+
+    # ── Graph ─────────────────────────────────────────────────────────────────
     if only in (None, "graph"):
-        logger.info("Building networkx graph for visualization…")
+        from topology.network_graph import NetworkGraph
+        from topology.relationship_engine import RelationshipEngine
+
+        logger.info("Building network graph…")
         graph = NetworkGraph()
         graph.build_from_inventory(all_resources)
-        edges = RelationshipEngine().build_all(inventory)
-        graph.build_from_edges(edges)
+        graph.build_from_edges(RelationshipEngine().build_all(inventory))
 
-        GraphVisualizer().render(
-            graph,
-            diagrams_dir / "dependency_graph.png",
-            title="Infrastructure Dependency Graph",
-        )
+        if use_html:
+            from visualization.html_renderer import render_graph_report
+            out = diagrams_dir / "graph_analysis.html"
+            render_graph_report(
+                graph.summary(),
+                graph.get_internet_facing(),
+                graph.get_nat_dependents(),
+                out,
+                account_name,
+            )
+            logger.info("Graph analysis report → %s", out)
+        else:
+            from visualization.graph_visualizer import GraphVisualizer
+            GraphVisualizer().render(graph, diagrams_dir / "dependency_graph.png")
 
-    # ── TGW topology ──────────────────────────────────────────────────────────
+    # ── TGW ───────────────────────────────────────────────────────────────────
     if only in (None, "tgw"):
-        logger.info("Generating TGW topology diagram…")
-        TGWDiagram().render(
-            inventory,
-            diagrams_dir / "tgw_topology.png",
-            title="Transit Gateway Topology",
-        )
+        if use_html:
+            # TGW as a simple HTML table
+            _render_tgw_html(inventory, diagrams_dir / "tgw_topology.html", account_name)
+        else:
+            from visualization.tgw_diagram import TGWDiagram
+            TGWDiagram().render(inventory, diagrams_dir / "tgw_topology.png")
 
+    # ── Print summary ─────────────────────────────────────────────────────────
+    ext = "html" if use_html else "png"
     print(f"\nDiagrams written to: {diagrams_dir}")
-    for f in sorted(diagrams_dir.glob("*.png")):
+    for f in sorted(diagrams_dir.glob(f"*.{ext}")):
         print(f"  {f.name}")
+
+
+def _render_tgw_html(inventory: dict, output_path: Path, account_name: str) -> None:
+    from visualization.html_renderer import _html_page
+    tgws   = inventory.get("transit_gateways", [])
+    atts   = inventory.get("transit_gateway_attachments", [])
+    vpcs   = {v["resource_id"]: v for v in inventory.get("vpcs", [])}
+
+    if not tgws and not atts:
+        logger.info("No TGW resources found")
+        return
+
+    att_by_tgw: dict[str, list] = {}
+    for a in atts:
+        att_by_tgw.setdefault(a.get("transit_gateway_id", "?"), []).append(a)
+
+    rows = ""
+    for tgw_id, tgw_atts in att_by_tgw.items():
+        for att in tgw_atts:
+            vpc_id  = att.get("resource_id_ref", "")
+            vpc     = vpcs.get(vpc_id, {})
+            vpc_name = vpc.get("tags", {}).get("Name") or vpc_id
+            rows += (
+                f"<tr><td><code>{tgw_id}</code></td>"
+                f"<td><code>{att['resource_id']}</code></td>"
+                f"<td>{att.get('attachment_type','')}</td>"
+                f"<td><code>{vpc_id}</code></td>"
+                f"<td>{vpc_name}</td>"
+                f"<td>{vpc.get('cidr_block','')}</td></tr>"
+            )
+
+    body = f"""<table><thead><tr>
+      <th>TGW ID</th><th>Attachment ID</th><th>Type</th>
+      <th>VPC ID</th><th>VPC Name</th><th>CIDR</th>
+    </tr></thead><tbody>{rows or '<tr><td colspan="6">No attachments found</td></tr>'}</tbody></table>"""
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(_html_page(f"TGW Topology — {account_name}", body), encoding="utf-8")
+    logger.info("TGW topology report → %s", output_path)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(
-        description="Generate PNG topology diagrams from jericho-extractor output"
+        description="Generate topology diagrams from jericho-extractor output"
     )
     parser.add_argument("--account",    required=True, help="Account folder name inside output/")
     parser.add_argument("--output-dir", default="output", help="Base output directory (default: output)")
@@ -139,6 +196,12 @@ def main() -> None:
         choices=["vpc", "security", "graph", "tgw"],
         default=None,
         help="Generate only one diagram type (default: all)",
+    )
+    parser.add_argument(
+        "--format",
+        choices=["auto", "html", "png"],
+        default="auto",
+        help="Output format: auto (html if matplotlib unavailable), html, or png (default: auto)",
     )
     args = parser.parse_args()
 
@@ -149,7 +212,7 @@ def main() -> None:
         print(f"Error: directory not found: {account_dir}")
         raise SystemExit(1)
 
-    generate(account_dir, diagrams_dir, args.only)
+    generate(account_dir, diagrams_dir, args.only, args.format)
 
 
 if __name__ == "__main__":
