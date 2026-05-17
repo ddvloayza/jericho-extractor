@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>VPC Topology — Portal-Prod</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0D1117;color:#E6EDF3;font-family:'Segoe UI',Arial,sans-serif;padding:20px}
+    h1{font-size:1.4rem;margin-bottom:16px;color:#58A6FF}
+    h2{font-size:1.1rem;margin:24px 0 10px;color:#79C0FF}
+    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.75rem;font-weight:600;color:#fff}
+    .critical{background:#D32F2F} .high{background:#F57C00}
+    .medium{background:#FBC02D;color:#000} .low{background:#388E3C}
+    .info{background:#1565C0}
+    table{width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:24px}
+    th{background:#161B22;color:#79C0FF;padding:8px 10px;text-align:left;border-bottom:1px solid #30363D}
+    td{padding:7px 10px;border-bottom:1px solid #21262D;vertical-align:top}
+    tr:hover td{background:#161B22}
+    .tag{display:inline-block;background:#21262D;color:#8B949E;padding:1px 6px;border-radius:3px;
+          font-size:.7rem;margin:1px}
+    
+  </style>
+</head>
+<body>
+<h1>VPC Topology — Portal-Prod</h1>
+<h2>VPC Summary</h2>
+    <table><thead><tr>
+      <th>Name</th><th>VPC ID</th><th>CIDR</th><th>Subnets</th><th>EC2</th><th>IGW</th>
+    </tr></thead><tbody><tr><td>vpc-0a2328aacb75cfc60</td><td><code>vpc-0a2328aacb75cfc60</code></td><td>172.31.0.0/16</td><td>3</td><td>0</td><td>✅</td></tr><tr><td>itl-0003-portal-prd-vpc-02</td><td><code>vpc-0626d66632373c892</code></td><td>10.10.0.0/16</td><td>9</td><td>24</td><td>✅</td></tr></tbody></table>
+<div style="border:2px solid #1565C0;border-radius:10px;padding:16px;margin-bottom:28px;background:#0D1B2A">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+    <span style="font-size:1rem;font-weight:700;color:#58A6FF">vpc-0a2328aacb75cfc60</span>
+    <code style="color:#8B949E;font-size:.8rem">vpc-0a2328aacb75cfc60</code>
+    <span style="color:#79C0FF;font-size:.85rem">172.31.0.0/16</span>
+    <span class='badge' style='background:#6A1B9A'>IGW</span>
+    
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap"><div style="flex:1;min-width:220px"><div style="color:#79C0FF;font-size:.75rem;margin-bottom:6px">AZ: eu-south-2a</div>
+  <div style="border:1px solid #9E9E9E;border-radius:6px;background:#EEEEEECC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">subnet-0d4d210f456e5c247</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">172.31.32.0/20 · <em>unknown</em></div>
+    <span style="color:#aaa;font-size:.7rem">empty</span>
+  </div></div><div style="flex:1;min-width:220px"><div style="color:#79C0FF;font-size:.75rem;margin-bottom:6px">AZ: eu-south-2b</div>
+  <div style="border:1px solid #9E9E9E;border-radius:6px;background:#EEEEEECC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">subnet-0c69299494134215d</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">172.31.16.0/20 · <em>unknown</em></div>
+    <span style="color:#aaa;font-size:.7rem">empty</span>
+  </div></div><div style="flex:1;min-width:220px"><div style="color:#79C0FF;font-size:.75rem;margin-bottom:6px">AZ: eu-south-2c</div>
+  <div style="border:1px solid #9E9E9E;border-radius:6px;background:#EEEEEECC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">subnet-03a0a390d332a497b</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">172.31.0.0/20 · <em>unknown</em></div>
+    <span style="color:#aaa;font-size:.7rem">empty</span>
+  </div></div></div></div>
+<div style="border:2px solid #1565C0;border-radius:10px;padding:16px;margin-bottom:28px;background:#0D1B2A">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+    <span style="font-size:1rem;font-weight:700;color:#58A6FF">itl-0003-portal-prd-vpc-02</span>
+    <code style="color:#8B949E;font-size:.8rem">vpc-0626d66632373c892</code>
+    <span style="color:#79C0FF;font-size:.85rem">10.10.0.0/16</span>
+    <span class='badge' style='background:#6A1B9A'>IGW</span>
+    <span class='badge' style='background:#F57F17'>EKS</span>
+  </div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap"><div style="flex:1;min-width:220px"><div style="color:#79C0FF;font-size:.75rem;margin-bottom:6px">AZ: eu-south-2a</div>
+  <div style="border:1px solid #2E7D32;border-radius:6px;background:#E8F5E9CC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">itl-0003-portal-prd-public-…</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">10.10.1.0/24 · <em>public</em></div>
+    <span class="tag" style="background:#AD145733;color:#AD1457">LB itl-0003-portal…</span><span class="tag" style="background:#AD145733;color:#AD1457">LB itl-0003-portal…</span><span class="tag" style="background:#00838F33;color:#00838F">NAT itl-0003-po…</span>
+  </div>
+  <div style="border:1px solid #F57F17;border-radius:6px;background:#FFF9C4CC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">itl-0003-portal-prd-private…</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">10.10.3.0/24 · <em>private</em></div>
+    <span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-10</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-7</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-2</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VMNN</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-5</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-6</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-8</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-4</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-9</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM12</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-1</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM-3</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM11</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 VM13</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 itl-0003-portal…</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 itl-0003-portal…</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 ITL-Server-Fort…</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 itl-0003-portal…</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 itl-0003-portal…</span><span class="tag" style="background:#AD145733;color:#AD1457">LB k8s-appsmith-ap…</span><span class="tag" style="background:#4527A033;color:#9C77E0">EP datasync</span><span class="tag" style="background:#4527A033;color:#9C77E0">EP guardduty-da</span><span class="tag" style="background:#4527A033;color:#9C77E0">EP logs</span>
+  </div>
+  <div style="border:1px solid #C62828;border-radius:6px;background:#FFEBEECC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">itl-0003-portal-prd-restric…</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">10.10.5.0/24 · <em>isolated</em></div>
+    <span style="color:#aaa;font-size:.7rem">empty</span>
+  </div></div><div style="flex:1;min-width:220px"><div style="color:#79C0FF;font-size:.75rem;margin-bottom:6px">AZ: eu-south-2b</div>
+  <div style="border:1px solid #2E7D32;border-radius:6px;background:#E8F5E9CC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">itl-0003-portal-prd-public-…</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">10.10.2.0/24 · <em>public</em></div>
+    <span class="tag" style="background:#AD145733;color:#AD1457">LB itl-0003-portal…</span><span class="tag" style="background:#AD145733;color:#AD1457">LB itl-0003-portal…</span><span class="tag" style="background:#AD145733;color:#AD1457">LB itl-0003-portal…</span>
+  </div>
+  <div style="border:1px solid #F57F17;border-radius:6px;background:#FFF9C4CC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">itl-0003-portal-prd-private…</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">10.10.4.0/24 · <em>private</em></div>
+    <span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 itl-0003-portal…</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 itl-0003-portal…</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 itl-0003-portal…</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 itl-0003-portal…</span><span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 itl-0003-portal…</span><span class="tag" style="background:#AD145733;color:#AD1457">LB k8s-appsmith-ap…</span><span class="tag" style="background:#4527A033;color:#9C77E0">EP datasync</span><span class="tag" style="background:#4527A033;color:#9C77E0">EP guardduty-da</span><span class="tag" style="background:#4527A033;color:#9C77E0">EP logs</span>
+  </div>
+  <div style="border:1px solid #C62828;border-radius:6px;background:#FFEBEECC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">itl-0003-portal-prd-restric…</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">10.10.6.0/24 · <em>isolated</em></div>
+    <span style="color:#aaa;font-size:.7rem">empty</span>
+  </div></div><div style="flex:1;min-width:220px"><div style="color:#79C0FF;font-size:.75rem;margin-bottom:6px">AZ: eu-south-2c</div>
+  <div style="border:1px solid #2E7D32;border-radius:6px;background:#E8F5E9CC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">itl-0003-portal-prd-public-…</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">10.10.7.0/24 · <em>public</em></div>
+    <span style="color:#aaa;font-size:.7rem">empty</span>
+  </div>
+  <div style="border:1px solid #F57F17;border-radius:6px;background:#FFF9C4CC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">itl-0003-portal-prd-private…</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">10.10.8.0/24 · <em>private</em></div>
+    <span style="color:#aaa;font-size:.7rem">empty</span>
+  </div>
+  <div style="border:1px solid #C62828;border-radius:6px;background:#FFEBEECC;padding:8px;margin-bottom:8px">
+    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">itl-0003-portal-prd-restric…</div>
+    <div style="font-size:.72rem;color:#555;margin-bottom:6px">10.10.9.0/24 · <em>isolated</em></div>
+    <span style="color:#aaa;font-size:.7rem">empty</span>
+  </div></div></div></div>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Security Report — Portal-Prod</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0D1117;color:#E6EDF3;font-family:'Segoe UI',Arial,sans-serif;padding:20px}
+    h1{font-size:1.4rem;margin-bottom:16px;color:#58A6FF}
+    h2{font-size:1.1rem;margin:24px 0 10px;color:#79C0FF}
+    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.75rem;font-weight:600;color:#fff}
+    .critical{background:#D32F2F} .high{background:#F57C00}
+    .medium{background:#FBC02D;color:#000} .low{background:#388E3C}
+    .info{background:#1565C0}
+    table{width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:24px}
+    th{background:#161B22;color:#79C0FF;padding:8px 10px;text-align:left;border-bottom:1px solid #30363D}
+    td{padding:7px 10px;border-bottom:1px solid #21262D;vertical-align:top}
+    tr:hover td{background:#161B22}
+    .tag{display:inline-block;background:#21262D;color:#8B949E;padding:1px 6px;border-radius:3px;
+          font-size:.7rem;margin:1px}
+    
+  </style>
+</head>
+<body>
+<h1>Security Report — Portal-Prod</h1>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px"><div style="background:#D32F2F22;border:1px solid #D32F2F;border-radius:8px;padding:12px 20px;min-width:110px;text-align:center"><div style="font-size:1.8rem;font-weight:700;color:#D32F2F">4</div><div style="font-size:.8rem;color:#8B949E;text-transform:uppercase">critical</div></div><div style="background:#F57C0022;border:1px solid #F57C00;border-radius:8px;padding:12px 20px;min-width:110px;text-align:center"><div style="font-size:1.8rem;font-weight:700;color:#F57C00">4</div><div style="font-size:.8rem;color:#8B949E;text-transform:uppercase">high</div></div><div style="background:#FBC02D22;border:1px solid #FBC02D;border-radius:8px;padding:12px 20px;min-width:110px;text-align:center"><div style="font-size:1.8rem;font-weight:700;color:#FBC02D">2</div><div style="font-size:.8rem;color:#8B949E;text-transform:uppercase">medium</div></div><div style="background:#388E3C22;border:1px solid #388E3C;border-radius:8px;padding:12px 20px;min-width:110px;text-align:center"><div style="font-size:1.8rem;font-weight:700;color:#388E3C">34</div><div style="font-size:.8rem;color:#8B949E;text-transform:uppercase">low</div></div><div style="background:#1565C022;border:1px solid #1565C0;border-radius:8px;padding:12px 20px;min-width:110px;text-align:center"><div style="font-size:1.8rem;font-weight:700;color:#1565C0">8</div><div style="font-size:.8rem;color:#8B949E;text-transform:uppercase">info</div></div></div><h2>Security Groups (52)</h2><table>
+      <thead><tr>
+        <th>Security Group</th><th>Risk</th><th>Exposure Flags</th>
+        <th>Attached Resources</th><th>Inbound</th><th>Outbound</th>
+      </tr></thead>
+      <tbody><tr>
+          <td><code style="color:#58A6FF">sg-05f186888e83ce35d</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-quicksight-03-sg</span></td>
+          <td><span class="badge critical">CRITICAL</span></td>
+          <td><span class="tag" style="background:#D32F2F33;color:#D32F2F">full_open_inbound</span><span class="tag" style="background:#D32F2F33;color:#D32F2F">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-066eeac13810d47cd<br>eni-03882adc274337ec4<br>eni-0e8079913d6f1152f</td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#D32F2F;font-size:.65rem">full_open_inbound</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0d760cd30300debca</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-forti-siem-fortisiem-sg-0220251224181727422800000001</span></td>
+          <td><span class="badge critical">CRITICAL</span></td>
+          <td><span class="tag" style="background:#D32F2F33;color:#D32F2F">https_public</span><span class="tag" style="background:#D32F2F33;color:#D32F2F">sg_reference</span><span class="tag" style="background:#D32F2F33;color:#D32F2F">ssh_public</span><span class="tag" style="background:#D32F2F33;color:#D32F2F">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-09dd913800bda2219<br>i-0edf6af8a92dc5a07</td>
+          <td style="font-size:.75rem">-1/all 10.0.4.104/32 <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/22 0.0.0.0/0 <span style="color:#D32F2F;font-size:.65rem">ssh_public</span><br>tcp/443 0.0.0.0/0 <span style="color:#FBC02D;font-size:.65rem">https_public</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0359116a8a11f7bc4</code><br>
+              <span style="color:#8B949E;font-size:.75rem">datasync-sg</span></td>
+          <td><span class="badge critical">CRITICAL</span></td>
+          <td><span class="tag" style="background:#D32F2F33;color:#D32F2F">alt_http_public</span><span class="tag" style="background:#D32F2F33;color:#D32F2F">http_public</span><span class="tag" style="background:#D32F2F33;color:#D32F2F">ssh_public</span><span class="tag" style="background:#D32F2F33;color:#D32F2F">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/80 0.0.0.0/0 <span style="color:#F57C00;font-size:.65rem">http_public</span><br>tcp/8080 0.0.0.0/0 <span style="color:#FBC02D;font-size:.65rem">alt_http_public</span><br>tcp/22 0.0.0.0/0 <span style="color:#D32F2F;font-size:.65rem">ssh_public</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-03564c47645430f75</code><br>
+              <span style="color:#8B949E;font-size:.75rem">datasync-sg-00</span></td>
+          <td><span class="badge critical">CRITICAL</span></td>
+          <td><span class="tag" style="background:#D32F2F33;color:#D32F2F">ssh_public</span><span class="tag" style="background:#D32F2F33;color:#D32F2F">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/22 0.0.0.0/0 <span style="color:#D32F2F;font-size:.65rem">ssh_public</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-09d2e75a3a87befdf</code><br>
+              <span style="color:#8B949E;font-size:.75rem">k8s-intelicaprdapps-381a38e418</span></td>
+          <td><span class="badge high">HIGH</span></td>
+          <td><span class="tag" style="background:#F57C0033;color:#F57C00">http_public</span><span class="tag" style="background:#F57C0033;color:#F57C00">https_public</span><span class="tag" style="background:#F57C0033;color:#F57C00">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0af18dac916f62164<br>eni-0dcb9e3c2d27bbae0<br>arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/app/itl-0003-portal-prd-alb-02/09e8ed2f9c6bd632</td>
+          <td style="font-size:.75rem">tcp/80 0.0.0.0/0 <span style="color:#F57C00;font-size:.65rem">http_public</span><br>tcp/443 0.0.0.0/0 <span style="color:#FBC02D;font-size:.65rem">https_public</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0e1cbefd39956a516</code><br>
+              <span style="color:#8B949E;font-size:.75rem">k8s-appsmith-appsmith-31153c86cc</span></td>
+          <td><span class="badge high">HIGH</span></td>
+          <td><span class="tag" style="background:#F57C0033;color:#F57C00">http_public</span><span class="tag" style="background:#F57C0033;color:#F57C00">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-07b726d2cb40b9e5e<br>eni-0b3f582c2a0ebf219<br>arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/net/k8s-appsmith-appsmith-06d45f1beb/f3d62eb37ed138ff</td>
+          <td style="font-size:.75rem">tcp/80 0.0.0.0/0 <span style="color:#F57C00;font-size:.65rem">http_public</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-016aa97ef90ac861c</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-sg-main-02</span></td>
+          <td><span class="badge high">HIGH</span></td>
+          <td><span class="tag" style="background:#F57C0033;color:#F57C00">http_public</span><span class="tag" style="background:#F57C0033;color:#F57C00">https_public</span><span class="tag" style="background:#F57C0033;color:#F57C00">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0f1ec444c0dd517b6<br>eni-001c7cdb43ecd3476<br>arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/app/itl-0003-portal-prd-lb-main-02/f58b197763e242ac</td>
+          <td style="font-size:.75rem">tcp/80 0.0.0.0/0 <span style="color:#F57C00;font-size:.65rem">http_public</span><br>tcp/443 0.0.0.0/0 <span style="color:#FBC02D;font-size:.65rem">https_public</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0e84f073bfa8dde00</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-sg-datasync-main-server-02</span></td>
+          <td><span class="badge high">HIGH</span></td>
+          <td><span class="tag" style="background:#F57C0033;color:#F57C00">http_public</span><span class="tag" style="background:#F57C0033;color:#F57C00">sg_reference</span><span class="tag" style="background:#F57C0033;color:#F57C00">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0a8acd12070ef7c9c<br>i-053be387c3a9920d1</td>
+          <td style="font-size:.75rem">tcp/80 0.0.0.0/0 <span style="color:#F57C00;font-size:.65rem">http_public</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span><br>tcp/443  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-035300560ba0db669</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-nlb-sftp-02-sg</span></td>
+          <td><span class="badge medium">MEDIUM</span></td>
+          <td><span class="tag" style="background:#FBC02D33;color:#FBC02D">public_port</span><span class="tag" style="background:#FBC02D33;color:#FBC02D">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-078b39bc06608b861<br>arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/net/itl-0003-portal-prd-nlb-sftp-02/4cb864a08f9e8ccf</td>
+          <td style="font-size:.75rem">tcp/2223 0.0.0.0/0 <span style="color:#FBC02D;font-size:.65rem">public_port</span><br>tcp/2222 0.0.0.0/0 <span style="color:#FBC02D;font-size:.65rem">public_port</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-00dc78ebf8c5726bd</code><br>
+              <span style="color:#8B949E;font-size:.75rem">AWS Application Migration Service default Replication Server Security Group</span></td>
+          <td><span class="badge medium">MEDIUM</span></td>
+          <td><span class="tag" style="background:#FBC02D33;color:#FBC02D">public_port</span><span class="tag" style="background:#FBC02D33;color:#FBC02D">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/1500 0.0.0.0/0 <span style="color:#FBC02D;font-size:.65rem">public_port</span></td>
+          <td style="font-size:.75rem">udp/53 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span><br>tcp/443 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-067b9fd88018f9db1</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-vm-sg-0220251115061340161700000001</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0d0f6fb7705d47d1b<br>eni-0b1dd7791a1e9ba5f<br>eni-04801ff38a88b6d4b<br>eni-0e3e7afeb72a6430a<br>eni-09e66044a74fb86e4<br><span style="color:#8B949E">+23 more</span></td>
+          <td style="font-size:.75rem">-1/all  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/5900  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/3389  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/445  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0175bf9584150c48d</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-ec2-apps-02-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0c2444bf9a08f63ec<br>eni-0318a06ac2bb48bf3<br>eni-046baa4ea79a50459<br>eni-057b11032d61998cd<br>eni-03af4c412bcd18188<br><span style="color:#8B949E">+10 more</span></td>
+          <td style="font-size:.75rem">tcp/6443  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/9443  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/80–32468  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/1025–65535  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/8443  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/10250  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br><span style="color:#8B949E">+4 more</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-00def764449f57c39</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-vpc-endpoints-2025111214240527400000000b</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-046cf3652d436df3e<br>eni-0ec637ab5c6e07242<br>eni-02397f90b668c02d7<br>eni-0c569f03716de7f4d<br>eni-0e5770c4120f32a90<br><span style="color:#8B949E">+5 more</span></td>
+          <td style="font-size:.75rem">tcp/1024–1064 10.10.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>tcp/443 10.10.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0f69ea76349f0e1bd</code><br>
+              <span style="color:#8B949E;font-size:.75rem">k8s-traffic-itl0003portalprdeksapps02-b595e1e50a</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0af18dac916f62164<br>eni-07b726d2cb40b9e5e<br>eni-0b3f582c2a0ebf219<br>eni-0dcb9e3c2d27bbae0<br>arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/net/k8s-appsmith-appsmith-06d45f1beb/f3d62eb37ed138ff<br><span style="color:#8B949E">+1 more</span></td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0e8864e42cb1e54d7</code><br>
+              <span style="color:#8B949E;font-size:.75rem">eks-cluster-sg-itl-0003-portal-prd-eks-apps-02-2029633073</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0480eefb24885a0d2<br>eni-0b75122f046b903da</td>
+          <td style="font-size:.75rem">-1/all  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">sg_reference</span> <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0fee7d175b68ed308</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-ec2-clickhouse-02-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0c216f174a0d0089c<br>i-077cf51cfedfde095</td>
+          <td style="font-size:.75rem">tcp/9000  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/8123  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-08a4cc9135f02dae0</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-vpc-endpoints-20251219182552706400000001</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-007a4d0c56e25d46c<br>eni-0f342451e25e1ce38</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0c3e413144170bb56</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-vpc-endpoints-20260203171149971800000001</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0017b705ce9cd4ad4<br>eni-0c871a180dc386c38</td>
+          <td style="font-size:.75rem">tcp/443 10.10.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-04aac9e78d6520b80</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-denver-sg-0220251114182412998400000002</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0f9361db8cfdafc5a<br>i-0016a8bc9ee8b94c7</td>
+          <td style="font-size:.75rem">tcp/1433  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>-1/all  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/22  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/3389  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/445  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0f58f8403c39a2551</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-resolver-inbound-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-05a16f85bc503dcfe<br>eni-0ad4394bea8568087</td>
+          <td style="font-size:.75rem">udp/53 10.18.3.147/32 <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/53 10.18.3.147/32 <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-023d0e02fd0b67e82</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-vienna-sg-0220251114182412998400000001</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0da4cd4e6ec2d4219<br>i-03616a16b6492e56d</td>
+          <td style="font-size:.75rem">tcp/80  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>-1/all  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/2222  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/3389  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/445  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/8081  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0131238705f3bdd7e</code><br>
+              <span style="color:#8B949E;font-size:.75rem">lambda-log-extractor-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0531c746fc5807f8c</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span><br>tcp/443 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0634ee789467ac220</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-rds-apps-02-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0041cee07b8b88bac</td>
+          <td style="font-size:.75rem">tcp/5432  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-01b4c83b6a8f3ea1e</code><br>
+              <span style="color:#8B949E;font-size:.75rem">fsx-shared-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0c2466fc66c943e69</td>
+          <td style="font-size:.75rem">-1/all 10.18.3.147/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>tcp/445  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-05477e0120952808e</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-3-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.18.4.81/32, 10.0.3.100/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-018c523ed2199f54c</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-6-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.0.3.100/32, 10.18.4.81/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-099ef19046ea9c56b</code><br>
+              <span style="color:#8B949E;font-size:.75rem">datasync-sg01</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0a96d436ac3cce15a</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-2-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.0.3.100/32, 10.18.4.81/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-045b795021b969456</code><br>
+              <span style="color:#8B949E;font-size:.75rem">datasync-sg-1</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0fc494c48d467ab08</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM13-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.18.4.81/32, 10.0.3.100/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0cc3434329b153607</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-ec2-datasync-02-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-01b60b6075b9422b2</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-4-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.0.3.100/32, 10.18.4.81/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0697339290d82202b</code><br>
+              <span style="color:#8B949E;font-size:.75rem">default</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">-1/all  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-00b87ac4a91c8a2d8</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-9-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.18.4.81/32, 10.0.3.100/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0ce8fbf4007100fd6</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-10-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.18.4.81/32, 10.0.3.100/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-06407a58a795a0fc2</code><br>
+              <span style="color:#8B949E;font-size:.75rem">ITL-Server-FortiSIEM-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/514 10.0.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>tcp/22 10.0.3.100/32, 10.18.4.81/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>tcp/161 10.0.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>tcp/443 10.0.3.100/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>udp/514 10.0.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-077f9142b25203033</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM12-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.18.4.81/32, 10.0.3.100/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0b6f4362125cb52cb</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM11-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.0.3.100/32, 10.18.4.81/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-08ca6aa9322883e5e</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-vpc-endpoints-20260504142049794100000001</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0373c8b39326439e7</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-5-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.0.3.100/32, 10.18.4.81/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-02109a69611b396ca</code><br>
+              <span style="color:#8B949E;font-size:.75rem">data-sync-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-011b2fc8b6dcd08c0</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-7-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.18.4.81/32, 10.0.3.100/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-09fafdc5ed122c78a</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-8-sg</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">internal_only</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389 10.0.3.100/32, 10.18.4.81/32 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-047c076fc07b2b2c0</code><br>
+              <span style="color:#8B949E;font-size:.75rem">default</span></td>
+          <td><span class="badge low">LOW</span></td>
+          <td><span class="tag" style="background:#388E3C33;color:#388E3C">sg_reference</span><span class="tag" style="background:#388E3C33;color:#388E3C">unrestricted_egress</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">-1/all  <span style="color:#1565C0;font-size:.65rem">sg_reference</span><br>tcp/3389  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">-1/all 0.0.0.0/0 <span style="color:#388E3C;font-size:.65rem">unrestricted_egress</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-064588145926737f4</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-eks-apps-02-sg</span></td>
+          <td><span class="badge info">INFO</span></td>
+          <td><span class="tag" style="background:#1565C033;color:#1565C0">sg_reference</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0480eefb24885a0d2<br>eni-0b75122f046b903da<br>arn:aws:eks:eu-south-2:610944808410:cluster/itl-0003-portal-prd-eks-apps-02</td>
+          <td style="font-size:.75rem">tcp/443  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">—</td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-08bec69ca1d781aad</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-lambda-fsx-log-export-02-sg</span></td>
+          <td><span class="badge info">INFO</span></td>
+          <td><span class="tag" style="background:#1565C033;color:#1565C0">internal_only</span><span class="tag" style="background:#1565C033;color:#1565C0">sg_reference</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-091b80268f96c5443<br>eni-08bc38961dcc7287c</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">udp/53 10.10.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>tcp/53 10.10.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>tcp/443  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-039aecc570853bb45</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-lambda-pg-audit-02-sg</span></td>
+          <td><span class="badge info">INFO</span></td>
+          <td><span class="tag" style="background:#1565C033;color:#1565C0">internal_only</span><span class="tag" style="background:#1565C033;color:#1565C0">sg_reference</span></td>
+          <td style="font-size:.75rem;color:#8B949E">eni-0f929f785e5a0d6fe<br>eni-0df7829887e7518b4</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">udp/53 10.10.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>tcp/53 10.10.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>tcp/443  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-06c94aeac9c2cf00a</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd--sg-0220251114222231234100000001</span></td>
+          <td><span class="badge info">INFO</span></td>
+          <td></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">—</td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-0d02c6be6190b05bf</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-ec2-dashboard-02-sg</span></td>
+          <td><span class="badge info">INFO</span></td>
+          <td></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">—</td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-09023c203f8e91004</code><br>
+              <span style="color:#8B949E;font-size:.75rem">itl-0003-portal-prd-lambda-fee-external-alert-02-sg</span></td>
+          <td><span class="badge info">INFO</span></td>
+          <td><span class="tag" style="background:#1565C033;color:#1565C0">internal_only</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">tcp/53 10.10.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span><br>udp/53 10.10.0.0/16 <span style="color:#1565C0;font-size:.65rem">internal_only</span></td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-03fdf9a2a3a970875</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VMNN-sg</span></td>
+          <td><span class="badge info">INFO</span></td>
+          <td><span class="tag" style="background:#1565C033;color:#1565C0">sg_reference</span></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">tcp/3389  <span style="color:#1565C0;font-size:.65rem">sg_reference</span></td>
+          <td style="font-size:.75rem">—</td>
+        </tr><tr>
+          <td><code style="color:#58A6FF">sg-08494443881f463eb</code><br>
+              <span style="color:#8B949E;font-size:.75rem">VM-1-sg</span></td>
+          <td><span class="badge info">INFO</span></td>
+          <td></td>
+          <td style="font-size:.75rem;color:#8B949E">—</td>
+          <td style="font-size:.75rem">—</td>
+          <td style="font-size:.75rem">—</td>
+        </tr></tbody>
+    </table>
+</body>
+</html>

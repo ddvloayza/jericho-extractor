@@ -1,0 +1,1235 @@
+[
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-01cb91eb9e0f491f9",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.159",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0e728c84873b1d1da",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-10-profile",
+    "launch_time": "2026-05-17 09:10:45+00:00",
+    "tags": {
+      "Type": "restored-vm",
+      "Name": "VM-10",
+      "coid": "itl",
+      "schedule": "vms",
+      "apid": "portal",
+      "assetid": "0003",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260237+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-012a3868351997756",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.189",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0db0219a0bbaae13a",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-7-profile",
+    "launch_time": "2026-05-17 09:10:45+00:00",
+    "tags": {
+      "env": "prd",
+      "Name": "VM-7",
+      "schedule": "vms",
+      "assetid": "0003",
+      "apid": "portal",
+      "coid": "itl",
+      "Type": "restored-vm"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260249+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0677abd83cd084b80",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.173",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0426271ee8962c4b2",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-2-profile",
+    "launch_time": "2026-05-13 18:15:08+00:00",
+    "tags": {
+      "Type": "restored-vm",
+      "Name": "VM-2",
+      "coid": "itl",
+      "assetid": "0003",
+      "apid": "portal",
+      "env": "prd",
+      "newschedule": "vmWed"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260255+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0698f3c88cde16dd0",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.195",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-04bcb96ea4743b87a",
+    "key_name": "itl-0003-vm-prd-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VMNN-profile",
+    "launch_time": "2026-05-13 18:15:08+00:00",
+    "tags": {
+      "coid": "itl",
+      "Type": "restored-vm",
+      "assetid": "0003",
+      "env": "prd",
+      "Name": "VMNN",
+      "apid": "portal",
+      "newschedule": "vmWed"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260261+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-05fe64ce8acf9f57a",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.139",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0b31450ae6d976747",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-5-profile",
+    "launch_time": "2026-05-17 09:10:45+00:00",
+    "tags": {
+      "Name": "VM-5",
+      "coid": "itl",
+      "assetid": "0003",
+      "env": "prd",
+      "schedule": "vms",
+      "Type": "restored-vm",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260265+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-075110d2fa5a3ef1c",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.77",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0dd5f018e0d744b0b",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-6-profile",
+    "launch_time": "2026-05-17 09:10:45+00:00",
+    "tags": {
+      "apid": "portal",
+      "env": "prd",
+      "Type": "restored-vm",
+      "coid": "itl",
+      "assetid": "0003",
+      "schedule": "vms",
+      "Name": "VM-6"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260270+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0772db056ff6e5368",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.63",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-04357c53876cd7f44",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-8-profile",
+    "launch_time": "2026-05-17 09:10:46+00:00",
+    "tags": {
+      "env": "prd",
+      "Name": "VM-8",
+      "schedule": "vms",
+      "apid": "portal",
+      "coid": "itl",
+      "assetid": "0003",
+      "Type": "restored-vm"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260275+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-015be3164b51150ce",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.15",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-01725b83baa891616",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-4-profile",
+    "launch_time": "2026-05-17 09:10:45+00:00",
+    "tags": {
+      "Name": "VM-4",
+      "Type": "restored-vm",
+      "env": "prd",
+      "apid": "portal",
+      "coid": "itl",
+      "schedule": "vms",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260279+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0541fd50781a206dd",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.153",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0dd96adcdac2fcc99",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-9-profile",
+    "launch_time": "2026-05-17 09:10:48+00:00",
+    "tags": {
+      "schedule": "vms",
+      "env": "prd",
+      "assetid": "0003",
+      "Name": "VM-9",
+      "Type": "restored-vm",
+      "apid": "portal",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260284+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-08ed071c3cbe599da",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.131",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-044e252a0f8dcdee3",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM12-profile",
+    "launch_time": "2026-05-17 09:10:46+00:00",
+    "tags": {
+      "env": "prd",
+      "Type": "restored-vm",
+      "assetid": "0003",
+      "coid": "itl",
+      "schedule": "vms",
+      "Name": "VM12",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260288+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-00afea735bae53a21",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.106",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0bb73d9baf811da92",
+    "key_name": "itl-0003-vm-prd-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-1-profile",
+    "launch_time": "2026-05-13 18:15:08+00:00",
+    "tags": {
+      "apid": "portal",
+      "coid": "itl",
+      "newschedule": "vmWed",
+      "Name": "VM-1",
+      "env": "prd",
+      "Type": "restored-vm",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260293+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0735b969853ae3772",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.48",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0e260e2febeaa43ae",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM-3-profile",
+    "launch_time": "2026-05-17 09:10:46+00:00",
+    "tags": {
+      "Type": "restored-vm",
+      "Name": "VM-3",
+      "env": "prd",
+      "coid": "itl",
+      "assetid": "0003",
+      "apid": "portal",
+      "schedule": "vms"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260297+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0db3e691e1fb75936",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "stopped",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.169",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0b9efa2d6c28ee7f5",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM11-profile",
+    "launch_time": "2026-05-17 09:10:48+00:00",
+    "tags": {
+      "Name": "VM11",
+      "apid": "portal",
+      "coid": "itl",
+      "assetid": "0003",
+      "Type": "restored-vm",
+      "schedule": "vms",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260301+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0f76f23449c42c4dc",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.154",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0ff1b55c2863e3f63",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-067b9fd88018f9db1"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/VM13-profile",
+    "launch_time": "2026-01-12 20:37:18+00:00",
+    "tags": {
+      "Type": "restored-vm",
+      "apid": "portal",
+      "env": "prd",
+      "Name": "VM13",
+      "schedule": "vmsoff",
+      "assetid": "0003",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-067b9fd88018f9db1",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260306+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0ca700ac20d9a9555",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "m7a.large",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.109",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-018c34f6794d3737b",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0175bf9584150c48d"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/eks-eacd3ea7-f0b0-8d3d-fa50-42e75c96ca24",
+    "launch_time": "2025-11-20 17:48:57+00:00",
+    "tags": {
+      "Name": "itl-0003-portal-prd-ec2-apps-02-portal",
+      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-portal",
+      "aws:eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "aws:autoscaling:groupName": "eks-itl-0003-portal-prd-ec2-apps-02-portal-eacd3ea7-f0b0-8d3d-fa50-42e75c96ca24",
+      "env": "prd",
+      "aws:ec2launchtemplate:id": "lt-0cce21c8ed416b7f5",
+      "assetid": "0003",
+      "coid": "itl",
+      "k8s.io/cluster-autoscaler/itl-0003-portal-prd-eks-apps-02": "owned",
+      "kubernetes.io/cluster/itl-0003-portal-prd-eks-apps-02": "owned",
+      "apid": "portal",
+      "aws:ec2launchtemplate:version": "2",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "aws:ec2:fleet-id": "fleet-cab68fbd-4225-468f-2c10-2100257cd3eb",
+      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0175bf9584150c48d",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260311+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0d038b9be4770c21a",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "c5.large",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.56",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-018c34f6794d3737b",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0175bf9584150c48d"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/eks-92cd3ea7-f0aa-7f31-35d0-74527ea58e69",
+    "launch_time": "2025-11-20 17:48:49+00:00",
+    "tags": {
+      "kubernetes.io/cluster/itl-0003-portal-prd-eks-apps-02": "owned",
+      "aws:autoscaling:groupName": "eks-itl-0003-portal-prd-ec2-apps-02-metabase-92cd3ea7-f0aa-7f31-35d0-74527ea58e69",
+      "aws:ec2launchtemplate:id": "lt-0ef87cf8f140b5813",
+      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "k8s.io/cluster-autoscaler/itl-0003-portal-prd-eks-apps-02": "owned",
+      "apid": "portal",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "aws:ec2launchtemplate:version": "2",
+      "coid": "itl",
+      "Name": "itl-0003-portal-prd-ec2-apps-02-metabase",
+      "env": "prd",
+      "aws:ec2:fleet-id": "fleet-c23685b7-c2a5-642d-063a-01aad82a31e0",
+      "aws:eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-metabase",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0175bf9584150c48d",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260317+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0edf6af8a92dc5a07",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "m5.2xlarge",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.13",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0c8526b3d896b2e73",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0d760cd30300debca"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/ITL-Server-FortiSIEM-profile",
+    "launch_time": "2025-11-27 17:23:58+00:00",
+    "tags": {
+      "Type": "restored-vm",
+      "Name": "ITL-Server-FortiSIEM",
+      "coid": "itl",
+      "assetid": "0003",
+      "env": "prd",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0d760cd30300debca",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260321+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-053be387c3a9920d1",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "r5.large",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.22",
+    "public_ip": "51.92.24.23",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-05fe1cabe2dad1e27",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0e84f073bfa8dde00"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/DataSyncProfile-main-server",
+    "launch_time": "2026-02-26 20:26:49+00:00",
+    "tags": {
+      "env": "prd",
+      "Name": "itl-0003-portal-prd-ec2-datasync-agent-main-server-02",
+      "apid": "portal",
+      "coid": "itl",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0e84f073bfa8dde00",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260325+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-018a33a99b7b3fe7a",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "m7a.2xlarge",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-042f934568c455b4c",
+    "private_ip": "10.10.3.200",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-018c34f6794d3737b",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0175bf9584150c48d"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/eks-04cd3ea7-f0b3-c6ed-93ff-c6a7601bceb5",
+    "launch_time": "2026-01-15 20:43:40+00:00",
+    "tags": {
+      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "k8s.io/cluster-autoscaler/itl-0003-portal-prd-eks-apps-02": "owned",
+      "apid": "portal",
+      "aws:ec2launchtemplate:id": "lt-0c3eb4b9e9fafb22b",
+      "aws:ec2launchtemplate:version": "3",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "aws:eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "kubernetes.io/cluster/itl-0003-portal-prd-eks-apps-02": "owned",
+      "env": "prd",
+      "coid": "itl",
+      "aws:ec2:fleet-id": "fleet-56afb206-2db6-c19c-0c32-ae80ea393429",
+      "Name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
+      "assetid": "0003",
+      "aws:autoscaling:groupName": "eks-itl-0003-portal-prd-ec2-apps-02-appsmith-04cd3ea7-f0b3-c6ed-93ff-c6a7601bceb5",
+      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-appsmith"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0175bf9584150c48d",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260331+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-03616a16b6492e56d",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "m5.2xlarge",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-0c396a6c940028849",
+    "private_ip": "10.10.4.11",
+    "public_ip": "",
+    "availability_zone": "eu-south-2b",
+    "ami_id": "ami-099880368988c95e9",
+    "key_name": "itl-0003-prtlgy-prd-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-023d0e02fd0b67e82"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/itl-0003-portal-prd-ec2-vienna-02-role-profile",
+    "launch_time": "2025-12-13 13:37:51+00:00",
+    "tags": {
+      "Name": "itl-0003-portal-prd-ec2-vienna-02",
+      "env": "prd",
+      "coid": "itl",
+      "Type": "ec2",
+      "apid": "portal",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-023d0e02fd0b67e82",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260335+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-077cf51cfedfde095",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "t3.xlarge",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-0c396a6c940028849",
+    "private_ip": "10.10.4.194",
+    "public_ip": "",
+    "availability_zone": "eu-south-2b",
+    "ami_id": "ami-0c9a5d06159e830b2",
+    "key_name": "itl-0003-ch-prd-key-pair",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0fee7d175b68ed308"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/itl-0003-portal-prd-ec2-clickhouse-02-ssm-profile",
+    "launch_time": "2025-11-19 11:54:18+00:00",
+    "tags": {
+      "Name": "itl-0003-portal-prd-ec2-clickhouse-02",
+      "env": "prd",
+      "coid": "itl",
+      "apid": "portal",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0fee7d175b68ed308",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260340+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-01e9582ac4bbd2d75",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "m7a.large",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-0c396a6c940028849",
+    "private_ip": "10.10.4.210",
+    "public_ip": "",
+    "availability_zone": "eu-south-2b",
+    "ami_id": "ami-018c34f6794d3737b",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0175bf9584150c48d"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/eks-eacd3ea7-f0b0-8d3d-fa50-42e75c96ca24",
+    "launch_time": "2025-11-20 17:48:57+00:00",
+    "tags": {
+      "aws:ec2launchtemplate:id": "lt-0cce21c8ed416b7f5",
+      "coid": "itl",
+      "aws:eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "Name": "itl-0003-portal-prd-ec2-apps-02-portal",
+      "env": "prd",
+      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-portal",
+      "kubernetes.io/cluster/itl-0003-portal-prd-eks-apps-02": "owned",
+      "aws:ec2:fleet-id": "fleet-dc961906-570f-e496-a618-87000e38bc27",
+      "apid": "portal",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "aws:ec2launchtemplate:version": "2",
+      "aws:autoscaling:groupName": "eks-itl-0003-portal-prd-ec2-apps-02-portal-eacd3ea7-f0b0-8d3d-fa50-42e75c96ca24",
+      "assetid": "0003",
+      "k8s.io/cluster-autoscaler/itl-0003-portal-prd-eks-apps-02": "owned"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0175bf9584150c48d",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260345+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0016a8bc9ee8b94c7",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "r5.4xlarge",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-0c396a6c940028849",
+    "private_ip": "10.10.4.10",
+    "public_ip": "",
+    "availability_zone": "eu-south-2b",
+    "ami_id": "ami-04336ba4494311688",
+    "key_name": "itl-0003-prtlgy-prd-denver-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-04aac9e78d6520b80"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/itl-0003-portal-prd-ec2-denver-02-role-profile",
+    "launch_time": "2025-12-13 13:31:36+00:00",
+    "tags": {
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal",
+      "coid": "itl",
+      "Name": "itl-0003-portal-prd-ec2-denver-02",
+      "Type": "ec2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-04aac9e78d6520b80",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260349+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0f511c964d109c447",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "instance_type": "m7a.2xlarge",
+    "state": "running",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-0c396a6c940028849",
+    "private_ip": "10.10.4.163",
+    "public_ip": "",
+    "availability_zone": "eu-south-2b",
+    "ami_id": "ami-018c34f6794d3737b",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0175bf9584150c48d"
+    ],
+    "iam_instance_profile": "arn:aws:iam::610944808410:instance-profile/eks-04cd3ea7-f0b3-c6ed-93ff-c6a7601bceb5",
+    "launch_time": "2026-01-16 17:26:09+00:00",
+    "tags": {
+      "env": "prd",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
+      "aws:autoscaling:groupName": "eks-itl-0003-portal-prd-ec2-apps-02-appsmith-04cd3ea7-f0b3-c6ed-93ff-c6a7601bceb5",
+      "k8s.io/cluster-autoscaler/itl-0003-portal-prd-eks-apps-02": "owned",
+      "coid": "itl",
+      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
+      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "aws:eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "apid": "portal",
+      "aws:ec2:fleet-id": "fleet-423485b7-e2a5-6c0d-0e32-298a487af996",
+      "aws:ec2launchtemplate:id": "lt-0c3eb4b9e9fafb22b",
+      "aws:ec2launchtemplate:version": "3",
+      "kubernetes.io/cluster/itl-0003-portal-prd-eks-apps-02": "owned"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0175bf9584150c48d",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:54.260355+00:00"
+  }
+]

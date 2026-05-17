@@ -7,8 +7,15 @@ import sys
 from pathlib import Path
 from typing import Any
 
+import boto3
+
 from config import AccountConfig, AppConfig
-from utils.aws_clients import get_ec2_client, get_elbv2_client, get_eks_client, get_session, resolve_identity
+from utils.aws_clients import (
+    get_ec2_client, get_elbv2_client, get_eks_client,
+    get_lambda_client, get_rds_client, get_iam_client,
+    get_kms_client, get_secretsmanager_client, get_s3_client,
+    get_session, resolve_identity,
+)
 from utils.writer import OutputWriter
 
 from collectors.vpcs import VPCCollector
@@ -28,6 +35,12 @@ from collectors.load_balancers import LoadBalancerCollector
 from collectors.target_groups import TargetGroupCollector
 from collectors.eks import EKSCollector
 from collectors.kubernetes_workloads import KubernetesWorkloadsCollector
+from collectors.lambdas import LambdaCollector
+from collectors.rds import RDSCollector
+from collectors.iam_roles import IAMRolesCollector
+from collectors.kms import KMSCollector
+from collectors.secrets_manager import SecretsManagerCollector
+from collectors.s3 import S3Collector
 
 from topology.subnet_classifier import SubnetClassifier
 from topology.dependency_mapper import DependencyMapper
@@ -51,9 +64,11 @@ def collect_region(
     account: AccountConfig,
     region: str,
     writer: OutputWriter,
+    session: boto3.Session | None = None,
 ) -> dict[str, list[dict[str, Any]]]:
     """Run all collectors for one account × region pair. Returns collected data by resource type."""
-    session = get_session(account)
+    if session is None:
+        session = get_session(account)
     ec2 = get_ec2_client(session, region)
     elbv2 = get_elbv2_client(session, region)
     eks = get_eks_client(session, region)
@@ -79,11 +94,20 @@ def collect_region(
         ("network_interfaces", NetworkInterfaceCollector(ec2, **ctx)),
         ("vpc_endpoints", VPCEndpointCollector(ec2, **ctx)),
     ]
+    lmb  = get_lambda_client(session, region)
+    rds  = get_rds_client(session, region)
+    kms  = get_kms_client(session, region)
+    sm   = get_secretsmanager_client(session, region)
+
     compute_collectors: list[tuple[str, Any]] = [
-        ("ec2", EC2Collector(ec2, **ctx)),
-        ("load_balancers", LoadBalancerCollector(elbv2, **ctx)),
-        ("target_groups", TargetGroupCollector(elbv2, **ctx)),
-        ("eks", EKSCollector(eks, **ctx)),
+        ("ec2",             EC2Collector(ec2, **ctx)),
+        ("load_balancers",  LoadBalancerCollector(elbv2, **ctx)),
+        ("target_groups",   TargetGroupCollector(elbv2, **ctx)),
+        ("eks",             EKSCollector(eks, **ctx)),
+        ("lambdas",         LambdaCollector(lmb, **ctx)),
+        ("rds",             RDSCollector(rds, **ctx)),
+        ("kms",             KMSCollector(kms, **ctx)),
+        ("secrets",         SecretsManagerCollector(sm, **ctx)),
     ]
 
     collected: dict[str, list[dict[str, Any]]] = {}
@@ -165,12 +189,12 @@ def run(config: AppConfig) -> None:
     summary: list[dict[str, Any]] = []
 
     for account in config.accounts:
+        session = get_session(account)
+
         if not account.is_identity_resolved:
-            session = get_session(account)
             account_id, arn = resolve_identity(session)
             account.account_id = account_id
             if not account.account_name:
-                # Use the role/user name from the ARN as a readable label
                 account.account_name = account_id
             logger.info("Resolved identity: %s → account %s", arn, account_id)
 
@@ -179,10 +203,23 @@ def run(config: AppConfig) -> None:
         )
         account_totals: dict[str, int] = {}
 
+        # ── Global collectors (run once per account, not per region) ─────────
+        iam_client = get_iam_client(session)
+        iam_data = IAMRolesCollector(iam_client, account.account_id, account.account_name).collect()
+        if iam_data:
+            writer.write(account.account_name, "iam_roles", iam_data)
+            account_totals["iam_roles"] = len(iam_data)
+
+        s3_client = get_s3_client(session)
+        s3_data = S3Collector(s3_client, session, account.account_id, account.account_name).collect()
+        if s3_data:
+            writer.write(account.account_name, "s3_buckets", s3_data)
+            account_totals["s3_buckets"] = len(s3_data)
+
         for region in account.regions:
             logger.info("  Region: %s", region)
             try:
-                collected = collect_region(account, region, writer)
+                collected = collect_region(account, region, writer, session=session)
                 for resource_type, data in collected.items():
                     account_totals[resource_type] = (
                         account_totals.get(resource_type, 0) + len(data)

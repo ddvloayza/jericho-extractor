@@ -1,0 +1,58 @@
+[
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-0a2328aacb75cfc60",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "cidr_block": "172.31.0.0/16",
+    "cidr_block_associations": [
+      "172.31.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": true,
+    "dhcp_options_id": "dopt-0eb3845684b8925c0",
+    "instance_tenancy": "default",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-0eb3845684b8925c0",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.264608+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "cidr_block": "10.10.0.0/16",
+    "cidr_block_associations": [
+      "10.10.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": false,
+    "dhcp_options_id": "dopt-0eb3845684b8925c0",
+    "instance_tenancy": "default",
+    "tags": {
+      "assetid": "0003",
+      "coid": "itl",
+      "Name": "itl-0003-portal-prd-vpc-02",
+      "apid": "portal",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-0eb3845684b8925c0",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.264622+00:00"
+  }
+]

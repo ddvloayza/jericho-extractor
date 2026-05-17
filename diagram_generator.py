@@ -134,6 +134,7 @@ class DrawioBuilder:
         self._counter = 10
         self._id_map: dict[str, str] = {}
         self._cells: list[Element] = []
+        self._added: set[str] = set()   # track resource_ids already materialized
 
     def _next_id(self) -> str:
         cid = str(self._counter)
@@ -156,6 +157,9 @@ class DrawioBuilder:
         h: float,
         parent_id: str = "1",
     ) -> str:
+        if resource_id in self._added:
+            return self._id_map[resource_id]
+        self._added.add(resource_id)
         cid = self.cell_id(resource_id)
         parent_cid = self._id_map.get(parent_id, parent_id)
         cell = Element("mxCell", {
@@ -220,6 +224,31 @@ class DrawioBuilder:
         return parseString(raw).toprettyxml(indent="  ")
 
 
+# ── Type labels shown under each icon ────────────────────────────────────────
+TYPE_LABELS: dict[str, str] = {
+    "nat":         "NAT Gateway",
+    "alb":         "App Load Balancer",
+    "nlb":         "Net Load Balancer",
+    "ec2":         "EC2 Instance",
+    "vpce":        "VPC Endpoint",
+    "eks":         "EKS Cluster",
+    "eks_ng":      "Node Group",
+    "igw":         "Internet Gateway",
+    "tgw":         "Transit Gateway",
+    "k8s_deploy":  "Deployment",
+    "k8s_svc":     "Service",
+    "k8s_ingress": "Ingress",
+}
+
+
+def _typed(name: str, type_key: str) -> str:
+    """Append a small grey type subtitle to an icon label (HTML)."""
+    tl = TYPE_LABELS.get(type_key, "")
+    if not tl:
+        return name
+    return f'{name}<br><font style="font-size:7px;color:#888888;">{tl}</font>'
+
+
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def load_json(path: Path) -> list[dict]:
     if not path.exists():
@@ -249,13 +278,18 @@ def place_resources(
     builder: DrawioBuilder,
     items: list[tuple[str, str, str]],
     parent_id: str,
+    container_w: int = SUBNET_W,
 ) -> None:
+    slot_w = RESOURCE_W + RESOURCE_MARGIN_X * 2
     for i, (rid, label, sk) in enumerate(items):
         col = i % RESOURCES_PER_ROW
         row = i // RESOURCES_PER_ROW
-        x = RESOURCE_MARGIN_X + col * (RESOURCE_W + RESOURCE_MARGIN_X * 2)
+        row_start  = row * RESOURCES_PER_ROW
+        row_count  = min(RESOURCES_PER_ROW, len(items) - row_start)
+        start_x    = max(0, (container_w - row_count * slot_w) / 2)
+        x = start_x + col * slot_w + RESOURCE_MARGIN_X
         y = SUBNET_LABEL_H + row * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y)
-        builder.add_vertex(rid, label, STYLES[sk], x, y, RESOURCE_W, RESOURCE_CELL_H, parent_id=parent_id)
+        builder.add_vertex(rid, _typed(label, sk), STYLES[sk], x, y, RESOURCE_W, RESOURCE_CELL_H, parent_id=parent_id)
 
 
 # ── Core diagram builder ──────────────────────────────────────────────────────
@@ -314,8 +348,10 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
         for sid in ng.get("subnet_ids", []):
             eks_ng_by_subnet.setdefault(sid, []).append(ng)
 
-    # ALB → EC2 via target groups (instance targets)
+    # LB → EC2 via target groups (instance-id AND ip targets)
     ec2_ids_set = {i["resource_id"] for i in ec2_instances}
+    ec2_by_ip:  dict[str, str] = {i["private_ip"]: i["resource_id"]
+                                   for i in ec2_instances if i.get("private_ip")}
     lb_to_ec2: dict[str, list[str]] = {}
     for tg in target_groups:
         for lb_arn in tg.get("load_balancer_arns", []):
@@ -323,6 +359,8 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
                 tid = t.get("id", "")
                 if tid in ec2_ids_set:
                     lb_to_ec2.setdefault(lb_arn, []).append(tid)
+                elif tid in ec2_by_ip:
+                    lb_to_ec2.setdefault(lb_arn, []).append(ec2_by_ip[tid])
 
     # ALB → EKS cluster (detect kubernetes-managed ALBs by tag)
     # AWS LBC uses elbv2.k8s.aws/cluster=<name> or kubernetes.io/cluster/<name>=owned
@@ -427,7 +465,7 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
 
         for k, igw in enumerate(vpc_igws):
             igw_x = igw_start_x + k * (GATEWAY_W + 20)
-            builder.add_vertex(igw["resource_id"], full_name(igw), STYLES["igw"], igw_x, igw_y, GATEWAY_W, GATEWAY_H)
+            builder.add_vertex(igw["resource_id"], _typed(full_name(igw), "igw"), STYLES["igw"], igw_x, igw_y, GATEWAY_W, GATEWAY_H)
             builder.add_edge(internet_id, igw["resource_id"], style=STYLES["edge_solid"])
             builder.add_edge(igw["resource_id"], vpc_id, style=STYLES["edge_solid"])
 
@@ -435,7 +473,7 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
         for att in tgw_by_vpc.get(vpc_id, []):
             tgw_x = cursor_x + vpc_w + 24
             tgw_y = vpc_y + vpc_h / 2 - GATEWAY_H / 2
-            builder.add_vertex(att["resource_id"], f"TGW\n{full_name(att)}", STYLES["tgw"], tgw_x, tgw_y, GATEWAY_W, GATEWAY_H)
+            builder.add_vertex(att["resource_id"], _typed(full_name(att), "tgw"), STYLES["tgw"], tgw_x, tgw_y, GATEWAY_W, GATEWAY_H)
             builder.add_edge(vpc_id, att["resource_id"], style=STYLES["edge_dashed"])
 
         # ── EKS clusters at top of VPC (outside subnets) ──────────────────────
@@ -445,7 +483,7 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
             eks_y = 10
             builder.add_vertex(
                 cluster["resource_id"],
-                f"EKS: {cluster.get('cluster_name', full_name(cluster))}",
+                _typed(cluster.get("cluster_name", full_name(cluster)), "eks"),
                 STYLES["eks"],
                 eks_x, eks_y, RESOURCE_W, RESOURCE_CELL_H,
                 parent_id=vpc_id,
@@ -480,14 +518,17 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
                     svc = ep.get("service_name", "").split(".")[-1]
                     items.append((ep["resource_id"], svc or full_name(ep), "vpce"))
                 for ng in eks_ng_by_subnet.get(sid, []):
-                    # Deduplicate: only show once per nodegroup (it spans multiple subnets)
-                    items.append((f"{ng['resource_id']}#{sid}", ng.get("nodegroup_name", full_name(ng)), "eks_ng"))
+                    items.append((ng["resource_id"], ng.get("nodegroup_name", full_name(ng)), "eks_ng"))
 
                 place_resources(builder, items, parent_id=sid)
                 row_y += sub_h + SUBNET_GAP
 
         max_vpc_bottom = max(max_vpc_bottom, vpc_y + vpc_h)
         cursor_x += vpc_w + VPC_GAP
+
+    # ── Edges: Node Group → EKS cluster ──────────────────────────────────────
+    for ng in eks_nodegroups:
+        builder.add_edge(ng["resource_id"], ng["cluster_arn"], style=STYLES["edge_dashed"])
 
     # ── Edges: ALB → EC2 (instance targets) ──────────────────────────────────
     drawn: set[tuple[str, str]] = set()
@@ -604,7 +645,7 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
                     row_r = i // K8S_RESOURCES_PER_ROW
                     rx = RESOURCE_MARGIN_X + col_r * (RESOURCE_W + RESOURCE_MARGIN_X * 2)
                     ry = K8S_NS_LABEL_H + row_r * (RESOURCE_CELL_H + RESOURCE_MARGIN_Y)
-                    builder.add_vertex(rid, label, STYLES[sk], rx, ry, RESOURCE_W, RESOURCE_CELL_H, parent_id=ns_id)
+                    builder.add_vertex(rid, _typed(label, sk), STYLES[sk], rx, ry, RESOURCE_W, RESOURCE_CELL_H, parent_id=ns_id)
 
             k8s_cursor_x += cluster_w + K8S_CLUSTER_GAP
 

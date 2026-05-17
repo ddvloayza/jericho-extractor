@@ -1,0 +1,547 @@
+[
+  {
+    "security_group_id": "sg-0d760cd30300debca",
+    "security_group_name": "itl-0003-portal-prd-forti-siem-fortisiem-sg-0220251224181727422800000001",
+    "description": "Managed by Terraform",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-09dd913800bda2219",
+      "i-0edf6af8a92dc5a07"
+    ],
+    "attached_count": 2,
+    "overall_risk": "critical",
+    "exposure_flags": [
+      "https_public",
+      "sg_reference",
+      "ssh_public",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 3,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "10.0.4.104/32"
+        ],
+        "referenced_sgs": [
+          "sg-023d0e02fd0b67e82",
+          "sg-04aac9e78d6520b80"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "critical",
+        "risk_tags": [
+          "ssh_public"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "https_public"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
+    "security_group_id": "sg-0359116a8a11f7bc4",
+    "security_group_name": "datasync-sg",
+    "description": "datasync-sg",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [],
+    "attached_count": 0,
+    "overall_risk": "critical",
+    "exposure_flags": [
+      "alt_http_public",
+      "http_public",
+      "ssh_public",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 3,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "high",
+        "risk_tags": [
+          "http_public"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 8080,
+        "to_port": 8080,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "alt_http_public"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "critical",
+        "risk_tags": [
+          "ssh_public"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
+    "security_group_id": "sg-05f186888e83ce35d",
+    "security_group_name": "itl-0003-portal-prd-quicksight-03-sg",
+    "description": "itl-0003-portal-prd-quicksight-03-sg",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0e8079913d6f1152f",
+      "eni-066eeac13810d47cd",
+      "eni-03882adc274337ec4"
+    ],
+    "attached_count": 3,
+    "overall_risk": "critical",
+    "exposure_flags": [
+      "full_open_inbound",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "critical",
+        "risk_tags": [
+          "full_open_inbound"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
+    "security_group_id": "sg-03564c47645430f75",
+    "security_group_name": "datasync-sg-00",
+    "description": "launch-wizard-1 created 2025-11-28T03:10:37.976Z",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [],
+    "attached_count": 0,
+    "overall_risk": "critical",
+    "exposure_flags": [
+      "ssh_public",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "critical",
+        "risk_tags": [
+          "ssh_public"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
+    "security_group_id": "sg-09d2e75a3a87befdf",
+    "security_group_name": "k8s-intelicaprdapps-381a38e418",
+    "description": "[k8s] Managed SecurityGroup for LoadBalancer",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0dcb9e3c2d27bbae0",
+      "eni-0af18dac916f62164",
+      "arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/app/itl-0003-portal-prd-alb-02/09e8ed2f9c6bd632"
+    ],
+    "attached_count": 3,
+    "overall_risk": "high",
+    "exposure_flags": [
+      "http_public",
+      "https_public",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 2,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "high",
+        "risk_tags": [
+          "http_public"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "https_public"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
+    "security_group_id": "sg-0e1cbefd39956a516",
+    "security_group_name": "k8s-appsmith-appsmith-31153c86cc",
+    "description": "[k8s] Managed SecurityGroup for LoadBalancer",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0b3f582c2a0ebf219",
+      "eni-07b726d2cb40b9e5e",
+      "arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/net/k8s-appsmith-appsmith-06d45f1beb/f3d62eb37ed138ff"
+    ],
+    "attached_count": 3,
+    "overall_risk": "high",
+    "exposure_flags": [
+      "http_public",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "high",
+        "risk_tags": [
+          "http_public"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
+    "security_group_id": "sg-016aa97ef90ac861c",
+    "security_group_name": "itl-0003-portal-prd-sg-main-02",
+    "description": "itl-0003-portal-prd-sg-main-02",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-001c7cdb43ecd3476",
+      "eni-0f1ec444c0dd517b6",
+      "arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/app/itl-0003-portal-prd-lb-main-02/f58b197763e242ac"
+    ],
+    "attached_count": 3,
+    "overall_risk": "high",
+    "exposure_flags": [
+      "http_public",
+      "https_public",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 2,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "high",
+        "risk_tags": [
+          "http_public"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "https_public"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
+    "security_group_id": "sg-0e84f073bfa8dde00",
+    "security_group_name": "itl-0003-portal-prd-sg-datasync-main-server-02",
+    "description": "SG for DataSync Agent main-server",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0a8acd12070ef7c9c",
+      "i-053be387c3a9920d1"
+    ],
+    "attached_count": 2,
+    "overall_risk": "high",
+    "exposure_flags": [
+      "http_public",
+      "sg_reference",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 2,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "high",
+        "risk_tags": [
+          "http_public"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-00def764449f57c39"
+        ],
+        "is_public": false,
+        "direction": "outbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      }
+    ]
+  }
+]

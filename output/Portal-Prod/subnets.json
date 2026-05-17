@@ -1,0 +1,372 @@
+[
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0588eba1879cd168c",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "cidr_block": "10.10.5.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 249,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "isolated",
+    "tags": {
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "prd",
+      "Name": "itl-0003-portal-prd-restricted-2a",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754864+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0c54894493d118e63",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "cidr_block": "10.10.2.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 248,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "public",
+    "tags": {
+      "env": "prd",
+      "kubernetes.io/role/elb": "1",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-public-2b",
+      "assetid": "0003",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754877+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0268210322395563d",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "cidr_block": "10.10.7.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2c",
+    "availability_zone_id": "eus2-az3",
+    "available_ip_count": 251,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "public",
+    "tags": {
+      "Name": "itl-0003-portal-prd-public-2c",
+      "apid": "portal",
+      "env": "prd",
+      "assetid": "0003",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754881+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-03d18c5b1df70087a",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "cidr_block": "10.10.1.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 248,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "public",
+    "tags": {
+      "Name": "itl-0003-portal-prd-public-2a",
+      "kubernetes.io/role/elb": "1",
+      "apid": "portal",
+      "env": "prd",
+      "coid": "itl",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754886+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0d4d210f456e5c247",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0a2328aacb75cfc60",
+    "cidr_block": "172.31.32.0/20",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 4091,
+    "state": "available",
+    "is_default": true,
+    "map_public_ip_on_launch": true,
+    "subnet_type": "unknown",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0a2328aacb75cfc60",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754888+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-03a0a390d332a497b",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0a2328aacb75cfc60",
+    "cidr_block": "172.31.0.0/20",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2c",
+    "availability_zone_id": "eus2-az3",
+    "available_ip_count": 4091,
+    "state": "available",
+    "is_default": true,
+    "map_public_ip_on_launch": true,
+    "subnet_type": "unknown",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0a2328aacb75cfc60",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754890+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0c69299494134215d",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0a2328aacb75cfc60",
+    "cidr_block": "172.31.16.0/20",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 4091,
+    "state": "available",
+    "is_default": true,
+    "map_public_ip_on_launch": true,
+    "subnet_type": "unknown",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0a2328aacb75cfc60",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754892+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-042f934568c455b4c",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "cidr_block": "10.10.3.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 130,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "private",
+    "tags": {
+      "env": "prd",
+      "Name": "itl-0003-portal-prd-private-2a",
+      "assetid": "0003",
+      "coid": "itl",
+      "apid": "portal",
+      "kubernetes.io/role/internal-elb": "1"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754895+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0362f83b46f047126",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "cidr_block": "10.10.6.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 248,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "isolated",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "Name": "itl-0003-portal-prd-restricted-2b",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754897+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-043e3fb731d433446",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "cidr_block": "10.10.9.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2c",
+    "availability_zone_id": "eus2-az3",
+    "available_ip_count": 251,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "isolated",
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "apid": "portal",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-prd-restricted-2c"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754899+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-00fec6232d3dc188d",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "cidr_block": "10.10.8.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2c",
+    "availability_zone_id": "eus2-az3",
+    "available_ip_count": 249,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "private",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "Name": "itl-0003-portal-prd-private-2c",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754902+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0c396a6c940028849",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "cidr_block": "10.10.4.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 172,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "private",
+    "tags": {
+      "coid": "itl",
+      "Name": "itl-0003-portal-prd-private-2b",
+      "kubernetes.io/role/internal-elb": "1",
+      "assetid": "0003",
+      "apid": "portal",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:47.754905+00:00"
+  }
+]

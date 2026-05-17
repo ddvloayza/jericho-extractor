@@ -52,6 +52,30 @@ def get_eks_client(session: boto3.Session, region: str) -> BaseClient:
     return session.client("eks", region_name=region, config=_RETRY_CONFIG)
 
 
+def get_lambda_client(session: boto3.Session, region: str) -> BaseClient:
+    return session.client("lambda", region_name=region, config=_RETRY_CONFIG)
+
+
+def get_rds_client(session: boto3.Session, region: str) -> BaseClient:
+    return session.client("rds", region_name=region, config=_RETRY_CONFIG)
+
+
+def get_iam_client(session: boto3.Session) -> BaseClient:
+    return session.client("iam", config=_RETRY_CONFIG)
+
+
+def get_kms_client(session: boto3.Session, region: str) -> BaseClient:
+    return session.client("kms", region_name=region, config=_RETRY_CONFIG)
+
+
+def get_secretsmanager_client(session: boto3.Session, region: str) -> BaseClient:
+    return session.client("secretsmanager", region_name=region, config=_RETRY_CONFIG)
+
+
+def get_s3_client(session: boto3.Session) -> BaseClient:
+    return session.client("s3", config=_RETRY_CONFIG)
+
+
 def get_eks_bearer_token(cluster_name: str, session: boto3.Session, region: str) -> str:
     """Generate a bearer token for authenticating to an EKS cluster's Kubernetes API.
 

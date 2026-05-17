@@ -1,0 +1,190 @@
+[
+  {
+    "resource_type": "aws::ec2::vpc_endpoint",
+    "resource_id": "vpce-0ad5ef02d858fb3a8",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "service_name": "com.amazonaws.eu-south-2.datasync",
+    "endpoint_type": "Interface",
+    "state": "available",
+    "associated_subnet_ids": [
+      "subnet-042f934568c455b4c",
+      "subnet-0c396a6c940028849"
+    ],
+    "associated_route_table_ids": [],
+    "dns_entries": [
+      "vpce-0ad5ef02d858fb3a8-428djrxd.datasync.eu-south-2.vpce.amazonaws.com",
+      "vpce-0ad5ef02d858fb3a8-428djrxd-eu-south-2b.datasync.eu-south-2.vpce.amazonaws.com",
+      "vpce-0ad5ef02d858fb3a8-428djrxd-eu-south-2a.datasync.eu-south-2.vpce.amazonaws.com",
+      "datasync.eu-south-2.amazonaws.com",
+      "datasync.eu-south-2.api.aws"
+    ],
+    "network_interface_ids": [
+      "eni-086c38358ffb821b2",
+      "eni-046cf3652d436df3e"
+    ],
+    "tags": {
+      "coid": "itl",
+      "Type": "Interface",
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-02-endpoint"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:52.779809+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc_endpoint",
+    "resource_id": "vpce-008241acd87b1188f",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "service_name": "com.amazonaws.eu-south-2.guardduty-data",
+    "endpoint_type": "Interface",
+    "state": "available",
+    "associated_subnet_ids": [
+      "subnet-042f934568c455b4c",
+      "subnet-0c396a6c940028849"
+    ],
+    "associated_route_table_ids": [],
+    "dns_entries": [
+      "vpce-008241acd87b1188f-5m4fdrlm.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "vpce-008241acd87b1188f-5m4fdrlm-eu-south-2b.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "vpce-008241acd87b1188f-5m4fdrlm-eu-south-2a.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "guardduty-data.eu-south-2.amazonaws.com"
+    ],
+    "network_interface_ids": [
+      "eni-0f342451e25e1ce38",
+      "eni-007a4d0c56e25d46c"
+    ],
+    "tags": {
+      "coid": "itl",
+      "Type": "Interface",
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-02-endpoint"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:52.779819+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc_endpoint",
+    "resource_id": "vpce-060605f2286b2f663",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "service_name": "com.amazonaws.eu-south-2.logs",
+    "endpoint_type": "Interface",
+    "state": "available",
+    "associated_subnet_ids": [
+      "subnet-042f934568c455b4c",
+      "subnet-0c396a6c940028849"
+    ],
+    "associated_route_table_ids": [],
+    "dns_entries": [
+      "vpce-060605f2286b2f663-41keiryu.logs.eu-south-2.vpce.amazonaws.com",
+      "vpce-060605f2286b2f663-41keiryu-eu-south-2a.logs.eu-south-2.vpce.amazonaws.com",
+      "vpce-060605f2286b2f663-41keiryu-eu-south-2b.logs.eu-south-2.vpce.amazonaws.com",
+      "logs.eu-south-2.amazonaws.com",
+      "streaming-logs.eu-south-2.amazonaws.com",
+      "streaming-logs.eu-south-2.api.aws",
+      "logs.eu-south-2.api.aws"
+    ],
+    "network_interface_ids": [
+      "eni-0c871a180dc386c38",
+      "eni-0017b705ce9cd4ad4"
+    ],
+    "tags": {
+      "coid": "itl",
+      "Type": "Interface",
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-02-endpoint"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:52.779823+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc_endpoint",
+    "resource_id": "vpce-012a2803fd24a38c7",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "service_name": "com.amazonaws.eu-south-2.s3",
+    "endpoint_type": "Gateway",
+    "state": "available",
+    "associated_subnet_ids": [],
+    "associated_route_table_ids": [
+      "rtb-00498af010ebcd780"
+    ],
+    "dns_entries": [],
+    "network_interface_ids": [],
+    "tags": {
+      "Name": "itl-0003-portal-prd-02-s3-gateway"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:52.779835+00:00"
+  }
+]

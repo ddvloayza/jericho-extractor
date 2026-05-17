@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Graph Analysis — Portal-Prod</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:#0D1117;color:#E6EDF3;font-family:'Segoe UI',Arial,sans-serif;padding:20px}
+    h1{font-size:1.4rem;margin-bottom:16px;color:#58A6FF}
+    h2{font-size:1.1rem;margin:24px 0 10px;color:#79C0FF}
+    .badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.75rem;font-weight:600;color:#fff}
+    .critical{background:#D32F2F} .high{background:#F57C00}
+    .medium{background:#FBC02D;color:#000} .low{background:#388E3C}
+    .info{background:#1565C0}
+    table{width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:24px}
+    th{background:#161B22;color:#79C0FF;padding:8px 10px;text-align:left;border-bottom:1px solid #30363D}
+    td{padding:7px 10px;border-bottom:1px solid #21262D;vertical-align:top}
+    tr:hover td{background:#161B22}
+    .tag{display:inline-block;background:#21262D;color:#8B949E;padding:1px 6px;border-radius:3px;
+          font-size:.7rem;margin:1px}
+    
+  </style>
+</head>
+<body>
+<h1>Graph Analysis — Portal-Prod</h1>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px"><div style="background:#161B22;border:1px solid #30363D;border-radius:8px;padding:14px 20px;min-width:140px;text-align:center"><div style="font-size:1.6rem;font-weight:700;color:#58A6FF">221</div><div style="font-size:.78rem;color:#8B949E">Nodes</div></div><div style="background:#161B22;border:1px solid #30363D;border-radius:8px;padding:14px 20px;min-width:140px;text-align:center"><div style="font-size:1.6rem;font-weight:700;color:#58A6FF">431</div><div style="font-size:.78rem;color:#8B949E">Edges</div></div><div style="background:#161B22;border:1px solid #30363D;border-radius:8px;padding:14px 20px;min-width:140px;text-align:center"><div style="font-size:1.6rem;font-weight:700;color:#D32F2F">2</div><div style="font-size:.78rem;color:#8B949E">Internet-Facing</div></div><div style="background:#161B22;border:1px solid #30363D;border-radius:8px;padding:14px 20px;min-width:140px;text-align:center"><div style="font-size:1.6rem;font-weight:700;color:#2E7D32">3</div><div style="font-size:.78rem;color:#8B949E">Public Subnets</div></div><div style="background:#161B22;border:1px solid #30363D;border-radius:8px;padding:14px 20px;min-width:140px;text-align:center"><div style="font-size:1.6rem;font-weight:700;color:#F57F17">3</div><div style="font-size:.78rem;color:#8B949E">Private Subnets</div></div><div style="background:#161B22;border:1px solid #30363D;border-radius:8px;padding:14px 20px;min-width:140px;text-align:center"><div style="font-size:1.6rem;font-weight:700;color:#58A6FF">31</div><div style="font-size:.78rem;color:#8B949E">Components</div></div></div><h2 style="color:#D32F2F">Internet-Facing Resources (2)</h2><table><thead><tr><th>ID</th><th>Type</th><th>Name</th><th>Region</th></tr></thead><tbody><tr><td><code>vpc-0626d66632373c892</code></td><td>vpc</td><td>itl-0003-portal-prd-vpc-02</td><td>eu-south-2</td></tr><tr><td><code>vpc-0a2328aacb75cfc60</code></td><td>vpc</td><td></td><td>eu-south-2</td></tr></tbody></table><h2 style="color:#F57C00">Resources Behind NAT (1)</h2><table><thead><tr><th>ID</th><th>Type</th><th>Name</th><th>Region</th></tr></thead><tbody><tr><td><code>rtb-0bb264a8a341f1036</code></td><td>route_table</td><td>itl-0003-portal-prd-rt-private-02</td><td>eu-south-2</td></tr></tbody></table>
+</body>
+</html>

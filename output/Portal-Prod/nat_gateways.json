@@ -1,0 +1,35 @@
+[
+  {
+    "resource_type": "aws::ec2::nat_gateway",
+    "resource_id": "nat-07f69a860188add0f",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_id": "subnet-03d18c5b1df70087a",
+    "state": "available",
+    "connectivity_type": "public",
+    "public_ip": "51.49.38.3",
+    "private_ip": "10.10.1.165",
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-nat-2a-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03d18c5b1df70087a",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:48.664716+00:00"
+  }
+]

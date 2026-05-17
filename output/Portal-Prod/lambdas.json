@@ -1,0 +1,229 @@
+[
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:610944808410:function:itl-0003-portal-prd-lambda-fsx-log-export-02",
+    "resource_name": "itl-0003-portal-prd-lambda-fsx-log-export-02",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.12",
+    "memory_mb": 128,
+    "timeout_seconds": 300,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-05-04T14:20:56.000+0000",
+    "code_size_bytes": 1122,
+    "handler": "lambda_function.lambda_handler",
+    "description": "Exporta logs de auditor\u00eda FSx a S3 Log Archive diariamente - PCI DSS 10.2.1",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_ids": [
+      "subnet-0362f83b46f047126",
+      "subnet-0588eba1879cd168c"
+    ],
+    "security_group_ids": [
+      "sg-08bec69ca1d781aad"
+    ],
+    "execution_role": "arn:aws:iam::610944808410:role/itl-0003-portal-prd-lambda-fsx-log-export-02-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "PREFIX_RESOURCE_NAME",
+      "FSX_FILESYSTEM_ID",
+      "LOG_GROUP_NAME",
+      "BUCKET_NAME"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "Compliance": "PCI-DSS-v4",
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0362f83b46f047126",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0588eba1879cd168c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-08bec69ca1d781aad",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::610944808410:role/itl-0003-portal-prd-lambda-fsx-log-export-02-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-05-17T17:51:10.775771+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:610944808410:function:itl-0003-portal-prd-lambda-pg-audit-02",
+    "resource_name": "itl-0003-portal-prd-lambda-pg-audit-02",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.12",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-05-01T22:35:07.000+0000",
+    "code_size_bytes": 1009,
+    "handler": "lambda.lambda_handler",
+    "description": "Lambda to export pgaudit logs to s3",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_ids": [
+      "subnet-0362f83b46f047126",
+      "subnet-0588eba1879cd168c"
+    ],
+    "security_group_ids": [
+      "sg-039aecc570853bb45"
+    ],
+    "execution_role": "arn:aws:iam::610944808410:role/itl-0003-portal-prd-lambda-pg-audit-02-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "ACCOUNT_ID",
+      "PREFIX",
+      "LOG_GROUP",
+      "BUCKET_NAME"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0362f83b46f047126",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0588eba1879cd168c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-039aecc570853bb45",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::610944808410:role/itl-0003-portal-prd-lambda-pg-audit-02-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-05-17T17:51:10.981362+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:610944808410:function:aws-controltower-NotificationForwarder",
+    "resource_name": "aws-controltower-NotificationForwarder",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.13",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-09-03T16:10:41.120+0000",
+    "code_size_bytes": 473,
+    "handler": "index.lambda_handler",
+    "description": "SNS message forwarding function for aggregating account notifications.",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::610944808410:role/aws-controltower-ForwardSnsNotificationRole",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "sns_arn"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "aws:cloudformation:logical-id": "ForwardSnsNotification",
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:610944808410:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-bc3c93ad-bdd3-49b9-a367-a7e0b0fea39a/86dba9c0-88e0-11f0-b414-0aac614a0e25",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-bc3c93ad-bdd3-49b9-a367-a7e0b0fea39a"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::610944808410:role/aws-controltower-ForwardSnsNotificationRole",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-05-17T17:51:11.187369+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:610944808410:function:fortisiem-log-extractor",
+    "resource_name": "fortisiem-log-extractor",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.12",
+    "memory_mb": 512,
+    "timeout_seconds": 600,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-05-06T15:26:51.000+0000",
+    "code_size_bytes": 1568,
+    "handler": "lambda_function.lambda_handler",
+    "description": "SSM fix Tue May  5 09:54:32 PM UTC 2026",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_ids": [
+      "subnet-042f934568c455b4c"
+    ],
+    "security_group_ids": [
+      "sg-0131238705f3bdd7e"
+    ],
+    "execution_role": "arn:aws:iam::610944808410:role/LambdaLogExtractorRole",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "CROSS_ACCOUNT_ROLE",
+      "EC2_INSTANCE_ID",
+      "DEST_PREFIX",
+      "AWS_REGION_NAME",
+      "DEST_BUCKET"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0131238705f3bdd7e",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::610944808410:role/LambdaLogExtractorRole",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-05-17T17:51:11.403990+00:00"
+  }
+]

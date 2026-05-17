@@ -1,0 +1,48 @@
+[
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-05d074c79cc6687d0",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-0a2328aacb75cfc60"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0a2328aacb75cfc60",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:48.435404+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-0b25b41f515013c5b",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-0626d66632373c892"
+    ],
+    "tags": {
+      "Name": "itl-0003-portal-prd-igw-02",
+      "coid": "itl",
+      "env": "prd",
+      "apid": "portal",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-17T17:50:48.435418+00:00"
+  }
+]

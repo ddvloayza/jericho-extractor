@@ -15,6 +15,12 @@ from collectors.load_balancers import LoadBalancerCollector
 from collectors.target_groups import TargetGroupCollector
 from collectors.eks import EKSCollector
 from collectors.kubernetes_workloads import KubernetesWorkloadsCollector
+from collectors.lambdas import LambdaCollector
+from collectors.rds import RDSCollector
+from collectors.iam_roles import IAMRolesCollector
+from collectors.kms import KMSCollector
+from collectors.secrets_manager import SecretsManagerCollector
+from collectors.s3 import S3Collector
 
 __all__ = [
     "VPCCollector",
@@ -34,4 +40,10 @@ __all__ = [
     "TargetGroupCollector",
     "EKSCollector",
     "KubernetesWorkloadsCollector",
+    "LambdaCollector",
+    "RDSCollector",
+    "IAMRolesCollector",
+    "KMSCollector",
+    "SecretsManagerCollector",
+    "S3Collector",
 ]
