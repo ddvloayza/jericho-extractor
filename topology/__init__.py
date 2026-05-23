@@ -4,6 +4,7 @@ from topology.dependency_mapper import DependencyMapper
 from topology.network_graph import NetworkGraph
 from topology.relationship_engine import RelationshipEngine, Edge
 from topology.security_analyzer import SecurityAnalyzer, RiskLevel
+from topology.cross_account_mapper import CrossAccountMapper
 
 __all__ = [
     "SubnetClassifier",
@@ -16,4 +17,5 @@ __all__ = [
     "Edge",
     "SecurityAnalyzer",
     "RiskLevel",
+    "CrossAccountMapper",
 ]

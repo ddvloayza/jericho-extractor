@@ -47,6 +47,7 @@ from topology.dependency_mapper import DependencyMapper
 from topology.network_graph import NetworkGraph
 from topology.relationship_engine import RelationshipEngine
 from topology.security_analyzer import SecurityAnalyzer, critical_findings, public_exposure_summary
+from topology.cross_account_mapper import CrossAccountMapper
 
 logger = logging.getLogger(__name__)
 
@@ -244,6 +245,24 @@ def run(config: AppConfig) -> None:
 
     _print_summary(summary)
 
+    # ── Cross-account analysis (runs after ALL accounts are collected) ────────
+    if len(config.accounts) > 1:
+        logger.info("Running cross-account relationship analysis…")
+        try:
+            output_path = Path(config.output_dir)
+            cross = CrossAccountMapper(output_path)
+            results = cross.build_all()
+            if results:
+                cross_dir = output_path / "cross_account"
+                cross_dir.mkdir(parents=True, exist_ok=True)
+                for key, data in results.items():
+                    out_file = cross_dir / f"{key}.json"
+                    with open(out_file, "w", encoding="utf-8") as f:
+                        json.dump(data if isinstance(data, list) else [data], f, indent=2, default=str)
+                _print_cross_account_summary(results.get("summary", {}))
+        except Exception as exc:
+            logger.error("Cross-account analysis failed: %s", exc, exc_info=True)
+
 
 def _print_summary(summary: list[dict[str, Any]]) -> None:
     print("\n" + "═" * 60)
@@ -257,6 +276,21 @@ def _print_summary(summary: list[dict[str, Any]]) -> None:
             print(f"    {resource_type:<35} {count:>6}")
         grand_total += entry["total_resources"]
     print(f"\n  Grand total: {grand_total} resources across {len(summary)} account(s)")
+    print("═" * 60 + "\n")
+
+
+def _print_cross_account_summary(summary: dict) -> None:
+    print("\n" + "═" * 60)
+    print("  CROSS-ACCOUNT RELATIONSHIPS")
+    print("═" * 60)
+    print(f"  Accounts analyzed      : {summary.get('accounts_analyzed', 0)}")
+    print(f"  TGW connections        : {summary.get('tgw_connections', 0)}")
+    print(f"  VPC peerings           : {summary.get('vpc_peerings', 0)}")
+    print(f"  IAM trust              : {summary.get('iam_trust_relationships', 0)}")
+    print(f"  KMS cross-account      : {summary.get('kms_cross_account', 0)}")
+    print(f"  Secrets cross-account  : {summary.get('secrets_cross_account', 0)}")
+    print(f"  S3 cross-account       : {summary.get('s3_cross_account', 0)}")
+    print(f"  Total findings         : {summary.get('total_findings', 0)}")
     print("═" * 60 + "\n")
 
 
