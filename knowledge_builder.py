@@ -904,10 +904,10 @@ class CrossAccountKnowledgeBuilder:
         return "\n".join(lines)
 
 
-# ── git push ──────────────────────────────────────────────────────────────────
+# ── git push (local clone) ────────────────────────────────────────────────────
 
 def _git_push(knowledge_dir: Path) -> None:
-    """Commit and push all changes in the knowledge repo."""
+    """Commit and push all changes in a locally cloned knowledge repo."""
     try:
         subprocess.run(["git", "-C", str(knowledge_dir), "add", "."], check=True)
         result = subprocess.run(
@@ -929,29 +929,180 @@ def _git_push(knowledge_dir: Path) -> None:
         logger.error("Git push failed: %s", exc)
 
 
+# ── GitHub API push (no local clone needed) ───────────────────────────────────
+
+import base64
+import urllib.request
+import urllib.error
+
+
+class GitHubAPIPusher:
+    """
+    Push Markdown files directly to a GitHub repo via the REST API.
+    No local clone required — only needs a GitHub token.
+
+    Token needs: repo (read + write contents) scope.
+    Create at: https://github.com/settings/tokens
+    """
+
+    API = "https://api.github.com"
+
+    def __init__(self, token: str, repo: str, branch: str = "main") -> None:
+        self.token  = token
+        self.repo   = repo          # e.g. "ddvloayza/intelica-aws-knowledge"
+        self.branch = branch
+        self._sha_cache: dict[str, str] = {}  # path → current SHA (for updates)
+
+    def push_files(self, files: dict[str, str]) -> None:
+        """
+        Push a dict of {github_path: content} to the repo.
+        Creates the file if it doesn't exist, updates it if it does.
+        """
+        timestamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+        pushed = 0
+        for path, content in files.items():
+            try:
+                self._put_file(path, content, f"chore: update {path} — {timestamp}")
+                pushed += 1
+            except Exception as exc:
+                logger.error("Failed to push %s: %s", path, exc)
+        logger.info("GitHub API: pushed %d/%d files to %s", pushed, len(files), self.repo)
+
+    def _put_file(self, path: str, content: str, message: str) -> None:
+        url     = f"{self.API}/repos/{self.repo}/contents/{path}"
+        encoded = base64.b64encode(content.encode("utf-8")).decode("ascii")
+        body: dict = {"message": message, "content": encoded, "branch": self.branch}
+
+        # If file already exists we need its SHA to update it
+        sha = self._get_sha(path)
+        if sha:
+            body["sha"] = sha
+
+        data = json.dumps(body).encode("utf-8")
+        req  = urllib.request.Request(
+            url, data=data, method="PUT",
+            headers={
+                "Authorization": f"Bearer {self.token}",
+                "Accept":        "application/vnd.github+json",
+                "Content-Type":  "application/json",
+                "X-GitHub-Api-Version": "2022-11-28",
+            },
+        )
+        with urllib.request.urlopen(req) as resp:
+            result = json.loads(resp.read())
+            # Cache new SHA for subsequent runs
+            self._sha_cache[path] = result.get("content", {}).get("sha", "")
+        logger.debug("Pushed: %s", path)
+
+    def _get_sha(self, path: str) -> str:
+        """Return the blob SHA of an existing file, or '' if it doesn't exist."""
+        if path in self._sha_cache:
+            return self._sha_cache[path]
+        url = f"{self.API}/repos/{self.repo}/contents/{path}?ref={self.branch}"
+        req = urllib.request.Request(
+            url,
+            headers={
+                "Authorization": f"Bearer {self.token}",
+                "Accept":        "application/vnd.github+json",
+                "X-GitHub-Api-Version": "2022-11-28",
+            },
+        )
+        try:
+            with urllib.request.urlopen(req) as resp:
+                data = json.loads(resp.read())
+                sha  = data.get("sha", "")
+                self._sha_cache[path] = sha
+                return sha
+        except urllib.error.HTTPError as e:
+            if e.code == 404:
+                return ""
+            raise
+
+
+# ── in-memory builder ─────────────────────────────────────────────────────────
+
+def _collect_files(output_dir: Path, account_filter: str | None) -> dict[str, str]:
+    """
+    Generate all Markdown content in memory and return a {github_path: content} dict.
+    Used by the GitHub API push mode — no local filesystem write needed.
+    """
+    import tempfile, shutil
+
+    tmp = Path(tempfile.mkdtemp())
+    try:
+        for account_dir in sorted(output_dir.iterdir()):
+            if not account_dir.is_dir() or account_dir.name == "cross_account":
+                continue
+            if account_filter and account_dir.name != account_filter:
+                continue
+            out_dir = tmp / "accounts" / account_dir.name
+            AccountKnowledgeBuilder(account_dir, out_dir).build_all()
+
+        if not account_filter:
+            out_dir = tmp / "cross_account"
+            CrossAccountKnowledgeBuilder(output_dir, out_dir).build_all()
+
+        # Collect all written files
+        files: dict[str, str] = {}
+        for f in tmp.rglob("*.md"):
+            github_path = f.relative_to(tmp).as_posix()
+            files[github_path] = f.read_text(encoding="utf-8")
+        return files
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Generate Markdown knowledge base from jericho-extractor output"
     )
-    parser.add_argument("--output-dir",    default="output",  help="jericho-extractor output dir")
-    parser.add_argument("--knowledge-dir", required=True,     help="Path to intelica-aws-knowledge repo")
-    parser.add_argument("--account",       default=None,      help="Process only this account (default: all)")
-    parser.add_argument("--push",          action="store_true", help="Git commit and push after generating")
+    parser.add_argument("--output-dir",    default="output",
+                        help="jericho-extractor output dir (default: output)")
+    parser.add_argument("--knowledge-dir", default=None,
+                        help="Path to locally cloned intelica-aws-knowledge repo")
+    parser.add_argument("--github-repo",   default=None,
+                        help="Push directly via GitHub API, e.g. 'org/intelica-aws-knowledge'")
+    parser.add_argument("--github-token",  default=None,
+                        help="GitHub personal access token (or set GITHUB_TOKEN env var)")
+    parser.add_argument("--github-branch", default="main",
+                        help="Target branch for GitHub API push (default: main)")
+    parser.add_argument("--account",       default=None,
+                        help="Process only this account (default: all)")
+    parser.add_argument("--push",          action="store_true",
+                        help="Git commit and push (only used with --knowledge-dir)")
     args = parser.parse_args()
 
-    output_dir    = Path(args.output_dir)
-    knowledge_dir = Path(args.knowledge_dir)
-
+    output_dir = Path(args.output_dir)
     if not output_dir.exists():
         print(f"Error: output dir not found: {output_dir}")
         raise SystemExit(1)
+
+    # ── Mode 1: GitHub API (no local clone) ───────────────────────────────────
+    if args.github_repo:
+        token = args.github_token or __import__("os").environ.get("GITHUB_TOKEN", "")
+        if not token:
+            print("Error: provide --github-token or set GITHUB_TOKEN env var")
+            raise SystemExit(1)
+
+        logger.info("Collecting files in memory…")
+        files = _collect_files(output_dir, args.account)
+        logger.info("Pushing %d files to GitHub repo: %s", len(files), args.github_repo)
+        GitHubAPIPusher(token, args.github_repo, args.github_branch).push_files(files)
+        print(f"\nPushed {len(files)} files to https://github.com/{args.github_repo}")
+        return
+
+    # ── Mode 2: local clone ───────────────────────────────────────────────────
+    if not args.knowledge_dir:
+        print("Error: provide --knowledge-dir or --github-repo")
+        raise SystemExit(1)
+
+    knowledge_dir = Path(args.knowledge_dir)
     if not knowledge_dir.exists():
         print(f"Error: knowledge dir not found: {knowledge_dir}")
         raise SystemExit(1)
 
-    # Per-account documents
     for account_dir in sorted(output_dir.iterdir()):
         if not account_dir.is_dir() or account_dir.name == "cross_account":
             continue
@@ -960,7 +1111,6 @@ def main() -> None:
         out_dir = knowledge_dir / "accounts" / account_dir.name
         AccountKnowledgeBuilder(account_dir, out_dir).build_all()
 
-    # Cross-account document
     if not args.account:
         out_dir = knowledge_dir / "cross_account"
         CrossAccountKnowledgeBuilder(output_dir, out_dir).build_all()
