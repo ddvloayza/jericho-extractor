@@ -1,81 +1,590 @@
 from __future__ import annotations
 
-"""Pure-Python HTML/SVG renderer — no numpy, no matplotlib, no C extensions."""
+"""Intelica-branded HTML renderer — pure Python, no external dependencies.
 
-import json
-import math
+Generates reports styled to match the Intelica design system:
+  Plus Jakarta Sans + JetBrains Mono · brand colors · sticky topbar · hero stats
+  tab navigation · cards / tiles / callouts · dark navy footer.
+"""
+
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 
-# ── Color palettes ────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# Brand palette
+# ─────────────────────────────────────────────────────────────────────────────
 
-RISK_COLORS = {
-    "critical": "#D32F2F",
-    "high":     "#F57C00",
-    "medium":   "#FBC02D",
-    "low":      "#388E3C",
-    "info":     "#1565C0",
+RISK_META: dict[str, dict[str, str]] = {
+    "critical": {"bg": "#FEF0F0", "text": "#C42626", "border": "#F04B4B"},
+    "high":     {"bg": "#FFF7EE", "text": "#B86200", "border": "#FF860D"},
+    "medium":   {"bg": "#FFFBE6", "text": "#856A00", "border": "#FBC02D"},
+    "low":      {"bg": "#EEFBF1", "text": "#1F7A35", "border": "#64E386"},
+    "info":     {"bg": "#F0F4FF", "text": "#21409A", "border": "#21409A"},
 }
 
-SUBNET_COLORS = {
-    "public":   ("#E8F5E9", "#2E7D32"),
-    "private":  ("#FFF9C4", "#F57F17"),
-    "isolated": ("#FFEBEE", "#C62828"),
-    "unknown":  ("#EEEEEE", "#9E9E9E"),
+SUBNET_META: dict[str, dict[str, str]] = {
+    "public":   {"cls": "pub",  "label": "Public"},
+    "private":  {"cls": "priv", "label": "Private"},
+    "isolated": {"cls": "iso",  "label": "Isolated"},
+    "unknown":  {"cls": "unk",  "label": "Unknown"},
 }
 
-RESOURCE_COLORS = {
-    "ec2":      "#FF8F00",
-    "alb":      "#AD1457",
-    "nlb":      "#880E4F",
-    "nat":      "#00838F",
-    "vpce":     "#4527A0",
-    "eks":      "#F57F17",
-    "default":  "#546E7A",
+RESOURCE_META: dict[str, dict[str, str]] = {
+    "ec2":    {"bg": "#FFF7EE", "text": "#B86200", "label": "EC2"},
+    "alb":    {"bg": "#FCE5EE", "text": "#A11F58", "label": "ALB"},
+    "nlb":    {"bg": "#E0EAFE", "text": "#1B3A8B", "label": "NLB"},
+    "nat":    {"bg": "#E6F3F5", "text": "#0F6E78", "label": "NAT"},
+    "vpce":   {"bg": "#E7E2FB", "text": "#4A3D9E", "label": "VPCE"},
+    "eks":    {"bg": "#D8F3DE", "text": "#1F7A35", "label": "EKS"},
+    "lambda": {"bg": "#FFF1E1", "text": "#B86200", "label": "λ"},
+    "rds":    {"bg": "#E0EAFE", "text": "#1B3A8B", "label": "RDS"},
+    "s3":     {"bg": "#D8F3DE", "text": "#1F7A35", "label": "S3"},
+    "igw":    {"bg": "#F0F4FF", "text": "#21409A", "label": "IGW"},
+    "tgw":    {"bg": "#FFF1E1", "text": "#B86200", "label": "TGW"},
 }
 
 
-def _short(resource: dict, max_len: int = 26) -> str:
-    name = resource.get("tags", {}).get("Name") or resource.get("resource_name") or resource.get("resource_id", "")
-    return name if len(name) <= max_len else name[:max_len - 1] + "…"
+# ─────────────────────────────────────────────────────────────────────────────
+# Intelica CSS design system
+# ─────────────────────────────────────────────────────────────────────────────
+
+_ITL_CSS = """\
+:root{
+  --ib:#21409A;--ib2:#2A4FBD;--io:#FF860D;--in:#0F1533;
+  --ibg:#F0F4FF;--ibgs:#FDFDFF;
+  --ig:#474D66;--ig2:#808599;--ig3:#B8BCCC;--ig4:#D8DDEF;
+  --ip:#64E386;--ineg:#F04B4B;
+  --fd:"Plus Jakarta Sans","Calibri",sans-serif;
+  --fm:"JetBrains Mono","Consolas",monospace;
+  --s1:0 1px 2px rgba(15,21,51,.04);
+  --s2:0 4px 16px rgba(15,21,51,.06),0 1px 3px rgba(15,21,51,.04);
+  --s3:0 12px 40px rgba(15,21,51,.08),0 4px 12px rgba(15,21,51,.04);
+  --r1:6px;--r2:10px;--r3:16px;--r4:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fd);background:var(--ibgs);color:var(--in);
+  line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;
+  min-height:100vh;overflow-x:hidden;
+}
+/* ── bg decor ── */
+.bg-decor{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bg-decor svg{position:absolute;opacity:.5}
+.bg-decor .cv1{top:-200px;right:-300px;width:900px;height:900px}
+.bg-decor .cv2{bottom:-400px;left:-200px;width:700px;height:700px}
+.bg-decor .dots{top:40%;right:5%;width:200px;height:200px;opacity:.4}
+main{position:relative;z-index:1}
+/* ── topbar ── */
+.topbar{
+  background:rgba(255,255,255,.88);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(33,64,154,.08);
+  position:sticky;top:0;z-index:50;
+}
+.topbar-inner{
+  max-width:1280px;margin:0 auto;padding:15px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand-iso{width:38px;height:38px;flex-shrink:0}
+.brand-name{
+  font-family:var(--fd);font-size:19px;font-weight:500;
+  color:var(--in);letter-spacing:-.02em;line-height:1;
+}
+.brand-name span{font-weight:700;color:var(--ib)}
+.topbar-meta{display:flex;align-items:center;gap:18px;font-size:13px;color:var(--ig)}
+.topbar-meta .pill{
+  background:var(--ibg);color:var(--ib);padding:5px 12px;
+  border-radius:999px;font-weight:600;font-size:12px;letter-spacing:.02em;
+}
+/* ── hero ── */
+.hero{max-width:1280px;margin:0 auto;padding:68px 40px 52px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;
+  font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--ib);margin-bottom:18px;
+}
+.hero-eyebrow::before{content:"";width:32px;height:2px;background:var(--io)}
+.hero h1{
+  font-family:var(--fd);font-size:clamp(30px,4.5vw,54px);font-weight:300;
+  line-height:1.08;letter-spacing:-.032em;color:var(--in);
+  margin-bottom:18px;max-width:800px;
+}
+.hero h1 strong{font-weight:700;color:var(--ib)}
+.hero-sub{
+  font-size:17px;line-height:1.6;color:var(--ig);
+  max-width:680px;margin-bottom:42px;
+}
+.hero-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));
+  gap:14px;max-width:1100px;
+}
+.hero-stat{
+  background:white;border:1px solid rgba(33,64,154,.08);
+  padding:20px 24px;border-radius:var(--r3);box-shadow:var(--s1);
+  transition:all .2s ease;
+}
+.hero-stat:hover{
+  border-color:rgba(33,64,154,.18);transform:translateY(-2px);box-shadow:var(--s2);
+}
+.hs-label{
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--ig2);margin-bottom:6px;
+}
+.hs-value{
+  font-family:var(--fd);font-size:28px;font-weight:700;color:var(--in);
+  letter-spacing:-.02em;line-height:1.1;
+}
+.hs-value small{font-size:13px;font-weight:500;color:var(--ig);margin-left:4px}
+.hero-stat.st-alert .hs-value{color:#C42626}
+.hero-stat.st-warn  .hs-value{color:#B86200}
+.hero-stat.st-ok    .hs-value{color:#1F7A35}
+/* ── tabnav ── */
+.tabnav-wrap{
+  position:sticky;top:69px;z-index:40;
+  background:rgba(253,253,255,.92);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(33,64,154,.08);
+}
+.tabnav{
+  max-width:1280px;margin:0 auto;padding:0 40px;
+  display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;
+}
+.tabnav::-webkit-scrollbar{display:none}
+.tab{
+  font-family:var(--fd);background:transparent;border:none;
+  padding:15px 20px;font-size:14px;font-weight:500;color:var(--ig);
+  cursor:pointer;position:relative;transition:color .2s ease;
+  white-space:nowrap;letter-spacing:-.005em;
+}
+.tab .tn{font-family:var(--fm);font-size:11px;color:var(--ig3);margin-right:8px;font-weight:500}
+.tab:hover{color:var(--in)}
+.tab.active{color:var(--ib);font-weight:600}
+.tab.active .tn{color:var(--io)}
+.tab.active::after{
+  content:"";position:absolute;bottom:-1px;left:16px;right:16px;
+  height:2px;background:var(--ib);border-radius:2px 2px 0 0;
+}
+/* ── content ── */
+.content{max-width:1280px;margin:0 auto;padding:52px 40px 96px}
+.panel{display:none;animation:fi .35s ease}
+.panel.active{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* ── section headings ── */
+.sec-eyebrow{
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--ib);margin-bottom:10px;
+}
+.sec-title{
+  font-family:var(--fd);font-size:34px;font-weight:300;letter-spacing:-.025em;
+  line-height:1.1;color:var(--in);margin-bottom:12px;
+}
+.sec-title strong{font-weight:700;color:var(--ib)}
+.sec-intro{
+  font-size:16px;color:var(--ig);max-width:740px;margin-bottom:38px;line-height:1.6;
+}
+h3.blk{
+  font-family:var(--fd);font-size:21px;font-weight:600;letter-spacing:-.015em;
+  color:var(--in);margin:42px 0 8px;
+}
+/* ── cards ── */
+.card{
+  background:white;border:1px solid rgba(33,64,154,.08);border-radius:var(--r3);
+  padding:26px;box-shadow:var(--s1);transition:all .25s ease;
+}
+.card:hover{border-color:rgba(33,64,154,.16);box-shadow:var(--s2)}
+.cgrid{display:grid;gap:16px;margin:18px 0}
+.cgrid.c2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.cgrid.c3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+/* ── tiles ── */
+.tile{
+  background:white;border:1px solid rgba(33,64,154,.08);
+  border-radius:var(--r2);padding:20px;transition:all .2s ease;
+  position:relative;overflow:hidden;
+}
+.tile::before{
+  content:"";position:absolute;top:0;left:0;width:4px;height:0;
+  background:var(--ib);transition:height .25s ease;
+}
+.tile:hover{border-color:rgba(33,64,154,.2);box-shadow:var(--s2);transform:translateY(-2px)}
+.tile:hover::before{height:100%}
+.tile.accent::before{background:var(--io);height:100%}
+.tile.ok::before{background:var(--ip);height:100%}
+.tile.warn::before{background:#FBC02D;height:100%}
+.tile.alert::before{background:var(--ineg);height:100%}
+.tile.muted::before{background:var(--ig3);height:100%}
+.tkicker{
+  font-family:var(--fm);font-size:11px;color:var(--ib);font-weight:600;
+  letter-spacing:.04em;margin-bottom:5px;text-transform:uppercase;
+}
+.tile.accent .tkicker{color:var(--io)}
+.ttitle{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--in);margin-bottom:5px;line-height:1.3}
+.tbody{font-size:14px;color:var(--ig);line-height:1.55}
+.tmeta{
+  margin-top:11px;padding-top:11px;border-top:1px solid rgba(33,64,154,.08);
+  display:flex;flex-wrap:wrap;gap:4px 10px;
+  font-size:12px;color:var(--ig2);font-family:var(--fm);
+}
+.tmeta strong{color:var(--in);font-weight:600}
+/* ── callouts ── */
+.callout{
+  border-left:3px solid var(--io);background:#FFF7EE;
+  padding:15px 20px;border-radius:0 var(--r2) var(--r2) 0;
+  margin:18px 0;font-size:15px;color:var(--in);line-height:1.6;
+}
+.callout strong{color:var(--io)}
+.callout.info{border-left-color:var(--ib);background:var(--ibg)}
+.callout.info strong{color:var(--ib)}
+.callout.ok{border-left-color:var(--ip);background:#EEFBF1}
+.callout.ok strong{color:#1F7A35}
+.callout.alert{border-left-color:var(--ineg);background:#FEF0F0}
+.callout.alert strong{color:#C42626}
+/* ── code ── */
+pre{
+  background:var(--in);color:#E8EBF4;padding:16px 20px;
+  border-radius:var(--r2);font-family:var(--fm);font-size:13px;
+  line-height:1.65;overflow-x:auto;margin:13px 0;
+  border:1px solid rgba(33,64,154,.2);
+}
+code:not(pre code){
+  font-family:var(--fm);font-size:.92em;background:var(--ibg);
+  color:var(--ib);padding:2px 6px;border-radius:4px;font-weight:500;
+}
+/* ── tables ── */
+.twrap{
+  background:white;border:1px solid rgba(33,64,154,.08);
+  border-radius:var(--r2);overflow:hidden;margin:18px 0;box-shadow:var(--s1);
+}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead{background:var(--ibg);color:var(--ib)}
+th{
+  text-align:left;padding:12px 18px;font-weight:600;font-size:12px;
+  text-transform:uppercase;letter-spacing:.06em;
+  border-bottom:1px solid rgba(33,64,154,.12);
+}
+td{
+  padding:12px 18px;border-bottom:1px solid rgba(33,64,154,.06);
+  color:var(--in);vertical-align:top;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:rgba(240,244,255,.5)}
+td code,td .mono{font-family:var(--fm);font-size:12.5px}
+/* ── badges & chips ── */
+.bdg{
+  display:inline-block;padding:3px 10px;border-radius:999px;
+  font-size:11px;font-weight:600;font-family:var(--fm);
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.bdg.critical{background:#FEF0F0;color:#C42626}
+.bdg.high{background:#FFF7EE;color:#B86200}
+.bdg.medium{background:#FFFBE6;color:#856A00}
+.bdg.low{background:#EEFBF1;color:#1F7A35}
+.bdg.info{background:#F0F4FF;color:#21409A}
+.chip{
+  display:inline-block;padding:2px 7px;border-radius:var(--r1);
+  font-size:11px;font-weight:600;font-family:var(--fm);margin:2px;
+}
+/* ── VPC layout ── */
+.vpc-card{
+  background:white;border:1.5px solid rgba(33,64,154,.14);
+  border-radius:var(--r3);padding:20px;margin-bottom:26px;box-shadow:var(--s1);
+}
+.vpc-header{
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;
+}
+.vpc-name{font-size:15px;font-weight:700;color:var(--ib)}
+.az-col{flex:1;min-width:210px}
+.az-label{
+  font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--ib);margin-bottom:7px;
+  font-family:var(--fm);
+}
+.sub-tile{
+  border:1px solid #ddd;border-radius:var(--r1);
+  padding:9px 11px;margin-bottom:7px;font-size:13px;
+}
+.sub-tile.pub{border-color:#64E386;background:#EEFBF1}
+.sub-tile.priv{border-color:#FF860D;background:#FFF7EE}
+.sub-tile.iso{border-color:#F04B4B;background:#FEF0F0}
+.sub-tile.unk{border-color:#B8BCCC;background:#F8F9FA}
+.sub-name{font-weight:600;color:var(--in);font-size:13px;margin-bottom:2px}
+.sub-cidr{font-family:var(--fm);font-size:11px;color:var(--ig2);margin-bottom:5px}
+.sub-res{display:flex;flex-wrap:wrap;gap:2px}
+/* ── footer ── */
+.foot{margin-top:80px;padding:52px 40px 32px;background:var(--in);color:#C0C7E0}
+.foot-inner{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;
+}
+.foot h5{
+  font-family:var(--fd);font-size:13px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.08em;color:white;margin-bottom:13px;
+}
+.foot p,.foot a{font-size:14px;color:#A0A7CA;text-decoration:none;line-height:1.7}
+.foot a:hover{color:var(--io)}
+.foot-bottom{
+  max-width:1280px;margin:40px auto 0;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;font-size:12px;color:#7B83A8;
+}
+/* ── responsive ── */
+@media(max-width:900px){
+  .hero{padding:52px 24px 36px}
+  .topbar-inner,.content,.tabnav{padding-left:24px;padding-right:24px}
+  .foot{padding:40px 24px 28px}
+  .foot-inner{grid-template-columns:1fr;gap:28px}
+  .foot-bottom{flex-direction:column;gap:8px}
+  .topbar-meta{display:none}
+  .sec-title{font-size:26px}
+  .card,.vpc-card{padding:16px}
+  .hero-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+}"""
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Static fragments
+# ─────────────────────────────────────────────────────────────────────────────
+
+_LOGO_SVG = (
+    '<svg class="brand-iso" viewBox="0 0 100 100" aria-hidden="true">'
+    '<defs><clipPath id="iso-clip"><circle cx="50" cy="50" r="42"/></clipPath></defs>'
+    '<circle cx="50" cy="50" r="42" fill="#FF860D"/>'
+    '<g clip-path="url(#iso-clip)" transform="rotate(-22 50 50)">'
+    '<rect x="-5" y="22" width="120" height="3.5" fill="#21409A"/>'
+    '<rect x="-5" y="37" width="120" height="3.5" fill="#21409A"/>'
+    '<rect x="-5" y="52" width="120" height="3.5" fill="#21409A"/>'
+    '<rect x="-5" y="67" width="120" height="3.5" fill="#21409A"/>'
+    '<rect x="-5" y="82" width="120" height="3.5" fill="#21409A"/>'
+    '</g></svg>'
+)
+
+_BG_DECOR = (
+    '<div class="bg-decor" aria-hidden="true">'
+    '<svg class="cv1" viewBox="0 0 900 900">'
+    '<circle cx="450" cy="450" r="380" fill="none" stroke="#21409A" stroke-width="1" opacity="0.14"/>'
+    '</svg>'
+    '<svg class="cv2" viewBox="0 0 700 700">'
+    '<circle cx="350" cy="350" r="300" fill="none" stroke="#FF860D" stroke-width="1" opacity="0.16"/>'
+    '</svg>'
+    '<svg class="dots" viewBox="0 0 160 160">'
+    '<g fill="#21409A" opacity="0.28">'
+    + "".join(
+        f'<circle cx="{x}" cy="{y}" r="1.5"/>'
+        for y in range(10, 161, 30)
+        for x in range(10, 161, 30)
+    )
+    + '</g></svg></div>'
+)
+
+_TAB_JS = """\
+<script>
+function showTab(n,btn){
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
+  var p=document.getElementById('p'+n);if(p){p.classList.add('active')}
+  if(btn){btn.classList.add('active')}
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var f=document.querySelector('.tab');if(f){f.click()}
+});
+</script>"""
 
 
-# ── HTML skeleton ─────────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# Core page template
+# ─────────────────────────────────────────────────────────────────────────────
 
-def _html_page(title: str, body: str, extra_css: str = "") -> str:
+def _html_page(
+    title: str,
+    body: str,
+    extra_css: str = "",
+    account_name: str = "",
+    hero_stats: list[dict] | None = None,
+    hero_title: str = "",
+    hero_sub: str = "",
+    hero_eyebrow: str = "",
+    tabs: list[str] | None = None,
+) -> str:
+    """Return a complete Intelica-branded HTML document."""
+    now = datetime.now(timezone.utc)
+    generated_at = now.strftime("%B %d, %Y")
+    year = now.year
+
+    # ── hero stats grid ──
+    stats_html = ""
+    if hero_stats:
+        stats_html = '<div class="hero-grid">'
+        for s in hero_stats:
+            mod_cls = f" st-{s['mod']}" if s.get("mod") else ""
+            small   = f'<small>{s["small"]}</small>' if s.get("small") else ""
+            stats_html += (
+                f'<div class="hero-stat{mod_cls}">'
+                f'<div class="hs-label">{s["label"]}</div>'
+                f'<div class="hs-value">{s["value"]}{small}</div>'
+                f'</div>'
+            )
+        stats_html += "</div>"
+
+    # ── tab nav ──
+    tabnav_html = ""
+    if tabs:
+        tabnav_html = '<div class="tabnav-wrap"><nav class="tabnav" role="tablist">'
+        for i, lbl in enumerate(tabs):
+            num = str(i + 1).zfill(2)
+            tabnav_html += (
+                f'<button class="tab" role="tab" onclick="showTab({i+1},this)">'
+                f'<span class="tn">{num}</span>{lbl}</button>'
+            )
+        tabnav_html += "</nav></div>"
+
+    ey = hero_eyebrow or f"AWS Infrastructure · {generated_at}"
+    ht = hero_title or (f"<strong>{account_name}</strong>" if account_name else title)
+    hs = hero_sub or "Infrastructure report generated by Jericho Extractor."
+    brand_sub = f" · {account_name}" if account_name else ""
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    *{{box-sizing:border-box;margin:0;padding:0}}
-    body{{background:#0D1117;color:#E6EDF3;font-family:'Segoe UI',Arial,sans-serif;padding:20px}}
-    h1{{font-size:1.4rem;margin-bottom:16px;color:#58A6FF}}
-    h2{{font-size:1.1rem;margin:24px 0 10px;color:#79C0FF}}
-    .badge{{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.75rem;font-weight:600;color:#fff}}
-    .critical{{background:#D32F2F}} .high{{background:#F57C00}}
-    .medium{{background:#FBC02D;color:#000}} .low{{background:#388E3C}}
-    .info{{background:#1565C0}}
-    table{{width:100%;border-collapse:collapse;font-size:.82rem;margin-bottom:24px}}
-    th{{background:#161B22;color:#79C0FF;padding:8px 10px;text-align:left;border-bottom:1px solid #30363D}}
-    td{{padding:7px 10px;border-bottom:1px solid #21262D;vertical-align:top}}
-    tr:hover td{{background:#161B22}}
-    .tag{{display:inline-block;background:#21262D;color:#8B949E;padding:1px 6px;border-radius:3px;
-          font-size:.7rem;margin:1px}}
-    {extra_css}
+{_ITL_CSS}
+{extra_css}
   </style>
 </head>
 <body>
-<h1>{title}</h1>
+{_BG_DECOR}
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#" class="brand">
+      {_LOGO_SVG}
+      <div class="brand-name">intelica<span>{brand_sub}</span></div>
+    </a>
+    <div class="topbar-meta">
+      <span>AWS Infrastructure Report</span>
+      <span class="pill">Jericho Extractor</span>
+    </div>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-eyebrow">{ey}</div>
+  <h1>{ht}</h1>
+  <p class="hero-sub">{hs}</p>
+  {stats_html}
+</section>
+{tabnav_html}
+<div class="content">
 {body}
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <h5>Jericho Extractor</h5>
+      <p>AWS infrastructure inventory and topology platform.<br/>
+         Automated discovery of VPCs, EC2, EKS, Lambda, RDS,<br/>
+         IAM, KMS, Secrets Manager and S3 resources.</p>
+    </div>
+    <div>
+      <h5>Report</h5>
+      <p>{account_name or "AWS Account"}<br/>Generated {generated_at}</p>
+    </div>
+    <div>
+      <h5>Platform</h5>
+      <p>Intelica<br/>Cloud Infrastructure</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; {year} Intelica &middot; Confidential</span>
+    <span>Generated by Jericho Extractor &middot; {generated_at}</span>
+  </div>
+</footer>
+{_TAB_JS}
 </body>
 </html>"""
 
 
-# ── Security report ───────────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# Shared helpers
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _short(resource: dict, max_len: int = 26) -> str:
+    name = (
+        resource.get("tags", {}).get("Name")
+        or resource.get("resource_name")
+        or resource.get("resource_id", "")
+    )
+    return name if len(name) <= max_len else name[: max_len - 1] + "…"
+
+
+def _risk_badge(risk: str) -> str:
+    r = str(risk).lower()
+    return f'<span class="bdg {r}">{r.upper()}</span>'
+
+
+def _chip(label: str, bg: str, text: str) -> str:
+    return (
+        f'<span class="chip" style="background:{bg};color:{text}">'
+        f'{label}</span>'
+    )
+
+
+def _resource_chip(type_key: str, name: str = "", max_len: int = 15) -> str:
+    meta = RESOURCE_META.get(type_key, {"bg": "#F0F4FF", "text": "#21409A", "label": type_key.upper()})
+    lbl  = meta["label"]
+    if name:
+        s = name if len(name) <= max_len else name[: max_len - 1] + "…"
+        lbl = f"{lbl} {s}"
+    return _chip(lbl, meta["bg"], meta["text"])
+
+
+def _callout(text: str, kind: str = "") -> str:
+    cls = f" {kind}" if kind else ""
+    return f'<div class="callout{cls}">{text}</div>'
+
+
+def _rules_summary(rules: list[dict]) -> str:
+    lines = []
+    for r in rules[:6]:
+        proto    = r.get("protocol", "-1")
+        fp       = r.get("from_port")
+        tp       = r.get("to_port")
+        cidrs    = ", ".join((r.get("cidrs") or [])[:2])
+        tags     = r.get("risk_tags", [])
+        risk     = str(r.get("risk_level", "info"))
+        meta     = RISK_META.get(risk, RISK_META["info"])
+        port_str = (
+            f"{fp}–{tp}"
+            if fp is not None and fp != tp
+            else (str(fp) if fp is not None else "all")
+        )
+        tag_html = " ".join(
+            f'<span class="chip" style="background:{meta["bg"]};color:{meta["text"]};'
+            f'font-size:10px;padding:1px 5px">{t}</span>'
+            for t in tags
+        )
+        lines.append(
+            f'<span style="font-family:var(--fm);font-size:12px">{proto}/{port_str}</span>'
+            f'<span style="color:var(--ig2);font-size:11px;margin-left:4px">{cidrs}</span>'
+            f" {tag_html}"
+        )
+    if len(rules) > 6:
+        lines.append(
+            f'<span style="color:var(--ig2);font-size:11px">+{len(rules)-6} more</span>'
+        )
+    return "<br>".join(lines) or "—"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Security report
+# ─────────────────────────────────────────────────────────────────────────────
 
 def render_security_report(
     sg_analyses: list[dict[str, Any]],
@@ -85,80 +594,131 @@ def render_security_report(
     risk_order = ["critical", "high", "medium", "low", "info"]
     sorted_sgs = sorted(
         sg_analyses,
-        key=lambda a: (risk_order.index(str(a.get("overall_risk", "info"))) if str(a.get("overall_risk", "info")) in risk_order else 99,
-                       -a.get("attached_count", 0)),
+        key=lambda a: (
+            risk_order.index(str(a.get("overall_risk", "info")))
+            if str(a.get("overall_risk", "info")) in risk_order
+            else 99,
+            -a.get("attached_count", 0),
+        ),
     )
 
-    # Summary cards
-    counts = {r: sum(1 for a in sg_analyses if str(a.get("overall_risk")) == r) for r in risk_order}
-    cards_html = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">'
-    for risk in risk_order:
-        color = RISK_COLORS.get(risk, "#546E7A")
-        cards_html += (
-            f'<div style="background:{color}22;border:1px solid {color};border-radius:8px;'
-            f'padding:12px 20px;min-width:110px;text-align:center">'
-            f'<div style="font-size:1.8rem;font-weight:700;color:{color}">{counts[risk]}</div>'
-            f'<div style="font-size:.8rem;color:#8B949E;text-transform:uppercase">{risk}</div>'
-            f'</div>'
-        )
-    cards_html += "</div>"
+    counts = {
+        r: sum(1 for a in sg_analyses if str(a.get("overall_risk")) == r)
+        for r in risk_order
+    }
+    total = len(sg_analyses)
 
-    # SG table
+    # ── hero stats ──
+    hero_stats = [
+        {"label": "Critical", "value": counts["critical"],
+         "mod": "alert" if counts["critical"] > 0 else ""},
+        {"label": "High",     "value": counts["high"],
+         "mod": "warn" if counts["high"] > 0 else ""},
+        {"label": "Medium",   "value": counts["medium"]},
+        {"label": "Low",      "value": counts["low"],  "mod": "ok"},
+        {"label": "Info",     "value": counts["info"],  "mod": "ok"},
+        {"label": "Total SGs", "value": total},
+    ]
+
+    # ── critical callout ──
+    crit_sgs = [sg for sg in sorted_sgs if str(sg.get("overall_risk")) == "critical"]
+    alert_html = ""
+    if crit_sgs:
+        names = ", ".join(
+            f'<code>{sg.get("security_group_id", "")}</code>' for sg in crit_sgs[:5]
+        )
+        extra = f" and {len(crit_sgs)-5} more" if len(crit_sgs) > 5 else ""
+        alert_html = _callout(
+            f"<strong>{len(crit_sgs)} critical security group(s)</strong> with open "
+            f"internet exposure detected: {names}{extra}.",
+            "alert",
+        )
+
+    # ── high-risk callout ──
+    high_sgs = [sg for sg in sorted_sgs if str(sg.get("overall_risk")) == "high"]
+    warn_html = ""
+    if high_sgs:
+        names = ", ".join(
+            f'<code>{sg.get("security_group_id", "")}</code>' for sg in high_sgs[:3]
+        )
+        extra = f" and {len(high_sgs)-3} more" if len(high_sgs) > 3 else ""
+        warn_html = _callout(
+            f"<strong>{len(high_sgs)} high-risk security group(s)</strong> require "
+            f"attention: {names}{extra}.",
+            "",  # orange left-border (default callout)
+        )
+
+    # ── SG table ──
     rows = ""
     for sg in sorted_sgs:
-        risk     = str(sg.get("overall_risk", "info"))
-        color    = RISK_COLORS.get(risk, "#546E7A")
-        flags    = sg.get("exposure_flags", [])
-        flags_html = "".join(f'<span class="tag" style="background:{color}33;color:{color}">{f}</span>' for f in flags)
-        attached = "<br>".join(sg.get("attached_resources", [])[:5])
-        if sg.get("attached_count", 0) > 5:
-            attached += f'<br><span style="color:#8B949E">+{sg["attached_count"]-5} more</span>'
+        risk  = str(sg.get("overall_risk", "info"))
+        flags = sg.get("exposure_flags", [])
+        meta  = RISK_META.get(risk, RISK_META["info"])
+        flags_html = "".join(
+            f'<span class="chip" style="background:{meta["bg"]};color:{meta["text"]}">{f}</span>'
+            for f in flags
+        )
+        attached = "<br>".join(sg.get("attached_resources", [])[:4])
+        if sg.get("attached_count", 0) > 4:
+            attached += (
+                f'<br><span style="color:var(--ig2);font-size:11px">'
+                f'+{sg["attached_count"]-4} more</span>'
+            )
+        rows += (
+            f"<tr>"
+            f"<td><code>{sg.get('security_group_id','')}</code><br>"
+            f'<span style="color:var(--ig2);font-size:12px">{sg.get("security_group_name","")}</span></td>'
+            f"<td>{_risk_badge(risk)}</td>"
+            f"<td>{flags_html or '<span style=\"color:var(--ig3)\">—</span>'}</td>"
+            f'<td style="font-size:12px;color:var(--ig)">{attached or "—"}</td>'
+            f"<td>{_rules_summary(sg.get('inbound_analysis', []))}</td>"
+            f"<td>{_rules_summary(sg.get('outbound_analysis', []))}</td>"
+            f"</tr>"
+        )
 
-        inbound_summary = _rules_summary(sg.get("inbound_analysis", []))
-        outbound_summary = _rules_summary(sg.get("outbound_analysis", []))
+    table_html = (
+        '<div class="twrap"><table>'
+        "<thead><tr>"
+        "<th>Security Group</th><th>Risk</th><th>Exposure Flags</th>"
+        "<th>Attached Resources</th><th>Inbound</th><th>Outbound</th>"
+        "</tr></thead>"
+        f"<tbody>{rows}</tbody>"
+        "</table></div>"
+    )
 
-        rows += f"""<tr>
-          <td><code style="color:#58A6FF">{sg.get('security_group_id','')}</code><br>
-              <span style="color:#8B949E;font-size:.75rem">{sg.get('security_group_name','')}</span></td>
-          <td><span class="badge {risk}">{risk.upper()}</span></td>
-          <td>{flags_html}</td>
-          <td style="font-size:.75rem;color:#8B949E">{attached or '—'}</td>
-          <td style="font-size:.75rem">{inbound_summary}</td>
-          <td style="font-size:.75rem">{outbound_summary}</td>
-        </tr>"""
+    body = (
+        '<div class="sec-eyebrow">Security Analysis</div>'
+        f'<div class="sec-title">Security Groups &mdash; <strong>{total} reviewed</strong></div>'
+        f'<div class="sec-intro">Risk assessment of all security groups in '
+        f'<strong>{account_name}</strong>, ranked by exposure level.</div>'
+        + alert_html
+        + warn_html
+        + f'<h3 class="blk">All Security Groups ({total})</h3>'
+        + table_html
+    )
 
-    table = f"""<table>
-      <thead><tr>
-        <th>Security Group</th><th>Risk</th><th>Exposure Flags</th>
-        <th>Attached Resources</th><th>Inbound</th><th>Outbound</th>
-      </tr></thead>
-      <tbody>{rows}</tbody>
-    </table>"""
-
-    body = cards_html + f"<h2>Security Groups ({len(sg_analyses)})</h2>" + table
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(_html_page(f"Security Report — {account_name}", body), encoding="utf-8")
+    output_path.write_text(
+        _html_page(
+            title=f"Security Report — {account_name}",
+            body=body,
+            account_name=account_name,
+            hero_stats=hero_stats,
+            hero_title=f"Security Posture &middot; <strong>{account_name}</strong>",
+            hero_sub=(
+                f"Risk assessment of {total} security groups. "
+                f"{counts['critical']} critical &middot; {counts['high']} high "
+                f"&middot; {counts['medium']} medium."
+            ),
+            hero_eyebrow=f"Security Analysis &middot; {account_name}",
+        ),
+        encoding="utf-8",
+    )
 
 
-def _rules_summary(rules: list[dict]) -> str:
-    lines = []
-    for r in rules[:6]:
-        proto = r.get("protocol", "-1")
-        fp    = r.get("from_port")
-        tp    = r.get("to_port")
-        cidrs = ", ".join((r.get("cidrs") or [])[:2])
-        tags  = r.get("risk_tags", [])
-        risk  = str(r.get("risk_level", "info"))
-        color = RISK_COLORS.get(risk, "#546E7A")
-        port_str = f"{fp}–{tp}" if fp is not None and fp != tp else (str(fp) if fp is not None else "all")
-        tag_str  = " ".join(f'<span style="color:{color};font-size:.65rem">{t}</span>' for t in tags)
-        lines.append(f"{proto}/{port_str} {cidrs} {tag_str}")
-    if len(rules) > 6:
-        lines.append(f'<span style="color:#8B949E">+{len(rules)-6} more</span>')
-    return "<br>".join(lines) or "—"
-
-
-# ── VPC topology report ───────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# VPC topology report
+# ─────────────────────────────────────────────────────────────────────────────
 
 def render_vpc_report(
     inventory: dict[str, list[dict[str, Any]]],
@@ -173,123 +733,210 @@ def render_vpc_report(
     igws    = inventory.get("internet_gateways", [])
     eps     = inventory.get("vpc_endpoints", [])
     eks_res = inventory.get("eks", [])
+    lambdas = inventory.get("lambdas", [])
+    rds_res = inventory.get("rds", [])
 
-    # Indexes
-    subs_by_vpc: dict[str, list[dict]] = {}
+    # ── indexes ──
+    subs_by_vpc: dict[str, list] = {}
     for s in subnets:
         subs_by_vpc.setdefault(s.get("vpc_id", ""), []).append(s)
 
-    ec2_by_sub: dict[str, list[dict]] = {}
+    ec2_by_sub: dict[str, list] = {}
     for i in ec2:
         ec2_by_sub.setdefault(i.get("subnet_id", ""), []).append(i)
 
-    lb_by_sub: dict[str, list[dict]] = {}
+    lb_by_sub: dict[str, list] = {}
     for lb in lbs:
         for az in lb.get("availability_zones", []):
             lb_by_sub.setdefault(az.get("SubnetId", ""), []).append(lb)
 
-    nat_by_sub: dict[str, list[dict]] = {}
+    nat_by_sub: dict[str, list] = {}
     for nat in nats:
         nat_by_sub.setdefault(nat.get("subnet_id", ""), []).append(nat)
 
-    ep_by_sub: dict[str, list[dict]] = {}
+    ep_by_sub: dict[str, list] = {}
     for ep in eps:
         for sid in ep.get("associated_subnet_ids", []):
             ep_by_sub.setdefault(sid, []).append(ep)
 
-    igw_by_vpc: dict[str, list[dict]] = {}
+    igw_by_vpc: dict[str, list] = {}
     for igw in igws:
         for vid in igw.get("attached_vpc_ids", []):
             igw_by_vpc.setdefault(vid, []).append(igw)
 
-    eks_by_vpc: dict[str, list[dict]] = {}
+    eks_by_vpc: dict[str, list] = {}
     for cl in eks_res:
         if cl.get("resource_type") == "aws::eks::cluster":
             eks_by_vpc.setdefault(cl.get("vpc_id", ""), []).append(cl)
 
-    body = ""
+    lambda_by_sub: dict[str, list] = {}
+    for fn in lambdas:
+        for sid in fn.get("subnet_ids", []):
+            lambda_by_sub.setdefault(sid, []).append(fn)
+
+    rds_by_sub: dict[str, list] = {}
+    for db in rds_res:
+        for sid in db.get("subnet_ids", []):
+            rds_by_sub.setdefault(sid, []).append(db)
+
+    # ── hero stats ──
+    pub_count  = sum(1 for s in subnets if s.get("subnet_type") == "public")
+    priv_count = sum(1 for s in subnets if s.get("subnet_type") == "private")
+    iso_count  = sum(1 for s in subnets if s.get("subnet_type") == "isolated")
+
+    hero_stats = [
+        {"label": "VPCs",            "value": len(vpcs)},
+        {"label": "Subnets",         "value": len(subnets)},
+        {"label": "Public Subnets",  "value": pub_count,
+         "mod": "alert" if pub_count > 0 else ""},
+        {"label": "Private Subnets", "value": priv_count, "mod": "ok"},
+        {"label": "EC2 Instances",   "value": len(ec2)},
+        {"label": "Load Balancers",  "value": len(lbs)},
+        {"label": "NAT Gateways",    "value": len(nats)},
+        {"label": "VPC Endpoints",   "value": len(eps)},
+    ]
+
+    # ── VPC summary table ──
+    sum_rows = "".join(
+        f"<tr>"
+        f"<td>{_short(v, 42)}</td>"
+        f"<td><code>{v['resource_id']}</code></td>"
+        f"<td><code>{v.get('cidr_block','')}</code></td>"
+        f"<td>{len(subs_by_vpc.get(v['resource_id'],[]))}</td>"
+        f"<td>{sum(len(ec2_by_sub.get(s['resource_id'],[]))for s in subs_by_vpc.get(v['resource_id'],[]))}</td>"
+        f"<td>{'<span class=\"bdg info\">Yes</span>' if igw_by_vpc.get(v['resource_id']) else '—'}</td>"
+        f"<td>{'<span class=\"bdg low\">Yes</span>' if eks_by_vpc.get(v['resource_id']) else '—'}</td>"
+        f"</tr>"
+        for v in vpcs
+    )
+    summary_table = (
+        '<div class="twrap"><table>'
+        "<thead><tr>"
+        "<th>Name</th><th>VPC ID</th><th>CIDR</th>"
+        "<th>Subnets</th><th>EC2</th><th>IGW</th><th>EKS</th>"
+        "</tr></thead>"
+        f"<tbody>{sum_rows or '<tr><td colspan=\"7\" style=\"color:var(--ig2)\">No VPCs found</td></tr>'}</tbody>"
+        "</table></div>"
+    )
+
+    # ── per-VPC topology cards ──
+    type_order = {"public": 0, "private": 1, "isolated": 2, "unknown": 3}
+    vpc_html = ""
+
     for vpc in vpcs:
         vid      = vpc["resource_id"]
-        vname    = _short(vpc, 40)
+        vname    = _short(vpc, 52)
         vcidr    = vpc.get("cidr_block", "")
         vpc_subs = subs_by_vpc.get(vid, [])
         n_igws   = len(igw_by_vpc.get(vid, []))
         n_eks    = len(eks_by_vpc.get(vid, []))
 
-        # AZ grouping
-        az_map: dict[str, list[dict]] = {}
+        hdr_extra = (
+            f'<code style="font-family:var(--fm);font-size:12px;color:var(--ig2)">{vid}</code>'
+            f'<code style="font-family:var(--fm);font-size:12px;color:var(--ib);margin-left:4px">{vcidr}</code>'
+        )
+        if n_igws:
+            hdr_extra += _chip("Internet Gateway", "#F0F4FF", "#21409A")
+        if n_eks:
+            hdr_extra += _chip(f"EKS ({n_eks})", "#D8F3DE", "#1F7A35")
+
+        # Group subnets by AZ
+        az_map: dict[str, list] = {}
         for s in vpc_subs:
             az_map.setdefault(s.get("availability_zone", "?"), []).append(s)
 
-        body += f"""
-<div style="border:2px solid #1565C0;border-radius:10px;padding:16px;margin-bottom:28px;background:#0D1B2A">
-  <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
-    <span style="font-size:1rem;font-weight:700;color:#58A6FF">{vname}</span>
-    <code style="color:#8B949E;font-size:.8rem">{vid}</code>
-    <span style="color:#79C0FF;font-size:.85rem">{vcidr}</span>
-    {"<span class='badge' style='background:#6A1B9A'>IGW</span>" * n_igws}
-    {"<span class='badge' style='background:#F57F17'>EKS</span>" * n_eks}
-  </div>
-  <div style="display:flex;gap:12px;flex-wrap:wrap">"""
-
-        type_order = {"public": 0, "private": 1, "isolated": 2, "unknown": 3}
+        az_cols = ""
         for az_name in sorted(az_map.keys()):
-            az_subs = sorted(az_map[az_name], key=lambda s: type_order.get(s.get("subnet_type", "unknown"), 3))
-            body += f'<div style="flex:1;min-width:220px"><div style="color:#79C0FF;font-size:.75rem;margin-bottom:6px">AZ: {az_name}</div>'
+            az_subs = sorted(
+                az_map[az_name],
+                key=lambda s: type_order.get(s.get("subnet_type", "unknown"), 3),
+            )
+            tiles = ""
             for sub in az_subs:
-                sid    = sub["resource_id"]
-                stype  = sub.get("subnet_type", "unknown")
-                sname  = _short(sub, 28)
-                scidr  = sub.get("cidr_block", "")
-                sfill, sstroke = SUBNET_COLORS.get(stype, SUBNET_COLORS["unknown"])
+                sid   = sub["resource_id"]
+                stype = sub.get("subnet_type", "unknown")
+                sname = _short(sub, 32)
+                scidr = sub.get("cidr_block", "")
+                scls  = SUBNET_META.get(stype, SUBNET_META["unknown"])["cls"]
 
-                resources_html = _subnet_resources(
-                    sid, ec2_by_sub, lb_by_sub, nat_by_sub, ep_by_sub
+                chips = []
+                for inst in ec2_by_sub.get(sid, []):
+                    chips.append(_resource_chip("ec2", _short(inst, 14)))
+                for lb in lb_by_sub.get(sid, []):
+                    lb_type = "alb" if lb.get("type") == "application" else "nlb"
+                    chips.append(_resource_chip(lb_type, _short(lb, 14)))
+                for _ in nat_by_sub.get(sid, []):
+                    chips.append(_resource_chip("nat"))
+                for ep in ep_by_sub.get(sid, []):
+                    svc = ep.get("service_name", "").split(".")[-1]
+                    chips.append(_resource_chip("vpce", svc[:12]))
+                for fn in lambda_by_sub.get(sid, []):
+                    chips.append(_resource_chip("lambda", _short(fn, 12)))
+                for db in rds_by_sub.get(sid, []):
+                    chips.append(_resource_chip("rds", _short(db, 12)))
+
+                res_html = (
+                    "".join(chips)
+                    or '<span style="color:var(--ig3);font-size:11px">empty</span>'
                 )
+                tiles += (
+                    f'<div class="sub-tile {scls}">'
+                    f'<div class="sub-name">{sname}</div>'
+                    f'<div class="sub-cidr">{scidr} &middot; {stype}</div>'
+                    f'<div class="sub-res">{res_html}</div>'
+                    f"</div>"
+                )
+            az_cols += (
+                f'<div class="az-col">'
+                f'<div class="az-label">{az_name}</div>'
+                f"{tiles}</div>"
+            )
 
-                body += f"""
-  <div style="border:1px solid {sstroke};border-radius:6px;background:{sfill}CC;padding:8px;margin-bottom:8px">
-    <div style="font-weight:600;font-size:.78rem;color:#333;margin-bottom:4px">{sname}</div>
-    <div style="font-size:.72rem;color:#555;margin-bottom:6px">{scidr} · <em>{stype}</em></div>
-    {resources_html}
-  </div>"""
-            body += "</div>"
+        vpc_html += (
+            f'<div class="vpc-card">'
+            f'<div class="vpc-header">'
+            f'<span class="vpc-name">{vname}</span>'
+            f"{hdr_extra}"
+            f"</div>"
+            f'<div style="display:flex;gap:14px;flex-wrap:wrap">{az_cols}</div>'
+            f"</div>"
+        )
 
-        body += "</div></div>"
-
-    # Summary table
-    summary_rows = "".join(
-        f"<tr><td>{_short(v,40)}</td><td><code>{v['resource_id']}</code></td>"
-        f"<td>{v.get('cidr_block','')}</td>"
-        f"<td>{len(subs_by_vpc.get(v['resource_id'],[]))}</td>"
-        f"<td>{sum(len(ec2_by_sub.get(s['resource_id'],[]))for s in subs_by_vpc.get(v['resource_id'],[]))}</td>"
-        f"<td>{'✅' if igw_by_vpc.get(v['resource_id']) else '—'}</td></tr>"
-        for v in vpcs
+    body = (
+        '<div class="sec-eyebrow">Network Topology</div>'
+        f'<div class="sec-title">VPC Architecture &middot; <strong>{account_name}</strong></div>'
+        f'<div class="sec-intro">'
+        f"{len(vpcs)} VPC(s) &middot; {len(subnets)} subnets "
+        f"({pub_count} public, {priv_count} private, {iso_count} isolated) &middot; "
+        f"{len(ec2)} EC2 &middot; {len(lbs)} load balancer(s)."
+        f"</div>"
+        + '<h3 class="blk">VPC Summary</h3>'
+        + summary_table
+        + f'<h3 class="blk">Topology Detail</h3>'
+        + vpc_html
     )
-    summary = f"""<h2>VPC Summary</h2>
-    <table><thead><tr>
-      <th>Name</th><th>VPC ID</th><th>CIDR</th><th>Subnets</th><th>EC2</th><th>IGW</th>
-    </tr></thead><tbody>{summary_rows}</tbody></table>"""
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(_html_page(f"VPC Topology — {account_name}", summary + body), encoding="utf-8")
+    output_path.write_text(
+        _html_page(
+            title=f"VPC Topology — {account_name}",
+            body=body,
+            account_name=account_name,
+            hero_stats=hero_stats,
+            hero_title=f"VPC Topology &middot; <strong>{account_name}</strong>",
+            hero_sub=(
+                f"{len(vpcs)} VPC(s) with {len(subnets)} subnets across "
+                f"{len(set(s.get('availability_zone','') for s in subnets))} availability zones."
+            ),
+            hero_eyebrow=f"Network Topology &middot; {account_name}",
+        ),
+        encoding="utf-8",
+    )
 
 
-def _subnet_resources(sid, ec2_by_sub, lb_by_sub, nat_by_sub, ep_by_sub) -> str:
-    items = []
-    for inst in ec2_by_sub.get(sid, []):
-        items.append(f'<span class="tag" style="background:#FF8F0033;color:#FF8F00">EC2 {_short(inst,16)}</span>')
-    for lb in lb_by_sub.get(sid, []):
-        items.append(f'<span class="tag" style="background:#AD145733;color:#AD1457">LB {_short(lb,16)}</span>')
-    for nat in nat_by_sub.get(sid, []):
-        items.append(f'<span class="tag" style="background:#00838F33;color:#00838F">NAT {_short(nat,12)}</span>')
-    for ep in ep_by_sub.get(sid, []):
-        svc = ep.get("service_name", "").split(".")[-1]
-        items.append(f'<span class="tag" style="background:#4527A033;color:#9C77E0">EP {svc[:12]}</span>')
-    return "".join(items) or '<span style="color:#aaa;font-size:.7rem">empty</span>'
-
-
-# ── Graph summary report ──────────────────────────────────────────────────────
+# ─────────────────────────────────────────────────────────────────────────────
+# Graph analysis report
+# ─────────────────────────────────────────────────────────────────────────────
 
 def render_graph_report(
     graph_summary: dict[str, Any],
@@ -298,44 +945,79 @@ def render_graph_report(
     output_path: Path,
     account_name: str = "",
 ) -> None:
-    def stat_card(label: str, value: Any, color: str = "#58A6FF") -> str:
-        return (
-            f'<div style="background:#161B22;border:1px solid #30363D;border-radius:8px;'
-            f'padding:14px 20px;min-width:140px;text-align:center">'
-            f'<div style="font-size:1.6rem;font-weight:700;color:{color}">{value}</div>'
-            f'<div style="font-size:.78rem;color:#8B949E">{label}</div></div>'
-        )
+    n_internet = graph_summary.get("internet_facing_count", 0)
+    n_nodes    = graph_summary.get("node_count", 0)
+    n_edges    = graph_summary.get("edge_count", 0)
+    n_pub      = graph_summary.get("public_subnet_count", 0)
+    n_priv     = graph_summary.get("private_subnet_count", 0)
+    n_comp     = graph_summary.get("connected_components", 0)
 
-    cards = '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">'
-    cards += stat_card("Nodes",             graph_summary.get("node_count", 0))
-    cards += stat_card("Edges",             graph_summary.get("edge_count", 0))
-    cards += stat_card("Internet-Facing",   graph_summary.get("internet_facing_count", 0), "#D32F2F")
-    cards += stat_card("Public Subnets",    graph_summary.get("public_subnet_count", 0),   "#2E7D32")
-    cards += stat_card("Private Subnets",   graph_summary.get("private_subnet_count", 0),  "#F57F17")
-    cards += stat_card("Components",        graph_summary.get("connected_components", 0))
-    cards += "</div>"
+    hero_stats = [
+        {"label": "Total Nodes",     "value": n_nodes},
+        {"label": "Total Edges",     "value": n_edges},
+        {"label": "Internet-Facing", "value": n_internet,
+         "mod": "alert" if n_internet > 0 else ""},
+        {"label": "Public Subnets",  "value": n_pub,
+         "mod": "alert" if n_pub > 0 else ""},
+        {"label": "Private Subnets", "value": n_priv, "mod": "ok"},
+        {"label": "Components",      "value": n_comp},
+    ]
 
-    def resource_table(resources: list[dict], heading: str, color: str) -> str:
+    def _resource_table(resources: list[dict], heading: str) -> str:
         if not resources:
-            return f"<h2>{heading}</h2><p style='color:#8B949E'>None found.</p>"
+            return (
+                f'<h3 class="blk">{heading}</h3>'
+                + _callout("No resources found in this category.", "ok")
+            )
         rows = "".join(
-            f"<tr><td><code>{r.get('resource_id','')}</code></td>"
-            f"<td>{r.get('resource_type','').split('::')[-1]}</td>"
-            f"<td>{r.get('tags',{}).get('Name') or r.get('resource_name','')}</td>"
-            f"<td>{r.get('region','')}</td></tr>"
+            f"<tr>"
+            f"<td><code>{r.get('resource_id','')}</code></td>"
+            f"<td><span class='bdg info'>"
+            f"{r.get('resource_type','').split('::')[-1].upper()}</span></td>"
+            f"<td>{r.get('tags',{}).get('Name') or r.get('resource_name','—')}</td>"
+            f"<td>{r.get('region','—')}</td>"
+            f"</tr>"
             for r in resources[:100]
         )
+        if len(resources) > 100:
+            rows += (
+                f'<tr><td colspan="4" style="color:var(--ig2);font-style:italic">'
+                f"+{len(resources)-100} more resources&hellip;</td></tr>"
+            )
         return (
-            f'<h2 style="color:{color}">{heading} ({len(resources)})</h2>'
-            f'<table><thead><tr><th>ID</th><th>Type</th><th>Name</th><th>Region</th></tr></thead>'
-            f'<tbody>{rows}</tbody></table>'
+            f'<h3 class="blk">{heading} ({len(resources)})</h3>'
+            '<div class="twrap"><table>'
+            "<thead><tr>"
+            "<th>Resource ID</th><th>Type</th><th>Name</th><th>Region</th>"
+            "</tr></thead>"
+            f"<tbody>{rows}</tbody>"
+            "</table></div>"
         )
 
     body = (
-        cards
-        + resource_table(internet_facing, "Internet-Facing Resources", "#D32F2F")
-        + resource_table(nat_dependents,  "Resources Behind NAT",      "#F57C00")
+        '<div class="sec-eyebrow">Graph Analysis</div>'
+        f'<div class="sec-title">Dependency Graph &middot; <strong>{account_name}</strong></div>'
+        f'<div class="sec-intro">'
+        f"Network graph with {n_nodes} nodes and {n_edges} edges. "
+        f"Highlights internet-exposed resources and NAT routing paths."
+        f"</div>"
+        + _resource_table(internet_facing, "Internet-Facing Resources")
+        + _resource_table(nat_dependents,  "Resources Behind NAT")
     )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(_html_page(f"Graph Analysis — {account_name}", body), encoding="utf-8")
+    output_path.write_text(
+        _html_page(
+            title=f"Graph Analysis — {account_name}",
+            body=body,
+            account_name=account_name,
+            hero_stats=hero_stats,
+            hero_title=f"Dependency Graph &middot; <strong>{account_name}</strong>",
+            hero_sub=(
+                f"{n_nodes} nodes &middot; {n_edges} edges &middot; "
+                f"{n_internet} internet-facing &middot; {n_comp} connected component(s)."
+            ),
+            hero_eyebrow=f"Graph Analysis &middot; {account_name}",
+        ),
+        encoding="utf-8",
+    )

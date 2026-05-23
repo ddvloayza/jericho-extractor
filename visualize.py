@@ -84,7 +84,7 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
             from visualization.html_renderer import render_vpc_report
             out = diagrams_dir / "vpc_topology.html"
             render_vpc_report(inventory, out, account_name)
-            logger.info("VPC topology report → %s", out)
+            logger.info("VPC topology report -> %s", out)
         else:
             from visualization.vpc_diagram import VPCDiagram
             VPCDiagram().render(inventory, diagrams_dir / "vpc_topology.png", title="VPC Topology")
@@ -97,7 +97,7 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
             from visualization.html_renderer import render_security_report
             out = diagrams_dir / "security_report.html"
             render_security_report(sg_analysis, out, account_name)
-            logger.info("Security report → %s", out)
+            logger.info("Security report -> %s", out)
         else:
             from visualization.security_visualizer import SecurityVisualizer
             sec = SecurityVisualizer()
@@ -125,7 +125,7 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
                 out,
                 account_name,
             )
-            logger.info("Graph analysis report → %s", out)
+            logger.info("Graph analysis report -> %s", out)
         else:
             from visualization.graph_visualizer import GraphVisualizer
             GraphVisualizer().render(graph, diagrams_dir / "dependency_graph.png")
@@ -147,7 +147,7 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
 
 
 def _render_tgw_html(inventory: dict, output_path: Path, account_name: str) -> None:
-    from visualization.html_renderer import _html_page
+    from visualization.html_renderer import _html_page, _chip
     tgws   = inventory.get("transit_gateways", [])
     atts   = inventory.get("transit_gateway_attachments", [])
     vpcs   = {v["resource_id"]: v for v in inventory.get("vpcs", [])}
@@ -163,26 +163,63 @@ def _render_tgw_html(inventory: dict, output_path: Path, account_name: str) -> N
     rows = ""
     for tgw_id, tgw_atts in att_by_tgw.items():
         for att in tgw_atts:
-            vpc_id  = att.get("resource_id_ref", "")
-            vpc     = vpcs.get(vpc_id, {})
+            vpc_id   = att.get("resource_id_ref", "")
+            vpc      = vpcs.get(vpc_id, {})
             vpc_name = vpc.get("tags", {}).get("Name") or vpc_id
+            state    = att.get("state", "")
+            state_chip = _chip(
+                state.upper(),
+                "#EEFBF1" if state == "available" else "#FFF7EE",
+                "#1F7A35" if state == "available" else "#B86200",
+            )
             rows += (
-                f"<tr><td><code>{tgw_id}</code></td>"
+                f"<tr>"
+                f"<td><code>{tgw_id}</code></td>"
                 f"<td><code>{att['resource_id']}</code></td>"
                 f"<td>{att.get('attachment_type','')}</td>"
                 f"<td><code>{vpc_id}</code></td>"
                 f"<td>{vpc_name}</td>"
-                f"<td>{vpc.get('cidr_block','')}</td></tr>"
+                f"<td><code>{vpc.get('cidr_block','')}</code></td>"
+                f"<td>{state_chip}</td>"
+                f"</tr>"
             )
 
-    body = f"""<table><thead><tr>
-      <th>TGW ID</th><th>Attachment ID</th><th>Type</th>
-      <th>VPC ID</th><th>VPC Name</th><th>CIDR</th>
-    </tr></thead><tbody>{rows or '<tr><td colspan="6">No attachments found</td></tr>'}</tbody></table>"""
+    n_tgws = len(tgws)
+    n_atts = len(atts)
+    hero_stats = [
+        {"label": "Transit Gateways", "value": n_tgws},
+        {"label": "Attachments",      "value": n_atts},
+        {"label": "VPCs Attached",    "value": len({a.get("resource_id_ref","") for a in atts if a.get("resource_id_ref")})},
+    ]
+
+    no_row = '<tr><td colspan="7" style="color:var(--ig2)">No TGW attachments found</td></tr>'
+    body = (
+        '<div class="sec-eyebrow">Network Connectivity</div>'
+        f'<div class="sec-title">Transit Gateway Topology &middot; <strong>{account_name}</strong></div>'
+        f'<div class="sec-intro">{n_tgws} transit gateway(s) with {n_atts} VPC attachment(s).</div>'
+        '<div class="twrap"><table>'
+        "<thead><tr>"
+        "<th>TGW ID</th><th>Attachment ID</th><th>Type</th>"
+        "<th>VPC ID</th><th>VPC Name</th><th>CIDR</th><th>State</th>"
+        "</tr></thead>"
+        f"<tbody>{rows or no_row}</tbody>"
+        "</table></div>"
+    )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(_html_page(f"TGW Topology — {account_name}", body), encoding="utf-8")
-    logger.info("TGW topology report → %s", output_path)
+    output_path.write_text(
+        _html_page(
+            title=f"TGW Topology — {account_name}",
+            body=body,
+            account_name=account_name,
+            hero_stats=hero_stats,
+            hero_title=f"Transit Gateway &middot; <strong>{account_name}</strong>",
+            hero_sub=f"{n_tgws} Transit Gateway(s) connecting {n_atts} VPC attachment(s).",
+            hero_eyebrow=f"Network Connectivity &middot; {account_name}",
+        ),
+        encoding="utf-8",
+    )
+    logger.info("TGW topology report -> %s", output_path)
 
 
 def main() -> None:
