@@ -1021,3 +1021,538 @@ def render_graph_report(
         ),
         encoding="utf-8",
     )
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Hierarchy report — VPC → AZ → Subnet → Resource → Security Groups
+# ─────────────────────────────────────────────────────────────────────────────
+
+_HIER_CSS = """\
+/* ── hierarchy ── */
+.hvpc{
+  border:1.5px solid rgba(33,64,154,.15);border-radius:var(--r3);
+  margin-bottom:28px;background:white;box-shadow:var(--s1);overflow:hidden;
+}
+.hvpc-hdr{
+  background:linear-gradient(135deg,rgba(33,64,154,.05),rgba(255,134,13,.02));
+  border-bottom:1px solid rgba(33,64,154,.10);padding:13px 18px;
+  display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+}
+.hvpc-name{font-weight:700;font-size:15px;color:var(--ib)}
+.hvpc-global{
+  border-bottom:1px solid rgba(33,64,154,.07);padding:8px 16px;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  background:rgba(240,244,255,.3);
+}
+.hvpc-global-lbl{
+  font-size:11px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--ig2);font-family:var(--fm);margin-right:2px;
+}
+.haz-group{display:flex;flex-wrap:wrap;align-items:stretch}
+.haz{
+  flex:1;min-width:250px;border-right:1px solid rgba(33,64,154,.07);
+  padding:12px 13px;
+}
+.haz:last-child{border-right:none}
+.haz-label{
+  font-family:var(--fm);font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;color:var(--ib);
+  margin-bottom:10px;padding-bottom:6px;
+  border-bottom:1px dashed rgba(33,64,154,.12);
+}
+.hsub{
+  border:1.5px solid;border-radius:var(--r2);margin-bottom:8px;overflow:hidden;
+}
+.hsub.pub{border-color:#64E386}
+.hsub.priv{border-color:#FF860D}
+.hsub.iso{border-color:#F04B4B}
+.hsub.unk{border-color:#B8BCCC}
+.hsub-hdr{
+  padding:7px 11px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+}
+.hsub.pub  .hsub-hdr{background:#EEFBF1}
+.hsub.priv .hsub-hdr{background:#FFF7EE}
+.hsub.iso  .hsub-hdr{background:#FEF0F0}
+.hsub.unk  .hsub-hdr{background:#F8F9FA}
+.hsub-name{font-weight:600;font-size:13px;color:var(--in)}
+.hsub-cidr{font-family:var(--fm);font-size:11px;color:var(--ig2)}
+.hres-list{padding:5px 7px}
+.hres-empty{padding:4px 6px;font-size:11px;color:var(--ig3);font-style:italic}
+.hres{
+  padding:6px 10px;border-radius:var(--r1);margin-bottom:4px;
+  border:1px solid rgba(33,64,154,.07);background:var(--ibgs);
+  transition:background .15s;
+}
+.hres:hover{background:var(--ibg)}
+.hres-hdr{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.hres-name{font-size:13px;font-weight:600;color:var(--in)}
+.hres-meta{font-size:11px;color:var(--ig2);font-family:var(--fm)}
+.hres-sgs{
+  display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-top:3px;
+}
+.hres-sgs .sg-lbl{
+  font-size:10px;color:var(--ig2);font-family:var(--fm);
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.sg-ref{
+  display:inline-block;padding:2px 8px;border-radius:999px;
+  font-size:10px;font-weight:600;font-family:var(--fm);
+  text-transform:uppercase;letter-spacing:.03em;cursor:default;
+}
+.sg-ref.critical{background:#FEF0F0;color:#C42626;border:1px solid rgba(240,75,75,.4)}
+.sg-ref.high    {background:#FFF7EE;color:#B86200;border:1px solid rgba(255,134,13,.4)}
+.sg-ref.medium  {background:#FFFBE6;color:#856A00;border:1px solid rgba(251,192,45,.4)}
+.sg-ref.low     {background:#EEFBF1;color:#1F7A35;border:1px solid rgba(100,227,134,.4)}
+.sg-ref.info    {background:#F0F4FF;color:#21409A;border:1px solid rgba(33,64,154,.25)}
+.loose-sgs{
+  border-top:1px solid rgba(33,64,154,.08);padding:10px 16px;
+  background:rgba(240,244,255,.2);
+}
+.loose-sgs-lbl{
+  font-size:11px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--ig2);font-family:var(--fm);margin-bottom:6px;
+}"""
+
+
+def _sg_inline(
+    sg_ids: list[str],
+    sg_risk_idx: dict[str, str],
+    sg_name_idx: dict[str, str],
+    max_show: int = 5,
+) -> str:
+    """Return inline SG risk badges for a resource."""
+    if not sg_ids:
+        return ""
+    parts = []
+    for sid in sg_ids[:max_show]:
+        risk  = sg_risk_idx.get(sid, "info")
+        name  = sg_name_idx.get(sid, sid)
+        short = name[:24] + "…" if len(name) > 24 else name
+        parts.append(
+            f'<span class="sg-ref {risk}" title="{sid}">{short}</span>'
+        )
+    if len(sg_ids) > max_show:
+        parts.append(
+            f'<span style="color:var(--ig2);font-size:10px">+{len(sg_ids)-max_show}</span>'
+        )
+    return '<span class="sg-lbl">Security Groups:</span> ' + " ".join(parts)
+
+
+def _h_resource(
+    type_key: str,
+    name: str,
+    meta: str,
+    sg_html: str,
+    extra_html: str = "",
+) -> str:
+    """Render one resource row inside a subnet tile."""
+    m = RESOURCE_META.get(type_key, {"bg": "#F0F4FF", "text": "#21409A", "label": type_key.upper()})
+    type_chip = _chip(m["label"], m["bg"], m["text"])
+    meta_span = f'<span class="hres-meta">{meta}</span>' if meta else ""
+    sgs_div   = f'<div class="hres-sgs">{sg_html}</div>' if sg_html else ""
+    return (
+        f'<div class="hres">'
+        f'<div class="hres-hdr">{type_chip}'
+        f'<span class="hres-name">{name}</span>{meta_span}</div>'
+        f"{sgs_div}{extra_html}"
+        f"</div>"
+    )
+
+
+def render_hierarchy_report(
+    inventory: dict[str, list[dict[str, Any]]],
+    sg_analysis: list[dict[str, Any]],
+    output_path: Path,
+    account_name: str = "",
+) -> None:
+    """
+    Hierarchical drill-down report: VPC → AZ → Subnet → Resource → Security Groups.
+
+    Shows the full network topology as a structured document — matching the diagram
+    layout but in readable, navigable HTML with risk levels shown inline.
+    """
+    # ── resource extraction ──────────────────────────────────────────────────
+    vpcs      = inventory.get("vpcs", [])
+    subnets   = inventory.get("subnets", [])
+    ec2       = [i for i in inventory.get("ec2", []) if i.get("state") != "terminated"]
+    lbs       = inventory.get("load_balancers", [])
+    nats      = inventory.get("nat_gateways", [])
+    igws      = inventory.get("internet_gateways", [])
+    tgw_atts  = inventory.get("transit_gateway_attachments", [])
+    eps       = inventory.get("vpc_endpoints", [])
+    eks_res   = inventory.get("eks", [])
+    lambdas   = inventory.get("lambdas", [])
+    rds_res   = inventory.get("rds", [])
+    sgs_inv   = inventory.get("security_groups", [])
+    peerings  = inventory.get("vpc_peerings", [])
+
+    # ── SG lookup tables ─────────────────────────────────────────────────────
+    sg_risk_idx: dict[str, str] = {}
+    sg_name_idx: dict[str, str] = {}
+    for sg_a in sg_analysis:
+        sid = sg_a.get("security_group_id", "")
+        sg_risk_idx[sid] = str(sg_a.get("overall_risk", "info"))
+        sg_name_idx[sid] = sg_a.get("security_group_name", sid)
+    # fill in any SGs not in the analysis
+    for sg in sgs_inv:
+        sid = sg.get("resource_id", "")
+        if sid not in sg_name_idx:
+            sg_name_idx[sid] = sg.get("resource_name") or sg.get("group_name") or sid
+        sg_risk_idx.setdefault(sid, "info")
+
+    # ── subnet / VPC indexes ─────────────────────────────────────────────────
+    subs_by_vpc: dict[str, list] = {}
+    for s in subnets:
+        subs_by_vpc.setdefault(s.get("vpc_id", ""), []).append(s)
+
+    ec2_by_sub: dict[str, list] = {}
+    for i in ec2:
+        ec2_by_sub.setdefault(i.get("subnet_id", ""), []).append(i)
+
+    # LBs: one entry per subnet they sit in (deduplicate per lb+subnet pair)
+    lb_by_sub: dict[str, list] = {}
+    _lb_seen: dict[str, set] = {}
+    for lb in lbs:
+        for az in lb.get("availability_zones", []):
+            sid = az.get("SubnetId", "")
+            if sid and lb["resource_id"] not in _lb_seen.get(sid, set()):
+                _lb_seen.setdefault(sid, set()).add(lb["resource_id"])
+                lb_by_sub.setdefault(sid, []).append(lb)
+
+    nat_by_sub: dict[str, list] = {}
+    for nat in nats:
+        nat_by_sub.setdefault(nat.get("subnet_id", ""), []).append(nat)
+
+    ep_by_sub: dict[str, list] = {}
+    for ep in eps:
+        for sid in ep.get("associated_subnet_ids", []):
+            ep_by_sub.setdefault(sid, []).append(ep)
+
+    lambda_by_sub: dict[str, list] = {}
+    for fn in lambdas:
+        for sid in fn.get("subnet_ids", []):
+            lambda_by_sub.setdefault(sid, []).append(fn)
+
+    rds_by_sub: dict[str, list] = {}
+    for db in rds_res:
+        for sid in db.get("subnet_ids", []):
+            rds_by_sub.setdefault(sid, []).append(db)
+
+    igw_by_vpc: dict[str, list] = {}
+    for igw in igws:
+        for vid in igw.get("attached_vpc_ids", []):
+            igw_by_vpc.setdefault(vid, []).append(igw)
+
+    tgw_by_vpc: dict[str, list] = {}
+    for att in tgw_atts:
+        vid = att.get("resource_id_ref", "") or att.get("vpc_id", "")
+        if vid:
+            tgw_by_vpc.setdefault(vid, []).append(att)
+
+    peering_by_vpc: dict[str, list] = {}
+    for p in peerings:
+        for vpc_key in ("requester_vpc_info", "accepter_vpc_info"):
+            vid = p.get(vpc_key, {}).get("VpcId", "")
+            if vid:
+                peering_by_vpc.setdefault(vid, []).append(p)
+
+    eks_clusters   = [e for e in eks_res if e.get("resource_type") == "aws::eks::cluster"]
+    eks_nodegroups = [e for e in eks_res if e.get("resource_type") == "aws::eks::nodegroup"]
+
+    eks_by_vpc: dict[str, list] = {}
+    for cl in eks_clusters:
+        eks_by_vpc.setdefault(cl.get("vpc_id", ""), []).append(cl)
+
+    ng_by_sub: dict[str, list] = {}
+    for ng in eks_nodegroups:
+        for sid in ng.get("subnet_ids", []):
+            ng_by_sub.setdefault(sid, []).append(ng)
+
+    sgs_by_vpc: dict[str, list] = {}
+    for sg in sgs_inv:
+        sgs_by_vpc.setdefault(sg.get("vpc_id", ""), []).append(sg)
+
+    # Track which SG IDs appear on at least one resource
+    attached_sg_ids: set[str] = set()
+    for res_list in [ec2, lbs, lambdas, rds_res, eks_clusters]:
+        for r in res_list:
+            for sid in (r.get("security_group_ids") or []):
+                if sid:
+                    attached_sg_ids.add(sid)
+
+    # ── hero stats ───────────────────────────────────────────────────────────
+    crit_count = sum(1 for v in sg_risk_idx.values() if v == "critical")
+    high_count = sum(1 for v in sg_risk_idx.values() if v == "high")
+    total_res  = len(ec2) + len(lbs) + len(lambdas) + len(rds_res) + len(eks_clusters)
+
+    hero_stats = [
+        {"label": "VPCs",           "value": len(vpcs)},
+        {"label": "Subnets",        "value": len(subnets)},
+        {"label": "Resources",      "value": total_res},
+        {"label": "Security Groups","value": len(sg_analysis)},
+        {"label": "Critical SGs",   "value": crit_count,
+         "mod": "alert" if crit_count > 0 else "ok"},
+        {"label": "High-Risk SGs",  "value": high_count,
+         "mod": "warn" if high_count > 0 else "ok"},
+    ]
+
+    # ── VPC ordering: subnets grouped by AZ ──────────────────────────────────
+    type_order = {"public": 0, "private": 1, "isolated": 2, "unknown": 3}
+    _sub_bg  = {"pub": "#EEFBF1", "priv": "#FFF7EE", "iso": "#FEF0F0", "unk": "#F8F9FA"}
+    _sub_txt = {"pub": "#1F7A35", "priv": "#B86200", "iso": "#C42626", "unk": "#808599"}
+
+    vpc_html = ""
+
+    for vpc in vpcs:
+        vid      = vpc["resource_id"]
+        vname    = _short(vpc, 56)
+        vcidr    = vpc.get("cidr_block", "")
+        vpc_subs = subs_by_vpc.get(vid, [])
+
+        # ── VPC header row ───────────────────────────────────────────────────
+        hdr = (
+            f'<span class="hvpc-name">{vname}</span>'
+            f'<code style="font-family:var(--fm);font-size:11px;color:var(--ig2)">{vid}</code>'
+            f'<code style="font-family:var(--fm);font-size:12px;color:var(--ib);margin-left:2px">{vcidr}</code>'
+        )
+
+        # ── VPC-level global resources bar ───────────────────────────────────
+        global_items = ""
+
+        for igw in igw_by_vpc.get(vid, []):
+            igw_name = _short(igw, 28)
+            global_items += _chip(f"IGW · {igw_name}", "#F0F4FF", "#21409A")
+
+        for att in tgw_by_vpc.get(vid, []):
+            tgw_id = att.get("transit_gateway_id", "?")
+            state  = att.get("state", "")
+            bg = "#EEFBF1" if state == "available" else "#FFF7EE"
+            tx = "#1F7A35" if state == "available" else "#B86200"
+            global_items += _chip(f"TGW · {tgw_id}", bg, tx)
+
+        seen_peerings: set[str] = set()
+        for p in peering_by_vpc.get(vid, []):
+            pid = p.get("resource_id", "")
+            if pid in seen_peerings:
+                continue
+            seen_peerings.add(pid)
+            req = p.get("requester_vpc_info", {})
+            acc = p.get("accepter_vpc_info", {})
+            other = acc.get("VpcId", "") if req.get("VpcId") == vid else req.get("VpcId", "")
+            global_items += _chip(f"Peering · {other}", "#E7E2FB", "#4A3D9E")
+
+        # EKS clusters shown at VPC level (they span multiple subnets)
+        eks_rows = ""
+        for cl in eks_by_vpc.get(vid, []):
+            cl_name  = _short(cl, 32)
+            cl_ver   = cl.get("version", "")
+            cl_sg    = _sg_inline(cl.get("security_group_ids", []), sg_risk_idx, sg_name_idx)
+            cl_node_names = [
+                ng.get("nodegroup_name", _short(ng, 20))
+                for ng in eks_nodegroups
+                if ng.get("cluster_arn") == cl.get("resource_id") or
+                   ng.get("cluster_name") == cl.get("cluster_name")
+            ]
+            ng_chips = "".join(
+                _chip(n[:20], "#D8F3DE", "#1F7A35") for n in cl_node_names[:6]
+            )
+            extra = f'<div style="margin-top:3px">{_chip("Node Groups:", "#F0F4FF","#21409A")} {ng_chips}</div>' if ng_chips else ""
+            eks_rows += (
+                f'<div style="margin-top:5px;width:100%">'
+                + _h_resource("eks", cl_name, cl_ver, cl_sg, extra)
+                + "</div>"
+            )
+
+        if global_items or eks_rows:
+            global_section = (
+                f'<div class="hvpc-global">'
+                f'<span class="hvpc-global-lbl">VPC Resources:</span>'
+                f"{global_items}{eks_rows}"
+                f"</div>"
+            )
+        else:
+            global_section = ""
+
+        # ── AZ columns ───────────────────────────────────────────────────────
+        az_map: dict[str, list] = {}
+        for s in vpc_subs:
+            az_map.setdefault(s.get("availability_zone", "?"), []).append(s)
+
+        az_cols = ""
+        for az_name in sorted(az_map.keys()):
+            az_subs = sorted(
+                az_map[az_name],
+                key=lambda s: type_order.get(s.get("subnet_type", "unknown"), 3),
+            )
+            sub_tiles = ""
+
+            for sub in az_subs:
+                sid   = sub["resource_id"]
+                stype = sub.get("subnet_type", "unknown")
+                sname = _short(sub, 34)
+                scidr = sub.get("cidr_block", "")
+                scls  = SUBNET_META.get(stype, SUBNET_META["unknown"])["cls"]
+                type_chip = _chip(
+                    SUBNET_META.get(stype, SUBNET_META["unknown"])["label"],
+                    _sub_bg[scls], _sub_txt[scls],
+                )
+
+                res_rows = ""
+
+                # EC2 instances
+                for inst in ec2_by_sub.get(sid, []):
+                    res_rows += _h_resource(
+                        "ec2",
+                        _short(inst, 30),
+                        " · ".join(filter(None, [
+                            inst.get("instance_type", ""),
+                            inst.get("private_ip", ""),
+                        ])),
+                        _sg_inline(inst.get("security_group_ids", []),
+                                   sg_risk_idx, sg_name_idx),
+                    )
+
+                # Load balancers
+                for lb in lb_by_sub.get(sid, []):
+                    lb_type = "alb" if lb.get("type") == "application" else "nlb"
+                    res_rows += _h_resource(
+                        lb_type,
+                        _short(lb, 30),
+                        lb.get("scheme", ""),
+                        _sg_inline(lb.get("security_group_ids", []),
+                                   sg_risk_idx, sg_name_idx),
+                    )
+
+                # NAT gateways
+                for nat in nat_by_sub.get(sid, []):
+                    res_rows += _h_resource(
+                        "nat", _short(nat, 30), nat.get("state", ""), "",
+                    )
+
+                # VPC endpoints
+                for ep in ep_by_sub.get(sid, []):
+                    svc = ep.get("service_name", "").split(".")[-1]
+                    res_rows += _h_resource(
+                        "vpce", svc, ep.get("endpoint_type", ""), "",
+                    )
+
+                # Lambda functions
+                for fn in lambda_by_sub.get(sid, []):
+                    res_rows += _h_resource(
+                        "lambda",
+                        _short(fn, 30),
+                        fn.get("runtime", ""),
+                        _sg_inline(fn.get("security_group_ids", []),
+                                   sg_risk_idx, sg_name_idx),
+                    )
+
+                # RDS instances / clusters
+                _seen_rds: set[str] = set()
+                for db in rds_by_sub.get(sid, []):
+                    if db["resource_id"] in _seen_rds:
+                        continue
+                    _seen_rds.add(db["resource_id"])
+                    res_rows += _h_resource(
+                        "rds",
+                        _short(db, 30),
+                        db.get("engine", ""),
+                        _sg_inline(db.get("security_group_ids", []),
+                                   sg_risk_idx, sg_name_idx),
+                    )
+
+                # EKS node groups
+                _seen_ng: set[str] = set()
+                for ng in ng_by_sub.get(sid, []):
+                    if ng["resource_id"] in _seen_ng:
+                        continue
+                    _seen_ng.add(ng["resource_id"])
+                    desired = ng.get("desired_size", "")
+                    itypes  = ", ".join(ng.get("instance_types", [])[:2])
+                    meta    = " · ".join(filter(None, [
+                        itypes,
+                        f"desired: {desired}" if desired != "" else "",
+                    ]))
+                    res_rows += _h_resource(
+                        "eks",
+                        ng.get("nodegroup_name") or _short(ng, 28),
+                        meta, "",
+                    )
+
+                sub_tiles += (
+                    f'<div class="hsub {scls}">'
+                    f'<div class="hsub-hdr">'
+                    f'<span class="hsub-name">{sname}</span>'
+                    f'<span class="hsub-cidr">{scidr}</span>'
+                    f"{type_chip}</div>"
+                    f'<div class="hres-list">'
+                    + (res_rows or '<div class="hres-empty">empty</div>')
+                    + "</div></div>"
+                )
+
+            az_cols += (
+                f'<div class="haz">'
+                f'<div class="haz-label">{az_name}</div>'
+                f"{sub_tiles}</div>"
+            )
+
+        # ── unattached (loose) SGs for this VPC ──────────────────────────────
+        vpc_sg_set   = {sg.get("resource_id", "") for sg in sgs_by_vpc.get(vid, [])}
+        loose_sg_ids = vpc_sg_set - attached_sg_ids
+
+        loose_html = ""
+        if loose_sg_ids:
+            badges = "".join(
+                f'<span class="sg-ref {sg_risk_idx.get(sid,"info")}" title="{sid}">'
+                f'{(sg_name_idx.get(sid,sid))[:26]}</span> '
+                for sid in sorted(loose_sg_ids)
+            )
+            loose_html = (
+                f'<div class="loose-sgs">'
+                f'<div class="loose-sgs-lbl">'
+                f'Unattached Security Groups ({len(loose_sg_ids)})</div>'
+                f'<div style="display:flex;flex-wrap:wrap;gap:4px">{badges}</div>'
+                f"</div>"
+            )
+
+        vpc_html += (
+            f'<div class="hvpc">'
+            f'<div class="hvpc-hdr">{hdr}</div>'
+            f"{global_section}"
+            f'<div class="haz-group">{az_cols}</div>'
+            f"{loose_html}"
+            f"</div>"
+        )
+
+    # ── assemble page ────────────────────────────────────────────────────────
+    pub_count  = sum(1 for s in subnets if s.get("subnet_type") == "public")
+    priv_count = sum(1 for s in subnets if s.get("subnet_type") == "private")
+
+    body = (
+        '<div class="sec-eyebrow">Infrastructure Hierarchy</div>'
+        f'<div class="sec-title">Network Hierarchy &middot; <strong>{account_name}</strong></div>'
+        f'<div class="sec-intro">'
+        f"Complete drill-down: VPC &rarr; Availability Zone &rarr; Subnet &rarr; Resource &rarr; Security Groups. "
+        f"{len(vpcs)} VPC(s) &middot; {len(subnets)} subnets "
+        f"({pub_count} public, {priv_count} private) &middot; "
+        f"{total_res} resources &middot; {len(sg_analysis)} security groups."
+        f"</div>"
+        + vpc_html
+    )
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        _html_page(
+            title=f"Network Hierarchy — {account_name}",
+            body=body,
+            account_name=account_name,
+            extra_css=_HIER_CSS,
+            hero_stats=hero_stats,
+            hero_title=f"Network Hierarchy &middot; <strong>{account_name}</strong>",
+            hero_sub=(
+                f"Full infrastructure map from VPC to security group. "
+                f"{crit_count} critical &middot; {high_count} high-risk security groups highlighted inline."
+            ),
+            hero_eyebrow=f"Infrastructure Overview &middot; {account_name}",
+        ),
+        encoding="utf-8",
+    )

@@ -130,6 +130,14 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
             from visualization.graph_visualizer import GraphVisualizer
             GraphVisualizer().render(graph, diagrams_dir / "dependency_graph.png")
 
+    # ── Hierarchy ─────────────────────────────────────────────────────────────
+    if only in (None, "hierarchy"):
+        if use_html:
+            from visualization.html_renderer import render_hierarchy_report
+            out = diagrams_dir / "network_hierarchy.html"
+            render_hierarchy_report(inventory, sg_analysis, out, account_name)
+            logger.info("Network hierarchy -> %s", out)
+
     # ── TGW ───────────────────────────────────────────────────────────────────
     if only in (None, "tgw"):
         if use_html:
@@ -230,7 +238,7 @@ def main() -> None:
     parser.add_argument("--output-dir", default="output", help="Base output directory (default: output)")
     parser.add_argument(
         "--only",
-        choices=["vpc", "security", "graph", "tgw"],
+        choices=["vpc", "security", "graph", "tgw", "hierarchy"],
         default=None,
         help="Generate only one diagram type (default: all)",
     )
