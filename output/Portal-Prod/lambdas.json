@@ -1,6 +1,73 @@
 [
   {
     "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:610944808410:function:itl-0003-portal-prd-lambda-fee-external-custom-alert-02",
+    "resource_name": "itl-0003-portal-prd-lambda-fee-external-custom-alert-02",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "runtime": "dotnet10",
+    "memory_mb": 256,
+    "timeout_seconds": 120,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-05-23T00:26:24.300+0000",
+    "code_size_bytes": 201,
+    "handler": "Intelica.Fee.External.Lambda::Intelica.Fee.External.Lambda.FeeExternalCustomAlertTrigger::FunctionHandler",
+    "description": "Lambda fee-external - custom-alert",
+    "vpc_id": "vpc-0626d66632373c892",
+    "subnet_ids": [
+      "subnet-0c396a6c940028849",
+      "subnet-042f934568c455b4c"
+    ],
+    "security_group_ids": [
+      "sg-0097bc967b64e085e"
+    ],
+    "execution_role": "arn:aws:iam::610944808410:role/itl-0003-portal-prd-lambda-fee-external-custom-alert-02-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "ExternsAPIS__Paths__AuthenticationPath",
+      "ExternsAPIS__Paths__NotificationCallbackUrl",
+      "ENVIRONMENT",
+      "AWS__Secrets__InternalAuthentication",
+      "ExternsAPIS__Paths__NotificationPath",
+      "AWS__Secrets__ConnectionString"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0097bc967b64e085e",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::610944808410:role/itl-0003-portal-prd-lambda-fee-external-custom-alert-02-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-05-24T02:14:31.564291+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
     "resource_id": "arn:aws:lambda:eu-south-2:610944808410:function:itl-0003-portal-prd-lambda-fsx-log-export-02",
     "resource_name": "itl-0003-portal-prd-lambda-fsx-log-export-02",
     "account_id": "610944808410",
@@ -63,7 +130,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-05-17T17:51:10.775771+00:00"
+    "collected_at": "2026-05-24T02:14:31.776367+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -128,7 +195,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-05-17T17:51:10.981362+00:00"
+    "collected_at": "2026-05-24T02:14:31.990091+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -169,7 +236,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-05-17T17:51:11.187369+00:00"
+    "collected_at": "2026-05-24T02:14:32.191563+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -224,6 +291,6 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-05-17T17:51:11.403990+00:00"
+    "collected_at": "2026-05-24T02:14:32.402143+00:00"
   }
 ]

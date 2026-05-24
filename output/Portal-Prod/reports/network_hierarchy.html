@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Network Hierarchy — Portal-Prod</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+:root{
+  --ib:#21409A;--ib2:#2A4FBD;--io:#FF860D;--in:#0F1533;
+  --ibg:#F0F4FF;--ibgs:#FDFDFF;
+  --ig:#474D66;--ig2:#808599;--ig3:#B8BCCC;--ig4:#D8DDEF;
+  --ip:#64E386;--ineg:#F04B4B;
+  --fd:"Plus Jakarta Sans","Calibri",sans-serif;
+  --fm:"JetBrains Mono","Consolas",monospace;
+  --s1:0 1px 2px rgba(15,21,51,.04);
+  --s2:0 4px 16px rgba(15,21,51,.06),0 1px 3px rgba(15,21,51,.04);
+  --s3:0 12px 40px rgba(15,21,51,.08),0 4px 12px rgba(15,21,51,.04);
+  --r1:6px;--r2:10px;--r3:16px;--r4:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--fd);background:var(--ibgs);color:var(--in);
+  line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;
+  min-height:100vh;overflow-x:hidden;
+}
+/* ── bg decor ── */
+.bg-decor{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.bg-decor svg{position:absolute;opacity:.5}
+.bg-decor .cv1{top:-200px;right:-300px;width:900px;height:900px}
+.bg-decor .cv2{bottom:-400px;left:-200px;width:700px;height:700px}
+.bg-decor .dots{top:40%;right:5%;width:200px;height:200px;opacity:.4}
+main{position:relative;z-index:1}
+/* ── topbar ── */
+.topbar{
+  background:rgba(255,255,255,.88);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(33,64,154,.08);
+  position:sticky;top:0;z-index:50;
+}
+.topbar-inner{
+  max-width:1280px;margin:0 auto;padding:15px 40px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+.brand-iso{width:38px;height:38px;flex-shrink:0}
+.brand-name{
+  font-family:var(--fd);font-size:19px;font-weight:500;
+  color:var(--in);letter-spacing:-.02em;line-height:1;
+}
+.brand-name span{font-weight:700;color:var(--ib)}
+.topbar-meta{display:flex;align-items:center;gap:18px;font-size:13px;color:var(--ig)}
+.topbar-meta .pill{
+  background:var(--ibg);color:var(--ib);padding:5px 12px;
+  border-radius:999px;font-weight:600;font-size:12px;letter-spacing:.02em;
+}
+/* ── hero ── */
+.hero{max-width:1280px;margin:0 auto;padding:68px 40px 52px}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;
+  font-weight:600;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--ib);margin-bottom:18px;
+}
+.hero-eyebrow::before{content:"";width:32px;height:2px;background:var(--io)}
+.hero h1{
+  font-family:var(--fd);font-size:clamp(30px,4.5vw,54px);font-weight:300;
+  line-height:1.08;letter-spacing:-.032em;color:var(--in);
+  margin-bottom:18px;max-width:800px;
+}
+.hero h1 strong{font-weight:700;color:var(--ib)}
+.hero-sub{
+  font-size:17px;line-height:1.6;color:var(--ig);
+  max-width:680px;margin-bottom:42px;
+}
+.hero-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));
+  gap:14px;max-width:1100px;
+}
+.hero-stat{
+  background:white;border:1px solid rgba(33,64,154,.08);
+  padding:20px 24px;border-radius:var(--r3);box-shadow:var(--s1);
+  transition:all .2s ease;
+}
+.hero-stat:hover{
+  border-color:rgba(33,64,154,.18);transform:translateY(-2px);box-shadow:var(--s2);
+}
+.hs-label{
+  font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;
+  color:var(--ig2);margin-bottom:6px;
+}
+.hs-value{
+  font-family:var(--fd);font-size:28px;font-weight:700;color:var(--in);
+  letter-spacing:-.02em;line-height:1.1;
+}
+.hs-value small{font-size:13px;font-weight:500;color:var(--ig);margin-left:4px}
+.hero-stat.st-alert .hs-value{color:#C42626}
+.hero-stat.st-warn  .hs-value{color:#B86200}
+.hero-stat.st-ok    .hs-value{color:#1F7A35}
+/* ── tabnav ── */
+.tabnav-wrap{
+  position:sticky;top:69px;z-index:40;
+  background:rgba(253,253,255,.92);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(33,64,154,.08);
+}
+.tabnav{
+  max-width:1280px;margin:0 auto;padding:0 40px;
+  display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;
+}
+.tabnav::-webkit-scrollbar{display:none}
+.tab{
+  font-family:var(--fd);background:transparent;border:none;
+  padding:15px 20px;font-size:14px;font-weight:500;color:var(--ig);
+  cursor:pointer;position:relative;transition:color .2s ease;
+  white-space:nowrap;letter-spacing:-.005em;
+}
+.tab .tn{font-family:var(--fm);font-size:11px;color:var(--ig3);margin-right:8px;font-weight:500}
+.tab:hover{color:var(--in)}
+.tab.active{color:var(--ib);font-weight:600}
+.tab.active .tn{color:var(--io)}
+.tab.active::after{
+  content:"";position:absolute;bottom:-1px;left:16px;right:16px;
+  height:2px;background:var(--ib);border-radius:2px 2px 0 0;
+}
+/* ── content ── */
+.content{max-width:1280px;margin:0 auto;padding:52px 40px 96px}
+.panel{display:none;animation:fi .35s ease}
+.panel.active{display:block}
+@keyframes fi{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+/* ── section headings ── */
+.sec-eyebrow{
+  font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  color:var(--ib);margin-bottom:10px;
+}
+.sec-title{
+  font-family:var(--fd);font-size:34px;font-weight:300;letter-spacing:-.025em;
+  line-height:1.1;color:var(--in);margin-bottom:12px;
+}
+.sec-title strong{font-weight:700;color:var(--ib)}
+.sec-intro{
+  font-size:16px;color:var(--ig);max-width:740px;margin-bottom:38px;line-height:1.6;
+}
+h3.blk{
+  font-family:var(--fd);font-size:21px;font-weight:600;letter-spacing:-.015em;
+  color:var(--in);margin:42px 0 8px;
+}
+/* ── cards ── */
+.card{
+  background:white;border:1px solid rgba(33,64,154,.08);border-radius:var(--r3);
+  padding:26px;box-shadow:var(--s1);transition:all .25s ease;
+}
+.card:hover{border-color:rgba(33,64,154,.16);box-shadow:var(--s2)}
+.cgrid{display:grid;gap:16px;margin:18px 0}
+.cgrid.c2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.cgrid.c3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+/* ── tiles ── */
+.tile{
+  background:white;border:1px solid rgba(33,64,154,.08);
+  border-radius:var(--r2);padding:20px;transition:all .2s ease;
+  position:relative;overflow:hidden;
+}
+.tile::before{
+  content:"";position:absolute;top:0;left:0;width:4px;height:0;
+  background:var(--ib);transition:height .25s ease;
+}
+.tile:hover{border-color:rgba(33,64,154,.2);box-shadow:var(--s2);transform:translateY(-2px)}
+.tile:hover::before{height:100%}
+.tile.accent::before{background:var(--io);height:100%}
+.tile.ok::before{background:var(--ip);height:100%}
+.tile.warn::before{background:#FBC02D;height:100%}
+.tile.alert::before{background:var(--ineg);height:100%}
+.tile.muted::before{background:var(--ig3);height:100%}
+.tkicker{
+  font-family:var(--fm);font-size:11px;color:var(--ib);font-weight:600;
+  letter-spacing:.04em;margin-bottom:5px;text-transform:uppercase;
+}
+.tile.accent .tkicker{color:var(--io)}
+.ttitle{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--in);margin-bottom:5px;line-height:1.3}
+.tbody{font-size:14px;color:var(--ig);line-height:1.55}
+.tmeta{
+  margin-top:11px;padding-top:11px;border-top:1px solid rgba(33,64,154,.08);
+  display:flex;flex-wrap:wrap;gap:4px 10px;
+  font-size:12px;color:var(--ig2);font-family:var(--fm);
+}
+.tmeta strong{color:var(--in);font-weight:600}
+/* ── callouts ── */
+.callout{
+  border-left:3px solid var(--io);background:#FFF7EE;
+  padding:15px 20px;border-radius:0 var(--r2) var(--r2) 0;
+  margin:18px 0;font-size:15px;color:var(--in);line-height:1.6;
+}
+.callout strong{color:var(--io)}
+.callout.info{border-left-color:var(--ib);background:var(--ibg)}
+.callout.info strong{color:var(--ib)}
+.callout.ok{border-left-color:var(--ip);background:#EEFBF1}
+.callout.ok strong{color:#1F7A35}
+.callout.alert{border-left-color:var(--ineg);background:#FEF0F0}
+.callout.alert strong{color:#C42626}
+/* ── code ── */
+pre{
+  background:var(--in);color:#E8EBF4;padding:16px 20px;
+  border-radius:var(--r2);font-family:var(--fm);font-size:13px;
+  line-height:1.65;overflow-x:auto;margin:13px 0;
+  border:1px solid rgba(33,64,154,.2);
+}
+code:not(pre code){
+  font-family:var(--fm);font-size:.92em;background:var(--ibg);
+  color:var(--ib);padding:2px 6px;border-radius:4px;font-weight:500;
+}
+/* ── tables ── */
+.twrap{
+  background:white;border:1px solid rgba(33,64,154,.08);
+  border-radius:var(--r2);overflow:hidden;margin:18px 0;box-shadow:var(--s1);
+}
+table{width:100%;border-collapse:collapse;font-size:14px}
+thead{background:var(--ibg);color:var(--ib)}
+th{
+  text-align:left;padding:12px 18px;font-weight:600;font-size:12px;
+  text-transform:uppercase;letter-spacing:.06em;
+  border-bottom:1px solid rgba(33,64,154,.12);
+}
+td{
+  padding:12px 18px;border-bottom:1px solid rgba(33,64,154,.06);
+  color:var(--in);vertical-align:top;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover td{background:rgba(240,244,255,.5)}
+td code,td .mono{font-family:var(--fm);font-size:12.5px}
+/* ── badges & chips ── */
+.bdg{
+  display:inline-block;padding:3px 10px;border-radius:999px;
+  font-size:11px;font-weight:600;font-family:var(--fm);
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.bdg.critical{background:#FEF0F0;color:#C42626}
+.bdg.high{background:#FFF7EE;color:#B86200}
+.bdg.medium{background:#FFFBE6;color:#856A00}
+.bdg.low{background:#EEFBF1;color:#1F7A35}
+.bdg.info{background:#F0F4FF;color:#21409A}
+.chip{
+  display:inline-block;padding:2px 7px;border-radius:var(--r1);
+  font-size:11px;font-weight:600;font-family:var(--fm);margin:2px;
+}
+/* ── VPC layout ── */
+.vpc-card{
+  background:white;border:1.5px solid rgba(33,64,154,.14);
+  border-radius:var(--r3);padding:20px;margin-bottom:26px;box-shadow:var(--s1);
+}
+.vpc-header{
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap;
+}
+.vpc-name{font-size:15px;font-weight:700;color:var(--ib)}
+.az-col{flex:1;min-width:210px}
+.az-label{
+  font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;
+  color:var(--ib);margin-bottom:7px;
+  font-family:var(--fm);
+}
+.sub-tile{
+  border:1px solid #ddd;border-radius:var(--r1);
+  padding:9px 11px;margin-bottom:7px;font-size:13px;
+}
+.sub-tile.pub{border-color:#64E386;background:#EEFBF1}
+.sub-tile.priv{border-color:#FF860D;background:#FFF7EE}
+.sub-tile.iso{border-color:#F04B4B;background:#FEF0F0}
+.sub-tile.unk{border-color:#B8BCCC;background:#F8F9FA}
+.sub-name{font-weight:600;color:var(--in);font-size:13px;margin-bottom:2px}
+.sub-cidr{font-family:var(--fm);font-size:11px;color:var(--ig2);margin-bottom:5px}
+.sub-res{display:flex;flex-wrap:wrap;gap:2px}
+/* ── footer ── */
+.foot{margin-top:80px;padding:52px 40px 32px;background:var(--in);color:#C0C7E0}
+.foot-inner{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr;gap:44px;
+}
+.foot h5{
+  font-family:var(--fd);font-size:13px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.08em;color:white;margin-bottom:13px;
+}
+.foot p,.foot a{font-size:14px;color:#A0A7CA;text-decoration:none;line-height:1.7}
+.foot a:hover{color:var(--io)}
+.foot-bottom{
+  max-width:1280px;margin:40px auto 0;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;font-size:12px;color:#7B83A8;
+}
+/* ── responsive ── */
+@media(max-width:900px){
+  .hero{padding:52px 24px 36px}
+  .topbar-inner,.content,.tabnav{padding-left:24px;padding-right:24px}
+  .foot{padding:40px 24px 28px}
+  .foot-inner{grid-template-columns:1fr;gap:28px}
+  .foot-bottom{flex-direction:column;gap:8px}
+  .topbar-meta{display:none}
+  .sec-title{font-size:26px}
+  .card,.vpc-card{padding:16px}
+  .hero-grid{grid-template-columns:repeat(auto-fit,minmax(140px,1fr))}
+}
+/* ── hierarchy ── */
+.hvpc{
+  border:1.5px solid rgba(33,64,154,.15);border-radius:var(--r3);
+  margin-bottom:28px;background:white;box-shadow:var(--s1);overflow:hidden;
+}
+.hvpc-hdr{
+  background:linear-gradient(135deg,rgba(33,64,154,.05),rgba(255,134,13,.02));
+  border-bottom:1px solid rgba(33,64,154,.10);padding:13px 18px;
+  display:flex;align-items:center;gap:9px;flex-wrap:wrap;
+}
+.hvpc-name{font-weight:700;font-size:15px;color:var(--ib)}
+.hvpc-global{
+  border-bottom:1px solid rgba(33,64,154,.07);padding:8px 16px;
+  display:flex;gap:6px;flex-wrap:wrap;align-items:center;
+  background:rgba(240,244,255,.3);
+}
+.hvpc-global-lbl{
+  font-size:11px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--ig2);font-family:var(--fm);margin-right:2px;
+}
+.haz-group{display:flex;flex-wrap:wrap;align-items:stretch}
+.haz{
+  flex:1;min-width:250px;border-right:1px solid rgba(33,64,154,.07);
+  padding:12px 13px;
+}
+.haz:last-child{border-right:none}
+.haz-label{
+  font-family:var(--fm);font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.07em;color:var(--ib);
+  margin-bottom:10px;padding-bottom:6px;
+  border-bottom:1px dashed rgba(33,64,154,.12);
+}
+.hsub{
+  border:1.5px solid;border-radius:var(--r2);margin-bottom:8px;overflow:hidden;
+}
+.hsub.pub{border-color:#64E386}
+.hsub.priv{border-color:#FF860D}
+.hsub.iso{border-color:#F04B4B}
+.hsub.unk{border-color:#B8BCCC}
+.hsub-hdr{
+  padding:7px 11px;display:flex;align-items:center;gap:7px;flex-wrap:wrap;
+}
+.hsub.pub  .hsub-hdr{background:#EEFBF1}
+.hsub.priv .hsub-hdr{background:#FFF7EE}
+.hsub.iso  .hsub-hdr{background:#FEF0F0}
+.hsub.unk  .hsub-hdr{background:#F8F9FA}
+.hsub-name{font-weight:600;font-size:13px;color:var(--in)}
+.hsub-cidr{font-family:var(--fm);font-size:11px;color:var(--ig2)}
+.hres-list{padding:5px 7px}
+.hres-empty{padding:4px 6px;font-size:11px;color:var(--ig3);font-style:italic}
+.hres{
+  padding:6px 10px;border-radius:var(--r1);margin-bottom:4px;
+  border:1px solid rgba(33,64,154,.07);background:var(--ibgs);
+  transition:background .15s;
+}
+.hres:hover{background:var(--ibg)}
+.hres-hdr{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.hres-name{font-size:13px;font-weight:600;color:var(--in)}
+.hres-meta{font-size:11px;color:var(--ig2);font-family:var(--fm)}
+.hres-sgs{
+  display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-top:3px;
+}
+.hres-sgs .sg-lbl{
+  font-size:10px;color:var(--ig2);font-family:var(--fm);
+  text-transform:uppercase;letter-spacing:.04em;
+}
+.sg-ref{
+  display:inline-block;padding:2px 8px;border-radius:999px;
+  font-size:10px;font-weight:600;font-family:var(--fm);
+  text-transform:uppercase;letter-spacing:.03em;cursor:default;
+}
+.sg-ref.critical{background:#FEF0F0;color:#C42626;border:1px solid rgba(240,75,75,.4)}
+.sg-ref.high    {background:#FFF7EE;color:#B86200;border:1px solid rgba(255,134,13,.4)}
+.sg-ref.medium  {background:#FFFBE6;color:#856A00;border:1px solid rgba(251,192,45,.4)}
+.sg-ref.low     {background:#EEFBF1;color:#1F7A35;border:1px solid rgba(100,227,134,.4)}
+.sg-ref.info    {background:#F0F4FF;color:#21409A;border:1px solid rgba(33,64,154,.25)}
+.loose-sgs{
+  border-top:1px solid rgba(33,64,154,.08);padding:10px 16px;
+  background:rgba(240,244,255,.2);
+}
+.loose-sgs-lbl{
+  font-size:11px;font-weight:600;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--ig2);font-family:var(--fm);margin-bottom:6px;
+}
+  </style>
+</head>
+<body>
+<div class="bg-decor" aria-hidden="true"><svg class="cv1" viewBox="0 0 900 900"><circle cx="450" cy="450" r="380" fill="none" stroke="#21409A" stroke-width="1" opacity="0.14"/></svg><svg class="cv2" viewBox="0 0 700 700"><circle cx="350" cy="350" r="300" fill="none" stroke="#FF860D" stroke-width="1" opacity="0.16"/></svg><svg class="dots" viewBox="0 0 160 160"><g fill="#21409A" opacity="0.28"><circle cx="10" cy="10" r="1.5"/><circle cx="40" cy="10" r="1.5"/><circle cx="70" cy="10" r="1.5"/><circle cx="100" cy="10" r="1.5"/><circle cx="130" cy="10" r="1.5"/><circle cx="160" cy="10" r="1.5"/><circle cx="10" cy="40" r="1.5"/><circle cx="40" cy="40" r="1.5"/><circle cx="70" cy="40" r="1.5"/><circle cx="100" cy="40" r="1.5"/><circle cx="130" cy="40" r="1.5"/><circle cx="160" cy="40" r="1.5"/><circle cx="10" cy="70" r="1.5"/><circle cx="40" cy="70" r="1.5"/><circle cx="70" cy="70" r="1.5"/><circle cx="100" cy="70" r="1.5"/><circle cx="130" cy="70" r="1.5"/><circle cx="160" cy="70" r="1.5"/><circle cx="10" cy="100" r="1.5"/><circle cx="40" cy="100" r="1.5"/><circle cx="70" cy="100" r="1.5"/><circle cx="100" cy="100" r="1.5"/><circle cx="130" cy="100" r="1.5"/><circle cx="160" cy="100" r="1.5"/><circle cx="10" cy="130" r="1.5"/><circle cx="40" cy="130" r="1.5"/><circle cx="70" cy="130" r="1.5"/><circle cx="100" cy="130" r="1.5"/><circle cx="130" cy="130" r="1.5"/><circle cx="160" cy="130" r="1.5"/><circle cx="10" cy="160" r="1.5"/><circle cx="40" cy="160" r="1.5"/><circle cx="70" cy="160" r="1.5"/><circle cx="100" cy="160" r="1.5"/><circle cx="130" cy="160" r="1.5"/><circle cx="160" cy="160" r="1.5"/></g></svg></div>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#" class="brand">
+      <svg class="brand-iso" viewBox="0 0 100 100" aria-hidden="true"><defs><clipPath id="iso-clip"><circle cx="50" cy="50" r="42"/></clipPath></defs><circle cx="50" cy="50" r="42" fill="#FF860D"/><g clip-path="url(#iso-clip)" transform="rotate(-22 50 50)"><rect x="-5" y="22" width="120" height="3.5" fill="#21409A"/><rect x="-5" y="37" width="120" height="3.5" fill="#21409A"/><rect x="-5" y="52" width="120" height="3.5" fill="#21409A"/><rect x="-5" y="67" width="120" height="3.5" fill="#21409A"/><rect x="-5" y="82" width="120" height="3.5" fill="#21409A"/></g></svg>
+      <div class="brand-name">intelica<span> · Portal-Prod</span></div>
+    </a>
+    <div class="topbar-meta">
+      <span>AWS Infrastructure Report</span>
+      <span class="pill">Jericho Extractor</span>
+    </div>
+  </div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-eyebrow">Infrastructure Overview &middot; Portal-Prod</div>
+  <h1>Network Hierarchy &middot; <strong>Portal-Prod</strong></h1>
+  <p class="hero-sub">Full infrastructure map from VPC to security group. 4 critical &middot; 4 high-risk security groups highlighted inline.</p>
+  <div class="hero-grid"><div class="hero-stat"><div class="hs-label">VPCs</div><div class="hs-value">2</div></div><div class="hero-stat"><div class="hs-label">Subnets</div><div class="hs-value">12</div></div><div class="hero-stat"><div class="hs-label">Resources</div><div class="hs-value">29</div></div><div class="hero-stat"><div class="hs-label">Security Groups</div><div class="hs-value">52</div></div><div class="hero-stat st-alert"><div class="hs-label">Critical SGs</div><div class="hs-value">4</div></div><div class="hero-stat st-warn"><div class="hs-label">High-Risk SGs</div><div class="hs-value">4</div></div></div>
+</section>
+
+<div class="content">
+<div class="sec-eyebrow">Infrastructure Hierarchy</div><div class="sec-title">Network Hierarchy &middot; <strong>Portal-Prod</strong></div><div class="sec-intro">Complete drill-down: VPC &rarr; Availability Zone &rarr; Subnet &rarr; Resource &rarr; Security Groups. 2 VPC(s) &middot; 12 subnets (3 public, 3 private) &middot; 29 resources &middot; 52 security groups.</div><div class="hvpc"><div class="hvpc-hdr"><span class="hvpc-name">vpc-0a2328aacb75cfc60</span><code style="font-family:var(--fm);font-size:11px;color:var(--ig2)">vpc-0a2328aacb75cfc60</code><code style="font-family:var(--fm);font-size:12px;color:var(--ib);margin-left:2px">172.31.0.0/16</code></div><div class="hvpc-global"><span class="hvpc-global-lbl">VPC Resources:</span><span class="chip" style="background:#F0F4FF;color:#21409A">IGW · igw-05d074c79cc6687d0</span></div><div class="haz-group"><div class="haz"><div class="haz-label">eu-south-2a</div><div class="hsub unk"><div class="hsub-hdr"><span class="hsub-name">subnet-0d4d210f456e5c247</span><span class="hsub-cidr">172.31.32.0/20</span><span class="chip" style="background:#F8F9FA;color:#808599">Unknown</span></div><div class="hres-list"><div class="hres-empty">empty</div></div></div></div><div class="haz"><div class="haz-label">eu-south-2b</div><div class="hsub unk"><div class="hsub-hdr"><span class="hsub-name">subnet-0c69299494134215d</span><span class="hsub-cidr">172.31.16.0/20</span><span class="chip" style="background:#F8F9FA;color:#808599">Unknown</span></div><div class="hres-list"><div class="hres-empty">empty</div></div></div></div><div class="haz"><div class="haz-label">eu-south-2c</div><div class="hsub unk"><div class="hsub-hdr"><span class="hsub-name">subnet-03a0a390d332a497b</span><span class="hsub-cidr">172.31.0.0/20</span><span class="chip" style="background:#F8F9FA;color:#808599">Unknown</span></div><div class="hres-list"><div class="hres-empty">empty</div></div></div></div></div><div class="loose-sgs"><div class="loose-sgs-lbl">Unattached Security Groups (3)</div><div style="display:flex;flex-wrap:wrap;gap:4px"><span class="sg-ref medium" title="sg-00dc78ebf8c5726bd">AWS Application Migration </span> <span class="sg-ref low" title="sg-0697339290d82202b">default</span> <span class="sg-ref low" title="sg-099ef19046ea9c56b">datasync-sg01</span> </div></div></div><div class="hvpc"><div class="hvpc-hdr"><span class="hvpc-name">itl-0003-portal-prd-vpc-02</span><code style="font-family:var(--fm);font-size:11px;color:var(--ig2)">vpc-0626d66632373c892</code><code style="font-family:var(--fm);font-size:12px;color:var(--ib);margin-left:2px">10.10.0.0/16</code></div><div class="hvpc-global"><span class="hvpc-global-lbl">VPC Resources:</span><span class="chip" style="background:#F0F4FF;color:#21409A">IGW · itl-0003-portal-prd-igw-02</span><span class="chip" style="background:#EEFBF1;color:#1F7A35">TGW · tgw-042a72cb246bebf1e</span><div style="margin-top:5px;width:100%"><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#D8F3DE;color:#1F7A35">EKS</span><span class="hres-name">itl-0003-portal-prd-eks-apps-02</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref info" title="sg-064588145926737f4">itl-0003-portal-prd-eks-…</span></div><div style="margin-top:3px"><span class="chip" style="background:#F0F4FF;color:#21409A">Node Groups:</span> <span class="chip" style="background:#D8F3DE;color:#1F7A35">itl-0003-portal-prd-</span><span class="chip" style="background:#D8F3DE;color:#1F7A35">itl-0003-portal-prd-</span><span class="chip" style="background:#D8F3DE;color:#1F7A35">itl-0003-portal-prd-</span></div></div></div></div><div class="haz-group"><div class="haz"><div class="haz-label">eu-south-2a</div><div class="hsub pub"><div class="hsub-hdr"><span class="hsub-name">itl-0003-portal-prd-public-2a</span><span class="hsub-cidr">10.10.1.0/24</span><span class="chip" style="background:#EEFBF1;color:#1F7A35">Public</span></div><div class="hres-list"><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E0EAFE;color:#1B3A8B">NLB</span><span class="hres-name">itl-0003-portal-prd-lb-main-02</span><span class="hres-meta">internet-facing</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref high" title="sg-016aa97ef90ac861c">itl-0003-portal-prd-sg-m…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E0EAFE;color:#1B3A8B">NLB</span><span class="hres-name">itl-0003-portal-prd-alb-apps-…</span><span class="hres-meta">internet-facing</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref high" title="sg-09d2e75a3a87befdf">k8s-intelicaprdapps-381a…</span> <span class="sg-ref low" title="sg-0f69ea76349f0e1bd">k8s-traffic-itl0003porta…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E6F3F5;color:#0F6E78">NAT</span><span class="hres-name">itl-0003-portal-prd-nat-2a-02</span><span class="hres-meta">available</span></div></div></div></div><div class="hsub priv"><div class="hsub-hdr"><span class="hsub-name">itl-0003-portal-prd-private-2a</span><span class="hsub-cidr">10.10.3.0/24</span><span class="chip" style="background:#FFF7EE;color:#B86200">Private</span></div><div class="hres-list"><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-10</span><span class="hres-meta">t3.medium · 10.10.3.159</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-7</span><span class="hres-meta">t3.medium · 10.10.3.189</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-2</span><span class="hres-meta">t3.medium · 10.10.3.173</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VMNN</span><span class="hres-meta">t3.medium · 10.10.3.195</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-5</span><span class="hres-meta">t3.medium · 10.10.3.139</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-6</span><span class="hres-meta">t3.medium · 10.10.3.77</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-8</span><span class="hres-meta">t3.medium · 10.10.3.63</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-4</span><span class="hres-meta">t3.medium · 10.10.3.15</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-9</span><span class="hres-meta">t3.medium · 10.10.3.153</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM12</span><span class="hres-meta">t3.medium · 10.10.3.131</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-1</span><span class="hres-meta">t3.medium · 10.10.3.106</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM-3</span><span class="hres-meta">t3.medium · 10.10.3.48</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM11</span><span class="hres-meta">t3.medium · 10.10.3.169</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">VM13</span><span class="hres-meta">t3.medium · 10.10.3.154</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-067b9fd88018f9db1">itl-0003-portal-prd-vm-s…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-…</span><span class="hres-meta">m7a.large · 10.10.3.109</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-0175bf9584150c48d">itl-0003-portal-prd-ec2-…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-…</span><span class="hres-meta">c5.large · 10.10.3.56</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-0175bf9584150c48d">itl-0003-portal-prd-ec2-…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">ITL-Server-FortiSIEM</span><span class="hres-meta">m5.2xlarge · 10.10.3.13</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref critical" title="sg-0d760cd30300debca">itl-0003-portal-prd-fort…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">itl-0003-portal-prd-ec2-datas…</span><span class="hres-meta">r5.large · 10.10.3.22</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref high" title="sg-0e84f073bfa8dde00">itl-0003-portal-prd-sg-d…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-…</span><span class="hres-meta">m7a.2xlarge · 10.10.3.200</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-0175bf9584150c48d">itl-0003-portal-prd-ec2-…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E0EAFE;color:#1B3A8B">NLB</span><span class="hres-name">k8s-appsmith-appsmith-06d45f1…</span><span class="hres-meta">internal</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-0f69ea76349f0e1bd">k8s-traffic-itl0003porta…</span> <span class="sg-ref high" title="sg-0e1cbefd39956a516">k8s-appsmith-appsmith-31…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E7E2FB;color:#4A3D9E">VPCE</span><span class="hres-name">datasync</span><span class="hres-meta">Interface</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E7E2FB;color:#4A3D9E">VPCE</span><span class="hres-name">guardduty-data</span><span class="hres-meta">Interface</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E7E2FB;color:#4A3D9E">VPCE</span><span class="hres-name">logs</span><span class="hres-meta">Interface</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#D8F3DE;color:#1F7A35">EKS</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-02-appsmith</span><span class="hres-meta">m7a.2xlarge · desired: 2</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#D8F3DE;color:#1F7A35">EKS</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-02-metabase</span><span class="hres-meta">c5.large · desired: 1</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#D8F3DE;color:#1F7A35">EKS</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-02-portal</span><span class="hres-meta">m7a.large · desired: 2</span></div></div></div></div><div class="hsub iso"><div class="hsub-hdr"><span class="hsub-name">itl-0003-portal-prd-restricted-2a</span><span class="hsub-cidr">10.10.5.0/24</span><span class="chip" style="background:#FEF0F0;color:#C42626">Isolated</span></div><div class="hres-list"><div class="hres-empty">empty</div></div></div></div><div class="haz"><div class="haz-label">eu-south-2b</div><div class="hsub pub"><div class="hsub-hdr"><span class="hsub-name">itl-0003-portal-prd-public-2b</span><span class="hsub-cidr">10.10.2.0/24</span><span class="chip" style="background:#EEFBF1;color:#1F7A35">Public</span></div><div class="hres-list"><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E0EAFE;color:#1B3A8B">NLB</span><span class="hres-name">itl-0003-portal-prd-nlb-sftp-…</span><span class="hres-meta">internet-facing</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref medium" title="sg-035300560ba0db669">itl-0003-portal-prd-nlb-…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E0EAFE;color:#1B3A8B">NLB</span><span class="hres-name">itl-0003-portal-prd-lb-main-02</span><span class="hres-meta">internet-facing</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref high" title="sg-016aa97ef90ac861c">itl-0003-portal-prd-sg-m…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E0EAFE;color:#1B3A8B">NLB</span><span class="hres-name">itl-0003-portal-prd-alb-apps-…</span><span class="hres-meta">internet-facing</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref high" title="sg-09d2e75a3a87befdf">k8s-intelicaprdapps-381a…</span> <span class="sg-ref low" title="sg-0f69ea76349f0e1bd">k8s-traffic-itl0003porta…</span></div></div></div></div><div class="hsub priv"><div class="hsub-hdr"><span class="hsub-name">itl-0003-portal-prd-private-2b</span><span class="hsub-cidr">10.10.4.0/24</span><span class="chip" style="background:#FFF7EE;color:#B86200">Private</span></div><div class="hres-list"><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">itl-0003-portal-prd-ec2-vienn…</span><span class="hres-meta">m5.2xlarge · 10.10.4.11</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-023d0e02fd0b67e82">itl-0003-portal-prd-vien…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">itl-0003-portal-prd-ec2-click…</span><span class="hres-meta">t3.xlarge · 10.10.4.194</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-0fee7d175b68ed308">itl-0003-portal-prd-ec2-…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-…</span><span class="hres-meta">m7a.large · 10.10.4.210</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-0175bf9584150c48d">itl-0003-portal-prd-ec2-…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">itl-0003-portal-prd-ec2-denve…</span><span class="hres-meta">r5.4xlarge · 10.10.4.10</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-04aac9e78d6520b80">itl-0003-portal-prd-denv…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#FFF7EE;color:#B86200">EC2</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-…</span><span class="hres-meta">m7a.2xlarge · 10.10.4.163</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-0175bf9584150c48d">itl-0003-portal-prd-ec2-…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E0EAFE;color:#1B3A8B">NLB</span><span class="hres-name">k8s-appsmith-appsmith-06d45f1…</span><span class="hres-meta">internal</span></div><div class="hres-sgs"><span class="sg-lbl">Security Groups:</span> <span class="sg-ref low" title="sg-0f69ea76349f0e1bd">k8s-traffic-itl0003porta…</span> <span class="sg-ref high" title="sg-0e1cbefd39956a516">k8s-appsmith-appsmith-31…</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E7E2FB;color:#4A3D9E">VPCE</span><span class="hres-name">datasync</span><span class="hres-meta">Interface</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E7E2FB;color:#4A3D9E">VPCE</span><span class="hres-name">guardduty-data</span><span class="hres-meta">Interface</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#E7E2FB;color:#4A3D9E">VPCE</span><span class="hres-name">logs</span><span class="hres-meta">Interface</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#D8F3DE;color:#1F7A35">EKS</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-02-appsmith</span><span class="hres-meta">m7a.2xlarge · desired: 2</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#D8F3DE;color:#1F7A35">EKS</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-02-metabase</span><span class="hres-meta">c5.large · desired: 1</span></div></div><div class="hres"><div class="hres-hdr"><span class="chip" style="background:#D8F3DE;color:#1F7A35">EKS</span><span class="hres-name">itl-0003-portal-prd-ec2-apps-02-portal</span><span class="hres-meta">m7a.large · desired: 2</span></div></div></div></div><div class="hsub iso"><div class="hsub-hdr"><span class="hsub-name">itl-0003-portal-prd-restricted-2b</span><span class="hsub-cidr">10.10.6.0/24</span><span class="chip" style="background:#FEF0F0;color:#C42626">Isolated</span></div><div class="hres-list"><div class="hres-empty">empty</div></div></div></div><div class="haz"><div class="haz-label">eu-south-2c</div><div class="hsub pub"><div class="hsub-hdr"><span class="hsub-name">itl-0003-portal-prd-public-2c</span><span class="hsub-cidr">10.10.7.0/24</span><span class="chip" style="background:#EEFBF1;color:#1F7A35">Public</span></div><div class="hres-list"><div class="hres-empty">empty</div></div></div><div class="hsub priv"><div class="hsub-hdr"><span class="hsub-name">itl-0003-portal-prd-private-2c</span><span class="hsub-cidr">10.10.8.0/24</span><span class="chip" style="background:#FFF7EE;color:#B86200">Private</span></div><div class="hres-list"><div class="hres-empty">empty</div></div></div><div class="hsub iso"><div class="hsub-hdr"><span class="hsub-name">itl-0003-portal-prd-restricted-2c</span><span class="hsub-cidr">10.10.9.0/24</span><span class="chip" style="background:#FEF0F0;color:#C42626">Isolated</span></div><div class="hres-list"><div class="hres-empty">empty</div></div></div></div></div><div class="loose-sgs"><div class="loose-sgs-lbl">Unattached Security Groups (36)</div><div style="display:flex;flex-wrap:wrap;gap:4px"><span class="sg-ref low" title="sg-0097bc967b64e085e">itl-0003-portal-prd-lambda</span> <span class="sg-ref low" title="sg-00b87ac4a91c8a2d8">VM-9-sg</span> <span class="sg-ref low" title="sg-00def764449f57c39">itl-0003-portal-prd-vpc-en</span> <span class="sg-ref low" title="sg-011b2fc8b6dcd08c0">VM-7-sg</span> <span class="sg-ref low" title="sg-0131238705f3bdd7e">lambda-log-extractor-sg</span> <span class="sg-ref low" title="sg-018c523ed2199f54c">VM-6-sg</span> <span class="sg-ref low" title="sg-01b4c83b6a8f3ea1e">fsx-shared-sg</span> <span class="sg-ref low" title="sg-01b60b6075b9422b2">VM-4-sg</span> <span class="sg-ref low" title="sg-02109a69611b396ca">data-sync-sg</span> <span class="sg-ref critical" title="sg-03564c47645430f75">datasync-sg-00</span> <span class="sg-ref critical" title="sg-0359116a8a11f7bc4">datasync-sg</span> <span class="sg-ref low" title="sg-0373c8b39326439e7">VM-5-sg</span> <span class="sg-ref info" title="sg-039aecc570853bb45">itl-0003-portal-prd-lambda</span> <span class="sg-ref info" title="sg-03fdf9a2a3a970875">VMNN-sg</span> <span class="sg-ref low" title="sg-045b795021b969456">datasync-sg-1</span> <span class="sg-ref low" title="sg-047c076fc07b2b2c0">default</span> <span class="sg-ref low" title="sg-05477e0120952808e">VM-3-sg</span> <span class="sg-ref critical" title="sg-05f186888e83ce35d">itl-0003-portal-prd-quicks</span> <span class="sg-ref low" title="sg-0634ee789467ac220">itl-0003-portal-prd-rds-ap</span> <span class="sg-ref low" title="sg-06407a58a795a0fc2">ITL-Server-FortiSIEM-sg</span> <span class="sg-ref info" title="sg-06c94aeac9c2cf00a">itl-0003-portal-prd--sg-02</span> <span class="sg-ref low" title="sg-077f9142b25203033">VM12-sg</span> <span class="sg-ref info" title="sg-08494443881f463eb">VM-1-sg</span> <span class="sg-ref low" title="sg-08a4cc9135f02dae0">itl-0003-portal-prd-vpc-en</span> <span class="sg-ref info" title="sg-08bec69ca1d781aad">itl-0003-portal-prd-lambda</span> <span class="sg-ref low" title="sg-08ca6aa9322883e5e">itl-0003-portal-prd-vpc-en</span> <span class="sg-ref low" title="sg-09fafdc5ed122c78a">VM-8-sg</span> <span class="sg-ref low" title="sg-0a96d436ac3cce15a">VM-2-sg</span> <span class="sg-ref low" title="sg-0b6f4362125cb52cb">VM11-sg</span> <span class="sg-ref low" title="sg-0c3e413144170bb56">itl-0003-portal-prd-vpc-en</span> <span class="sg-ref low" title="sg-0cc3434329b153607">itl-0003-portal-prd-ec2-da</span> <span class="sg-ref low" title="sg-0ce8fbf4007100fd6">VM-10-sg</span> <span class="sg-ref info" title="sg-0d02c6be6190b05bf">itl-0003-portal-prd-ec2-da</span> <span class="sg-ref low" title="sg-0e8864e42cb1e54d7">eks-cluster-sg-itl-0003-po</span> <span class="sg-ref low" title="sg-0f58f8403c39a2551">itl-0003-portal-prd-resolv</span> <span class="sg-ref low" title="sg-0fc494c48d467ab08">VM13-sg</span> </div></div></div>
+</div>
+</main>
+<footer class="foot">
+  <div class="foot-inner">
+    <div>
+      <h5>Jericho Extractor</h5>
+      <p>AWS infrastructure inventory and topology platform.<br/>
+         Automated discovery of VPCs, EC2, EKS, Lambda, RDS,<br/>
+         IAM, KMS, Secrets Manager and S3 resources.</p>
+    </div>
+    <div>
+      <h5>Report</h5>
+      <p>Portal-Prod<br/>Generated May 24, 2026</p>
+    </div>
+    <div>
+      <h5>Platform</h5>
+      <p>Intelica<br/>Cloud Infrastructure</p>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>&copy; 2026 Intelica &middot; Confidential</span>
+    <span>Generated by Jericho Extractor &middot; May 24, 2026</span>
+  </div>
+</footer>
+<script>
+function showTab(n,btn){
+  document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
+  var p=document.getElementById('p'+n);if(p){p.classList.add('active')}
+  if(btn){btn.classList.add('active')}
+}
+document.addEventListener('DOMContentLoaded',function(){
+  var f=document.querySelector('.tab');if(f){f.click()}
+});
+</script>
+</body>
+</html>

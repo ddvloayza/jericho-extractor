@@ -1,0 +1,48 @@
+[
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-00982dcc71039f386",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-04ef4e1c7cb3cc620"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-04ef4e1c7cb3cc620",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:42.620766+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-054c0fdd7e6602217",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-000f7f02c4d4819a3"
+    ],
+    "tags": {
+      "coid": "itl",
+      "apid": "shared-network",
+      "assetid": "0001",
+      "env": "all",
+      "Name": "itl-0002-shared-network-all-igw-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:42.620780+00:00"
+  }
+]

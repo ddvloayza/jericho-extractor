@@ -1,0 +1,310 @@
+[
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:818835242461:function:itl-0004-itx-prd-lmbd-app-02",
+    "resource_name": "itl-0004-itx-prd-lmbd-app-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.10",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-03-18T19:48:23.000+0000",
+    "code_size_bytes": 27346219,
+    "handler": "trigger_app.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_ids": [
+      "subnet-03c90b860a79acd5e",
+      "subnet-0922b864eefaddb05"
+    ],
+    "security_group_ids": [
+      "sg-0d132d30a28741e82"
+    ],
+    "execution_role": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lmbd-app-02-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "environment_keys": [
+      "QUEUES_URL_MAP"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0d132d30a28741e82",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lmbd-app-02-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:49.984181+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:818835242461:function:itl-0004-itx-prd-lmbd-file-load-02",
+    "resource_name": "itl-0004-itx-prd-lmbd-file-load-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.10",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-10-27T04:36:36.000+0000",
+    "code_size_bytes": 1806,
+    "handler": "src/lambda_fileload_rds.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_ids": [
+      "subnet-03c90b860a79acd5e",
+      "subnet-0922b864eefaddb05"
+    ],
+    "security_group_ids": [
+      "sg-0fde3398d48e6fdb0"
+    ],
+    "execution_role": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lmbd-file-load-02-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "environment_keys": [
+      "INTERCHANGE_DATABASE_SECRET_ARN",
+      "BUCKET_NAME"
+    ],
+    "tracing_mode": "Active",
+    "dead_letter_target": "arn:aws:sqs:eu-south-2:818835242461:itl-0004-itx-prd-lmbd-file-load-02-dlq",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0fde3398d48e6fdb0",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lmbd-file-load-02-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:50.203057+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:818835242461:function:itl-0004-itx-prd-lmbd-sendmail-02",
+    "resource_name": "itl-0004-itx-prd-lmbd-sendmail-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.10",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-10-26T19:15:40.000+0000",
+    "code_size_bytes": 1833,
+    "handler": "src/lambda_function.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_ids": [
+      "subnet-03c90b860a79acd5e",
+      "subnet-0922b864eefaddb05"
+    ],
+    "security_group_ids": [
+      "sg-0cf9b3d2905943753"
+    ],
+    "execution_role": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lmbd-sendmail-02-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "environment_keys": [
+      "SMTP_SECRET_ARN"
+    ],
+    "tracing_mode": "Active",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0cf9b3d2905943753",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lmbd-sendmail-02-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:50.422470+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:818835242461:function:itl-0004-itx-prd-lambda-pg-audit-02",
+    "resource_name": "itl-0004-itx-prd-lambda-pg-audit-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.12",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-03-20T22:31:41.000+0000",
+    "code_size_bytes": 1032,
+    "handler": "lambda.lambda_handler",
+    "description": "Lambda to export pgaudit logs to s3",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_ids": [
+      "subnet-013b386fa64d33781",
+      "subnet-0ed8a143f2b994c42"
+    ],
+    "security_group_ids": [
+      "sg-0a9badb1aa57f04b6"
+    ],
+    "execution_role": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lambda-pg-audit-02-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "ACCOUNT_ID",
+      "PREFIX",
+      "LOG_GROUP",
+      "BUCKET_NAME"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-013b386fa64d33781",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0ed8a143f2b994c42",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0a9badb1aa57f04b6",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lambda-pg-audit-02-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:50.628305+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:818835242461:function:aws-controltower-NotificationForwarder",
+    "resource_name": "aws-controltower-NotificationForwarder",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.13",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-09-03T15:30:15.970+0000",
+    "code_size_bytes": 473,
+    "handler": "index.lambda_handler",
+    "description": "SNS message forwarding function for aggregating account notifications.",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::818835242461:role/aws-controltower-ForwardSnsNotificationRole",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "sns_arn"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "aws:cloudformation:logical-id": "ForwardSnsNotification",
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:818835242461:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-1e5bb32d-7651-4eff-b38b-69399e44b6bd/e1321810-88da-11f0-856f-0eb272764b65",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-1e5bb32d-7651-4eff-b38b-69399e44b6bd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::818835242461:role/aws-controltower-ForwardSnsNotificationRole",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:50.845399+00:00"
+  }
+]

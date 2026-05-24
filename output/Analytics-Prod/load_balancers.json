@@ -1,0 +1,76 @@
+[
+  {
+    "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+    "resource_name": "itl-0005-ana-prd-alb-apps-02",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "dns_name": "internal-itl-0005-ana-prd-alb-apps-02-2014865631.eu-south-2.elb.amazonaws.com",
+    "scheme": "internal",
+    "lb_type": "application",
+    "state": "active",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "availability_zones": [
+      {
+        "ZoneName": "eu-south-2c",
+        "SubnetId": "subnet-04c4e78c5fef9f756",
+        "LoadBalancerAddresses": []
+      },
+      {
+        "ZoneName": "eu-south-2b",
+        "SubnetId": "subnet-08d029e0c1f7e782e",
+        "LoadBalancerAddresses": []
+      },
+      {
+        "ZoneName": "eu-south-2a",
+        "SubnetId": "subnet-0d85a80ddb479d2fb",
+        "LoadBalancerAddresses": []
+      }
+    ],
+    "security_group_ids": [
+      "sg-0833875ec8868948e",
+      "sg-09e84fe96301bd6fb"
+    ],
+    "canonical_hosted_zone_id": "Z0956581394HF5D5LXGAP",
+    "created_time": "2025-10-17 03:47:30.520000+00:00",
+    "tags": {
+      "ingress.k8s.aws/resource": "LoadBalancer",
+      "ingress.k8s.aws/stack": "intelica-apps",
+      "elbv2.k8s.aws/cluster": "itl-0005-ana-prd-eks-af-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-04c4e78c5fef9f756",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0833875ec8868948e",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-09e84fe96301bd6fb",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:03:27.414669+00:00"
+  }
+]

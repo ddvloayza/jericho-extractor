@@ -1,0 +1,2128 @@
+[
+  {
+    "nodes": [
+      {
+        "id": "vpc-0008aceba2432ab91",
+        "resource_type": "aws::ec2::vpc",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "vpc-0ede3f28262280a93",
+        "resource_type": "aws::ec2::vpc",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "subnet-0234f424bc7b4795e",
+        "resource_type": "aws::ec2::subnet",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0ede3f28262280a93",
+        "subnet_type": "unknown"
+      },
+      {
+        "id": "subnet-098f112a26aa4f4a2",
+        "resource_type": "aws::ec2::subnet",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0ede3f28262280a93",
+        "subnet_type": "unknown"
+      },
+      {
+        "id": "subnet-077cb8f42729b95bb",
+        "resource_type": "aws::ec2::subnet",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": "public"
+      },
+      {
+        "id": "subnet-04c4e78c5fef9f756",
+        "resource_type": "aws::ec2::subnet",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": "private"
+      },
+      {
+        "id": "subnet-0a7d571bb2360baed",
+        "resource_type": "aws::ec2::subnet",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": "public"
+      },
+      {
+        "id": "subnet-08d029e0c1f7e782e",
+        "resource_type": "aws::ec2::subnet",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": "private"
+      },
+      {
+        "id": "subnet-0d2f2112cc95f756e",
+        "resource_type": "aws::ec2::subnet",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": "public"
+      },
+      {
+        "id": "subnet-0d85a80ddb479d2fb",
+        "resource_type": "aws::ec2::subnet",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": "private"
+      },
+      {
+        "id": "subnet-05ced23f76cfe459c",
+        "resource_type": "aws::ec2::subnet",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0ede3f28262280a93",
+        "subnet_type": "unknown"
+      },
+      {
+        "id": "rtb-0a2759d67b5e7cf1b",
+        "resource_type": "aws::ec2::route_table",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "rtb-0a70f3e8465a64752",
+        "resource_type": "aws::ec2::route_table",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0ede3f28262280a93",
+        "subnet_type": ""
+      },
+      {
+        "id": "rtb-0d4657796890aeae9",
+        "resource_type": "aws::ec2::route_table",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "rtb-0f8ec71a2d3f5e03d",
+        "resource_type": "aws::ec2::route_table",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "igw-09126b47c08cf232c",
+        "resource_type": "aws::ec2::internet_gateway",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "igw-0eff82aaffadad80f",
+        "resource_type": "aws::ec2::internet_gateway",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "nat-0beb17b37f7133346",
+        "resource_type": "aws::ec2::nat_gateway",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "tgw-attach-0075738dd2bed67c3",
+        "resource_type": "aws::ec2::transit_gateway_attachment",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "sg-07f5539aa666685bf",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "sg-0ea3d643b45650c9a",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "sg-005bad6e329e4bc98",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "sg-09e84fe96301bd6fb",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "sg-074026ddbbdad7fbb",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "sg-0e0494efc97b8b13d",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "sg-05b1e784af79f4344",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0ede3f28262280a93",
+        "subnet_type": ""
+      },
+      {
+        "id": "sg-083547b121cc43193",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "sg-0833875ec8868948e",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "acl-001e53d406396c87b",
+        "resource_type": "aws::ec2::network_acl",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0ede3f28262280a93",
+        "subnet_type": ""
+      },
+      {
+        "id": "acl-0a850c03d3dd0bbff",
+        "resource_type": "aws::ec2::network_acl",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-01b13eae07f63ec5b",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0d144890172d51e61",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0c01d58ce07196bf7",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-094ec242f055a887e",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-05a7587ff34a96782",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0638313d399bbb015",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0aaf8958fbe099431",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-05ae2ad03388cd6bd",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-04bcdd7cdf1cf8bb7",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-00b7dc4879eb60f45",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0b4fc83acca5e64bb",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-01df5477f090276cb",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-023605556d0217d22",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0cea9fd415c978aab",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0fe5f78a887383ed6",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0c0ad353441c2ea41",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-01440afb26af67999",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0831b7bf7b62b1d45",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0d578578ba7d2fd5f",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0e76fc679e6a237bc",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0e1b4dd567aab51ca",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-022536acf807a6420",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0e21110e8693c7976",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-08295e77479fbfb23",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0ed86b2140eae12cc",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-082a83760696ec388",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-07d16d5cf9033ed5c",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-07e48210c07971d3d",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-012c836fd8f406cb6",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-04aa60d2e07578b38",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-09fcd001c4366b21f",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-039b0cf01b31e473f",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-07c9de0fd0c8ad9a9",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0bce524924708ead4",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0d10ebaa8ce3c586e",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0e071b24317c337cc",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-075fabecb8c96b024",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0fe4fe78662d18866",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-0aec236f429dae28d",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "vpce-0e1367019a835c7c6",
+        "resource_type": "aws::ec2::vpc_endpoint",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "vpce-04dbbb4c57b18e28e",
+        "resource_type": "aws::ec2::vpc_endpoint",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "vpce-07decf21486e508e2",
+        "resource_type": "aws::ec2::vpc_endpoint",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "vpce-04f839953b8ca8f18",
+        "resource_type": "aws::ec2::vpc_endpoint",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "i-01575f747726bb062",
+        "resource_type": "aws::ec2::instance",
+        "resource_name": "",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_name": "itl-0005-ana-prd-alb-apps-02",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:targetgroup/k8s-airflow-airflowp-872a1d5914/c179f449fe5d8326",
+        "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+        "resource_name": "k8s-airflow-airflowp-872a1d5914",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:targetgroup/k8s-argocd-argocdse-44f3dcd63b/de7ca4e4bea1abf1",
+        "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+        "resource_name": "k8s-argocd-argocdse-44f3dcd63b",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:targetgroup/k8s-argocd-argocdse-61e9eb9ff6/0afc88cc26197062",
+        "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+        "resource_name": "k8s-argocd-argocdse-61e9eb9ff6",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02",
+        "resource_type": "aws::eks::cluster",
+        "resource_name": "itl-0005-ana-prd-eks-af-02",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:nodegroup/itl-0005-ana-prd-eks-af-02/itl-0005-ana-prd-ng-dags-02-20251017032808088700000026/28ccf81a-f680-754d-5734-4d37cc48f9ba",
+        "resource_type": "aws::eks::nodegroup",
+        "resource_name": "itl-0005-ana-prd-ng-dags-02-20251017032808088700000026",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:lambda:eu-south-2:831926623233:function:aws-controltower-NotificationForwarder",
+        "resource_type": "aws::lambda::function",
+        "resource_name": "aws-controltower-NotificationForwarder",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:rds:eu-south-2:831926623233:db:itl-0005-ana-prd-rds-dbaf-02",
+        "resource_type": "aws::rds::dbinstance",
+        "resource_name": "itl-0005-ana-prd-rds-dbaf-02",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-0008aceba2432ab91",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:kms:eu-south-2:831926623233:key/746658b3-5dd0-4c98-b05d-2ace2021dc74",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/itl-0005-ana-prd-ebs-02",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:kms:eu-south-2:831926623233:key/933d2257-7a06-47c7-b503-b13c40013c60",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/aws/lambda",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:kms:eu-south-2:831926623233:key/a0613685-3d87-4779-a32c-db154847217b",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/aws/acm",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:kms:eu-south-2:831926623233:key/a865ca5f-dd1a-4037-b0a1-d82f977b3d4d",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/aws/rds",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:kms:eu-south-2:831926623233:key/d5972fe1-ae4d-446d-9ee7-d8c60f9ee511",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/eks/itl-0005-ana-prd-eks-af-02",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_name": "airflow",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_name": "amazon-cloudwatch",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_namespace/amazon-guardduty",
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_name": "amazon-guardduty",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_name": "argocd",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_namespace/default",
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_name": "default",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_namespace/kube-node-lease",
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_name": "kube-node-lease",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_namespace/kube-public",
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_name": "kube-public",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_name": "kube-system",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/airflow/airflowprd-db-migrations",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "airflowprd-db-migrations",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/airflow/airflowprd-pgbouncer",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "airflowprd-pgbouncer",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/airflow/airflowprd-scheduler",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "airflowprd-scheduler",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/airflow/airflowprd-sync-connections",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "airflowprd-sync-connections",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/airflow/airflowprd-sync-users",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "airflowprd-sync-users",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/airflow/airflowprd-triggerer",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "airflowprd-triggerer",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/airflow/airflowprd-web",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "airflowprd-web",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/amazon-cloudwatch/amazon-cloudwatch-observability-controller-manager",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "amazon-cloudwatch-observability-controller-manager",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-applicationset-controller",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "argocd-applicationset-controller",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-dex-server",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "argocd-dex-server",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-notifications-controller",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "argocd-notifications-controller",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-redis",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "argocd-redis",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-repo-server",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "argocd-repo-server",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-server",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "argocd-server",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/kube-system/autoscaler-aws-cluster-autoscaler",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "autoscaler-aws-cluster-autoscaler",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/kube-system/aws-load-balancer-controller",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "aws-load-balancer-controller",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/kube-system/coredns",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "coredns",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/kube-system/external-dns",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "external-dns",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_deployment/kube-system/metrics-server",
+        "resource_type": "aws::eks::k8s_deployment",
+        "resource_name": "metrics-server",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/airflow/airflowprd-pgbouncer",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "airflowprd-pgbouncer",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/airflow/airflowprd-web",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "airflowprd-web",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/amazon-cloudwatch-observability-webhook-service",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "amazon-cloudwatch-observability-webhook-service",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "cloudwatch-agent",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-headless",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "cloudwatch-agent-headless",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-monitoring",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "cloudwatch-agent-monitoring",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-windows",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "cloudwatch-agent-windows",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-windows-container-insights-monitoring",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "cloudwatch-agent-windows-container-insights-monitoring",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-windows-headless",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "cloudwatch-agent-windows-headless",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-windows-monitoring",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "cloudwatch-agent-windows-monitoring",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/dcgm-exporter-service",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "dcgm-exporter-service",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/neuron-monitor-service",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "neuron-monitor-service",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/argocd/argocd-applicationset-controller",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "argocd-applicationset-controller",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/argocd/argocd-dex-server",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "argocd-dex-server",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/argocd/argocd-redis",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "argocd-redis",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/argocd/argocd-repo-server",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "argocd-repo-server",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/argocd/argocd-server",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "argocd-server",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/argocd/argocd-server-grpc",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "argocd-server-grpc",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/default/kubernetes",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "kubernetes",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/kube-system/autoscaler-aws-cluster-autoscaler",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "autoscaler-aws-cluster-autoscaler",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/kube-system/aws-load-balancer-webhook-service",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "aws-load-balancer-webhook-service",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/kube-system/eks-extension-metrics-api",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "eks-extension-metrics-api",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/kube-system/external-dns",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "external-dns",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/kube-system/kube-dns",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "kube-dns",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_service/kube-system/metrics-server",
+        "resource_type": "aws::eks::k8s_service",
+        "resource_name": "metrics-server",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_ingress/airflow/airflowprd-web",
+        "resource_type": "aws::eks::k8s_ingress",
+        "resource_name": "airflowprd-web",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02/aws::eks::k8s_ingress/argocd/argocd-server",
+        "resource_type": "aws::eks::k8s_ingress",
+        "resource_name": "argocd-server",
+        "account_id": "831926623233",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      }
+    ],
+    "edges": [
+      {
+        "source": "subnet-0234f424bc7b4795e",
+        "target": "vpc-0ede3f28262280a93",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "subnet-098f112a26aa4f4a2",
+        "target": "vpc-0ede3f28262280a93",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "subnet-077cb8f42729b95bb",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "subnet-04c4e78c5fef9f756",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "subnet-0a7d571bb2360baed",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "subnet-08d029e0c1f7e782e",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "subnet-0d2f2112cc95f756e",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "subnet-0d85a80ddb479d2fb",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "subnet-05ced23f76cfe459c",
+        "target": "vpc-0ede3f28262280a93",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "rtb-0a2759d67b5e7cf1b",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "rtb-0a70f3e8465a64752",
+        "target": "vpc-0ede3f28262280a93",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "rtb-0a70f3e8465a64752",
+        "target": "igw-09126b47c08cf232c",
+        "relation": "routes_to_igw",
+        "destination": ""
+      },
+      {
+        "source": "rtb-0d4657796890aeae9",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "rtb-0d4657796890aeae9",
+        "target": "igw-0eff82aaffadad80f",
+        "relation": "routes_to_igw",
+        "destination": ""
+      },
+      {
+        "source": "rtb-0f8ec71a2d3f5e03d",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "source": "rtb-0f8ec71a2d3f5e03d",
+        "target": "nat-0beb17b37f7133346",
+        "relation": "routes_to_nat",
+        "destination": ""
+      },
+      {
+        "source": "igw-09126b47c08cf232c",
+        "target": "vpc-0ede3f28262280a93",
+        "relation": "attached_to_vpc"
+      },
+      {
+        "source": "igw-0eff82aaffadad80f",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "attached_to_vpc"
+      },
+      {
+        "source": "nat-0beb17b37f7133346",
+        "target": "subnet-077cb8f42729b95bb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "nat-0beb17b37f7133346",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "source": "sg-005bad6e329e4bc98",
+        "target": "sg-09e84fe96301bd6fb",
+        "relation": "references_sg"
+      },
+      {
+        "source": "sg-005bad6e329e4bc98",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "references_sg"
+      },
+      {
+        "source": "sg-05b1e784af79f4344",
+        "target": "sg-05b1e784af79f4344",
+        "relation": "references_sg"
+      },
+      {
+        "source": "eni-01b13eae07f63ec5b",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-01b13eae07f63ec5b",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-01b13eae07f63ec5b",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0d144890172d51e61",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0d144890172d51e61",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0d144890172d51e61",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0c01d58ce07196bf7",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0c01d58ce07196bf7",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0c01d58ce07196bf7",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-094ec242f055a887e",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-094ec242f055a887e",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-094ec242f055a887e",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-05a7587ff34a96782",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-05a7587ff34a96782",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-05a7587ff34a96782",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0638313d399bbb015",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0638313d399bbb015",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0638313d399bbb015",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0aaf8958fbe099431",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0aaf8958fbe099431",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0aaf8958fbe099431",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-05ae2ad03388cd6bd",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-05ae2ad03388cd6bd",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-05ae2ad03388cd6bd",
+        "target": "sg-07f5539aa666685bf",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-04bcdd7cdf1cf8bb7",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-04bcdd7cdf1cf8bb7",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-04bcdd7cdf1cf8bb7",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-00b7dc4879eb60f45",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-00b7dc4879eb60f45",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-00b7dc4879eb60f45",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0b4fc83acca5e64bb",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0b4fc83acca5e64bb",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-01df5477f090276cb",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-01df5477f090276cb",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-01df5477f090276cb",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-023605556d0217d22",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-023605556d0217d22",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-023605556d0217d22",
+        "target": "sg-0833875ec8868948e",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-023605556d0217d22",
+        "target": "sg-09e84fe96301bd6fb",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0cea9fd415c978aab",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0cea9fd415c978aab",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0cea9fd415c978aab",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0fe5f78a887383ed6",
+        "target": "subnet-077cb8f42729b95bb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0fe5f78a887383ed6",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0c0ad353441c2ea41",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0c0ad353441c2ea41",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0c0ad353441c2ea41",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-01440afb26af67999",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-01440afb26af67999",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-01440afb26af67999",
+        "target": "sg-0e0494efc97b8b13d",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0831b7bf7b62b1d45",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0831b7bf7b62b1d45",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0831b7bf7b62b1d45",
+        "target": "sg-0833875ec8868948e",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0831b7bf7b62b1d45",
+        "target": "sg-09e84fe96301bd6fb",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0d578578ba7d2fd5f",
+        "target": "subnet-077cb8f42729b95bb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0d578578ba7d2fd5f",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0e76fc679e6a237bc",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0e76fc679e6a237bc",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0e76fc679e6a237bc",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0e1b4dd567aab51ca",
+        "target": "subnet-077cb8f42729b95bb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0e1b4dd567aab51ca",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0e1b4dd567aab51ca",
+        "target": "sg-07f5539aa666685bf",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-022536acf807a6420",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-022536acf807a6420",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-022536acf807a6420",
+        "target": "sg-0e0494efc97b8b13d",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0e21110e8693c7976",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0e21110e8693c7976",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0e21110e8693c7976",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-08295e77479fbfb23",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-08295e77479fbfb23",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-08295e77479fbfb23",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0ed86b2140eae12cc",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0ed86b2140eae12cc",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-082a83760696ec388",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-082a83760696ec388",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-082a83760696ec388",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-07d16d5cf9033ed5c",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-07d16d5cf9033ed5c",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-07d16d5cf9033ed5c",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-07e48210c07971d3d",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-07e48210c07971d3d",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-07e48210c07971d3d",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-012c836fd8f406cb6",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-012c836fd8f406cb6",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-012c836fd8f406cb6",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-04aa60d2e07578b38",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-04aa60d2e07578b38",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-04aa60d2e07578b38",
+        "target": "sg-07f5539aa666685bf",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-09fcd001c4366b21f",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-09fcd001c4366b21f",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-09fcd001c4366b21f",
+        "target": "sg-074026ddbbdad7fbb",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-039b0cf01b31e473f",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-039b0cf01b31e473f",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-039b0cf01b31e473f",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-07c9de0fd0c8ad9a9",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-07c9de0fd0c8ad9a9",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-07c9de0fd0c8ad9a9",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0bce524924708ead4",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0bce524924708ead4",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0bce524924708ead4",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0d10ebaa8ce3c586e",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0d10ebaa8ce3c586e",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0d10ebaa8ce3c586e",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0e071b24317c337cc",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0e071b24317c337cc",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0e071b24317c337cc",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-075fabecb8c96b024",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-075fabecb8c96b024",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-075fabecb8c96b024",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0fe4fe78662d18866",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0fe4fe78662d18866",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0fe4fe78662d18866",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0aec236f429dae28d",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0aec236f429dae28d",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0aec236f429dae28d",
+        "target": "sg-0833875ec8868948e",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0aec236f429dae28d",
+        "target": "sg-09e84fe96301bd6fb",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "vpce-0e1367019a835c7c6",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "vpce-04dbbb4c57b18e28e",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "vpce-04dbbb4c57b18e28e",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "vpce-07decf21486e508e2",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "vpce-07decf21486e508e2",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "vpce-04f839953b8ca8f18",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "vpce-04f839953b8ca8f18",
+        "target": "subnet-077cb8f42729b95bb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "vpce-04f839953b8ca8f18",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "vpce-04f839953b8ca8f18",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "i-01575f747726bb062",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "i-01575f747726bb062",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "source": "i-01575f747726bb062",
+        "target": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "source": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "target": "sg-0833875ec8868948e",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "target": "sg-09e84fe96301bd6fb",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "target": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:targetgroup/k8s-airflow-airflowp-872a1d5914/c179f449fe5d8326",
+        "relation": "routes_to_tg"
+      },
+      {
+        "source": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "target": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:targetgroup/k8s-argocd-argocdse-44f3dcd63b/de7ca4e4bea1abf1",
+        "relation": "routes_to_tg"
+      },
+      {
+        "source": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+        "target": "arn:aws:elasticloadbalancing:eu-south-2:831926623233:targetgroup/k8s-argocd-argocdse-61e9eb9ff6/0afc88cc26197062",
+        "relation": "routes_to_tg"
+      },
+      {
+        "source": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02",
+        "target": "vpc-0008aceba2432ab91",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "source": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "uses_subnet"
+      },
+      {
+        "source": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "uses_subnet"
+      },
+      {
+        "source": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "uses_subnet"
+      },
+      {
+        "source": "arn:aws:eks:eu-south-2:831926623233:nodegroup/itl-0005-ana-prd-eks-af-02/itl-0005-ana-prd-ng-dags-02-20251017032808088700000026/28ccf81a-f680-754d-5734-4d37cc48f9ba",
+        "target": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "source": "arn:aws:eks:eu-south-2:831926623233:nodegroup/itl-0005-ana-prd-eks-af-02/itl-0005-ana-prd-ng-dags-02-20251017032808088700000026/28ccf81a-f680-754d-5734-4d37cc48f9ba",
+        "target": "subnet-04c4e78c5fef9f756",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "arn:aws:eks:eu-south-2:831926623233:nodegroup/itl-0005-ana-prd-eks-af-02/itl-0005-ana-prd-ng-dags-02-20251017032808088700000026/28ccf81a-f680-754d-5734-4d37cc48f9ba",
+        "target": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "source": "arn:aws:eks:eu-south-2:831926623233:nodegroup/itl-0005-ana-prd-eks-af-02/itl-0005-ana-prd-ng-dags-02-20251017032808088700000026/28ccf81a-f680-754d-5734-4d37cc48f9ba",
+        "target": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "summary": {
+      "node_count": 141,
+      "public_subnet_count": 3,
+      "private_subnet_count": 3,
+      "edge_count": 168,
+      "connected_components": 69,
+      "internet_facing_count": 2
+    }
+  }
+]

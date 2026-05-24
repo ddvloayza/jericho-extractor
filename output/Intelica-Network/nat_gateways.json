@@ -1,0 +1,35 @@
+[
+  {
+    "resource_type": "aws::ec2::nat_gateway",
+    "resource_id": "nat-019b78f30236407b3",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_id": "subnet-0a157bf35bbf62195",
+    "state": "available",
+    "connectivity_type": "public",
+    "public_ip": "51.48.249.241",
+    "private_ip": "10.18.1.201",
+    "tags": {
+      "coid": "itl",
+      "env": "all",
+      "assetid": "0001",
+      "apid": "shared-network",
+      "Name": "itl-0002-shared-network-all-nat-2a-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0a157bf35bbf62195",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:42.871586+00:00"
+  }
+]

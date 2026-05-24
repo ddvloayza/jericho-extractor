@@ -1,0 +1,88 @@
+[
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:954976322048:targetgroup/k8s-pritunl-pritunlv-583c237939/4a3a6f3c2fc35b05",
+    "resource_name": "k8s-pritunl-pritunlv-583c237939",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "protocol": "UDP",
+    "port": 32578,
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "target_type": "instance",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/healthz",
+    "health_check_interval": 10,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/net/itl-0002-network-all-nlb-pritunl/4583f4ee7c8e9d99"
+    ],
+    "targets": [
+      {
+        "id": "i-036906f692ce0026b",
+        "port": 32578,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/net/itl-0002-network-all-nlb-pritunl/4583f4ee7c8e9d99",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:48.370695+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:954976322048:targetgroup/k8s-pritunl-pritunlw-b00474fa36/870ee43a05dd7789",
+    "resource_name": "k8s-pritunl-pritunlw-b00474fa36",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "protocol": "HTTPS",
+    "port": 443,
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTPS",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/app/k8s-pritunl-pritunli-1014a3c469/7f821ffcb5ec9629"
+    ],
+    "targets": [
+      {
+        "id": "10.18.4.229",
+        "port": 443,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/app/k8s-pritunl-pritunli-1014a3c469/7f821ffcb5ec9629",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:48.591878+00:00"
+  }
+]

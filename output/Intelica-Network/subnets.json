@@ -1,0 +1,274 @@
+[
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-060bccb2e00f66b25",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-04ef4e1c7cb3cc620",
+    "cidr_block": "172.31.16.0/20",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 4091,
+    "state": "available",
+    "is_default": true,
+    "map_public_ip_on_launch": true,
+    "subnet_type": "unknown",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-04ef4e1c7cb3cc620",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.958643+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0c9fc58aab4d826c2",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "cidr_block": "10.18.5.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 251,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "isolated",
+    "tags": {
+      "Name": "itl-0002-shared-network-all-restricted-2a",
+      "assetid": "0001",
+      "apid": "shared-network",
+      "env": "all",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.958663+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0cc5df51a602ec5b4",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-04ef4e1c7cb3cc620",
+    "cidr_block": "172.31.32.0/20",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 4091,
+    "state": "available",
+    "is_default": true,
+    "map_public_ip_on_launch": true,
+    "subnet_type": "unknown",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-04ef4e1c7cb3cc620",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.958668+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0624a59dbcfc36798",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "cidr_block": "10.18.4.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 215,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "private",
+    "tags": {
+      "apid": "shared-network",
+      "kubernetes.io/role/internal-elb": "1",
+      "Name": "itl-0002-shared-network-all-private-2b",
+      "env": "all",
+      "coid": "itl",
+      "assetid": "0001"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.958673+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-017059e9a4fe66bd0",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-04ef4e1c7cb3cc620",
+    "cidr_block": "172.31.0.0/20",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2c",
+    "availability_zone_id": "eus2-az3",
+    "available_ip_count": 4091,
+    "state": "available",
+    "is_default": true,
+    "map_public_ip_on_launch": true,
+    "subnet_type": "unknown",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-04ef4e1c7cb3cc620",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.958683+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-011ec58c1a72d1d92",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "cidr_block": "10.18.6.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 251,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "isolated",
+    "tags": {
+      "Name": "itl-0002-shared-network-all-restricted-2b",
+      "assetid": "0001",
+      "env": "all",
+      "apid": "shared-network",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.958689+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0f412a52465a75334",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "cidr_block": "10.18.2.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 249,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "public",
+    "tags": {
+      "env": "all",
+      "Name": "itl-0002-shared-network-all-public-2b",
+      "apid": "shared-network",
+      "coid": "itl",
+      "assetid": "0001"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.958693+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-06e26c7cc455004c5",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "cidr_block": "10.18.3.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 247,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "private",
+    "tags": {
+      "coid": "itl",
+      "assetid": "0001",
+      "env": "all",
+      "apid": "shared-network",
+      "Name": "itl-0002-shared-network-all-private-2a",
+      "kubernetes.io/role/internal-elb": "1"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.958697+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0a157bf35bbf62195",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "cidr_block": "10.18.1.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 248,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "public",
+    "tags": {
+      "coid": "itl",
+      "env": "all",
+      "apid": "shared-network",
+      "assetid": "0001",
+      "Name": "itl-0002-shared-network-all-public-2a"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.958701+00:00"
+  }
+]

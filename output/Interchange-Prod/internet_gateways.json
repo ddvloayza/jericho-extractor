@@ -1,0 +1,74 @@
+[
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-01ee7a6bfe96bfbb1",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-0c6863a32b8db36e0"
+    ],
+    "tags": {
+      "Name": "itl-0004-itx-prod-igw-02",
+      "apid": "itx",
+      "assetid": "0004",
+      "env": "prod",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:41.628004+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-0840f656c99b08f58",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-09cd0eff0b0a7a363"
+    ],
+    "tags": {
+      "Name": "itl-0004-itx-prod-igw-01",
+      "env": "prod",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-09cd0eff0b0a7a363",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:41.628018+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-0f1155ffd0b58b243",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-0e628fe72b4175720"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0e628fe72b4175720",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:41.628023+00:00"
+  }
+]

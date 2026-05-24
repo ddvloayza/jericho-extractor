@@ -1556,3 +1556,743 @@ def render_hierarchy_report(
         ),
         encoding="utf-8",
     )
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Consolidated audit report — 6 tabs, single HTML file
+# ─────────────────────────────────────────────────────────────────────────────
+
+_DANGEROUS_PORTS = {
+    22:    "SSH",     23:    "Telnet",    3389:  "RDP",
+    1433:  "MSSQL",  3306:  "MySQL",     5432:  "PostgreSQL",
+    27017: "MongoDB", 6379: "Redis",     9200:  "Elasticsearch",
+    9300:  "Elasticsearch", 5984: "CouchDB",
+    2181:  "Zookeeper", 11211: "Memcached",
+}
+_OPEN_CIDRS = {"0.0.0.0/0", "::/0"}
+
+
+def _is_open_to_internet(rule: dict) -> bool:
+    return bool(set(rule.get("cidrs") or []) & _OPEN_CIDRS)
+
+
+def _dangerous_open_ports(sg: dict) -> list[tuple]:
+    hits: list[tuple] = []
+    for rule in sg.get("inbound_analysis", []):
+        if not _is_open_to_internet(rule):
+            continue
+        fp    = rule.get("from_port")
+        tp    = rule.get("to_port")
+        proto = rule.get("protocol", "-1")
+        if proto in ("-1", "all"):
+            hits.append((None, "ALL TRAFFIC"))
+            continue
+        if fp is not None:
+            for port, svc in _DANGEROUS_PORTS.items():
+                if fp <= port <= (tp or fp):
+                    hits.append((port, svc))
+    return hits
+
+
+def _safe(v: Any, yes: str = "Yes", no: str = "No") -> str:
+    if v is None:
+        return '<span style="color:var(--ig3)">—</span>'
+    return (
+        f'<span class="chip" style="background:#EEFBF1;color:#1F7A35">{yes}</span>'
+        if v
+        else f'<span class="chip" style="background:#FEF0F0;color:#C42626">{no}</span>'
+    )
+
+
+# ── per-tab builders ──────────────────────────────────────────────────────────
+
+def _tab_dashboard(
+    inventory: dict, sg_analysis: list[dict],
+    internet_facing: list[dict], account_name: str,
+) -> str:
+    risk_order = ["critical", "high", "medium", "low", "info"]
+    counts = {r: sum(1 for a in sg_analysis if str(a.get("overall_risk")) == r) for r in risk_order}
+
+    crit_sgs = [a for a in sg_analysis if str(a.get("overall_risk")) == "critical"]
+    high_sgs = [a for a in sg_analysis if str(a.get("overall_risk")) == "high"]
+    s3       = inventory.get("s3_buckets", [])
+    kms      = inventory.get("kms", [])
+    secrets  = inventory.get("secrets", [])
+    ec2      = [i for i in inventory.get("ec2", []) if i.get("state") != "terminated"]
+    rds      = inventory.get("rds", [])
+
+    s3_exposed  = [b for b in s3 if b.get("acl_public") or b.get("bucket_policy_public")]
+    s3_no_block = [b for b in s3 if not all([
+        b.get("block_public_acls"), b.get("block_public_policy"),
+        b.get("ignore_public_acls"), b.get("restrict_public_buckets"),
+    ])]
+    kms_no_rot  = [k for k in kms if k.get("key_manager") == "CUSTOMER" and not k.get("rotation_enabled")]
+    sec_no_rot  = [s for s in secrets if not s.get("rotation_enabled")]
+    rds_no_enc  = [db for db in rds if db.get("storage_encrypted") is False]
+
+    callouts = ""
+    if crit_sgs:
+        ids   = ", ".join(f'<code>{sg.get("security_group_id","")}</code>' for sg in crit_sgs[:5])
+        extra = f" +{len(crit_sgs)-5} more" if len(crit_sgs) > 5 else ""
+        callouts += _callout(
+            f"<strong>{len(crit_sgs)} critical security group(s)</strong> allow unrestricted "
+            f"internet access to sensitive ports. Immediate remediation required: {ids}{extra}.", "alert")
+    if s3_exposed:
+        names = ", ".join(f'<code>{b.get("resource_name","")}</code>' for b in s3_exposed[:4])
+        callouts += _callout(
+            f"<strong>{len(s3_exposed)} S3 bucket(s) are publicly accessible</strong> via ACL "
+            f"or bucket policy: {names}. Review and restrict access.", "alert")
+    if high_sgs:
+        callouts += _callout(
+            f"<strong>{len(high_sgs)} high-risk security group(s)</strong> have elevated exposure. "
+            f"Review and tighten ingress rules.")
+    if s3_no_block:
+        callouts += _callout(
+            f"<strong>{len(s3_no_block)} S3 bucket(s)</strong> do not have all four public-access "
+            f"block settings enabled (<code>BlockPublicAcls</code>, <code>BlockPublicPolicy</code>, "
+            f"<code>IgnorePublicAcls</code>, <code>RestrictPublicBuckets</code>).", "info")
+    if kms_no_rot:
+        callouts += _callout(
+            f"<strong>{len(kms_no_rot)} customer-managed KMS key(s)</strong> do not have automatic "
+            f"rotation enabled. Enable yearly rotation.", "info")
+    if sec_no_rot:
+        callouts += _callout(
+            f"<strong>{len(sec_no_rot)} secret(s)</strong> in Secrets Manager have no rotation "
+            f"configured. Automate rotation to reduce credential exposure.", "info")
+    if rds_no_enc:
+        names = ", ".join(f'<code>{db.get("resource_name","")}</code>' for db in rds_no_enc[:3])
+        callouts += _callout(
+            f"<strong>{len(rds_no_enc)} RDS instance(s) not encrypted at rest:</strong> {names}. "
+            f"Enable encryption for data-at-rest compliance.", "alert")
+    if not callouts:
+        callouts = _callout("<strong>No critical findings detected.</strong> Infrastructure appears well-configured.", "ok")
+
+    risk_tiles = '<div class="cgrid c3" style="margin:20px 0">'
+    for risk, clr, desc in [
+        ("critical", "#C42626", "Unrestricted internet access to sensitive ports."),
+        ("high",     "#B86200", "Broad access rules exposing sensitive resources."),
+        ("medium",   "#856A00", "Moderately permissive; review recommended."),
+        ("low",      "#1F7A35", "Restricted access; acceptable risk."),
+        ("info",     "#21409A", "No significant exposure detected."),
+    ]:
+        cnt = counts[risk]
+        risk_tiles += (
+            f'<div class="tile" style="border-left:4px solid {clr}">'
+            f'<div class="tkicker" style="color:{clr}">{risk.upper()}</div>'
+            f'<div style="font-size:26px;font-weight:700;color:{clr};margin-bottom:4px">{cnt}</div>'
+            f'<div class="tbody">{desc}</div></div>')
+    risk_tiles += "</div>"
+
+    eks_cls = [e for e in inventory.get("eks", []) if e.get("resource_type") == "aws::eks::cluster"]
+    rows = "".join(
+        f"<tr><td>{label}</td><td style='font-weight:600'>{count}</td></tr>"
+        for label, count in [
+            ("VPCs",              len(inventory.get("vpcs", []))),
+            ("Subnets (Public)",  sum(1 for s in inventory.get("subnets",[]) if s.get("subnet_type") == "public")),
+            ("Subnets (Private)", sum(1 for s in inventory.get("subnets",[]) if s.get("subnet_type") == "private")),
+            ("EC2 Instances",     len(ec2)),
+            ("Load Balancers",    len(inventory.get("load_balancers", []))),
+            ("EKS Clusters",      len(eks_cls)),
+            ("Lambda Functions",  len(inventory.get("lambdas", []))),
+            ("RDS Instances",     len(rds)),
+            ("S3 Buckets",        len(s3)),
+            ("KMS Keys",          len(kms)),
+            ("IAM Roles",         len(inventory.get("iam_roles", []))),
+            ("Secrets",           len(secrets)),
+            ("Security Groups",   len(sg_analysis)),
+            ("Internet-Facing",   len(internet_facing)),
+        ] if count > 0
+    )
+
+    if_rows = "".join(
+        f"<tr>"
+        f"<td>{r.get('tags',{}).get('Name') or r.get('resource_name','—')}<br>"
+        f'<span style="font-family:var(--fm);font-size:11px;color:var(--ig2)">{r.get("resource_id","")}</span></td>'
+        f"<td><span class='bdg info'>{r.get('resource_type','').split('::')[-1].upper()}</span></td>"
+        f"</tr>"
+        for r in internet_facing[:12]
+    ) + (f"<tr><td colspan='2' style='color:var(--ig2);font-style:italic'>+{len(internet_facing)-12} more…</td></tr>"
+         if len(internet_facing) > 12 else "")
+
+    inv_block = (
+        '<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px">'
+        f'<div class="twrap"><table><thead><tr><th>Resource Type</th><th>Count</th></tr></thead>'
+        f"<tbody>{rows}</tbody></table></div>"
+        f'<div><h3 class="blk" style="margin-top:0">Internet-Facing Resources</h3>'
+        + (
+            f'<div class="twrap"><table><thead><tr><th>Resource</th><th>Type</th></tr></thead>'
+            f"<tbody>{if_rows}</tbody></table></div>"
+            if internet_facing
+            else _callout("No internet-facing resources detected.", "ok")
+        )
+        + "</div></div>"
+    )
+
+    return (
+        '<div class="sec-eyebrow">Audit Dashboard</div>'
+        f'<div class="sec-title">Executive Summary &middot; <strong>{account_name}</strong></div>'
+        '<div class="sec-intro">Critical findings ranked by severity. Remediate in order from top to bottom.</div>'
+        + callouts
+        + '<h3 class="blk">Security Group Risk Distribution</h3>'
+        + risk_tiles
+        + '<h3 class="blk">Resource Inventory &amp; Internet-Facing</h3>'
+        + inv_block
+    )
+
+
+def _tab_security(sg_analysis: list[dict]) -> str:
+    risk_order = ["critical", "high", "medium", "low", "info"]
+    sorted_sgs = sorted(
+        sg_analysis,
+        key=lambda a: (
+            risk_order.index(str(a.get("overall_risk","info"))) if str(a.get("overall_risk","info")) in risk_order else 99,
+            -a.get("attached_count", 0),
+        ),
+    )
+    rows = ""
+    for sg in sorted_sgs:
+        risk  = str(sg.get("overall_risk", "info"))
+        flags = sg.get("exposure_flags", [])
+        meta  = RISK_META.get(risk, RISK_META["info"])
+        flags_html = "".join(
+            f'<span class="chip" style="background:{meta["bg"]};color:{meta["text"]}">{f}</span>'
+            for f in flags)
+        attached = "<br>".join(sg.get("attached_resources", [])[:4])
+        if sg.get("attached_count", 0) > 4:
+            attached += f'<br><span style="color:var(--ig2);font-size:11px">+{sg["attached_count"]-4} more</span>'
+        rows += (
+            f"<tr>"
+            f"<td><code>{sg.get('security_group_id','')}</code><br>"
+            f'<span style="color:var(--ig2);font-size:12px">{sg.get("security_group_name","")}</span></td>'
+            f"<td>{_risk_badge(risk)}</td>"
+            f"<td>{flags_html or '<span style=\"color:var(--ig3)\">—</span>'}</td>"
+            f'<td style="font-size:12px;color:var(--ig)">{attached or "—"}</td>'
+            f"<td>{_rules_summary(sg.get('inbound_analysis', []))}</td>"
+            f"<td>{_rules_summary(sg.get('outbound_analysis', []))}</td>"
+            f"</tr>")
+    return (
+        '<div class="sec-eyebrow">Security Analysis</div>'
+        f'<div class="sec-title">Security Groups &mdash; <strong>{len(sg_analysis)} reviewed</strong></div>'
+        '<div class="sec-intro">All security groups ranked by risk level. '
+        'Critical and High entries expose infrastructure to the internet or allow overly broad access. '
+        'Verify that every open port is intentional and documented.</div>'
+        '<div class="twrap"><table>'
+        "<thead><tr><th>Security Group</th><th>Risk</th><th>Exposure Flags</th>"
+        "<th>Attached Resources</th><th>Inbound Rules</th><th>Outbound Rules</th></tr></thead>"
+        f"<tbody>{rows}</tbody></table></div>"
+    )
+
+
+def _tab_internet_exposure(
+    inventory: dict, sg_analysis: list[dict], internet_facing: list[dict],
+) -> str:
+    open_sg_rows = ""
+    for sg in sg_analysis:
+        dangerous = _dangerous_open_ports(sg)
+        if not dangerous:
+            continue
+        risk  = str(sg.get("overall_risk", "info"))
+        ports = "".join(
+            f'<span class="chip" style="background:#FEF0F0;color:#C42626">'
+            f'{"ALL" if p is None else p}/{svc}</span>'
+            for p, svc in dangerous[:6])
+        open_sg_rows += (
+            f"<tr>"
+            f"<td><code>{sg.get('security_group_id','')}</code><br>"
+            f'<span style="color:var(--ig2);font-size:12px">{sg.get("security_group_name","")}</span></td>'
+            f"<td>{_risk_badge(risk)}</td>"
+            f"<td style='white-space:normal'>{ports}</td>"
+            f"<td>{sg.get('attached_count',0)}</td>"
+            f"</tr>")
+
+    sgs_table = (
+        '<div class="twrap"><table>'
+        "<thead><tr><th>Security Group</th><th>Risk</th>"
+        "<th>Dangerous Ports Open to Internet</th><th>Attached Resources</th></tr></thead>"
+        f"<tbody>{open_sg_rows or '<tr><td colspan=\"4\" style=\"color:var(--ig2)\">'+'No SGs with dangerous open ports detected.</td></tr>'}</tbody>"
+        "</table></div>")
+
+    if_rows = "".join(
+        f"<tr>"
+        f"<td>{r.get('tags',{}).get('Name') or r.get('resource_name','—')}<br>"
+        f'<span style="font-family:var(--fm);font-size:11px;color:var(--ig2)">{r.get("resource_id","")}</span></td>'
+        f"<td><span class='bdg info'>{r.get('resource_type','').split('::')[-1].upper()}</span></td>"
+        f"<td>{r.get('region','—')}</td>"
+        f"</tr>"
+        for r in internet_facing)
+    if_table = (
+        '<div class="twrap"><table>'
+        "<thead><tr><th>Resource</th><th>Type</th><th>Region</th></tr></thead>"
+        f"<tbody>{if_rows or '<tr><td colspan=\"3\" style=\"color:var(--ig2)\">No internet-facing resources found.</td></tr>'}</tbody>"
+        "</table></div>")
+
+    pub_subs = [s for s in inventory.get("subnets", []) if s.get("subnet_type") == "public"]
+    sub_rows = "".join(
+        f"<tr><td>{_short(s, 36)}</td>"
+        f"<td><code>{s.get('resource_id','')}</code></td>"
+        f"<td><code>{s.get('cidr_block','')}</code></td>"
+        f"<td>{s.get('availability_zone','')}</td></tr>"
+        for s in pub_subs)
+    pub_table = (
+        '<div class="twrap"><table>'
+        "<thead><tr><th>Subnet Name</th><th>ID</th><th>CIDR</th><th>AZ</th></tr></thead>"
+        f"<tbody>{sub_rows or '<tr><td colspan=\"4\" style=\"color:var(--ig2)\">No public subnets found.</td></tr>'}</tbody>"
+        "</table></div>")
+
+    return (
+        '<div class="sec-eyebrow">Internet Exposure</div>'
+        '<div class="sec-title">Publicly Reachable Resources &amp; <strong>Open Ports</strong></div>'
+        '<div class="sec-intro">Everything reachable from the public internet. '
+        'Each entry is a potential attack surface — validate that every item is intentional, '
+        'documented, and protected by a WAF or additional controls where appropriate.</div>'
+        + _callout(
+            f"<strong>{len(internet_facing)} resource(s) are reachable from the internet.</strong> "
+            "Verify each one is intentional. Unexpected entries may indicate misconfigurations.",
+            "alert" if internet_facing else "ok")
+        + '<h3 class="blk">Security Groups with Dangerous Ports Open to 0.0.0.0/0</h3>'
+        + sgs_table
+        + f'<h3 class="blk">Internet-Facing Resources ({len(internet_facing)})</h3>'
+        + if_table
+        + f'<h3 class="blk">Public Subnets ({len(pub_subs)})</h3>'
+        + pub_table
+    )
+
+
+def _tab_data_protection(inventory: dict) -> str:
+    s3      = inventory.get("s3_buckets", [])
+    kms     = inventory.get("kms", [])
+    secrets = inventory.get("secrets", [])
+    rds     = inventory.get("rds", [])
+
+    s3_rows = ""
+    for b in sorted(s3, key=lambda x: (not (x.get("acl_public") or x.get("bucket_policy_public")), x.get("resource_name",""))):
+        exposed     = b.get("acl_public") or b.get("bucket_policy_public")
+        all_blocked = all([b.get("block_public_acls"), b.get("block_public_policy"),
+                           b.get("ignore_public_acls"), b.get("restrict_public_buckets")])
+        s3_rows += (
+            f"<tr>"
+            f"<td>{b.get('resource_name','')}<br>"
+            f'<span style="font-family:var(--fm);font-size:11px;color:var(--ig2)">{b.get("region","")}</span></td>'
+            f"<td><span class='chip' style='background:{'#FEF0F0' if exposed else '#EEFBF1'};color:{'#C42626' if exposed else '#1F7A35'}'>"
+            f"{'PUBLIC' if exposed else 'Private'}</span></td>"
+            f"<td>{_safe(all_blocked, 'Blocked', 'Not blocked')}</td>"
+            f"<td><code>{b.get('encryption_type','—')}</code></td>"
+            f"<td>{_safe(b.get('versioning_status') == 'Enabled', 'Enabled', b.get('versioning_status','Disabled'))}</td>"
+            f"<td>{_safe(b.get('logging_enabled'))}</td>"
+            f"</tr>")
+
+    kms_cust = [k for k in kms if k.get("key_manager") == "CUSTOMER" and k.get("enabled")]
+    kms_rows = "".join(
+        f"<tr>"
+        f"<td>{', '.join(k.get('aliases', [])) or k.get('resource_name','—')}<br>"
+        f'<span style="font-family:var(--fm);font-size:11px;color:var(--ig2)">{k.get("key_id","")}</span></td>'
+        f"<td>{_safe(k.get('rotation_enabled'), 'Enabled', 'Disabled')}</td>"
+        f"<td>{_safe(k.get('multi_region'), 'Multi-Region', 'Single-Region')}</td>"
+        f"<td><code>{k.get('key_state','')}</code></td>"
+        f"<td>{k.get('region','')}</td>"
+        f"</tr>"
+        for k in kms_cust)
+
+    sec_rows = "".join(
+        f"<tr>"
+        f"<td>{s.get('resource_name','')}</td>"
+        f"<td>{_safe(s.get('rotation_enabled'))}</td>"
+        f"<td>{str(s.get('last_rotated_date','—'))[:10]}</td>"
+        f"<td>{str(s.get('last_accessed_date','—'))[:10]}</td>"
+        f"<td>{'<span class=\"chip\" style=\"background:#EEFBF1;color:#1F7A35\">Managed</span>' if s.get('owning_service') else '—'}</td>"
+        f"</tr>"
+        for s in sorted(secrets, key=lambda x: not x.get("rotation_enabled", False)))
+
+    rds_rows = "".join(
+        f"<tr>"
+        f"<td>{db.get('resource_name','')}</td>"
+        f"<td><code>{db.get('engine','')}</code></td>"
+        f"<td>{_safe(db.get('storage_encrypted'), 'Encrypted', 'Not Encrypted')}</td>"
+        f"<td>{db.get('backup_retention_period','—')} days</td>"
+        f"<td>{db.get('region','')}</td>"
+        f"</tr>"
+        for db in sorted(rds, key=lambda x: not x.get("storage_encrypted", True)))
+
+    def _tbl(cols: list[str], rows_html: str, empty: str) -> str:
+        ths = "".join(f"<th>{c}</th>" for c in cols)
+        return (
+            '<div class="twrap"><table>'
+            f"<thead><tr>{ths}</tr></thead>"
+            f"<tbody>{rows_html or f'<tr><td colspan=\"{len(cols)}\" style=\"color:var(--ig2)\">{empty}</td></tr>'}</tbody>"
+            "</table></div>")
+
+    return (
+        '<div class="sec-eyebrow">Data Protection</div>'
+        '<div class="sec-title">Encryption &amp; <strong>Data Security Controls</strong></div>'
+        '<div class="sec-intro">'
+        'Encryption at rest, public data exposure, key rotation, and secret lifecycle management. '
+        'These controls are required by SOC 2, ISO 27001, PCI-DSS and most data-protection regulations.'
+        '</div>'
+        + '<h3 class="blk">S3 Buckets</h3>'
+        + _tbl(["Bucket", "Access", "Public Block", "Encryption", "Versioning", "Logging"], s3_rows, "No S3 buckets collected.")
+        + f'<h3 class="blk">Customer-Managed KMS Keys ({len(kms_cust)})</h3>'
+        + _tbl(["Key Alias / Name", "Auto-Rotation", "Scope", "State", "Region"], kms_rows, "No customer-managed KMS keys found.")
+        + '<h3 class="blk">Secrets Manager</h3>'
+        + _tbl(["Secret Name", "Auto-Rotation", "Last Rotated", "Last Accessed", "Managed By"], sec_rows, "No secrets collected.")
+        + '<h3 class="blk">RDS Instances</h3>'
+        + _tbl(["Instance / Cluster", "Engine", "Encryption", "Backup Retention", "Region"], rds_rows, "No RDS instances collected.")
+    )
+
+
+def _tab_iam_connectivity(inventory: dict) -> str:
+    iam_roles = inventory.get("iam_roles", [])
+    tgw_atts  = inventory.get("transit_gateway_attachments", [])
+    peerings  = inventory.get("vpc_peerings", [])
+    endpoints = inventory.get("vpc_endpoints", [])
+
+    def _iam_sort(r: dict) -> tuple:
+        return (len(r.get("trusted_accounts", [])) == 0, r.get("resource_name", ""))
+
+    iam_rows = "".join(
+        f"<tr>"
+        f"<td>{r.get('resource_name','')}<br>"
+        f'<span style="font-family:var(--fm);font-size:11px;color:var(--ig2)">{(r.get("description","") or "")[:60] or "—"}</span></td>'
+        f"<td>{''.join(_chip(s.split('.')[0], '#F0F4FF', '#21409A') for s in r.get('trusted_services',[])[:4])}</td>"
+        f"<td>{''.join(_chip(a, '#FFF7EE', '#B86200') for a in r.get('trusted_accounts',[])[:4])}</td>"
+        f"<td>{len(r.get('attached_policies',[]))} attached"
+        + (f", {len(r.get('inline_policy_names', []))} inline" if r.get('inline_policy_names') else "")
+        + "</td>"
+        f"</tr>"
+        for r in sorted(iam_roles, key=_iam_sort))
+
+    tgw_rows = "".join(
+        f"<tr>"
+        f"<td><code>{att.get('transit_gateway_id','')}</code></td>"
+        f"<td><code>{att.get('resource_id','')}</code></td>"
+        f"<td><code>{att.get('resource_id_ref','')}</code></td>"
+        f"<td>{att.get('state','')}</td>"
+        f"</tr>"
+        for att in tgw_atts)
+
+    peer_rows = "".join(
+        f"<tr>"
+        f"<td><code>{p.get('resource_id','')}</code></td>"
+        f"<td><code>{p.get('requester_vpc_info',{}).get('VpcId','')}</code> "
+        f"<span style='font-size:11px;color:var(--ig2)'>{p.get('requester_vpc_info',{}).get('CidrBlock','')}</span></td>"
+        f"<td><code>{p.get('accepter_vpc_info',{}).get('VpcId','')}</code> "
+        f"<span style='font-size:11px;color:var(--ig2)'>{p.get('accepter_vpc_info',{}).get('CidrBlock','')}</span></td>"
+        f"<td>{p.get('status','')}</td>"
+        f"</tr>"
+        for p in peerings)
+
+    ep_rows = "".join(
+        f"<tr>"
+        f"<td>{ep.get('service_name','').split('.')[-1]}</td>"
+        f"<td><code>{ep.get('service_name','')}</code></td>"
+        f"<td>{ep.get('endpoint_type','')}</td>"
+        f"<td><code>{ep.get('vpc_id','')}</code></td>"
+        f"<td>{ep.get('state','')}</td>"
+        f"</tr>"
+        for ep in endpoints)
+
+    def _tbl(cols: list[str], rows_html: str, empty: str) -> str:
+        ths = "".join(f"<th>{c}</th>" for c in cols)
+        return (
+            '<div class="twrap"><table>'
+            f"<thead><tr>{ths}</tr></thead>"
+            f"<tbody>{rows_html or f'<tr><td colspan=\"{len(cols)}\" style=\"color:var(--ig2)\">{empty}</td></tr>'}</tbody>"
+            "</table></div>")
+
+    cross_account = [r for r in iam_roles if r.get("trusted_accounts")]
+    return (
+        '<div class="sec-eyebrow">Identity &amp; Connectivity</div>'
+        '<div class="sec-title">IAM Roles &amp; <strong>Network Connectivity</strong></div>'
+        '<div class="sec-intro">'
+        'Identity access patterns and network connectivity paths. '
+        'Cross-account IAM trusts and Transit Gateway connections define your blast radius '
+        'in the event of a compromise. Validate every external trust is documented and justified.'
+        '</div>'
+        + (
+            _callout(
+                f"<strong>{len(cross_account)} IAM role(s) trust external AWS accounts.</strong> "
+                "Validate these are expected and follow least-privilege principles.",
+                "alert")
+            if cross_account else ""
+        )
+        + f'<h3 class="blk">IAM Roles ({len(iam_roles)})</h3>'
+        + _tbl(["Role Name", "Trusted Services", "Trusted Accounts", "Policies"], iam_rows, "No IAM roles collected.")
+        + f'<h3 class="blk">Transit Gateway Attachments ({len(tgw_atts)})</h3>'
+        + _tbl(["TGW ID", "Attachment ID", "VPC ID", "State"], tgw_rows, "No TGW attachments found.")
+        + f'<h3 class="blk">VPC Peerings ({len(peerings)})</h3>'
+        + _tbl(["Peering ID", "Requester VPC", "Accepter VPC", "Status"], peer_rows, "No VPC peerings found.")
+        + f'<h3 class="blk">VPC Endpoints ({len(endpoints)})</h3>'
+        + _tbl(["Service", "Full Service Name", "Type", "VPC", "State"], ep_rows, "No VPC endpoints found.")
+    )
+
+
+# ── Main render ───────────────────────────────────────────────────────────────
+
+def render_audit_report(
+    inventory: dict[str, list[dict[str, Any]]],
+    sg_analysis: list[dict[str, Any]],
+    graph_summary: dict[str, Any],
+    internet_facing: list[dict[str, Any]],
+    output_path: Path,
+    account_name: str = "",
+) -> None:
+    """
+    Single-file audit report with 6 tabs:
+      01 Dashboard · 02 Security Groups · 03 Internet Exposure
+      04 Network Map · 05 Data Protection · 06 IAM & Access
+
+    Designed for security auditors: shows findings, risk levels, and
+    remediation context — not just raw inventory data.
+    """
+    risk_order = ["critical", "high", "medium", "low", "info"]
+    counts = {r: sum(1 for a in sg_analysis if str(a.get("overall_risk")) == r) for r in risk_order}
+    s3   = inventory.get("s3_buckets", [])
+    ec2  = [i for i in inventory.get("ec2", []) if i.get("state") != "terminated"]
+
+    hero_stats = [
+        {"label": "Critical Findings", "value": counts["critical"],
+         "mod": "alert" if counts["critical"] > 0 else "ok"},
+        {"label": "High-Risk SGs",     "value": counts["high"],
+         "mod": "warn" if counts["high"] > 0 else "ok"},
+        {"label": "Internet-Facing",   "value": len(internet_facing),
+         "mod": "alert" if internet_facing else "ok"},
+        {"label": "S3 Buckets",        "value": len(s3)},
+        {"label": "EC2 Instances",     "value": len(ec2)},
+        {"label": "IAM Roles",         "value": len(inventory.get("iam_roles", []))},
+    ]
+
+    # Build SG indexes for the network map tab
+    sg_risk_idx: dict[str, str] = {}
+    sg_name_idx: dict[str, str] = {}
+    for sg_a in sg_analysis:
+        sid = sg_a.get("security_group_id", "")
+        sg_risk_idx[sid] = str(sg_a.get("overall_risk", "info"))
+        sg_name_idx[sid] = sg_a.get("security_group_name", sid)
+    for sg in inventory.get("security_groups", []):
+        sid = sg.get("resource_id", "")
+        sg_name_idx.setdefault(sid, sg.get("resource_name") or sg.get("group_name") or sid)
+        sg_risk_idx.setdefault(sid, "info")
+
+    # Tab panels 1-3, 5-6
+    p1 = _tab_dashboard(inventory, sg_analysis, internet_facing, account_name)
+    p2 = _tab_security(sg_analysis)
+    p3 = _tab_internet_exposure(inventory, sg_analysis, internet_facing)
+    p5 = _tab_data_protection(inventory)
+    p6 = _tab_iam_connectivity(inventory)
+
+    # Tab 4 — Network Map (hierarchy, reuses existing logic)
+    p4_header = (
+        '<div class="sec-eyebrow">Network Topology</div>'
+        '<div class="sec-title">Network Map &middot; <strong>Full Hierarchy</strong></div>'
+        '<div class="sec-intro">'
+        'VPC &rarr; AZ &rarr; Subnet &rarr; Resource &rarr; Security Groups. '
+        'Use this view to trace network paths, validate segmentation, and verify '
+        'that sensitive resources are in private or isolated subnets.'
+        '</div>'
+    )
+
+    type_order = {"public": 0, "private": 1, "isolated": 2, "unknown": 3}
+    _sub_bg  = {"pub": "#EEFBF1", "priv": "#FFF7EE", "iso": "#FEF0F0", "unk": "#F8F9FA"}
+    _sub_txt = {"pub": "#1F7A35", "priv": "#B86200", "iso": "#C42626", "unk": "#808599"}
+
+    # Build all indexes needed for the hierarchy
+    subs_by_vpc: dict[str, list] = {}
+    for s in inventory.get("subnets", []):
+        subs_by_vpc.setdefault(s.get("vpc_id",""), []).append(s)
+    ec2_by_sub: dict[str, list] = {}
+    for i in ec2:
+        ec2_by_sub.setdefault(i.get("subnet_id",""), []).append(i)
+    lb_by_sub: dict[str, list] = {}
+    _lb_s: dict[str, set] = {}
+    for lb in inventory.get("load_balancers",[]):
+        for az in lb.get("availability_zones",[]):
+            sid = az.get("SubnetId","")
+            if sid and lb["resource_id"] not in _lb_s.get(sid, set()):
+                _lb_s.setdefault(sid, set()).add(lb["resource_id"])
+                lb_by_sub.setdefault(sid, []).append(lb)
+    nat_by_sub: dict[str, list] = {}
+    for nat in inventory.get("nat_gateways",[]):
+        nat_by_sub.setdefault(nat.get("subnet_id",""), []).append(nat)
+    ep_by_sub: dict[str, list] = {}
+    for ep in inventory.get("vpc_endpoints",[]):
+        for sid in ep.get("associated_subnet_ids",[]):
+            ep_by_sub.setdefault(sid, []).append(ep)
+    lambda_by_sub: dict[str, list] = {}
+    for fn in inventory.get("lambdas",[]):
+        for sid in fn.get("subnet_ids",[]):
+            lambda_by_sub.setdefault(sid, []).append(fn)
+    rds_by_sub: dict[str, list] = {}
+    for db in inventory.get("rds",[]):
+        for sid in db.get("subnet_ids",[]):
+            rds_by_sub.setdefault(sid, []).append(db)
+    igw_by_vpc: dict[str, list] = {}
+    for igw in inventory.get("internet_gateways",[]):
+        for vid in igw.get("attached_vpc_ids",[]):
+            igw_by_vpc.setdefault(vid, []).append(igw)
+    tgw_by_vpc: dict[str, list] = {}
+    for att in inventory.get("transit_gateway_attachments",[]):
+        vid = att.get("resource_id_ref","")
+        if vid:
+            tgw_by_vpc.setdefault(vid, []).append(att)
+    eks_cls = [e for e in inventory.get("eks",[]) if e.get("resource_type") == "aws::eks::cluster"]
+    eks_ngs = [e for e in inventory.get("eks",[]) if e.get("resource_type") == "aws::eks::nodegroup"]
+    eks_by_vpc: dict[str, list] = {}
+    for cl in eks_cls:
+        eks_by_vpc.setdefault(cl.get("vpc_id",""), []).append(cl)
+    ng_by_sub: dict[str, list] = {}
+    for ng in eks_ngs:
+        for sid in ng.get("subnet_ids",[]):
+            ng_by_sub.setdefault(sid, []).append(ng)
+    sgs_by_vpc: dict[str, list] = {}
+    for sg in inventory.get("security_groups",[]):
+        sgs_by_vpc.setdefault(sg.get("vpc_id",""), []).append(sg)
+    attached_sg_ids: set[str] = set()
+    for rl in [ec2, inventory.get("load_balancers",[]),
+               inventory.get("lambdas",[]), inventory.get("rds",[]), eks_cls]:
+        for r in rl:
+            for sid in (r.get("security_group_ids") or []):
+                if sid:
+                    attached_sg_ids.add(sid)
+
+    vpc_html_parts = [p4_header]
+    for vpc in inventory.get("vpcs", []):
+        vid   = vpc["resource_id"]
+        vname = _short(vpc, 56)
+        vcidr = vpc.get("cidr_block", "")
+        hdr = (
+            f'<span class="hvpc-name">{vname}</span>'
+            f'<code style="font-family:var(--fm);font-size:11px;color:var(--ig2)">{vid}</code>'
+            f'<code style="font-family:var(--fm);font-size:12px;color:var(--ib);margin-left:2px">{vcidr}</code>'
+        )
+        global_items = "".join(
+            _chip(f"IGW · {_short(igw, 28)}", "#F0F4FF", "#21409A")
+            for igw in igw_by_vpc.get(vid, [])
+        ) + "".join(
+            _chip(f"TGW · {att.get('transit_gateway_id','?')}",
+                  "#EEFBF1" if att.get("state") == "available" else "#FFF7EE",
+                  "#1F7A35" if att.get("state") == "available" else "#B86200")
+            for att in tgw_by_vpc.get(vid, [])
+        )
+        eks_rows_h = "".join(
+            f'<div style="margin-top:5px;width:100%">'
+            + _h_resource("eks", _short(cl, 32), cl.get("version",""),
+                _sg_inline(cl.get("security_group_ids",[]), sg_risk_idx, sg_name_idx),
+                '<div style="margin-top:3px">' + _chip("Node Groups:","#F0F4FF","#21409A")
+                + "".join(_chip(ng.get("nodegroup_name","NG")[:18],"#D8F3DE","#1F7A35")
+                          for ng in eks_ngs if ng.get("cluster_name") == cl.get("cluster_name"))
+                + "</div>")
+            + "</div>"
+            for cl in eks_by_vpc.get(vid, [])
+        )
+        g_sec = (
+            f'<div class="hvpc-global"><span class="hvpc-global-lbl">VPC Resources:</span>'
+            f"{global_items}{eks_rows_h}</div>"
+        ) if (global_items or eks_rows_h) else ""
+
+        az_map: dict[str, list] = {}
+        for s in subs_by_vpc.get(vid, []):
+            az_map.setdefault(s.get("availability_zone","?"), []).append(s)
+        az_cols = ""
+        for az_name in sorted(az_map.keys()):
+            sub_tiles = ""
+            for sub in sorted(az_map[az_name],
+                              key=lambda s: type_order.get(s.get("subnet_type","unknown"), 3)):
+                sid   = sub["resource_id"]
+                stype = sub.get("subnet_type","unknown")
+                scls  = SUBNET_META.get(stype, SUBNET_META["unknown"])["cls"]
+                type_chip = _chip(SUBNET_META.get(stype, SUBNET_META["unknown"])["label"],
+                                  _sub_bg[scls], _sub_txt[scls])
+                res_rows = ""
+                for inst in ec2_by_sub.get(sid,[]):
+                    res_rows += _h_resource("ec2", _short(inst,30),
+                        " · ".join(filter(None,[inst.get("instance_type",""), inst.get("private_ip","")])),
+                        _sg_inline(inst.get("security_group_ids",[]), sg_risk_idx, sg_name_idx))
+                for lb in lb_by_sub.get(sid,[]):
+                    lb_t = "alb" if lb.get("type") == "application" else "nlb"
+                    res_rows += _h_resource(lb_t, _short(lb,30), lb.get("scheme",""),
+                        _sg_inline(lb.get("security_group_ids",[]), sg_risk_idx, sg_name_idx))
+                for nat in nat_by_sub.get(sid,[]):
+                    res_rows += _h_resource("nat", _short(nat,30), nat.get("state",""), "")
+                for ep in ep_by_sub.get(sid,[]):
+                    res_rows += _h_resource("vpce", ep.get("service_name","").split(".")[-1],
+                        ep.get("endpoint_type",""), "")
+                for fn in lambda_by_sub.get(sid,[]):
+                    res_rows += _h_resource("lambda", _short(fn,30), fn.get("runtime",""),
+                        _sg_inline(fn.get("security_group_ids",[]), sg_risk_idx, sg_name_idx))
+                _seen_r: set[str] = set()
+                for db in rds_by_sub.get(sid,[]):
+                    if db["resource_id"] in _seen_r: continue
+                    _seen_r.add(db["resource_id"])
+                    res_rows += _h_resource("rds", _short(db,30), db.get("engine",""),
+                        _sg_inline(db.get("security_group_ids",[]), sg_risk_idx, sg_name_idx))
+                _seen_ng: set[str] = set()
+                for ng in ng_by_sub.get(sid,[]):
+                    if ng["resource_id"] in _seen_ng: continue
+                    _seen_ng.add(ng["resource_id"])
+                    res_rows += _h_resource("eks",
+                        ng.get("nodegroup_name") or _short(ng,28),
+                        " · ".join(filter(None,[", ".join(ng.get("instance_types",[])[:2]),
+                            f"desired: {ng.get('desired_size','')}" if ng.get('desired_size') != '' else ""])), "")
+                sub_tiles += (
+                    f'<div class="hsub {scls}"><div class="hsub-hdr">'
+                    f'<span class="hsub-name">{_short(sub,34)}</span>'
+                    f'<span class="hsub-cidr">{sub.get("cidr_block","")}</span>{type_chip}</div>'
+                    f'<div class="hres-list">'
+                    + (res_rows or '<div class="hres-empty">empty</div>')
+                    + "</div></div>")
+            az_cols += f'<div class="haz"><div class="haz-label">{az_name}</div>{sub_tiles}</div>'
+
+        vpc_sg_set = {sg.get("resource_id","") for sg in sgs_by_vpc.get(vid,[])}
+        loose = vpc_sg_set - attached_sg_ids
+        loose_html = ""
+        if loose:
+            badges = "".join(
+                f'<span class="sg-ref {sg_risk_idx.get(sid,"info")}" title="{sid}">'
+                f'{sg_name_idx.get(sid,sid)[:26]}</span> '
+                for sid in sorted(loose))
+            loose_html = (
+                f'<div class="loose-sgs"><div class="loose-sgs-lbl">'
+                f'Unattached Security Groups ({len(loose)})</div>'
+                f'<div style="display:flex;flex-wrap:wrap;gap:4px">{badges}</div></div>')
+
+        vpc_html_parts.append(
+            f'<div class="hvpc"><div class="hvpc-hdr">{hdr}</div>'
+            f"{g_sec}"
+            f'<div class="haz-group">{az_cols}</div>'
+            f"{loose_html}</div>")
+
+    p4 = "".join(vpc_html_parts)
+
+    # Assemble tabbed page
+    body = (
+        f'<div class="panel" id="p1">{p1}</div>'
+        f'<div class="panel" id="p2">{p2}</div>'
+        f'<div class="panel" id="p3">{p3}</div>'
+        f'<div class="panel" id="p4">{p4}</div>'
+        f'<div class="panel" id="p5">{p5}</div>'
+        f'<div class="panel" id="p6">{p6}</div>'
+    )
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        _html_page(
+            title=f"AWS Audit Report — {account_name}",
+            body=body,
+            account_name=account_name,
+            extra_css=_HIER_CSS,
+            hero_stats=hero_stats,
+            hero_title=f"AWS Security Audit &middot; <strong>{account_name}</strong>",
+            hero_sub=(
+                "Consolidated infrastructure audit report. "
+                "Review tabs in order: Dashboard → Security → Internet Exposure → Network Map → Data Protection → IAM."
+            ),
+            hero_eyebrow=f"Security Audit &middot; {account_name}",
+            tabs=[
+                "Dashboard",
+                "Security Groups",
+                "Internet Exposure",
+                "Network Map",
+                "Data Protection",
+                "IAM & Access",
+            ],
+        ),
+        encoding="utf-8",
+    )

@@ -1,0 +1,140 @@
+[
+  {
+    "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/net/itl-0002-network-all-nlb-pritunl/4583f4ee7c8e9d99",
+    "resource_name": "itl-0002-network-all-nlb-pritunl",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "dns_name": "itl-0002-network-all-nlb-pritunl-4583f4ee7c8e9d99.elb.eu-south-2.amazonaws.com",
+    "scheme": "internet-facing",
+    "lb_type": "network",
+    "state": "active",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "availability_zones": [
+      {
+        "ZoneName": "eu-south-2a",
+        "SubnetId": "subnet-0a157bf35bbf62195",
+        "LoadBalancerAddresses": [
+          {
+            "IpAddress": "51.49.116.147",
+            "AllocationId": "eipalloc-0558a4cb9a03caa40"
+          }
+        ]
+      },
+      {
+        "ZoneName": "eu-south-2b",
+        "SubnetId": "subnet-0f412a52465a75334",
+        "LoadBalancerAddresses": [
+          {
+            "IpAddress": "51.48.172.135",
+            "AllocationId": "eipalloc-0df23b2ab7b5204fe"
+          }
+        ]
+      }
+    ],
+    "security_group_ids": [
+      "sg-09f10199e3d10c2d7",
+      "sg-043f24a24d1750bf7"
+    ],
+    "canonical_hosted_zone_id": "Z1011216NVTVYADP1SSV",
+    "created_time": "2025-09-19 22:13:52.391000+00:00",
+    "tags": {
+      "service.k8s.aws/stack": "pritunl/pritunl-vpn",
+      "service.k8s.aws/resource": "LoadBalancer",
+      "elbv2.k8s.aws/cluster": "itl-0002-shared-network-all-eks-pritunl-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0a157bf35bbf62195",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0f412a52465a75334",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-09f10199e3d10c2d7",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-043f24a24d1750bf7",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:47.704094+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/app/k8s-pritunl-pritunli-1014a3c469/7f821ffcb5ec9629",
+    "resource_name": "k8s-pritunl-pritunli-1014a3c469",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "dns_name": "k8s-pritunl-pritunli-1014a3c469-1184641132.eu-south-2.elb.amazonaws.com",
+    "scheme": "internet-facing",
+    "lb_type": "application",
+    "state": "active",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "availability_zones": [
+      {
+        "ZoneName": "eu-south-2a",
+        "SubnetId": "subnet-0a157bf35bbf62195",
+        "LoadBalancerAddresses": []
+      },
+      {
+        "ZoneName": "eu-south-2b",
+        "SubnetId": "subnet-0f412a52465a75334",
+        "LoadBalancerAddresses": []
+      }
+    ],
+    "security_group_ids": [
+      "sg-0247a38200b63753c",
+      "sg-043f24a24d1750bf7"
+    ],
+    "canonical_hosted_zone_id": "Z0956581394HF5D5LXGAP",
+    "created_time": "2025-09-19 21:29:09.294000+00:00",
+    "tags": {
+      "ingress.k8s.aws/resource": "LoadBalancer",
+      "ingress.k8s.aws/stack": "pritunl/pritunl-ingress",
+      "elbv2.k8s.aws/cluster": "itl-0002-shared-network-all-eks-pritunl-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0a157bf35bbf62195",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0f412a52465a75334",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0247a38200b63753c",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-043f24a24d1750bf7",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:47.922582+00:00"
+  }
+]

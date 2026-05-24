@@ -40,6 +40,24 @@ def resolve_identity(session: boto3.Session) -> tuple[str, str]:
     return identity["Account"], identity["Arn"]
 
 
+def resolve_account_name(session: boto3.Session, account_id: str) -> str:
+    """Try to get the friendly account name from AWS Organizations.
+
+    Requires organizations:DescribeAccount permission on the management account
+    or a delegated admin. Falls back to the account_id string if denied.
+    """
+    try:
+        org = session.client("organizations", region_name="us-east-1", config=_RETRY_CONFIG)
+        resp = org.describe_account(AccountId=account_id)
+        name = resp["Account"].get("Name", "").strip()
+        if name:
+            logger.info("Resolved account name from Organizations: %s", name)
+            return name
+    except Exception as exc:
+        logger.debug("Could not resolve account name from Organizations: %s", exc)
+    return account_id
+
+
 def get_ec2_client(session: boto3.Session, region: str) -> BaseClient:
     return session.client("ec2", region_name=region, config=_RETRY_CONFIG)
 

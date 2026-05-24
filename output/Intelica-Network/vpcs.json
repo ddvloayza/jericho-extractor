@@ -1,0 +1,58 @@
+[
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-000f7f02c4d4819a3",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "cidr_block": "10.18.0.0/16",
+    "cidr_block_associations": [
+      "10.18.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": false,
+    "dhcp_options_id": "dopt-0a7fd3178bbdfa907",
+    "instance_tenancy": "default",
+    "tags": {
+      "Name": "itl-0002-shared-network-all-vpc-02",
+      "env": "all",
+      "apid": "shared-network",
+      "coid": "itl",
+      "assetid": "0001"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-0a7fd3178bbdfa907",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.481866+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-04ef4e1c7cb3cc620",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "cidr_block": "172.31.0.0/16",
+    "cidr_block_associations": [
+      "172.31.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": true,
+    "dhcp_options_id": "dopt-035add1875ad7fdaa",
+    "instance_tenancy": "default",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-035add1875ad7fdaa",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:41.481881+00:00"
+  }
+]

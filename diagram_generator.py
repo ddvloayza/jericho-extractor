@@ -666,8 +666,8 @@ def build_diagram(account_dir: Path, output_path: Path) -> None:
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(xml_str)
 
-    print(f"Diagram written → {output_path}")
-    print("Open at: https://app.diagrams.net  (File → Open from Device)")
+    print(f"Diagram written -> {output_path}")
+    print("Open at: https://app.diagrams.net  (File > Open from Device)")
 
 
 def main() -> None:
@@ -677,7 +677,7 @@ def main() -> None:
     args = parser.parse_args()
 
     account_dir = Path(args.output_dir) / args.account
-    output_path = account_dir / "network_diagram.drawio"
+    output_path = account_dir / "diagrams" / "network_diagram.drawio"
 
     if not account_dir.exists():
         print(f"Error: directory not found: {account_dir}")

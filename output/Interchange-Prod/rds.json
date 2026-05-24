@@ -1,0 +1,140 @@
+[
+  {
+    "resource_type": "aws::rds::dbinstance",
+    "resource_id": "arn:aws:rds:eu-south-2:818835242461:db:itl-0004-itx-prd-rds-analitycs-02",
+    "resource_name": "itl-0004-itx-prd-rds-analitycs-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "engine": "postgres",
+    "engine_version": "17.8",
+    "instance_class": "db.r5.large",
+    "status": "available",
+    "allocated_storage_gb": 3259,
+    "multi_az": false,
+    "publicly_accessible": false,
+    "storage_encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "subnet_group_name": "itl-0004-itx-prd-rds-analitycs-02-sng",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_ids": [
+      "subnet-0ed8a143f2b994c42",
+      "subnet-013b386fa64d33781"
+    ],
+    "security_group_ids": [
+      "sg-06619eddecd66bc23"
+    ],
+    "endpoint_address": "itl-0004-itx-prd-rds-analitycs-02.cb2wsasugzte.eu-south-2.rds.amazonaws.com",
+    "endpoint_port": 5432,
+    "backup_retention_days": 7,
+    "deletion_protection": false,
+    "availability_zone": "eu-south-2a",
+    "secondary_az": "",
+    "auto_minor_version_upgrade": true,
+    "ca_certificate": "rds-ca-rsa2048-g1",
+    "instance_create_time": "2025-10-17 19:48:29.989000+00:00",
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::rds::subnetgroup",
+        "resource_id": "itl-0004-itx-prd-rds-analitycs-02-sng",
+        "relation": "deployed_in_subnet_group"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0ed8a143f2b994c42",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-013b386fa64d33781",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-06619eddecd66bc23",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:52.282945+00:00"
+  },
+  {
+    "resource_type": "aws::rds::dbinstance",
+    "resource_id": "arn:aws:rds:eu-south-2:818835242461:db:itl-0004-itx-prd-rds-app-02-1",
+    "resource_name": "itl-0004-itx-prd-rds-app-02-1",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "engine": "aurora-postgresql",
+    "engine_version": "16.11",
+    "instance_class": "db.r5.2xlarge",
+    "status": "available",
+    "allocated_storage_gb": 1,
+    "multi_az": false,
+    "publicly_accessible": false,
+    "storage_encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "subnet_group_name": "itl-0004-itx-prd-rds-app-02-sng",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_ids": [
+      "subnet-0ed8a143f2b994c42",
+      "subnet-013b386fa64d33781"
+    ],
+    "security_group_ids": [
+      "sg-0ddb2e33452d2a5ca"
+    ],
+    "endpoint_address": "itl-0004-itx-prd-rds-app-02-1.cb2wsasugzte.eu-south-2.rds.amazonaws.com",
+    "endpoint_port": 5432,
+    "backup_retention_days": 7,
+    "deletion_protection": false,
+    "availability_zone": "eu-south-2b",
+    "secondary_az": "",
+    "auto_minor_version_upgrade": true,
+    "ca_certificate": "rds-ca-rsa2048-g1",
+    "instance_create_time": "2025-10-25 22:20:25.778000+00:00",
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::rds::subnetgroup",
+        "resource_id": "itl-0004-itx-prd-rds-app-02-sng",
+        "relation": "deployed_in_subnet_group"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0ed8a143f2b994c42",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-013b386fa64d33781",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0ddb2e33452d2a5ca",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:52.501152+00:00"
+  }
+]

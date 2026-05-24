@@ -1,0 +1,53 @@
+[
+  {
+    "resource_type": "aws::ec2::vpc_endpoint",
+    "resource_id": "vpce-08c87c7892a5c1dc4",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "service_name": "com.amazonaws.eu-south-2.guardduty-data",
+    "endpoint_type": "Interface",
+    "state": "available",
+    "associated_subnet_ids": [
+      "subnet-0624a59dbcfc36798",
+      "subnet-06e26c7cc455004c5"
+    ],
+    "associated_route_table_ids": [],
+    "dns_entries": [
+      "vpce-08c87c7892a5c1dc4-8qnknulc.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "vpce-08c87c7892a5c1dc4-8qnknulc-eu-south-2b.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "vpce-08c87c7892a5c1dc4-8qnknulc-eu-south-2a.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "guardduty-data.eu-south-2.amazonaws.com"
+    ],
+    "network_interface_ids": [
+      "eni-0839b1bf82c22b21d",
+      "eni-014618079dd826f8d"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "all",
+      "assetid": "0001",
+      "apid": "shared-network",
+      "Name": "itl-0002-shared-network-all-guardduty-data-vpc-endpoint"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0624a59dbcfc36798",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-06e26c7cc455004c5",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:45.697720+00:00"
+  }
+]

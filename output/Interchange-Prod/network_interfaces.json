@@ -1,0 +1,1092 @@
+[
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-04c7abd19f45ac347",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.16",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-0b20ff61ae59addc6",
+    "security_group_ids": [
+      "sg-01ce57c1fc8749c8b"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837836+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0098d56d884a2ccbe",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "quicksight",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.227",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "QuickSightarn:aws:quicksight:eu-south-2:818835242461:vpcConnection/97573158-ac35-4473-943e-eb3e636a073d",
+    "security_group_ids": [
+      "sg-00983722a8c6e69af"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837848+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-06a30f48005472682",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0ed8a143f2b994c42",
+    "interface_type": "lambda",
+    "status": "in-use",
+    "private_ip_address": "10.13.5.84",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "AWS Lambda VPC ENI-itl-0004-itx-prd-lambda-pg-audit-02",
+    "security_group_ids": [
+      "sg-0a9badb1aa57f04b6"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0ed8a143f2b994c42",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837853+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0e5c936e243caa5a7",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "lambda",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.20",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "AWS Lambda VPC ENI-itl-0004-itx-prd-lmbd-file-load-02",
+    "security_group_ids": [
+      "sg-0fde3398d48e6fdb0"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837855+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0d37c5d54b040a130",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.231",
+    "public_ip_address": "",
+    "attachment_instance_id": "i-08385ff7dbbc37b9d",
+    "attachment_status": "attached",
+    "description": "",
+    "security_group_ids": [
+      "sg-0becff9d6790cf669"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837859+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0d557dc5c03a685ef",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "lambda",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.171",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "AWS Lambda VPC ENI-itl-0004-itx-prd-lmbd-sendmail-02",
+    "security_group_ids": [
+      "sg-0cf9b3d2905943753"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837862+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-03d1d43785bb4c4b5",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.116",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-07cfc05c593dde461",
+    "security_group_ids": [
+      "sg-01ce57c1fc8749c8b"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837865+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-02419025dc4340800",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0ed8a143f2b994c42",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.5.151",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-05dd2c98f8e1ed8d6",
+    "security_group_ids": [
+      "sg-02910643fab6f3d15"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0ed8a143f2b994c42",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837867+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-041a0b52cf8a87b09",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.31",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-0918f1a2e48f7fb51",
+    "security_group_ids": [
+      "sg-01ce57c1fc8749c8b"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837870+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0dd98f4ab023a83c6",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-01e1b509ce04c5bb2",
+    "interface_type": "network_load_balancer",
+    "status": "in-use",
+    "private_ip_address": "10.13.1.241",
+    "public_ip_address": "51.49.168.102",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "ELB net/itl-0004-itx-prd-nlb-sftp-02/f9f0bec89a01e51a",
+    "security_group_ids": [
+      "sg-0a417ccec8040b8f3"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-01e1b509ce04c5bb2",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837874+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-04894cb14b767ecd2",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.54",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "DMSNetworkInterface",
+    "security_group_ids": [
+      "sg-097a391d184cf49cd"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837877+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0dd617a4c5c2c2117",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.177",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-094de1c92d5aa3d1d",
+    "security_group_ids": [
+      "sg-01ce57c1fc8749c8b"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837879+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0643737a711256c78",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0ed8a143f2b994c42",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.13.5.36",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "RDSNetworkInterface",
+    "security_group_ids": [
+      "sg-06619eddecd66bc23"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0ed8a143f2b994c42",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837882+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0c678271b05acb104",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "lambda",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.128",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "AWS Lambda VPC ENI-itl-0004-itx-prd-lmbd-app-02",
+    "security_group_ids": [
+      "sg-0d132d30a28741e82"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837884+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0c68f7506084be720",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-09cd0eff0b0a7a363",
+    "subnet_id": "subnet-014840bef902a667c",
+    "interface_type": "nat_gateway",
+    "status": "in-use",
+    "private_ip_address": "172.9.1.168",
+    "public_ip_address": "51.48.64.73",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Interface for NAT Gateway nat-087cf87c9fdf098b8",
+    "security_group_ids": [],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-09cd0eff0b0a7a363",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-014840bef902a667c",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837887+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-05b2488abfc4d2192",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-01e1b509ce04c5bb2",
+    "interface_type": "nat_gateway",
+    "status": "in-use",
+    "private_ip_address": "10.13.1.99",
+    "public_ip_address": "51.48.251.185",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Interface for NAT Gateway nat-00f93b8b61457d10d",
+    "security_group_ids": [],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-01e1b509ce04c5bb2",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837889+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0652c8db5e686a708",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.233",
+    "public_ip_address": "",
+    "attachment_instance_id": "i-0912b617340cb9eb4",
+    "attachment_status": "attached",
+    "description": "",
+    "security_group_ids": [
+      "sg-0697a3b7e4356aba6"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0912b617340cb9eb4",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837892+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-04c30f665cba8be13",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "interface_type": "transit_gateway",
+    "status": "in-use",
+    "private_ip_address": "10.13.3.98",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Network Interface for Transit Gateway Attachment tgw-attach-099db8323944dbd48",
+    "security_group_ids": [],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837894+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0d4687093c14a4926",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-013b386fa64d33781",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.13.6.24",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "RDSNetworkInterface",
+    "security_group_ids": [
+      "sg-0ddb2e33452d2a5ca"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-013b386fa64d33781",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837896+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0188e39734230a1f4",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-03c90b860a79acd5e",
+    "interface_type": "quicksight",
+    "status": "in-use",
+    "private_ip_address": "10.13.4.57",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "QuickSightarn:aws:quicksight:eu-south-2:818835242461:vpcConnection/97573158-ac35-4473-943e-eb3e636a073d",
+    "security_group_ids": [
+      "sg-00983722a8c6e69af"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837898+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-068dd9368b7b9761b",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-03c90b860a79acd5e",
+    "interface_type": "lambda",
+    "status": "in-use",
+    "private_ip_address": "10.13.4.191",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "AWS Lambda VPC ENI-itl-0004-itx-prd-lmbd-file-load-02",
+    "security_group_ids": [
+      "sg-0fde3398d48e6fdb0"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837902+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0cc4f3d0c008de63d",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0951555575751a819",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.2.85",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-05dd2c98f8e1ed8d6",
+    "security_group_ids": [
+      "sg-02910643fab6f3d15"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0951555575751a819",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837904+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0e22d41d16240a7fd",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-03c90b860a79acd5e",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.4.10",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-07cfc05c593dde461",
+    "security_group_ids": [
+      "sg-01ce57c1fc8749c8b"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837907+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-07208cd0fb517be62",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-03c90b860a79acd5e",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.4.11",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-094de1c92d5aa3d1d",
+    "security_group_ids": [
+      "sg-01ce57c1fc8749c8b"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837909+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0ec70d6c284b65734",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-03c90b860a79acd5e",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.4.140",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-0b20ff61ae59addc6",
+    "security_group_ids": [
+      "sg-01ce57c1fc8749c8b"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837911+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0a6e1900354e73edc",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-03c90b860a79acd5e",
+    "interface_type": "lambda",
+    "status": "in-use",
+    "private_ip_address": "10.13.4.208",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "AWS Lambda VPC ENI-itl-0004-itx-prd-lmbd-sendmail-02",
+    "security_group_ids": [
+      "sg-0cf9b3d2905943753"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837914+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0c8e0a7580a7733da",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-03c90b860a79acd5e",
+    "interface_type": "transit_gateway",
+    "status": "in-use",
+    "private_ip_address": "10.13.4.175",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Network Interface for Transit Gateway Attachment tgw-attach-099db8323944dbd48",
+    "security_group_ids": [],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837916+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0440582f7f5147448",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-03c90b860a79acd5e",
+    "interface_type": "lambda",
+    "status": "in-use",
+    "private_ip_address": "10.13.4.237",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "AWS Lambda VPC ENI-itl-0004-itx-prd-lmbd-app-02",
+    "security_group_ids": [
+      "sg-0d132d30a28741e82"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837919+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0a5f217711b627f53",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-013b386fa64d33781",
+    "interface_type": "lambda",
+    "status": "in-use",
+    "private_ip_address": "10.13.6.246",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "AWS Lambda VPC ENI-itl-0004-itx-prd-lambda-pg-audit-02",
+    "security_group_ids": [
+      "sg-0a9badb1aa57f04b6"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-013b386fa64d33781",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837921+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0c1de5508ff7dce4d",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-03c90b860a79acd5e",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.4.49",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-0918f1a2e48f7fb51",
+    "security_group_ids": [
+      "sg-01ce57c1fc8749c8b"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03c90b860a79acd5e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837923+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-016f34eb8dc54cb9e",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0951555575751a819",
+    "interface_type": "network_load_balancer",
+    "status": "in-use",
+    "private_ip_address": "10.13.2.173",
+    "public_ip_address": "15.216.4.239",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "ELB net/itl-0004-itx-prd-nlb-sftp-02/f9f0bec89a01e51a",
+    "security_group_ids": [
+      "sg-0a417ccec8040b8f3"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0951555575751a819",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837926+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0b2400f94caa62a11",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0951555575751a819",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.13.2.4",
+    "public_ip_address": "51.48.56.140",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-0217b520de4a350f0",
+    "security_group_ids": [
+      "sg-07acdd0a77dde77d8"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0951555575751a819",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:44.837929+00:00"
+  }
+]

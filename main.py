@@ -14,7 +14,7 @@ from utils.aws_clients import (
     get_ec2_client, get_elbv2_client, get_eks_client,
     get_lambda_client, get_rds_client, get_iam_client,
     get_kms_client, get_secretsmanager_client, get_s3_client,
-    get_session, resolve_identity,
+    get_session, resolve_identity, resolve_account_name,
 )
 from utils.writer import OutputWriter
 
@@ -196,8 +196,8 @@ def run(config: AppConfig) -> None:
             account_id, arn = resolve_identity(session)
             account.account_id = account_id
             if not account.account_name:
-                account.account_name = account_id
-            logger.info("Resolved identity: %s → account %s", arn, account_id)
+                account.account_name = resolve_account_name(session, account_id)
+            logger.info("Resolved identity: %s -> account %s (%s)", arn, account_id, account.account_name)
 
         logger.info(
             "━━ Account: %s (%s) ━━", account.account_name, account.account_id

@@ -1,0 +1,89 @@
+[
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-0e628fe72b4175720",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "cidr_block": "172.31.0.0/16",
+    "cidr_block_associations": [
+      "172.31.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": true,
+    "dhcp_options_id": "dopt-07ba768b37f3bf65b",
+    "instance_tenancy": "default",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-07ba768b37f3bf65b",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:40.107722+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-0c6863a32b8db36e0",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "cidr_block": "10.13.0.0/16",
+    "cidr_block_associations": [
+      "10.13.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": false,
+    "dhcp_options_id": "dopt-07ba768b37f3bf65b",
+    "instance_tenancy": "default",
+    "tags": {
+      "env": "prod",
+      "Name": "itl-0004-itx-prod-vpc-02",
+      "assetid": "0004",
+      "coid": "itl",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-07ba768b37f3bf65b",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:40.107737+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-09cd0eff0b0a7a363",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "cidr_block": "172.9.0.0/16",
+    "cidr_block_associations": [
+      "172.9.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": false,
+    "dhcp_options_id": "dopt-07ba768b37f3bf65b",
+    "instance_tenancy": "default",
+    "tags": {
+      "coid": "itl",
+      "env": "prod",
+      "Name": "itl-0004-itx-prod-vpc-01",
+      "apid": "itx",
+      "assetid": "0004"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-07ba768b37f3bf65b",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:40.107743+00:00"
+  }
+]

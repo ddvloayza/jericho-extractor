@@ -1,0 +1,61 @@
+[
+  {
+    "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:818835242461:loadbalancer/net/itl-0004-itx-prd-nlb-sftp-02/f9f0bec89a01e51a",
+    "resource_name": "itl-0004-itx-prd-nlb-sftp-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "dns_name": "itl-0004-itx-prd-nlb-sftp-02-f9f0bec89a01e51a.elb.eu-south-2.amazonaws.com",
+    "scheme": "internet-facing",
+    "lb_type": "network",
+    "state": "active",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "availability_zones": [
+      {
+        "ZoneName": "eu-south-2a",
+        "SubnetId": "subnet-01e1b509ce04c5bb2",
+        "LoadBalancerAddresses": []
+      },
+      {
+        "ZoneName": "eu-south-2b",
+        "SubnetId": "subnet-0951555575751a819",
+        "LoadBalancerAddresses": []
+      }
+    ],
+    "security_group_ids": [
+      "sg-0a417ccec8040b8f3"
+    ],
+    "canonical_hosted_zone_id": "Z1011216NVTVYADP1SSV",
+    "created_time": "2025-10-17 08:53:17.809000+00:00",
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-01e1b509ce04c5bb2",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0951555575751a819",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0a417ccec8040b8f3",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:47.236908+00:00"
+  }
+]

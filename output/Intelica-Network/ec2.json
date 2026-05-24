@@ -1,0 +1,108 @@
+[
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0a10f15b976bc2a70",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "instance_type": "t3.large",
+    "state": "running",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_id": "subnet-06e26c7cc455004c5",
+    "private_ip": "10.18.3.147",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-082181802bfdef96d",
+    "key_name": "itl-0002-shared-network-all-key-pair-02",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-03bed10a7bf7da98d"
+    ],
+    "iam_instance_profile": "arn:aws:iam::954976322048:instance-profile/itl-0002-shared-network-all-ec2-directory-all-ec2-02-role-profile",
+    "launch_time": "2025-09-13 15:47:26+00:00",
+    "tags": {
+      "env": "all",
+      "apid": "shared-network",
+      "coid": "itl",
+      "assetid": "0001",
+      "Name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-06e26c7cc455004c5",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-03bed10a7bf7da98d",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:46.197998+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-036906f692ce0026b",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "instance_type": "t3.medium",
+    "state": "running",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_id": "subnet-0624a59dbcfc36798",
+    "private_ip": "10.18.4.194",
+    "public_ip": "",
+    "availability_zone": "eu-south-2b",
+    "ami_id": "ami-051ccbf0f8a1c6b5d",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0aa6d55bd394447f6"
+    ],
+    "iam_instance_profile": "arn:aws:iam::954976322048:instance-profile/eks-4ccca7de-34cc-1d78-a019-55daac0dfb02",
+    "launch_time": "2025-12-26 21:06:25+00:00",
+    "tags": {
+      "aws:ec2launchtemplate:id": "lt-0085e0a3f85ee5f1f",
+      "eks:nodegroup-name": "itl-0002-shared-network-all-ec2-pritunl-02",
+      "kubernetes.io/cluster/itl-0002-shared-network-all-eks-pritunl-02": "owned",
+      "env": "all",
+      "k8s.io/cluster-autoscaler/itl-0002-shared-network-all-eks-pritunl-02": "owned",
+      "Name": "itl-0002-shared-network-all-ec2-pritunl-02",
+      "apid": "shared-network",
+      "aws:eks:cluster-name": "itl-0002-shared-network-all-eks-pritunl-02",
+      "assetid": "0001",
+      "aws:autoscaling:groupName": "eks-itl-0002-shared-network-all-ec2-pritunl-02-4ccca7de-34cc-1d78-a019-55daac0dfb02",
+      "coid": "itl",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "aws:ec2:fleet-id": "fleet-e89e2735-620f-6c85-2cb0-a9a820c0f886",
+      "eks:cluster-name": "itl-0002-shared-network-all-eks-pritunl-02",
+      "aws:ec2launchtemplate:version": "4"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0624a59dbcfc36798",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0aa6d55bd394447f6",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:46.198010+00:00"
+  }
+]

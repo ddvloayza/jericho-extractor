@@ -1,0 +1,468 @@
+[
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::dms-assessment-run-2025-11-25-21-26-44",
+    "resource_name": "dms-assessment-run-2025-11-25-21-26-44",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-11-26 02:48:44+00:00",
+    "encryption_type": "AES256",
+    "kms_key_id": "",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "AssessmentRun": "assessment-run-2025-11-25-21-26-44",
+      "Project": "Assessment",
+      "CreatedBy": "DMS-Console"
+    },
+    "relationships": [],
+    "collected_at": "2026-05-24T02:09:04.068763+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::eu-south-2-scan-interchange-logs",
+    "resource_name": "eu-south-2-scan-interchange-logs",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-26 02:03:29+00:00",
+    "encryption_type": "AES256",
+    "kms_key_id": "",
+    "versioning_status": "Disabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-05-24T02:09:06.449946+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-configuration-02",
+    "resource_name": "itl-0004-itx-prd-s3-configuration-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:03+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:08.747424+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-devops-02",
+    "resource_name": "itl-0004-itx-prd-s3-devops-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:04+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:11.060991+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-enriched-02",
+    "resource_name": "itl-0004-itx-prd-s3-enriched-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:03+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:13.333954+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-landing-02",
+    "resource_name": "itl-0004-itx-prd-s3-landing-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:04+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:15.752457+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-landing-pre-02",
+    "resource_name": "itl-0004-itx-prd-s3-landing-pre-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:03+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:18.031483+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-log-02",
+    "resource_name": "itl-0004-itx-prd-s3-log-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:03+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:20.392263+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-operational-02",
+    "resource_name": "itl-0004-itx-prd-s3-operational-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:03+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:22.749834+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-raw-02",
+    "resource_name": "itl-0004-itx-prd-s3-raw-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:03+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:25.020462+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-scheme-fee-02",
+    "resource_name": "itl-0004-itx-prd-s3-scheme-fee-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:03+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:27.312271+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0004-itx-prd-s3-structured-02",
+    "resource_name": "itl-0004-itx-prd-s3-structured-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-17 01:02:03+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:29.588059+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itx-copy-testing",
+    "resource_name": "itx-copy-testing",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-07-24 20:46:50+00:00",
+    "encryption_type": "AES256",
+    "kms_key_id": "",
+    "versioning_status": "Disabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-05-24T02:09:31.853225+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::terraform-backend-818835242461",
+    "resource_name": "terraform-backend-818835242461",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-07-21 19:42:29+00:00",
+    "encryption_type": "AES256",
+    "kms_key_id": "",
+    "versioning_status": "Disabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-05-24T02:09:34.182475+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::terraform-backend-818835242461-eu-south-2",
+    "resource_name": "terraform-backend-818835242461-eu-south-2",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-19 06:42:50+00:00",
+    "encryption_type": "AES256",
+    "kms_key_id": "",
+    "versioning_status": "Disabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-05-24T02:09:36.504193+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::tfstate-eu-south-2-818835242461",
+    "resource_name": "tfstate-eu-south-2-818835242461",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-09-08 23:29:35+00:00",
+    "encryption_type": "AES256",
+    "kms_key_id": "",
+    "versioning_status": "Enabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-05-24T02:09:38.728664+00:00"
+  }
+]

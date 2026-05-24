@@ -1,0 +1,1970 @@
+[
+  {
+    "source_id": "i-08385ff7dbbc37b9d",
+    "source_type": "aws::ec2::instance",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "i-08385ff7dbbc37b9d",
+    "source_type": "aws::ec2::instance",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "deployed_in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "i-08385ff7dbbc37b9d",
+    "source_type": "aws::ec2::instance",
+    "target_id": "sg-0becff9d6790cf669",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "i-0912b617340cb9eb4",
+    "source_type": "aws::ec2::instance",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "i-0912b617340cb9eb4",
+    "source_type": "aws::ec2::instance",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "deployed_in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "i-0912b617340cb9eb4",
+    "source_type": "aws::ec2::instance",
+    "target_id": "sg-0697a3b7e4356aba6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-04c7abd19f45ac347",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-04c7abd19f45ac347",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-04c7abd19f45ac347",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0098d56d884a2ccbe",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0098d56d884a2ccbe",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0098d56d884a2ccbe",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-00983722a8c6e69af",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-06a30f48005472682",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0ed8a143f2b994c42",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-06a30f48005472682",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-06a30f48005472682",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0a9badb1aa57f04b6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0e5c936e243caa5a7",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0e5c936e243caa5a7",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0e5c936e243caa5a7",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0fde3398d48e6fdb0",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0d37c5d54b040a130",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0d37c5d54b040a130",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0d37c5d54b040a130",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0becff9d6790cf669",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0d557dc5c03a685ef",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0d557dc5c03a685ef",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0d557dc5c03a685ef",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0cf9b3d2905943753",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-03d1d43785bb4c4b5",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-03d1d43785bb4c4b5",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-03d1d43785bb4c4b5",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-02419025dc4340800",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0ed8a143f2b994c42",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-02419025dc4340800",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-02419025dc4340800",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-02910643fab6f3d15",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-041a0b52cf8a87b09",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-041a0b52cf8a87b09",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-041a0b52cf8a87b09",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0dd98f4ab023a83c6",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-01e1b509ce04c5bb2",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0dd98f4ab023a83c6",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0dd98f4ab023a83c6",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0a417ccec8040b8f3",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-04894cb14b767ecd2",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-04894cb14b767ecd2",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-04894cb14b767ecd2",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-097a391d184cf49cd",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0dd617a4c5c2c2117",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0dd617a4c5c2c2117",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0dd617a4c5c2c2117",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0643737a711256c78",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0ed8a143f2b994c42",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0643737a711256c78",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0643737a711256c78",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-06619eddecd66bc23",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c678271b05acb104",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c678271b05acb104",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c678271b05acb104",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0d132d30a28741e82",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c68f7506084be720",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-014840bef902a667c",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c68f7506084be720",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-05b2488abfc4d2192",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-01e1b509ce04c5bb2",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-05b2488abfc4d2192",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0652c8db5e686a708",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0652c8db5e686a708",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0652c8db5e686a708",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0697a3b7e4356aba6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-04c30f665cba8be13",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-04c30f665cba8be13",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0d4687093c14a4926",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-013b386fa64d33781",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0d4687093c14a4926",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0d4687093c14a4926",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0ddb2e33452d2a5ca",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0188e39734230a1f4",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0188e39734230a1f4",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0188e39734230a1f4",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-00983722a8c6e69af",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-068dd9368b7b9761b",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-068dd9368b7b9761b",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-068dd9368b7b9761b",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0fde3398d48e6fdb0",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0cc4f3d0c008de63d",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0951555575751a819",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0cc4f3d0c008de63d",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0cc4f3d0c008de63d",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-02910643fab6f3d15",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0e22d41d16240a7fd",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0e22d41d16240a7fd",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0e22d41d16240a7fd",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-07208cd0fb517be62",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-07208cd0fb517be62",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-07208cd0fb517be62",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0ec70d6c284b65734",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0ec70d6c284b65734",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0ec70d6c284b65734",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0a6e1900354e73edc",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0a6e1900354e73edc",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0a6e1900354e73edc",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0cf9b3d2905943753",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c8e0a7580a7733da",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c8e0a7580a7733da",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0440582f7f5147448",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0440582f7f5147448",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0440582f7f5147448",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0d132d30a28741e82",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0a5f217711b627f53",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-013b386fa64d33781",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0a5f217711b627f53",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0a5f217711b627f53",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0a9badb1aa57f04b6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c1de5508ff7dce4d",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c1de5508ff7dce4d",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0c1de5508ff7dce4d",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-016f34eb8dc54cb9e",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0951555575751a819",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-016f34eb8dc54cb9e",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-016f34eb8dc54cb9e",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-0a417ccec8040b8f3",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0b2400f94caa62a11",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "subnet-0951555575751a819",
+    "target_type": "aws::ec2::subnet",
+    "relation": "in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0b2400f94caa62a11",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "eni-0b2400f94caa62a11",
+    "source_type": "aws::ec2::network_interface",
+    "target_id": "sg-07acdd0a77dde77d8",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-0951555575751a819",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-057ebce9596b3bf36",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-0e628fe72b4175720",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-079acbb9ff15d4baf",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-0ed8a143f2b994c42",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-013b386fa64d33781",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-0a841673111368598",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-0e628fe72b4175720",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-044a2704c0387e2b5",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-0e628fe72b4175720",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-0922b864eefaddb05",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-01799deb0a8d8f211",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-01e1b509ce04c5bb2",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-0c4fd47c211461df6",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-014840bef902a667c",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-03c90b860a79acd5e",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-0d83e06465f5db5e0",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "subnet-0a6a896434731d1de",
+    "source_type": "aws::ec2::subnet",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-0654bef32cb286360",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-00c15e51493207f9d",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-00c15e51493207f9d",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "igw-0840f656c99b08f58",
+    "target_type": "aws::ec2::internet_gateway",
+    "relation": "routes_to_igw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-018969498db66c652",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-05f3ab96f212b380b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "nat-087cf87c9fdf098b8",
+    "target_type": "aws::ec2::nat_gateway",
+    "relation": "routes_to_nat",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-09b445d8293f92e76",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "vpc-0e628fe72b4175720",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-09b445d8293f92e76",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "igw-0f1155ffd0b58b243",
+    "target_type": "aws::ec2::internet_gateway",
+    "relation": "routes_to_igw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-0ab891dac95111899",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-0536a8ece25c5f227",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-0536a8ece25c5f227",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-0536a8ece25c5f227",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-0536a8ece25c5f227",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-0536a8ece25c5f227",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-0536a8ece25c5f227",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-0536a8ece25c5f227",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-0536a8ece25c5f227",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-0536a8ece25c5f227",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "nat-00f93b8b61457d10d",
+    "target_type": "aws::ec2::nat_gateway",
+    "relation": "routes_to_nat",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-066a8e80d1b4c16e5",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-066a8e80d1b4c16e5",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "igw-01ee7a6bfe96bfbb1",
+    "target_type": "aws::ec2::internet_gateway",
+    "relation": "routes_to_igw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-04430eb0309ae243e",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "belongs_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "routes_to_tgw",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "rtb-009384fe500e1bd2b",
+    "source_type": "aws::ec2::route_table",
+    "target_id": "nat-00f93b8b61457d10d",
+    "target_type": "aws::ec2::nat_gateway",
+    "relation": "routes_to_nat",
+    "metadata": {
+      "destination": ""
+    }
+  },
+  {
+    "source_id": "igw-01ee7a6bfe96bfbb1",
+    "source_type": "aws::ec2::internet_gateway",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "attached_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "igw-0840f656c99b08f58",
+    "source_type": "aws::ec2::internet_gateway",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "attached_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "igw-0f1155ffd0b58b243",
+    "source_type": "aws::ec2::internet_gateway",
+    "target_id": "vpc-0e628fe72b4175720",
+    "target_type": "aws::ec2::vpc",
+    "relation": "attached_to_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "nat-00f93b8b61457d10d",
+    "source_type": "aws::ec2::nat_gateway",
+    "target_id": "subnet-01e1b509ce04c5bb2",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "nat-00f93b8b61457d10d",
+    "source_type": "aws::ec2::nat_gateway",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "deployed_in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "nat-087cf87c9fdf098b8",
+    "source_type": "aws::ec2::nat_gateway",
+    "target_id": "subnet-014840bef902a667c",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "nat-087cf87c9fdf098b8",
+    "source_type": "aws::ec2::nat_gateway",
+    "target_id": "vpc-09cd0eff0b0a7a363",
+    "target_type": "aws::ec2::vpc",
+    "relation": "deployed_in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpc-0c6863a32b8db36e0",
+    "source_type": "aws::ec2::vpc",
+    "target_id": "tgw-042a72cb246bebf1e",
+    "target_type": "aws::ec2::transit_gateway",
+    "relation": "connected_via_tgw",
+    "metadata": {
+      "attachment_id": "tgw-attach-099db8323944dbd48"
+    }
+  },
+  {
+    "source_id": "vpce-01e20579e8bbd6acc",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-0217b520de4a350f0",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-0217b520de4a350f0",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-0951555575751a819",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-08f803e956d09a53d",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-0b20ff61ae59addc6",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-0b20ff61ae59addc6",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-0b20ff61ae59addc6",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-0918f1a2e48f7fb51",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-0918f1a2e48f7fb51",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-0918f1a2e48f7fb51",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-07cfc05c593dde461",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-07cfc05c593dde461",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-07cfc05c593dde461",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-094de1c92d5aa3d1d",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-094de1c92d5aa3d1d",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-03c90b860a79acd5e",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-094de1c92d5aa3d1d",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-0922b864eefaddb05",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-05dd2c98f8e1ed8d6",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-05dd2c98f8e1ed8d6",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-0951555575751a819",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "vpce-05dd2c98f8e1ed8d6",
+    "source_type": "aws::ec2::vpc_endpoint",
+    "target_id": "subnet-0ed8a143f2b994c42",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "arn:aws:elasticloadbalancing:eu-south-2:818835242461:loadbalancer/net/itl-0004-itx-prd-nlb-sftp-02/f9f0bec89a01e51a",
+    "source_type": "aws::elasticloadbalancing::loadbalancer",
+    "target_id": "vpc-0c6863a32b8db36e0",
+    "target_type": "aws::ec2::vpc",
+    "relation": "deployed_in_vpc",
+    "metadata": {}
+  },
+  {
+    "source_id": "arn:aws:elasticloadbalancing:eu-south-2:818835242461:loadbalancer/net/itl-0004-itx-prd-nlb-sftp-02/f9f0bec89a01e51a",
+    "source_type": "aws::elasticloadbalancing::loadbalancer",
+    "target_id": "subnet-01e1b509ce04c5bb2",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "arn:aws:elasticloadbalancing:eu-south-2:818835242461:loadbalancer/net/itl-0004-itx-prd-nlb-sftp-02/f9f0bec89a01e51a",
+    "source_type": "aws::elasticloadbalancing::loadbalancer",
+    "target_id": "subnet-0951555575751a819",
+    "target_type": "aws::ec2::subnet",
+    "relation": "deployed_in_subnet",
+    "metadata": {}
+  },
+  {
+    "source_id": "arn:aws:elasticloadbalancing:eu-south-2:818835242461:loadbalancer/net/itl-0004-itx-prd-nlb-sftp-02/f9f0bec89a01e51a",
+    "source_type": "aws::elasticloadbalancing::loadbalancer",
+    "target_id": "sg-0a417ccec8040b8f3",
+    "target_type": "aws::ec2::security_group",
+    "relation": "protected_by_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "arn:aws:elasticloadbalancing:eu-south-2:818835242461:loadbalancer/net/itl-0004-itx-prd-nlb-sftp-02/f9f0bec89a01e51a",
+    "source_type": "aws::elasticloadbalancing::loadbalancer",
+    "target_id": "arn:aws:elasticloadbalancing:eu-south-2:818835242461:targetgroup/itl-0004-itx-prd-tg-sftp-02/e8e0584595112458",
+    "target_type": "aws::elasticloadbalancing::targetgroup",
+    "relation": "routes_to_tg",
+    "metadata": {}
+  },
+  {
+    "source_id": "arn:aws:elasticloadbalancing:eu-south-2:818835242461:targetgroup/itl-0004-itx-prd-tg-sftp-02/e8e0584595112458",
+    "source_type": "aws::elasticloadbalancing::targetgroup",
+    "target_id": "10.13.2.4",
+    "target_type": "aws::ec2::instance",
+    "relation": "forwards_to",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-06619eddecd66bc23",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-08a170933bb288237",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-06619eddecd66bc23",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-005bad6e329e4bc98",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-06619eddecd66bc23",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0808b36aeca15eba4",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-06619eddecd66bc23",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0becff9d6790cf669",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-06619eddecd66bc23",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0e8864e42cb1e54d7",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-06619eddecd66bc23",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-097a391d184cf49cd",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-06619eddecd66bc23",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0aa6d55bd394447f6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-06619eddecd66bc23",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0175bf9584150c48d",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0603d76bcffc16951",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0603d76bcffc16951",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0697a3b7e4356aba6",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0aa6d55bd394447f6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0ddb2e33452d2a5ca",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0697a3b7e4356aba6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0ddb2e33452d2a5ca",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0fde3398d48e6fdb0",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0ddb2e33452d2a5ca",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-097a391d184cf49cd",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0ddb2e33452d2a5ca",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0175bf9584150c48d",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0ddb2e33452d2a5ca",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0aa6d55bd394447f6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0ddb2e33452d2a5ca",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-08a170933bb288237",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0ddb2e33452d2a5ca",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-00983722a8c6e69af",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0ddb2e33452d2a5ca",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-04aac9e78d6520b80",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-00a9f08db40f8628f",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-00a9f08db40f8628f",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0fde3398d48e6fdb0",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0b770898b1f897e5d",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0b770898b1f897e5d",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0cf9b3d2905943753",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0becff9d6790cf669",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-097a391d184cf49cd",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0becff9d6790cf669",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-01b7aec8368516654",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0becff9d6790cf669",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0175bf9584150c48d",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0becff9d6790cf669",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0aa6d55bd394447f6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0becff9d6790cf669",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0d760cd30300debca",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0becff9d6790cf669",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-01b7aec8368516654",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0becff9d6790cf669",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0aa6d55bd394447f6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0becff9d6790cf669",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-0aa6d55bd394447f6",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0a9badb1aa57f04b6",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  },
+  {
+    "source_id": "sg-0d132d30a28741e82",
+    "source_type": "aws::ec2::security_group",
+    "target_id": "sg-01ce57c1fc8749c8b",
+    "target_type": "aws::ec2::security_group",
+    "relation": "references_sg",
+    "metadata": {}
+  }
+]

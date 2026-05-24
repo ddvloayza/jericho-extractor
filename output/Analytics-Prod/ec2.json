@@ -1,0 +1,60 @@
+[
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-01575f747726bb062",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "instance_type": "c7i.large",
+    "state": "running",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-04c4e78c5fef9f756",
+    "private_ip": "10.15.2.57",
+    "public_ip": "",
+    "availability_zone": "eu-south-2c",
+    "ami_id": "ami-01f7f60a6501e456b",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "iam_instance_profile": "arn:aws:iam::831926623233:instance-profile/eks-28ccf81a-f680-754d-5734-4d37cc48f9ba",
+    "launch_time": "2026-05-22 22:31:58+00:00",
+    "tags": {
+      "apid": "ana",
+      "aws:autoscaling:groupName": "eks-itl-0005-ana-prd-ng-dags-02-20251017032808088700000026-28ccf81a-f680-754d-5734-4d37cc48f9ba",
+      "aws:eks:cluster-name": "itl-0005-ana-prd-eks-af-02",
+      "coid": "itl",
+      "aws:ec2launchtemplate:id": "lt-0888388710663aedc",
+      "aws:ec2launchtemplate:version": "3",
+      "k8s.io/cluster-autoscaler/itl-0005-ana-prd-eks-af-02": "owned",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "Name": "itl-0005-ana-prd-ng-dags-02",
+      "assetid": "0005",
+      "eks:cluster-name": "itl-0005-ana-prd-eks-af-02",
+      "kubernetes.io/cluster/itl-0005-ana-prd-eks-af-02": "owned",
+      "aws:ec2:fleet-id": "fleet-e29e0d37-6aa5-4cad-2cb8-2b22b141265a",
+      "env": "prd",
+      "eks:nodegroup-name": "itl-0005-ana-prd-ng-dags-02-20251017032808088700000026"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-04c4e78c5fef9f756",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-005bad6e329e4bc98",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:03:25.927689+00:00"
+  }
+]

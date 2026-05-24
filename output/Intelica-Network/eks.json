@@ -1,0 +1,110 @@
+[
+  {
+    "resource_type": "aws::eks::cluster",
+    "resource_id": "arn:aws:eks:eu-south-2:954976322048:cluster/itl-0002-shared-network-all-eks-pritunl-02",
+    "resource_name": "itl-0002-shared-network-all-eks-pritunl-02",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0002-shared-network-all-eks-pritunl-02",
+    "status": "ACTIVE",
+    "kubernetes_version": "1.34",
+    "endpoint": "https://6F5B9E39B54A2DD334CC06CF8D4AD97D.gr7.eu-south-2.eks.amazonaws.com",
+    "certificate_authority": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJR1BQNldCUTRON0l3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TlRBNU1UVXlNekkyTkRkYUZ3MHpOVEE1TVRNeU16TXhORGRhTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURFZ0k2K1JHLzVzNGZkM2NrSThYOWtsSWMrd1k5Y1FTamJLOTR1RElZa0pHUTNXZVVrcFhzNmdPSGMKTEpKcFJrR1p6blY3a2pldUI0dHhOeVlJdFJzb2wxM1RGejZWdWxkbVIzeTdGMldaT1ZPRjlnMjhXaXRnZnIyMQp5VTF1Z2lZZzZ6cW95QTlOaGFUakVPc21na3F1VzJvQUpVQmNqVERLM3p3ZXM1SmcrekY3Y3BUVndYTzRaUEZUCk1qdCtrejBzODdla2pEdVFiUCtvL0cxOHZxWXFHOEgzTENjTGJhYXEvSkJxSjJSdHZHeTcrand1QnZKZ1JMZU8KN0NKYkJtQ2RRUk0rWTA5ci9nNjNaajhDNzFRRGxyb3lzWjZKTTJRRi9OdmluUGFwVUJ5MkpYZFRTWUNMZHY5bApZUVFkQVNkcmtnNU9odldkS1pMRnIrQ3BZNmFQQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUU0RJaXhXWUxvSjh1c3kvK0RrbllwYjZqZUhEQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQmNQOTBjdlVYZAptVWo0dHRMZjk3d0xzYUU4c2w4QTUzWWdya3NiUGRSR280UmxWcmFYU2Q2WmNMU3VLMzdzM0RodkgzZ0FKUWExCmhlcVlVWGE5YXA1YzZKSmhyVTNlTmwxVDBsZUVSbFFIR1lZOXllNlF0bG9SWlhaeVcxNTFUU0k4VEQ3WlVsRi8KR2xmSTZ5MTYwM0o3TFdNbWFUUlhTNG9VSWZqcm5qQ2tQRS80c0FnSnZLdkRaY2hjdmtaZm5lb2U1djdZUnB4cwowbzNwd3drTjlObGh0cVJpbGpEUnlKRTZpWmZxZ3hiYTMxYlY5M3VUUTl5OVVpUDREdVhLMkFXbjRBRytsd3BjClVaZHBaWER0bkU4S21SKzhmcVlOMU5TTng0aFJGak53Nk1TckZKN1htdXlydzdjclk3SmpTUmZZUUx1Y0JXaloKb2xtK3RPTnNWc1ZPCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_ids": [
+      "subnet-06e26c7cc455004c5",
+      "subnet-0624a59dbcfc36798"
+    ],
+    "security_group_ids": [
+      "sg-04aca11661012920a"
+    ],
+    "endpoint_public_access": true,
+    "endpoint_private_access": true,
+    "role_arn": "arn:aws:iam::954976322048:role/itl-0002-shared-network-all-eks-pritunl-02-role",
+    "logging_enabled": [
+      "api",
+      "audit",
+      "authenticator"
+    ],
+    "tags": {
+      "coid": "itl",
+      "terraform-aws-modules": "eks",
+      "env": "all",
+      "assetid": "0001",
+      "apid": "shared-network"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-06e26c7cc455004c5",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0624a59dbcfc36798",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-04aca11661012920a",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:49.963360+00:00"
+  },
+  {
+    "resource_type": "aws::eks::nodegroup",
+    "resource_id": "arn:aws:eks:eu-south-2:954976322048:nodegroup/itl-0002-shared-network-all-eks-pritunl-02/itl-0002-shared-network-all-ec2-pritunl-02/4ccca7de-34cc-1d78-a019-55daac0dfb02",
+    "resource_name": "itl-0002-shared-network-all-ec2-pritunl-02",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "cluster_arn": "arn:aws:eks:eu-south-2:954976322048:cluster/itl-0002-shared-network-all-eks-pritunl-02",
+    "nodegroup_name": "itl-0002-shared-network-all-ec2-pritunl-02",
+    "status": "ACTIVE",
+    "instance_types": [
+      "t3.medium"
+    ],
+    "ami_type": "AL2023_x86_64_STANDARD",
+    "capacity_type": "ON_DEMAND",
+    "subnet_ids": [
+      "subnet-06e26c7cc455004c5",
+      "subnet-0624a59dbcfc36798"
+    ],
+    "desired_size": 1,
+    "min_size": 0,
+    "max_size": 1,
+    "disk_size": 0,
+    "tags": {
+      "coid": "itl",
+      "env": "all",
+      "assetid": "0001",
+      "apid": "shared-network",
+      "Name": "itl-0002-shared-network-all-ec2-pritunl-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:954976322048:cluster/itl-0002-shared-network-all-eks-pritunl-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-06e26c7cc455004c5",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0624a59dbcfc36798",
+        "relation": "uses_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:05:50.566379+00:00"
+  }
+]

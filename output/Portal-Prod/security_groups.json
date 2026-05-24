@@ -41,7 +41,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459544+00:00"
+    "collected_at": "2026-05-24T02:14:10.450063+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -94,64 +94,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459558+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-0634ee789467ac220",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0626d66632373c892",
-    "group_name": "itl-0003-portal-prd-rds-apps-02-sg",
-    "description": "Control traffic to/from RDS Aurora itl-0003-portal-prd-rds-apps-02",
-    "inbound_rules": [
-      {
-        "protocol": "tcp",
-        "from_port": 5432,
-        "to_port": 5432,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-04aac9e78d6520b80",
-          "sg-0175bf9584150c48d",
-          "sg-023d0e02fd0b67e82",
-          "sg-0e8cd582b4803bcfc",
-          "sg-0aa6d55bd394447f6",
-          "sg-0becff9d6790cf669",
-          "sg-05f186888e83ce35d"
-        ],
-        "prefix_list_ids": []
-      }
-    ],
-    "outbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [
-          "0.0.0.0/0"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "tags": {
-      "Name": "itl-0003-portal-prd-rds-apps-02-sg",
-      "apid": "portal",
-      "assetid": "0003",
-      "coid": "itl",
-      "env": "prd"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0626d66632373c892",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-17T17:50:50.459564+00:00"
+    "collected_at": "2026-05-24T02:14:10.450082+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -227,7 +170,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459570+00:00"
+    "collected_at": "2026-05-24T02:14:10.450091+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -280,7 +223,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459574+00:00"
+    "collected_at": "2026-05-24T02:14:10.450097+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -331,7 +274,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459578+00:00"
+    "collected_at": "2026-05-24T02:14:10.450102+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -395,7 +338,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459582+00:00"
+    "collected_at": "2026-05-24T02:14:10.450109+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -428,7 +371,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459585+00:00"
+    "collected_at": "2026-05-24T02:14:10.450113+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -481,7 +424,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459588+00:00"
+    "collected_at": "2026-05-24T02:14:10.450121+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -548,7 +491,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459595+00:00"
+    "collected_at": "2026-05-24T02:14:10.450131+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -581,7 +524,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459597+00:00"
+    "collected_at": "2026-05-24T02:14:10.450134+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -634,7 +577,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459602+00:00"
+    "collected_at": "2026-05-24T02:14:10.450139+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -670,7 +613,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459605+00:00"
+    "collected_at": "2026-05-24T02:14:10.450144+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -703,7 +646,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459607+00:00"
+    "collected_at": "2026-05-24T02:14:10.450147+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -756,7 +699,81 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459611+00:00"
+    "collected_at": "2026-05-24T02:14:10.450153+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0097bc967b64e085e",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "group_name": "itl-0003-portal-prd-lambda-fee-external-custom-alert-02-sg",
+    "description": "SG Lambda itl-0003-portal-prd-lambda-fee-external-custom-alert-02 - egress a VPC endpoints y DNS",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "ipv4_ranges": [
+          "10.10.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.10.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.10.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-00def764449f57c39"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "apid": "portal",
+      "coid": "itl",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-prd-lambda-fee-external-custom-alert-02-sg",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:14:10.450160+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -795,7 +812,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459614+00:00"
+    "collected_at": "2026-05-24T02:14:10.450166+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -840,7 +857,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459617+00:00"
+    "collected_at": "2026-05-24T02:14:10.450170+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -891,7 +908,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459621+00:00"
+    "collected_at": "2026-05-24T02:14:10.450176+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -944,7 +961,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459625+00:00"
+    "collected_at": "2026-05-24T02:14:10.450182+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1006,7 +1023,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459630+00:00"
+    "collected_at": "2026-05-24T02:14:10.450188+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1059,7 +1076,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459634+00:00"
+    "collected_at": "2026-05-24T02:14:10.450193+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1086,7 +1103,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459637+00:00"
+    "collected_at": "2026-05-24T02:14:10.450196+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1151,7 +1168,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459642+00:00"
+    "collected_at": "2026-05-24T02:14:10.450203+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1248,7 +1265,65 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459648+00:00"
+    "collected_at": "2026-05-24T02:14:10.450213+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0634ee789467ac220",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "group_name": "itl-0003-portal-prd-rds-apps-02-sg",
+    "description": "Control traffic to/from RDS Aurora itl-0003-portal-prd-rds-apps-02",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-04aac9e78d6520b80",
+          "sg-0175bf9584150c48d",
+          "sg-023d0e02fd0b67e82",
+          "sg-0e8cd582b4803bcfc",
+          "sg-0aa6d55bd394447f6",
+          "sg-0becff9d6790cf669",
+          "sg-05f186888e83ce35d",
+          "sg-0097bc967b64e085e"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "Name": "itl-0003-portal-prd-rds-apps-02-sg",
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-05-24T02:14:10.450218+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1311,7 +1386,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459652+00:00"
+    "collected_at": "2026-05-24T02:14:10.450224+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1364,7 +1439,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459656+00:00"
+    "collected_at": "2026-05-24T02:14:10.450230+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1429,7 +1504,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459661+00:00"
+    "collected_at": "2026-05-24T02:14:10.450237+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1457,7 +1532,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459663+00:00"
+    "collected_at": "2026-05-24T02:14:10.450241+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1510,7 +1585,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459667+00:00"
+    "collected_at": "2026-05-24T02:14:10.450247+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1559,7 +1634,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459670+00:00"
+    "collected_at": "2026-05-24T02:14:10.450252+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1669,7 +1744,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459676+00:00"
+    "collected_at": "2026-05-24T02:14:10.450261+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1720,7 +1795,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459682+00:00"
+    "collected_at": "2026-05-24T02:14:10.450265+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1759,7 +1834,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459685+00:00"
+    "collected_at": "2026-05-24T02:14:10.450269+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1812,7 +1887,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459689+00:00"
+    "collected_at": "2026-05-24T02:14:10.450274+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1845,7 +1920,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459691+00:00"
+    "collected_at": "2026-05-24T02:14:10.450279+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1907,7 +1982,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459695+00:00"
+    "collected_at": "2026-05-24T02:14:10.450287+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -1967,57 +2042,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459700+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-09023c203f8e91004",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0626d66632373c892",
-    "group_name": "itl-0003-portal-prd-lambda-fee-external-alert-02-sg",
-    "description": "SG Lambda itl-0003-portal-prd-lambda-fee-external-alert-02 - egress a VPC endpoints y DNS",
-    "inbound_rules": [],
-    "outbound_rules": [
-      {
-        "protocol": "tcp",
-        "from_port": 53,
-        "to_port": 53,
-        "ipv4_ranges": [
-          "10.10.0.0/16"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "udp",
-        "from_port": 53,
-        "to_port": 53,
-        "ipv4_ranges": [
-          "10.10.0.0/16"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "tags": {
-      "coid": "itl",
-      "assetid": "0003",
-      "apid": "portal",
-      "Name": "itl-0003-portal-prd-lambda-fee-external-alert-02-sg",
-      "env": "prd"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0626d66632373c892",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-17T17:50:50.459703+00:00"
+    "collected_at": "2026-05-24T02:14:10.450293+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2080,7 +2105,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459707+00:00"
+    "collected_at": "2026-05-24T02:14:10.450299+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2141,7 +2166,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459712+00:00"
+    "collected_at": "2026-05-24T02:14:10.450305+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2181,7 +2206,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459715+00:00"
+    "collected_at": "2026-05-24T02:14:10.450309+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2209,7 +2234,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459719+00:00"
+    "collected_at": "2026-05-24T02:14:10.450312+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2262,7 +2287,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459723+00:00"
+    "collected_at": "2026-05-24T02:14:10.450318+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2414,7 +2439,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459732+00:00"
+    "collected_at": "2026-05-24T02:14:10.450331+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2473,7 +2498,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459737+00:00"
+    "collected_at": "2026-05-24T02:14:10.450336+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2535,7 +2560,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459742+00:00"
+    "collected_at": "2026-05-24T02:14:10.450342+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2620,7 +2645,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459747+00:00"
+    "collected_at": "2026-05-24T02:14:10.450349+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2731,7 +2756,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459754+00:00"
+    "collected_at": "2026-05-24T02:14:10.450359+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2784,7 +2809,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459758+00:00"
+    "collected_at": "2026-05-24T02:14:10.450364+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2823,7 +2848,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459761+00:00"
+    "collected_at": "2026-05-24T02:14:10.450368+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2879,7 +2904,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459764+00:00"
+    "collected_at": "2026-05-24T02:14:10.450373+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -2924,6 +2949,6 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-17T17:50:50.459768+00:00"
+    "collected_at": "2026-05-24T02:14:10.450377+00:00"
   }
 ]

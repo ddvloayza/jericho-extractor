@@ -1,0 +1,115 @@
+[
+  {
+    "resource_type": "aws::eks::cluster",
+    "resource_id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02",
+    "resource_name": "itl-0005-ana-prd-eks-af-02",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-prd-eks-af-02",
+    "status": "ACTIVE",
+    "kubernetes_version": "1.34",
+    "endpoint": "https://4E441782E0C3F75B19D536EA88C14071.sk1.eu-south-2.eks.amazonaws.com",
+    "certificate_authority": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJVVYyVnU5Smd2QlV3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TlRFd01UY3dNekU0TXpOYUZ3MHpOVEV3TVRVd016SXpNek5hTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUMvNk9qYldQcjYrNGl3Wk4zbnlXUFYwakVEOGpWRW5EWnlGT0FlSURqMGNJODFOSXJ4V3BGNWdQdFUKakUyQnVIai9sTDAyN1FjdGx0N0hMc0h6ZGVWdEJmMkdoQ20zZStvdllrdTI5aW5nTDJRMzBjVG5meEtyUWQrawpSZ05aS2hqVnBMR3FpYzdWYmswMklsM3F6SXpmRXgxdWU5L0pqY3Y0c1pINEZ6ZGVjdHBRR1NWVVNEMS9aamcyCkpNVkVUSE5LSlZnVFBMeVhNVk5adW96WHlLQ3kyTTBKVmppRzZvSGFsNWVuaVZoU0U1MTRudzIxWEcyMW5DS1gKRWg4aVBxczl0RnhHdGF3UUJDOEQyR0h2ZjlaeUJrdXVMMjVnUGZTVnMzQmJPMk1mSGdQdEw2Y1liL0M0RW5lKwp3WFVWdStqU0tMUmlsci8vbW5PVHp5T1FnYnNOQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJURGl6TnpWRW40ZEt4L0p2cTFVd0ZSbGV1cCtEQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQVArNSt6TDVuZwpHRVBQYlo1VUZ4VnMvaGtNMS9CZllQcjJVRm5td0lhSWlZeldDeWpRUVdCUUJIQmJocVJTTEpid3dEdFR0SS9oClhGVFUrQkNNKzhhc1BQOU9VRDlZRUxzVDBzR29lT0lzZDJBc1NtZnBVV2hvMkU5OVM3bzJ2clQyanE5OVQrWnQKVDdBMjN2ZzZOTk9Pa2JncksyTVk2WjNrQmNhUmFsMHhWcFgxSVFrb3ZoT2VWWEFNMUgzaEFYQTQ4Ny9rTzdxOAo1VzZDYzZKTUZRM3Iwd1N6MFFGVytnK05GRGVWaXlKaEJtR2piUjB3RVZuZDFSL0NLNDlrc25GSGk5cXJ1TWt1CjJQTE83R0ZNTFlmVWxSYmJpUWMxNHZRMzVaakJKdUpvTnVnbHNzUGtxWHZXTnVrNjdBMUFxSm91OEhWcTlVdCsKT2NHR0xrZWR6SG1SCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_ids": [
+      "subnet-04c4e78c5fef9f756",
+      "subnet-08d029e0c1f7e782e",
+      "subnet-0d85a80ddb479d2fb"
+    ],
+    "security_group_ids": [],
+    "endpoint_public_access": true,
+    "endpoint_private_access": true,
+    "role_arn": "arn:aws:iam::831926623233:role/itl-0005-ana-prd-eks-af-02-role-20251017031718274000000003",
+    "logging_enabled": [
+      "api",
+      "audit",
+      "authenticator"
+    ],
+    "tags": {
+      "coid": "itl",
+      "terraform-aws-modules": "eks",
+      "env": "prd",
+      "assetid": "0005",
+      "apid": "ana"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-04c4e78c5fef9f756",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "uses_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:03:29.723118+00:00"
+  },
+  {
+    "resource_type": "aws::eks::nodegroup",
+    "resource_id": "arn:aws:eks:eu-south-2:831926623233:nodegroup/itl-0005-ana-prd-eks-af-02/itl-0005-ana-prd-ng-dags-02-20251017032808088700000026/28ccf81a-f680-754d-5734-4d37cc48f9ba",
+    "resource_name": "itl-0005-ana-prd-ng-dags-02-20251017032808088700000026",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "cluster_arn": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02",
+    "nodegroup_name": "itl-0005-ana-prd-ng-dags-02-20251017032808088700000026",
+    "status": "ACTIVE",
+    "instance_types": [
+      "c7i.large"
+    ],
+    "ami_type": "AL2023_x86_64_STANDARD",
+    "capacity_type": "ON_DEMAND",
+    "subnet_ids": [
+      "subnet-04c4e78c5fef9f756",
+      "subnet-08d029e0c1f7e782e",
+      "subnet-0d85a80ddb479d2fb"
+    ],
+    "desired_size": 1,
+    "min_size": 1,
+    "max_size": 5,
+    "disk_size": 0,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0005",
+      "apid": "ana",
+      "Name": "itl-0005-ana-prd-ng-dags-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:831926623233:cluster/itl-0005-ana-prd-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-04c4e78c5fef9f756",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "uses_subnet"
+      }
+    ],
+    "collected_at": "2026-05-24T02:03:30.320489+00:00"
+  }
+]

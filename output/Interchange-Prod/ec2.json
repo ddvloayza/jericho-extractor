@@ -1,0 +1,94 @@
+[
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-08385ff7dbbc37b9d",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "instance_type": "x2iedn.4xlarge",
+    "state": "running",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "private_ip": "10.13.3.231",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-03539353ff0dfe73d",
+    "key_name": "itl-0004-itx-prod-keypair-london-01",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0becff9d6790cf669"
+    ],
+    "iam_instance_profile": "arn:aws:iam::818835242461:instance-profile/EC2-SSM-Windows-Role",
+    "launch_time": "2026-01-27 22:31:40+00:00",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0becff9d6790cf669",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:45.810481+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-0912b617340cb9eb4",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "instance_type": "r6g.2xlarge",
+    "state": "running",
+    "vpc_id": "vpc-0c6863a32b8db36e0",
+    "subnet_id": "subnet-0922b864eefaddb05",
+    "private_ip": "10.13.3.233",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-00462550d73e31ab8",
+    "key_name": "itl-0004-itx-prd-ec2-app-02",
+    "platform": "linux",
+    "architecture": "arm64",
+    "security_group_ids": [
+      "sg-0697a3b7e4356aba6"
+    ],
+    "iam_instance_profile": "arn:aws:iam::818835242461:instance-profile/itl-0004-itx-prd-ec2-app-02-role-profile",
+    "launch_time": "2025-10-29 21:54:13+00:00",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "Name": "itl-0004-itx-prd-ec2-app-02",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0c6863a32b8db36e0",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0922b864eefaddb05",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0697a3b7e4356aba6",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-05-24T02:09:45.810495+00:00"
+  }
+]

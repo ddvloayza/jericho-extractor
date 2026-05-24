@@ -8,6 +8,8 @@ when matplotlib/numpy are unavailable (e.g. blocked by App Control).
 Usage:
     python visualize.py --account Portal-Prod
     python visualize.py --account Portal-Prod --output-dir output
+    # HTML reports -> output/<account>/reports/
+    # draw.io      -> output/<account>/diagrams/  (via diagram_generator.py)
     python visualize.py --account Portal-Prod --only security
     python visualize.py --account Portal-Prod --only vpc
     python visualize.py --account Portal-Prod --only graph
@@ -72,6 +74,11 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
         "route_tables":                load(account_dir, "route_tables"),
         "target_groups":               load(account_dir, "target_groups"),
         "vpc_peerings":                load(account_dir, "vpc_peerings"),
+        # Data-protection / IAM (used by audit report)
+        "kms":                         load(account_dir, "kms"),
+        "secrets":                     load(account_dir, "secrets"),
+        "s3_buckets":                  load(account_dir, "s3_buckets"),
+        "iam_roles":                   load(account_dir, "iam_roles"),
     }
 
     sg_analysis  = load(account_dir, "relationships/security_groups_analysis")
@@ -146,6 +153,31 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
         else:
             from visualization.tgw_diagram import TGWDiagram
             TGWDiagram().render(inventory, diagrams_dir / "tgw_topology.png")
+
+    # ── Audit (consolidated) ──────────────────────────────────────────────────
+    if only in (None, "audit"):
+        if use_html:
+            from topology.network_graph import NetworkGraph
+            from topology.relationship_engine import RelationshipEngine
+            from visualization.html_renderer import render_audit_report
+
+            logger.info("Building network graph for audit report...")
+            graph = NetworkGraph()
+            graph.build_from_inventory(all_resources)
+            graph.build_from_edges(RelationshipEngine().build_all(inventory))
+
+            out = diagrams_dir / "audit_report.html"
+            render_audit_report(
+                inventory=inventory,
+                sg_analysis=sg_analysis,
+                graph_summary=graph.summary(),
+                internet_facing=graph.get_internet_facing(),
+                output_path=out,
+                account_name=account_name,
+            )
+            logger.info("Audit report -> %s", out)
+        else:
+            logger.warning("Audit report is HTML-only; use --format html or --format auto")
 
     # ── Print summary ─────────────────────────────────────────────────────────
     ext = "html" if use_html else "png"
@@ -238,7 +270,7 @@ def main() -> None:
     parser.add_argument("--output-dir", default="output", help="Base output directory (default: output)")
     parser.add_argument(
         "--only",
-        choices=["vpc", "security", "graph", "tgw", "hierarchy"],
+        choices=["vpc", "security", "graph", "tgw", "hierarchy", "audit"],
         default=None,
         help="Generate only one diagram type (default: all)",
     )
@@ -251,7 +283,7 @@ def main() -> None:
     args = parser.parse_args()
 
     account_dir  = Path(args.output_dir) / args.account
-    diagrams_dir = account_dir / "diagrams"
+    diagrams_dir = account_dir / "reports"
 
     if not account_dir.exists():
         print(f"Error: directory not found: {account_dir}")
