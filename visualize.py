@@ -79,6 +79,10 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
         "secrets":                     load(account_dir, "secrets"),
         "s3_buckets":                  load(account_dir, "s3_buckets"),
         "iam_roles":                   load(account_dir, "iam_roles"),
+        # Storage & backups
+        "ebs":                         load(account_dir, "ebs"),
+        "snapshots":                   load(account_dir, "snapshots"),
+        "amis":                        load(account_dir, "amis"),
     }
 
     sg_analysis  = load(account_dir, "relationships/security_groups_analysis")
@@ -179,6 +183,29 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
         else:
             logger.warning("Audit report is HTML-only; use --format html or --format auto")
 
+    # ── Costs ─────────────────────────────────────────────────────────────────
+    if only in (None, "costs"):
+        if use_html:
+            from visualization.html_renderer import render_cost_report
+            out = diagrams_dir / "cost_report.html"
+            render_cost_report(
+                costs_daily      = load(account_dir, "costs_daily"),
+                costs_by_name    = load(account_dir, "costs_by_name"),
+                costs_by_usage   = load(account_dir, "costs_by_usage"),
+                costs_monthly    = load(account_dir, "costs_monthly"),
+                output_path      = out,
+                account_name     = account_name,
+                # enrichment data for EBS → EC2 cross-reference
+                ebs_inventory    = inventory.get("ebs", []),
+                ec2_inventory    = inventory.get("ec2", []),
+                # backup / AMI analysis
+                snapshot_inventory = inventory.get("snapshots", []),
+                ami_inventory      = inventory.get("amis", []),
+            )
+            logger.info("Cost report -> %s", out)
+        else:
+            logger.warning("Cost report is HTML-only; use --format html or --format auto")
+
     # ── Print summary ─────────────────────────────────────────────────────────
     ext = "html" if use_html else "png"
     print(f"\nDiagrams written to: {diagrams_dir}")
@@ -270,7 +297,7 @@ def main() -> None:
     parser.add_argument("--output-dir", default="output", help="Base output directory (default: output)")
     parser.add_argument(
         "--only",
-        choices=["vpc", "security", "graph", "tgw", "hierarchy", "audit"],
+        choices=["vpc", "security", "graph", "tgw", "hierarchy", "audit", "costs"],
         default=None,
         help="Generate only one diagram type (default: all)",
     )

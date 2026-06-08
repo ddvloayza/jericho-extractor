@@ -7,9 +7,13 @@ Generates reports styled to match the Intelica design system:
   tab navigation · cards / tiles / callouts · dark navy footer.
 """
 
+import json
+import logging
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+logger = logging.getLogger(__name__)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -2295,4 +2299,914 @@ def render_audit_report(
             ],
         ),
         encoding="utf-8",
+    )
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Cost report — 4 tabs, standalone HTML with Chart.js
+# ─────────────────────────────────────────────────────────────────────────────
+
+_COST_COLORS = [
+    "#21409A", "#FF860D", "#0F1533", "#2ECC71",
+    "#E74C3C", "#9B59B6", "#1ABC9C", "#F39C12",
+]
+
+_COST_CSS = """\
+/* ── cost charts ── */
+.chart-wrap{
+  background:white;border:1px solid rgba(33,64,154,.08);
+  border-radius:var(--r3);padding:24px;box-shadow:var(--s1);margin:18px 0;
+}
+.chart-wrap canvas{max-height:340px}
+.trend-up{color:#C42626;font-weight:700}
+.trend-dn{color:#1F7A35;font-weight:700}
+.trend-eq{color:#808599}
+"""
+
+
+def render_cost_report(
+    costs_daily: list[dict],
+    costs_by_name: list[dict],
+    costs_by_usage: list[dict],
+    costs_monthly: list[dict],
+    output_path: Path,
+    account_name: str = "",
+    ebs_inventory: list[dict] | None = None,
+    ec2_inventory: list[dict] | None = None,
+    snapshot_inventory: list[dict] | None = None,
+    ami_inventory: list[dict] | None = None,
+) -> None:
+    """
+    Generate a standalone HTML cost report with 4 tabs.
+
+    Tabs:
+      01 Overview    — hero stats, donut chart, top-10 resources table
+      02 Tendencia Diaria — 90-day stacked line chart
+      03 Por Recurso / Nombre — named resource table + untagged usage breakdown
+      04 Histórico Mensual — 13-month stacked bar chart + table
+
+    Optional enrichment:
+      ebs_inventory  — ebs.json  (adds EBS -> EC2 instance column to resource table)
+      ec2_inventory  — ec2.json  (resolves EC2 friendly name from instance ID)
+    """
+    from collections import defaultdict
+
+    # ── Build EBS -> EC2 cross-reference ─────────────────────────────────────
+    # ebs_name_to_ec2: resource Name tag -> EC2 instance name (or instance ID)
+    ebs_name_to_ec2: dict[str, str] = {}
+    if ebs_inventory and ec2_inventory:
+        ec2_by_id: dict[str, str] = {}
+        for inst in ec2_inventory:
+            iid   = inst.get("resource_id", "")
+            iname = inst.get("tags", {}).get("Name") or inst.get("resource_name", "") or iid
+            if iid:
+                ec2_by_id[iid] = iname
+
+        for vol in ebs_inventory:
+            vol_name = vol.get("tags", {}).get("Name") or vol.get("resource_name", "")
+            inst_id  = vol.get("attached_instance_id", "")
+            if vol_name and inst_id:
+                ebs_name_to_ec2[vol_name] = ec2_by_id.get(inst_id, inst_id)
+
+    now = datetime.now(timezone.utc)
+    cur_year  = now.year
+    cur_month = now.month
+
+    # ── helpers ──────────────────────────────────────────────────────────────
+
+    def _ym(date_str: str) -> tuple:
+        """Return (year, month) from a YYYY-MM-DD string."""
+        parts = date_str[:7].split("-")
+        return (int(parts[0]), int(parts[1]))
+
+    def _month_key(date_str: str) -> str:
+        """Return 'YYYY-MM' from any date string."""
+        return date_str[:7]
+
+    cur_ym  = (cur_year, cur_month)
+    prev_ym = (cur_year, cur_month - 1) if cur_month > 1 else (cur_year - 1, 12)
+
+    # ── aggregate costs_daily by (month, service) ────────────────────────────
+    daily_svc_month: dict[tuple, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    for row in costs_daily:
+        ym  = _ym(row["date"])
+        svc = row.get("service", "Other")
+        daily_svc_month[ym][svc] += float(row.get("amount", 0))
+
+    cur_by_svc  = daily_svc_month.get(cur_ym,  {})
+    prev_by_svc = daily_svc_month.get(prev_ym, {})
+
+    cur_total  = sum(cur_by_svc.values())
+    prev_total = sum(prev_by_svc.values())
+
+    if prev_total > 0:
+        mom_pct = (cur_total - prev_total) / prev_total * 100.0
+    else:
+        mom_pct = 0.0
+
+    top_svc_name   = max(cur_by_svc, key=lambda k: cur_by_svc[k]) if cur_by_svc else "—"
+    top_svc_amount = cur_by_svc.get(top_svc_name, 0.0)
+
+    mom_mod = "alert" if mom_pct > 0 else ("ok" if mom_pct < 0 else "")
+    mom_str = ("+" if mom_pct >= 0 else "") + f"{mom_pct:.1f}%"
+
+    hero_stats = [
+        {"label": "Este mes",    "value": f"${cur_total:,.2f}"},
+        {"label": "Mes anterior","value": f"${prev_total:,.2f}"},
+        {"label": "Cambio MoM",  "value": mom_str, "mod": mom_mod},
+        {"label": "Top servicio","value": top_svc_name,
+         "small": f"${top_svc_amount:,.2f}"},
+    ]
+
+    # ── Tab 1: Overview ───────────────────────────────────────────────────────
+    # Donut — top 8 services this month
+    top8_svcs = sorted(cur_by_svc.items(), key=lambda x: x[1], reverse=True)[:8]
+    donut_labels = [s for s, _ in top8_svcs]
+    donut_values = [round(v, 2) for _, v in top8_svcs]
+    donut_colors = _COST_COLORS[:len(donut_labels)]
+
+    # Top-10 resources table (uses costs_by_name + costs_by_usage combined)
+    res_cur:  dict[tuple, float] = defaultdict(float)
+    res_prev: dict[tuple, float] = defaultdict(float)
+    # (display_label, service) -> amount
+    for row in costs_by_name:
+        nm  = row.get("name", "") or ""
+        svc = row.get("service", "")
+        key = (nm if nm else "__usage__", svc)
+        ym  = _ym(row["date"])
+        if ym == cur_ym:
+            res_cur[key]  += float(row.get("amount", 0))
+        elif ym == prev_ym:
+            res_prev[key] += float(row.get("amount", 0))
+
+    for row in costs_by_usage:
+        nm  = row.get("name", "") or ""
+        if nm:
+            continue  # already captured via costs_by_name
+        usage = row.get("usage_type", "") or ""
+        svc   = row.get("service", "")
+        key   = ("__usage__:" + usage, svc)
+        ym    = _ym(row["date"])
+        if ym == cur_ym:
+            res_cur[key]  += float(row.get("amount", 0))
+        elif ym == prev_ym:
+            res_prev[key] += float(row.get("amount", 0))
+
+    top10_keys = sorted(res_cur.keys(), key=lambda k: res_cur[k], reverse=True)[:10]
+
+    res_rows_html = ""
+    for key in top10_keys:
+        label, svc = key
+        if label.startswith("__usage__:"):
+            disp = label[len("__usage__:"):]
+            disp_cell = '<span class="chip" style="background:#F0F4FF;color:#21409A">USAGE</span> ' + disp
+        else:
+            disp_cell = label if label else '<span style="color:var(--ig3)">—</span>'
+        c_amt = res_cur.get(key, 0.0)
+        p_amt = res_prev.get(key, 0.0)
+        if p_amt > 0:
+            diff = c_amt - p_amt
+            if diff > 0.01:
+                trend = '<span class="trend-up">&#x2191;</span>'
+            elif diff < -0.01:
+                trend = '<span class="trend-dn">&#x2193;</span>'
+            else:
+                trend = '<span class="trend-eq">&#x2192;</span>'
+        else:
+            trend = '<span class="trend-eq">&#x2192;</span>'
+        res_rows_html += (
+            "<tr>"
+            "<td>" + disp_cell + "</td>"
+            "<td>" + svc + "</td>"
+            "<td>" + f"${c_amt:,.2f}" + "</td>"
+            "<td>" + (f"${p_amt:,.2f}" if p_amt else "—") + "</td>"
+            "<td style='text-align:center'>" + trend + "</td>"
+            "</tr>"
+        )
+
+    top10_table = (
+        '<div class="twrap"><table>'
+        "<thead><tr>"
+        "<th>Recurso / Nombre</th><th>Servicio</th>"
+        "<th>Este mes</th><th>Mes anterior</th><th>Tendencia</th>"
+        "</tr></thead>"
+        "<tbody>" + (res_rows_html or '<tr><td colspan="5" style="color:var(--ig2)">Sin datos</td></tr>') + "</tbody>"
+        "</table></div>"
+    )
+
+    tab1_html = (
+        '<div class="sec-eyebrow">Resumen de Costos</div>'
+        '<div class="sec-title">Overview &middot; <strong>' + (account_name or "AWS") + '</strong></div>'
+        '<div class="sec-intro">Costos del mes actual vs. mes anterior, top servicios y recursos.</div>'
+        '<div class="chart-wrap">'
+        '<canvas id="svc-donut"></canvas>'
+        "</div>"
+        '<h3 class="blk">Top 10 Recursos</h3>'
+        + top10_table
+    )
+
+    # ── Tab 2: Tendencia Diaria ───────────────────────────────────────────────
+    # Last 90 days, stacked by top 6 services
+    import datetime as _dt
+    cutoff_dt = now.date() - _dt.timedelta(days=90)
+    cutoff_str = cutoff_dt.isoformat()
+
+    # Collect all dates in range and top-6 services
+    daily_by_date_svc: dict[str, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    for row in costs_daily:
+        d = row["date"][:10]
+        if d >= cutoff_str:
+            daily_by_date_svc[d][row.get("service", "Other")] += float(row.get("amount", 0))
+
+    sorted_dates = sorted(daily_by_date_svc.keys())
+
+    # Determine top-6 services by total in range
+    svc_totals_90: dict[str, float] = defaultdict(float)
+    for d, svc_map in daily_by_date_svc.items():
+        for svc, amt in svc_map.items():
+            svc_totals_90[svc] += amt
+    top6_svcs = [s for s, _ in sorted(svc_totals_90.items(), key=lambda x: x[1], reverse=True)[:6]]
+
+    trend_datasets = []
+    for i, svc in enumerate(top6_svcs):
+        color = _COST_COLORS[i % len(_COST_COLORS)]
+        values = [round(daily_by_date_svc[d].get(svc, 0.0), 2) for d in sorted_dates]
+        trend_datasets.append({
+            "label": svc,
+            "data": values,
+            "backgroundColor": color,
+            "borderColor": color,
+            "fill": True,
+            "tension": 0.3,
+            "pointRadius": 0,
+        })
+
+    tab2_html = (
+        '<div class="sec-eyebrow">Tendencia Diaria</div>'
+        '<div class="sec-title">Últimos 90 días &middot; <strong>por servicio</strong></div>'
+        '<div class="sec-intro">Costo diario apilado por los 6 servicios de mayor gasto.</div>'
+        '<div class="chart-wrap">'
+        '<canvas id="trend-line"></canvas>'
+        "</div>"
+    )
+
+    # ── Tab 3: Por Recurso / Nombre ───────────────────────────────────────────
+    # 30-day and 7-day windows
+    thirty_days_ago = (now.date() - _dt.timedelta(days=30)).isoformat()
+    seven_days_ago  = (now.date() - _dt.timedelta(days=7)).isoformat()
+
+    named_30:  dict[tuple, float] = defaultdict(float)
+    named_7:   dict[tuple, float] = defaultdict(float)
+    named_days: dict[tuple, int]  = defaultdict(set)  # type: ignore[assignment]
+
+    for row in costs_by_name:
+        nm  = row.get("name", "") or ""
+        if not nm or nm == "No tag":
+            continue
+        svc = row.get("service", "")
+        key = (nm, svc)
+        d   = row["date"][:10]
+        amt = float(row.get("amount", 0))
+        if d >= thirty_days_ago:
+            named_30[key]  += amt
+            named_days[key].add(d)  # type: ignore[attr-defined]
+        if d >= seven_days_ago:
+            named_7[key] += amt
+
+    named_keys = sorted(named_30.keys(), key=lambda k: named_30[k], reverse=True)
+
+    named_rows_html = ""
+    for key in named_keys:
+        nm, svc = key
+        t30  = named_30[key]
+        t7   = named_7.get(key, 0.0)
+        days = len(named_days[key])  # type: ignore[arg-type]
+        avg  = t30 / days if days > 0 else 0.0
+
+        # Trend: compare last 7d vs prior 7d
+        prior_7_ago = (now.date() - _dt.timedelta(days=14)).isoformat()
+        prior_total: float = 0.0
+        for row in costs_by_name:
+            if (row.get("name", "") or "") != nm:
+                continue
+            if row.get("service", "") != svc:
+                continue
+            d = row["date"][:10]
+            if prior_7_ago <= d < seven_days_ago:
+                prior_total += float(row.get("amount", 0))
+
+        if t7 > prior_total * 1.05:
+            trend = '<span class="trend-up">&#x2191;</span>'
+        elif t7 < prior_total * 0.95:
+            trend = '<span class="trend-dn">&#x2193;</span>'
+        else:
+            trend = '<span class="trend-eq">&#x2192;</span>'
+
+        # EBS → EC2 enrichment
+        ec2_cell = ""
+        ec2_link = ebs_name_to_ec2.get(nm, "")
+        if ec2_link:
+            ec2_cell = (
+                '<span style="font-size:0.78em;color:#21409A" title="EBS adjunto a esta EC2">'
+                "&#x1F4BD; " + ec2_link + "</span>"
+            )
+
+        named_rows_html += (
+            "<tr>"
+            "<td>" + nm + ("&nbsp;" + ec2_cell if ec2_cell else "") + "</td>"
+            "<td>" + svc + "</td>"
+            "<td>" + f"${t30:,.2f}" + "</td>"
+            "<td>" + f"${t7:,.2f}" + "</td>"
+            "<td>" + f"${avg:,.2f}" + "</td>"
+            "<td style='text-align:center'>" + trend + "</td>"
+            "</tr>"
+        )
+
+    named_table = (
+        '<div class="twrap"><table>'
+        "<thead><tr>"
+        "<th>Nombre Recurso</th><th>Servicio</th>"
+        "<th>30d Total</th><th>7d Total</th><th>Prom/día</th><th>Tendencia</th>"
+        "</tr></thead>"
+        "<tbody>" + (named_rows_html or '<tr><td colspan="6" style="color:var(--ig2)">Sin recursos con nombre</td></tr>') + "</tbody>"
+        "</table></div>"
+    )
+
+    # Untagged section — by usage_type
+    usage_30: dict[tuple, float] = defaultdict(float)
+    for row in costs_by_usage:
+        nm = row.get("name", "") or ""
+        if nm and nm != "No tag":
+            continue
+        usage = row.get("usage_type", "") or ""
+        svc   = row.get("service", "")
+        key   = (usage, svc)
+        d     = row["date"][:10]
+        if d >= thirty_days_ago:
+            usage_30[key] += float(row.get("amount", 0))
+
+    usage_keys = sorted(usage_30.keys(), key=lambda k: usage_30[k], reverse=True)
+    usage_rows_html = ""
+    for usage, svc in usage_keys:
+        amt = usage_30[(usage, svc)]
+        usage_rows_html += (
+            "<tr>"
+            "<td>" + (usage or "—") + "</td>"
+            "<td>" + svc + "</td>"
+            "<td>" + f"${amt:,.2f}" + "</td>"
+            "</tr>"
+        )
+
+    usage_table = (
+        '<div class="twrap"><table>'
+        "<thead><tr><th>Usage Type</th><th>Servicio</th><th>30d Total</th></tr></thead>"
+        "<tbody>" + (usage_rows_html or '<tr><td colspan="3" style="color:var(--ig2)">Sin datos sin tag</td></tr>') + "</tbody>"
+        "</table></div>"
+    )
+
+    tab3_html = (
+        '<div class="sec-eyebrow">Por Recurso / Nombre</div>'
+        '<div class="sec-title">Recursos <strong>etiquetados</strong></div>'
+        '<div class="sec-intro">Recursos con nombre de tag — últimos 30 días, ordenados por gasto.</div>'
+        + named_table
+        + '<h3 class="blk">Sin tag &mdash; por USAGE_TYPE (últimos 30 días)</h3>'
+        + usage_table
+    )
+
+    # ── Tab 4: Histórico Mensual ──────────────────────────────────────────────
+    # Last 13 months stacked by top 8 services
+    monthly_by_ym_svc: dict[tuple, dict[str, float]] = defaultdict(lambda: defaultdict(float))
+    for row in costs_monthly:
+        ym  = _ym(row["date"])
+        svc = row.get("service", "Other")
+        monthly_by_ym_svc[ym][svc] += float(row.get("amount", 0))
+
+    # Also fill in from costs_daily if costs_monthly is sparse
+    if not monthly_by_ym_svc:
+        for ym, svc_map in daily_svc_month.items():
+            for svc, amt in svc_map.items():
+                monthly_by_ym_svc[ym][svc] += amt
+
+    # Sort months — last 13
+    all_yms = sorted(monthly_by_ym_svc.keys())[-13:]
+    month_labels = [f"{ym[0]}-{str(ym[1]).zfill(2)}" for ym in all_yms]
+
+    # Top-8 services by total across all shown months
+    monthly_svc_totals: dict[str, float] = defaultdict(float)
+    for ym in all_yms:
+        for svc, amt in monthly_by_ym_svc[ym].items():
+            monthly_svc_totals[svc] += amt
+    top8_monthly = [s for s, _ in sorted(monthly_svc_totals.items(), key=lambda x: x[1], reverse=True)[:8]]
+
+    bar_datasets = []
+    for i, svc in enumerate(top8_monthly):
+        color = _COST_COLORS[i % len(_COST_COLORS)]
+        values = [round(monthly_by_ym_svc[ym].get(svc, 0.0), 2) for ym in all_yms]
+        bar_datasets.append({
+            "label": svc,
+            "data": values,
+            "backgroundColor": color,
+        })
+
+    # Monthly table
+    monthly_th = "".join("<th>" + s + "</th>" for s in top8_monthly) + "<th>Total</th>"
+    monthly_rows_html = ""
+    for ym in all_yms:
+        label = f"{ym[0]}-{str(ym[1]).zfill(2)}"
+        cells = ""
+        row_total = 0.0
+        for svc in top8_monthly:
+            amt = monthly_by_ym_svc[ym].get(svc, 0.0)
+            row_total += amt
+            cells += "<td>" + f"${amt:,.2f}" + "</td>"
+        cells += "<td style='font-weight:600'>" + f"${row_total:,.2f}" + "</td>"
+        monthly_rows_html += "<tr><td>" + label + "</td>" + cells + "</tr>"
+
+    monthly_table = (
+        '<div class="twrap" style="overflow-x:auto"><table>'
+        "<thead><tr><th>Mes</th>" + monthly_th + "</tr></thead>"
+        "<tbody>" + (monthly_rows_html or '<tr><td colspan="10" style="color:var(--ig2)">Sin datos mensuales</td></tr>') + "</tbody>"
+        "</table></div>"
+    )
+
+    tab4_html = (
+        '<div class="sec-eyebrow">Histórico Mensual</div>'
+        '<div class="sec-title">Últimos 13 meses &middot; <strong>por servicio</strong></div>'
+        '<div class="sec-intro">Distribución mensual de costos apilados por los 8 principales servicios.</div>'
+        '<div class="chart-wrap">'
+        '<canvas id="monthly-bar"></canvas>'
+        "</div>"
+        '<h3 class="blk">Detalle mensual por servicio</h3>'
+        + monthly_table
+    )
+
+    # ── Build CHART_DATA blob ─────────────────────────────────────────────────
+    chart_data = {
+        "donut": {
+            "labels": donut_labels,
+            "values": donut_values,
+            "colors": donut_colors,
+        },
+        "trend": {
+            "labels": sorted_dates,
+            "datasets": trend_datasets,
+        },
+        "monthly": {
+            "labels": month_labels,
+            "datasets": bar_datasets,
+        },
+    }
+
+    chart_data_json = json.dumps(chart_data, ensure_ascii=False)
+
+    chart_js = (
+        '<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>\n'
+        "<script>\nconst CHART_DATA = " + chart_data_json + ";\n</script>\n"
+        "<script>\n"
+        "document.addEventListener('DOMContentLoaded', function(){\n"
+        # Donut chart
+        "  var donutCtx = document.getElementById('svc-donut');\n"
+        "  if(donutCtx){\n"
+        "    new Chart(donutCtx, {\n"
+        "      type: 'doughnut',\n"
+        "      data: {\n"
+        "        labels: CHART_DATA.donut.labels,\n"
+        "        datasets: [{\n"
+        "          data: CHART_DATA.donut.values,\n"
+        "          backgroundColor: CHART_DATA.donut.colors,\n"
+        "          borderWidth: 2\n"
+        "        }]\n"
+        "      },\n"
+        "      options: {\n"
+        "        responsive: true,\n"
+        "        plugins: {\n"
+        "          legend: { position: 'right' },\n"
+        "          tooltip: { callbacks: { label: function(ctx){\n"
+        "            return ctx.label + ': $' + ctx.parsed.toLocaleString('en-US', {minimumFractionDigits:2});\n"
+        "          }}}\n"
+        "        }\n"
+        "      }\n"
+        "    });\n"
+        "  }\n"
+        # Trend line chart
+        "  var trendCtx = document.getElementById('trend-line');\n"
+        "  if(trendCtx){\n"
+        "    new Chart(trendCtx, {\n"
+        "      type: 'line',\n"
+        "      data: {\n"
+        "        labels: CHART_DATA.trend.labels,\n"
+        "        datasets: CHART_DATA.trend.datasets\n"
+        "      },\n"
+        "      options: {\n"
+        "        responsive: true,\n"
+        "        interaction: { mode: 'index', intersect: false },\n"
+        "        scales: {\n"
+        "          x: { ticks: { maxTicksLimit: 12 } },\n"
+        "          y: { stacked: true, ticks: { callback: function(v){ return '$'+v.toLocaleString(); } } }\n"
+        "        },\n"
+        "        plugins: { legend: { position: 'bottom' } }\n"
+        "      }\n"
+        "    });\n"
+        "  }\n"
+        # Monthly bar chart
+        "  var barCtx = document.getElementById('monthly-bar');\n"
+        "  if(barCtx){\n"
+        "    new Chart(barCtx, {\n"
+        "      type: 'bar',\n"
+        "      data: {\n"
+        "        labels: CHART_DATA.monthly.labels,\n"
+        "        datasets: CHART_DATA.monthly.datasets\n"
+        "      },\n"
+        "      options: {\n"
+        "        responsive: true,\n"
+        "        scales: {\n"
+        "          x: { stacked: true },\n"
+        "          y: { stacked: true, ticks: { callback: function(v){ return '$'+v.toLocaleString(); } } }\n"
+        "        },\n"
+        "        plugins: { legend: { position: 'bottom' } }\n"
+        "      }\n"
+        "    });\n"
+        "  }\n"
+        "});\n"
+        "</script>"
+    )
+
+    # ── Tab 5: Backups & AMIs ─────────────────────────────────────────────────
+    tab5_html = _build_backup_tab(
+        snapshot_inventory or [],
+        ami_inventory      or [],
+        costs_by_name,
+        account_name,
+    )
+
+    # ── Assemble panels ───────────────────────────────────────────────────────
+    body = (
+        '<div class="panel" id="p1">' + tab1_html + "</div>"
+        '<div class="panel" id="p2">' + tab2_html + "</div>"
+        '<div class="panel" id="p3">' + tab3_html + "</div>"
+        '<div class="panel" id="p4">' + tab4_html + "</div>"
+        '<div class="panel" id="p5">' + tab5_html + "</div>"
+        + chart_js
+    )
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    html = _html_page(
+        title="Cost Report" + (" — " + account_name if account_name else ""),
+        body=body,
+        account_name=account_name,
+        extra_css=_COST_CSS,
+        hero_stats=hero_stats,
+        hero_title="Reporte de Costos &middot; <strong>" + (account_name or "AWS") + "</strong>",
+        hero_sub=(
+            "Análisis de costos AWS: resumen mensual, tendencia diaria, "
+            "recursos etiquetados e histórico por servicio."
+        ),
+        hero_eyebrow="Cost Analysis &middot; " + (account_name or "AWS"),
+        tabs=[
+            "Overview",
+            "Tendencia Diaria",
+            "Por Recurso / Nombre",
+            "Histórico Mensual",
+            "Backups &amp; AMIs",
+        ],
+    )
+    output_path.write_text(html, encoding="utf-8")
+    logger.info("Cost report -> %s", output_path)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+#  Backup & AMI analysis tab helper
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _build_backup_tab(
+    snapshots: list[dict],
+    amis: list[dict],
+    costs_by_name: list[dict],
+    account_name: str,
+) -> str:
+    """
+    Build Tab 5 content: Backups & AMIs.
+
+    Sections:
+      A. Summary hero row (counts + estimated total cost)
+      B. Optimization opportunities (colour-coded alerts)
+      C. AMI table  (name, age, size, snaps, est cost, recommendation)
+      D. Snapshot table (name, age, vol status, orphaned?, AMI-backed?, cost)
+    """
+    from collections import defaultdict
+    import datetime as _dt
+
+    # ── real CE cost lookup: resource name -> cost last 30 days ──────────────
+    cutoff_30 = (_dt.date.today() - _dt.timedelta(days=30)).isoformat()
+    ce_cost_by_name: dict[str, float] = defaultdict(float)
+    for row in costs_by_name:
+        if row.get("date", "") >= cutoff_30:
+            nm = row.get("name", "") or ""
+            if nm:
+                ce_cost_by_name[nm] += float(row.get("amount", 0))
+
+    # ── classify snapshots ────────────────────────────────────────────────────
+    snap_orphaned = []   # volume_exists=False and no backing AMI
+    snap_ami_bkd  = []   # used by >= 1 AMI
+    snap_old_365  = []   # age > 365d, not AMI-backed
+    snap_old_180  = []   # age 180-365d, not AMI-backed
+    snap_old_90   = []   # age 90-180d, not AMI-backed
+    snap_ok       = []   # everything else
+
+    for s in snapshots:
+        age     = s.get("age_days") or 0
+        exists  = s.get("volume_exists")   # True / False / None
+        ami_ids = s.get("ami_ids", [])
+
+        if ami_ids:
+            snap_ami_bkd.append(s)
+        elif exists is False:
+            snap_orphaned.append(s)
+        elif age > 365:
+            snap_old_365.append(s)
+        elif age > 180:
+            snap_old_180.append(s)
+        elif age > 90:
+            snap_old_90.append(s)
+        else:
+            snap_ok.append(s)
+
+    total_snap_gb = sum(s.get("volume_size_gb", 0) for s in snapshots)
+    total_ami_gb  = sum(a.get("total_size_gb",  0) for a in amis)
+    est_snap_cost = round(total_snap_gb * 0.05, 2)
+    est_ami_cost  = round(total_ami_gb  * 0.05, 2)
+    orphan_gb     = sum(s.get("volume_size_gb", 0) for s in snap_orphaned)
+    orphan_cost   = round(orphan_gb * 0.05, 2)
+    old_gb        = sum(s.get("volume_size_gb", 0) for s in snap_old_365 + snap_old_180)
+    old_cost      = round(old_gb * 0.05, 2)
+
+    # ── A. Summary stats row ─────────────────────────────────────────────────
+    def _stat(label, value, sub="", alert=False):
+        color = "color:#c0392b;font-weight:700" if alert else ""
+        return (
+            '<div class="hero-stat">'
+            + '<div class="hero-stat__val" style="' + color + '">' + str(value) + '</div>'
+            + '<div class="hero-stat__lbl">' + label + '</div>'
+            + ('<div class="hero-stat__sub">' + sub + '</div>' if sub else "")
+            + "</div>"
+        )
+
+    summary_html = (
+        '<div class="hero-stats" style="margin-bottom:2rem">'
+        + _stat("Snapshots", str(len(snapshots)),
+                f"{total_snap_gb:,} GB &middot; est. ${est_snap_cost:,.0f}/mes")
+        + _stat("AMIs", str(len(amis)),
+                f"{total_ami_gb:,} GB &middot; est. ${est_ami_cost:,.0f}/mes")
+        + _stat("Huérfanos", str(len(snap_orphaned)),
+                f"${orphan_cost:,.0f}/mes posible ahorro", alert=len(snap_orphaned) > 0)
+        + _stat("+180 días sin AMI", str(len(snap_old_365 + snap_old_180)),
+                f"${old_cost:,.0f}/mes posible ahorro",
+                alert=len(snap_old_365 + snap_old_180) > 0)
+        + "</div>"
+    )
+
+    # ── B. Optimization opportunities ────────────────────────────────────────
+    def _alert_box(color_hex, bg_hex, icon, title, body_text):
+        return (
+            '<div style="border-left:4px solid ' + color_hex + ';background:' + bg_hex + ';'
+            'padding:0.9rem 1.2rem;border-radius:0 6px 6px 0;margin-bottom:1rem">'
+            '<strong style="color:' + color_hex + '">' + icon + ' ' + title + '</strong>'
+            '<div style="margin-top:0.3rem;font-size:0.9rem;color:#333">' + body_text + '</div>'
+            "</div>"
+        )
+
+    opps_html = '<h3 class="blk">Oportunidades de Ahorro</h3>'
+
+    if snap_orphaned:
+        sample = ", ".join(
+            (s.get("resource_name") or s["resource_id"])[:35]
+            for s in snap_orphaned[:5]
+        )
+        if len(snap_orphaned) > 5:
+            sample += f" ... +{len(snap_orphaned)-5} más"
+        opps_html += _alert_box(
+            "#c0392b", "#fdf0ef", "&#x26D4;",
+            f"{len(snap_orphaned)} snapshots HUÉRFANOS (volumen origen eliminado) — "
+            f"ahorro potencial ${orphan_cost:,.2f}/mes",
+            "El volumen origen ya no existe. Estos snapshots no tienen ningún propósito activo "
+            "y pueden eliminarse de forma segura. "
+            f"Ejemplos: {sample}"
+        )
+
+    if snap_old_365:
+        sample = ", ".join(
+            (s.get("resource_name") or s["resource_id"])[:35]
+            for s in snap_old_365[:4]
+        )
+        gb = sum(s.get("volume_size_gb", 0) for s in snap_old_365)
+        opps_html += _alert_box(
+            "#e67e22", "#fff8f0", "&#x231B;",
+            f"{len(snap_old_365)} snapshots con más de 1 año — "
+            f"${round(gb*0.05,2):,.2f}/mes",
+            "Revisar política de retención. Si solo necesitas los últimos N backups, "
+            f"los anteriores pueden eliminarse. Ejemplos: {sample}"
+        )
+
+    if snap_old_180:
+        sample = ", ".join(
+            (s.get("resource_name") or s["resource_id"])[:35]
+            for s in snap_old_180[:4]
+        )
+        gb = sum(s.get("volume_size_gb", 0) for s in snap_old_180)
+        opps_html += _alert_box(
+            "#f39c12", "#fffbf0", "&#x26A0;",
+            f"{len(snap_old_180)} snapshots entre 180–365 días — "
+            f"${round(gb*0.05,2):,.2f}/mes",
+            f"Evaluar si todos son necesarios para cumplimiento. Ejemplos: {sample}"
+        )
+
+    old_amis = [a for a in amis if (a.get("age_days") or 0) > 180]
+    if old_amis:
+        sample = ", ".join(
+            (a.get("name") or a["resource_id"])[:40]
+            for a in old_amis[:4]
+        )
+        gb = sum(a.get("total_size_gb", 0) for a in old_amis)
+        opps_html += _alert_box(
+            "#8e44ad", "#fbf0ff", "&#x1F4BE;",
+            f"{len(old_amis)} AMIs con más de 180 días — "
+            f"${round(gb*0.05,2):,.2f}/mes en snapshots de respaldo",
+            "Deregistrar una AMI NO borra sus snapshots: "
+            "debes hacerlo manualmente en dos pasos: "
+            "1) Deregistrar la AMI, 2) Borrar cada snapshot EBS asociado. "
+            f"Ejemplos: {sample}"
+        )
+
+    if not snap_orphaned and not snap_old_365 and not snap_old_180 and not old_amis:
+        opps_html += (
+            '<div style="color:#27ae60;padding:1rem 1.2rem;background:#f0fdf4;'
+            'border-radius:6px;border-left:4px solid #27ae60">'
+            "&#x2705; Sin oportunidades de ahorro inmediatas detectadas."
+            "</div>"
+        )
+
+    # ── helpers ───────────────────────────────────────────────────────────────
+    def _age_badge(days):
+        if days is None:
+            return '<span style="color:#999">—</span>'
+        if days > 365:
+            return (
+                '<span class="chip" style="background:#fdf0ef;color:#c0392b">'
+                f"+1 año ({days}d)</span>"
+            )
+        if days > 180:
+            return f'<span class="chip" style="background:#fff8f0;color:#e67e22">{days}d</span>'
+        if days > 90:
+            return f'<span class="chip" style="background:#fffbf0;color:#f39c12">{days}d</span>'
+        return f'<span class="chip" style="background:#f0fdf4;color:#27ae60">{days}d</span>'
+
+    def _vol_status(snap):
+        ami_ids = snap.get("ami_ids", [])
+        exists  = snap.get("volume_exists")
+        if ami_ids:
+            n = len(ami_ids)
+            return (
+                '<span class="chip" style="background:#f3e8ff;color:#8e44ad">'
+                f"AMI-backed ({n})</span>"
+            )
+        if exists is True:
+            return '<span class="chip" style="background:#f0fdf4;color:#27ae60">Volumen OK</span>'
+        if exists is False:
+            return (
+                '<span class="chip" style="background:#fdf0ef;color:#c0392b">'
+                "&#x26D4; Huérfano</span>"
+            )
+        return '<span style="color:#999">Desconocido</span>'
+
+    # ── C. AMI table ─────────────────────────────────────────────────────────
+    ami_rows = ""
+    for ami in sorted(amis, key=lambda a: a.get("age_days") or 0, reverse=True):
+        name      = ami.get("name") or ami.get("resource_id", "")
+        age_days  = ami.get("age_days")
+        size_gb   = ami.get("total_size_gb", 0)
+        n_snaps   = len(ami.get("snapshot_ids", []))
+        est_cost  = ami.get("est_cost_per_month", 0)
+        ce_cost   = ce_cost_by_name.get(name, 0.0)
+        platform  = ami.get("platform", "") or "linux"
+        created   = (ami.get("creation_date", "") or "")[:10]
+
+        if (age_days or 0) > 365:
+            rec = '<span class="chip" style="background:#fdf0ef;color:#c0392b">Candidato a eliminar</span>'
+        elif (age_days or 0) > 180:
+            rec = '<span class="chip" style="background:#fff8f0;color:#e67e22">Revisar</span>'
+        else:
+            rec = '<span class="chip" style="background:#f0fdf4;color:#27ae60">OK</span>'
+
+        ami_rows += (
+            "<tr>"
+            + "<td><code style='font-size:0.82em'>" + name[:60] + "</code></td>"
+            + "<td>" + _age_badge(age_days) + "</td>"
+            + "<td>" + created + "</td>"
+            + "<td>" + f"{size_gb:,} GB" + "</td>"
+            + "<td>" + str(n_snaps) + "</td>"
+            + "<td>$" + f"{est_cost:,.2f}" + "</td>"
+            + "<td>" + ("$" + f"{ce_cost:,.2f}" if ce_cost > 0 else "—") + "</td>"
+            + "<td>" + platform + "</td>"
+            + "<td>" + rec + "</td>"
+            + "</tr>"
+        )
+
+    ami_table = (
+        '<div class="twrap"><table>'
+        "<thead><tr>"
+        "<th>Nombre AMI</th><th>Edad</th><th>Creación</th><th>Tamaño</th>"
+        "<th># Snaps</th><th>Est. Costo/mes</th><th>CE (30d)</th>"
+        "<th>Plataforma</th><th>Recomendación</th>"
+        "</tr></thead>"
+        "<tbody>"
+        + (ami_rows
+           or '<tr><td colspan="9" style="color:var(--ig2)">Sin AMIs propias</td></tr>')
+        + "</tbody></table></div>"
+    )
+
+    # ── D. Snapshot table ─────────────────────────────────────────────────────
+    def _snap_sort_key(s):
+        exists  = s.get("volume_exists")
+        has_ami = bool(s.get("ami_ids"))
+        age     = s.get("age_days") or 0
+        # orphans first, then oldest, AMI-backed last
+        if exists is False and not has_ami:
+            return (0, -age)
+        if age > 180 and not has_ami:
+            return (1, -age)
+        if has_ami:
+            return (3, -age)
+        return (2, -age)
+
+    snap_rows = ""
+    for snap in sorted(snapshots, key=_snap_sort_key):
+        name     = snap.get("resource_name") or snap.get("resource_id", "")
+        age_days = snap.get("age_days")
+        size_gb  = snap.get("volume_size_gb", 0)
+        vol_name = snap.get("volume_name", "") or snap.get("volume_id", "") or "—"
+        ec2_name = snap.get("attached_ec2_name", "")
+        est_cost = snap.get("est_cost_per_month", 0)
+        ce_cost  = ce_cost_by_name.get(name, 0.0)
+        tier     = snap.get("storage_tier", "standard")
+        created  = (snap.get("start_time", "") or "")[:10]
+
+        ec2_sub = (
+            "<br><span style='font-size:0.75em;color:#21409A'>&#x1F4BD; " + ec2_name + "</span>"
+            if ec2_name else ""
+        )
+        name_cell = "<code style='font-size:0.8em'>" + name[:50] + "</code>" + ec2_sub
+
+        snap_rows += (
+            "<tr>"
+            + "<td>" + name_cell + "</td>"
+            + "<td>" + _age_badge(age_days) + "</td>"
+            + "<td>" + created + "</td>"
+            + "<td>" + f"{size_gb:,} GB" + "</td>"
+            + "<td><span style='font-size:0.8em'>" + str(vol_name)[:40] + "</span></td>"
+            + "<td>" + _vol_status(snap) + "</td>"
+            + "<td>$" + f"{est_cost:,.2f}" + "</td>"
+            + "<td>" + ("$" + f"{ce_cost:,.2f}" if ce_cost > 0 else "—") + "</td>"
+            + "<td><span class='chip' style='background:#f0f4ff;color:#21409A'>"
+            + tier + "</span></td>"
+            + "</tr>"
+        )
+
+    snap_table = (
+        '<div class="twrap"><table>'
+        "<thead><tr>"
+        "<th>Nombre Snapshot</th><th>Edad</th><th>Creación</th><th>Tamaño</th>"
+        "<th>Volumen Origen</th><th>Estado</th>"
+        "<th>Est. Costo/mes</th><th>CE (30d)</th><th>Tier</th>"
+        "</tr></thead>"
+        "<tbody>"
+        + (snap_rows
+           or '<tr><td colspan="9" style="color:var(--ig2)">Sin snapshots</td></tr>')
+        + "</tbody></table></div>"
+    )
+
+    # ── Assemble tab ──────────────────────────────────────────────────────────
+    savings_total = round(orphan_cost + old_cost, 2)
+    intro = (
+        f"Inventario de AMIs y snapshots EBS para <strong>{account_name}</strong>. "
+        f"Se detectaron <strong>{len(snap_orphaned)} snapshots huérfanos</strong> y "
+        f"<strong>{len(snap_old_365)+len(snap_old_180)} snapshots de +180 días</strong>. "
+        + (
+            "Ahorro potencial estimado: "
+            f"<strong style='color:#c0392b'>${savings_total:,.2f}/mes</strong>."
+            if savings_total > 0 else ""
+        )
+    )
+
+    return (
+        '<div class="sec-eyebrow">Storage &amp; Backups</div>'
+        '<div class="sec-title">Backups &amp; AMIs &middot; <strong>'
+        + (account_name or "AWS")
+        + "</strong></div>"
+        + '<div class="sec-intro">' + intro + "</div>"
+        + summary_html
+        + opps_html
+        + '<h3 class="blk">AMIs propias</h3>'
+        + ami_table
+        + '<h3 class="blk">Snapshots EBS</h3>'
+        + snap_table
     )

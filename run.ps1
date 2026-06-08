@@ -36,11 +36,18 @@ function Print-Help {
     Write-Host "    .\run.ps1 extract              Extrae inventario (vars de entorno)"
     Write-Host "    .\run.ps1 extract-all          Extrae con config.json (multi-cuenta)"
     Write-Host ""
+    Write-Host "  Todo de un golpe:" -ForegroundColor Yellow
+    Write-Host "    .\run.ps1 full                 Extrae + reportes + diagramas (todas las cuentas)"
+    Write-Host ""
     Write-Host "  Reportes HTML:" -ForegroundColor Yellow
     Write-Host "    .\run.ps1 reports    [cuenta]  Genera todos los HTMLs"
     Write-Host "    .\run.ps1 reports-all           Genera HTMLs para todas las cuentas"
     Write-Host "    .\run.ps1 audit      [cuenta]  Solo audit_report.html"
     Write-Host "    .\run.ps1 audit-all             Audit para todas las cuentas"
+    Write-Host ""
+    Write-Host "  Costos:" -ForegroundColor Yellow
+    Write-Host "    .\run.ps1 costs      [cuenta]  Genera cost_report.html"
+    Write-Host "    .\run.ps1 costs-all             Costos para todas las cuentas"
     Write-Host ""
     Write-Host "  Diagramas draw.io:" -ForegroundColor Yellow
     Write-Host "    .\run.ps1 diagrams   [cuenta]  Genera network_diagram.drawio"
@@ -59,8 +66,13 @@ function Print-Help {
 }
 
 function Run-Extract {
-    Write-Host "[extract] Extrayendo con variables de entorno..." -ForegroundColor Cyan
-    & $PYTHON main.py
+    if (Test-Path "config.json") {
+        Write-Host "[extract] Extrayendo con config.json (multi-cuenta)..." -ForegroundColor Cyan
+        & $PYTHON main.py --config config.json
+    } else {
+        Write-Host "[extract] Extrayendo con variables de entorno..." -ForegroundColor Cyan
+        & $PYTHON main.py
+    }
 }
 
 function Run-ExtractAll {
@@ -107,6 +119,19 @@ function Run-DiagramsAll {
     }
 }
 
+function Run-Costs($acc) {
+    Write-Host "[costs] Generando cost_report.html para $acc..." -ForegroundColor Cyan
+    & $PYTHON visualize.py --account $acc --format html --only costs
+}
+
+function Run-CostsAll {
+    Write-Host "[costs-all] Generando cost_report.html para todas las cuentas..." -ForegroundColor Cyan
+    foreach ($acc in $ACCOUNTS) {
+        Write-Host "  -> $acc" -ForegroundColor DarkGray
+        & $PYTHON visualize.py --account $acc --format html --only costs
+    }
+}
+
 function Run-All($acc) {
     Run-Reports $acc
     Run-Diagrams $acc
@@ -119,6 +144,41 @@ function Run-AllAccounts {
     Run-ReportsAll
     Run-DiagramsAll
     Write-Host "[all-accounts] Completado para todas las cuentas" -ForegroundColor Green
+}
+
+function Run-Full {
+    Write-Host ""
+    Write-Host "╔══════════════════════════════════════════╗" -ForegroundColor Cyan
+    Write-Host "║  Jericho Extractor — Full Pipeline       ║" -ForegroundColor Cyan
+    Write-Host "╚══════════════════════════════════════════╝" -ForegroundColor Cyan
+    Write-Host ""
+
+    Write-Host "[1/3] Extrayendo inventario + costos..." -ForegroundColor Yellow
+    if (Test-Path "config.json") {
+        & $PYTHON main.py --config config.json
+    } else {
+        & $PYTHON main.py
+    }
+    if (-not $?) { Write-Host "ERROR en extraccion" -ForegroundColor Red; return }
+
+    Write-Host ""
+    Write-Host "[2/3] Generando reportes HTML para todas las cuentas..." -ForegroundColor Yellow
+    foreach ($acc in $ACCOUNTS) {
+        Write-Host "  -> $acc" -ForegroundColor DarkGray
+        & $PYTHON visualize.py --account $acc --format html
+    }
+
+    Write-Host ""
+    Write-Host "[3/3] Generando diagramas draw.io para todas las cuentas..." -ForegroundColor Yellow
+    foreach ($acc in $ACCOUNTS) {
+        Write-Host "  -> $acc" -ForegroundColor DarkGray
+        & $PYTHON diagram_generator.py --account $acc
+    }
+
+    Write-Host ""
+    Write-Host "Completado." -ForegroundColor Green
+    Write-Host "  Reports  -> $OUTPUT\<cuenta>\reports\" -ForegroundColor DarkGray
+    Write-Host "  Diagrams -> $OUTPUT\<cuenta>\diagrams\" -ForegroundColor DarkGray
 }
 
 function Run-Clean($acc) {
@@ -149,8 +209,11 @@ switch ($Command) {
     "audit-all"     { Run-AuditAll }
     "diagrams"      { Run-Diagrams $Account }
     "diagrams-all"  { Run-DiagramsAll }
+    "costs"         { Run-Costs $Account }
+    "costs-all"     { Run-CostsAll }
     "all"           { Run-All $Account }
     "all-accounts"  { Run-AllAccounts }
+    "full"          { Run-Full }
     "clean"         { Run-Clean $Account }
     "clean-all"     { Run-CleanAll }
     default {

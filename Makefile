@@ -14,6 +14,7 @@ ACCOUNT ?= Portal-Prod
         extract extract-all \
         reports reports-all \
         diagrams diagrams-all \
+        costs costs-all \
         all all-accounts \
         clean clean-reports clean-diagrams clean-all \
         open
@@ -84,6 +85,18 @@ audit-all:
 		$(PYTHON) visualize.py --account $$account --format html --only audit; \
 	done
 
+# ── Costos ───────────────────────────────────────────────────────────────────
+costs:
+	@echo "[costs] Generando cost_report.html para $(ACCOUNT)..."
+	$(PYTHON) visualize.py --account $(ACCOUNT) --format html --only costs
+
+costs-all:
+	@echo "[costs-all] Generando cost_report.html para todas las cuentas..."
+	@for account in $(ACCOUNTS); do \
+		echo "  -> $$account"; \
+		$(PYTHON) visualize.py --account $$account --format html --only costs; \
+	done
+
 # ── Diagramas draw.io ─────────────────────────────────────────────────────────
 diagrams:
 	@echo "[diagrams] Generando network_diagram.drawio para $(ACCOUNT)..."
@@ -104,6 +117,25 @@ all: reports diagrams
 
 all-accounts: reports-all diagrams-all
 	@echo "[all-accounts] Completado para todas las cuentas"
+
+full:
+	@echo ""
+	@echo "=== [1/3] Extrayendo inventario + costos... ==="
+	$(PYTHON) main.py
+	@echo ""
+	@echo "=== [2/3] Generando reportes HTML... ==="
+	@for account in $(ACCOUNTS); do \
+		echo "  -> $$account"; \
+		$(PYTHON) visualize.py --account $$account --format html; \
+	done
+	@echo ""
+	@echo "=== [3/3] Generando diagramas draw.io... ==="
+	@for account in $(ACCOUNTS); do \
+		echo "  -> $$account"; \
+		$(PYTHON) diagram_generator.py --account $$account; \
+	done
+	@echo ""
+	@echo "Completado."
 
 # ── Limpieza ──────────────────────────────────────────────────────────────────
 clean-reports:

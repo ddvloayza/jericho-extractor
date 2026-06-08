@@ -1,378 +1,5 @@
 [
   {
-    "security_group_id": "sg-03bed10a7bf7da98d",
-    "security_group_name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-sg",
-    "description": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-sg",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "account_id": "954976322048",
-    "region": "eu-south-2",
-    "attached_resources": [
-      "eni-05e0d81de512dee41",
-      "i-0a10f15b976bc2a70"
-    ],
-    "attached_count": 2,
-    "overall_risk": "critical",
-    "exposure_flags": [
-      "https_public",
-      "public_port",
-      "rdp_public",
-      "sg_reference",
-      "unrestricted_egress"
-    ],
-    "inbound_rule_count": 22,
-    "outbound_rule_count": 1,
-    "inbound_analysis": [
-      {
-        "protocol": "udp",
-        "from_port": 464,
-        "to_port": 464,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 464,
-        "to_port": 464,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 49152,
-        "to_port": 65535,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "udp",
-        "from_port": 389,
-        "to_port": 389,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "udp",
-        "from_port": 53,
-        "to_port": 53,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 389,
-        "to_port": 389,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "udp",
-        "from_port": 123,
-        "to_port": 123,
-        "cidrs": [],
-        "referenced_sgs": [
-          "sg-04aac9e78d6520b80"
-        ],
-        "is_public": false,
-        "direction": "inbound",
-        "risk_level": "info",
-        "risk_tags": [
-          "sg_reference"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 443,
-        "to_port": 443,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "https_public"
-        ]
-      },
-      {
-        "protocol": "icmp",
-        "from_port": -1,
-        "to_port": -1,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 445,
-        "to_port": 445,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 3389,
-        "to_port": 3389,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "critical",
-        "risk_tags": [
-          "rdp_public"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 3268,
-        "to_port": 3268,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 88,
-        "to_port": 88,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 0,
-        "to_port": 65535,
-        "cidrs": [],
-        "referenced_sgs": [
-          "sg-05d047c1f6581e523"
-        ],
-        "is_public": false,
-        "direction": "inbound",
-        "risk_level": "info",
-        "risk_tags": [
-          "sg_reference"
-        ]
-      },
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "cidrs": [],
-        "referenced_sgs": [
-          "sg-01b4c83b6a8f3ea1e",
-          "sg-025cc5598ac86146d"
-        ],
-        "is_public": false,
-        "direction": "inbound",
-        "risk_level": "info",
-        "risk_tags": [
-          "sg_reference"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 135,
-        "to_port": 135,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 139,
-        "to_port": 139,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 636,
-        "to_port": 636,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 53,
-        "to_port": 53,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 3269,
-        "to_port": 3269,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "udp",
-        "from_port": 636,
-        "to_port": 636,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      },
-      {
-        "protocol": "udp",
-        "from_port": 88,
-        "to_port": 88,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "inbound",
-        "risk_level": "medium",
-        "risk_tags": [
-          "public_port"
-        ]
-      }
-    ],
-    "outbound_analysis": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "outbound",
-        "risk_level": "low",
-        "risk_tags": [
-          "unrestricted_egress"
-        ]
-      }
-    ]
-  },
-  {
     "security_group_id": "sg-043f24a24d1750bf7",
     "security_group_name": "k8s-traffic-itl0002sharednetworkallekspritunl02-a069a18c96",
     "description": "[k8s] Shared Backend SecurityGroup for LoadBalancer",
@@ -381,9 +8,9 @@
     "region": "eu-south-2",
     "attached_resources": [
       "eni-0bc2a634d6f25a6ef",
-      "eni-00a38f9ae180e3be2",
+      "eni-04eb3d161d93165c8",
+      "eni-0494a3d082bd96d24",
       "eni-062a714a9b9e56272",
-      "eni-0ec27414b1421665c",
       "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/net/itl-0002-network-all-nlb-pritunl/4583f4ee7c8e9d99",
       "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/app/k8s-pritunl-pritunli-1014a3c469/7f821ffcb5ec9629"
     ],
@@ -782,8 +409,8 @@
     "account_id": "954976322048",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-017889a1ae0b333f7",
-      "eni-0d1d8e06b780ae519",
+      "eni-015de3bb2b7b54c65",
+      "eni-0301c2c9310735c38",
       "arn:aws:eks:eu-south-2:954976322048:cluster/itl-0002-shared-network-all-eks-pritunl-02"
     ],
     "attached_count": 3,
@@ -889,8 +516,8 @@
     "account_id": "954976322048",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-017889a1ae0b333f7",
-      "eni-0d1d8e06b780ae519"
+      "eni-015de3bb2b7b54c65",
+      "eni-0301c2c9310735c38"
     ],
     "attached_count": 2,
     "overall_risk": "low",
@@ -933,6 +560,384 @@
         "risk_level": "low",
         "risk_tags": [
           "sg_reference",
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
+    "security_group_id": "sg-03bed10a7bf7da98d",
+    "security_group_name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-sg",
+    "description": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-sg",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "account_id": "954976322048",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-05e0d81de512dee41",
+      "i-0a10f15b976bc2a70"
+    ],
+    "attached_count": 2,
+    "overall_risk": "critical",
+    "exposure_flags": [
+      "https_public",
+      "public_port",
+      "rdp_public",
+      "sg_reference",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 22,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "udp",
+        "from_port": 464,
+        "to_port": 464,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 464,
+        "to_port": 464,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 49152,
+        "to_port": 65535,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "udp",
+        "from_port": 389,
+        "to_port": 389,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 389,
+        "to_port": 389,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "udp",
+        "from_port": 123,
+        "to_port": 123,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-067b9fd88018f9db1",
+          "sg-0922640d2a80f5742",
+          "sg-0becff9d6790cf669",
+          "sg-05975d35e046ca0bf",
+          "sg-023d0e02fd0b67e82",
+          "sg-04aac9e78d6520b80"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "https_public"
+        ]
+      },
+      {
+        "protocol": "icmp",
+        "from_port": -1,
+        "to_port": -1,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 445,
+        "to_port": 445,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 3389,
+        "to_port": 3389,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "critical",
+        "risk_tags": [
+          "rdp_public"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 3268,
+        "to_port": 3268,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 88,
+        "to_port": 88,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 0,
+        "to_port": 65535,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-05d047c1f6581e523"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      },
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-01b4c83b6a8f3ea1e",
+          "sg-025cc5598ac86146d"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 135,
+        "to_port": 135,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 139,
+        "to_port": 139,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 636,
+        "to_port": 636,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 3269,
+        "to_port": 3269,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "udp",
+        "from_port": 636,
+        "to_port": 636,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      },
+      {
+        "protocol": "udp",
+        "from_port": 88,
+        "to_port": 88,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "medium",
+        "risk_tags": [
+          "public_port"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
           "unrestricted_egress"
         ]
       }
@@ -997,8 +1002,8 @@
     "account_id": "954976322048",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-00a38f9ae180e3be2",
-      "eni-0ec27414b1421665c",
+      "eni-04eb3d161d93165c8",
+      "eni-0494a3d082bd96d24",
       "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/app/k8s-pritunl-pritunli-1014a3c469/7f821ffcb5ec9629"
     ],
     "attached_count": 3,

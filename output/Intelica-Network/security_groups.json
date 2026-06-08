@@ -1,6 +1,495 @@
 [
   {
     "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-043f24a24d1750bf7",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "group_name": "k8s-traffic-itl0002sharednetworkallekspritunl02-a069a18c96",
+    "description": "[k8s] Shared Backend SecurityGroup for LoadBalancer",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "elbv2.k8s.aws/cluster": "itl-0002-shared-network-all-eks-pritunl-02",
+      "elbv2.k8s.aws/resource": "backend-sg"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:32.393665+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-04e5d3553a6198ae7",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "group_name": "default",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-04e5d3553a6198ae7"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:32.393683+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-09f10199e3d10c2d7",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "group_name": "k8s-pritunl-pritunlv-dfd3b42ac9",
+    "description": "[k8s] Managed SecurityGroup for LoadBalancer",
+    "inbound_rules": [
+      {
+        "protocol": "udp",
+        "from_port": 16687,
+        "to_port": 16687,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "service.k8s.aws/resource": "ManagedLBSecurityGroup",
+      "service.k8s.aws/stack": "pritunl/pritunl-vpn",
+      "elbv2.k8s.aws/cluster": "itl-0002-shared-network-all-eks-pritunl-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:32.393688+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-012e11036409842ac",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-04ef4e1c7cb3cc620",
+    "group_name": "default",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-012e11036409842ac"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-04ef4e1c7cb3cc620",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:32.393692+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0aa6d55bd394447f6",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "group_name": "itl-0002-shared-network-all-ec2-pritunl-02-sg",
+    "description": "EKS node shared security group",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 6443,
+        "to_port": 6443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-04aca11661012920a"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 9443,
+        "to_port": 9443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-04aca11661012920a"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 1025,
+        "to_port": 65535,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 8443,
+        "to_port": 8443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-04aca11661012920a"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 30632,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-043f24a24d1750bf7"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "udp",
+        "from_port": 32578,
+        "to_port": 32578,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-043f24a24d1750bf7"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 10250,
+        "to_port": 10250,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-04aca11661012920a"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 4443,
+        "to_port": 4443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-04aca11661012920a"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-04aca11661012920a"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "coid": "itl",
+      "kubernetes.io/cluster/itl-0002-shared-network-all-eks-pritunl-02": "owned",
+      "env": "all",
+      "Name": "itl-0002-shared-network-all-ec2-pritunl-02-sg",
+      "apid": "shared-network",
+      "assetid": "0001"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:32.393702+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-04aca11661012920a",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "group_name": "itl-0002-shared-network-all-eks-pritunl-02-sg",
+    "description": "EKS cluster security group",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [],
+    "tags": {
+      "coid": "itl",
+      "Name": "itl-0002-shared-network-all-eks-pritunl-02-sg",
+      "apid": "shared-network",
+      "assetid": "0001",
+      "env": "all"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:32.393706+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0a459eecd4fa98749",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "group_name": "itl-0002-shared-network-all-vpc-endpoints-sg",
+    "description": "Security group for VPC endpoints",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "ipv4_ranges": [
+          "10.18.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.18.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "env": "all",
+      "coid": "itl",
+      "Name": "itl-0002-shared-network-all-vpc-endpoints-sg",
+      "assetid": "0001",
+      "apid": "shared-network"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:32.393712+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0d8e8df1695843092",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "group_name": "eks-cluster-sg-itl-0002-shared-network-all-eks-pritunl-02-1559606019",
+    "description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0d8e8df1695843092"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0d8e8df1695843092"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "aws:eks:cluster-name": "itl-0002-shared-network-all-eks-pritunl-02",
+      "kubernetes.io/cluster/itl-0002-shared-network-all-eks-pritunl-02": "owned",
+      "Name": "eks-cluster-sg-itl-0002-shared-network-all-eks-pritunl-02-1559606019"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:32.393716+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
     "resource_id": "sg-03bed10a7bf7da98d",
     "account_id": "954976322048",
     "account_name": "Intelica-Network",
@@ -82,6 +571,11 @@
         "ipv4_ranges": [],
         "ipv6_ranges": [],
         "referenced_group_ids": [
+          "sg-067b9fd88018f9db1",
+          "sg-0922640d2a80f5742",
+          "sg-0becff9d6790cf669",
+          "sg-05975d35e046ca0bf",
+          "sg-023d0e02fd0b67e82",
           "sg-04aac9e78d6520b80"
         ],
         "prefix_list_ids": []
@@ -280,496 +774,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-24T02:05:44.277898+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-043f24a24d1750bf7",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "group_name": "k8s-traffic-itl0002sharednetworkallekspritunl02-a069a18c96",
-    "description": "[k8s] Shared Backend SecurityGroup for LoadBalancer",
-    "inbound_rules": [],
-    "outbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [
-          "0.0.0.0/0"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "tags": {
-      "elbv2.k8s.aws/cluster": "itl-0002-shared-network-all-eks-pritunl-02",
-      "elbv2.k8s.aws/resource": "backend-sg"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:44.277916+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-04e5d3553a6198ae7",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "group_name": "default",
-    "description": "default VPC security group",
-    "inbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-04e5d3553a6198ae7"
-        ],
-        "prefix_list_ids": []
-      }
-    ],
-    "outbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [
-          "0.0.0.0/0"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:44.277923+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-09f10199e3d10c2d7",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "group_name": "k8s-pritunl-pritunlv-dfd3b42ac9",
-    "description": "[k8s] Managed SecurityGroup for LoadBalancer",
-    "inbound_rules": [
-      {
-        "protocol": "udp",
-        "from_port": 16687,
-        "to_port": 16687,
-        "ipv4_ranges": [
-          "0.0.0.0/0"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "outbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [
-          "0.0.0.0/0"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "tags": {
-      "service.k8s.aws/resource": "ManagedLBSecurityGroup",
-      "service.k8s.aws/stack": "pritunl/pritunl-vpn",
-      "elbv2.k8s.aws/cluster": "itl-0002-shared-network-all-eks-pritunl-02"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:44.277928+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-012e11036409842ac",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-04ef4e1c7cb3cc620",
-    "group_name": "default",
-    "description": "default VPC security group",
-    "inbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-012e11036409842ac"
-        ],
-        "prefix_list_ids": []
-      }
-    ],
-    "outbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [
-          "0.0.0.0/0"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-04ef4e1c7cb3cc620",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:44.277931+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-0aa6d55bd394447f6",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "group_name": "itl-0002-shared-network-all-ec2-pritunl-02-sg",
-    "description": "EKS node shared security group",
-    "inbound_rules": [
-      {
-        "protocol": "tcp",
-        "from_port": 6443,
-        "to_port": 6443,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-04aca11661012920a"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 9443,
-        "to_port": 9443,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-04aca11661012920a"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 1025,
-        "to_port": 65535,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-0aa6d55bd394447f6"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 8443,
-        "to_port": 8443,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-04aca11661012920a"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 443,
-        "to_port": 30632,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-043f24a24d1750bf7"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "udp",
-        "from_port": 32578,
-        "to_port": 32578,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-043f24a24d1750bf7"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 10250,
-        "to_port": 10250,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-04aca11661012920a"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "udp",
-        "from_port": 53,
-        "to_port": 53,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-0aa6d55bd394447f6"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 53,
-        "to_port": 53,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-0aa6d55bd394447f6"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 4443,
-        "to_port": 4443,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-04aca11661012920a"
-        ],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 443,
-        "to_port": 443,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-04aca11661012920a"
-        ],
-        "prefix_list_ids": []
-      }
-    ],
-    "outbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [
-          "0.0.0.0/0"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "tags": {
-      "coid": "itl",
-      "kubernetes.io/cluster/itl-0002-shared-network-all-eks-pritunl-02": "owned",
-      "env": "all",
-      "Name": "itl-0002-shared-network-all-ec2-pritunl-02-sg",
-      "apid": "shared-network",
-      "assetid": "0001"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:44.277943+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-04aca11661012920a",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "group_name": "itl-0002-shared-network-all-eks-pritunl-02-sg",
-    "description": "EKS cluster security group",
-    "inbound_rules": [
-      {
-        "protocol": "tcp",
-        "from_port": 443,
-        "to_port": 443,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-0aa6d55bd394447f6"
-        ],
-        "prefix_list_ids": []
-      }
-    ],
-    "outbound_rules": [],
-    "tags": {
-      "coid": "itl",
-      "Name": "itl-0002-shared-network-all-eks-pritunl-02-sg",
-      "apid": "shared-network",
-      "assetid": "0001",
-      "env": "all"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:44.277947+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-0a459eecd4fa98749",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "group_name": "itl-0002-shared-network-all-vpc-endpoints-sg",
-    "description": "Security group for VPC endpoints",
-    "inbound_rules": [
-      {
-        "protocol": "tcp",
-        "from_port": 80,
-        "to_port": 80,
-        "ipv4_ranges": [
-          "10.18.0.0/16"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      },
-      {
-        "protocol": "tcp",
-        "from_port": 443,
-        "to_port": 443,
-        "ipv4_ranges": [
-          "10.18.0.0/16"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "outbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [
-          "0.0.0.0/0"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [],
-        "prefix_list_ids": []
-      }
-    ],
-    "tags": {
-      "env": "all",
-      "coid": "itl",
-      "Name": "itl-0002-shared-network-all-vpc-endpoints-sg",
-      "assetid": "0001",
-      "apid": "shared-network"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:44.277952+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::security_group",
-    "resource_id": "sg-0d8e8df1695843092",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "group_name": "eks-cluster-sg-itl-0002-shared-network-all-eks-pritunl-02-1559606019",
-    "description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
-    "inbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-0d8e8df1695843092"
-        ],
-        "prefix_list_ids": []
-      }
-    ],
-    "outbound_rules": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "ipv4_ranges": [
-          "0.0.0.0/0"
-        ],
-        "ipv6_ranges": [],
-        "referenced_group_ids": [
-          "sg-0d8e8df1695843092"
-        ],
-        "prefix_list_ids": []
-      }
-    ],
-    "tags": {
-      "aws:eks:cluster-name": "itl-0002-shared-network-all-eks-pritunl-02",
-      "kubernetes.io/cluster/itl-0002-shared-network-all-eks-pritunl-02": "owned",
-      "Name": "eks-cluster-sg-itl-0002-shared-network-all-eks-pritunl-02-1559606019"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:44.277957+00:00"
+    "collected_at": "2026-06-08T01:14:32.393733+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -814,7 +819,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-24T02:05:44.277960+00:00"
+    "collected_at": "2026-06-08T01:14:32.393736+00:00"
   },
   {
     "resource_type": "aws::ec2::security_group",
@@ -863,6 +868,6 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-05-24T02:05:44.277965+00:00"
+    "collected_at": "2026-06-08T01:14:32.393739+00:00"
   }
 ]

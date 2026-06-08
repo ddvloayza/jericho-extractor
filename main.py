@@ -14,7 +14,7 @@ from utils.aws_clients import (
     get_ec2_client, get_elbv2_client, get_eks_client,
     get_lambda_client, get_rds_client, get_iam_client,
     get_kms_client, get_secretsmanager_client, get_s3_client,
-    get_session, resolve_identity, resolve_account_name,
+    get_ce_client, get_session, resolve_identity, resolve_account_name,
 )
 from utils.writer import OutputWriter
 
@@ -31,6 +31,9 @@ from collectors.vpc_peerings import VPCPeeringCollector
 from collectors.network_interfaces import NetworkInterfaceCollector
 from collectors.vpc_endpoints import VPCEndpointCollector
 from collectors.ec2 import EC2Collector
+from collectors.ebs import EBSCollector
+from collectors.snapshots import SnapshotCollector
+from collectors.amis import AMICollector
 from collectors.load_balancers import LoadBalancerCollector
 from collectors.target_groups import TargetGroupCollector
 from collectors.eks import EKSCollector
@@ -41,6 +44,7 @@ from collectors.iam_roles import IAMRolesCollector
 from collectors.kms import KMSCollector
 from collectors.secrets_manager import SecretsManagerCollector
 from collectors.s3 import S3Collector
+from collectors.costs import CostCollector
 
 from topology.subnet_classifier import SubnetClassifier
 from topology.dependency_mapper import DependencyMapper
@@ -102,6 +106,9 @@ def collect_region(
 
     compute_collectors: list[tuple[str, Any]] = [
         ("ec2",             EC2Collector(ec2, **ctx)),
+        ("ebs",             EBSCollector(ec2, **ctx)),
+        ("snapshots",       SnapshotCollector(ec2, **ctx)),
+        ("amis",            AMICollector(ec2, **ctx)),
         ("load_balancers",  LoadBalancerCollector(elbv2, **ctx)),
         ("target_groups",   TargetGroupCollector(elbv2, **ctx)),
         ("eks",             EKSCollector(eks, **ctx)),
@@ -117,6 +124,10 @@ def collect_region(
         data = collector.collect()
         collected[resource_type] = data
         writer.write(account.account_name, resource_type, data)
+
+    # ── Snapshot / AMI cross-enrichment ──────────────────────────────────────
+    #    Run AFTER ebs + snapshots + amis are collected in the loop above
+    _enrich_snapshots(collected, account, writer)
 
     # ── Kubernetes workloads (read-only describe) ─────────────────────────────
     k8s_resources: list[dict] = []
@@ -185,6 +196,71 @@ def collect_region(
     return collected
 
 
+def _enrich_snapshots(
+    collected: dict[str, list[dict[str, Any]]],
+    account: Any,
+    writer: "OutputWriter",
+) -> None:
+    """
+    Cross-enrich snapshots and AMIs after both are collected:
+
+      snapshot.volume_exists      — True if ebs.json has the source volume
+      snapshot.volume_name        — Name tag of the source volume
+      snapshot.attached_ec2_name  — EC2 name if the volume is attached
+      snapshot.ami_ids            — list of AMI IDs that reference this snapshot
+      ami.snapshot_ids            — already set by AMICollector; no change needed
+    """
+    snapshots = collected.get("snapshots", [])
+    amis      = collected.get("amis", [])
+    ebs_vols  = collected.get("ebs", [])
+    ec2_insts = collected.get("ec2", [])
+
+    if not snapshots:
+        return
+
+    # Build lookup: volume_id -> ebs record
+    ebs_by_id: dict[str, dict] = {v["resource_id"]: v for v in ebs_vols}
+
+    # Build lookup: instance_id -> ec2 name
+    ec2_name_by_id: dict[str, str] = {}
+    for inst in ec2_insts:
+        iid   = inst.get("resource_id", "")
+        iname = inst.get("tags", {}).get("Name") or inst.get("resource_name", "") or iid
+        if iid:
+            ec2_name_by_id[iid] = iname
+
+    # Build lookup: snapshot_id -> list of AMI IDs that use it
+    snap_to_amis: dict[str, list[str]] = {}
+    for ami in amis:
+        for snap_id in ami.get("snapshot_ids", []):
+            snap_to_amis.setdefault(snap_id, []).append(ami["resource_id"])
+
+    # Enrich each snapshot
+    for snap in snapshots:
+        snap_id = snap["resource_id"]
+        vol_id  = snap.get("volume_id", "")
+
+        if vol_id:
+            vol = ebs_by_id.get(vol_id)
+            snap["volume_exists"] = vol is not None
+            if vol:
+                snap["volume_name"] = vol.get("resource_name", "") or vol.get("tags", {}).get("Name", "")
+                inst_id = vol.get("attached_instance_id", "")
+                snap["attached_ec2_name"] = ec2_name_by_id.get(inst_id, "")
+        else:
+            snap["volume_exists"] = False  # vol_id blank = snapshot of deleted volume
+
+        snap["ami_ids"] = snap_to_amis.get(snap_id, [])
+
+    # Persist enriched snapshots
+    if snapshots:
+        writer.write(account.account_name, "snapshots", snapshots)
+    logger.info(
+        "[%s] Snapshot enrichment: %d snapshots, %d AMIs, %d EBS vols",
+        account.account_name, len(snapshots), len(amis), len(ebs_vols),
+    )
+
+
 def run(config: AppConfig) -> None:
     writer = OutputWriter(config.output_dir)
     summary: list[dict[str, Any]] = []
@@ -216,6 +292,39 @@ def run(config: AppConfig) -> None:
         if s3_data:
             writer.write(account.account_name, "s3_buckets", s3_data)
             account_totals["s3_buckets"] = len(s3_data)
+
+        # ── Cost Explorer (global, once per account) ─────────────────────────
+        try:
+            from utils.cost_history import merge_and_save
+            from pathlib import Path as _Path
+
+            ce_client  = get_ce_client(session)
+            cost_data  = CostCollector(ce_client, account.account_id, account.account_name).collect()
+            account_dir = _Path(config.output_dir) / account.account_name
+
+            for key, records in cost_data.items():
+                if records:
+                    writer.write(account.account_name, key, records)
+                    account_totals[key] = len(records)
+
+            # Accumulate history — never loses data older than 90-day window
+            history_keys = [
+                ("costs_daily",        "costs_history.json"),
+                ("costs_by_name",      "costs_history_by_name.json"),
+                ("costs_by_apid",      "costs_history_by_apid.json"),
+                ("costs_by_assetid",   "costs_history_by_assetid.json"),
+                ("costs_by_env",       "costs_history_by_env.json"),
+                ("costs_by_usage",     "costs_history_by_usage.json"),
+                ("costs_monthly",      "costs_history_monthly.json"),
+            ]
+            for data_key, hist_file in history_keys:
+                records = cost_data.get(data_key, [])
+                if records:
+                    merge_and_save(records, account_dir / hist_file)
+
+        except Exception as exc:
+            logger.warning("Cost Explorer collection failed for %s: %s",
+                           account.account_name, exc)
 
         for region in account.regions:
             logger.info("  Region: %s", region)

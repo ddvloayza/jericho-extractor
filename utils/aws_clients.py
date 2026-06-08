@@ -94,6 +94,11 @@ def get_s3_client(session: boto3.Session) -> BaseClient:
     return session.client("s3", config=_RETRY_CONFIG)
 
 
+def get_ce_client(session: boto3.Session) -> BaseClient:
+    """Cost Explorer is a global service — endpoint always in us-east-1."""
+    return session.client("ce", region_name="us-east-1", config=_RETRY_CONFIG)
+
+
 def get_eks_bearer_token(cluster_name: str, session: boto3.Session, region: str) -> str:
     """Generate a bearer token for authenticating to an EKS cluster's Kubernetes API.
 

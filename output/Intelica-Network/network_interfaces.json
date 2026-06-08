@@ -1,6 +1,75 @@
 [
   {
     "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0839b1bf82c22b21d",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_id": "subnet-0624a59dbcfc36798",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.18.4.18",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-08c87c7892a5c1dc4",
+    "security_group_ids": [
+      "sg-0a459eecd4fa98749"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0624a59dbcfc36798",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:33.949451+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0bc2a634d6f25a6ef",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_id": "subnet-0f412a52465a75334",
+    "interface_type": "network_load_balancer",
+    "status": "in-use",
+    "private_ip_address": "10.18.2.239",
+    "public_ip_address": "51.48.172.135",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "ELB net/itl-0002-network-all-nlb-pritunl/4583f4ee7c8e9d99",
+    "security_group_ids": [
+      "sg-043f24a24d1750bf7",
+      "sg-09f10199e3d10c2d7"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0f412a52465a75334",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:33.949467+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
     "resource_id": "eni-0d77560a13d66b397",
     "account_id": "954976322048",
     "account_name": "Intelica-Network",
@@ -47,111 +116,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-05-24T02:05:45.436670+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0839b1bf82c22b21d",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "subnet_id": "subnet-0624a59dbcfc36798",
-    "interface_type": "vpc_endpoint",
-    "status": "in-use",
-    "private_ip_address": "10.18.4.18",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "VPC Endpoint Interface vpce-08c87c7892a5c1dc4",
-    "security_group_ids": [
-      "sg-0a459eecd4fa98749"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0624a59dbcfc36798",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:45.436684+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-017889a1ae0b333f7",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "subnet_id": "subnet-0624a59dbcfc36798",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.18.4.22",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "Amazon EKS itl-0002-shared-network-all-eks-pritunl-02",
-    "security_group_ids": [
-      "sg-0d8e8df1695843092",
-      "sg-04aca11661012920a"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0624a59dbcfc36798",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:45.436692+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0bc2a634d6f25a6ef",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "subnet_id": "subnet-0f412a52465a75334",
-    "interface_type": "network_load_balancer",
-    "status": "in-use",
-    "private_ip_address": "10.18.2.239",
-    "public_ip_address": "51.48.172.135",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "ELB net/itl-0002-network-all-nlb-pritunl/4583f4ee7c8e9d99",
-    "security_group_ids": [
-      "sg-043f24a24d1750bf7",
-      "sg-09f10199e3d10c2d7"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0f412a52465a75334",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:45.436696+00:00"
+    "collected_at": "2026-06-08T01:14:33.949475+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
@@ -183,11 +148,11 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-05-24T02:05:45.436699+00:00"
+    "collected_at": "2026-06-08T01:14:33.949479+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-00a38f9ae180e3be2",
+    "resource_id": "eni-04eb3d161d93165c8",
     "account_id": "954976322048",
     "account_name": "Intelica-Network",
     "region": "eu-south-2",
@@ -195,8 +160,8 @@
     "subnet_id": "subnet-0f412a52465a75334",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.18.2.160",
-    "public_ip_address": "15.216.80.12",
+    "private_ip_address": "10.18.2.155",
+    "public_ip_address": "15.216.150.18",
     "attachment_instance_id": "",
     "attachment_status": "attached",
     "description": "ELB app/k8s-pritunl-pritunli-1014a3c469/7f821ffcb5ec9629",
@@ -218,23 +183,58 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-05-24T02:05:45.436703+00:00"
+    "collected_at": "2026-06-08T01:14:33.949483+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0ec2e99b032e880cc",
+    "resource_id": "eni-015de3bb2b7b54c65",
     "account_id": "954976322048",
     "account_name": "Intelica-Network",
     "region": "eu-south-2",
     "vpc_id": "vpc-000f7f02c4d4819a3",
-    "subnet_id": "subnet-06e26c7cc455004c5",
-    "interface_type": "transit_gateway",
+    "subnet_id": "subnet-0624a59dbcfc36798",
+    "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.18.3.196",
+    "private_ip_address": "10.18.4.84",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
-    "description": "Network Interface for Transit Gateway Attachment tgw-attach-0374276375df2f3c8",
+    "description": "Amazon EKS itl-0002-shared-network-all-eks-pritunl-02",
+    "security_group_ids": [
+      "sg-0d8e8df1695843092",
+      "sg-04aca11661012920a"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0624a59dbcfc36798",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:33.949487+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-097836d368348bf3f",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_id": "subnet-0a157bf35bbf62195",
+    "interface_type": "nat_gateway",
+    "status": "in-use",
+    "private_ip_address": "10.18.1.201",
+    "public_ip_address": "51.48.249.241",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Interface for NAT Gateway nat-019b78f30236407b3",
     "security_group_ids": [],
     "availability_zone": "eu-south-2a",
     "tags": {},
@@ -246,11 +246,11 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-06e26c7cc455004c5",
+        "resource_id": "subnet-0a157bf35bbf62195",
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-05-24T02:05:45.436706+00:00"
+    "collected_at": "2026-06-08T01:14:33.949494+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
@@ -284,7 +284,109 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-05-24T02:05:45.436710+00:00"
+    "collected_at": "2026-06-08T01:14:33.949499+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0301c2c9310735c38",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_id": "subnet-06e26c7cc455004c5",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.18.3.105",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Amazon EKS itl-0002-shared-network-all-eks-pritunl-02",
+    "security_group_ids": [
+      "sg-0d8e8df1695843092",
+      "sg-04aca11661012920a"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-06e26c7cc455004c5",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:33.949503+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0494a3d082bd96d24",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_id": "subnet-0a157bf35bbf62195",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.18.1.217",
+    "public_ip_address": "51.48.180.65",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "ELB app/k8s-pritunl-pritunli-1014a3c469/7f821ffcb5ec9629",
+    "security_group_ids": [
+      "sg-043f24a24d1750bf7",
+      "sg-0247a38200b63753c"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0a157bf35bbf62195",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:33.949507+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0ec2e99b032e880cc",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-000f7f02c4d4819a3",
+    "subnet_id": "subnet-06e26c7cc455004c5",
+    "interface_type": "transit_gateway",
+    "status": "in-use",
+    "private_ip_address": "10.18.3.196",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Network Interface for Transit Gateway Attachment tgw-attach-0374276375df2f3c8",
+    "security_group_ids": [],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-000f7f02c4d4819a3",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-06e26c7cc455004c5",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-06-08T01:14:33.949510+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
@@ -319,7 +421,7 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-05-24T02:05:45.436713+00:00"
+    "collected_at": "2026-06-08T01:14:33.949514+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
@@ -358,108 +460,6 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-05-24T02:05:45.436717+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0d1d8e06b780ae519",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "subnet_id": "subnet-06e26c7cc455004c5",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.18.3.86",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "Amazon EKS itl-0002-shared-network-all-eks-pritunl-02",
-    "security_group_ids": [
-      "sg-0d8e8df1695843092",
-      "sg-04aca11661012920a"
-    ],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-06e26c7cc455004c5",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:45.436720+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0ec27414b1421665c",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "subnet_id": "subnet-0a157bf35bbf62195",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.18.1.27",
-    "public_ip_address": "51.94.140.45",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "ELB app/k8s-pritunl-pritunli-1014a3c469/7f821ffcb5ec9629",
-    "security_group_ids": [
-      "sg-043f24a24d1750bf7",
-      "sg-0247a38200b63753c"
-    ],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0a157bf35bbf62195",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:45.436725+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-097836d368348bf3f",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-000f7f02c4d4819a3",
-    "subnet_id": "subnet-0a157bf35bbf62195",
-    "interface_type": "nat_gateway",
-    "status": "in-use",
-    "private_ip_address": "10.18.1.201",
-    "public_ip_address": "51.48.249.241",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "Interface for NAT Gateway nat-019b78f30236407b3",
-    "security_group_ids": [],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-000f7f02c4d4819a3",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0a157bf35bbf62195",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-05-24T02:05:45.436730+00:00"
+    "collected_at": "2026-06-08T01:14:33.949518+00:00"
   }
 ]
