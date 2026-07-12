@@ -464,6 +464,63 @@
     ]
   },
   {
+    "security_group_id": "sg-0e8864e42cb1e54d7",
+    "security_group_name": "eks-cluster-sg-itl-0003-portal-prd-eks-apps-02-2029633073",
+    "description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0d015a0d2c81c42a5",
+      "eni-0c504404a97598078"
+    ],
+    "attached_count": 2,
+    "overall_risk": "low",
+    "exposure_flags": [
+      "sg_reference",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-0e8864e42cb1e54d7"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [
+          "sg-0e8864e42cb1e54d7"
+        ],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "sg_reference",
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
     "security_group_id": "sg-0fee7d175b68ed308",
     "security_group_name": "itl-0003-portal-prd-ec2-clickhouse-02-sg",
     "description": "Security group for ClickHouse EC2 instance",
@@ -508,7 +565,8 @@
           "10.12.0.0/16"
         ],
         "referenced_sgs": [
-          "sg-0aa6d55bd394447f6"
+          "sg-0aa6d55bd394447f6",
+          "sg-0175bf9584150c48d"
         ],
         "is_public": false,
         "direction": "inbound",
@@ -531,63 +589,6 @@
         "direction": "outbound",
         "risk_level": "low",
         "risk_tags": [
-          "unrestricted_egress"
-        ]
-      }
-    ]
-  },
-  {
-    "security_group_id": "sg-0e8864e42cb1e54d7",
-    "security_group_name": "eks-cluster-sg-itl-0003-portal-prd-eks-apps-02-2029633073",
-    "description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
-    "vpc_id": "vpc-0626d66632373c892",
-    "account_id": "610944808410",
-    "region": "eu-south-2",
-    "attached_resources": [
-      "eni-0700e604d7fef419b",
-      "eni-0685af8d22492552c"
-    ],
-    "attached_count": 2,
-    "overall_risk": "low",
-    "exposure_flags": [
-      "sg_reference",
-      "unrestricted_egress"
-    ],
-    "inbound_rule_count": 1,
-    "outbound_rule_count": 1,
-    "inbound_analysis": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "cidrs": [],
-        "referenced_sgs": [
-          "sg-0e8864e42cb1e54d7"
-        ],
-        "is_public": false,
-        "direction": "inbound",
-        "risk_level": "info",
-        "risk_tags": [
-          "sg_reference"
-        ]
-      }
-    ],
-    "outbound_analysis": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [
-          "sg-0e8864e42cb1e54d7"
-        ],
-        "is_public": true,
-        "direction": "outbound",
-        "risk_level": "low",
-        "risk_tags": [
-          "sg_reference",
           "unrestricted_egress"
         ]
       }
@@ -856,14 +857,16 @@
     "account_id": "610944808410",
     "region": "eu-south-2",
     "attached_resources": [
+      "eni-037abf956631f43c2",
       "eni-0b3f582c2a0ebf219",
-      "eni-0a32c971a5469349f",
+      "eni-0c3f137f9cdd467a0",
+      "eni-0ea651bd09028c30d",
+      "eni-06c38f14076736635",
       "eni-07b726d2cb40b9e5e",
-      "eni-0cbf0c829b6c29419",
       "arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/net/k8s-appsmith-appsmith-06d45f1beb/f3d62eb37ed138ff",
       "arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/app/itl-0003-portal-prd-alb-02/09e8ed2f9c6bd632"
     ],
-    "attached_count": 6,
+    "attached_count": 8,
     "overall_risk": "low",
     "exposure_flags": [
       "unrestricted_egress"
@@ -1152,43 +1155,6 @@
     ]
   },
   {
-    "security_group_id": "sg-08a4cc9135f02dae0",
-    "security_group_name": "itl-0003-portal-prd-vpc-endpoints-20251219182552706400000001",
-    "description": "Security group for VPC Interface Endpoints",
-    "vpc_id": "vpc-0626d66632373c892",
-    "account_id": "610944808410",
-    "region": "eu-south-2",
-    "attached_resources": [
-      "eni-0f342451e25e1ce38",
-      "eni-007a4d0c56e25d46c"
-    ],
-    "attached_count": 2,
-    "overall_risk": "low",
-    "exposure_flags": [
-      "unrestricted_egress"
-    ],
-    "inbound_rule_count": 0,
-    "outbound_rule_count": 1,
-    "inbound_analysis": [],
-    "outbound_analysis": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "outbound",
-        "risk_level": "low",
-        "risk_tags": [
-          "unrestricted_egress"
-        ]
-      }
-    ]
-  },
-  {
     "security_group_id": "sg-0697339290d82202b",
     "security_group_name": "default",
     "description": "default VPC security group",
@@ -1354,15 +1320,15 @@
     "region": "eu-south-2",
     "attached_resources": [
       "eni-086c38358ffb821b2",
+      "eni-02397f90b668c02d7",
       "eni-046cf3652d436df3e",
-      "eni-0e5770c4120f32a90",
+      "eni-0c62859a1a9655cfa",
+      "eni-0ec637ab5c6e07242",
       "eni-0c569f03716de7f4d",
       "eni-087d46e0f835b0c1e",
       "eni-07ad0d2d1d8fb01c6",
       "eni-0336adb2f9f2e285d",
-      "eni-02397f90b668c02d7",
-      "eni-0ec637ab5c6e07242",
-      "eni-0c62859a1a9655cfa"
+      "eni-0e5770c4120f32a90"
     ],
     "attached_count": 10,
     "overall_risk": "low",
@@ -1498,11 +1464,13 @@
     "account_id": "610944808410",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-0a32c971a5469349f",
-      "eni-0cbf0c829b6c29419",
+      "eni-037abf956631f43c2",
+      "eni-0c3f137f9cdd467a0",
+      "eni-0ea651bd09028c30d",
+      "eni-06c38f14076736635",
       "arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/app/itl-0003-portal-prd-alb-02/09e8ed2f9c6bd632"
     ],
-    "attached_count": 3,
+    "attached_count": 5,
     "overall_risk": "high",
     "exposure_flags": [
       "http_public",
@@ -1652,67 +1620,6 @@
         "risk_level": "info",
         "risk_tags": [
           "internal_only"
-        ]
-      }
-    ],
-    "outbound_analysis": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "outbound",
-        "risk_level": "low",
-        "risk_tags": [
-          "unrestricted_egress"
-        ]
-      }
-    ]
-  },
-  {
-    "security_group_id": "sg-0634ee789467ac220",
-    "security_group_name": "itl-0003-portal-prd-rds-apps-02-sg",
-    "description": "Control traffic to/from RDS Aurora itl-0003-portal-prd-rds-apps-02",
-    "vpc_id": "vpc-0626d66632373c892",
-    "account_id": "610944808410",
-    "region": "eu-south-2",
-    "attached_resources": [
-      "eni-0041cee07b8b88bac",
-      "arn:aws:rds:eu-south-2:610944808410:db:itl-0003-portal-prd-rds-apps-02-instance-1"
-    ],
-    "attached_count": 2,
-    "overall_risk": "low",
-    "exposure_flags": [
-      "sg_reference",
-      "unrestricted_egress"
-    ],
-    "inbound_rule_count": 1,
-    "outbound_rule_count": 1,
-    "inbound_analysis": [
-      {
-        "protocol": "tcp",
-        "from_port": 5432,
-        "to_port": 5432,
-        "cidrs": [],
-        "referenced_sgs": [
-          "sg-04aac9e78d6520b80",
-          "sg-0175bf9584150c48d",
-          "sg-023d0e02fd0b67e82",
-          "sg-0e8cd582b4803bcfc",
-          "sg-0aa6d55bd394447f6",
-          "sg-0becff9d6790cf669",
-          "sg-05f186888e83ce35d",
-          "sg-0097bc967b64e085e"
-        ],
-        "is_public": false,
-        "direction": "inbound",
-        "risk_level": "info",
-        "risk_tags": [
-          "sg_reference"
         ]
       }
     ],
@@ -2058,11 +1965,14 @@
     "account_id": "610944808410",
     "region": "eu-south-2",
     "attached_resources": [
+      "eni-08061425a3d6671c6",
+      "eni-011b1780bd9640f45",
+      "eni-05697047f130d9763",
       "eni-0e7e78223b7e91a53",
-      "eni-0fbab91acb0491308",
-      "eni-011b1780bd9640f45"
+      "eni-05987615459fb60d6",
+      "eni-0fbab91acb0491308"
     ],
-    "attached_count": 3,
+    "attached_count": 6,
     "overall_risk": "critical",
     "exposure_flags": [
       "full_open_inbound",
@@ -2226,6 +2136,60 @@
     ]
   },
   {
+    "security_group_id": "sg-08a4cc9135f02dae0",
+    "security_group_name": "itl-0003-portal-prd-vpc-endpoints-20251219182552706400000001",
+    "description": "Security group for VPC Interface Endpoints",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0f342451e25e1ce38",
+      "eni-007a4d0c56e25d46c"
+    ],
+    "attached_count": 2,
+    "overall_risk": "low",
+    "exposure_flags": [
+      "sg_reference",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-0175bf9584150c48d"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
     "security_group_id": "sg-00791bd5a7801e5c4",
     "security_group_name": "itl-0003-portal-prd-lambda-sync-buk-organization-02-sg",
     "description": "SG Lambda itl-0003-portal-prd-lambda-sync-buk-organization-02 - egress a VPC endpoints y DNS",
@@ -2321,8 +2285,8 @@
     "account_id": "610944808410",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-0b52f64b270c12bd7",
-      "eni-0d4d6de71fceb71eb",
+      "eni-02ff48eeda8fff822",
+      "eni-0e67bc9e8688891f1",
       "arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/app/itl-0003-portal-prd-lb-main-02/f58b197763e242ac"
     ],
     "attached_count": 3,
@@ -2706,23 +2670,30 @@
     "account_id": "610944808410",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-08cc37b6f42d03659",
-      "eni-074581e6fb65329a2",
+      "eni-003a0bb471bdec912",
       "eni-00391611c3d8215ea",
+      "eni-08cc37b6f42d03659",
       "eni-0e8b112a66f2aa653",
-      "eni-0318a06ac2bb48bf3",
-      "eni-057b11032d61998cd",
-      "eni-03af4c412bcd18188",
+      "eni-074581e6fb65329a2",
+      "eni-0ac959059429c2916",
+      "eni-01c99f648e8e959fd",
+      "eni-0f3d263557ddb50e3",
+      "eni-0785bb7d595917d30",
       "eni-05f94c7d97f0f0ed1",
+      "eni-0318a06ac2bb48bf3",
       "eni-046baa4ea79a50459",
+      "eni-05c5f0c3e37aabe3b",
       "eni-0c2444bf9a08f63ec",
+      "eni-03af4c412bcd18188",
+      "eni-057b11032d61998cd",
       "i-0ca700ac20d9a9555",
       "i-0d038b9be4770c21a",
       "i-018a33a99b7b3fe7a",
       "i-01e9582ac4bbd2d75",
-      "i-0f511c964d109c447"
+      "i-0f511c964d109c447",
+      "i-0914bb82d30d1f030"
     ],
-    "attached_count": 15,
+    "attached_count": 22,
     "overall_risk": "low",
     "exposure_flags": [
       "sg_reference",
@@ -3037,6 +3008,72 @@
     ]
   },
   {
+    "security_group_id": "sg-0634ee789467ac220",
+    "security_group_name": "itl-0003-portal-prd-rds-apps-02-sg",
+    "description": "Control traffic to/from RDS Aurora itl-0003-portal-prd-rds-apps-02",
+    "vpc_id": "vpc-0626d66632373c892",
+    "account_id": "610944808410",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0041cee07b8b88bac",
+      "arn:aws:rds:eu-south-2:610944808410:db:itl-0003-portal-prd-rds-apps-02-instance-1"
+    ],
+    "attached_count": 2,
+    "overall_risk": "low",
+    "exposure_flags": [
+      "sg_reference",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-04aac9e78d6520b80",
+          "sg-0175bf9584150c48d",
+          "sg-023d0e02fd0b67e82",
+          "sg-0e8cd582b4803bcfc",
+          "sg-0aa6d55bd394447f6",
+          "sg-0becff9d6790cf669",
+          "sg-05f186888e83ce35d",
+          "sg-0097bc967b64e085e",
+          "sg-0298903744ea9eb8c",
+          "sg-0a9a6842b93f8716e",
+          "sg-00791bd5a7801e5c4",
+          "sg-0922640d2a80f5742",
+          "sg-05d2473cae7a50fab"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
     "security_group_id": "sg-067b9fd88018f9db1",
     "security_group_name": "itl-0003-portal-prd-vm-sg-0220251115061340161700000001",
     "description": "Managed by Terraform",
@@ -3044,20 +3081,20 @@
     "account_id": "610944808410",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-0fd6ce37a6cfadf05",
-      "eni-0b1dd7791a1e9ba5f",
-      "eni-0d0f6fb7705d47d1b",
       "eni-0b93a48b946c3bd2a",
-      "eni-0830926e56fc80687",
-      "eni-08f551cadd63f3281",
-      "eni-0e3a83f2769a4b0ad",
-      "eni-0e3e7afeb72a6430a",
-      "eni-04801ff38a88b6d4b",
-      "eni-09e66044a74fb86e4",
-      "eni-045a9629959f53911",
-      "eni-05c92d9672e04d591",
-      "eni-050935be33c7d22e7",
       "eni-0ab3d7e949f66b8d6",
+      "eni-09e66044a74fb86e4",
+      "eni-05c92d9672e04d591",
+      "eni-04801ff38a88b6d4b",
+      "eni-050935be33c7d22e7",
+      "eni-045a9629959f53911",
+      "eni-0d0f6fb7705d47d1b",
+      "eni-0fd6ce37a6cfadf05",
+      "eni-0e3e7afeb72a6430a",
+      "eni-0e3a83f2769a4b0ad",
+      "eni-08f551cadd63f3281",
+      "eni-0b1dd7791a1e9ba5f",
+      "eni-0830926e56fc80687",
       "i-01cb91eb9e0f491f9",
       "i-012a3868351997756",
       "i-0677abd83cd084b80",
@@ -3356,8 +3393,8 @@
     "account_id": "610944808410",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-0700e604d7fef419b",
-      "eni-0685af8d22492552c",
+      "eni-0d015a0d2c81c42a5",
+      "eni-0c504404a97598078",
       "arn:aws:eks:eu-south-2:610944808410:cluster/itl-0003-portal-prd-eks-apps-02"
     ],
     "attached_count": 3,

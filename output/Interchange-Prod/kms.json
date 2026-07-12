@@ -24,7 +24,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:01.898533+00:00"
+    "collected_at": "2026-07-12T19:39:32.634435+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -62,7 +62,34 @@
       "rotation-type": "manual"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:02.734030+00:00"
+    "collected_at": "2026-07-12T19:39:33.409224+00:00"
+  },
+  {
+    "resource_type": "aws::kms::key",
+    "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/151d062a-6363-4227-9016-bbd4d0e6da64",
+    "resource_name": "alias/aws/s3",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "key_id": "151d062a-6363-4227-9016-bbd4d0e6da64",
+    "key_state": "Enabled",
+    "key_usage": "ENCRYPT_DECRYPT",
+    "key_spec": "SYMMETRIC_DEFAULT",
+    "key_manager": "AWS",
+    "enabled": true,
+    "multi_region": false,
+    "multi_region_key_type": "",
+    "description": "Default key that protects my S3 objects when no other key is defined",
+    "creation_date": "2026-07-02 10:04:43.631000-05:00",
+    "deletion_date": "",
+    "rotation_enabled": true,
+    "aliases": [
+      "alias/aws/s3"
+    ],
+    "origin": "AWS_KMS",
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:39:33.984061+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -100,7 +127,48 @@
       "rotation-type": "manual"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:03.490780+00:00"
+    "collected_at": "2026-07-12T19:39:34.750278+00:00"
+  },
+  {
+    "resource_type": "aws::kms::key",
+    "resource_id": "arn:aws:kms:eu-south-2:818835242461:key/24a02a70-64c6-4426-8b34-a7c11e0f8ce2",
+    "resource_name": "alias/pci-pan-enc-key",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "key_id": "24a02a70-64c6-4426-8b34-a7c11e0f8ce2",
+    "key_state": "Enabled",
+    "key_usage": "ENCRYPT_DECRYPT",
+    "key_spec": "SYMMETRIC_DEFAULT",
+    "key_manager": "CUSTOMER",
+    "enabled": true,
+    "multi_region": false,
+    "multi_region_key_type": "",
+    "description": "PCI DSS 4.0.1 - CMK encriptacion PAN - itl-0004-itx-prd - Rotacion MANUAL",
+    "creation_date": "2026-06-24 11:34:43.940000-05:00",
+    "deletion_date": "",
+    "rotation_enabled": false,
+    "aliases": [
+      "alias/pci-pan-enc-key"
+    ],
+    "origin": "AWS_KMS",
+    "tags": {
+      "apid": "itx",
+      "application": "itl-0004-itx-prd",
+      "assetid": "0004",
+      "coid": "itl",
+      "cryptoperiod-months": "12",
+      "data-classification": "PAN",
+      "env": "prd",
+      "environment": "production",
+      "key-creation-date": "2026-05-25",
+      "key-expiry-date": "2027-05-25",
+      "pci-requirement": "3.7.4",
+      "pci-scope": "true",
+      "rotation-type": "manual"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:39:35.517848+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -127,7 +195,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:04.062393+00:00"
+    "collected_at": "2026-07-12T19:39:36.092968+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -159,7 +227,7 @@
       "env": "prd"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:04.826708+00:00"
+    "collected_at": "2026-07-12T19:39:36.860457+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -196,7 +264,7 @@
       "rotation-type": "manual"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:05.584325+00:00"
+    "collected_at": "2026-07-12T19:39:37.628456+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -223,7 +291,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:06.344690+00:00"
+    "collected_at": "2026-07-12T19:39:38.400796+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -255,7 +323,7 @@
       "env": "prod"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:07.101959+00:00"
+    "collected_at": "2026-07-12T19:39:39.168375+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -282,7 +350,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:07.668775+00:00"
+    "collected_at": "2026-07-12T19:39:39.742199+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -309,7 +377,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:08.239365+00:00"
+    "collected_at": "2026-07-12T19:39:40.315447+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -336,7 +404,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:08.809731+00:00"
+    "collected_at": "2026-07-12T19:39:40.902326+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -363,7 +431,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:09.381455+00:00"
+    "collected_at": "2026-07-12T19:39:41.477173+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -390,7 +458,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:09.951416+00:00"
+    "collected_at": "2026-07-12T19:39:42.051469+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -417,7 +485,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:10.527674+00:00"
+    "collected_at": "2026-07-12T19:39:42.627517+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -444,7 +512,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:11.094503+00:00"
+    "collected_at": "2026-07-12T19:39:43.202905+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -471,6 +539,6 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T00:56:11.661041+00:00"
+    "collected_at": "2026-07-12T19:39:43.776330+00:00"
   }
 ]

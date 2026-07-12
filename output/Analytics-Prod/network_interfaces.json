@@ -1,7 +1,7 @@
 [
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-01b13eae07f63ec5b",
+    "resource_id": "eni-04c17b59f93e9eb0d",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
@@ -9,11 +9,11 @@
     "subnet_id": "subnet-04c4e78c5fef9f756",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.2.28",
+    "private_ip_address": "10.15.2.148",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
-    "description": "b27a5cc7673748918736ee35fbdb769c",
+    "description": "c2d4f0cd101844889695ee70ed7fa9fb",
     "security_group_ids": [
       "sg-005bad6e329e4bc98"
     ],
@@ -31,11 +31,11 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053621+00:00"
+    "collected_at": "2026-07-12T19:41:53.249283+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0638313d399bbb015",
+    "resource_id": "eni-072ccb002e3b38aa2",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
@@ -43,11 +43,11 @@
     "subnet_id": "subnet-04c4e78c5fef9f756",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.2.95",
+    "private_ip_address": "10.15.2.153",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
-    "description": "92fe4e6068e745a18354b9bf4d88cab2",
+    "description": "b1970239fccb4f329c289bf6cfe62a75",
     "security_group_ids": [
       "sg-005bad6e329e4bc98"
     ],
@@ -65,73 +65,7 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053632+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0b4fc83acca5e64bb",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-04c4e78c5fef9f756",
-    "interface_type": "transit_gateway",
-    "status": "in-use",
-    "private_ip_address": "10.15.2.166",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "Network Interface for Transit Gateway Attachment tgw-attach-0075738dd2bed67c3",
-    "security_group_ids": [],
-    "availability_zone": "eu-south-2c",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-04c4e78c5fef9f756",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053636+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-05a7587ff34a96782",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-04c4e78c5fef9f756",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.2.25",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "7c2ccb5bb49c47a798a30cc6c2761f3c",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2c",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-04c4e78c5fef9f756",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053639+00:00"
+    "collected_at": "2026-07-12T19:41:53.249294+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
@@ -165,11 +99,11 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053642+00:00"
+    "collected_at": "2026-07-12T19:41:53.249299+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0c01d58ce07196bf7",
+    "resource_id": "eni-00d87dabb2d4d392b",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
@@ -177,11 +111,11 @@
     "subnet_id": "subnet-04c4e78c5fef9f756",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.2.119",
+    "private_ip_address": "10.15.2.104",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
-    "description": "41941854d71e4da2a60357f64a5f37a3",
+    "description": "6620f4bb71b541fd92061de76b608018",
     "security_group_ids": [
       "sg-005bad6e329e4bc98"
     ],
@@ -199,11 +133,11 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053645+00:00"
+    "collected_at": "2026-07-12T19:41:53.249303+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-04bcdd7cdf1cf8bb7",
+    "resource_id": "eni-06b1e65ef1fabcdad",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
@@ -211,75 +145,7 @@
     "subnet_id": "subnet-04c4e78c5fef9f756",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.2.211",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "bd68649e5009432a8a475d0c24346452",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2c",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-04c4e78c5fef9f756",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053648+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-094ec242f055a887e",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-04c4e78c5fef9f756",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.2.42",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "dc244f357e1046ed9b52296167318044",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2c",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-04c4e78c5fef9f756",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053651+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0a7765b43b5a4f33b",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-04c4e78c5fef9f756",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.2.151",
+    "private_ip_address": "10.15.2.111",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
@@ -302,11 +168,11 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053653+00:00"
+    "collected_at": "2026-07-12T19:41:53.249311+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0aaf8958fbe099431",
+    "resource_id": "eni-05d1ca66ebcee5318",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
@@ -314,11 +180,11 @@
     "subnet_id": "subnet-04c4e78c5fef9f756",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.2.229",
+    "private_ip_address": "10.15.2.163",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
-    "description": "926d71a15127477892412435fbd53acd",
+    "description": "c0dde2ebb0b3492ba51d1be5044594e9",
     "security_group_ids": [
       "sg-005bad6e329e4bc98"
     ],
@@ -336,256 +202,19 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053656+00:00"
+    "collected_at": "2026-07-12T19:41:53.249315+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-022536acf807a6420",
+    "resource_id": "eni-05ebce47f1d32fdf8",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
     "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-0d85a80ddb479d2fb",
-    "interface_type": "vpc_endpoint",
-    "status": "in-use",
-    "private_ip_address": "10.15.0.184",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "VPC Endpoint Interface vpce-04dbbb4c57b18e28e",
-    "security_group_ids": [
-      "sg-0e0494efc97b8b13d"
-    ],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0d85a80ddb479d2fb",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053658+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0d578578ba7d2fd5f",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-077cb8f42729b95bb",
-    "interface_type": "nat_gateway",
-    "status": "in-use",
-    "private_ip_address": "10.15.10.36",
-    "public_ip_address": "51.92.248.232",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "Interface for NAT Gateway nat-0beb17b37f7133346",
-    "security_group_ids": [],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-077cb8f42729b95bb",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053661+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0e21110e8693c7976",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "subnet_id": "subnet-04c4e78c5fef9f756",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.0.209",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "821f8a8c1f104eb6b3f91b1edde4b84d",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0d85a80ddb479d2fb",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053664+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0c0ad353441c2ea41",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-0d85a80ddb479d2fb",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.0.115",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "376bf39da6754a2cbc6a691745b846f4",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0d85a80ddb479d2fb",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053666+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0efdd779f93932fa7",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-0d85a80ddb479d2fb",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.0.203",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "ELB app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
-    "security_group_ids": [
-      "sg-0833875ec8868948e",
-      "sg-09e84fe96301bd6fb"
-    ],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0d85a80ddb479d2fb",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053669+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0e1b4dd567aab51ca",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-077cb8f42729b95bb",
-    "interface_type": "vpc_endpoint",
-    "status": "in-use",
-    "private_ip_address": "10.15.10.182",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "VPC Endpoint Interface vpce-04f839953b8ca8f18",
-    "security_group_ids": [
-      "sg-07f5539aa666685bf"
-    ],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-077cb8f42729b95bb",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053671+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0cea9fd415c978aab",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-0d85a80ddb479d2fb",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.0.181",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "f8455539a97a46c5a85d6576f99d8d6a",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2a",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0d85a80ddb479d2fb",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053674+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0c4d1dd1d4d1dffb7",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-0d85a80ddb479d2fb",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.0.164",
+    "private_ip_address": "10.15.2.179",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
@@ -593,7 +222,7 @@
     "security_group_ids": [
       "sg-005bad6e329e4bc98"
     ],
-    "availability_zone": "eu-south-2a",
+    "availability_zone": "eu-south-2c",
     "tags": {},
     "relationships": [
       {
@@ -603,31 +232,31 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "resource_id": "subnet-04c4e78c5fef9f756",
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053676+00:00"
+    "collected_at": "2026-07-12T19:41:53.249319+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-01440afb26af67999",
+    "resource_id": "eni-084c9cfcf506dae9e",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
     "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-0d85a80ddb479d2fb",
-    "interface_type": "vpc_endpoint",
+    "subnet_id": "subnet-04c4e78c5fef9f756",
+    "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.0.57",
+    "private_ip_address": "10.15.2.93",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
-    "description": "VPC Endpoint Interface vpce-07decf21486e508e2",
+    "description": "b692d8a33a894092820947384471c33d",
     "security_group_ids": [
-      "sg-0e0494efc97b8b13d"
+      "sg-005bad6e329e4bc98"
     ],
-    "availability_zone": "eu-south-2a",
+    "availability_zone": "eu-south-2c",
     "tags": {},
     "relationships": [
       {
@@ -637,29 +266,29 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "resource_id": "subnet-04c4e78c5fef9f756",
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053681+00:00"
+    "collected_at": "2026-07-12T19:41:53.249323+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0fe5f78a887383ed6",
+    "resource_id": "eni-0b4fc83acca5e64bb",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
     "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-077cb8f42729b95bb",
+    "subnet_id": "subnet-04c4e78c5fef9f756",
     "interface_type": "transit_gateway",
     "status": "in-use",
-    "private_ip_address": "10.15.10.252",
+    "private_ip_address": "10.15.2.166",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
     "description": "Network Interface for Transit Gateway Attachment tgw-attach-0075738dd2bed67c3",
     "security_group_ids": [],
-    "availability_zone": "eu-south-2a",
+    "availability_zone": "eu-south-2c",
     "tags": {},
     "relationships": [
       {
@@ -669,31 +298,31 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-077cb8f42729b95bb",
+        "resource_id": "subnet-04c4e78c5fef9f756",
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053684+00:00"
+    "collected_at": "2026-07-12T19:41:53.249327+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0e76fc679e6a237bc",
+    "resource_id": "eni-09b27d160c1dea55a",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
     "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "subnet_id": "subnet-04c4e78c5fef9f756",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.0.16",
+    "private_ip_address": "10.15.2.212",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
-    "description": "5a0557ba61794d6b98abac07b47f6d6e",
+    "description": "9607b5b5ea634aa8b1d1cf94efbcbd4a",
     "security_group_ids": [
       "sg-005bad6e329e4bc98"
     ],
-    "availability_zone": "eu-south-2a",
+    "availability_zone": "eu-south-2c",
     "tags": {},
     "relationships": [
       {
@@ -703,49 +332,15 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "resource_id": "subnet-04c4e78c5fef9f756",
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053687+00:00"
+    "collected_at": "2026-07-12T19:41:53.249331+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-04aa60d2e07578b38",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "vpc_endpoint",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.57",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "VPC Endpoint Interface vpce-04f839953b8ca8f18",
-    "security_group_ids": [
-      "sg-07f5539aa666685bf"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053690+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0cde41f15aa773a3a",
+    "resource_id": "eni-05c2930a68fcefc56",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
@@ -753,11 +348,11 @@
     "subnet_id": "subnet-08d029e0c1f7e782e",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.1.212",
+    "private_ip_address": "10.15.1.87",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
-    "description": "9b8eb10c4faa48408d4b30255f902112",
+    "description": "453a768f259c46c9a2a6bdf3f9f90015",
     "security_group_ids": [
       "sg-005bad6e329e4bc98"
     ],
@@ -775,7 +370,107 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053692+00:00"
+    "collected_at": "2026-07-12T19:41:53.249335+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0ed86b2140eae12cc",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-08d029e0c1f7e782e",
+    "interface_type": "transit_gateway",
+    "status": "in-use",
+    "private_ip_address": "10.15.1.85",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Network Interface for Transit Gateway Attachment tgw-attach-0075738dd2bed67c3",
+    "security_group_ids": [],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249339+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-004fd1760902b822c",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-08d029e0c1f7e782e",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.1.248",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "2bd4849d60f74be18fb8cd3bb2767799",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249343+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-04b804c46a41693db",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-08d029e0c1f7e782e",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.1.185",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "7335f3e81d3b40849cb0a88bbb0f98e1",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249347+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
@@ -809,11 +504,11 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053695+00:00"
+    "collected_at": "2026-07-12T19:41:53.249353+00:00"
   },
   {
     "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0bce524924708ead4",
+    "resource_id": "eni-02754a29ebeb9f7f2",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
@@ -821,506 +516,7 @@
     "subnet_id": "subnet-08d029e0c1f7e782e",
     "interface_type": "interface",
     "status": "in-use",
-    "private_ip_address": "10.15.1.134",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "c25433ff9f8d4221b86af67f26ef07cb",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053698+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0d10ebaa8ce3c586e",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.142",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "d5d699d39c4b4ab59740e566d3aee519",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053701+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0ac2a485a2b03258c",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.183",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "Amazon EKS itl-0005-ana-prd-eks-af-02",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053704+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-039b0cf01b31e473f",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.124",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "efb55b0a501442be99e952f15c891a10",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053707+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0e071b24317c337cc",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.118",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "61bba497aad8477588cde457e2931b25",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053709+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-07c9de0fd0c8ad9a9",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.147",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "44ae7c65d9c841ab8b4c8096e9c529ec",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053712+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0ed86b2140eae12cc",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "transit_gateway",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.85",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "Network Interface for Transit Gateway Attachment tgw-attach-0075738dd2bed67c3",
-    "security_group_ids": [],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053715+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-018d27e389f57e0c9",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.132",
-    "public_ip_address": "",
-    "attachment_instance_id": "i-095b148937b8fdb50",
-    "attachment_status": "attached",
-    "description": "",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {
-      "Name": "itl-0005-ana-prd-ng-dags-02",
-      "eks:eni:owner": "amazon-vpc-cni",
-      "eks:cluster-name": "itl-0005-ana-prd-eks-af-02",
-      "eks:nodegroup-name": "itl-0005-ana-prd-ng-dags-02-20251017032808088700000026",
-      "apid": "ana",
-      "env": "prd",
-      "cluster.k8s.amazonaws.com/name": "itl-0005-ana-prd-eks-af-02",
-      "coid": "itl",
-      "node.k8s.amazonaws.com/instance_id": "i-095b148937b8fdb50",
-      "assetid": "0005"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      },
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-095b148937b8fdb50",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053719+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-075fabecb8c96b024",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.44",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "2e093a09ca2947609c10ab26c6402eb9",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053722+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0abed347c8f303b7b",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "trunk",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.233",
-    "public_ip_address": "",
-    "attachment_instance_id": "i-095b148937b8fdb50",
-    "attachment_status": "attached",
-    "description": "aws-k8s-trunk-eni",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {
-      "eks:eni:owner": "eks-vpc-resource-controller",
-      "node.k8s.amazonaws.com/instance_id": "i-095b148937b8fdb50",
-      "kubernetes.io/cluster/itl-0005-ana-prd-eks-af-02": "owned"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      },
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-095b148937b8fdb50",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053727+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0fe4fe78662d18866",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.83",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "70b358a4fde243e7bb02587c0ac4108e",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053730+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-012c836fd8f406cb6",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.238",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "4513c91934d8455982fad98e77055c45",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053733+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-07e48210c07971d3d",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.168",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "a1dfb41a610a4e92aa0df8ab65ca8508",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053735+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-08295e77479fbfb23",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.247",
-    "public_ip_address": "",
-    "attachment_instance_id": "",
-    "attachment_status": "attached",
-    "description": "3821035e1310457097c6dc2b7bcec02c",
-    "security_group_ids": [
-      "sg-005bad6e329e4bc98"
-    ],
-    "availability_zone": "eu-south-2b",
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::vpc",
-        "resource_id": "vpc-0008aceba2432ab91",
-        "relation": "belongs_to_vpc"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-08d029e0c1f7e782e",
-        "relation": "deployed_in_subnet"
-      }
-    ],
-    "collected_at": "2026-06-08T04:41:26.053737+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::network_interface",
-    "resource_id": "eni-0c6e91dad62a14d01",
-    "account_id": "831926623233",
-    "account_name": "Analytics-Prod",
-    "region": "eu-south-2",
-    "vpc_id": "vpc-0008aceba2432ab91",
-    "subnet_id": "subnet-08d029e0c1f7e782e",
-    "interface_type": "interface",
-    "status": "in-use",
-    "private_ip_address": "10.15.1.244",
+    "private_ip_address": "10.15.1.108",
     "public_ip_address": "",
     "attachment_instance_id": "",
     "attachment_status": "attached",
@@ -1343,6 +539,810 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-06-08T04:41:26.053740+00:00"
+    "collected_at": "2026-07-12T19:41:53.249357+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-06fefdf2eb55839f2",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-08d029e0c1f7e782e",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.1.28",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "b35d944205c449769c847e2655b0af5e",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249361+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-03229ff8fc3c4af65",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-08d029e0c1f7e782e",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.1.117",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "fcb430aab8674690ac18f990584f1ff0",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249365+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-071eb11e9afcf23d4",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-08d029e0c1f7e782e",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.1.253",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "761b04ab86a647a9a6dcdafe36a0ce7f",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249369+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-04aa60d2e07578b38",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-08d029e0c1f7e782e",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.15.1.57",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-04f839953b8ca8f18",
+    "security_group_ids": [
+      "sg-07f5539aa666685bf"
+    ],
+    "availability_zone": "eu-south-2b",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08d029e0c1f7e782e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249373+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0284a0ead055015ce",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "trunk",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.201",
+    "public_ip_address": "",
+    "attachment_instance_id": "i-07c8177d4d71f8d0e",
+    "attachment_status": "attached",
+    "description": "aws-k8s-trunk-eni",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {
+      "node.k8s.amazonaws.com/instance_id": "i-07c8177d4d71f8d0e",
+      "kubernetes.io/cluster/itl-0005-ana-prd-eks-af-02": "owned",
+      "eks:eni:owner": "eks-vpc-resource-controller"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-07c8177d4d71f8d0e",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249378+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-060d38afa8f509161",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.226",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "f9b25cd51fb445749d183a99137fff93",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249382+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-022536acf807a6420",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.184",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-04dbbb4c57b18e28e",
+    "security_group_ids": [
+      "sg-0e0494efc97b8b13d"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249385+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0e1b4dd567aab51ca",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-077cb8f42729b95bb",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.15.10.182",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-04f839953b8ca8f18",
+    "security_group_ids": [
+      "sg-07f5539aa666685bf"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-077cb8f42729b95bb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249388+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0cc8a703c8ec3041c",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.181",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "99b28081824a44adb17f43f0514c3556",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249393+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0d578578ba7d2fd5f",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-077cb8f42729b95bb",
+    "interface_type": "nat_gateway",
+    "status": "in-use",
+    "private_ip_address": "10.15.10.36",
+    "public_ip_address": "51.92.248.232",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Interface for NAT Gateway nat-0beb17b37f7133346",
+    "security_group_ids": [],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-077cb8f42729b95bb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249397+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-01440afb26af67999",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "vpc_endpoint",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.57",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "VPC Endpoint Interface vpce-07decf21486e508e2",
+    "security_group_ids": [
+      "sg-0e0494efc97b8b13d"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249401+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0bc70b3d0f47a5161",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.135",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "8f92e6c357e141c2856580cea6bba9ab",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249404+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0dea4a35d98e7a833",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.7",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "9c84e9ab63ff4c2cae7dc8628b423a53",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249408+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-052aa9ea3495c7d3e",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.193",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "1967f8f5bdc24a9b936d0e5ba5d949ab",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249411+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-047b34700188e0c4f",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.133",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "b04f0a7855954c7b9d3d3260b7e2148c",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249415+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-02030c86e6354aa69",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.154",
+    "public_ip_address": "",
+    "attachment_instance_id": "i-07c8177d4d71f8d0e",
+    "attachment_status": "attached",
+    "description": "",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {
+      "eks:cluster-name": "itl-0005-ana-prd-eks-af-02",
+      "eks:nodegroup-name": "itl-0005-ana-prd-ng-dags-02-20251017032808088700000026",
+      "Name": "itl-0005-ana-prd-ng-dags-02",
+      "eks:eni:owner": "amazon-vpc-cni",
+      "apid": "ana",
+      "cluster.k8s.amazonaws.com/name": "itl-0005-ana-prd-eks-af-02",
+      "node.k8s.amazonaws.com/instance_id": "i-07c8177d4d71f8d0e",
+      "coid": "itl",
+      "assetid": "0005",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-07c8177d4d71f8d0e",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249422+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-00148f1f54bc4bfda",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.97",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "1b53f53408f64393a7d43d848dc9917a",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249425+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-09eb573b574b812f2",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.148",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "d6f88447cad44175a6b5efab359d3cd8",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249428+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-03c589926729ad263",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.53",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "fb2a76718b8c4ef3af8a4f8f9db41771",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249433+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0eb1bddc31f26511d",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.229",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Amazon EKS itl-0005-ana-prd-eks-af-02",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249437+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-037da7ad0bf96b4b4",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.183",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "ELB app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc",
+    "security_group_ids": [
+      "sg-0833875ec8868948e",
+      "sg-09e84fe96301bd6fb"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249441+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-0fe5f78a887383ed6",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-077cb8f42729b95bb",
+    "interface_type": "transit_gateway",
+    "status": "in-use",
+    "private_ip_address": "10.15.10.252",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "Network Interface for Transit Gateway Attachment tgw-attach-0075738dd2bed67c3",
+    "security_group_ids": [],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-077cb8f42729b95bb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249444+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_interface",
+    "resource_id": "eni-073a8ca2a111e825e",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0008aceba2432ab91",
+    "subnet_id": "subnet-0d85a80ddb479d2fb",
+    "interface_type": "interface",
+    "status": "in-use",
+    "private_ip_address": "10.15.0.160",
+    "public_ip_address": "",
+    "attachment_instance_id": "",
+    "attachment_status": "attached",
+    "description": "7083dee70a7b45debb167f104d7ba889",
+    "security_group_ids": [
+      "sg-005bad6e329e4bc98"
+    ],
+    "availability_zone": "eu-south-2a",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0008aceba2432ab91",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d85a80ddb479d2fb",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:41:53.249448+00:00"
   }
 ]

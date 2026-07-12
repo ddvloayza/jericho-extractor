@@ -42,39 +42,45 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:13:55.643512+00:00"
+    "collected_at": "2026-07-12T19:40:28.377538+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-controltower-AdministratorExecutionRole",
-    "resource_name": "aws-controltower-AdministratorExecutionRole",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSReadOnlyAccess_63eef15677df6d6e",
+    "resource_name": "AWSReservedSSO_AWSReadOnlyAccess_63eef15677df6d6e",
     "account_id": "954976322048",
     "account_name": "Intelica-Network",
     "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-10-15 15:53:26+00:00",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "This policy grants permissions to view resources and basic metadata across all AWS services",
+    "max_session_duration": 43200,
+    "create_date": "2024-10-14 17:02:12+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditAdministratorRole"
+            "Federated": "arn:aws:iam::954976322048:saml-provider/AWSSSO_e44b2f34d9fc8fe6_DO_NOT_DELETE"
           },
-          "Action": "sts:AssumeRole"
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
         }
       ]
     },
     "trusted_services": [],
-    "trusted_accounts": [
-      "060795899335"
-    ],
+    "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AdministratorAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+        "PolicyName": "ViewOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"
       }
     ],
     "inline_policy_names": [],
@@ -82,11 +88,184 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "resource_id": "arn:aws:iam::aws:policy/job-function/ViewOnlyAccess",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:13:56.056441+00:00"
+    "collected_at": "2026-07-12T19:40:28.789466+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSAllAdm_b087b3c2feb7f75a",
+    "resource_name": "AWSReservedSSO_ItlAWSAllAdm_b087b3c2feb7f75a",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "global AWS administrator permission sets",
+    "max_session_duration": 43200,
+    "create_date": "2025-02-11 14:45:09+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::954976322048:saml-provider/AWSSSO_e44b2f34d9fc8fe6_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "AwsSSOInlinePolicy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:40:29.162180+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS",
+    "resource_name": "AWSServiceRoleForAmazonEKS",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-service-role/eks.amazonaws.com/",
+    "description": "Allows Amazon EKS to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2025-04-21 23:48:51+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "eks.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "eks.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonEKSServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonEKSServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonEKSServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:29.527496+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup",
+    "resource_name": "AWSServiceRoleForAmazonEKSNodegroup",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-service-role/eks-nodegroup.amazonaws.com/",
+    "description": "This policy allows Amazon EKS to create and manage Nodegroups",
+    "max_session_duration": 3600,
+    "create_date": "2025-04-21 23:59:11+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "eks-nodegroup.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "eks-nodegroup.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSServiceRoleForAmazonEKSNodegroup",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForAmazonEKSNodegroup"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForAmazonEKSNodegroup",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:29.921701+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDuty",
+    "resource_name": "AWSServiceRoleForAmazonGuardDuty",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-service-role/guardduty.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-18 20:49:14+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "guardduty.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "guardduty.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonGuardDutyServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:30.291797+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -139,285 +318,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:13:56.477734+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-controltower-ForwardSnsNotificationRole",
-    "resource_name": "aws-controltower-ForwardSnsNotificationRole",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-10-15 15:53:27+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "lambda.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "lambda.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSLambdaBasicExecutionRole",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-      }
-    ],
-    "inline_policy_names": [
-      "sns"
-    ],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:13:56.883198+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-controltower-ReadOnlyExecutionRole",
-    "resource_name": "aws-controltower-ReadOnlyExecutionRole",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-10-15 15:53:27+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditReadOnlyRole"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [
-      "060795899335"
-    ],
-    "attached_policies": [
-      {
-        "PolicyName": "ReadOnlyAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/ReadOnlyAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:13:57.319532+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/AWSControlTowerExecution",
-    "resource_name": "AWSControlTowerExecution",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-10-14 17:01:15+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::664418961607:root"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [
-      "664418961607"
-    ],
-    "attached_policies": [
-      {
-        "PolicyName": "AdministratorAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:13:57.692314+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/AWSControlTower_VPCFlowLogsRole",
-    "resource_name": "AWSControlTower_VPCFlowLogsRole",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-10-14 17:07:39+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "vpc-flow-logs.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "vpc-flow-logs.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSLambdaBasicExecutionRole",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:13:58.069474+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_a92a9b95e089bb60",
-    "resource_name": "AWSReservedSSO_AWSAdministratorAccess_a92a9b95e089bb60",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-reserved/sso.amazonaws.com/",
-    "description": "Provides full access to AWS services and resources",
-    "max_session_duration": 43200,
-    "create_date": "2024-10-14 17:02:13+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::954976322048:saml-provider/AWSSSO_e44b2f34d9fc8fe6_DO_NOT_DELETE"
-          },
-          "Action": [
-            "sts:AssumeRoleWithSAML",
-            "sts:TagSession"
-          ],
-          "Condition": {
-            "StringEquals": {
-              "SAML:aud": "https://signin.aws.amazon.com/saml"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AdministratorAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:13:58.479232+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSOrganizationsFullAccess_5cab4ff635f6b1d4",
-    "resource_name": "AWSReservedSSO_AWSOrganizationsFullAccess_5cab4ff635f6b1d4",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-reserved/sso.amazonaws.com/",
-    "description": "Provides full access to AWS Organizations",
-    "max_session_duration": 43200,
-    "create_date": "2024-10-14 17:02:11+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::954976322048:saml-provider/AWSSSO_e44b2f34d9fc8fe6_DO_NOT_DELETE"
-          },
-          "Action": [
-            "sts:AssumeRoleWithSAML",
-            "sts:TagSession"
-          ],
-          "Condition": {
-            "StringEquals": {
-              "SAML:aud": "https://signin.aws.amazon.com/saml"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSOrganizationsFullAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:13:58.894420+00:00"
+    "collected_at": "2026-07-12T19:40:30.509492+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -467,218 +368,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:13:59.344075+00:00"
+    "collected_at": "2026-07-12T19:40:30.528736+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSReadOnlyAccess_63eef15677df6d6e",
-    "resource_name": "AWSReservedSSO_AWSReadOnlyAccess_63eef15677df6d6e",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-controltower-AdministratorExecutionRole",
+    "resource_name": "aws-controltower-AdministratorExecutionRole",
     "account_id": "954976322048",
     "account_name": "Intelica-Network",
     "region": "global",
-    "path": "/aws-reserved/sso.amazonaws.com/",
-    "description": "This policy grants permissions to view resources and basic metadata across all AWS services",
-    "max_session_duration": 43200,
-    "create_date": "2024-10-14 17:02:12+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::954976322048:saml-provider/AWSSSO_e44b2f34d9fc8fe6_DO_NOT_DELETE"
-          },
-          "Action": [
-            "sts:AssumeRoleWithSAML",
-            "sts:TagSession"
-          ],
-          "Condition": {
-            "StringEquals": {
-              "SAML:aud": "https://signin.aws.amazon.com/saml"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "ViewOnlyAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/job-function/ViewOnlyAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:13:59.759576+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSAllAdm_b087b3c2feb7f75a",
-    "resource_name": "AWSReservedSSO_ItlAWSAllAdm_b087b3c2feb7f75a",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-reserved/sso.amazonaws.com/",
-    "description": "global AWS administrator permission sets",
-    "max_session_duration": 43200,
-    "create_date": "2025-02-11 14:45:09+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::954976322048:saml-provider/AWSSSO_e44b2f34d9fc8fe6_DO_NOT_DELETE"
-          },
-          "Action": [
-            "sts:AssumeRoleWithSAML",
-            "sts:TagSession"
-          ],
-          "Condition": {
-            "StringEquals": {
-              "SAML:aud": "https://signin.aws.amazon.com/saml"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "AwsSSOInlinePolicy"
-    ],
-    "tags": {},
-    "relationships": [],
-    "collected_at": "2026-06-08T01:14:00.128287+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/eks.amazonaws.com/AWSServiceRoleForAmazonEKS",
-    "resource_name": "AWSServiceRoleForAmazonEKS",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-service-role/eks.amazonaws.com/",
-    "description": "Allows Amazon EKS to call AWS services on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2025-04-21 23:48:51+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "eks.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "eks.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonEKSServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonEKSServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonEKSServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:00.513030+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup",
-    "resource_name": "AWSServiceRoleForAmazonEKSNodegroup",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-service-role/eks-nodegroup.amazonaws.com/",
-    "description": "This policy allows Amazon EKS to create and manage Nodegroups",
-    "max_session_duration": 3600,
-    "create_date": "2025-04-21 23:59:11+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "eks-nodegroup.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "eks-nodegroup.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSServiceRoleForAmazonEKSNodegroup",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForAmazonEKSNodegroup"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForAmazonEKSNodegroup",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:00.902608+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDuty",
-    "resource_name": "AWSServiceRoleForAmazonGuardDuty",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-service-role/guardduty.amazonaws.com/",
+    "path": "/",
     "description": "",
     "max_session_duration": 3600,
-    "create_date": "2024-11-18 20:49:14+00:00",
+    "create_date": "2024-10-15 15:53:26+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "guardduty.amazonaws.com"
+            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditAdministratorRole"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
-    "trusted_services": [
-      "guardduty.amazonaws.com"
+    "trusted_services": [],
+    "trusted_accounts": [
+      "060795899335"
     ],
-    "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AmazonGuardDutyServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy"
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
       }
     ],
     "inline_policy_names": [],
@@ -686,11 +408,289 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:01.297848+00:00"
+    "collected_at": "2026-07-12T19:40:30.545431+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-controltower-ForwardSnsNotificationRole",
+    "resource_name": "aws-controltower-ForwardSnsNotificationRole",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-15 15:53:27+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [
+      "sns"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:30.546488+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/AWSControlTowerExecution",
+    "resource_name": "AWSControlTowerExecution",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 17:01:15+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:30.551164+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSOrganizationsFullAccess_5cab4ff635f6b1d4",
+    "resource_name": "AWSReservedSSO_AWSOrganizationsFullAccess_5cab4ff635f6b1d4",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "Provides full access to AWS Organizations",
+    "max_session_duration": 43200,
+    "create_date": "2024-10-14 17:02:11+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::954976322048:saml-provider/AWSSSO_e44b2f34d9fc8fe6_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSOrganizationsFullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:30.558906+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_a92a9b95e089bb60",
+    "resource_name": "AWSReservedSSO_AWSAdministratorAccess_a92a9b95e089bb60",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "Provides full access to AWS services and resources",
+    "max_session_duration": 43200,
+    "create_date": "2024-10-14 17:02:13+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::954976322048:saml-provider/AWSSSO_e44b2f34d9fc8fe6_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:30.562889+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/AWSControlTower_VPCFlowLogsRole",
+    "resource_name": "AWSControlTower_VPCFlowLogsRole",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 17:07:39+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "vpc-flow-logs.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "vpc-flow-logs.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:30.563883+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-controltower-ReadOnlyExecutionRole",
+    "resource_name": "aws-controltower-ReadOnlyExecutionRole",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-15 15:53:27+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditReadOnlyRole"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "060795899335"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:30.569555+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -734,7 +734,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:01.695170+00:00"
+    "collected_at": "2026-07-12T19:40:30.697063+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -778,7 +778,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:02.114218+00:00"
+    "collected_at": "2026-07-12T19:40:30.877909+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -822,95 +822,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:02.534920+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgMember",
-    "resource_name": "AWSServiceRoleForCloudFormationStackSetsOrgMember",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/",
-    "description": "Service linked role for CloudFormation StackSets (Organization Member)",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-25 16:38:35+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "member.org.stacksets.cloudformation.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "member.org.stacksets.cloudformation.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "CloudFormationStackSetsOrgMemberServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:02.922996+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/cloudtrail.amazonaws.com/AWSServiceRoleForCloudTrail",
-    "resource_name": "AWSServiceRoleForCloudTrail",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-service-role/cloudtrail.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-10-14 17:04:17+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "cloudtrail.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "cloudtrail.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "CloudTrailServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:03.315402+00:00"
+    "collected_at": "2026-07-12T19:40:30.913727+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -954,7 +866,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:03.725326+00:00"
+    "collected_at": "2026-07-12T19:40:30.941849+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -998,7 +910,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:04.126472+00:00"
+    "collected_at": "2026-07-12T19:40:30.960535+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1042,7 +954,95 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:04.539168+00:00"
+    "collected_at": "2026-07-12T19:40:30.964992+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "resource_name": "AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/",
+    "description": "Service linked role for CloudFormation StackSets (Organization Member)",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-25 16:38:35+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "member.org.stacksets.cloudformation.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "member.org.stacksets.cloudformation.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:30.965862+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/cloudtrail.amazonaws.com/AWSServiceRoleForCloudTrail",
+    "resource_name": "AWSServiceRoleForCloudTrail",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-service-role/cloudtrail.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 17:04:17+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "cloudtrail.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "cloudtrail.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudTrailServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:30.968248+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1086,7 +1086,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:04.939635+00:00"
+    "collected_at": "2026-07-12T19:40:30.970403+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1130,7 +1130,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:05.323450+00:00"
+    "collected_at": "2026-07-12T19:40:30.999459+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1174,7 +1174,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:05.700024+00:00"
+    "collected_at": "2026-07-12T19:40:31.078552+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1218,51 +1218,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:06.086082+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
-    "resource_name": "AWSServiceRoleForResourceExplorer",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-service-role/resource-explorer-2.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-10-03 19:57:30+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "resource-explorer-2.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "resource-explorer-2.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSResourceExplorerServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:06.493842+00:00"
+    "collected_at": "2026-07-12T19:40:31.241575+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1306,39 +1262,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:06.887021+00:00"
+    "collected_at": "2026-07-12T19:40:31.303654+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/securityhubv2.amazonaws.com/AWSServiceRoleForSecurityHubV2",
-    "resource_name": "AWSServiceRoleForSecurityHubV2",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+    "resource_name": "AWSServiceRoleForResourceExplorer",
     "account_id": "954976322048",
     "account_name": "Intelica-Network",
     "region": "global",
-    "path": "/aws-service-role/securityhubv2.amazonaws.com/",
+    "path": "/aws-service-role/resource-explorer-2.amazonaws.com/",
     "description": "",
     "max_session_duration": 3600,
-    "create_date": "2025-12-29 21:26:16+00:00",
+    "create_date": "2025-10-03 19:57:30+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "securityhubv2.amazonaws.com"
+            "Service": "resource-explorer-2.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "securityhubv2.amazonaws.com"
+      "resource-explorer-2.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSSecurityHubV2ServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy"
+        "PolicyName": "AWSResourceExplorerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy"
       }
     ],
     "inline_policy_names": [],
@@ -1346,99 +1302,11 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:07.294092+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/servicequotas.amazonaws.com/AWSServiceRoleForServiceQuotas",
-    "resource_name": "AWSServiceRoleForServiceQuotas",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-service-role/servicequotas.amazonaws.com/",
-    "description": "A service-linked role is required for Service Quotas to access your service limits.",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-21 17:10:14+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "servicequotas.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "servicequotas.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "ServiceQuotasServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:07.674836+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
-    "resource_name": "AWSServiceRoleForSSO",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/aws-service-role/sso.amazonaws.com/",
-    "description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2024-10-14 17:01:33+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "sso.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "sso.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSSSOServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:08.077188+00:00"
+    "collected_at": "2026-07-12T19:40:31.309990+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1482,7 +1350,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:08.465649+00:00"
+    "collected_at": "2026-07-12T19:40:31.323774+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1526,7 +1394,95 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:09.375715+00:00"
+    "collected_at": "2026-07-12T19:40:31.333741+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+    "resource_name": "AWSServiceRoleForSSO",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-service-role/sso.amazonaws.com/",
+    "description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 17:01:33+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "sso.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "sso.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSSOServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:31.354256+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/securityhubv2.amazonaws.com/AWSServiceRoleForSecurityHubV2",
+    "resource_name": "AWSServiceRoleForSecurityHubV2",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-service-role/securityhubv2.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-12-29 21:26:16+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "securityhubv2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "securityhubv2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSecurityHubV2ServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:31.356339+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1570,7 +1526,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:09.771752+00:00"
+    "collected_at": "2026-07-12T19:40:31.412637+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1645,7 +1601,51 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:10.179397+00:00"
+    "collected_at": "2026-07-12T19:40:31.423849+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/aws-service-role/servicequotas.amazonaws.com/AWSServiceRoleForServiceQuotas",
+    "resource_name": "AWSServiceRoleForServiceQuotas",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/aws-service-role/servicequotas.amazonaws.com/",
+    "description": "A service-linked role is required for Service Quotas to access your service limits.",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-21 17:10:14+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "servicequotas.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "servicequotas.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "ServiceQuotasServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:31.507549+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1749,7 +1749,78 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:10.605196+00:00"
+    "collected_at": "2026-07-12T19:40:31.618006+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/itl-0001-shared-network-all-eks-pritunl-01-external-dns-role",
+    "resource_name": "itl-0001-shared-network-all-eks-pritunl-01-external-dns-role",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-04-21 23:58:33+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::954976322048:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/E239D32CF5BCC918D272AE2DDB92D9EA"
+          },
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {
+            "StringEquals": {
+              "oidc.eks.us-east-1.amazonaws.com/id/E239D32CF5BCC918D272AE2DDB92D9EA:sub": "system:serviceaccount:kube-system:external-dns",
+              "oidc.eks.us-east-1.amazonaws.com/id/E239D32CF5BCC918D272AE2DDB92D9EA:aud": "sts.amazonaws.com"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSXrayWriteOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess"
+      },
+      {
+        "PolicyName": "CloudWatchAgentServerPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+      },
+      {
+        "PolicyName": "itl-0001-shared-network-all-eks-pritunl-01-external-dns-role-route53-pol",
+        "PolicyArn": "arn:aws:iam::954976322048:policy/itl-0001-shared-network-all-eks-pritunl-01-external-dns-role-route53-pol"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "assetid": "0001",
+      "coid": "itl",
+      "env": "all",
+      "apid": "shared-network"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::954976322048:policy/itl-0001-shared-network-all-eks-pritunl-01-external-dns-role-route53-pol",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:31.666094+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1829,78 +1900,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:11.017660+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/itl-0001-shared-network-all-eks-pritunl-01-external-dns-role",
-    "resource_name": "itl-0001-shared-network-all-eks-pritunl-01-external-dns-role",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-04-21 23:58:33+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::954976322048:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/E239D32CF5BCC918D272AE2DDB92D9EA"
-          },
-          "Action": "sts:AssumeRoleWithWebIdentity",
-          "Condition": {
-            "StringEquals": {
-              "oidc.eks.us-east-1.amazonaws.com/id/E239D32CF5BCC918D272AE2DDB92D9EA:sub": "system:serviceaccount:kube-system:external-dns",
-              "oidc.eks.us-east-1.amazonaws.com/id/E239D32CF5BCC918D272AE2DDB92D9EA:aud": "sts.amazonaws.com"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSXrayWriteOnlyAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess"
-      },
-      {
-        "PolicyName": "CloudWatchAgentServerPolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
-      },
-      {
-        "PolicyName": "itl-0001-shared-network-all-eks-pritunl-01-external-dns-role-route53-pol",
-        "PolicyArn": "arn:aws:iam::954976322048:policy/itl-0001-shared-network-all-eks-pritunl-01-external-dns-role-route53-pol"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {
-      "assetid": "0001",
-      "coid": "itl",
-      "env": "all",
-      "apid": "shared-network"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::954976322048:policy/itl-0001-shared-network-all-eks-pritunl-01-external-dns-role-route53-pol",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:11.422581+00:00"
+    "collected_at": "2026-07-12T19:40:31.673022+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1980,54 +1980,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:11.823633+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/itl-0001-shared-network-all-eks-route53-assume-role",
-    "resource_name": "itl-0001-shared-network-all-eks-route53-assume-role",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-06-13 07:51:22+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": [
-              "arn:aws:iam::610944808410:role/itl-0003-portal-prd-eks-apps-02-external-dns-role",
-              "arn:aws:iam::610944808410:role/itl-0003-portal-prd-eks-apps-01-external-dns-role"
-            ]
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [
-      "610944808410"
-    ],
-    "attached_policies": [
-      {
-        "PolicyName": "itl-0001-shared-network-all-eks-route53-assume-pol-01",
-        "PolicyArn": "arn:aws:iam::954976322048:policy/itl-0001-shared-network-all-eks-route53-assume-pol-01"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::954976322048:policy/itl-0001-shared-network-all-eks-route53-assume-pol-01",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:12.214600+00:00"
+    "collected_at": "2026-07-12T19:40:31.690766+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2094,7 +2047,54 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:12.594970+00:00"
+    "collected_at": "2026-07-12T19:40:31.708521+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/itl-0001-shared-network-all-eks-route53-assume-role",
+    "resource_name": "itl-0001-shared-network-all-eks-route53-assume-role",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-13 07:51:22+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": [
+              "arn:aws:iam::610944808410:role/itl-0003-portal-prd-eks-apps-01-external-dns-role",
+              "arn:aws:iam::610944808410:role/itl-0003-portal-prd-eks-apps-02-external-dns-role"
+            ]
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "610944808410"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0001-shared-network-all-eks-route53-assume-pol-01",
+        "PolicyArn": "arn:aws:iam::954976322048:policy/itl-0001-shared-network-all-eks-route53-assume-pol-01"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::954976322048:policy/itl-0001-shared-network-all-eks-route53-assume-pol-01",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:31.716661+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2198,7 +2198,78 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:13.008269+00:00"
+    "collected_at": "2026-07-12T19:40:31.743628+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/itl-0002-shared-network-all-eks-pritunl-02-external-dns-role",
+    "resource_name": "itl-0002-shared-network-all-eks-pritunl-02-external-dns-role",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-15 23:35:33+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::954976322048:oidc-provider/oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D"
+          },
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {
+            "StringEquals": {
+              "oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D:aud": "sts.amazonaws.com",
+              "oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D:sub": "system:serviceaccount:kube-system:external-dns"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSXrayWriteOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess"
+      },
+      {
+        "PolicyName": "CloudWatchAgentServerPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+      },
+      {
+        "PolicyName": "itl-0002-shared-network-all-eks-pritunl-02-external-dns-role-route53-pol",
+        "PolicyArn": "arn:aws:iam::954976322048:policy/itl-0002-shared-network-all-eks-pritunl-02-external-dns-role-route53-pol"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "assetid": "0001",
+      "coid": "itl",
+      "env": "all",
+      "apid": "shared-network"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::954976322048:policy/itl-0002-shared-network-all-eks-pritunl-02-external-dns-role-route53-pol",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:31.778199+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2222,8 +2293,8 @@
           "Action": "sts:AssumeRoleWithWebIdentity",
           "Condition": {
             "StringEquals": {
-              "oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D:sub": "system:serviceaccount:kube-system:aws-elb",
-              "oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D:aud": "sts.amazonaws.com"
+              "oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D:aud": "sts.amazonaws.com",
+              "oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D:sub": "system:serviceaccount:kube-system:aws-elb"
             }
           }
         }
@@ -2278,78 +2349,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:13.412077+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/itl-0002-shared-network-all-eks-pritunl-02-external-dns-role",
-    "resource_name": "itl-0002-shared-network-all-eks-pritunl-02-external-dns-role",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-09-15 23:35:33+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::954976322048:oidc-provider/oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D"
-          },
-          "Action": "sts:AssumeRoleWithWebIdentity",
-          "Condition": {
-            "StringEquals": {
-              "oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D:sub": "system:serviceaccount:kube-system:external-dns",
-              "oidc.eks.eu-south-2.amazonaws.com/id/6F5B9E39B54A2DD334CC06CF8D4AD97D:aud": "sts.amazonaws.com"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSXrayWriteOnlyAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess"
-      },
-      {
-        "PolicyName": "CloudWatchAgentServerPolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
-      },
-      {
-        "PolicyName": "itl-0002-shared-network-all-eks-pritunl-02-external-dns-role-route53-pol",
-        "PolicyArn": "arn:aws:iam::954976322048:policy/itl-0002-shared-network-all-eks-pritunl-02-external-dns-role-route53-pol"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {
-      "assetid": "0001",
-      "coid": "itl",
-      "env": "all",
-      "apid": "shared-network"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AWSXrayWriteOnlyAccess",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::954976322048:policy/itl-0002-shared-network-all-eks-pritunl-02-external-dns-role-route53-pol",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-06-08T01:14:13.783931+00:00"
+    "collected_at": "2026-07-12T19:40:31.823537+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2429,7 +2429,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:14.172075+00:00"
+    "collected_at": "2026-07-12T19:40:31.906449+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2469,7 +2469,7 @@
       "env": "all"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T01:14:14.549670+00:00"
+    "collected_at": "2026-07-12T19:40:31.986226+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2514,7 +2514,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:14.936440+00:00"
+    "collected_at": "2026-07-12T19:40:32.034422+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2558,7 +2558,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:15.331998+00:00"
+    "collected_at": "2026-07-12T19:40:32.037380+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2620,7 +2620,47 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:15.725560+00:00"
+    "collected_at": "2026-07-12T19:40:32.043815+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::954976322048:role/vmimport",
+    "resource_name": "vmimport",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-30 15:17:03+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "vmie.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:Externalid": "vmimport"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "vmie.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "vmimport-policy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:40:32.071590+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2666,46 +2706,6 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-06-08T01:14:16.108158+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::954976322048:role/vmimport",
-    "resource_name": "vmimport",
-    "account_id": "954976322048",
-    "account_name": "Intelica-Network",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-10-30 15:17:03+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "vmie.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole",
-          "Condition": {
-            "StringEquals": {
-              "sts:Externalid": "vmimport"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [
-      "vmie.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "vmimport-policy"
-    ],
-    "tags": {},
-    "relationships": [],
-    "collected_at": "2026-06-08T01:14:16.498223+00:00"
+    "collected_at": "2026-07-12T19:40:32.094703+00:00"
   }
 ]

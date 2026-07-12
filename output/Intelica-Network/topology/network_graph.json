@@ -281,6 +281,15 @@
         "subnet_type": ""
       },
       {
+        "id": "sg-03bed10a7bf7da98d",
+        "resource_type": "aws::ec2::security_group",
+        "resource_name": "",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-000f7f02c4d4819a3",
+        "subnet_type": ""
+      },
+      {
         "id": "sg-09f10199e3d10c2d7",
         "resource_type": "aws::ec2::security_group",
         "resource_name": "",
@@ -327,15 +336,6 @@
       },
       {
         "id": "sg-0d8e8df1695843092",
-        "resource_type": "aws::ec2::security_group",
-        "resource_name": "",
-        "account_id": "954976322048",
-        "region": "eu-south-2",
-        "vpc_id": "vpc-000f7f02c4d4819a3",
-        "subnet_type": ""
-      },
-      {
-        "id": "sg-03bed10a7bf7da98d",
         "resource_type": "aws::ec2::security_group",
         "resource_name": "",
         "account_id": "954976322048",
@@ -407,24 +407,6 @@
         "subnet_type": ""
       },
       {
-        "id": "eni-0839b1bf82c22b21d",
-        "resource_type": "aws::ec2::network_interface",
-        "resource_name": "",
-        "account_id": "954976322048",
-        "region": "eu-south-2",
-        "vpc_id": "vpc-000f7f02c4d4819a3",
-        "subnet_type": ""
-      },
-      {
-        "id": "eni-0bc2a634d6f25a6ef",
-        "resource_type": "aws::ec2::network_interface",
-        "resource_name": "",
-        "account_id": "954976322048",
-        "region": "eu-south-2",
-        "vpc_id": "vpc-000f7f02c4d4819a3",
-        "subnet_type": ""
-      },
-      {
         "id": "eni-0d77560a13d66b397",
         "resource_type": "aws::ec2::network_interface",
         "resource_name": "",
@@ -443,7 +425,7 @@
         "subnet_type": ""
       },
       {
-        "id": "eni-04eb3d161d93165c8",
+        "id": "eni-0839b1bf82c22b21d",
         "resource_type": "aws::ec2::network_interface",
         "resource_name": "",
         "account_id": "954976322048",
@@ -452,7 +434,7 @@
         "subnet_type": ""
       },
       {
-        "id": "eni-015de3bb2b7b54c65",
+        "id": "eni-0bc2a634d6f25a6ef",
         "resource_type": "aws::ec2::network_interface",
         "resource_name": "",
         "account_id": "954976322048",
@@ -461,7 +443,7 @@
         "subnet_type": ""
       },
       {
-        "id": "eni-097836d368348bf3f",
+        "id": "eni-0034f0641b1ad5cb0",
         "resource_type": "aws::ec2::network_interface",
         "resource_name": "",
         "account_id": "954976322048",
@@ -470,7 +452,7 @@
         "subnet_type": ""
       },
       {
-        "id": "eni-014618079dd826f8d",
+        "id": "eni-06aa4a21695854293",
         "resource_type": "aws::ec2::network_interface",
         "resource_name": "",
         "account_id": "954976322048",
@@ -479,7 +461,7 @@
         "subnet_type": ""
       },
       {
-        "id": "eni-0301c2c9310735c38",
+        "id": "eni-00edea36ec6feaeb3",
         "resource_type": "aws::ec2::network_interface",
         "resource_name": "",
         "account_id": "954976322048",
@@ -488,7 +470,7 @@
         "subnet_type": ""
       },
       {
-        "id": "eni-0494a3d082bd96d24",
+        "id": "eni-081c4955f76106b93",
         "resource_type": "aws::ec2::network_interface",
         "resource_name": "",
         "account_id": "954976322048",
@@ -506,7 +488,25 @@
         "subnet_type": ""
       },
       {
+        "id": "eni-014618079dd826f8d",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-000f7f02c4d4819a3",
+        "subnet_type": ""
+      },
+      {
         "id": "eni-062a714a9b9e56272",
+        "resource_type": "aws::ec2::network_interface",
+        "resource_name": "",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "vpc-000f7f02c4d4819a3",
+        "subnet_type": ""
+      },
+      {
+        "id": "eni-097836d368348bf3f",
         "resource_type": "aws::ec2::network_interface",
         "resource_name": "",
         "account_id": "954976322048",
@@ -548,6 +548,132 @@
         "account_id": "954976322048",
         "region": "eu-south-2",
         "vpc_id": "vpc-000f7f02c4d4819a3",
+        "subnet_type": ""
+      },
+      {
+        "id": "vol-09a8fa33ec08ac174",
+        "resource_type": "aws::ec2::volume",
+        "resource_name": "itl-0002-shared-network-all-eks-pritunl-02-dynamic-pvc-a5017763-9df5-4bbd-a380-267cd9a4de28",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "vol-03c6fafb54470231a",
+        "resource_type": "aws::ec2::volume",
+        "resource_name": "",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "vol-098e20f6ad1e1beb9",
+        "resource_type": "aws::ec2::volume",
+        "resource_name": "itl-0002-shared-network-all-ec2-pritunl-02",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "snap-039b881b82f1e6f0d",
+        "resource_type": "aws::ec2::snapshot",
+        "resource_name": "",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "snap-0012a98fbf03fd3b5",
+        "resource_type": "aws::ec2::snapshot",
+        "resource_name": "pvc from pritunl backup",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "snap-0b0436b24fdf74ef2",
+        "resource_type": "aws::ec2::snapshot",
+        "resource_name": "",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "snap-080942f9957ee1c6d",
+        "resource_type": "aws::ec2::snapshot",
+        "resource_name": "",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "ami-0c13c11bd859daaf4",
+        "resource_type": "aws::ec2::ami",
+        "resource_name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "ami-04dd621385b1e6937",
+        "resource_type": "aws::ec2::ami",
+        "resource_name": "AD-SPAIN",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "eipalloc-0df23b2ab7b5204fe",
+        "resource_type": "aws::ec2::eip",
+        "resource_name": "itl-0002-shared-network-all-eip-pritunl-az1-02",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "eipalloc-0af604f8cf64cb725",
+        "resource_type": "aws::ec2::eip",
+        "resource_name": "itl-0002-shared-network-all-eip-2a-02",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "eipalloc-0558a4cb9a03caa40",
+        "resource_type": "aws::ec2::eip",
+        "resource_name": "itl-0002-shared-network-all-eip-pritunl-az2-02",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "eipalloc-0dba4e01fecea0dd3",
+        "resource_type": "aws::ec2::eip",
+        "resource_name": "",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "eipalloc-0068f27577d48976c",
+        "resource_type": "aws::ec2::eip",
+        "resource_name": "",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
         "subnet_type": ""
       },
       {
@@ -635,6 +761,96 @@
         "id": "arn:aws:kms:eu-south-2:954976322048:key/efac52ae-0aed-45c3-a947-d8aa4ef10eeb",
         "resource_type": "aws::kms::key",
         "resource_name": "alias/aws/acm",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:eu-south-2:954976322048:log-group:/aws/containerinsights/itl-0002-shared-network-all-eks-pritunl-02/application:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/containerinsights/itl-0002-shared-network-all-eks-pritunl-02/application",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:eu-south-2:954976322048:log-group:/aws/containerinsights/itl-0002-shared-network-all-eks-pritunl-02/dataplane:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/containerinsights/itl-0002-shared-network-all-eks-pritunl-02/dataplane",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:eu-south-2:954976322048:log-group:/aws/containerinsights/itl-0002-shared-network-all-eks-pritunl-02/host:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/containerinsights/itl-0002-shared-network-all-eks-pritunl-02/host",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:eu-south-2:954976322048:log-group:/aws/containerinsights/itl-0002-shared-network-all-eks-pritunl-02/performance:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/containerinsights/itl-0002-shared-network-all-eks-pritunl-02/performance",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:eu-south-2:954976322048:log-group:/aws/eks/itl-0002-shared-network-all-eks-pritunl-02/cluster:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/eks/itl-0002-shared-network-all-eks-pritunl-02/cluster",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:eu-south-2:954976322048:log-group:itl-0002-shared-network-all-vpc-flow-logs:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "itl-0002-shared-network-all-vpc-flow-logs",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "8ece9b98ba1248318b11076996b73eac",
+        "resource_type": "aws::guardduty::detector",
+        "resource_name": "8ece9b98ba1248318b11076996b73eac",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:acm:eu-south-2:954976322048:certificate/39e8d234-b7bd-4b40-93ff-422b512fce43",
+        "resource_type": "aws::acm::certificate",
+        "resource_name": "auth.pritunl.temporal.intelica.com",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:acm:eu-south-2:954976322048:certificate/81eecfc5-d919-478c-89ff-f582d914465a",
+        "resource_type": "aws::acm::certificate",
+        "resource_name": "auth.pritunl.intelica.com",
+        "account_id": "954976322048",
+        "region": "eu-south-2",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:acm:eu-south-2:954976322048:certificate/c451873d-4f1f-4319-a112-37c645c37d7f",
+        "resource_type": "aws::acm::certificate",
+        "resource_name": "temporal.intelica.com",
         "account_id": "954976322048",
         "region": "eu-south-2",
         "vpc_id": "",
@@ -798,41 +1014,6 @@
         "relation": "references_sg"
       },
       {
-        "source": "eni-0839b1bf82c22b21d",
-        "target": "subnet-0624a59dbcfc36798",
-        "relation": "in_subnet"
-      },
-      {
-        "source": "eni-0839b1bf82c22b21d",
-        "target": "vpc-000f7f02c4d4819a3",
-        "relation": "in_vpc"
-      },
-      {
-        "source": "eni-0839b1bf82c22b21d",
-        "target": "sg-0a459eecd4fa98749",
-        "relation": "protected_by_sg"
-      },
-      {
-        "source": "eni-0bc2a634d6f25a6ef",
-        "target": "subnet-0f412a52465a75334",
-        "relation": "in_subnet"
-      },
-      {
-        "source": "eni-0bc2a634d6f25a6ef",
-        "target": "vpc-000f7f02c4d4819a3",
-        "relation": "in_vpc"
-      },
-      {
-        "source": "eni-0bc2a634d6f25a6ef",
-        "target": "sg-043f24a24d1750bf7",
-        "relation": "protected_by_sg"
-      },
-      {
-        "source": "eni-0bc2a634d6f25a6ef",
-        "target": "sg-09f10199e3d10c2d7",
-        "relation": "protected_by_sg"
-      },
-      {
         "source": "eni-0d77560a13d66b397",
         "target": "subnet-0624a59dbcfc36798",
         "relation": "in_subnet"
@@ -858,52 +1039,127 @@
         "relation": "in_vpc"
       },
       {
-        "source": "eni-04eb3d161d93165c8",
-        "target": "subnet-0f412a52465a75334",
-        "relation": "in_subnet"
-      },
-      {
-        "source": "eni-04eb3d161d93165c8",
-        "target": "vpc-000f7f02c4d4819a3",
-        "relation": "in_vpc"
-      },
-      {
-        "source": "eni-04eb3d161d93165c8",
-        "target": "sg-043f24a24d1750bf7",
-        "relation": "protected_by_sg"
-      },
-      {
-        "source": "eni-04eb3d161d93165c8",
-        "target": "sg-0247a38200b63753c",
-        "relation": "protected_by_sg"
-      },
-      {
-        "source": "eni-015de3bb2b7b54c65",
+        "source": "eni-0839b1bf82c22b21d",
         "target": "subnet-0624a59dbcfc36798",
         "relation": "in_subnet"
       },
       {
-        "source": "eni-015de3bb2b7b54c65",
+        "source": "eni-0839b1bf82c22b21d",
         "target": "vpc-000f7f02c4d4819a3",
         "relation": "in_vpc"
       },
       {
-        "source": "eni-015de3bb2b7b54c65",
+        "source": "eni-0839b1bf82c22b21d",
+        "target": "sg-0a459eecd4fa98749",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0bc2a634d6f25a6ef",
+        "target": "subnet-0f412a52465a75334",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0bc2a634d6f25a6ef",
+        "target": "vpc-000f7f02c4d4819a3",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0bc2a634d6f25a6ef",
+        "target": "sg-043f24a24d1750bf7",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0bc2a634d6f25a6ef",
+        "target": "sg-09f10199e3d10c2d7",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0034f0641b1ad5cb0",
+        "target": "subnet-0624a59dbcfc36798",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0034f0641b1ad5cb0",
+        "target": "vpc-000f7f02c4d4819a3",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-0034f0641b1ad5cb0",
         "target": "sg-0d8e8df1695843092",
         "relation": "protected_by_sg"
       },
       {
-        "source": "eni-015de3bb2b7b54c65",
+        "source": "eni-0034f0641b1ad5cb0",
         "target": "sg-04aca11661012920a",
         "relation": "protected_by_sg"
       },
       {
-        "source": "eni-097836d368348bf3f",
+        "source": "eni-06aa4a21695854293",
+        "target": "subnet-0f412a52465a75334",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-06aa4a21695854293",
+        "target": "vpc-000f7f02c4d4819a3",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-06aa4a21695854293",
+        "target": "sg-043f24a24d1750bf7",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-06aa4a21695854293",
+        "target": "sg-0247a38200b63753c",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-00edea36ec6feaeb3",
+        "target": "subnet-06e26c7cc455004c5",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-00edea36ec6feaeb3",
+        "target": "vpc-000f7f02c4d4819a3",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-00edea36ec6feaeb3",
+        "target": "sg-0d8e8df1695843092",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-00edea36ec6feaeb3",
+        "target": "sg-04aca11661012920a",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-081c4955f76106b93",
         "target": "subnet-0a157bf35bbf62195",
         "relation": "in_subnet"
       },
       {
-        "source": "eni-097836d368348bf3f",
+        "source": "eni-081c4955f76106b93",
+        "target": "vpc-000f7f02c4d4819a3",
+        "relation": "in_vpc"
+      },
+      {
+        "source": "eni-081c4955f76106b93",
+        "target": "sg-043f24a24d1750bf7",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-081c4955f76106b93",
+        "target": "sg-0247a38200b63753c",
+        "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-0ec2e99b032e880cc",
+        "target": "subnet-06e26c7cc455004c5",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-0ec2e99b032e880cc",
         "target": "vpc-000f7f02c4d4819a3",
         "relation": "in_vpc"
       },
@@ -921,56 +1177,6 @@
         "source": "eni-014618079dd826f8d",
         "target": "sg-0a459eecd4fa98749",
         "relation": "protected_by_sg"
-      },
-      {
-        "source": "eni-0301c2c9310735c38",
-        "target": "subnet-06e26c7cc455004c5",
-        "relation": "in_subnet"
-      },
-      {
-        "source": "eni-0301c2c9310735c38",
-        "target": "vpc-000f7f02c4d4819a3",
-        "relation": "in_vpc"
-      },
-      {
-        "source": "eni-0301c2c9310735c38",
-        "target": "sg-0d8e8df1695843092",
-        "relation": "protected_by_sg"
-      },
-      {
-        "source": "eni-0301c2c9310735c38",
-        "target": "sg-04aca11661012920a",
-        "relation": "protected_by_sg"
-      },
-      {
-        "source": "eni-0494a3d082bd96d24",
-        "target": "subnet-0a157bf35bbf62195",
-        "relation": "in_subnet"
-      },
-      {
-        "source": "eni-0494a3d082bd96d24",
-        "target": "vpc-000f7f02c4d4819a3",
-        "relation": "in_vpc"
-      },
-      {
-        "source": "eni-0494a3d082bd96d24",
-        "target": "sg-043f24a24d1750bf7",
-        "relation": "protected_by_sg"
-      },
-      {
-        "source": "eni-0494a3d082bd96d24",
-        "target": "sg-0247a38200b63753c",
-        "relation": "protected_by_sg"
-      },
-      {
-        "source": "eni-0ec2e99b032e880cc",
-        "target": "subnet-06e26c7cc455004c5",
-        "relation": "in_subnet"
-      },
-      {
-        "source": "eni-0ec2e99b032e880cc",
-        "target": "vpc-000f7f02c4d4819a3",
-        "relation": "in_vpc"
       },
       {
         "source": "eni-062a714a9b9e56272",
@@ -991,6 +1197,16 @@
         "source": "eni-062a714a9b9e56272",
         "target": "sg-09f10199e3d10c2d7",
         "relation": "protected_by_sg"
+      },
+      {
+        "source": "eni-097836d368348bf3f",
+        "target": "subnet-0a157bf35bbf62195",
+        "relation": "in_subnet"
+      },
+      {
+        "source": "eni-097836d368348bf3f",
+        "target": "vpc-000f7f02c4d4819a3",
+        "relation": "in_vpc"
       },
       {
         "source": "eni-05e0d81de512dee41",
@@ -1154,11 +1370,11 @@
       }
     ],
     "summary": {
-      "node_count": 71,
+      "node_count": 95,
       "public_subnet_count": 2,
       "private_subnet_count": 2,
       "edge_count": 101,
-      "connected_components": 23,
+      "connected_components": 47,
       "internet_facing_count": 3
     }
   }

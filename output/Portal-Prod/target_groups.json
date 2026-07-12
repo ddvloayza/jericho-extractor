@@ -40,7 +40,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:03.062819+00:00"
+    "collected_at": "2026-07-12T19:36:38.244909+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -83,7 +83,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:03.280111+00:00"
+    "collected_at": "2026-07-12T19:36:38.462352+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -126,7 +126,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:03.505978+00:00"
+    "collected_at": "2026-07-12T19:36:38.678545+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -169,7 +169,50 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:03.725746+00:00"
+    "collected_at": "2026-07-12T19:36:38.896021+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:610944808410:targetgroup/k8s-airflow-airfloww-7cfdd21f73/3a6a6d79eb25bdb4",
+    "resource_name": "k8s-airflow-airfloww-7cfdd21f73",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8080,
+    "vpc_id": "vpc-0626d66632373c892",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/health",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/app/itl-0003-portal-prd-alb-02/09e8ed2f9c6bd632"
+    ],
+    "targets": [
+      {
+        "id": "10.10.3.57",
+        "port": 8080,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:610944808410:loadbalancer/app/itl-0003-portal-prd-alb-02/09e8ed2f9c6bd632",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-07-12T19:36:39.110316+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -212,7 +255,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:03.942583+00:00"
+    "collected_at": "2026-07-12T19:36:39.329396+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -254,6 +297,12 @@
         "health_reason": ""
       },
       {
+        "id": "i-0914bb82d30d1f030",
+        "port": 32468,
+        "health_state": "healthy",
+        "health_reason": ""
+      },
+      {
         "id": "i-0f511c964d109c447",
         "port": 32468,
         "health_state": "healthy",
@@ -279,7 +328,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:04.165598+00:00"
+    "collected_at": "2026-07-12T19:36:39.544336+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -303,7 +352,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.3.220",
+        "id": "10.10.3.46",
         "port": 8080,
         "health_state": "unhealthy",
         "health_reason": "Target.ResponseCodeMismatch"
@@ -322,7 +371,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:04.389023+00:00"
+    "collected_at": "2026-07-12T19:36:39.765339+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -365,7 +414,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:04.614180+00:00"
+    "collected_at": "2026-07-12T19:36:39.986337+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -401,7 +450,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:04.823692+00:00"
+    "collected_at": "2026-07-12T19:36:40.187844+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -425,7 +474,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.111",
+        "id": "10.10.4.151",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -444,7 +493,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:05.042535+00:00"
+    "collected_at": "2026-07-12T19:36:40.402241+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -468,7 +517,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.148",
+        "id": "10.10.4.62",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -487,7 +536,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:05.259537+00:00"
+    "collected_at": "2026-07-12T19:36:40.628842+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -530,7 +579,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:05.476059+00:00"
+    "collected_at": "2026-07-12T19:36:40.841806+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -554,7 +603,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.3.113",
+        "id": "10.10.3.166",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -573,7 +622,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:05.695812+00:00"
+    "collected_at": "2026-07-12T19:36:41.053342+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -597,7 +646,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.46",
+        "id": "10.10.4.147",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -616,7 +665,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:05.920243+00:00"
+    "collected_at": "2026-07-12T19:36:41.266761+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -659,7 +708,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:06.142419+00:00"
+    "collected_at": "2026-07-12T19:36:41.482234+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -683,7 +732,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.38",
+        "id": "10.10.4.184",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -702,7 +751,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:06.405020+00:00"
+    "collected_at": "2026-07-12T19:36:41.696843+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -726,7 +775,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.3.210",
+        "id": "10.10.4.218",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -745,7 +794,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:06.624849+00:00"
+    "collected_at": "2026-07-12T19:36:41.912826+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -769,7 +818,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.3.43",
+        "id": "10.10.4.236",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -788,7 +837,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:06.844881+00:00"
+    "collected_at": "2026-07-12T19:36:42.126181+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -812,7 +861,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.44",
+        "id": "10.10.3.17",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -831,7 +880,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:07.062202+00:00"
+    "collected_at": "2026-07-12T19:36:42.339430+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -855,7 +904,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.144",
+        "id": "10.10.4.98",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -874,7 +923,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:07.282603+00:00"
+    "collected_at": "2026-07-12T19:36:42.556948+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -917,7 +966,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:07.500948+00:00"
+    "collected_at": "2026-07-12T19:36:42.772898+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -941,7 +990,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.3.34",
+        "id": "10.10.4.111",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -960,7 +1009,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:07.720377+00:00"
+    "collected_at": "2026-07-12T19:36:42.986965+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -984,7 +1033,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.34",
+        "id": "10.10.3.223",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -1003,7 +1052,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:07.941545+00:00"
+    "collected_at": "2026-07-12T19:36:43.203482+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1039,7 +1088,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:08.150006+00:00"
+    "collected_at": "2026-07-12T19:36:43.407097+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1063,7 +1112,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.146",
+        "id": "10.10.4.211",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -1082,7 +1131,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:08.366530+00:00"
+    "collected_at": "2026-07-12T19:36:43.619232+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1125,7 +1174,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:08.586601+00:00"
+    "collected_at": "2026-07-12T19:36:43.835462+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1161,7 +1210,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:08.796517+00:00"
+    "collected_at": "2026-07-12T19:36:44.037792+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1204,7 +1253,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:09.019684+00:00"
+    "collected_at": "2026-07-12T19:36:44.263153+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1228,7 +1277,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.3.114",
+        "id": "10.10.3.27",
         "port": 80,
         "health_state": "unhealthy",
         "health_reason": "Target.ResponseCodeMismatch"
@@ -1247,7 +1296,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:09.241024+00:00"
+    "collected_at": "2026-07-12T19:36:44.590569+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1290,7 +1339,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:09.461903+00:00"
+    "collected_at": "2026-07-12T19:36:44.809764+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1326,7 +1375,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:09.673279+00:00"
+    "collected_at": "2026-07-12T19:36:45.013074+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1369,7 +1418,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:09.893792+00:00"
+    "collected_at": "2026-07-12T19:36:45.229349+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1393,7 +1442,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.42",
+        "id": "10.10.3.43",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -1412,7 +1461,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:10.114735+00:00"
+    "collected_at": "2026-07-12T19:36:45.443723+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1455,7 +1504,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:10.334349+00:00"
+    "collected_at": "2026-07-12T19:36:45.663080+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1479,7 +1528,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.147",
+        "id": "10.10.3.49",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -1498,7 +1547,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:10.555319+00:00"
+    "collected_at": "2026-07-12T19:36:45.878037+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1522,7 +1571,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.3.223",
+        "id": "10.10.4.173",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -1541,7 +1590,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:10.774429+00:00"
+    "collected_at": "2026-07-12T19:36:46.089407+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1584,7 +1633,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:10.996263+00:00"
+    "collected_at": "2026-07-12T19:36:46.305358+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1608,7 +1657,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.3.217",
+        "id": "10.10.3.44",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -1627,7 +1676,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:11.216736+00:00"
+    "collected_at": "2026-07-12T19:36:46.521658+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1670,7 +1719,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:11.435252+00:00"
+    "collected_at": "2026-07-12T19:36:46.736863+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1694,7 +1743,7 @@
     ],
     "targets": [
       {
-        "id": "10.10.4.107",
+        "id": "10.10.3.113",
         "port": 80,
         "health_state": "healthy",
         "health_reason": ""
@@ -1713,7 +1762,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:11.657403+00:00"
+    "collected_at": "2026-07-12T19:36:46.950409+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1756,7 +1805,7 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:11.881582+00:00"
+    "collected_at": "2026-07-12T19:36:47.181645+00:00"
   },
   {
     "resource_type": "aws::elasticloadbalancingv2::targetgroup",
@@ -1799,6 +1848,6 @@
         "relation": "registered_on_lb"
       }
     ],
-    "collected_at": "2026-06-08T06:15:12.101713+00:00"
+    "collected_at": "2026-07-12T19:36:47.395789+00:00"
   }
 ]

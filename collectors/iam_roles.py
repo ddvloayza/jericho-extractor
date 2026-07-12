@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import logging
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any
 
 from botocore.client import BaseClient
@@ -12,6 +13,14 @@ from utils.relationships import build_relationship
 logger = logging.getLogger(__name__)
 
 RESOURCE_TYPE = "aws::iam::role"
+
+# Per-role normalization does 3 sequential API calls (attached policies, inline
+# policies, tags). Accounts with Control Tower / SSO / StackSets commonly have
+# 100-300+ roles, which made this take several minutes with zero progress
+# output. Threads parallelize the per-role calls; IAM's per-account rate
+# limits comfortably handle this worker count.
+_MAX_WORKERS = 10
+_PROGRESS_EVERY = 50
 
 
 class IAMRolesCollector:
@@ -35,10 +44,24 @@ class IAMRolesCollector:
         logger.info("[%s][global] Collecting IAM roles", self.account_name)
         try:
             roles = paginate(self.client, "list_roles", "Roles")
-            return [self._normalize(role) for role in roles]
         except Exception as exc:
             logger.error("[%s][global] IAM roles failed: %s", self.account_name, exc)
             return []
+
+        total = len(roles)
+        logger.info("[%s][global] %d IAM roles found — fetching policies/tags", self.account_name, total)
+
+        results: list[dict[str, Any]] = []
+        done = 0
+        with ThreadPoolExecutor(max_workers=_MAX_WORKERS) as pool:
+            futures = {pool.submit(self._normalize, role): role for role in roles}
+            for future in as_completed(futures):
+                results.append(future.result())
+                done += 1
+                if done % _PROGRESS_EVERY == 0 or done == total:
+                    logger.info("[%s][global] IAM roles processed: %d/%d", self.account_name, done, total)
+
+        return results
 
     def _normalize(self, role: dict[str, Any]) -> dict[str, Any]:
         role_arn  = role["Arn"]

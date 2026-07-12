@@ -56,7 +56,56 @@
         "relation": "protected_by_sg"
       }
     ],
-    "collected_at": "2026-06-08T06:15:13.345131+00:00"
+    "collected_at": "2026-07-12T19:36:48.664124+00:00"
+  },
+  {
+    "resource_type": "aws::eks::nodegroup",
+    "resource_id": "arn:aws:eks:eu-south-2:610944808410:nodegroup/itl-0003-portal-prd-eks-apps-02/itl-0003-portal-prd-ec2-apps-02-airflow/92cf9483-6717-c205-8cbd-6732845465b5",
+    "resource_name": "itl-0003-portal-prd-ec2-apps-02-airflow",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "cluster_arn": "arn:aws:eks:eu-south-2:610944808410:cluster/itl-0003-portal-prd-eks-apps-02",
+    "nodegroup_name": "itl-0003-portal-prd-ec2-apps-02-airflow",
+    "status": "ACTIVE",
+    "instance_types": [
+      "m5.xlarge"
+    ],
+    "ami_type": "AL2023_x86_64_STANDARD",
+    "capacity_type": "ON_DEMAND",
+    "subnet_ids": [
+      "subnet-042f934568c455b4c",
+      "subnet-0c396a6c940028849"
+    ],
+    "desired_size": 1,
+    "min_size": 1,
+    "max_size": 5,
+    "disk_size": 0,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-ec2-apps-02-airflow"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:610944808410:cluster/itl-0003-portal-prd-eks-apps-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "uses_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:36:49.246318+00:00"
   },
   {
     "resource_type": "aws::eks::nodegroup",
@@ -105,7 +154,7 @@
         "relation": "uses_subnet"
       }
     ],
-    "collected_at": "2026-06-08T06:15:13.957410+00:00"
+    "collected_at": "2026-07-12T19:36:49.577355+00:00"
   },
   {
     "resource_type": "aws::eks::nodegroup",
@@ -154,7 +203,7 @@
         "relation": "uses_subnet"
       }
     ],
-    "collected_at": "2026-06-08T06:15:14.259469+00:00"
+    "collected_at": "2026-07-12T19:36:49.895514+00:00"
   },
   {
     "resource_type": "aws::eks::nodegroup",
@@ -203,6 +252,6 @@
         "relation": "uses_subnet"
       }
     ],
-    "collected_at": "2026-06-08T06:15:14.569450+00:00"
+    "collected_at": "2026-07-12T19:36:50.233453+00:00"
   }
 ]

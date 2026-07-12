@@ -8,9 +8,9 @@
     "vpc_id": "vpc-0626d66632373c892",
     "is_main": false,
     "associated_subnet_ids": [
-      "subnet-043e3fb731d433446",
+      "subnet-0362f83b46f047126",
       "subnet-0588eba1879cd168c",
-      "subnet-0362f83b46f047126"
+      "subnet-043e3fb731d433446"
     ],
     "routes": [
       {
@@ -211,7 +211,7 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-043e3fb731d433446",
+        "resource_id": "subnet-0362f83b46f047126",
         "relation": "associated_with_subnet"
       },
       {
@@ -221,11 +221,11 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0362f83b46f047126",
+        "resource_id": "subnet-043e3fb731d433446",
         "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-06-08T06:14:47.352444+00:00"
+    "collected_at": "2026-07-12T19:36:27.343655+00:00"
   },
   {
     "resource_type": "aws::ec2::route_table",
@@ -236,9 +236,9 @@
     "vpc_id": "vpc-0626d66632373c892",
     "is_main": false,
     "associated_subnet_ids": [
-      "subnet-03d18c5b1df70087a",
       "subnet-0268210322395563d",
-      "subnet-0c54894493d118e63"
+      "subnet-0c54894493d118e63",
+      "subnet-03d18c5b1df70087a"
     ],
     "routes": [
       {
@@ -283,11 +283,6 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-03d18c5b1df70087a",
-        "relation": "associated_with_subnet"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
         "resource_id": "subnet-0268210322395563d",
         "relation": "associated_with_subnet"
       },
@@ -295,9 +290,14 @@
         "resource_type": "aws::ec2::subnet",
         "resource_id": "subnet-0c54894493d118e63",
         "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03d18c5b1df70087a",
+        "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-06-08T06:14:47.352460+00:00"
+    "collected_at": "2026-07-12T19:36:27.343670+00:00"
   },
   {
     "resource_type": "aws::ec2::route_table",
@@ -308,9 +308,9 @@
     "vpc_id": "vpc-0626d66632373c892",
     "is_main": false,
     "associated_subnet_ids": [
-      "subnet-0c396a6c940028849",
+      "subnet-00fec6232d3dc188d",
       "subnet-042f934568c455b4c",
-      "subnet-00fec6232d3dc188d"
+      "subnet-0c396a6c940028849"
     ],
     "routes": [
       {
@@ -498,7 +498,7 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0c396a6c940028849",
+        "resource_id": "subnet-00fec6232d3dc188d",
         "relation": "associated_with_subnet"
       },
       {
@@ -508,11 +508,11 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-00fec6232d3dc188d",
+        "resource_id": "subnet-0c396a6c940028849",
         "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-06-08T06:14:47.352477+00:00"
+    "collected_at": "2026-07-12T19:36:27.343682+00:00"
   },
   {
     "resource_type": "aws::ec2::route_table",
@@ -559,7 +559,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-06-08T06:14:47.352482+00:00"
+    "collected_at": "2026-07-12T19:36:27.343685+00:00"
   },
   {
     "resource_type": "aws::ec2::route_table",
@@ -593,6 +593,6 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-06-08T06:14:47.352485+00:00"
+    "collected_at": "2026-07-12T19:36:27.343689+00:00"
   }
 ]

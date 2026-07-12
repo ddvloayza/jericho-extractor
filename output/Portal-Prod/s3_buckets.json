@@ -6,7 +6,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2025-02-12 16:58:44+00:00",
+    "creation_date": "2026-05-01 09:41:59+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Enabled",
@@ -24,7 +24,7 @@
       "apid": "portal"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:13:44.572053+00:00"
+    "collected_at": "2026-07-12T19:35:37.265091+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -33,7 +33,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2025-02-12 16:58:16+00:00",
+    "creation_date": "2026-05-01 03:25:01+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Enabled",
@@ -57,124 +57,16 @@
       "QuickSetupManagerID": "fadacc77-abaa-4de1-9812-7c3bd8e00a66"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:13:45.989860+00:00"
+    "collected_at": "2026-07-12T19:35:38.820540+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
-    "resource_id": "arn:aws:s3:::cf-templates-18fwtzd4sq6e2-us-east-1",
-    "resource_name": "cf-templates-18fwtzd4sq6e2-us-east-1",
+    "resource_id": "arn:aws:s3:::fortisiemtmp",
+    "resource_name": "fortisiemtmp",
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
-    "region": "us-east-1",
-    "creation_date": "2025-03-19 16:25:48+00:00",
-    "encryption_type": "AES256",
-    "kms_key_id": "",
-    "versioning_status": "Disabled",
-    "logging_enabled": false,
-    "acl_public": false,
-    "bucket_policy_public": false,
-    "block_public_acls": true,
-    "ignore_public_acls": true,
-    "block_public_policy": true,
-    "restrict_public_buckets": true,
-    "tags": {
-      "coid": "itl",
-      "env": "prd",
-      "assetid": "0003",
-      "apid": "portal"
-    },
-    "relationships": [],
-    "collected_at": "2026-06-08T06:13:47.506350+00:00"
-  },
-  {
-    "resource_type": "aws::s3::bucket",
-    "resource_id": "arn:aws:s3:::codepipeline-us-east-1-563931557123",
-    "resource_name": "codepipeline-us-east-1-563931557123",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "us-east-1",
-    "creation_date": "2022-10-12 02:36:23+00:00",
-    "encryption_type": "AES256",
-    "kms_key_id": "",
-    "versioning_status": "Disabled",
-    "logging_enabled": false,
-    "acl_public": false,
-    "bucket_policy_public": false,
-    "block_public_acls": false,
-    "ignore_public_acls": false,
-    "block_public_policy": false,
-    "restrict_public_buckets": false,
-    "tags": {
-      "coid": "itl",
-      "env": "prd",
-      "assetid": "0003",
-      "apid": "portal"
-    },
-    "relationships": [],
-    "collected_at": "2026-06-08T06:13:49.019155+00:00"
-  },
-  {
-    "resource_type": "aws::s3::bucket",
-    "resource_id": "arn:aws:s3:::infrastructurestack-artifactbucket7410c9ef-7lkg7u9tttyj",
-    "resource_name": "infrastructurestack-artifactbucket7410c9ef-7lkg7u9tttyj",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "us-east-1",
-    "creation_date": "2021-12-01 02:44:19+00:00",
-    "encryption_type": "AES256",
-    "kms_key_id": "",
-    "versioning_status": "Disabled",
-    "logging_enabled": false,
-    "acl_public": false,
-    "bucket_policy_public": false,
-    "block_public_acls": false,
-    "ignore_public_acls": false,
-    "block_public_policy": false,
-    "restrict_public_buckets": false,
-    "tags": {
-      "coid": "itl",
-      "env": "prd",
-      "assetid": "0003",
-      "apid": "portal"
-    },
-    "relationships": [],
-    "collected_at": "2026-06-08T06:13:50.506415+00:00"
-  },
-  {
-    "resource_type": "aws::s3::bucket",
-    "resource_id": "arn:aws:s3:::intelica-newrelic-err-log-ingestion-firehose",
-    "resource_name": "intelica-newrelic-err-log-ingestion-firehose",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "us-east-1",
-    "creation_date": "2025-03-19 16:23:13+00:00",
-    "encryption_type": "AES256",
-    "kms_key_id": "",
-    "versioning_status": "Disabled",
-    "logging_enabled": false,
-    "acl_public": false,
-    "bucket_policy_public": false,
-    "block_public_acls": true,
-    "ignore_public_acls": true,
-    "block_public_policy": true,
-    "restrict_public_buckets": true,
-    "tags": {
-      "coid": "itl",
-      "env": "prd",
-      "assetid": "0003",
-      "apid": "portal"
-    },
-    "relationships": [],
-    "collected_at": "2026-06-08T06:13:52.189016+00:00"
-  },
-  {
-    "resource_type": "aws::s3::bucket",
-    "resource_id": "arn:aws:s3:::itl-0003-portal-prd-nlb-logging-01",
-    "resource_name": "itl-0003-portal-prd-nlb-logging-01",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "us-east-1",
-    "creation_date": "2025-11-07 23:01:19+00:00",
+    "region": "eu-south-2",
+    "creation_date": "2026-07-03 16:28:19+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Disabled",
@@ -187,7 +79,91 @@
     "restrict_public_buckets": true,
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T06:13:53.662982+00:00"
+    "collected_at": "2026-07-12T19:35:41.144569+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::infrastructurestack-artifactbucket7410c9ef-7lkg7u9tttyj",
+    "resource_name": "infrastructurestack-artifactbucket7410c9ef-7lkg7u9tttyj",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "us-east-1",
+    "creation_date": "2026-04-28 18:38:03+00:00",
+    "encryption_type": "AES256",
+    "kms_key_id": "",
+    "versioning_status": "Disabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": false,
+    "ignore_public_acls": false,
+    "block_public_policy": false,
+    "restrict_public_buckets": false,
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:35:42.706942+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0003-portal-prd-nlb-logging-01",
+    "resource_name": "itl-0003-portal-prd-nlb-logging-01",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "us-east-1",
+    "creation_date": "2026-05-01 13:40:21+00:00",
+    "encryption_type": "AES256",
+    "kms_key_id": "",
+    "versioning_status": "Disabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:35:44.310977+00:00"
+  },
+  {
+    "resource_type": "aws::s3::bucket",
+    "resource_id": "arn:aws:s3:::itl-0003-portal-prd-s3-airflow-logs-02",
+    "resource_name": "itl-0003-portal-prd-s3-airflow-logs-02",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2026-07-03 17:28:55+00:00",
+    "encryption_type": "aws:kms",
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "versioning_status": "Disabled",
+    "logging_enabled": false,
+    "acl_public": false,
+    "bucket_policy_public": false,
+    "block_public_acls": true,
+    "ignore_public_acls": true,
+    "block_public_policy": true,
+    "restrict_public_buckets": true,
+    "tags": {
+      "coid": "itl",
+      "Type": "s3-bucket",
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-s3-airflow-logs-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:35:46.689373+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -196,7 +172,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-10-15 23:55:48+00:00",
+    "creation_date": "2026-04-22 16:17:04+00:00",
     "encryption_type": "aws:kms",
     "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
     "versioning_status": "Enabled",
@@ -220,7 +196,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-06-08T06:13:56.038829+00:00"
+    "collected_at": "2026-07-12T19:35:48.961702+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -229,7 +205,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-10-15 23:55:55+00:00",
+    "creation_date": "2026-04-22 17:14:49+00:00",
     "encryption_type": "aws:kms",
     "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
     "versioning_status": "Enabled",
@@ -253,7 +229,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-06-08T06:13:58.975612+00:00"
+    "collected_at": "2026-07-12T19:35:51.334308+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -262,7 +238,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-11-13 20:56:21+00:00",
+    "creation_date": "2026-04-22 15:50:17+00:00",
     "encryption_type": "aws:kms",
     "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
     "versioning_status": "Disabled",
@@ -288,7 +264,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-06-08T06:14:01.276308+00:00"
+    "collected_at": "2026-07-12T19:35:53.677634+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -297,7 +273,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-11-13 20:56:21+00:00",
+    "creation_date": "2026-04-22 16:12:29+00:00",
     "encryption_type": "aws:kms",
     "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
     "versioning_status": "Disabled",
@@ -323,7 +299,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-06-08T06:14:03.549075+00:00"
+    "collected_at": "2026-07-12T19:35:55.950483+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -332,7 +308,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-11-12 14:24:04+00:00",
+    "creation_date": "2026-04-22 16:45:35+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Disabled",
@@ -350,7 +326,7 @@
       "apid": "portal"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:05.852130+00:00"
+    "collected_at": "2026-07-12T19:35:58.260817+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -359,7 +335,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-11-12 14:24:01+00:00",
+    "creation_date": "2026-04-22 15:54:58+00:00",
     "encryption_type": "aws:kms",
     "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
     "versioning_status": "Enabled",
@@ -383,7 +359,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-06-08T06:14:08.127409+00:00"
+    "collected_at": "2026-07-12T19:36:00.650832+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -392,7 +368,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-12-17 17:44:45+00:00",
+    "creation_date": "2026-04-22 16:27:25+00:00",
     "encryption_type": "aws:kms",
     "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
     "versioning_status": "Disabled",
@@ -418,7 +394,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-06-08T06:14:10.341821+00:00"
+    "collected_at": "2026-07-12T19:36:03.047451+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -427,7 +403,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-11-13 20:56:21+00:00",
+    "creation_date": "2026-04-22 16:11:30+00:00",
     "encryption_type": "aws:kms",
     "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
     "versioning_status": "Enabled",
@@ -453,7 +429,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-06-08T06:14:12.511058+00:00"
+    "collected_at": "2026-07-12T19:36:05.289542+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -462,7 +438,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2026-04-01 21:41:04+00:00",
+    "creation_date": "2026-04-22 17:08:05+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Disabled",
@@ -482,29 +458,7 @@
       "Name": "itl-0003-portal-prd-s3-pub-templates-02"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:14.808499+00:00"
-  },
-  {
-    "resource_type": "aws::s3::bucket",
-    "resource_id": "arn:aws:s3:::itl-0003-portal-prd-s3-temporal-backups-denver",
-    "resource_name": "itl-0003-portal-prd-s3-temporal-backups-denver",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "creation_date": "2025-10-16 18:43:03+00:00",
-    "encryption_type": "AES256",
-    "kms_key_id": "",
-    "versioning_status": "Enabled",
-    "logging_enabled": false,
-    "acl_public": false,
-    "bucket_policy_public": false,
-    "block_public_acls": true,
-    "ignore_public_acls": true,
-    "block_public_policy": true,
-    "restrict_public_buckets": true,
-    "tags": {},
-    "relationships": [],
-    "collected_at": "2026-06-08T06:14:17.019376+00:00"
+    "collected_at": "2026-07-12T19:36:07.541013+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -513,7 +467,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-11-13 20:56:21+00:00",
+    "creation_date": "2026-04-22 16:49:38+00:00",
     "encryption_type": "aws:kms",
     "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
     "versioning_status": "Disabled",
@@ -539,7 +493,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-06-08T06:14:19.213847+00:00"
+    "collected_at": "2026-07-12T19:36:09.790786+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -548,7 +502,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2022-10-04 23:52:14+00:00",
+    "creation_date": "2026-04-30 23:56:46+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Enabled",
@@ -566,7 +520,7 @@
       "apid": "portal"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:20.713337+00:00"
+    "collected_at": "2026-07-12T19:36:11.324520+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -575,7 +529,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2023-06-01 00:24:15+00:00",
+    "creation_date": "2026-04-29 04:26:30+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Enabled",
@@ -593,7 +547,7 @@
       "apid": "portal"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:22.462129+00:00"
+    "collected_at": "2026-07-12T19:36:12.870485+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -602,7 +556,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2024-06-11 21:48:42+00:00",
+    "creation_date": "2026-04-29 13:22:56+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Enabled",
@@ -620,7 +574,7 @@
       "apid": "portal"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:23.944020+00:00"
+    "collected_at": "2026-07-12T19:36:14.379352+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -629,7 +583,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2023-01-25 01:39:21+00:00",
+    "creation_date": "2026-04-30 21:43:02+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Disabled",
@@ -647,7 +601,7 @@
       "apid": "portal"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:25.461242+00:00"
+    "collected_at": "2026-07-12T19:36:15.906782+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -656,7 +610,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2021-07-02 17:18:56+00:00",
+    "creation_date": "2026-04-28 18:20:17+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Disabled",
@@ -674,7 +628,7 @@
       "apid": "portal"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:26.978692+00:00"
+    "collected_at": "2026-07-12T19:36:17.438618+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -683,7 +637,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2021-07-12 16:51:19+00:00",
+    "creation_date": "2026-04-29 10:39:23+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Enabled",
@@ -701,34 +655,7 @@
       "apid": "portal"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:28.505973+00:00"
-  },
-  {
-    "resource_type": "aws::s3::bucket",
-    "resource_id": "arn:aws:s3:::s3-vienna",
-    "resource_name": "s3-vienna",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "us-east-1",
-    "creation_date": "2024-07-25 16:44:57+00:00",
-    "encryption_type": "AES256",
-    "kms_key_id": "",
-    "versioning_status": "Disabled",
-    "logging_enabled": false,
-    "acl_public": false,
-    "bucket_policy_public": false,
-    "block_public_acls": false,
-    "ignore_public_acls": false,
-    "block_public_policy": false,
-    "restrict_public_buckets": false,
-    "tags": {
-      "coid": "itl",
-      "env": "prd",
-      "assetid": "0003",
-      "apid": "portal"
-    },
-    "relationships": [],
-    "collected_at": "2026-06-08T06:14:30.045771+00:00"
+    "collected_at": "2026-07-12T19:36:19.003585+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -737,7 +664,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2025-04-23 18:37:18+00:00",
+    "creation_date": "2026-04-30 00:08:20+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Enabled",
@@ -750,7 +677,7 @@
     "restrict_public_buckets": true,
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:31.491881+00:00"
+    "collected_at": "2026-07-12T19:36:20.536626+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -759,7 +686,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "us-east-1",
-    "creation_date": "2022-04-22 23:14:05+00:00",
+    "creation_date": "2026-04-30 09:40:02+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Enabled",
@@ -777,7 +704,7 @@
       "apid": "portal"
     },
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:32.977055+00:00"
+    "collected_at": "2026-07-12T19:36:22.090713+00:00"
   },
   {
     "resource_type": "aws::s3::bucket",
@@ -786,7 +713,7 @@
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "creation_date": "2025-10-03 21:56:49+00:00",
+    "creation_date": "2026-04-22 16:31:58+00:00",
     "encryption_type": "AES256",
     "kms_key_id": "",
     "versioning_status": "Enabled",
@@ -799,6 +726,6 @@
     "restrict_public_buckets": true,
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-06-08T06:14:35.321384+00:00"
+    "collected_at": "2026-07-12T19:36:24.477564+00:00"
   }
 ]

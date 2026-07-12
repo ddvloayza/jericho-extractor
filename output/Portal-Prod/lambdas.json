@@ -12,8 +12,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-06-03T20:18:50.032+0000",
-    "code_size_bytes": 201,
+    "last_modified": "2026-07-10T16:36:20.000+0000",
+    "code_size_bytes": 48717033,
     "handler": "Intelica.Shared.Internal.Lambda::Intelica.Shared.Internal.Lambda.SyncJiraTrigger::FunctionHandler",
     "description": "Lambda sync - jira",
     "vpc_id": "vpc-0626d66632373c892",
@@ -61,7 +61,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-06-08T06:15:15.966656+00:00"
+    "collected_at": "2026-07-12T19:36:51.608373+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -76,8 +76,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-06-05T15:57:30.000+0000",
-    "code_size_bytes": 50738595,
+    "last_modified": "2026-07-10T16:31:39.000+0000",
+    "code_size_bytes": 50336252,
     "handler": "Intelica.Fee.External.Lambda::Intelica.Fee.External.Lambda.FeeExternalCustomAlertTrigger::FunctionHandler",
     "description": "Lambda fee-external - custom-alert",
     "vpc_id": "vpc-0626d66632373c892",
@@ -93,7 +93,9 @@
     "environment_keys": [
       "ExternsAPIS__Paths__AuthenticationPath",
       "ExternsAPIS__Paths__NotificationCallbackUrl",
+      "ExternsAPIS__Paths__SecurityPath",
       "ENVIRONMENT",
+      "ExternsAPIS__Paths__BaseExternalUrl",
       "AWS__Secrets__InternalAuthentication",
       "ExternsAPIS__Paths__NotificationPath",
       "AWS__Secrets__ConnectionString"
@@ -128,7 +130,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-06-08T06:15:16.185996+00:00"
+    "collected_at": "2026-07-12T19:36:51.813339+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -194,7 +196,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-06-08T06:15:16.394547+00:00"
+    "collected_at": "2026-07-12T19:36:52.019891+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -259,7 +261,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-06-08T06:15:16.611420+00:00"
+    "collected_at": "2026-07-12T19:36:52.236619+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -300,7 +302,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-06-08T06:15:16.829419+00:00"
+    "collected_at": "2026-07-12T19:36:52.457446+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -315,8 +317,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-06-03T20:14:41.419+0000",
-    "code_size_bytes": 201,
+    "last_modified": "2026-07-10T16:36:23.000+0000",
+    "code_size_bytes": 48717033,
     "handler": "Intelica.Shared.Internal.Lambda::Intelica.Shared.Internal.Lambda.SyncBukAbsenceTrigger::FunctionHandler",
     "description": "Lambda sync-buk - absence",
     "vpc_id": "vpc-0626d66632373c892",
@@ -364,7 +366,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-06-08T06:15:17.045758+00:00"
+    "collected_at": "2026-07-12T19:36:52.675152+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -379,8 +381,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-06-03T20:16:45.737+0000",
-    "code_size_bytes": 201,
+    "last_modified": "2026-07-10T16:36:26.000+0000",
+    "code_size_bytes": 48717033,
     "handler": "Intelica.Shared.Internal.Lambda::Intelica.Shared.Internal.Lambda.SyncBukOrganizationTrigger::FunctionHandler",
     "description": "Lambda sync-buk - organization",
     "vpc_id": "vpc-0626d66632373c892",
@@ -428,7 +430,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-06-08T06:15:17.257270+00:00"
+    "collected_at": "2026-07-12T19:36:52.889937+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -483,6 +485,6 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-06-08T06:15:17.461019+00:00"
+    "collected_at": "2026-07-12T19:36:53.102670+00:00"
   }
 ]

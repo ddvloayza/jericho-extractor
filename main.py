@@ -14,7 +14,11 @@ from utils.aws_clients import (
     get_ec2_client, get_elbv2_client, get_eks_client,
     get_lambda_client, get_rds_client, get_iam_client,
     get_kms_client, get_secretsmanager_client, get_s3_client,
-    get_ce_client, get_session, resolve_identity, resolve_account_name,
+    get_ce_client, get_backup_client, get_session, resolve_identity, resolve_account_name,
+    get_logs_client, get_dynamodb_client, get_apigateway_client, get_apigatewayv2_client,
+    get_sqs_client, get_sns_client, get_events_client, get_stepfunctions_client,
+    get_cloudtrail_client, get_config_client, get_guardduty_client, get_acm_client,
+    get_wafv2_client, get_ecr_client, get_route53_client,
 )
 from utils.writer import OutputWriter
 
@@ -34,6 +38,24 @@ from collectors.ec2 import EC2Collector
 from collectors.ebs import EBSCollector
 from collectors.snapshots import SnapshotCollector
 from collectors.amis import AMICollector
+from collectors.aws_backup import AWSBackupCollector
+from collectors.cloudwatch_logs import CloudWatchLogsCollector
+from collectors.elastic_ips import ElasticIPCollector
+from collectors.dynamodb import DynamoDBCollector
+from collectors.api_gateway import APIGatewayCollector
+from collectors.sqs import SQSCollector
+from collectors.sns import SNSCollector
+from collectors.eventbridge import EventBridgeCollector
+from collectors.step_functions import StepFunctionsCollector
+from collectors.cloudtrail import CloudTrailCollector
+from collectors.config_service import ConfigServiceCollector
+from collectors.guardduty import GuardDutyCollector
+from collectors.acm import ACMCollector
+from collectors.waf import WAFCollector
+from collectors.ecr import ECRCollector
+from collectors.route53 import Route53Collector
+from collectors.iam_users import IAMUsersCollector
+from collectors.iam_groups import IAMGroupsCollector
 from collectors.load_balancers import LoadBalancerCollector
 from collectors.target_groups import TargetGroupCollector
 from collectors.eks import EKSCollector
@@ -99,16 +121,33 @@ def collect_region(
         ("network_interfaces", NetworkInterfaceCollector(ec2, **ctx)),
         ("vpc_endpoints", VPCEndpointCollector(ec2, **ctx)),
     ]
-    lmb  = get_lambda_client(session, region)
-    rds  = get_rds_client(session, region)
-    kms  = get_kms_client(session, region)
-    sm   = get_secretsmanager_client(session, region)
+    lmb    = get_lambda_client(session, region)
+    rds    = get_rds_client(session, region)
+    kms    = get_kms_client(session, region)
+    sm     = get_secretsmanager_client(session, region)
+    backup = get_backup_client(session, region)
+    logs_c = get_logs_client(session, region)
+    ddb    = get_dynamodb_client(session, region)
+    apigw  = get_apigateway_client(session, region)
+    apigwv2 = get_apigatewayv2_client(session, region)
+    sqs_c  = get_sqs_client(session, region)
+    sns_c  = get_sns_client(session, region)
+    events = get_events_client(session, region)
+    sfn    = get_stepfunctions_client(session, region)
+    ct     = get_cloudtrail_client(session, region)
+    cfg_c  = get_config_client(session, region)
+    gd     = get_guardduty_client(session, region)
+    acm_c  = get_acm_client(session, region)
+    waf_c  = get_wafv2_client(session, region)
+    ecr_c  = get_ecr_client(session, region)
 
     compute_collectors: list[tuple[str, Any]] = [
         ("ec2",             EC2Collector(ec2, **ctx)),
         ("ebs",             EBSCollector(ec2, **ctx)),
         ("snapshots",       SnapshotCollector(ec2, **ctx)),
         ("amis",            AMICollector(ec2, **ctx)),
+        ("elastic_ips",     ElasticIPCollector(ec2, **ctx)),
+        ("aws_backup",      AWSBackupCollector(backup, **ctx)),
         ("load_balancers",  LoadBalancerCollector(elbv2, **ctx)),
         ("target_groups",   TargetGroupCollector(elbv2, **ctx)),
         ("eks",             EKSCollector(eks, **ctx)),
@@ -116,6 +155,19 @@ def collect_region(
         ("rds",             RDSCollector(rds, **ctx)),
         ("kms",             KMSCollector(kms, **ctx)),
         ("secrets",         SecretsManagerCollector(sm, **ctx)),
+        ("cloudwatch_logs", CloudWatchLogsCollector(logs_c, **ctx)),
+        ("dynamodb",        DynamoDBCollector(ddb, **ctx)),
+        ("api_gateway",     APIGatewayCollector(apigw, apigwv2, **ctx)),
+        ("sqs",             SQSCollector(sqs_c, **ctx)),
+        ("sns",             SNSCollector(sns_c, **ctx)),
+        ("eventbridge",     EventBridgeCollector(events, **ctx)),
+        ("step_functions",  StepFunctionsCollector(sfn, **ctx)),
+        ("cloudtrail",      CloudTrailCollector(ct, **ctx)),
+        ("aws_config",      ConfigServiceCollector(cfg_c, **ctx)),
+        ("guardduty",       GuardDutyCollector(gd, **ctx)),
+        ("acm",             ACMCollector(acm_c, **ctx)),
+        ("waf",             WAFCollector(waf_c, **ctx)),
+        ("ecr",             ECRCollector(ecr_c, **ctx)),
     ]
 
     collected: dict[str, list[dict[str, Any]]] = {}
@@ -287,44 +339,65 @@ def run(config: AppConfig) -> None:
             writer.write(account.account_name, "iam_roles", iam_data)
             account_totals["iam_roles"] = len(iam_data)
 
+        iam_users_data = IAMUsersCollector(iam_client, account.account_id, account.account_name).collect()
+        if iam_users_data:
+            writer.write(account.account_name, "iam_users", iam_users_data)
+            account_totals["iam_users"] = len(iam_users_data)
+
+        iam_groups_data = IAMGroupsCollector(iam_client, account.account_id, account.account_name).collect()
+        if iam_groups_data:
+            writer.write(account.account_name, "iam_groups", iam_groups_data)
+            account_totals["iam_groups"] = len(iam_groups_data)
+
         s3_client = get_s3_client(session)
         s3_data = S3Collector(s3_client, session, account.account_id, account.account_name).collect()
         if s3_data:
             writer.write(account.account_name, "s3_buckets", s3_data)
             account_totals["s3_buckets"] = len(s3_data)
 
-        # ── Cost Explorer (global, once per account) ─────────────────────────
-        try:
-            from utils.cost_history import merge_and_save
-            from pathlib import Path as _Path
+        route53_client = get_route53_client(session)
+        route53_data = Route53Collector(route53_client, account.account_id, account.account_name).collect()
+        if route53_data:
+            writer.write(account.account_name, "route53", route53_data)
+            account_totals["route53"] = len(route53_data)
 
-            ce_client  = get_ce_client(session)
-            cost_data  = CostCollector(ce_client, account.account_id, account.account_name).collect()
-            account_dir = _Path(config.output_dir) / account.account_name
+        # ── Cost Explorer (global, once per account) ──────────────────────────
+        # The only collector that charges per API call (~$0.01/request).
+        # Skip with --skip-costs / SKIP_COSTS=1 / config.json "skip_costs": true
+        if config.skip_costs:
+            logger.info("[%s] Skipping Cost Explorer (--skip-costs)", account.account_name)
+        else:
+            try:
+                from utils.cost_history import merge_and_save
+                from pathlib import Path as _Path
 
-            for key, records in cost_data.items():
-                if records:
-                    writer.write(account.account_name, key, records)
-                    account_totals[key] = len(records)
+                ce_client  = get_ce_client(session)
+                cost_data  = CostCollector(ce_client, account.account_id, account.account_name).collect()
+                account_dir = _Path(config.output_dir) / account.account_name
 
-            # Accumulate history — never loses data older than 90-day window
-            history_keys = [
-                ("costs_daily",        "costs_history.json"),
-                ("costs_by_name",      "costs_history_by_name.json"),
-                ("costs_by_apid",      "costs_history_by_apid.json"),
-                ("costs_by_assetid",   "costs_history_by_assetid.json"),
-                ("costs_by_env",       "costs_history_by_env.json"),
-                ("costs_by_usage",     "costs_history_by_usage.json"),
-                ("costs_monthly",      "costs_history_monthly.json"),
-            ]
-            for data_key, hist_file in history_keys:
-                records = cost_data.get(data_key, [])
-                if records:
-                    merge_and_save(records, account_dir / hist_file)
+                for key, records in cost_data.items():
+                    if records:
+                        writer.write(account.account_name, key, records)
+                        account_totals[key] = len(records)
 
-        except Exception as exc:
-            logger.warning("Cost Explorer collection failed for %s: %s",
-                           account.account_name, exc)
+                # Accumulate history — never loses data older than 90-day window
+                history_keys = [
+                    ("costs_daily",        "costs_history.json"),
+                    ("costs_by_name",      "costs_history_by_name.json"),
+                    ("costs_by_apid",      "costs_history_by_apid.json"),
+                    ("costs_by_assetid",   "costs_history_by_assetid.json"),
+                    ("costs_by_env",       "costs_history_by_env.json"),
+                    ("costs_by_usage",     "costs_history_by_usage.json"),
+                    ("costs_monthly",      "costs_history_monthly.json"),
+                ]
+                for data_key, hist_file in history_keys:
+                    records = cost_data.get(data_key, [])
+                    if records:
+                        merge_and_save(records, account_dir / hist_file)
+
+            except Exception as exc:
+                logger.warning("Cost Explorer collection failed for %s: %s",
+                               account.account_name, exc)
 
         for region in account.regions:
             logger.info("  Region: %s", region)
@@ -418,6 +491,12 @@ def main() -> None:
         default=None,
         help="Override output directory",
     )
+    parser.add_argument(
+        "--skip-costs",
+        action="store_true",
+        help="Skip Cost Explorer collection — the only collector that charges "
+             "per API call (~$0.01/request). Useful for test/dry runs.",
+    )
     args = parser.parse_args()
 
     if args.config:
@@ -427,6 +506,8 @@ def main() -> None:
 
     if args.output_dir:
         config.output_dir = args.output_dir
+    if args.skip_costs:
+        config.skip_costs = True
 
     setup_logging(config.log_level)
     run(config)

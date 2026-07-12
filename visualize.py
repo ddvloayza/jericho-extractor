@@ -83,6 +83,7 @@ def generate(account_dir: Path, diagrams_dir: Path, only: str | None, fmt: str) 
         "ebs":                         load(account_dir, "ebs"),
         "snapshots":                   load(account_dir, "snapshots"),
         "amis":                        load(account_dir, "amis"),
+        "aws_backup":                  load(account_dir, "aws_backup"),
     }
 
     sg_analysis  = load(account_dir, "relationships/security_groups_analysis")
