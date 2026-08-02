@@ -1,0 +1,1511 @@
+[
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-mc-transform",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-transform",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 10000,
+    "timeout_seconds": 400,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:23.000+0000",
+    "code_size_bytes": 18772,
+    "handler": "handler.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "S3_REFERENCE_BUCKET",
+      "S3_STAGING_BUCKET",
+      "ITX_RUNTIME",
+      "S3_OPERATIONAL_BUCKET",
+      "ENVIRONMENT",
+      "S3_LANDING_BUCKET",
+      "DDB_FILE_CONTROL_TABLE",
+      "DDB_CLIENT_TABLE"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:50.716994+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-unzip",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-unzip",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 1024,
+    "timeout_seconds": 240,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:01:54.000+0000",
+    "code_size_bytes": 6598,
+    "handler": "handler.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0671b8f0fb5aa27ca"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "EXTRACT_CHUNK_SIZE_MB",
+      "S3_BUCKET_LANDING",
+      "S3_BUCKET_ARCHIVE",
+      "DYNAMODB_TABLE_FILE_PATTERN"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0671b8f0fb5aa27ca",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:50.947808+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-lmbd-sendmail-02",
+    "resource_name": "itl-0004-itx-dev-lmbd-sendmail-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.10",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-10-26T18:43:59.000+0000",
+    "code_size_bytes": 1833,
+    "handler": "src/lambda_function.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-08e80112c0389743c"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-sendmail-02-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "SMTP_SECRET_ARN"
+    ],
+    "tracing_mode": "Active",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-08e80112c0389743c",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-sendmail-02-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:51.175035+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-vi-transform",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-transform",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 10240,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:00.000+0000",
+    "code_size_bytes": 9500,
+    "handler": "handler.lambda_handler",
+    "description": "Transformer de campos del archivo fuente",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0671b8f0fb5aa27ca"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "CHUNK_SIZE_MB",
+      "S3_BUCKET_STAGING",
+      "S3_BUCKET_LANDING",
+      "FLUSH_BATCH_SIZE"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0671b8f0fb5aa27ca",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:51.403438+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 512,
+    "timeout_seconds": 750,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:40.000+0000",
+    "code_size_bytes": 17203,
+    "handler": "handler.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-07565e1ecf3294bf9"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-role",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-07565e1ecf3294bf9",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:51.635488+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-vi-extract",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-extract",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 10240,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:03.000+0000",
+    "code_size_bytes": 7028,
+    "handler": "handler.lambda_handler",
+    "description": "Extraccion y mapeo de campos",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0671b8f0fb5aa27ca"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "DYNAMODB_FIELD_DEFINITION",
+      "S3_BUCKET_STAGING",
+      "S3_BUCKET_LANDING",
+      "EXTRACT_CHUNK_SIZE"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0671b8f0fb5aa27ca",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:51.862732+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-mc-interpreter",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-interpreter",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 10240,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:20.000+0000",
+    "code_size_bytes": 27679,
+    "handler": "handler.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:52.079482+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-testfunction",
+    "resource_name": "itl-0004-itx-dev-testfunction",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.14",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-12-29T23:06:29.209+0000",
+    "code_size_bytes": 299,
+    "handler": "lambda_function.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/service-role/itl-0004-itx-dev-testfunction-role-cy4y3vjy",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/service-role/itl-0004-itx-dev-testfunction-role-cy4y3vjy",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:52.304640+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-lambda-pg-audit-02",
+    "resource_name": "itl-0004-itx-dev-lambda-pg-audit-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.12",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-04-30T16:59:00.000+0000",
+    "code_size_bytes": 1042,
+    "handler": "lambda.lambda_handler",
+    "description": "Lambda to export pgaudit logs to s3",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-05dae71c2f90dc501",
+      "subnet-09162acc62b24d7cb"
+    ],
+    "security_group_ids": [
+      "sg-0e1edda6ab1eed290"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lambda-pg-audit-02-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "ACCOUNT_ID",
+      "PREFIX",
+      "LOG_GROUP",
+      "BUCKET_NAME"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05dae71c2f90dc501",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-09162acc62b24d7cb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0e1edda6ab1eed290",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lambda-pg-audit-02-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:52.522374+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:aws-controltower-NotificationForwarder",
+    "resource_name": "aws-controltower-NotificationForwarder",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.13",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-09-02T20:15:33.926+0000",
+    "code_size_bytes": 473,
+    "handler": "index.lambda_handler",
+    "description": "SNS message forwarding function for aggregating account notifications.",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/aws-controltower-ForwardSnsNotificationRole",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "sns_arn"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "aws:cloudformation:logical-id": "ForwardSnsNotification",
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:861276092327:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-13380e59-ecb9-463f-8b41-d2a8fa63a1b8/91f23b50-8839-11f0-8dca-06b78e07dfa3",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-13380e59-ecb9-463f-8b41-d2a8fa63a1b8"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/aws-controltower-ForwardSnsNotificationRole",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:52.749966+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-vi-ardef",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-ardef",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 4096,
+    "timeout_seconds": 300,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:16.000+0000",
+    "code_size_bytes": 29432,
+    "handler": "handler.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "ITX_CLIENT_ID",
+      "ITX_ENVIRONMENT",
+      "ITX_S3_BUCKET_OPERATIONAL",
+      "ITX_S3_BUCKET_LANDING",
+      "ITX_S3_BUCKET_REFERENCE",
+      "ITX_S3_BUCKET_STAGING",
+      "ITX_TABLE_FILE_CONTROL",
+      "ITX_LOG_LEVEL"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:52.967996+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-test-1",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-test-1",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 512,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-06-10T17:02:06.840+0000",
+    "code_size_bytes": 161,
+    "handler": "handler.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0671b8f0fb5aa27ca"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0671b8f0fb5aa27ca",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:53.195552+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-mc-store",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-store",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 10240,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:33.000+0000",
+    "code_size_bytes": 8443,
+    "handler": "handler.lambda_handler",
+    "description": "Test Store",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:53.424483+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-router",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-router",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 8192,
+    "timeout_seconds": 240,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:01:51.000+0000",
+    "code_size_bytes": 16996,
+    "handler": "handler.lambda_handler",
+    "description": "Router de clasificacion de archivos",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0671b8f0fb5aa27ca"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "UNZIP_FUNCTION_NAME",
+      "VISA_ARDEF_FUNCTION_NAME",
+      "STEP_FUNCTION_ARN",
+      "STEP_FUNCTION_MC_ARN",
+      "S3_BUCKET_STAGING",
+      "STEP_FUNCTION_VI_ARN",
+      "MASTERCARD_IAR_FUNCTION_NAME",
+      "DYNAMODB_TABLE_FILE_CONTROL",
+      "S3_BUCKET_LANDING",
+      "DYNAMODB_TABLE_FILE_PATTERN"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0671b8f0fb5aa27ca",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:53.647354+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "",
+    "memory_mb": 2048,
+    "timeout_seconds": 750,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-06-23T16:01:00.000+0000",
+    "code_size_bytes": 0,
+    "handler": "",
+    "description": "Final Settings",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0ea832a8a272949c3"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-role",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0ea832a8a272949c3",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:53.866250+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-vi-clean",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-clean",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 10240,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:07.000+0000",
+    "code_size_bytes": 8023,
+    "handler": "handler.lambda_handler",
+    "description": "Limpieza y validacion",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0671b8f0fb5aa27ca"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "DYNAMODB_FIELD_DEFINITION",
+      "CLEAN_CHUNK_SIZE",
+      "S3_BUCKET_STAGING",
+      "S3_BUCKET_LANDING"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0671b8f0fb5aa27ca",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:54.093012+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-mc-clean",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-clean",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 10240,
+    "timeout_seconds": 600,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:30.000+0000",
+    "code_size_bytes": 15466,
+    "handler": "handler.lambda_handler",
+    "description": "Test",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:54.344062+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-archive-file",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-archive-file",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 8192,
+    "timeout_seconds": 240,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:01:57.000+0000",
+    "code_size_bytes": 5166,
+    "handler": "handler.lambda_handler",
+    "description": "Archivado de archivo original",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0671b8f0fb5aa27ca"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "S3_BUCKET_STAGING",
+      "S3_BUCKET_LANDING",
+      "S3_BUCKET_ARCHIVE"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0671b8f0fb5aa27ca",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:54.560630+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-mc-iar",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-iar",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 1024,
+    "timeout_seconds": 300,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:37.000+0000",
+    "code_size_bytes": 20394,
+    "handler": "handler.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "S3_REFERENCE_BUCKET",
+      "S3_STAGING_BUCKET",
+      "ITX_RUNTIME",
+      "S3_OPERATIONAL_BUCKET",
+      "ENVIRONMENT",
+      "S3_LANDING_BUCKET",
+      "DDB_FILE_CONTROL_TABLE",
+      "DDB_CLIENT_TABLE"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:54.776355+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-mc-extract",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-extract",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 10240,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:27.000+0000",
+    "code_size_bytes": 14368,
+    "handler": "handler.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "S3_BUCKET",
+      "DYNAMO_TABLE_FIELDS",
+      "DYNAMO_TABLE_FILE_CONTROL"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:55.009791+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-lmbd-file-load-02",
+    "resource_name": "itl-0004-itx-dev-lmbd-file-load-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.10",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-12-19T21:49:01.000+0000",
+    "code_size_bytes": 1806,
+    "handler": "src/lambda_fileload_rds.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0ad22b09c390c7209"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-file-load-02-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "INTERCHANGE_DATABASE_SECRET_ARN",
+      "BUCKET_NAME"
+    ],
+    "tracing_mode": "Active",
+    "dead_letter_target": "arn:aws:sqs:eu-south-2:861276092327:itl-0004-itx-dev-lmbd-file-load-02-dlq",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0ad22b09c390c7209",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-file-load-02-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:55.232501+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-lmbd-sbsa-preprocess-02",
+    "resource_name": "itl-0004-itx-dev-lmbd-sbsa-preprocess-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.10",
+    "memory_mb": 512,
+    "timeout_seconds": 300,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-06-23T16:22:11.732+0000",
+    "code_size_bytes": 2113,
+    "handler": "lambda_function.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0b8b779c168840f49"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-sbsa-preprocess-02-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "PRD_BUCKET",
+      "PRE_BUCKET"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "Name": "itl-0004-itx-dev-lmbd-sbsa-preprocess-02",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "sbsa-preprocess"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0b8b779c168840f49",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-sbsa-preprocess-02-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:55.447876+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-lmbd-app-02",
+    "resource_name": "itl-0004-itx-dev-lmbd-app-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.10",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-07T15:22:31.000+0000",
+    "code_size_bytes": 27346219,
+    "handler": "trigger_app.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0f93fba3d7978e8d6"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-app-02-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "QUEUES_URL_MAP"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0f93fba3d7978e8d6",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-app-02-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:55.669381+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-test-2",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-test-2",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 512,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-06-10T17:02:14.144+0000",
+    "code_size_bytes": 161,
+    "handler": "handler.lambda_handler",
+    "description": "",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0d9bb259e3a608ad0"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0d9bb259e3a608ad0",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:55.887955+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-portal-dev-kms-pgcrypto",
+    "resource_name": "itl-portal-dev-kms-pgcrypto",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.13",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-10-14T23:00:33.000+0000",
+    "code_size_bytes": 821,
+    "handler": "lambda_function.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::861276092327:role/service-role/itl-portal-dev-kms-pgcrypto-role-1yfluw2l",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "KMS_KEY_ARN"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/service-role/itl-portal-dev-kms-pgcrypto-role-1yfluw2l",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:56.106617+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:861276092327:function:itl-0004-itx-dev-intchg-02-lmbd-vi-store",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-store",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.11",
+    "memory_mb": 10240,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T16:02:10.000+0000",
+    "code_size_bytes": 7744,
+    "handler": "handler.lambda_handler",
+    "description": "Persistencia de resultados operacionales",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-03cb8477fb39f639e",
+      "subnet-0b02ad525f046501b"
+    ],
+    "security_group_ids": [
+      "sg-0671b8f0fb5aa27ca"
+    ],
+    "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "kms_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "environment_keys": [
+      "S3_BUCKET_OPERATIONAL",
+      "S3_BUCKET_STAGING",
+      "DYNAMODB_TABLE_FILE_CONTROL",
+      "S3_BUCKET_LANDING"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03cb8477fb39f639e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0671b8f0fb5aa27ca",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+        "relation": "uses_iam_role"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:56.324080+00:00"
+  }
+]

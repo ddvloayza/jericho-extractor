@@ -1,0 +1,26 @@
+[
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:831926623233:certificate/b5679d1a-4ef2-4680-ad1f-ea7a8cc71e8c",
+    "resource_name": "prd.analytics.intelica.com",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-10-16 19:00:00-05:00",
+    "not_after": "2026-11-15 18:59:59-05:00",
+    "subject_alternative_names": [
+      "prd.analytics.intelica.com",
+      "*.prd.analytics.intelica.com"
+    ],
+    "in_use": true,
+    "in_use_by": [
+      "arn:aws:elasticloadbalancing:eu-south-2:831926623233:loadbalancer/app/itl-0005-ana-prd-alb-apps-02/0e8aa383453c05dc"
+    ],
+    "renewal_eligibility": "ELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-07-12T19:42:31.702418+00:00"
+  }
+]

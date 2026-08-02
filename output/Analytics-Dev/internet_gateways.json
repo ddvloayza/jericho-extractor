@@ -1,0 +1,48 @@
+[
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-0293d75be96041edb",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-092dc05179287e08a"
+    ],
+    "tags": {
+      "Name": "itl-0005-ana-dev-vpc-02-igw",
+      "assetid": "0005",
+      "apid": "ana",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:42.200717+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-081bcc0327e5eb2ac",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-0f4a2881864e2f145"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0f4a2881864e2f145",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:42.200727+00:00"
+  }
+]

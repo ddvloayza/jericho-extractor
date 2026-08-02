@@ -1,0 +1,42 @@
+[
+  {
+    "resource_type": "aws::iam::group",
+    "resource_id": "arn:aws:iam::610944808410:group/admin",
+    "resource_name": "admin",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "global",
+    "path": "/",
+    "create_date": "2021-07-01 12:41:22+00:00",
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "member_user_names": [],
+    "tags": {},
+    "collected_at": "2026-07-12T19:35:34.420598+00:00"
+  },
+  {
+    "resource_type": "aws::iam::group",
+    "resource_id": "arn:aws:iam::610944808410:group/grp-access-s3",
+    "resource_name": "grp-access-s3",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "global",
+    "path": "/",
+    "create_date": "2021-07-02 17:27:42+00:00",
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonS3FullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "member_user_names": [],
+    "tags": {},
+    "collected_at": "2026-07-12T19:35:34.813543+00:00"
+  }
+]

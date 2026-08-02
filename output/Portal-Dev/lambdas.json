@@ -1,0 +1,493 @@
+[
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:891376942769:function:SharedExternalMonthXFunction",
+    "resource_name": "SharedExternalMonthXFunction",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "runtime": "dotnet10",
+    "memory_mb": 512,
+    "timeout_seconds": 15,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-05-14T20:28:46.000+0000",
+    "code_size_bytes": 48609224,
+    "handler": "Intelica.Shared.External.Lambda::Intelica.Shared.External.Lambda.SharedExternalMonthXFunction::FunctionHandler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-fee-external-alert-03-role",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-fee-external-alert-03-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:39.073271+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-sync-jira-03",
+    "resource_name": "itl-0003-portal-dev-lambda-sync-jira-03",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "runtime": "dotnet10",
+    "memory_mb": 256,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-10T16:49:40.000+0000",
+    "code_size_bytes": 48717030,
+    "handler": "Intelica.Shared.Internal.Lambda::Intelica.Shared.Internal.Lambda.SyncJiraTrigger::FunctionHandler",
+    "description": "Lambda sync - jira",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "subnet_ids": [
+      "subnet-05c87676a0cbfce54",
+      "subnet-0c353ee340c3da15e"
+    ],
+    "security_group_ids": [
+      "sg-01f1fa4ca795113d8"
+    ],
+    "execution_role": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-sync-jira-03-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "AWS__Secrets__ExternalCredentials",
+      "ENVIRONMENT",
+      "AWS__Secrets__ConnectionString"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-01f1fa4ca795113d8",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-sync-jira-03-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:39.300201+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:891376942769:function:SharedExternalDayXFunction",
+    "resource_name": "SharedExternalDayXFunction",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "runtime": "dotnet10",
+    "memory_mb": 512,
+    "timeout_seconds": 15,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-05-14T20:28:43.000+0000",
+    "code_size_bytes": 48609224,
+    "handler": "Intelica.Shared.External.Lambda::Intelica.Shared.External.Lambda.SharedExternalDayXFunction::FunctionHandler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-eks-apps-03-api-fee-internal-role",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-eks-apps-03-api-fee-internal-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:39.514995+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-sync-buk-absence-03",
+    "resource_name": "itl-0003-portal-dev-lambda-sync-buk-absence-03",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "runtime": "dotnet10",
+    "memory_mb": 256,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-10T16:49:43.000+0000",
+    "code_size_bytes": 48717030,
+    "handler": "Intelica.Shared.Internal.Lambda::Intelica.Shared.Internal.Lambda.SyncBukAbsenceTrigger::FunctionHandler",
+    "description": "Lambda sync-buk - absence",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "subnet_ids": [
+      "subnet-05c87676a0cbfce54",
+      "subnet-0c353ee340c3da15e"
+    ],
+    "security_group_ids": [
+      "sg-06717f2261d9bef36"
+    ],
+    "execution_role": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-sync-buk-absence-03-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "AWS__Secrets__ExternalCredentials",
+      "ENVIRONMENT",
+      "AWS__Secrets__ConnectionString"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-06717f2261d9bef36",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-sync-buk-absence-03-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:39.742628+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:891376942769:function:aws-controltower-NotificationForwarder",
+    "resource_name": "aws-controltower-NotificationForwarder",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.13",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-09-02T20:50:56.139+0000",
+    "code_size_bytes": 473,
+    "handler": "index.lambda_handler",
+    "description": "SNS message forwarding function for aggregating account notifications.",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::891376942769:role/aws-controltower-ForwardSnsNotificationRole",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "sns_arn"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "aws:cloudformation:logical-id": "ForwardSnsNotification",
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:891376942769:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-a3b3a07b-a521-42b0-9c39-d07d9845958a/82cfed20-883e-11f0-878f-0e879d3c472b",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-a3b3a07b-a521-42b0-9c39-d07d9845958a"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::891376942769:role/aws-controltower-ForwardSnsNotificationRole",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:39.969543+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:891376942769:function:quicksightEmbedAndListDashboard",
+    "resource_name": "quicksightEmbedAndListDashboard",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.14",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-04-23T16:14:12.000+0000",
+    "code_size_bytes": 10758,
+    "handler": "lambda_function.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::891376942769:role/lambdaQuicksightRole",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "ALLOWED_DOMAINS",
+      "CATALOG_CACHE_SECONDS",
+      "DESCRIBE_WORKERS",
+      "AWS_ACCOUNT_ID",
+      "QS_NAMESPACE",
+      "QS_SET_PREFIX",
+      "QS_USER_REGION",
+      "SESSION_MINUTES",
+      "QS_DASHBOARD_REGION",
+      "QS_USER_EMAIL"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::891376942769:role/lambdaQuicksightRole",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:40.185998+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-sync-buk-organization-03",
+    "resource_name": "itl-0003-portal-dev-lambda-sync-buk-organization-03",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "runtime": "dotnet10",
+    "memory_mb": 256,
+    "timeout_seconds": 900,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-10T16:49:46.000+0000",
+    "code_size_bytes": 48717030,
+    "handler": "Intelica.Shared.Internal.Lambda::Intelica.Shared.Internal.Lambda.SyncBukOrganizationTrigger::FunctionHandler",
+    "description": "Lambda sync-buk - organization",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "subnet_ids": [
+      "subnet-05c87676a0cbfce54",
+      "subnet-0c353ee340c3da15e"
+    ],
+    "security_group_ids": [
+      "sg-0a4a3d94379c8d963"
+    ],
+    "execution_role": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-sync-buk-organization-03-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "AWS__Secrets__ExternalCredentials",
+      "ENVIRONMENT",
+      "AWS__Secrets__ConnectionString"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0a4a3d94379c8d963",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-sync-buk-organization-03-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:40.414551+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-pg-audit-03",
+    "resource_name": "itl-0003-portal-dev-lambda-pg-audit-03",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.12",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-05-11T21:18:59.000+0000",
+    "code_size_bytes": 1042,
+    "handler": "lambda.lambda_handler",
+    "description": "Lambda to export pgaudit logs to s3",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "subnet_ids": [
+      "subnet-085c2712bbea48a30",
+      "subnet-0a244b304a580c5e3"
+    ],
+    "security_group_ids": [
+      "sg-054b6a28f76db503c"
+    ],
+    "execution_role": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-pg-audit-03-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "ACCOUNT_ID",
+      "PREFIX",
+      "LOG_GROUP",
+      "BUCKET_NAME"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-085c2712bbea48a30",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0a244b304a580c5e3",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-054b6a28f76db503c",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-pg-audit-03-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:40.647972+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-fee-external-custom-alert-03",
+    "resource_name": "itl-0003-portal-dev-lambda-fee-external-custom-alert-03",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "runtime": "dotnet10",
+    "memory_mb": 256,
+    "timeout_seconds": 120,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-10T15:38:32.000+0000",
+    "code_size_bytes": 50510748,
+    "handler": "Intelica.Fee.External.Lambda::Intelica.Fee.External.Lambda.FeeExternalCustomAlertTrigger::FunctionHandler",
+    "description": "Lambda fee-external - custom-alert",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "subnet_ids": [
+      "subnet-05c87676a0cbfce54",
+      "subnet-0c353ee340c3da15e"
+    ],
+    "security_group_ids": [
+      "sg-0454300e4d0c1f411"
+    ],
+    "execution_role": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-fee-external-custom-alert-03-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "ExternsAPIS__Paths__AuthenticationPath",
+      "ExternsAPIS__Paths__NotificationCallbackUrl",
+      "ENVIRONMENT",
+      "AWS__Secrets__InternalAuthentication",
+      "ExternsAPIS__Paths__NotificationPath",
+      "AWS__Secrets__ConnectionString"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0454300e4d0c1f411",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-lambda-fee-external-custom-alert-03-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:40.867403+00:00"
+  }
+]

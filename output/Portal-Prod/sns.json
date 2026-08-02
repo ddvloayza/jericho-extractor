@@ -1,0 +1,61 @@
+[
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:610944808410:aws-controltower-SecurityNotifications",
+    "resource_name": "aws-controltower-SecurityNotifications",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "display_name": "aws-controltower-SecurityNotifications",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 1,
+    "subscriptions_pending": 0,
+    "subscription_count": 1,
+    "kms_master_key_id": "",
+    "tags": {
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:610944808410:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-bc3c93ad-bdd3-49b9-a367-a7e0b0fea39a/86dba9c0-88e0-11f0-b414-0aac614a0e25",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-bc3c93ad-bdd3-49b9-a367-a7e0b0fea39a",
+      "aws:cloudformation:logical-id": "LocalSecurityTopic"
+    },
+    "collected_at": "2026-07-12T19:37:33.685142+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:610944808410:itl-0003-portal-prd-sns-ops-02",
+    "resource_name": "itl-0003-portal-prd-sns-ops-02",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "display_name": "",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 1,
+    "subscriptions_pending": 0,
+    "subscription_count": 1,
+    "kms_master_key_id": "",
+    "tags": {},
+    "collected_at": "2026-07-12T19:37:34.288134+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:610944808410:itl-0003-portal-prd-sns-security-alerts-02",
+    "resource_name": "itl-0003-portal-prd-sns-security-alerts-02",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "display_name": "",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 0,
+    "subscriptions_pending": 0,
+    "subscription_count": 0,
+    "kms_master_key_id": "",
+    "tags": {
+      "coid": "itl",
+      "Compliance": "PCI-DSS-v4",
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-sns-security-alerts-02"
+    },
+    "collected_at": "2026-07-12T19:37:34.890340+00:00"
+  }
+]

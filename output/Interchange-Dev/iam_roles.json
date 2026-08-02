@@ -1,0 +1,4773 @@
+[
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-controltower-AdministratorExecutionRole",
+    "resource_name": "aws-controltower-AdministratorExecutionRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:23:56+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditAdministratorRole"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "060795899335"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:39.681544+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-QuickSetup-SSM-LocalExecutionRole",
+    "resource_name": "AWS-QuickSetup-SSM-LocalExecutionRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:01:15+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::861276092327:role/AWS-QuickSetup-SSM-LocalAdministrationRole"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "861276092327"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSQuickSetupSSMDeploymentS3BucketRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSQuickSetupSSMDeploymentS3BucketRolePolicy"
+      },
+      {
+        "PolicyName": "AWSQuickSetupSSMDeploymentRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSQuickSetupSSMDeploymentRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSQuickSetupSSMDeploymentS3BucketRolePolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSQuickSetupSSMDeploymentRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:40.081711+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-QuickSetup-SSM-ManageResources-LA-us-east-1",
+    "resource_name": "AWS-QuickSetup-SSM-ManageResources-LA-us-east-1",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:01:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSQuickSetupSSMManageResourcesExecutionPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSQuickSetupSSMManageResourcesExecutionPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "QuickSetupDefinitionID": "clkwc",
+      "QuickSetupManagerAccount": "861276092327",
+      "QuickSetupDocumentVersionName": "2.0",
+      "QuickSetupManagerRegion": "us-east-1",
+      "QuickSetupDocument": "AWSQuickSetupType-SSM",
+      "QuickSetupManagerID": "450b891e-ff94-4a67-850c-fa390be9fa31",
+      "QuickSetupManagerArn": "arn:aws:ssm-quicksetup:us-east-1:861276092327:configuration-manager/450b891e-ff94-4a67-850c-fa390be9fa31"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSQuickSetupSSMManageResourcesExecutionPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:40.450960+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/service-role/aws-quicksight-service-role-v0",
+    "resource_name": "aws-quicksight-service-role-v0",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-05-18 21:13:38+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "quicksight.amazonaws.com"
+          },
+          "Action": [
+            "sts:AssumeRole",
+            "sts:TagSession"
+          ]
+        }
+      ]
+    },
+    "trusted_services": [
+      "quicksight.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSQuickSightIAMPolicy",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/service-role/AWSQuickSightIAMPolicy"
+      },
+      {
+        "PolicyName": "AWSQuickSightRDSPolicy",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/service-role/AWSQuickSightRDSPolicy"
+      },
+      {
+        "PolicyName": "AWSQuickSightRedshiftPolicy",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/service-role/AWSQuickSightRedshiftPolicy"
+      },
+      {
+        "PolicyName": "AWSQuicksightAthenaAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSQuicksightAthenaAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/service-role/AWSQuickSightIAMPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/service-role/AWSQuickSightRDSPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/service-role/AWSQuickSightRedshiftPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSQuicksightAthenaAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:40.871336+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-SSM-DiagnosisAdminRole-861276092327-us-east-1",
+    "resource_name": "AWS-SSM-DiagnosisAdminRole-861276092327-us-east-1",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:01:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "aws:SourceAccount": "861276092327"
+            },
+            "ArnLike": {
+              "aws:SourceArn": "arn:aws:ssm:*:*:automation-execution/*"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWS-SSM-Automation-DiagnosisBucketPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWS-SSM-Automation-DiagnosisBucketPolicy"
+      },
+      {
+        "PolicyName": "AWS-SSM-DiagnosisAutomation-AdministrationRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWS-SSM-DiagnosisAutomation-AdministrationRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "QuickSetupDefinitionID": "clkwc",
+      "QuickSetupManagerAccount": "861276092327",
+      "QuickSetupDocumentVersionName": "2.0",
+      "QuickSetupManagerRegion": "us-east-1",
+      "QuickSetupDocument": "AWSQuickSetupType-SSM",
+      "QuickSetupManagerID": "450b891e-ff94-4a67-850c-fa390be9fa31",
+      "QuickSetupManagerArn": "arn:aws:ssm-quicksetup:us-east-1:861276092327:configuration-manager/450b891e-ff94-4a67-850c-fa390be9fa31"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWS-SSM-Automation-DiagnosisBucketPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWS-SSM-DiagnosisAutomation-AdministrationRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.270697+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-SSM-DiagnosisExecutionRole-861276092327-us-east-1",
+    "resource_name": "AWS-SSM-DiagnosisExecutionRole-861276092327-us-east-1",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:02:10+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "AllowRoleAssumptionFromAutomationAdminRole",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::861276092327:role/AWS-SSM-DiagnosisAdminRole-861276092327-us-east-1"
+          },
+          "Action": "sts:AssumeRole"
+        },
+        {
+          "Sid": "AllowRoleAssumptionFromSsmAutomation",
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "aws:SourceAccount": "861276092327"
+            },
+            "ArnLike": {
+              "aws:SourceArn": "arn:aws:ssm:*:861276092327:automation-execution/*"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [
+      "861276092327"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AWS-SSM-Automation-DiagnosisBucketPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWS-SSM-Automation-DiagnosisBucketPolicy"
+      },
+      {
+        "PolicyName": "AWS-SSM-DiagnosisAutomation-ExecutionRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWS-SSM-DiagnosisAutomation-ExecutionRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "QuickSetupDefinitionID": "clkwc",
+      "QuickSetupManagerAccount": "861276092327",
+      "QuickSetupDocumentVersionName": "2.0",
+      "QuickSetupManagerRegion": "us-east-1",
+      "QuickSetupDocument": "AWSQuickSetupType-SSM",
+      "QuickSetupManagerID": "450b891e-ff94-4a67-850c-fa390be9fa31",
+      "QuickSetupManagerArn": "arn:aws:ssm-quicksetup:us-east-1:861276092327:configuration-manager/450b891e-ff94-4a67-850c-fa390be9fa31"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWS-SSM-Automation-DiagnosisBucketPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWS-SSM-DiagnosisAutomation-ExecutionRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.682495+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-QuickSetup-SSM-DefaultEC2MgmtRole-us-east-1",
+    "resource_name": "AWS-QuickSetup-SSM-DefaultEC2MgmtRole-us-east-1",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Do Not Modify or Delete. This resource has been created to support the deployment of DHMC Quick Setup configuration, and modification or deletion of this resource may hinder the functionality of that Quick Setup configuration.",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:03:25+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonSSMManagedEC2InstanceDefaultPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedEC2InstanceDefaultPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedEC2InstanceDefaultPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.862750+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-controltower-ConfigRecorderRole",
+    "resource_name": "aws-controltower-ConfigRecorderRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:23:57+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "config.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "config.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
+      },
+      {
+        "PolicyName": "AWS_ConfigRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWS_ConfigRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWS_ConfigRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.864562+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-QuickSetup-SSM-LifecycleManagement-LA-us-east-1",
+    "resource_name": "AWS-QuickSetup-SSM-LifecycleManagement-LA-us-east-1",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:01:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSQuickSetupSSMLifecycleManagementExecutionPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSQuickSetupSSMLifecycleManagementExecutionPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "QuickSetupDefinitionID": "clkwc",
+      "QuickSetupManagerAccount": "861276092327",
+      "QuickSetupDocumentVersionName": "2.0",
+      "QuickSetupManagerRegion": "us-east-1",
+      "QuickSetupDocument": "AWSQuickSetupType-SSM",
+      "QuickSetupManagerID": "450b891e-ff94-4a67-850c-fa390be9fa31",
+      "QuickSetupManagerArn": "arn:aws:ssm-quicksetup:us-east-1:861276092327:configuration-manager/450b891e-ff94-4a67-850c-fa390be9fa31"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSQuickSetupSSMLifecycleManagementExecutionPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.872584+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-QuickSetup-SSM-EnableAREX-clkwc",
+    "resource_name": "AWS-QuickSetup-SSM-EnableAREX-clkwc",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:02:40+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSQuickSetupEnableAREXExecutionPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSQuickSetupEnableAREXExecutionPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "QuickSetupDocument": "AWSQuickSetupType-SSM"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSQuickSetupEnableAREXExecutionPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.879304+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-controltower-ForwardSnsNotificationRole",
+    "resource_name": "aws-controltower-ForwardSnsNotificationRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:23:57+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [
+      "sns"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.884851+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-controltower-ReadOnlyExecutionRole",
+    "resource_name": "aws-controltower-ReadOnlyExecutionRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:23:56+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditReadOnlyRole"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "060795899335"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.886863+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-QuickSetup-SSM-EnableExplorer-clkwc",
+    "resource_name": "AWS-QuickSetup-SSM-EnableExplorer-clkwc",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:02:29+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSystemsManagerEnableExplorerExecutionPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSSystemsManagerEnableExplorerExecutionPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "QuickSetupDocument": "AWSQuickSetupType-SSM"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSSystemsManagerEnableExplorerExecutionPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.904655+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-QuickSetup-SSM-EnableDHMC-clkwc",
+    "resource_name": "AWS-QuickSetup-SSM-EnableDHMC-clkwc",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:02:35+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSQuickSetupEnableDHMCExecutionPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSQuickSetupEnableDHMCExecutionPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "QuickSetupDocument": "AWSQuickSetupType-SSM"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSQuickSetupEnableDHMCExecutionPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:41.910087+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-QuickSetup-SSM-LocalAdministrationRole",
+    "resource_name": "AWS-QuickSetup-SSM-LocalAdministrationRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:00:56+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "cloudformation.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "aws:SourceAccount": "861276092327"
+            },
+            "StringLike": {
+              "aws:SourceArn": "arn:aws:cloudformation:*:861276092327:stackset/AWS-QuickSetup-*"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "cloudformation.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "AssumeExecutionRolePermissions"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:41.914362+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-SSM-RemediationAdminRole-861276092327-us-east-1",
+    "resource_name": "AWS-SSM-RemediationAdminRole-861276092327-us-east-1",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:01:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "aws:SourceAccount": "861276092327"
+            },
+            "ArnLike": {
+              "aws:SourceArn": "arn:aws:ssm:*:*:automation-execution/*"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWS-SSM-Automation-DiagnosisBucketPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWS-SSM-Automation-DiagnosisBucketPolicy"
+      },
+      {
+        "PolicyName": "AWS-SSM-RemediationAutomation-AdministrationRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWS-SSM-RemediationAutomation-AdministrationRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "QuickSetupDefinitionID": "clkwc",
+      "QuickSetupManagerAccount": "861276092327",
+      "QuickSetupDocumentVersionName": "2.0",
+      "QuickSetupManagerRegion": "us-east-1",
+      "QuickSetupDocument": "AWSQuickSetupType-SSM",
+      "QuickSetupManagerID": "450b891e-ff94-4a67-850c-fa390be9fa31",
+      "QuickSetupManagerArn": "arn:aws:ssm-quicksetup:us-east-1:861276092327:configuration-manager/450b891e-ff94-4a67-850c-fa390be9fa31"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWS-SSM-Automation-DiagnosisBucketPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWS-SSM-RemediationAutomation-AdministrationRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.072643+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/service-role/AWSApplicationMigrationAgentRole",
+    "resource_name": "AWSApplicationMigrationAgentRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-01 18:52:18+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "mgn.amazonaws.com"
+          },
+          "Action": [
+            "sts:AssumeRole",
+            "sts:SetSourceIdentity"
+          ],
+          "Condition": {
+            "StringLike": {
+              "sts:SourceIdentity": "s-*",
+              "aws:SourceAccount": "861276092327"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "mgn.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSApplicationMigrationAgentPolicy_v2",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationAgentPolicy_v2"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationAgentPolicy_v2",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.236462+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/service-role/AWSApplicationMigrationConversionServerRole",
+    "resource_name": "AWSApplicationMigrationConversionServerRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-01 18:52:17+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSApplicationMigrationConversionServerPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationConversionServerPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationConversionServerPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.237841+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWS-SSM-RemediationExecutionRole-861276092327-us-east-1",
+    "resource_name": "AWS-SSM-RemediationExecutionRole-861276092327-us-east-1",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:02:10+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "AllowRoleAssumptionFromAutomationAdminRole",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::861276092327:role/AWS-SSM-RemediationAdminRole-861276092327-us-east-1"
+          },
+          "Action": "sts:AssumeRole"
+        },
+        {
+          "Sid": "AllowRoleAssumptionFromSsmAutomation",
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "aws:SourceAccount": "861276092327"
+            },
+            "ArnLike": {
+              "aws:SourceArn": "arn:aws:ssm:*:861276092327:automation-execution/*"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [
+      "861276092327"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AWS-SSM-Automation-DiagnosisBucketPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWS-SSM-Automation-DiagnosisBucketPolicy"
+      },
+      {
+        "PolicyName": "AWS-SSM-RemediationAutomation-ExecutionRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWS-SSM-RemediationAutomation-ExecutionRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "QuickSetupDefinitionID": "clkwc",
+      "QuickSetupManagerAccount": "861276092327",
+      "QuickSetupDocumentVersionName": "2.0",
+      "QuickSetupManagerRegion": "us-east-1",
+      "QuickSetupDocument": "AWSQuickSetupType-SSM",
+      "QuickSetupManagerID": "450b891e-ff94-4a67-850c-fa390be9fa31",
+      "QuickSetupManagerArn": "arn:aws:ssm-quicksetup:us-east-1:861276092327:configuration-manager/450b891e-ff94-4a67-850c-fa390be9fa31"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWS-SSM-Automation-DiagnosisBucketPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWS-SSM-RemediationAutomation-ExecutionRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.248558+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/service-role/AWSApplicationMigrationLaunchInstanceWithSsmRole",
+    "resource_name": "AWSApplicationMigrationLaunchInstanceWithSsmRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-01 18:52:17+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonSSMManagedInstanceCore",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.252453+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/service-role/AWSApplicationMigrationLaunchInstanceWithDrsRole",
+    "resource_name": "AWSApplicationMigrationLaunchInstanceWithDrsRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-01 18:52:17+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonSSMManagedInstanceCore",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      },
+      {
+        "PolicyName": "AWSElasticDisasterRecoveryEc2InstancePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSElasticDisasterRecoveryEc2InstancePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSElasticDisasterRecoveryEc2InstancePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.269967+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWSControlTower_VPCFlowLogsRole",
+    "resource_name": "AWSControlTower_VPCFlowLogsRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:27:41+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "vpc-flow-logs.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "vpc-flow-logs.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.290709+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/service-role/AWSApplicationMigrationMGHRole",
+    "resource_name": "AWSApplicationMigrationMGHRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-01 18:52:18+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "mgn.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "mgn.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSApplicationMigrationMGHAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationMGHAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationMGHAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.298236+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/service-role/AWSApplicationMigrationReplicationServerRole",
+    "resource_name": "AWSApplicationMigrationReplicationServerRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-01 18:52:17+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSApplicationMigrationReplicationServerPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationReplicationServerPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationReplicationServerPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.316080+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/AWSControlTowerExecution",
+    "resource_name": "AWSControlTowerExecution",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:21:10+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.317198+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_2dd0e2d70d86c17e",
+    "resource_name": "AWSReservedSSO_AWSAdministratorAccess_2dd0e2d70d86c17e",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "Provides full access to AWS services and resources",
+    "max_session_duration": 43200,
+    "create_date": "2025-02-10 22:22:55+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::861276092327:saml-provider/AWSSSO_8438a912d3abae96_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.465601+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSOrganizationsFullAccess_78c71ab99e85055c",
+    "resource_name": "AWSReservedSSO_AWSOrganizationsFullAccess_78c71ab99e85055c",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "Provides full access to AWS Organizations",
+    "max_session_duration": 43200,
+    "create_date": "2025-02-10 22:22:53+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::861276092327:saml-provider/AWSSSO_8438a912d3abae96_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSOrganizationsFullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.591855+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSReadOnlyAccess_548aac164789e52c",
+    "resource_name": "AWSReservedSSO_AWSReadOnlyAccess_548aac164789e52c",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "This policy grants permissions to view resources and basic metadata across all AWS services",
+    "max_session_duration": 43200,
+    "create_date": "2025-02-10 22:22:55+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::861276092327:saml-provider/AWSSSO_8438a912d3abae96_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "ViewOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/job-function/ViewOnlyAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.606639+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSAllAdm_4e8ca8ef2585bd0c",
+    "resource_name": "AWSReservedSSO_ItlAWSAllAdm_4e8ca8ef2585bd0c",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "global AWS administrator permission sets",
+    "max_session_duration": 43200,
+    "create_date": "2025-02-11 14:44:59+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::861276092327:saml-provider/AWSSSO_8438a912d3abae96_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "AwsSSOInlinePolicy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:42.620339+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSPowerUserAccess_fc882db2b10a70cc",
+    "resource_name": "AWSReservedSSO_AWSPowerUserAccess_fc882db2b10a70cc",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "Provides full access to AWS services and resources, but does not allow management of Users and groups",
+    "max_session_duration": 43200,
+    "create_date": "2025-02-10 22:22:54+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::861276092327:saml-provider/AWSSSO_8438a912d3abae96_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "PowerUserAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/PowerUserAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/PowerUserAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.621465+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSIntercambioDevAna_5b4940160ce096da",
+    "resource_name": "AWSReservedSSO_ItlAWSIntercambioDevAna_5b4940160ce096da",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "AWS Dev analyst permission sets",
+    "max_session_duration": 43200,
+    "create_date": "2025-02-11 14:44:59+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::861276092327:saml-provider/AWSSSO_8438a912d3abae96_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "AwsSSOInlinePolicy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:42.633893+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSIntercambioDevExp_915495cf446cd93d",
+    "resource_name": "AWSReservedSSO_ItlAWSIntercambioDevExp_915495cf446cd93d",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "AWS Experimental Dev analyst permission sets",
+    "max_session_duration": 43200,
+    "create_date": "2025-12-29 22:15:53+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::861276092327:saml-provider/AWSSSO_8438a912d3abae96_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "AwsSSOInlinePolicy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:42.648533+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSIntercambioDevAdm_dbf6fe2d5a640ef7",
+    "resource_name": "AWSReservedSSO_ItlAWSIntercambioDevAdm_dbf6fe2d5a640ef7",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "AWS Dev admin permission sets",
+    "max_session_duration": 43200,
+    "create_date": "2025-02-11 14:45:22+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::861276092327:saml-provider/AWSSSO_8438a912d3abae96_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "Billing",
+        "PolicyArn": "arn:aws:iam::aws:policy/job-function/Billing"
+      }
+    ],
+    "inline_policy_names": [
+      "AwsSSOInlinePolicy"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/job-function/Billing",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.650894+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/malware-protection.guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDutyMalwareProtection",
+    "resource_name": "AWSServiceRoleForAmazonGuardDutyMalwareProtection",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/malware-protection.guardduty.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-04-16 16:35:40+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "malware-protection.guardduty.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "malware-protection.guardduty.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonGuardDutyMalwareProtectionServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyMalwareProtectionServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyMalwareProtectionServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.676595+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDuty",
+    "resource_name": "AWSServiceRoleForAmazonGuardDuty",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/guardduty.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:23:13+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "guardduty.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "guardduty.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonGuardDutyServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:42.710019+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService",
+    "resource_name": "AWSServiceRoleForAmazonOpenSearchService",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/opensearchservice.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-12 17:16:53+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "opensearchservice.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "opensearchservice.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonOpenSearchServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonOpenSearchServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonOpenSearchServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.264100+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/ssm.amazonaws.com/AWSServiceRoleForAmazonSSM",
+    "resource_name": "AWSServiceRoleForAmazonSSM",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/ssm.amazonaws.com/",
+    "description": "Provides access to AWS Resources managed or used by Amazon SSM.",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:01:49+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonSSMServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonSSMServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonSSMServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.379059+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/backup.amazonaws.com/AWSServiceRoleForBackup",
+    "resource_name": "AWSServiceRoleForBackup",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/backup.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-01-19 22:14:00+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "backup.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "backup.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSBackupServiceLinkedRolePolicyForBackup",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSBackupServiceLinkedRolePolicyForBackup"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSBackupServiceLinkedRolePolicyForBackup",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.380970+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+    "resource_name": "AWSServiceRoleForAutoScaling",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/autoscaling.amazonaws.com/",
+    "description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 14:37:07+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "autoscaling.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AutoScalingServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.386260+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/controltower.amazonaws.com/AWSServiceRoleForAWSControlTower",
+    "resource_name": "AWSServiceRoleForAWSControlTower",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/controltower.amazonaws.com/",
+    "description": "Provides access to AWS Resources managed or used by AWS Control Tower",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:23:59+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "controltower.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "controltower.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSControlTowerAccountServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.402635+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/mgn.amazonaws.com/AWSServiceRoleForApplicationMigrationService",
+    "resource_name": "AWSServiceRoleForApplicationMigrationService",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/mgn.amazonaws.com/",
+    "description": "Access role for the mgn.amazonaws.com",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-01 18:52:19+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "mgn.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "mgn.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSApplicationMigrationServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSApplicationMigrationServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSApplicationMigrationServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.405219+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/cloudtrail.amazonaws.com/AWSServiceRoleForCloudTrail",
+    "resource_name": "AWSServiceRoleForCloudTrail",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/cloudtrail.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:24:13+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "cloudtrail.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "cloudtrail.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudTrailServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.490541+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "resource_name": "AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/",
+    "description": "Service linked role for CloudFormation StackSets (Organization Member)",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:21:20+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "member.org.stacksets.cloudformation.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "member.org.stacksets.cloudformation.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.499629+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+    "resource_name": "AWSServiceRoleForConfig",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/config.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:23:35+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "config.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "config.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSConfigServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSConfigServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSConfigServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.513707+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+    "resource_name": "AWSServiceRoleForECS",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/ecs.amazonaws.com/",
+    "description": "Policy to enable Amazon ECS to manage your EC2 instances and related resources.",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 14:30:08+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ecs.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ecs.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonECSServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonECSServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonECSServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.529992+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+    "resource_name": "AWSServiceRoleForElasticLoadBalancing",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+    "description": "Allows ELB to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-12 16:35:27+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "elasticloadbalancing.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSElasticLoadBalancingServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.637235+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/imagebuilder.amazonaws.com/AWSServiceRoleForImageBuilder",
+    "resource_name": "AWSServiceRoleForImageBuilder",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/imagebuilder.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 16:47:14+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "imagebuilder.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "imagebuilder.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSServiceRoleForImageBuilder",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForImageBuilder"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForImageBuilder",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.740477+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/fms.amazonaws.com/AWSServiceRoleForFMS",
+    "resource_name": "AWSServiceRoleForFMS",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/fms.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:21:43+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "fms.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "fms.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "FMSServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/FMSServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/FMSServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.762043+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/AWSServiceRoleForReachabilityAnalyzer",
+    "resource_name": "AWSServiceRoleForReachabilityAnalyzer",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/",
+    "description": "The Service Linked Role used by Reachability Analyzer.",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:21:33+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "reachabilityanalyzer.networkinsights.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "reachabilityanalyzer.networkinsights.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSReachabilityAnalyzerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.763961+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+    "resource_name": "AWSServiceRoleForOrganizations",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/organizations.amazonaws.com/",
+    "description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:21:11+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "organizations.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "organizations.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSOrganizationsServiceTrustPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.790739+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+    "resource_name": "AWSServiceRoleForRDS",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/rds.amazonaws.com/",
+    "description": "Allows Amazon RDS to manage AWS resources on your behalf",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-12 16:33:13+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonRDSServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.800486+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+    "resource_name": "AWSServiceRoleForResourceExplorer",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/resource-explorer-2.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:03:25+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "resource-explorer-2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "resource-explorer-2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSResourceExplorerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.833047+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/securityhubv2.amazonaws.com/AWSServiceRoleForSecurityHubV2",
+    "resource_name": "AWSServiceRoleForSecurityHubV2",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/securityhubv2.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-12-29 21:26:16+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "securityhubv2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "securityhubv2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSecurityHubV2ServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.868474+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/securityhub.amazonaws.com/AWSServiceRoleForSecurityHub",
+    "resource_name": "AWSServiceRoleForSecurityHub",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/securityhub.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:22:41+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "securityhub.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "securityhub.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSecurityHubServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.895094+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/ssm-quicksetup.amazonaws.com/AWSServiceRoleForSSMQuickSetup",
+    "resource_name": "AWSServiceRoleForSSMQuickSetup",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/ssm-quicksetup.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 22:01:38+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm-quicksetup.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm-quicksetup.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "SSMQuickSetupRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/SSMQuickSetupRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/SSMQuickSetupRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.901177+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+    "resource_name": "AWSServiceRoleForSSO",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/sso.amazonaws.com/",
+    "description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:21:21+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "sso.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "sso.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSSOServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:43.993882+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+    "resource_name": "AWSServiceRoleForSupport",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/support.amazonaws.com/",
+    "description": "Enables resource access for AWS to provide billing, administrative and support services",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:21:10+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "support.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "support.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSupportServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.101647+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+    "resource_name": "AWSServiceRoleForTrustedAdvisor",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+    "description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:21:10+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "trustedadvisor.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSTrustedAdvisorServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.103284+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway",
+    "resource_name": "AWSServiceRoleForVPCTransitGateway",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/aws-service-role/transitgateway.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-25 20:10:21+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "transitgateway.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "transitgateway.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSVPCTransitGatewayServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.110045+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/IAMRoleForReachabilityAnalyzerCrossAccountResourceAccess",
+    "resource_name": "IAMRoleForReachabilityAnalyzerCrossAccountResourceAccess",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Enables console access role, which allows management and delegated admin accounts to discover cross account resources and switch roles between accounts.",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:22:49+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:AssumeRole"
+        },
+        {
+          "Sid": "SetSourceIdentity",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:SetSourceIdentity",
+          "Condition": {
+            "StringLike": {
+              "sts:SourceIdentity": "${aws:SourceIdentity}"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSDirectConnectReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSDirectConnectReadOnlyAccess"
+      },
+      {
+        "PolicyName": "AmazonEC2ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
+      },
+      {
+        "PolicyName": "AmazonVPCReachabilityAnalyzerPathComponentReadPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonVPCReachabilityAnalyzerPathComponentReadPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSDirectConnectReadOnlyAccess",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonVPCReachabilityAnalyzerPathComponentReadPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.174931+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/EC2InstanceProfileForImageBuilder",
+    "resource_name": "EC2InstanceProfileForImageBuilder",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 16:21:41+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonSSMManagedInstanceCore",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      },
+      {
+        "PolicyName": "EC2InstanceProfileForImageBuilder",
+        "PolicyArn": "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilder"
+      },
+      {
+        "PolicyName": "EC2InstanceProfileForImageBuilderECRContainerBuilds",
+        "PolicyArn": "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilderECRContainerBuilds"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilder",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/EC2InstanceProfileForImageBuilderECRContainerBuilds",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.193975+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-codedeploy-ec2-app-main-02-dg-role",
+    "resource_name": "itl-0004-itx-dev-codedeploy-ec2-app-main-02-dg-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 17:35:13+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "codedeploy.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "codedeploy.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSCodeDeployRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole"
+      }
+    ],
+    "inline_policy_names": [
+      "artifact-bucket"
+    ],
+    "tags": {
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.209943+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-ec2-app-02-role",
+    "resource_name": "itl-0004-itx-dev-ec2-app-02-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 17:06:43+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudWatchAgentServerPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+      },
+      {
+        "PolicyName": "AmazonSSMManagedInstanceCore",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      },
+      {
+        "PolicyName": "AmazonS3FullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      }
+    ],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-ec2-app-02-role-lambda-pol",
+      "itl-0004-itx-dev-ec2-app-02-role-s3-pol",
+      "itl-0004-itx-dev-ec2-app-02-role-sqs-pol",
+      "s3-devops-artifact-pol"
+    ],
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.249171+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-glue-role",
+    "resource_name": "itl-0004-itx-dev-intchg-02-glue-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-04-23 21:56:20+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "glue.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "glue.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSGlueServiceRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole"
+      }
+    ],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-intchg-02-glue-data-policy",
+      "itl-0004-itx-dev-intchg-02-glue-scheme-fee-policy"
+    ],
+    "tags": {
+      "env": "dev",
+      "project": "datalake",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.287983+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-iam-devops-02",
+    "resource_name": "itl-0004-itx-dev-iam-devops-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 17:35:13+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::423623846320:root"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "423623846320"
+    ],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "deploy",
+      "s3-devops-artifact-pol",
+      "s3-terraform-state-pol"
+    ],
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.303099+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-glue-test-role",
+    "resource_name": "itl-0004-itx-dev-intchg-02-glue-test-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-06-10 17:02:05+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "glue.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "glue.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSGlueServiceRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole"
+      }
+    ],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-intchg-02-glue-test-policy"
+    ],
+    "tags": {
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.345245+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-role",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-05-15 20:58:37+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-policy"
+    ],
+    "tags": {
+      "project": "datalake",
+      "coid": "itl",
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.446335+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-scheduler-role",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-scheduler-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-06-02 20:09:34+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "scheduler.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "scheduler.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-scheduler-policy"
+    ],
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.447659+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-05-15 18:30:08+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-intchg-02-lmbd-mc-policy"
+    ],
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.485164+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-role",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-05-15 20:58:37+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-policy"
+    ],
+    "tags": {
+      "project": "datalake",
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.529794+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-05-15 18:30:14+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-intchg-02-lmbd-vi-policy"
+    ],
+    "tags": {
+      "env": "dev",
+      "project": "datalake",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.542151+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-scheduler-role",
+    "resource_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-scheduler-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-05-15 20:58:37+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "scheduler.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "scheduler.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-scheduler-policy"
+    ],
+    "tags": {
+      "project": "datalake",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.567188+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-sfn-role",
+    "resource_name": "itl-0004-itx-dev-intchg-02-sfn-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-04-23 21:56:22+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "states.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "states.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-intchg-02-sfn-policy"
+    ],
+    "tags": {
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "datalake",
+      "apid": "itx"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.602271+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-app-02-role",
+    "resource_name": "itl-0004-itx-dev-lmbd-app-02-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 16:46:23+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-lmbd-app-02-role-cloudwatch-logs-pol",
+      "itl-0004-itx-dev-lmbd-app-02-role-source-s3-pol",
+      "itl-0004-itx-dev-lmbd-app-02-role-target-sqs-pol",
+      "itl-0004-itx-dev-lmbd-app-02-role-vpc-pol"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.644191+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lambda-pg-audit-02-role",
+    "resource_name": "itl-0004-itx-dev-lambda-pg-audit-02-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-01-19 22:57:59+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-lambda-pg-audit-02-policy"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.680630+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-file-load-02-role",
+    "resource_name": "itl-0004-itx-dev-lmbd-file-load-02-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 16:46:24+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSXRayDaemonWriteAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess"
+      }
+    ],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-lmbd-file-load-02-role-cloudwatch-logs-pol",
+      "itl-0004-itx-dev-lmbd-file-load-02-role-dlq-pol",
+      "itl-0004-itx-dev-lmbd-file-load-02-role-secrets-pol",
+      "itl-0004-itx-dev-lmbd-file-load-02-role-vpc-pol"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSXRayDaemonWriteAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.706487+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-sbsa-preprocess-02-role",
+    "resource_name": "itl-0004-itx-dev-lmbd-sbsa-preprocess-02-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-06-22 22:01:39+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-lmbd-sbsa-preprocess-02-role-cloudwatch-pol",
+      "itl-0004-itx-dev-lmbd-sbsa-preprocess-02-role-kms-pol",
+      "itl-0004-itx-dev-lmbd-sbsa-preprocess-02-role-s3-pol",
+      "itl-0004-itx-dev-lmbd-sbsa-preprocess-02-role-vpc-pol"
+    ],
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "project": "sbsa-preprocess",
+      "Name": "itl-0004-itx-dev-lmbd-sbsa-preprocess-02"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.795678+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-lmbd-sendmail-02-role",
+    "resource_name": "itl-0004-itx-dev-lmbd-sendmail-02-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 17:04:53+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-lmbd-sendmail-02-role-cloudwatch-logs-pol",
+      "itl-0004-itx-dev-lmbd-sendmail-02-role-secrets-pol",
+      "itl-0004-itx-dev-lmbd-sendmail-02-role-vpc-pol"
+    ],
+    "tags": {
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.805947+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-rds-app-02-monitoring-role",
+    "resource_name": "itl-0004-itx-dev-rds-app-02-monitoring-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-22 05:03:19+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "monitoring.rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "monitoring.rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonRDSEnhancedMonitoringRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonRDSEnhancedMonitoringRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AmazonRDSEnhancedMonitoringRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.841234+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-rds-app-02-s3-export-role",
+    "resource_name": "itl-0004-itx-dev-rds-app-02-s3-export-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 15:53:41+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "s3-export-buckets"
+    ],
+    "tags": {
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.868459+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-rds-app-02-s3-import-role",
+    "resource_name": "itl-0004-itx-dev-rds-app-02-s3-import-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 15:53:41+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "s3-import-buckets"
+    ],
+    "tags": {
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.913800+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-role-backup-02",
+    "resource_name": "itl-0004-itx-dev-role-backup-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-01-19 22:13:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "backup.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "backup.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSBackupServiceRolePolicyForBackup",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSBackupServiceRolePolicyForBackup"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSBackupServiceRolePolicyForBackup",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:44.935753+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-s3-replication-role",
+    "resource_name": "itl-0004-itx-dev-s3-replication-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-01 00:04:51+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        },
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "batchoperations.s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "batchoperations.s3.amazonaws.com",
+      "s3.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-dev-s3-replication-role-pol"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:44.963450+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/service-role/itl-0004-itx-dev-testfunction-role-cy4y3vjy",
+    "resource_name": "itl-0004-itx-dev-testfunction-role-cy4y3vjy",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-12-29 23:06:20+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole-c4e5c660-3889-4349-8929-fb21084be9b6",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/service-role/AWSLambdaBasicExecutionRole-c4e5c660-3889-4349-8929-fb21084be9b6"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/service-role/AWSLambdaBasicExecutionRole-c4e5c660-3889-4349-8929-fb21084be9b6",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.023696+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-tf-sftp-02-landing-pre-role",
+    "resource_name": "itl-0004-itx-dev-tf-sftp-02-landing-pre-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-22 02:29:46+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "transfer.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "transfer.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0004-itx-dev-tf-sftp-02-landing-pre-role-s3-pol",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/itl-0004-itx-dev-tf-sftp-02-landing-pre-role-s3-pol"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/itl-0004-itx-dev-tf-sftp-02-landing-pre-role-s3-pol",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.044800+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-tf-sftp-02-landing-role",
+    "resource_name": "itl-0004-itx-dev-tf-sftp-02-landing-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 14:34:12+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "transfer.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "transfer.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0004-itx-dev-tf-sftp-02-landing-role-s3-pol",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/itl-0004-itx-dev-tf-sftp-02-landing-role-s3-pol"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/itl-0004-itx-dev-tf-sftp-02-landing-role-s3-pol",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.067307+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-tf-sftp-02-logging-role",
+    "resource_name": "itl-0004-itx-dev-tf-sftp-02-logging-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-17 14:34:12+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "transfer.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "transfer.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSTransferLoggingAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSTransferLoggingAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSTransferLoggingAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.165283+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/service-role/itl-portal-dev-kms-pgcrypto-role-1yfluw2l",
+    "resource_name": "itl-portal-dev-kms-pgcrypto-role-1yfluw2l",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-14 22:53:14+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole-5604e4b5-1627-4a23-b330-6e4e87d53bad",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/service-role/AWSLambdaBasicExecutionRole-5604e4b5-1627-4a23-b330-6e4e87d53bad"
+      },
+      {
+        "PolicyName": "AWSLambdaExecute",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSLambdaExecute"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/service-role/AWSLambdaBasicExecutionRole-5604e4b5-1627-4a23-b330-6e4e87d53bad",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSLambdaExecute",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.168167+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/OpenSearchSnapshotRole",
+    "resource_name": "OpenSearchSnapshotRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-12 05:58:57+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "es.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "es.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "OpenSearchSnapshotPolicy",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/OpenSearchSnapshotPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/OpenSearchSnapshotPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.198806+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/OrganizationAccountAccessRole",
+    "resource_name": "OrganizationAccountAccessRole",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-08-12 19:25:17+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {}
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.259033+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/rds-monitoring-role",
+    "resource_name": "rds-monitoring-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-22 05:07:10+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "",
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "monitoring.rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "monitoring.rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonRDSEnhancedMonitoringRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonRDSEnhancedMonitoringRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AmazonRDSEnhancedMonitoringRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.317270+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/S3-Batch-Replication-Role",
+    "resource_name": "S3-Batch-Replication-Role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Rol para Batch Replication de S3",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-30 01:53:33+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "batchoperations.s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "batchoperations.s3.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "S3-Batch-Replication-Role-Policy",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/S3-Batch-Replication-Role-Policy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/S3-Batch-Replication-Role-Policy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.335317+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/S3-Batch-Replication-Role-Final",
+    "resource_name": "S3-Batch-Replication-Role-Final",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Rol para Batch Replication de S3 con KMS",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-30 19:04:57+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "batchoperations.s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "batchoperations.s3.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "S3-Batch-Replication-Role-Final-Policy",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/S3-Batch-Replication-Role-Final-Policy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/S3-Batch-Replication-Role-Final-Policy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.392344+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/S3-Cross-Account-Replication-Role",
+    "resource_name": "S3-Cross-Account-Replication-Role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Rol para replicaci\u00f3n cross-account de S3",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-30 01:53:22+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "s3.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "S3-Cross-Account-Replication-Role-Policy",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/S3-Cross-Account-Replication-Role-Policy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/S3-Cross-Account-Replication-Role-Policy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.408798+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/rds-monitoring-delete",
+    "resource_name": "rds-monitoring-delete",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Allows EC2 instances to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-22 04:56:07+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "monitoring.rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "monitoring.rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonRDSEnhancedMonitoringRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonRDSEnhancedMonitoringRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AmazonRDSEnhancedMonitoringRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.422615+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/S3-Cross-Account-Replication-Role-Fixed",
+    "resource_name": "S3-Cross-Account-Replication-Role-Fixed",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Rol para replicaci\u00f3n cross-account de S3 con permisos completos",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-30 07:09:31+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "s3.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "S3-Cross-Account-Replication-Role-Fixed-Policy",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/S3-Cross-Account-Replication-Role-Fixed-Policy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/S3-Cross-Account-Replication-Role-Fixed-Policy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.442768+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/s3-cross-region-replication-role",
+    "resource_name": "s3-cross-region-replication-role",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-30 17:31:53+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        },
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "batchoperations.s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "batchoperations.s3.amazonaws.com",
+      "s3.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "s3-cross-region-replication-policy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:45.520009+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/S3-Cross-Region-Replication-Role-Final",
+    "resource_name": "S3-Cross-Region-Replication-Role-Final",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Rol para replicaci\u00f3n cross-region de S3 con KMS",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-30 19:04:41+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "s3.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "S3-Cross-Region-Replication-Role-Final-Policy",
+        "PolicyArn": "arn:aws:iam::861276092327:policy/S3-Cross-Region-Replication-Role-Final-Policy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::861276092327:policy/S3-Cross-Region-Replication-Role-Final-Policy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.527325+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/s3-replication-role-delete",
+    "resource_name": "s3-replication-role-delete",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-09-30 08:01:14+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "s3.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "s3.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "s3-replication-policy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:45.562252+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/stacksets-exec-a3c7510b0e65438900724098d066a8c0",
+    "resource_name": "stacksets-exec-a3c7510b0e65438900724098d066a8c0",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Role created by AWSCloudFormation StackSets",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-10 22:21:34+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Id": "stacksets-exec-a3c7510b0e65438900724098d066a8c0-assume-role-policy",
+      "Statement": [
+        {
+          "Sid": "1",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:role/aws-service-role/stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgAdmin"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:42:45.619545+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::861276092327:role/vmimport",
+    "resource_name": "vmimport",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Allows EC2 instances to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2025-06-30 16:04:09+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "vmie.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "vmie.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "import-s3",
+      "policy-vmimport"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:42:45.692963+00:00"
+  }
+]

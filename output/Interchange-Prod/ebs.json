@@ -1,0 +1,1049 @@
+[
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0d10c98ce4c9bf9ed",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-GeneralDB",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 270,
+    "volume_type": "gp3",
+    "iops": 4000,
+    "throughput": 1000,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-21 03:52:32.631000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdp",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdp",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-GeneralDB"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372734+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-06d704dead4eb258a",
+    "resource_name": "",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 80,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "snapshot_id": "snap-0286b71c7e5ec472d",
+    "multi_attach": false,
+    "create_time": "2025-10-17 09:18:43.350000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0912b617340cb9eb4",
+        "device": "/dev/xvda",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0912b617340cb9eb4",
+    "attached_device": "/dev/xvda",
+    "attached_state": "attached",
+    "tags": {
+      "env": "prd",
+      "coid": "itl",
+      "apid": "itx",
+      "assetid": "0004"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0912b617340cb9eb4",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372742+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0fd083114c25705f0",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-Backups",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 5000,
+    "volume_type": "sc1",
+    "iops": 0,
+    "throughput": 0,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-10-02 16:17:24.335000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdu",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdu",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-Backups"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372746+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0b18887810b37448c",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-BRD-Data",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 3500,
+    "volume_type": "gp3",
+    "iops": 4000,
+    "throughput": 1000,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2026-04-16 22:31:27.346000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdg",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdg",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-BRD-Data"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372750+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0b8649efd8b71e139",
+    "resource_name": "DYNAMIC_J_1",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 800,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "snap-019869b01c0b711eb",
+    "multi_attach": false,
+    "create_time": "2025-09-11 17:29:12.718000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvde",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvde",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "DYNAMIC_J_1"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372754+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0831ab9423f45fcfa",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-GeneralIndexes",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 100,
+    "volume_type": "gp3",
+    "iops": 4000,
+    "throughput": 1000,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-21 03:57:01.531000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdq",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdq",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-GeneralIndexes"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372758+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-063ff05d9a650c708",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-BT-Indexes",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 700,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 500,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2026-03-25 20:42:37.571000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdj",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdj",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-BT-Indexes"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372762+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0bff7a1190737f2f9",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-TempDB-03",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 100,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 500,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-19 16:09:18.769000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdm",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdm",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-03"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372766+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0cd4d3ddd6be419b1",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-SQLAudit",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 200,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "snap-0d924c521723c443e",
+    "multi_attach": false,
+    "create_time": "2025-09-11 17:29:12.067000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "/dev/sdi",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "/dev/sdi",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-SQLAudit"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372770+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0f0c3a56f8a506f5b",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-TempDB-01",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 100,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 500,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-19 16:09:53.565000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdn",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdn",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-01"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372774+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-07fed5a532e3b8301",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-XTP",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 1,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2026-04-01 19:36:14.221000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdv",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdv",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-XTP"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372778+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-09e27931529285d51",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-TempDB-04",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 100,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 500,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-19 16:10:28.063000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdo",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdo",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-04"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372782+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0e4bd829978c5df17",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-GeneralData",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 1420,
+    "volume_type": "gp3",
+    "iops": 4000,
+    "throughput": 1000,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-21 03:56:32.022000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdr",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdr",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-GeneralData"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372787+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-042400c02eb51b498",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-TempDB-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 100,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 500,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-19 16:08:44.307000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdl",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdl",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372790+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-00b642d6e1ec9af4f",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-RBC-Indexes",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 530,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 500,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-17 23:23:41.705000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdf",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdf",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-RBC-Indexes",
+      "name": "RBC-INDEX"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372794+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0d8c4fea59d15ed58",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-Logs",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 1536,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 500,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "snap-044f37e4e574f0685",
+    "multi_attach": false,
+    "create_time": "2025-09-11 17:29:11.957000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "/dev/sdg",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "/dev/sdg",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-Logs"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372797+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-07fa8aaacb335fbe3",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-System",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 170,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "snap-08a9c38dbad7ead53",
+    "multi_attach": false,
+    "create_time": "2025-09-11 17:29:11.690000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-System"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372802+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0407da654811c1fe6",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-ERSTHU-Data",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 2600,
+    "volume_type": "gp3",
+    "iops": 4000,
+    "throughput": 1000,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-17 23:21:56.103000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdc",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdc",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-ERSTHU-Data",
+      "name": "ERSTHU-DATA"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372806+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-093dfbdb1e45fc821",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-ERSTHU-Indexes",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 1100,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 500,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-17 23:23:20.538000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdh",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdh",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-ERSTHU-Indexes",
+      "name": "ERSTHU-INDEX"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372810+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-007f28051b1073415",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-EUR-Data",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 2300,
+    "volume_type": "gp3",
+    "iops": 4000,
+    "throughput": 1000,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-21 03:55:07.554000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvds",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvds",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-EUR-Data"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372813+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0ebadcc42504f0213",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-BT-Data",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 4200,
+    "volume_type": "gp3",
+    "iops": 4000,
+    "throughput": 1000,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2026-03-25 20:41:30.797000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdw",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdw",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-BT-Data"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372817+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-02e6e3a5f36949fc2",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-RBC-Data",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 2500,
+    "volume_type": "gp3",
+    "iops": 4000,
+    "throughput": 1000,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-17 23:22:58.942000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdi",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdi",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-RBC-Data",
+      "name": "RBC-DATA"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372820+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-04364fe9de61f529c",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-AuditLogs",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 400,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "snap-0dd9cf9077bb8d31e",
+    "multi_attach": false,
+    "create_time": "2025-09-11 17:29:11.839000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "/dev/sdf",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "/dev/sdf",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-AuditLogs"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372824+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-026abdd16a37819b1",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-EUR-Indexes",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 750,
+    "volume_type": "gp3",
+    "iops": 4000,
+    "throughput": 1000,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-21 03:54:13.105000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdt",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdt",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-EUR-Indexes"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372828+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-014b5e72a4209da4e",
+    "resource_name": "DYNAMIC_J_2",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 400,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/4f7c2682-b237-46de-9f47-be14a2c6eab5",
+    "snapshot_id": "snap-083dfd895a0cad1dc",
+    "multi_attach": false,
+    "create_time": "2025-09-11 17:29:12.611000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdd",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdd",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "DYNAMIC_J_2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372831+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0e165bd018defe4f8",
+    "resource_name": "itl-0004-itx-prod-ec2-london-01-BRD-Indexes",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 200,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 500,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2026-04-16 22:32:56.884000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08385ff7dbbc37b9d",
+        "device": "xvdb",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08385ff7dbbc37b9d",
+    "attached_device": "xvdb",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0004-itx-prod-ec2-london-01-BRD-Indexes"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08385ff7dbbc37b9d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:39:20.372835+00:00"
+  }
+]

@@ -1,0 +1,49 @@
+[
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:891376942769:certificate/9159e832-56d3-4972-80bd-2dc91e7991ba",
+    "resource_name": "temporal.dev.intelica.com",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-09-30 19:00:00-05:00",
+    "not_after": "2026-10-30 18:59:59-05:00",
+    "subject_alternative_names": [
+      "temporal.dev.intelica.com",
+      "*.temporal.dev.intelica.com"
+    ],
+    "in_use": false,
+    "in_use_by": [],
+    "renewal_eligibility": "INELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:30.745989+00:00"
+  },
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:891376942769:certificate/1dfbfeb5-135d-4591-9825-0d739f75b809",
+    "resource_name": "dev.intelica.com",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-11-05 19:00:00-05:00",
+    "not_after": "2026-12-05 18:59:59-05:00",
+    "subject_alternative_names": [
+      "dev.intelica.com",
+      "*.dev.intelica.com"
+    ],
+    "in_use": true,
+    "in_use_by": [
+      "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/app/itl-0003-portal-dev-alb-02/44cf6aae78cc8f09",
+      "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/app/itl-0003-portal-dev-alb-03/e21e56659f3c0ae7"
+    ],
+    "renewal_eligibility": "ELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:31.228767+00:00"
+  }
+]

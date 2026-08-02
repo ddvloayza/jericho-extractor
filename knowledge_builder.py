@@ -52,6 +52,31 @@ def _now() -> str:
     return datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 
+def _format_rule(rule: dict) -> str:
+    """Render a security_groups.py inbound/outbound rule dict as one line."""
+    protocol = rule.get("protocol", "")
+    proto_label = "ALL" if protocol == "-1" else protocol.upper()
+
+    from_port = rule.get("from_port")
+    to_port   = rule.get("to_port")
+    if from_port is None and to_port is None:
+        port_label = "all ports"
+    elif from_port == to_port:
+        port_label = f"port {from_port}"
+    else:
+        port_label = f"ports {from_port}-{to_port}"
+
+    sources = (
+        rule.get("ipv4_ranges", [])
+        + rule.get("ipv6_ranges", [])
+        + [f"sg:{g}" for g in rule.get("referenced_group_ids", [])]
+        + [f"pl:{p}" for p in rule.get("prefix_list_ids", [])]
+    )
+    source_label = ", ".join(sources) if sources else "—"
+
+    return f"{proto_label} {port_label} ← {source_label}"
+
+
 # ── per-account builder ───────────────────────────────────────────────────────
 
 class AccountKnowledgeBuilder:
@@ -586,10 +611,18 @@ class AccountKnowledgeBuilder:
         lines += ["## Security Groups (key ones)", ""]
         named_sgs = [sg for sg in self.sgs if sg.get("tags",{}).get("Name") or sg.get("group_name","").startswith("itl-")]
         for sg in sorted(named_sgs, key=lambda x: _name(x))[:20]:
-            sg_name   = _name(sg)
-            ingress   = sg.get("ingress_rules", [])
-            egress    = sg.get("egress_rules", [])
-            lines.append(f"- **{sg_name}** (`{sg['resource_id']}`) — {len(ingress)} ingress rules, {len(egress)} egress rules")
+            sg_name  = _name(sg)
+            inbound  = sg.get("inbound_rules", [])
+            outbound = sg.get("outbound_rules", [])
+            lines.append(f"- **{sg_name}** (`{sg['resource_id']}`) — {len(inbound)} inbound rules, {len(outbound)} outbound rules")
+            for rule in inbound[:5]:
+                lines.append(f"    - IN  {_format_rule(rule)}")
+            if len(inbound) > 5:
+                lines.append(f"    - _(+ {len(inbound)-5} more inbound)_")
+            for rule in outbound[:5]:
+                lines.append(f"    - OUT {_format_rule(rule)}")
+            if len(outbound) > 5:
+                lines.append(f"    - _(+ {len(outbound)-5} more outbound)_")
         if len(named_sgs) > 20:
             lines.append(f"\n_(+ {len(named_sgs)-20} more security groups)_")
         lines.append("")

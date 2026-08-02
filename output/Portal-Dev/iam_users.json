@@ -1,0 +1,80 @@
+[
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::891376942769:user/githubaction",
+    "resource_name": "githubaction",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "global",
+    "path": "/",
+    "create_date": "2025-01-16 21:53:27+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0003-portal-dev-githubactions-portal-pol-01",
+        "PolicyArn": "arn:aws:iam::891376942769:policy/itl-0003-portal-dev-githubactions-portal-pol-01"
+      },
+      {
+        "PolicyName": "AmazonS3FullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      }
+    ],
+    "inline_policy_names": [
+      "ECR-permissions",
+      "git-hub-kms-access",
+      "github-eks-policy"
+    ],
+    "access_keys": [
+      {
+        "access_key_id": "AKIA47CRUX2YWHZDBIHV",
+        "status": "Active",
+        "create_date": "2025-01-16 21:54:55+00:00",
+        "age_days": 541,
+        "stale": true
+      }
+    ],
+    "tags": {},
+    "collected_at": "2026-07-12T19:46:40.537744+00:00"
+  },
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::891376942769:user/jmartinez",
+    "resource_name": "jmartinez",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "global",
+    "path": "/",
+    "create_date": "2026-03-13 13:06:16+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
+      },
+      {
+        "PolicyName": "SecretsManagerReadWrite",
+        "PolicyArn": "arn:aws:iam::aws:policy/SecretsManagerReadWrite"
+      },
+      {
+        "PolicyName": "AmazonS3FullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "access_keys": [
+      {
+        "access_key_id": "AKIA47CRUX2Y32HG3W5Z",
+        "status": "Active",
+        "create_date": "2026-03-13 13:47:42+00:00",
+        "age_days": 121,
+        "stale": true
+      }
+    ],
+    "tags": {},
+    "collected_at": "2026-07-12T19:46:40.550146+00:00"
+  }
+]

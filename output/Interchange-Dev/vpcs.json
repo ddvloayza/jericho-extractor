@@ -1,0 +1,58 @@
+[
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-029134477d2a41610",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "cidr_block": "172.31.0.0/16",
+    "cidr_block_associations": [
+      "172.31.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": true,
+    "dhcp_options_id": "dopt-0a3064911df7dfbb9",
+    "instance_tenancy": "default",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-0a3064911df7dfbb9",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:38.957505+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-0101d2c447b67e9db",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "cidr_block": "10.14.0.0/16",
+    "cidr_block_associations": [
+      "10.14.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": false,
+    "dhcp_options_id": "dopt-0a3064911df7dfbb9",
+    "instance_tenancy": "default",
+    "tags": {
+      "Name": "itl-0004-itx-dev-vpc-02",
+      "coid": "itl",
+      "apid": "itx",
+      "env": "dev",
+      "assetid": "0004"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-0a3064911df7dfbb9",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:38.957517+00:00"
+  }
+]

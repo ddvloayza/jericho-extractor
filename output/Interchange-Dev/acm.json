@@ -1,0 +1,26 @@
+[
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:861276092327:certificate/9714e06f-b4a7-4ef6-af72-ba435238ac2e",
+    "resource_name": "dev.itx.intelica.com",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-09-15 19:00:00-05:00",
+    "not_after": "2026-10-15 18:59:59-05:00",
+    "subject_alternative_names": [
+      "dev.itx.intelica.com",
+      "*.dev.itx.intelica.com"
+    ],
+    "in_use": true,
+    "in_use_by": [
+      "arn:aws:transfer:eu-south-2:861276092327:server/s-ec4a3c1bb3a04bb88"
+    ],
+    "renewal_eligibility": "ELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-07-12T19:45:08.710485+00:00"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "resource_type": "aws::ec2::nat_gateway",
+    "resource_id": "nat-014b4d7d86c3c4692",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "subnet_id": "subnet-0c09cafe518adff09",
+    "state": "available",
+    "connectivity_type": "public",
+    "public_ip": "18.100.88.252",
+    "private_ip": "10.12.1.16",
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-dev-nat-2a-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c09cafe518adff09",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:16.502509+00:00"
+  }
+]

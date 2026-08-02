@@ -1,0 +1,58 @@
+[
+  {
+    "resource_type": "aws::backup::vault",
+    "resource_id": "arn:aws:backup:eu-south-2:861276092327:backup-vault:itl-0004-itx-dev-bck-vault-02",
+    "resource_name": "itl-0004-itx-dev-bck-vault-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "creation_date": "2026-01-19 17:13:50.672000-05:00",
+    "encryption_key_arn": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "number_of_recovery_points": 1,
+    "locked": false,
+    "min_retention_days": null,
+    "max_retention_days": null,
+    "total_backup_size_bytes": 85899345920,
+    "total_backup_size_gb": 80.0,
+    "est_cost_per_month": 4.0,
+    "tags": {},
+    "collected_at": "2026-07-12T19:43:44.926487+00:00"
+  },
+  {
+    "resource_type": "aws::backup::plan",
+    "resource_id": "arn:aws:backup:eu-south-2:861276092327:backup-plan:c9307d2d-5174-4794-b160-7cdd3255abbf",
+    "resource_name": "itl-0004-itx-dev-bck-plan-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "plan_id": "c9307d2d-5174-4794-b160-7cdd3255abbf",
+    "version_id": "ODQxMWU1ZWEtNTZmYS00YTkyLWIzMmMtZWVhN2JjMGYzZjcw",
+    "creation_date": "2026-01-19 17:13:51.134000-05:00",
+    "last_execution_date": "2026-07-12 03:16:07.146000-05:00",
+    "rules": [
+      {
+        "rule_name": "itl-0004-itx-dev-bck-rule-02",
+        "target_vault": "itl-0004-itx-dev-bck-vault-02",
+        "schedule_expression": "cron(00 03 * * ? *)",
+        "start_window_minutes": 60,
+        "completion_window_minutes": 180,
+        "move_to_cold_storage_after_days": null,
+        "delete_after_days": 1,
+        "enable_continuous_backup": false
+      }
+    ],
+    "selections": [
+      {
+        "selection_name": "itl-0004-itx-dev-bck-selection-02",
+        "iam_role_arn": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-role-backup-02",
+        "resources": [
+          "arn:aws:ec2:eu-south-2:861276092327:instance/i-08982a4115e1f13eb"
+        ],
+        "tag_conditions": []
+      }
+    ],
+    "protected_resource_count": 1,
+    "tags": {},
+    "collected_at": "2026-07-12T19:43:45.875080+00:00"
+  }
+]

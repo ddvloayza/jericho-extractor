@@ -1,0 +1,86 @@
+[
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:861276092327:aws-controltower-SecurityNotifications",
+    "resource_name": "aws-controltower-SecurityNotifications",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "display_name": "aws-controltower-SecurityNotifications",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 1,
+    "subscriptions_pending": 0,
+    "subscription_count": 1,
+    "kms_master_key_id": "",
+    "tags": {
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:861276092327:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-13380e59-ecb9-463f-8b41-d2a8fa63a1b8/91f23b50-8839-11f0-8dca-06b78e07dfa3",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-13380e59-ecb9-463f-8b41-d2a8fa63a1b8",
+      "aws:cloudformation:logical-id": "LocalSecurityTopic"
+    },
+    "collected_at": "2026-07-12T19:44:55.657246+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:861276092327:itl-0004-itx-dev-intchg-02-status",
+    "resource_name": "itl-0004-itx-dev-intchg-02-status",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "display_name": "",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 1,
+    "subscriptions_pending": 0,
+    "subscription_count": 1,
+    "kms_master_key_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "tags": {
+      "coid": "itl",
+      "project": "datalake",
+      "env": "dev",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "collected_at": "2026-07-12T19:44:56.315460+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:861276092327:itl-0004-itx-dev-sns-itl-operations-02",
+    "resource_name": "itl-0004-itx-dev-sns-itl-operations-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "display_name": "",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 0,
+    "subscriptions_pending": 0,
+    "subscription_count": 0,
+    "kms_master_key_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "collected_at": "2026-07-12T19:44:56.957353+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:861276092327:itl-0004-itx-dev-sns-opensearch-02",
+    "resource_name": "itl-0004-itx-dev-sns-opensearch-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "display_name": "",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 0,
+    "subscriptions_pending": 0,
+    "subscription_count": 0,
+    "kms_master_key_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "collected_at": "2026-07-12T19:44:57.606488+00:00"
+  }
+]

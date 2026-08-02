@@ -1,0 +1,38 @@
+[
+  {
+    "resource_type": "aws::events::rule",
+    "resource_id": "arn:aws:events:eu-south-2:221082197632:rule/AWSControlTowerManagedRule",
+    "resource_name": "AWSControlTowerManagedRule",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "event_bus_name": "default",
+    "state": "ENABLED",
+    "description": "This rule is used to route Security Hub Control Findings to Control Tower",
+    "schedule_expression": "",
+    "event_pattern": "{  \"source\": [\"aws.securityhub\"],   \"detail-type\": [\"Security Hub Findings - Imported\"],  \"detail\": {    \"findings\": {      \"Compliance\": {        \"AssociatedStandards\": {          \"StandardsId\" : [            { \"prefix\": \"standards/service-managed-aws-control-tower\" }          ]        }      },      \"Region\" : [\"eu-south-2\"]    }  }}",
+    "target_count": 1,
+    "tags": {},
+    "collected_at": "2026-07-12T19:46:14.948348+00:00"
+  },
+  {
+    "resource_type": "aws::events::rule",
+    "resource_id": "arn:aws:events:eu-south-2:221082197632:rule/aws-controltower-ConfigComplianceChangeEventRule",
+    "resource_name": "aws-controltower-ConfigComplianceChangeEventRule",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "event_bus_name": "default",
+    "state": "ENABLED",
+    "description": "CloudWatch Event Rule to send notification on Config Rule compliance changes.",
+    "schedule_expression": "",
+    "event_pattern": "{\"detail-type\":[\"Config Rules Compliance Change\"],\"source\":[\"aws.config\"]}",
+    "target_count": 1,
+    "tags": {
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:221082197632:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-9f1cd62a-8a65-49db-8a8e-1495f737f442/c74fe980-8836-11f0-9049-0a0c1e17e159",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-9f1cd62a-8a65-49db-8a8e-1495f737f442",
+      "aws:cloudformation:logical-id": "CWEventRuleComplianceChangeEvent"
+    },
+    "collected_at": "2026-07-12T19:46:15.363196+00:00"
+  }
+]

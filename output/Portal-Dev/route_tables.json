@@ -1,0 +1,541 @@
+[
+  {
+    "resource_type": "aws::ec2::route_table",
+    "resource_id": "rtb-0e360b325411eb0b4",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "is_main": false,
+    "associated_subnet_ids": [
+      "subnet-05c87676a0cbfce54",
+      "subnet-0c353ee340c3da15e"
+    ],
+    "routes": [
+      {
+        "destination_cidr": "10.0.3.0/24",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.0.4.0/24",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.10.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.11.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.12.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "local",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRouteTable"
+      },
+      {
+        "destination_cidr": "10.13.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.14.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.15.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.16.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.17.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.18.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "0.0.0.0/0",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "nat-014b4d7d86c3c4692",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "pl-64a5400d",
+        "gateway_id": "vpce-0cba99b86f2b07753",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      }
+    ],
+    "tags": {
+      "apid": "portal",
+      "coid": "itl",
+      "env": "dev",
+      "Name": "itl-0003-portal-dev-rt-private-02",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "associated_with_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:16.024918+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::route_table",
+    "resource_id": "rtb-0779ad3e0f829ee87",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-086471f116a4c4c20",
+    "is_main": true,
+    "associated_subnet_ids": [],
+    "routes": [
+      {
+        "destination_cidr": "172.31.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "local",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRouteTable"
+      },
+      {
+        "destination_cidr": "0.0.0.0/0",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "igw-0635c19da966fcd94",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-086471f116a4c4c20",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:16.024929+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::route_table",
+    "resource_id": "rtb-008218366635dd789",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "is_main": true,
+    "associated_subnet_ids": [],
+    "routes": [
+      {
+        "destination_cidr": "10.12.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "local",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRouteTable"
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:16.024932+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::route_table",
+    "resource_id": "rtb-02a31f1a412de0fd7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "is_main": false,
+    "associated_subnet_ids": [
+      "subnet-0a244b304a580c5e3",
+      "subnet-085c2712bbea48a30"
+    ],
+    "routes": [
+      {
+        "destination_cidr": "172.8.3.51/32",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "172.31.96.117/32",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.0.3.100/32",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "172.3.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "172.4.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.10.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.11.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.12.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "local",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRouteTable"
+      },
+      {
+        "destination_cidr": "10.13.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "10.18.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "tgw-042a72cb246bebf1e",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      },
+      {
+        "destination_cidr": "",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "pl-64a5400d",
+        "gateway_id": "vpce-0cba99b86f2b07753",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      }
+    ],
+    "tags": {
+      "Name": "itl-0003-portal-dev-rt-restricted-02",
+      "apid": "portal",
+      "env": "dev",
+      "assetid": "0003",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0a244b304a580c5e3",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-085c2712bbea48a30",
+        "relation": "associated_with_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:16.024940+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::route_table",
+    "resource_id": "rtb-018a21d4bce92239b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "is_main": false,
+    "associated_subnet_ids": [
+      "subnet-065c0d2ee544988f8",
+      "subnet-0c09cafe518adff09"
+    ],
+    "routes": [
+      {
+        "destination_cidr": "10.12.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "local",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRouteTable"
+      },
+      {
+        "destination_cidr": "0.0.0.0/0",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "igw-08de3c6edee36b2db",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRoute"
+      }
+    ],
+    "tags": {
+      "Name": "itl-0003-portal-dev-rt-public-02",
+      "env": "dev",
+      "assetid": "0003",
+      "coid": "itl",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-065c0d2ee544988f8",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c09cafe518adff09",
+        "relation": "associated_with_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:16.024944+00:00"
+  }
+]

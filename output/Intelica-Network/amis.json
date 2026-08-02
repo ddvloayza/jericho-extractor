@@ -1,0 +1,70 @@
+[
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0c13c11bd859daaf4",
+    "resource_name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
+    "description": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-03-24T20:58:18.000Z",
+    "age_days": 109,
+    "total_size_gb": 70,
+    "est_cost_per_month": 3.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0b0436b24fdf74ef2",
+        "size_gb": 70,
+        "volume_type": "gp2"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0b0436b24fdf74ef2"
+    ],
+    "tags": {},
+    "collected_at": "2026-07-12T19:40:45.176617+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-04dd621385b1e6937",
+    "resource_name": "AD-SPAIN",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "AD-SPAIN",
+    "description": "",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2025-12-01T23:22:19.000Z",
+    "age_days": 222,
+    "total_size_gb": 70,
+    "est_cost_per_month": 3.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-080942f9957ee1c6d",
+        "size_gb": 70,
+        "volume_type": "gp2"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-080942f9957ee1c6d"
+    ],
+    "tags": {},
+    "collected_at": "2026-07-12T19:40:45.176639+00:00"
+  }
+]

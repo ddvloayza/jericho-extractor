@@ -1,0 +1,101 @@
+[
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:818835242461:AMZ-LONDON-topic-01",
+    "resource_name": "AMZ-LONDON-topic-01",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "display_name": "AMZ-LONDON-topic-01",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 0,
+    "subscriptions_pending": 0,
+    "subscription_count": 0,
+    "kms_master_key_id": "",
+    "tags": {},
+    "collected_at": "2026-07-12T19:40:09.010512+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:818835242461:aws-controltower-SecurityNotifications",
+    "resource_name": "aws-controltower-SecurityNotifications",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "display_name": "aws-controltower-SecurityNotifications",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 1,
+    "subscriptions_pending": 0,
+    "subscription_count": 1,
+    "kms_master_key_id": "",
+    "tags": {
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:818835242461:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-1e5bb32d-7651-4eff-b38b-69399e44b6bd/e1321810-88da-11f0-856f-0eb272764b65",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-1e5bb32d-7651-4eff-b38b-69399e44b6bd",
+      "aws:cloudformation:logical-id": "LocalSecurityTopic"
+    },
+    "collected_at": "2026-07-12T19:40:09.632697+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:818835242461:itl-0004-itx-prd-sns-free-storage-space-02",
+    "resource_name": "itl-0004-itx-prd-sns-free-storage-space-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "display_name": "",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 1,
+    "subscriptions_pending": 0,
+    "subscription_count": 1,
+    "kms_master_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "collected_at": "2026-07-12T19:40:10.260408+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:818835242461:itl-0004-itx-prd-sns-itl-operations-02",
+    "resource_name": "itl-0004-itx-prd-sns-itl-operations-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "display_name": "",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 1,
+    "subscriptions_pending": 0,
+    "subscription_count": 1,
+    "kms_master_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "collected_at": "2026-07-12T19:40:10.880706+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:818835242461:itl-0004-itx-prd-sns-opensearch-02",
+    "resource_name": "itl-0004-itx-prd-sns-opensearch-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "display_name": "",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 1,
+    "subscriptions_pending": 0,
+    "subscription_count": 1,
+    "kms_master_key_id": "arn:aws:kms:eu-south-2:818835242461:key/371d4f99-41d4-4c91-845d-144e02715fe9",
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "collected_at": "2026-07-12T19:40:11.500024+00:00"
+  }
+]

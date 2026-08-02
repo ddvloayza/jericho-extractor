@@ -1,0 +1,434 @@
+[
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-03c1d0afc1a60f0e4",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-092dc05179287e08a",
+    "group_name": "k8s-intelicaapps-57ea5d2ed6",
+    "description": "[k8s] Managed SecurityGroup for LoadBalancer",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "ipv4_ranges": [
+          "10.13.0.0/16",
+          "10.16.0.0/16",
+          "172.5.0.0/16",
+          "172.8.0.0/16",
+          "172.9.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.13.0.0/16",
+          "10.16.0.0/16",
+          "172.5.0.0/16",
+          "172.8.0.0/16",
+          "172.9.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "ingress.k8s.aws/stack": "intelica-apps",
+      "elbv2.k8s.aws/cluster": "itl-0005-ana-dev-eks-af-02",
+      "ingress.k8s.aws/resource": "ManagedLBSecurityGroup"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:43.254788+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0306696bd6ebb3048",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-092dc05179287e08a",
+    "group_name": "GuardDutyManagedSecurityGroup-vpc-092dc05179287e08a",
+    "description": "Associated with VPC-vpc-092dc05179287e08a and tagged as GuardDutyManaged",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.16.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [],
+    "tags": {
+      "GuardDutyManaged": "true"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:43.254803+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-09f9f8634ffe458e8",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0f4a2881864e2f145",
+    "group_name": "default",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-09f9f8634ffe458e8"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0f4a2881864e2f145",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:43.254810+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-08a170933bb288237",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-092dc05179287e08a",
+    "group_name": "eks-cluster-sg-itl-0005-ana-dev-eks-af-02-755421789",
+    "description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 8080,
+        "to_port": 8080,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-02006a6eae69e1737"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-02006a6eae69e1737",
+          "sg-08a170933bb288237"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-08a170933bb288237"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.16.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.13.0.0/16",
+          "10.16.0.0/16",
+          "172.5.0.0/16",
+          "172.8.0.0/16",
+          "172.9.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "assetid": "0005",
+      "Name": "eks-cluster-sg-itl-0005-ana-dev-eks-af-02-755421789",
+      "kubernetes.io/cluster/itl-0005-ana-dev-eks-af-02": "owned",
+      "aws:eks:cluster-name": "itl-0005-ana-dev-eks-af-02",
+      "apid": "ana",
+      "env": "dev",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:43.254827+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-085b5a07768a54d37",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-092dc05179287e08a",
+    "group_name": "itl-0005-ana-dev-rds-dbaf-02-sg",
+    "description": "Managed by Terraform",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "ipv4_ranges": [
+          "10.16.1.0/24",
+          "10.16.2.0/24",
+          "10.16.0.0/24"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "apid": "ana",
+      "assetid": "0005",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:43.254835+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-07a758f02116e2f3e",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-092dc05179287e08a",
+    "group_name": "itl-0005-ana-dev-evpc-02-sg",
+    "description": "VPC Endpoint security Group",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.16.0.0/24",
+          "10.16.1.0/24",
+          "10.16.2.0/24"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "assetid": "0005",
+      "env": "dev",
+      "apid": "ana",
+      "Name": "itl-0005-ana-dev-evpc-02-sg",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:43.254843+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0dae416b84554ddd6",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-092dc05179287e08a",
+    "group_name": "default",
+    "description": "default VPC security group",
+    "inbound_rules": [],
+    "outbound_rules": [],
+    "tags": {
+      "assetid": "0005",
+      "coid": "itl",
+      "env": "dev",
+      "Name": "default",
+      "apid": "ana"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:43.254847+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-02006a6eae69e1737",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-092dc05179287e08a",
+    "group_name": "k8s-traffic-itl0005anadeveksaf02-75e4763a0f",
+    "description": "[k8s] Shared Backend SecurityGroup for LoadBalancer",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "elbv2.k8s.aws/cluster": "itl-0005-ana-dev-eks-af-02",
+      "elbv2.k8s.aws/resource": "backend-sg"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:43.254852+00:00"
+  }
+]

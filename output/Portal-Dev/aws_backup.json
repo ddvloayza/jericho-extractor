@@ -1,0 +1,58 @@
+[
+  {
+    "resource_type": "aws::backup::vault",
+    "resource_id": "arn:aws:backup:eu-south-2:891376942769:backup-vault:itl-0003-portal-dev-bck-vault-03",
+    "resource_name": "itl-0003-portal-dev-bck-vault-03",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-03 12:29:51.310000-05:00",
+    "encryption_key_arn": "arn:aws:kms:eu-south-2:891376942769:key/01234c6d-f41e-45d2-9e78-dae042d00859",
+    "number_of_recovery_points": 1,
+    "locked": false,
+    "min_retention_days": null,
+    "max_retention_days": null,
+    "total_backup_size_bytes": 6345814179840,
+    "total_backup_size_gb": 5910.0,
+    "est_cost_per_month": 295.5,
+    "tags": {},
+    "collected_at": "2026-07-12T19:47:21.667148+00:00"
+  },
+  {
+    "resource_type": "aws::backup::plan",
+    "resource_id": "arn:aws:backup:eu-south-2:891376942769:backup-plan:fe1a2885-fe86-4ae8-a80b-63e931ed0984",
+    "resource_name": "itl-0003-portal-dev-bck-plan-03",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "plan_id": "fe1a2885-fe86-4ae8-a80b-63e931ed0984",
+    "version_id": "NjdlMGM3ODktMTE0Zi00OGY1LWIxYjYtOTg5NjM0ZDRmZTFh",
+    "creation_date": "2026-01-13 14:37:12.943000-05:00",
+    "last_execution_date": "2026-07-12 03:13:59.387000-05:00",
+    "rules": [
+      {
+        "rule_name": "itl-0003-portal-dev-bck-rule-03",
+        "target_vault": "itl-0003-portal-dev-bck-vault-03",
+        "schedule_expression": "cron(00 03 * * ? *)",
+        "start_window_minutes": 60,
+        "completion_window_minutes": 180,
+        "move_to_cold_storage_after_days": null,
+        "delete_after_days": 1,
+        "enable_continuous_backup": false
+      }
+    ],
+    "selections": [
+      {
+        "selection_name": "itl-0003-portal-dev-bck-selection-03",
+        "iam_role_arn": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-role-backup-03",
+        "resources": [
+          "arn:aws:ec2:eu-south-2:891376942769:instance/i-05194347248b47521"
+        ],
+        "tag_conditions": []
+      }
+    ],
+    "protected_resource_count": 1,
+    "tags": {},
+    "collected_at": "2026-07-12T19:47:22.563612+00:00"
+  }
+]

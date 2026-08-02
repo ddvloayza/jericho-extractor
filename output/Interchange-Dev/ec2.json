@@ -1,0 +1,50 @@
+[
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-08982a4115e1f13eb",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "instance_type": "r6g.xlarge",
+    "state": "running",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_id": "subnet-0b02ad525f046501b",
+    "private_ip": "10.14.3.173",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-029023ea8a832aed0",
+    "key_name": "itl-0004-itx-dev-ec2-app-02",
+    "platform": "linux",
+    "architecture": "arm64",
+    "security_group_ids": [
+      "sg-08b45de2d52e4a925"
+    ],
+    "iam_instance_profile": "arn:aws:iam::861276092327:instance-profile/itl-0004-itx-dev-ec2-app-02-role-profile",
+    "launch_time": "2025-09-17 17:06:53+00:00",
+    "tags": {
+      "assetid": "0004",
+      "apid": "itx",
+      "Name": "itl-0004-itx-dev-ec2-app-02",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b02ad525f046501b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-08b45de2d52e4a925",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:42.612870+00:00"
+  }
+]

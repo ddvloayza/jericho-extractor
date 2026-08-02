@@ -1,0 +1,2474 @@
+[
+  {
+    "resource_type": "aws::eks::k8s_namespace",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+    "resource_name": "airflow",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "64105735-7736-450d-9355-fd00cb33e177",
+    "namespace": "",
+    "status": "Active",
+    "labels": {
+      "apid": "ana",
+      "assetid": "0005",
+      "coid": "itl",
+      "env": "dev",
+      "kubernetes.io/metadata.name": "airflow"
+    },
+    "annotations": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:25.915417+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_namespace",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+    "resource_name": "amazon-cloudwatch",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "ee066157-9b92-4dd3-8996-cfe045c41a58",
+    "namespace": "",
+    "status": "Active",
+    "labels": {
+      "kubernetes.io/metadata.name": "amazon-cloudwatch"
+    },
+    "annotations": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:25.915427+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_namespace",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-guardduty",
+    "resource_name": "amazon-guardduty",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "17a377d3-e45d-4805-b00d-a8767b7a47a4",
+    "namespace": "",
+    "status": "Active",
+    "labels": {
+      "kubernetes.io/metadata.name": "amazon-guardduty"
+    },
+    "annotations": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:25.915430+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_namespace",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+    "resource_name": "argocd",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "33b48e49-8a8e-4c74-b7df-a8103e631f17",
+    "namespace": "",
+    "status": "Active",
+    "labels": {
+      "kubernetes.io/metadata.name": "argocd"
+    },
+    "annotations": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:25.915433+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_namespace",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/default",
+    "resource_name": "default",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "98320855-c842-47ca-902d-b21399e77267",
+    "namespace": "",
+    "status": "Active",
+    "labels": {
+      "kubernetes.io/metadata.name": "default"
+    },
+    "annotations": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:25.915435+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_namespace",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-node-lease",
+    "resource_name": "kube-node-lease",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "cf1bfb58-a354-4dc1-a9b8-74ab240190a6",
+    "namespace": "",
+    "status": "Active",
+    "labels": {
+      "kubernetes.io/metadata.name": "kube-node-lease"
+    },
+    "annotations": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:25.915438+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_namespace",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-public",
+    "resource_name": "kube-public",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "851f8606-6a45-4506-a21f-560ee5605eb9",
+    "namespace": "",
+    "status": "Active",
+    "labels": {
+      "kubernetes.io/metadata.name": "kube-public"
+    },
+    "annotations": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:25.915440+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_namespace",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+    "resource_name": "kube-system",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "336e4bab-cfbe-4062-98ec-5dfa0051d636",
+    "namespace": "",
+    "status": "Active",
+    "labels": {
+      "kubernetes.io/metadata.name": "kube-system"
+    },
+    "annotations": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:25.915444+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/airflow/airflowdev-db-migrations",
+    "resource_name": "airflowdev-db-migrations",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "cb001a2b-ce29-4632-90b2-0a8aeed78b90",
+    "namespace": "airflow",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "db-migrations",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "selector": {
+      "app": "airflow",
+      "component": "db-migrations",
+      "release": "airflowdev"
+    },
+    "containers": [
+      "221082197632.dkr.ecr.eu-south-2.amazonaws.com/itl-0005-ana-dev-ecr-slim-airflow-02:latest",
+      "registry.k8s.io/git-sync/git-sync:v3.6.9"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954710+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/airflow/airflowdev-pgbouncer",
+    "resource_name": "airflowdev-pgbouncer",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "6fdd86f1-8db2-44b9-917b-cc38df50925b",
+    "namespace": "airflow",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "pgbouncer",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "selector": {
+      "app": "airflow",
+      "component": "pgbouncer",
+      "release": "airflowdev"
+    },
+    "containers": [
+      "ghcr.io/airflow-helm/pgbouncer:1.22.1-patch.0"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954724+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/airflow/airflowdev-scheduler",
+    "resource_name": "airflowdev-scheduler",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "503588b3-3420-4c32-8340-4d75921c7bfa",
+    "namespace": "airflow",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "scheduler",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "selector": {
+      "app": "airflow",
+      "component": "scheduler",
+      "release": "airflowdev"
+    },
+    "containers": [
+      "221082197632.dkr.ecr.eu-south-2.amazonaws.com/itl-0005-ana-dev-ecr-slim-airflow-02:latest",
+      "registry.k8s.io/git-sync/git-sync:v3.6.9",
+      "221082197632.dkr.ecr.eu-south-2.amazonaws.com/itl-0005-ana-dev-ecr-slim-airflow-02:latest"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954732+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/airflow/airflowdev-sync-connections",
+    "resource_name": "airflowdev-sync-connections",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "8f0fd4ab-aab0-49c4-95ad-a09318f33d8d",
+    "namespace": "airflow",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "sync-connections",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "selector": {
+      "app": "airflow",
+      "component": "sync-connections",
+      "release": "airflowdev"
+    },
+    "containers": [
+      "221082197632.dkr.ecr.eu-south-2.amazonaws.com/itl-0005-ana-dev-ecr-slim-airflow-02:latest",
+      "registry.k8s.io/git-sync/git-sync:v3.6.9"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954738+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/airflow/airflowdev-sync-users",
+    "resource_name": "airflowdev-sync-users",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "218dc7b3-6e87-46b3-972e-91e2d8462f29",
+    "namespace": "airflow",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "sync-users",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "selector": {
+      "app": "airflow",
+      "component": "sync-users",
+      "release": "airflowdev"
+    },
+    "containers": [
+      "221082197632.dkr.ecr.eu-south-2.amazonaws.com/itl-0005-ana-dev-ecr-slim-airflow-02:latest",
+      "registry.k8s.io/git-sync/git-sync:v3.6.9"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954744+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/airflow/airflowdev-triggerer",
+    "resource_name": "airflowdev-triggerer",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "84a165f9-962c-46be-b111-90ff1a42aaf6",
+    "namespace": "airflow",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "triggerer",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "selector": {
+      "app": "airflow",
+      "component": "triggerer",
+      "release": "airflowdev"
+    },
+    "containers": [
+      "221082197632.dkr.ecr.eu-south-2.amazonaws.com/itl-0005-ana-dev-ecr-slim-airflow-02:latest",
+      "registry.k8s.io/git-sync/git-sync:v3.6.9"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954750+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/airflow/airflowdev-web",
+    "resource_name": "airflowdev-web",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "7d8dfc02-85bb-448a-b74d-64b30e07f44e",
+    "namespace": "airflow",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "web",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "selector": {
+      "app": "airflow",
+      "component": "web",
+      "release": "airflowdev"
+    },
+    "containers": [
+      "221082197632.dkr.ecr.eu-south-2.amazonaws.com/itl-0005-ana-dev-ecr-slim-airflow-02:latest",
+      "registry.k8s.io/git-sync/git-sync:v3.6.9"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954756+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/amazon-cloudwatch/amazon-cloudwatch-observability-controller-manager",
+    "resource_name": "amazon-cloudwatch-observability-controller-manager",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "ae9e7658-92cd-4a3f-88ab-738ce7bffb5b",
+    "namespace": "amazon-cloudwatch",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/instance": "amazon-cloudwatch-observability",
+      "app.kubernetes.io/managed-by": "EKS",
+      "app.kubernetes.io/name": "amazon-cloudwatch-observability",
+      "app.kubernetes.io/version": "1.0.0",
+      "control-plane": "controller-manager"
+    },
+    "selector": {
+      "app.kubernetes.io/name": "amazon-cloudwatch-observability",
+      "control-plane": "controller-manager"
+    },
+    "containers": [
+      "455263428931.dkr.ecr.eu-south-2.amazonaws.com/eks/observability/cloudwatch-agent-operator:3.3.0"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954761+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-applicationset-controller",
+    "resource_name": "argocd-applicationset-controller",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "f0563168-38a4-4b82-85ef-8ebe7fc0750b",
+    "namespace": "argocd",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/component": "applicationset-controller",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-applicationset-controller",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-applicationset-controller"
+    },
+    "containers": [
+      "quay.io/argoproj/argocd:v2.14.2"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954767+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-dex-server",
+    "resource_name": "argocd-dex-server",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "42a8aeb4-451a-42a0-885e-f608af1cba81",
+    "namespace": "argocd",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/component": "dex-server",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-dex-server",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-dex-server"
+    },
+    "containers": [
+      "ghcr.io/dexidp/dex:v2.41.1"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954772+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-notifications-controller",
+    "resource_name": "argocd-notifications-controller",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "8d5384bd-0feb-4aaf-b5e4-2fa51efae133",
+    "namespace": "argocd",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/component": "notifications-controller",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-notifications-controller",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-notifications-controller"
+    },
+    "containers": [
+      "quay.io/argoproj/argocd:v2.14.2"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954778+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-redis",
+    "resource_name": "argocd-redis",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "7f45bff1-cc7f-4834-acff-bcfbdfa2f8e9",
+    "namespace": "argocd",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/component": "redis",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-redis",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "selector": {
+      "app.kubernetes.io/name": "argocd-redis"
+    },
+    "containers": [
+      "public.ecr.aws/docker/library/redis:7.4.2-alpine"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954783+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-repo-server",
+    "resource_name": "argocd-repo-server",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "aeee94c8-fc93-489b-9e72-538684d4f360",
+    "namespace": "argocd",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/component": "repo-server",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-repo-server",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-repo-server"
+    },
+    "containers": [
+      "quay.io/argoproj/argocd:v2.14.2"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954788+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/argocd/argocd-server",
+    "resource_name": "argocd-server",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "554c58e8-02fb-47b7-a21a-930a2857f71f",
+    "namespace": "argocd",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/component": "server",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-server",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-server"
+    },
+    "containers": [
+      "quay.io/argoproj/argocd:v2.14.2"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954792+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/kube-system/autoscaler-aws-cluster-autoscaler",
+    "resource_name": "autoscaler-aws-cluster-autoscaler",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "15cf4996-b568-4e4f-b9e7-d1a2e79ec552",
+    "namespace": "kube-system",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/instance": "autoscaler",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "aws-cluster-autoscaler",
+      "helm.sh/chart": "cluster-autoscaler-9.37.0"
+    },
+    "selector": {
+      "app.kubernetes.io/instance": "autoscaler",
+      "app.kubernetes.io/name": "aws-cluster-autoscaler"
+    },
+    "containers": [
+      "registry.k8s.io/autoscaling/cluster-autoscaler:v1.30.0"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954796+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/kube-system/aws-load-balancer-controller",
+    "resource_name": "aws-load-balancer-controller",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "043beb45-6990-42d8-b208-e475415d78e1",
+    "namespace": "kube-system",
+    "replicas": 2,
+    "available_replicas": 2,
+    "ready_replicas": 2,
+    "labels": {
+      "app.kubernetes.io/instance": "aws-load-balancer-controller",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "aws-load-balancer-controller",
+      "app.kubernetes.io/version": "v2.13.3",
+      "helm.sh/chart": "aws-load-balancer-controller-1.13.3"
+    },
+    "selector": {
+      "app.kubernetes.io/instance": "aws-load-balancer-controller",
+      "app.kubernetes.io/name": "aws-load-balancer-controller"
+    },
+    "containers": [
+      "public.ecr.aws/eks/aws-load-balancer-controller:v2.13.3"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954799+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/kube-system/coredns",
+    "resource_name": "coredns",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "3f6a1974-87f1-4ce1-be86-cb160456917a",
+    "namespace": "kube-system",
+    "replicas": 2,
+    "available_replicas": 2,
+    "ready_replicas": 2,
+    "labels": {
+      "eks.amazonaws.com/component": "coredns",
+      "k8s-app": "kube-dns",
+      "kubernetes.io/name": "CoreDNS"
+    },
+    "selector": {
+      "eks.amazonaws.com/component": "coredns",
+      "k8s-app": "kube-dns"
+    },
+    "containers": [
+      "455263428931.dkr.ecr.eu-south-2.amazonaws.com/eks/coredns:v1.12.1-eksbuild.2"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954802+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/kube-system/external-dns",
+    "resource_name": "external-dns",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "cca14d7d-a64d-4c38-8c63-c71297a04725",
+    "namespace": "kube-system",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/instance": "external-dns",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "external-dns",
+      "app.kubernetes.io/version": "0.13.6",
+      "helm.sh/chart": "external-dns-1.13.1"
+    },
+    "selector": {
+      "app.kubernetes.io/instance": "external-dns",
+      "app.kubernetes.io/name": "external-dns"
+    },
+    "containers": [
+      "registry.k8s.io/external-dns/external-dns:v0.13.6"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954806+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_deployment/kube-system/metrics-server",
+    "resource_name": "metrics-server",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "ef19f577-2eba-49ae-8a66-bb1744bea120",
+    "namespace": "kube-system",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app.kubernetes.io/instance": "metrics-server",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "metrics-server",
+      "app.kubernetes.io/version": "0.7.1",
+      "helm.sh/chart": "metrics-server-3.12.1"
+    },
+    "selector": {
+      "app.kubernetes.io/instance": "metrics-server",
+      "app.kubernetes.io/name": "metrics-server"
+    },
+    "containers": [
+      "registry.k8s.io/metrics-server/metrics-server:v0.7.1"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:26.954809+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/airflow/airflowdev-pgbouncer",
+    "resource_name": "airflowdev-pgbouncer",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "1155d59e-8456-498c-9932-3f246d5708a5",
+    "namespace": "airflow",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.103.174",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 6432,
+        "target_port": "6432",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app": "airflow",
+      "component": "pgbouncer",
+      "release": "airflowdev"
+    },
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "pgbouncer",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166073+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/airflow/airflowdev-web",
+    "resource_name": "airflowdev-web",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "e039aeb1-2bb1-4bc4-b036-290042813f1d",
+    "namespace": "airflow",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.39.206",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 8080,
+        "target_port": "8080",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app": "airflow",
+      "component": "web",
+      "release": "airflowdev"
+    },
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "web",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166086+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/amazon-cloudwatch-observability-webhook-service",
+    "resource_name": "amazon-cloudwatch-observability-webhook-service",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "8ed3ce59-f753-4d07-a438-0b4923e0f362",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.41.192",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 443,
+        "target_port": "9443",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/name": "amazon-cloudwatch-observability",
+      "control-plane": "controller-manager"
+    },
+    "labels": {
+      "app.kubernetes.io/instance": "amazon-cloudwatch-observability",
+      "app.kubernetes.io/managed-by": "EKS",
+      "app.kubernetes.io/name": "amazon-cloudwatch-observability",
+      "app.kubernetes.io/version": "1.0.0"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166090+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent",
+    "resource_name": "cloudwatch-agent",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "0af55ec8-4e0c-4fdb-9164-50fb92b8362b",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.231.69",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 4315,
+        "target_port": "4315",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 4316,
+        "target_port": "4316",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 2000,
+        "target_port": "2000",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 4311,
+        "target_port": "4311",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/name": "cloudwatch-agent",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/version": "1.300060.0b1248"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166095+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-headless",
+    "resource_name": "cloudwatch-agent-headless",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "b057c283-b0c1-42e8-87da-113035708fa8",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "None",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 2000,
+        "target_port": "2000",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 4311,
+        "target_port": "4311",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 4315,
+        "target_port": "4315",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 4316,
+        "target_port": "4316",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/name": "cloudwatch-agent",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/version": "1.300060.0b1248",
+      "operator.opentelemetry.io/collector-headless-service": "Exists"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166101+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-monitoring",
+    "resource_name": "cloudwatch-agent-monitoring",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "6c00795a-f1b3-4420-9df6-aa912829e67d",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.223.104",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 8888,
+        "target_port": "8888",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/name": "cloudwatch-agent-monitoring",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/version": "1.300060.0b1248"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166105+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-windows",
+    "resource_name": "cloudwatch-agent-windows",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "5e70f1df-c638-4c16-8640-13164b0044df",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.242.14",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 4315,
+        "target_port": "4315",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 4316,
+        "target_port": "4316",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 2000,
+        "target_port": "2000",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 4311,
+        "target_port": "4311",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent-windows",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent-windows",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/name": "cloudwatch-agent-windows",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/version": "1.300060.0b1248"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166110+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-windows-container-insights-monitoring",
+    "resource_name": "cloudwatch-agent-windows-container-insights-monitoring",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "e08aa4b1-1f28-44c7-8339-159c1e0de999",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.160.101",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 8888,
+        "target_port": "8888",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent-windows-container-insights",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent-windows-container-insights",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/name": "cloudwatch-agent-windows-container-insights-monitoring",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/version": "1.300060.0b1248"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166114+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-windows-headless",
+    "resource_name": "cloudwatch-agent-windows-headless",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "786ad8f7-b369-4089-9fbf-7644e54d9778",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "None",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 4315,
+        "target_port": "4315",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 4316,
+        "target_port": "4316",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 2000,
+        "target_port": "2000",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 4311,
+        "target_port": "4311",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent-windows",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent-windows",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/name": "cloudwatch-agent-windows",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/version": "1.300060.0b1248",
+      "operator.opentelemetry.io/collector-headless-service": "Exists"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166120+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/cloudwatch-agent-windows-monitoring",
+    "resource_name": "cloudwatch-agent-windows-monitoring",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "af5cc442-77a4-436d-9aac-cc181f2c7422",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.17.4",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 8888,
+        "target_port": "8888",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent-windows",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.cloudwatch-agent-windows",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/name": "cloudwatch-agent-windows-monitoring",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/version": "1.300060.0b1248"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166123+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/dcgm-exporter-service",
+    "resource_name": "dcgm-exporter-service",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "2a957703-bb23-49ba-b8a6-38719a4d3708",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.39.5",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 9400,
+        "target_port": "9400",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/component": "dcgm-exporter",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.dcgm-exporter",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "dcgm-exporter",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.dcgm-exporter",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/name": "dcgm-exporter",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/version": "4.4.0-4.5.0-ubuntu22.04",
+      "k8s-app": "dcgm-exporter-service",
+      "version": "v1"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166127+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/amazon-cloudwatch/neuron-monitor-service",
+    "resource_name": "neuron-monitor-service",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "b69ef623-5de5-4c33-8dfd-3fc0ea4adfc3",
+    "namespace": "amazon-cloudwatch",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.10.85",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 8000,
+        "target_port": "8000",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/component": "neuron-monitor",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.neuron-monitor",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "neuron-monitor",
+      "app.kubernetes.io/instance": "amazon-cloudwatch.neuron-monitor",
+      "app.kubernetes.io/managed-by": "amazon-cloudwatch-agent-operator",
+      "app.kubernetes.io/name": "neuron-monitor",
+      "app.kubernetes.io/part-of": "amazon-cloudwatch-agent",
+      "app.kubernetes.io/version": "1.6.0",
+      "k8s-app": "neuron-monitor-service",
+      "version": "v1"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/amazon-cloudwatch",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166131+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/argocd/argocd-applicationset-controller",
+    "resource_name": "argocd-applicationset-controller",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "5c5b066c-b68b-42f0-9ae1-e52a008dd595",
+    "namespace": "argocd",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.194.17",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 7000,
+        "target_port": "webhook",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-applicationset-controller"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "applicationset-controller",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-applicationset-controller",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166134+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/argocd/argocd-dex-server",
+    "resource_name": "argocd-dex-server",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "4245d610-d6f5-4d1d-addf-0bbaf0e25b2e",
+    "namespace": "argocd",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.167.229",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 5556,
+        "target_port": "http",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 5557,
+        "target_port": "grpc",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-dex-server"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "dex-server",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-dex-server",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166138+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/argocd/argocd-redis",
+    "resource_name": "argocd-redis",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "ba6edbce-39ee-4bf7-8ec5-306a9d4b41a9",
+    "namespace": "argocd",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.157.249",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 6379,
+        "target_port": "redis",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-redis"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "redis",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-redis",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166142+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/argocd/argocd-repo-server",
+    "resource_name": "argocd-repo-server",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "2ea16cdd-f887-41a5-a0e8-2bba8373aff5",
+    "namespace": "argocd",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.232.249",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 8081,
+        "target_port": "repo-server",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-repo-server"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "repo-server",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-repo-server",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166146+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/argocd/argocd-server",
+    "resource_name": "argocd-server",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "7161eddc-fcfb-43fb-9fd2-b7d6c053faba",
+    "namespace": "argocd",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.28.166",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 80,
+        "target_port": "8080",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 443,
+        "target_port": "8080",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-server"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "server",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-server",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166150+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/argocd/argocd-server-grpc",
+    "resource_name": "argocd-server-grpc",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "f3b907eb-e2fd-4623-93d8-f87785818409",
+    "namespace": "argocd",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.91.30",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 80,
+        "target_port": "8080",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 443,
+        "target_port": "8080",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/name": "argocd-server"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "server-gprc",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-server-grpc",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166155+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/default/kubernetes",
+    "resource_name": "kubernetes",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "7a93e88c-f8fa-418f-85f2-474b05ca8bb9",
+    "namespace": "default",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.0.1",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 443,
+        "target_port": "443",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {},
+    "labels": {
+      "component": "apiserver",
+      "provider": "kubernetes"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/default",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166158+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/kube-system/autoscaler-aws-cluster-autoscaler",
+    "resource_name": "autoscaler-aws-cluster-autoscaler",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "a8b3473a-e0dc-4866-b704-6aa0734c1076",
+    "namespace": "kube-system",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.152.231",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 8085,
+        "target_port": "8085",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "autoscaler",
+      "app.kubernetes.io/name": "aws-cluster-autoscaler"
+    },
+    "labels": {
+      "app.kubernetes.io/instance": "autoscaler",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "aws-cluster-autoscaler",
+      "helm.sh/chart": "cluster-autoscaler-9.37.0"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166162+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/kube-system/aws-load-balancer-webhook-service",
+    "resource_name": "aws-load-balancer-webhook-service",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "02c12779-abbd-4237-8104-c2d6676801f3",
+    "namespace": "kube-system",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.182.212",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 443,
+        "target_port": "webhook-server",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "aws-load-balancer-controller",
+      "app.kubernetes.io/name": "aws-load-balancer-controller"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "webhook",
+      "app.kubernetes.io/instance": "aws-load-balancer-controller",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "aws-load-balancer-controller",
+      "app.kubernetes.io/version": "v2.13.3",
+      "helm.sh/chart": "aws-load-balancer-controller-1.13.3",
+      "prometheus.io/service-monitor": "false"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166166+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/kube-system/eks-extension-metrics-api",
+    "resource_name": "eks-extension-metrics-api",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "62db7658-db00-4ec2-911b-1788f6b46c6e",
+    "namespace": "kube-system",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.138.85",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 443,
+        "target_port": "10443",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {},
+    "labels": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166170+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/kube-system/external-dns",
+    "resource_name": "external-dns",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "409de77c-f323-4014-8c00-ef10a035703e",
+    "namespace": "kube-system",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.61.48",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 7979,
+        "target_port": "http",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "external-dns",
+      "app.kubernetes.io/name": "external-dns"
+    },
+    "labels": {
+      "app.kubernetes.io/instance": "external-dns",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "external-dns",
+      "app.kubernetes.io/version": "0.13.6",
+      "helm.sh/chart": "external-dns-1.13.1"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166174+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/kube-system/kube-dns",
+    "resource_name": "kube-dns",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "9d31fc2c-969e-4dd4-80c4-982eafc09da1",
+    "namespace": "kube-system",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.0.10",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 53,
+        "target_port": "53",
+        "protocol": "UDP",
+        "node_port": null
+      },
+      {
+        "port": 53,
+        "target_port": "53",
+        "protocol": "TCP",
+        "node_port": null
+      },
+      {
+        "port": 9153,
+        "target_port": "9153",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "k8s-app": "kube-dns"
+    },
+    "labels": {
+      "eks.amazonaws.com/component": "kube-dns",
+      "k8s-app": "kube-dns",
+      "kubernetes.io/cluster-service": "true",
+      "kubernetes.io/name": "CoreDNS"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166179+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_service/kube-system/metrics-server",
+    "resource_name": "metrics-server",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "dd6fe819-1e6b-47a2-aa0b-83dd2a6ee878",
+    "namespace": "kube-system",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.226.166",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 443,
+        "target_port": "https",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app.kubernetes.io/instance": "metrics-server",
+      "app.kubernetes.io/name": "metrics-server"
+    },
+    "labels": {
+      "app.kubernetes.io/instance": "metrics-server",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "metrics-server",
+      "app.kubernetes.io/version": "0.7.1",
+      "helm.sh/chart": "metrics-server-3.12.1"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/kube-system",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.166182+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_ingress",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_ingress/airflow/airflowdev-web",
+    "resource_name": "airflowdev-web",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "55d3e801-97ea-4e4e-8a0b-a69226072985",
+    "namespace": "airflow",
+    "ingress_class": "alb",
+    "alb_hostname": "internal-itl-0005-ana-dev-alb-apps-02-302345601.eu-south-2.elb.amazonaws.com",
+    "rules": [
+      {
+        "host": "airflow.dev.analytics.intelica.com",
+        "paths": [
+          {
+            "path": "/",
+            "path_type": "ImplementationSpecific",
+            "service_name": "airflowdev-web",
+            "service_port": "web"
+          }
+        ]
+      }
+    ],
+    "annotations": {
+      "alb.ingress.kubernetes.io/certificate-arn": "arn:aws:acm:eu-south-2:221082197632:certificate/48cbd7ee-9670-4367-bc13-db4601ee6c30",
+      "alb.ingress.kubernetes.io/group.name": "intelica-apps",
+      "alb.ingress.kubernetes.io/healthcheck-path": "/health",
+      "alb.ingress.kubernetes.io/inbound-cidrs": "10.13.0.0/16,10.16.0.0/16,172.5.0.0/16,172.8.0.0/16,172.9.0.0/16",
+      "alb.ingress.kubernetes.io/listen-ports": "[{\"HTTP\": 80},{\"HTTPS\":443}]",
+      "alb.ingress.kubernetes.io/load-balancer-name": "itl-0005-ana-dev-alb-apps-02",
+      "alb.ingress.kubernetes.io/scheme": "internal",
+      "alb.ingress.kubernetes.io/ssl-policy": "ELBSecurityPolicy-TLS-1-2-2017-01",
+      "alb.ingress.kubernetes.io/ssl-redirect": "443",
+      "alb.ingress.kubernetes.io/target-type": "ip",
+      "external-dns.alpha.kubernetes.io/hostname": "airflow.dev.analytics.intelica.com",
+      "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"networking.k8s.io/v1\",\"kind\":\"Ingress\",\"metadata\":{\"annotations\":{\"alb.ingress.kubernetes.io/certificate-arn\":\"arn:aws:acm:eu-south-2:221082197632:certificate/48cbd7ee-9670-4367-bc13-db4601ee6c30\",\"alb.ingress.kubernetes.io/group.name\":\"intelica-apps\",\"alb.ingress.kubernetes.io/healthcheck-path\":\"/health\",\"alb.ingress.kubernetes.io/listen-ports\":\"[{\\\"HTTP\\\": 80},{\\\"HTTPS\\\":443}]\",\"alb.ingress.kubernetes.io/load-balancer-name\":\"itl-0005-ana-dev-alb-apps-02\",\"alb.ingress.kubernetes.io/scheme\":\""
+    },
+    "labels": {
+      "app": "airflow",
+      "argocd.argoproj.io/instance": "airflowdev",
+      "chart": "airflow-8.9.0",
+      "component": "web",
+      "heritage": "Helm",
+      "release": "airflowdev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/airflow",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.367517+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_ingress",
+    "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_ingress/argocd/argocd-server",
+    "resource_name": "argocd-server",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0005-ana-dev-eks-af-02",
+    "cluster_arn": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+    "uid": "85c868df-f14a-46eb-bc8e-3356a5de973a",
+    "namespace": "argocd",
+    "ingress_class": "alb",
+    "alb_hostname": "internal-itl-0005-ana-dev-alb-apps-02-302345601.eu-south-2.elb.amazonaws.com",
+    "rules": [
+      {
+        "host": "argocd.dev.analytics.intelica.com",
+        "paths": [
+          {
+            "path": "/",
+            "path_type": "Prefix",
+            "service_name": "argocd-server-grpc",
+            "service_port": "80"
+          },
+          {
+            "path": "/",
+            "path_type": "Prefix",
+            "service_name": "argocd-server",
+            "service_port": "80"
+          }
+        ]
+      }
+    ],
+    "annotations": {
+      "alb.ingress.kubernetes.io/backend-protocol": "HTTP",
+      "alb.ingress.kubernetes.io/certificate-arn": "arn:aws:acm:eu-south-2:221082197632:certificate/48cbd7ee-9670-4367-bc13-db4601ee6c30",
+      "alb.ingress.kubernetes.io/conditions.argocd-server-grpc": "[{\"field\":\"http-header\",\"httpHeaderConfig\":{\"httpHeaderName\": \"Content-Type\", \"values\":[\"application/grpc\"]}}]\n",
+      "alb.ingress.kubernetes.io/group.name": "intelica-apps",
+      "alb.ingress.kubernetes.io/listen-ports": "[{\"HTTP\": 80},{\"HTTPS\":443}]",
+      "alb.ingress.kubernetes.io/load-balancer-name": "itl-0005-ana-dev-alb-apps-02",
+      "alb.ingress.kubernetes.io/scheme": "internal",
+      "alb.ingress.kubernetes.io/ssl-policy": "ELBSecurityPolicy-TLS-1-2-2017-01",
+      "alb.ingress.kubernetes.io/ssl-redirect": "443",
+      "alb.ingress.kubernetes.io/target-type": "ip",
+      "external-dns.alpha.kubernetes.io/hostname": "argocd.dev.analytics.intelica.com",
+      "meta.helm.sh/release-name": "argocd",
+      "meta.helm.sh/release-namespace": "argocd"
+    },
+    "labels": {
+      "app.kubernetes.io/component": "server",
+      "app.kubernetes.io/instance": "argocd",
+      "app.kubernetes.io/managed-by": "Helm",
+      "app.kubernetes.io/name": "argocd-server",
+      "app.kubernetes.io/part-of": "argocd",
+      "app.kubernetes.io/version": "v2.14.2",
+      "helm.sh/chart": "argo-cd-7.8.2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:221082197632:cluster/itl-0005-ana-dev-eks-af-02/aws::eks::k8s_namespace/argocd",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-07-12T19:46:27.367538+00:00"
+  }
+]

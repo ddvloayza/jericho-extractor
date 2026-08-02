@@ -1,0 +1,71 @@
+[
+  {
+    "resource_type": "aws::rds::dbinstance",
+    "resource_id": "arn:aws:rds:eu-south-2:861276092327:db:itl-0004-itx-dev-rds-app-02-1",
+    "resource_name": "itl-0004-itx-dev-rds-app-02-1",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "engine": "aurora-postgresql",
+    "engine_version": "16.11",
+    "instance_class": "db.r5.large",
+    "status": "available",
+    "allocated_storage_gb": 1,
+    "multi_az": false,
+    "publicly_accessible": false,
+    "storage_encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "subnet_group_name": "itl-0004-itx-dev-rds-app-02-sng",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "subnet_ids": [
+      "subnet-05dae71c2f90dc501",
+      "subnet-09162acc62b24d7cb"
+    ],
+    "security_group_ids": [
+      "sg-07040d29e788f886d"
+    ],
+    "endpoint_address": "itl-0004-itx-dev-rds-app-02-1.ct2k6yaewech.eu-south-2.rds.amazonaws.com",
+    "endpoint_port": 5432,
+    "backup_retention_days": 7,
+    "deletion_protection": false,
+    "availability_zone": "eu-south-2a",
+    "secondary_az": "",
+    "auto_minor_version_upgrade": true,
+    "ca_certificate": "rds-ca-rsa2048-g1",
+    "instance_create_time": "2025-09-17 15:57:40.041000+00:00",
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::rds::subnetgroup",
+        "resource_id": "itl-0004-itx-dev-rds-app-02-sng",
+        "relation": "deployed_in_subnet_group"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05dae71c2f90dc501",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-09162acc62b24d7cb",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-07040d29e788f886d",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::kms::key",
+        "resource_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+        "relation": "encrypted_by_kms"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:58.241347+00:00"
+  }
+]

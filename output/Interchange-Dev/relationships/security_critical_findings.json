@@ -1,0 +1,127 @@
+[
+  {
+    "security_group_id": "sg-077c487b85cadb62e",
+    "security_group_name": "itl-0004-itx-dev-tf-sftp-02-sg",
+    "description": "itl-0004-itx-dev-tf-sftp-02-sg",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "account_id": "861276092327",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0976e2028904e8c53"
+    ],
+    "attached_count": 1,
+    "overall_risk": "critical",
+    "exposure_flags": [
+      "ssh_public"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 0,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "critical",
+        "risk_tags": [
+          "ssh_public"
+        ]
+      }
+    ],
+    "outbound_analysis": []
+  },
+  {
+    "security_group_id": "sg-08b45de2d52e4a925",
+    "security_group_name": "itl-0004-itx-dev-ec2-app-02-sg",
+    "description": "itl-0004-itx-dev-ec2-app-02-sg",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "account_id": "861276092327",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0948f18227242f717",
+      "i-08982a4115e1f13eb"
+    ],
+    "attached_count": 2,
+    "overall_risk": "critical",
+    "exposure_flags": [
+      "sg_reference",
+      "ssh_public",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 2,
+    "outbound_rule_count": 2,
+    "inbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "10.0.4.0/24",
+          "100.0.4.38/32",
+          "10.0.3.100/32"
+        ],
+        "referenced_sgs": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "critical",
+        "risk_tags": [
+          "ssh_public"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-0dc99291db78d868a"
+        ],
+        "is_public": false,
+        "direction": "outbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      }
+    ]
+  }
+]

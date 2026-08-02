@@ -1,0 +1,68 @@
+[
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:954976322048:certificate/39e8d234-b7bd-4b40-93ff-422b512fce43",
+    "resource_name": "auth.pritunl.temporal.intelica.com",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-09-15 19:00:00-05:00",
+    "not_after": "2026-10-15 18:59:59-05:00",
+    "subject_alternative_names": [
+      "auth.pritunl.temporal.intelica.com"
+    ],
+    "in_use": false,
+    "in_use_by": [],
+    "renewal_eligibility": "INELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-07-12T19:41:16.096771+00:00"
+  },
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:954976322048:certificate/81eecfc5-d919-478c-89ff-f582d914465a",
+    "resource_name": "auth.pritunl.intelica.com",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-09-25 19:00:00-05:00",
+    "not_after": "2026-10-25 18:59:59-05:00",
+    "subject_alternative_names": [
+      "auth.pritunl.intelica.com"
+    ],
+    "in_use": true,
+    "in_use_by": [
+      "arn:aws:elasticloadbalancing:eu-south-2:954976322048:loadbalancer/app/k8s-pritunl-pritunli-1014a3c469/7f821ffcb5ec9629"
+    ],
+    "renewal_eligibility": "ELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-07-12T19:41:16.562788+00:00"
+  },
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:954976322048:certificate/c451873d-4f1f-4319-a112-37c645c37d7f",
+    "resource_name": "temporal.intelica.com",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-11-12 19:00:00-05:00",
+    "not_after": "2026-12-12 18:59:59-05:00",
+    "subject_alternative_names": [
+      "temporal.intelica.com",
+      "*.temporal.intelica.com"
+    ],
+    "in_use": false,
+    "in_use_by": [],
+    "renewal_eligibility": "INELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-07-12T19:41:17.054019+00:00"
+  }
+]

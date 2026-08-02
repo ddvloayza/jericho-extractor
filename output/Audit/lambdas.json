@@ -1,0 +1,192 @@
+[
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:us-east-1:060795899335:function:aws-controltower-NotificationForwarder",
+    "resource_name": "aws-controltower-NotificationForwarder",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "us-east-1",
+    "runtime": "python3.13",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-09-02T15:52:08.000+0000",
+    "code_size_bytes": 473,
+    "handler": "index.lambda_handler",
+    "description": "SNS message forwarding function for aggregating account notifications.",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::060795899335:role/aws-controltower-ForwardSnsNotificationRole",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "sns_arn"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "aws:cloudformation:logical-id": "ForwardSnsNotification",
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:us-east-1:060795899335:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-a3d4e3f0-cf2c-44a6-9bfe-9bd6ca839d88/cdd59a50-8a41-11ef-9055-0edb2933a48b",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-a3d4e3f0-cf2c-44a6-9bfe-9bd6ca839d88"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::060795899335:role/aws-controltower-ForwardSnsNotificationRole",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:40.158365+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:us-east-1:060795899335:function:ilt-0008-waf-all-lambda-reviewer",
+    "resource_name": "ilt-0008-waf-all-lambda-reviewer",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "us-east-1",
+    "runtime": "python3.13",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-08-18T16:32:02.142+0000",
+    "code_size_bytes": 299,
+    "handler": "lambda_function.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::060795899335:role/service-role/ilt-0008-waf-all-lambda-reviewer-role-hqqs6qjc",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::060795899335:role/service-role/ilt-0008-waf-all-lambda-reviewer-role-hqqs6qjc",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:40.305782+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:us-east-1:060795899335:function:lambda_reviewer",
+    "resource_name": "lambda_reviewer",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "us-east-1",
+    "runtime": "python3.13",
+    "memory_mb": 128,
+    "timeout_seconds": 3,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-10-27T21:16:51.781+0000",
+    "code_size_bytes": 299,
+    "handler": "lambda_function.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::060795899335:role/service-role/lambda_reviewer-role-7xat3d27",
+    "kms_key_arn": "",
+    "environment_keys": [],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::060795899335:role/service-role/lambda_reviewer-role-7xat3d27",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:40.436096+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:us-east-1:060795899335:function:cur-processor",
+    "resource_name": "cur-processor",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "us-east-1",
+    "runtime": "python3.12",
+    "memory_mb": 1024,
+    "timeout_seconds": 600,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-07-11T01:07:06.000+0000",
+    "code_size_bytes": 20320752,
+    "handler": "handler.handler",
+    "description": "Processes CUR v2 (BCM Data Exports) files from all AWS accounts and generates FinOps dashboard JSON reports in S3",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::060795899335:role/cur-processor-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "CUR_BUCKET",
+      "CUR_PREFIX",
+      "RPT_PREFIX",
+      "RPT_BUCKET",
+      "DYNAMO_TABLE"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::060795899335:role/cur-processor-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:40.566455+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:us-east-1:060795899335:function:finops-api",
+    "resource_name": "finops-api",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "us-east-1",
+    "runtime": "python3.12",
+    "memory_mb": 512,
+    "timeout_seconds": 90,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-06-29T06:53:44.000+0000",
+    "code_size_bytes": 4517,
+    "handler": "handler.handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::060795899335:role/finops-api-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "SKIP_AUTH",
+      "COGNITO_USER_POOL_ID"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::060795899335:role/finops-api-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:40.699738+00:00"
+  }
+]

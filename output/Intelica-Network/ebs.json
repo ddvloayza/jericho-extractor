@@ -1,0 +1,138 @@
+[
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-09a8fa33ec08ac174",
+    "resource_name": "itl-0002-shared-network-all-eks-pritunl-02-dynamic-pvc-a5017763-9df5-4bbd-a380-267cd9a4de28",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 10,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:954976322048:key/43d0aab5-6794-4c7f-becd-3eb7ab5f320f",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-09-17 03:29:29.641000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-036906f692ce0026b",
+        "device": "/dev/xvdaa",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-036906f692ce0026b",
+    "attached_device": "/dev/xvdaa",
+    "attached_state": "attached",
+    "tags": {
+      "CSIVolumeName": "pvc-a5017763-9df5-4bbd-a380-267cd9a4de28",
+      "kubernetes.io/cluster/itl-0002-shared-network-all-eks-pritunl-02": "owned",
+      "kubernetes.io/created-for/pv/name": "pvc-a5017763-9df5-4bbd-a380-267cd9a4de28",
+      "KubernetesCluster": "itl-0002-shared-network-all-eks-pritunl-02",
+      "Name": "itl-0002-shared-network-all-eks-pritunl-02-dynamic-pvc-a5017763-9df5-4bbd-a380-267cd9a4de28",
+      "kubernetes.io/created-for/pvc/name": "mongo-data-pritunl-mongodb-0",
+      "kubernetes.io/created-for/pvc/namespace": "pritunl",
+      "ebs.csi.aws.com/cluster": "true"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-036906f692ce0026b",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:44.690395+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-03c6fafb54470231a",
+    "resource_name": "",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 70,
+    "volume_type": "gp2",
+    "iops": 210,
+    "throughput": 0,
+    "encrypted": false,
+    "kms_key_id": "",
+    "snapshot_id": "snap-0dcf6a67e64ecaa15",
+    "multi_attach": false,
+    "create_time": "2025-09-13 15:47:27.531000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0a10f15b976bc2a70",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0a10f15b976bc2a70",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "apid": "shared-network",
+      "env": "all",
+      "assetid": "0001",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0a10f15b976bc2a70",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:44.690407+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-098e20f6ad1e1beb9",
+    "resource_name": "itl-0002-shared-network-all-ec2-pritunl-02",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 20,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": false,
+    "kms_key_id": "",
+    "snapshot_id": "snap-01521362025553df9",
+    "multi_attach": false,
+    "create_time": "2025-12-26 21:06:26.148000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-036906f692ce0026b",
+        "device": "/dev/xvda",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-036906f692ce0026b",
+    "attached_device": "/dev/xvda",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0002-shared-network-all-ec2-pritunl-02",
+      "apid": "shared-network",
+      "assetid": "0001",
+      "eks:cluster-name": "itl-0002-shared-network-all-eks-pritunl-02",
+      "coid": "itl",
+      "env": "all",
+      "eks:nodegroup-name": "itl-0002-shared-network-all-ec2-pritunl-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-036906f692ce0026b",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:40:44.690415+00:00"
+  }
+]

@@ -1,0 +1,45 @@
+[
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:861276092327:targetgroup/itl-0004-itx-dev-tg-sftp-02/974e231bbc969070",
+    "resource_name": "itl-0004-itx-dev-tg-sftp-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "protocol": "TCP",
+    "port": 22,
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "TCP",
+    "health_check_path": "",
+    "health_check_interval": 30,
+    "healthy_threshold": 5,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:861276092327:loadbalancer/net/itl-0004-itx-dev-nlb-sftp-02/47806c4b41458d6e"
+    ],
+    "targets": [
+      {
+        "id": "10.14.2.71",
+        "port": 22,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:861276092327:loadbalancer/net/itl-0004-itx-dev-nlb-sftp-02/47806c4b41458d6e",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:47.891631+00:00"
+  }
+]

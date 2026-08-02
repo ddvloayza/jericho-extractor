@@ -1,0 +1,3714 @@
+[
+  {
+    "nodes": [
+      {
+        "id": "arn:aws:lambda:us-east-1:060795899335:function:aws-controltower-NotificationForwarder",
+        "resource_type": "aws::lambda::function",
+        "resource_name": "aws-controltower-NotificationForwarder",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:lambda:us-east-1:060795899335:function:ilt-0008-waf-all-lambda-reviewer",
+        "resource_type": "aws::lambda::function",
+        "resource_name": "ilt-0008-waf-all-lambda-reviewer",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:lambda:us-east-1:060795899335:function:lambda_reviewer",
+        "resource_type": "aws::lambda::function",
+        "resource_name": "lambda_reviewer",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:lambda:us-east-1:060795899335:function:cur-processor",
+        "resource_type": "aws::lambda::function",
+        "resource_name": "cur-processor",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:lambda:us-east-1:060795899335:function:finops-api",
+        "resource_type": "aws::lambda::function",
+        "resource_name": "finops-api",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:kms:us-east-1:060795899335:key/00a11a37-ab80-410c-8d0f-2735d6412961",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/aws/lambda",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:kms:us-east-1:060795899335:key/1a1cbac3-d358-42e9-8747-4f719bece342",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/aws/sns",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:kms:us-east-1:060795899335:key/59158a6b-9b24-45bd-9daf-3d85a3fc3472",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/alias/itl-0008-audit-kms-general-01",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:kms:us-east-1:060795899335:key/c51af703-549d-4ef8-8953-e78fabbfbdc7",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/aws/s3",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/amplify/dy28kq3ht02ks:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/amplify/dy28kq3ht02ks",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/guardduty/malware-scan-events:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/guardduty/malware-scan-events",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/lambda/aws-controltower-NotificationForwarder:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/lambda/aws-controltower-NotificationForwarder",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/lambda/cur-processor:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/lambda/cur-processor",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/lambda/finops-api:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/lambda/finops-api",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/macie/classificationjobs:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/macie/classificationjobs",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:dynamodb:us-east-1:060795899335:table/intelica-finops-daily",
+        "resource_type": "aws::dynamodb::table",
+        "resource_name": "intelica-finops-daily",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:sns:us-east-1:060795899335:aws-controltower-AggregateSecurityNotifications",
+        "resource_type": "aws::sns::topic",
+        "resource_name": "aws-controltower-AggregateSecurityNotifications",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:sns:us-east-1:060795899335:aws-controltower-AllConfigNotifications",
+        "resource_type": "aws::sns::topic",
+        "resource_name": "aws-controltower-AllConfigNotifications",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:sns:us-east-1:060795899335:aws-controltower-SecurityNotifications",
+        "resource_type": "aws::sns::topic",
+        "resource_name": "aws-controltower-SecurityNotifications",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:sns:us-east-1:060795899335:itl-0008-all-waf-sns-review",
+        "resource_type": "aws::sns::topic",
+        "resource_name": "itl-0008-all-waf-sns-review",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:events:us-east-1:060795899335:rule/AWSControlTowerManagedRule",
+        "resource_type": "aws::events::rule",
+        "resource_name": "AWSControlTowerManagedRule",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:events:us-east-1:060795899335:rule/DO-NOT-DELETE-AmazonInspectorEc2ManagedRule",
+        "resource_type": "aws::events::rule",
+        "resource_name": "DO-NOT-DELETE-AmazonInspectorEc2ManagedRule",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:events:us-east-1:060795899335:rule/DO-NOT-DELETE-AmazonInspectorEc2TagManagedRule",
+        "resource_type": "aws::events::rule",
+        "resource_name": "DO-NOT-DELETE-AmazonInspectorEc2TagManagedRule",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:events:us-east-1:060795899335:rule/DO-NOT-DELETE-AmazonInspectorEcrManagedRule",
+        "resource_type": "aws::events::rule",
+        "resource_name": "DO-NOT-DELETE-AmazonInspectorEcrManagedRule",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:events:us-east-1:060795899335:rule/DO-NOT-DELETE-AmazonInspectorLambdaCodeManagedRule",
+        "resource_type": "aws::events::rule",
+        "resource_name": "DO-NOT-DELETE-AmazonInspectorLambdaCodeManagedRule",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:events:us-east-1:060795899335:rule/DO-NOT-DELETE-AmazonInspectorLambdaManagedRule",
+        "resource_type": "aws::events::rule",
+        "resource_name": "DO-NOT-DELETE-AmazonInspectorLambdaManagedRule",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:events:us-east-1:060795899335:rule/DO-NOT-DELETE-AmazonInspectorLambdaTagManagedRule",
+        "resource_type": "aws::events::rule",
+        "resource_name": "DO-NOT-DELETE-AmazonInspectorLambdaTagManagedRule",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:events:us-east-1:060795899335:rule/aws-controltower-ConfigComplianceChangeEventRule",
+        "resource_type": "aws::events::rule",
+        "resource_name": "aws-controltower-ConfigComplianceChangeEventRule",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:events:us-east-1:060795899335:rule/cur-processor-daily",
+        "resource_type": "aws::events::rule",
+        "resource_name": "cur-processor-daily",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "aws-controltower-BaselineConfigRecorder",
+        "resource_type": "aws::config::configurationrecorder",
+        "resource_name": "aws-controltower-BaselineConfigRecorder",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-ocvxb0",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "AWSControlTower_AWS-GR_AUDIT_BUCKET_PUBLIC_READ_PROHIBITED",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-vsu1j9",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "AWSControlTower_AWS-GR_AUDIT_BUCKET_PUBLIC_WRITE_PROHIBITED",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-layez7",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "AWSControlTower_AWS-GR_DETECT_CLOUDTRAIL_ENABLED_ON_SHARED_ACCOUNTS",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-gnllts",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "AWSControlTower_AWS-GR_ENCRYPTED_VOLUMES",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-tlfqij",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "AWSControlTower_AWS-GR_IAM_USER_MFA_ENABLED",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jdr3zn",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-access-keys-rotated-a237f8a2",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-j8ohqg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-acm-certificate-expiration-check-564a152f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-d9vava",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-acm-certificate-rsa-check-9c1e5014",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rinuwp",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-acm-pca-root-ca-disabled-da9e1180",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-7vqnp7",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-alb-desync-mode-check-535d6571",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-m4vet1",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-alb-http-drop-invalid-header-enabled-8fed0244",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tl4gw6",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-alb-http-to-https-redirection-check-58a7916b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-sn13rr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-api-gw-associated-with-waf-043a17f7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-j8c1kx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-api-gw-cache-encrypted-85717988",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mqathm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-api-gw-execution-logging-enabled-91567c65",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tr5p01",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-api-gw-ssl-enabled-6b25543e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-moke51",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-api-gw-xray-enabled-cebd7263",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tw7kdq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-api-gwv2-access-logs-enabled-210153d6",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4kt6oe",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-api-gwv2-authorization-type-configured-88b15894",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-2uhdpu",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-apigateway-domain-name-tls-check-f5f4ff5a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tejzd2",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-apigatewayv2-integration-private-https-enabled-cba232de",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kzjulg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-appsync-authorization-check-c82c5980",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-aluukq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-appsync-logging-enabled-d85ae682",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rleegp",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-athena-workgroup-logging-enabled-aeaeed29",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-6shfij",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-aurora-mysql-backtracking-enabled-c360b1cd",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ebn15l",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-aurora-mysql-cluster-audit-logging-d8e86921",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nobur1",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-autoscaling-group-elb-healthcheck-required-66c0aaf7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-6j7maf",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-autoscaling-launch-config-public-ip-disabled-37b111b5",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-06m0ih",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-autoscaling-launch-template-e350726d",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qsue5c",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-autoscaling-launchconfig-requires-imdsv2-ec2fcb8b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nx8yka",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-autoscaling-multiple-az-4f087b4a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nkv6g7",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-autoscaling-multiple-instance-types-ab5b390c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-il5sje",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-backup-recovery-point-encrypted-cec364d5",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zalltr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-beanstalk-enhanced-health-reporting-enabled-e94e9e28",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vln6ez",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-bedrockagentcore-browsercustom-network-mode-not-public-4bcd4bd5",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zi4vob",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-bedrockagentcore-browsercustom-recording-enabled-b79e9e82",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-uyzmd0",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-bedrockagentcore-gateway-authorizer-enabled-9dbadadf",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-sntrvc",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-bedrockagentcore-runtime-private-network-required-3f28950f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ij42vw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-clb-desync-mode-check-65427767",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-w2jly0",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-clb-multiple-az-6071d8e9",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-7jbqdx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloud-trail-cloud-watch-logs-enabled-6afb4917",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ci7exw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloud-trail-encryption-enabled-5f479223",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-eakixn",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloud-trail-log-file-validation-enabled-288a6f2c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gu5ggy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudformation-stack-service-role-check-abad8e1b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8ej4hc",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudformation-termination-protection-check-4b6f6674",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-muptwr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-accesslogs-enabled-803865ce",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-k169zs",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-associated-with-waf-a0bd51a0",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jdasco",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-custom-ssl-certificate-50f82184",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-42vnic",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-default-root-object-configured-6f003583",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-f1yxro",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-distribution-key-group-enabled-c1ab8869",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-poqiss",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-no-deprecated-ssl-protocols-73a215b0",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-uakilk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-origin-failover-enabled-59c888ca",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vpfa0h",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-origin-lambda-url-oac-enabled-7c49c722",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4wixmh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-s3-origin-access-control-enabled-de960214",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ysqxch",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-s3-origin-non-existent-bucket-53d98d28",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nobaqw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-sni-enabled-bf1da057",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zaykty",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-ssl-policy-check-c82b7885",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-iydx4y",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-traffic-to-origin-encrypted-a64f8d2f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-umaiqd",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cloudfront-viewer-policy-https-e4aaa183",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ei18un",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cmk-backing-key-rotation-enabled-ae99b311",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ylzamy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-codebuild-project-envvar-awscred-check-3d9d1883",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mlzllj",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-codebuild-project-logging-enabled-061793f5",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cstutl",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-codebuild-project-s3-logs-encrypted-d023ecec",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zcq7s8",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-codebuild-project-source-repo-url-check-f2ee19e5",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-iro1kw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-codebuild-report-group-encrypted-at-rest-2645a7c1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-68pagb",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cognito-identity-pool-unauth-access-check-3bbf91b2",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ftamjo",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cognito-user-pool-advanced-security-enabled-6c546550",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-l5skrg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cognito-user-pool-deletion-protection-enabled-00ca9217",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vub6cu",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cognito-user-pool-mfa-enabled-09cb9ce1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-pn3zkh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cognito-user-pool-password-policy-check-63dd6b9c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-t4ibdr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-cognito-userpool-cust-auth-threat-full-check-d30fe4bc",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gosagy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-connect-instance-logging-enabled-0f38619e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ja3ntk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-custom-eventbus-policy-attached-b7f5e76b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-enhjzc",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-datasync-task-logging-enabled-25cc88b9",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cgjrdl",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dax-encryption-enabled-8f2a9980",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-afuoiq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dax-tls-endpoint-encryption-5327f06c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-5dmu80",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-db-instance-backup-enabled-30ccc1fb",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vm956y",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dms-auto-minor-version-upgrade-check-a379a700",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ti8sl0",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dms-endpoint-ssl-configured-43957f0f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-w9r9ww",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dms-mongo-db-authentication-enabled-6ccd0dcf",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-c0bw77",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dms-neptune-iam-authorization-enabled-9d89ce4f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tkfg92",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dms-redis-tls-enabled-a7df71f2",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4ajpxw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dms-replication-instance-multi-az-enabled-af7dfd59",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-skmgzw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dms-replication-not-public-e2cae10f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-knz16a",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dms-replication-task-sourcedb-logging-a3f8a146",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zt0okw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dms-replication-task-targetdb-logging-d4919371",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qoyxxx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-docdb-cluster-audit-logging-enabled-1f2ba47f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-yhqfxa",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-docdb-cluster-backup-retention-check-5571739d",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wwfd28",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-docdb-cluster-deletion-protection-enabled-35d4d066",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-omutmt",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-docdb-cluster-encrypted-f7b03e58",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-azj9hg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-docdb-cluster-encrypted-in-transit-e26d9992",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dw6u0n",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-docdb-cluster-snapshot-public-prohibited-16559a64",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-hn8fin",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dynamodb-autoscaling-enabled-3fb41a45",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-spyq0s",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dynamodb-pitr-enabled-b182ec97",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-strfxw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-dynamodb-table-deletion-protection-enabled-93f79e12",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-khgeac",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ebs-snapshot-block-public-access-377f3373",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tebgs1",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ebs-snapshot-public-restorable-check-4e3eea8d",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mzdfgd",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-client-vpn-connection-log-enabled-ada7e883",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-e8d3km",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-ebs-encryption-by-default-b6527242",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fxxsoy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-enis-source-destination-check-enabled-fd20c610",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zb6bb3",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-imdsv2-check-96429b3b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-n7tss7",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-instance-managed-by-ssm-e1d2746b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-khyft7",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-instance-multiple-eni-check-e1a57e3a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nps2eh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-instance-no-public-ip-8ffc7736",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-6faagc",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-launch-template-imdsv2-check-2a6a4a15",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-iveyjo",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-launch-template-public-ip-disabled-418e3b14",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fqgzv3",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-launch-templates-ebs-volume-encrypted-fdfac51e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wnmbvl",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-managedinstance-association-compliance-status-check-7d39869c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-2fa7ib",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-managedinstance-patch-compliance-b3a5753a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-eorpxv",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-paravirtual-instance-check-2e383721",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-r7y7s5",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-spot-fleet-request-ct-encryption-at-rest-140955d2",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-srxxrv",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-stopped-instance-days-check-6f6ca237",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mqv6q5",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-transit-gateway-auto-vpc-attach-disabled-016c2156",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fev7rg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-vpc-bpa-internet-gateway-blocked-d7600bf3",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dqgxax",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-vpn-connection-ike-version-check-ff998832",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kovl4v",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ec2-vpn-connection-logging-enabled-4b58f363",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-txdgod",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecr-private-image-scanning-enabled-579f0319",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ws0q8x",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecr-private-lifecycle-policy-configured-1ec718cb",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-olvoqp",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecr-private-tag-immutability-enabled-ed7dbabf",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qpbjbp",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-capacity-provider-termination-check-25575bdd",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-x88tsf",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-container-insights-enabled-72512a90",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-v8kz6s",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-containers-nonprivileged-2f02d803",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cseybh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-containers-readonly-access-11af991c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-p92gxx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-fargate-latest-platform-version-fc7ac867",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lvvmmb",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-no-environment-secrets-54def986",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zjbvzm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-service-assign-public-ip-disabled-68cc310d",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-5i60y4",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-task-definition-efs-encryption-enabled-a3774c36",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8fqr72",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-task-definition-linux-user-non-root-4d599597",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-uksfhe",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-task-definition-log-configuration-ad0febc6",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fu6bg0",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-task-definition-pid-mode-check-6f88cbc1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-7x5uzg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-task-definition-windows-user-non-admin-0bf79559",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gdhybs",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ecs-taskset-assign-public-ip-disabled-d915b214",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-h4tcle",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-efs-access-point-enforce-root-directory-3bae4fe4",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0j0u4d",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-efs-access-point-enforce-user-identity-88c0e130",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-9umbks",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-efs-automatic-backups-enabled-e937de56",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-hkmzo9",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-efs-encrypted-check-6feb5d61",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ptlzhm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-efs-filesystem-ct-encrypted-5e6cd0a4",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-891pka",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-efs-in-backup-plan-87f6ac63",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-x7mjzn",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-efs-mount-target-public-accessible-dac60548",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-krbsqs",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-eks-cluster-log-enabled-4f914816",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ms4lee",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-eks-cluster-secrets-encrypted-f3573868",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0ruw5w",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-eks-cluster-supported-version-debfd089",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kmhqzh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-eks-endpoint-no-public-access-4bb0c123",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3e6hfq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-eks-nodegroup-supported-version-check-15f908ad",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-yqunmt",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elastic-beanstalk-logs-to-cloudwatch-9ccf1330",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ddse2b",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elastic-beanstalk-managed-updates-enabled-78c4a858",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-9v57jb",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticache-auto-minor-version-upgrade-check-176dcff8",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gwwpms",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticache-redis-cluster-automatic-backup-check-942ed1f7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lnkijq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticache-repl-grp-auto-failover-enabled-a89af1ca",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-7do2iu",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticsearch-audit-logging-enabled-afcf6916",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xgmmkk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticsearch-data-node-fault-tolerance-4c000f0c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dlt7fx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticsearch-encrypted-at-rest-99d4e23e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jprstt",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticsearch-https-required-a433d313",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gup00q",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticsearch-in-vpc-only-7c37d891",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8vzy9p",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticsearch-logs-to-cloudwatch-b1cff8da",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-pl5hnh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticsearch-node-to-node-encryption-check-ebd7c995",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3t5zel",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elasticsearch-primary-node-fault-tolerance-eee425ca",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ngfxhm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elb-acm-certificate-required-a9bfcdcc",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ljo62h",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elb-connection-draining-enabled-51eae1b4",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-veovga",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elb-cross-zone-load-balancing-enabled-b2bdbb31",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-b9dqke",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elb-deletion-protection-enabled-7fc4dde3",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-c7fnol",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elb-logging-enabled-6ed03103",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vbnpgx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elb-predefined-security-policy-ssl-check-e93c2d41",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qwdqro",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elb-tls-https-listeners-only-b531d8cd",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xh0mtz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elbv2-listener-encryption-in-transit-ec2cf29c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lpintx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elbv2-multiple-az-036e4cb7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kcpqcb",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elbv2-predefined-security-policy-ssl-check-c1aa8419",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vgynvp",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elbv2-targetgroup-healthcheck-protocol-encrypted-78f8c517",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-buprfk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-elbv2-targetgroup-protocol-encrypted-63d05224",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-a5vlkz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-emr-block-public-access-92e08ff2",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zu6jiy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-emr-master-no-public-ip-75c12ade",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-x0068w",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-emr-security-configuration-encryption-rest-91062c05",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ke64ia",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-emr-security-configuration-encryption-transit-13d819fc",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qcozkw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-encrypted-volumes-08fbd82c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-9a9tdn",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-fsx-lustre-copy-tags-to-backups-c98f4b85",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-sqb4p9",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-fsx-ontap-deployment-type-check-2d2d738f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-sxna98",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-fsx-openzfs-copy-tags-enabled-842dfa25",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wryiko",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-fsx-openzfs-deployment-type-check-955d91d2",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kfswfr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-fsx-windows-deployment-type-check-640016a7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-6axlit",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-glue-ml-transform-encrypted-at-rest-dbd18f4a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fbxepr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-glue-spark-job-supported-version-dfb5c717",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kh9wns",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-ec2-protection-runtime-enabled-215f8eb2",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-2rr0pi",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-ecs-protection-runtime-enabled-985b2220",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gmd50j",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-eks-protection-audit-enabled-2fbabe0a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-suydqy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-eks-protection-runtime-enabled-20025a2e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-d3an0l",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-enabled-centralized-9bcfed75",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-5au50u",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-lambda-protection-enabled-4f0d1ae1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jrmpvq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-malware-protection-enabled-f8b1d535",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4847mj",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-rds-protection-enabled-d7f14c34",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-e1sxsx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-runtime-monitoring-enabled-f86f4f33",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dlnocg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-guardduty-s3-protection-enabled-ae3c78ba",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lb5r9b",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-customer-policy-blocked-kms-actions-39990f20",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gragyq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-inline-policy-blocked-kms-actions-cd1d0ed9",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-z6giay",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-password-policy-ensure-expires-abbd376f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lhowjd",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-password-policy-lowercase-letter-check-a5faac3f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-t7munb",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-password-policy-minimum-length-check-0d774dfd",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-srbkjn",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-password-policy-number-check-4e473396",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tj2wap",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-password-policy-prevent-reuse-check-48d62102",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xhdt96",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-password-policy-recommended-defaults-d559adfe",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-88dehv",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-password-policy-symbol-check-dd06384b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0ivt6i",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-password-policy-uppercase-letter-check-0db10dc0",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kh1ao2",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-policy-no-statements-with-admin-access-23d3a80c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0bfcuw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-policy-no-statements-with-full-access-bab92951",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-shrdu7",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-root-access-key-check-477c2c17",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8emfvo",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-support-policy-in-use-26912208",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qhu1nx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-user-no-policies-check-aee6980f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-83fanz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-iam-user-unused-credentials-check-2dabcb19",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-b31cii",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-inspector-ec2-scan-enabled-05b1ec4e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-umsdux",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-inspector-ecr-scan-enabled-9281147a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qy4ber",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-inspector-lambda-code-scan-enabled-86810951",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ztdqtk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-inspector-lambda-standard-scan-enabled-0b30dbba",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ynikym",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-kinesis-firehose-delivery-stream-encrypted-30a83038",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-22jyqh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-kinesis-stream-backup-retention-check-aa7d1786",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gsvfxk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-kinesis-stream-encrypted-6ea7981e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-r1yrcr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-kms-cmk-not-scheduled-for-deletion-2-14b2c8db",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-hrjmob",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-kms-key-policy-no-public-access-b8b70c4d",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gsx9kk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-lambda-function-public-access-prohibited-8c155081",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vpjutq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-lambda-function-settings-check-8b10ce1a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ad4k17",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-lambda-vpc-multi-az-check-b97b09be",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-hswfci",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-macie-auto-sensitive-data-discovery-check-b954800a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-uicuvz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-macie-status-check-22669da7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ejl27l",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-mariadb-publish-logs-to-cloudwatch-logs-8dd4dea8",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-2nlasi",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-mfa-enabled-for-iam-console-access-3f37a504",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-z2tgyo",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-mq-cloudwatch-audit-log-enabled-251c0c73",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lo2wry",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-msk-cluster-public-access-disabled-abe2b523",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-huyfby",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-msk-connect-connector-encrypted-4562a1c5",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ephpki",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-msk-connect-connector-logging-enabled-f8675384",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-hvxejj",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-msk-in-cluster-node-require-tls-4f44c0ef",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-khqa5n",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-msk-unrestricted-access-check-f322c293",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-s09xll",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-multi-region-cloud-trail-enabled-a6a18002",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vvaymf",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-nacl-no-unrestricted-ssh-rdp-7d9e96a7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3s0ibz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-neptune-cluster-backup-retention-check-32b78494",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-acfhcy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-neptune-cluster-cloudwatch-log-export-enabled-4f8cdacd",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tx3add",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-neptune-cluster-copy-tags-to-snapshot-enabled-2444c122",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-msp9yi",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-neptune-cluster-deletion-protection-enabled-56b2da5a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4coe27",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-neptune-cluster-encrypted-6dcfdd83",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-uie5tf",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-neptune-cluster-iam-database-authentication-b6105352",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-j5a6qe",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-neptune-cluster-snapshot-encrypted-ea575424",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-w5unvh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-neptune-cluster-snapshot-public-prohibited-f823fe58",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tpyrdk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-netfw-deletion-protection-enabled-b927c1a8",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-9kgvuy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-netfw-logging-enabled-1c249896",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-udrbcg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-netfw-policy-default-action-fragment-packets-a03132a8",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xhkzto",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-netfw-policy-default-action-full-packets-b3e9cd32",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-i8wsj1",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-netfw-policy-rule-group-associated-3c80506e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mhrnpm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-netfw-stateless-rule-group-not-empty-53925da4",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zzkzs3",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-netfw-subnet-change-protection-enabled-3ef96f82",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8vkdfk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-opensearch-access-control-enabled-d46c132f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kpofie",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-opensearch-audit-logging-enabled-b4e15f21",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qa7lyd",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-opensearch-data-node-fault-tolerance-78ac30ce",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-pc0ymm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-opensearch-encrypted-at-rest-3046d7e4",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fbnhra",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-opensearch-https-required-80899315",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-b6l1iz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-opensearch-in-vpc-only-a59fcff7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fr1uuw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-opensearch-logs-to-cloudwatch-73d65bbc",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jphsl3",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-opensearch-node-to-node-encryption-check-fa2520af",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gijkwj",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-opensearch-update-check-05a2cd3d",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-s5xnnv",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-aurora-mysql-audit-logging-enabled-1c4bae64",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lmerwh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-aurora-postgresql-logs-to-cloudwatch-ea5f884f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fsdnmb",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-automatic-minor-version-upgrade-enabled-77bb2336",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-z3npiz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-cluster-auto-minor-version-upgrade-enable-7174997e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-i9bnxq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-cluster-backup-retention-check-c15c32e1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-uqtmg1",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-cluster-copy-tags-to-snapshots-enabled-070d9119",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8oqddc",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-cluster-default-admin-check-20fc98d5",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-m9ozdq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-cluster-deletion-protection-enabled-4745ad37",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-5jif93",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-cluster-encrypted-at-rest-01e1a4f7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-6ezdfo",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-cluster-event-notifications-configured-e995d7b3",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-n5befr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-cluster-iam-authentication-enabled-5e88bedf",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-v49nqg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-cluster-multi-az-enabled-fcd0a628",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xelpim",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-enhanced-monitoring-enabled-4d2c13e0",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ruy0qd",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-global-cluster-aurora-mysql-supported-version-d16ecae1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-oxda5w",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-instance-copy-tags-to-snapshots-enabled-12d0e82e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ztnbvv",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-instance-default-admin-check-763d9541",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ojlegt",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-instance-deletion-protection-enabled-0798d953",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-iu46pr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-instance-event-notifications-configured-c14e2641",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-m4zctq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-instance-iam-authentication-enabled-a393a009",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zux4bf",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-instance-public-access-check-c3419ed1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ocqbfy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-instance-subnet-igw-check-f25161d8",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vqyifi",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-logging-enabled-8c24fd88",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0zmjj0",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-mariadb-instance-encrypted-in-transit-7f1aa3f7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nalumo",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-multi-az-support-90bf57e6",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qqpolp",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-mysql-cluster-copy-tags-to-snapshot-check-0fc71e8e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tcxc8w",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-mysql-instance-encrypted-in-transit-62c0f9b4",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kpgomt",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-no-default-ports-6a2aa5c7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8q8zjk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-pg-event-notifications-configured-2936f88b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vsr4lr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-pgsql-cluster-copy-tags-to-snapshot-check-e0348574",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3bnniw",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-postgres-instance-encrypted-in-transit-834cca70",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-1f2au7",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-postgresql-logs-to-cloudwatch-02b4e569",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-npcier",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-proxy-tls-encryption-f515c2d3",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zelzdl",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-sg-event-notifications-configured-59af3612",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-bjgoe1",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-snapshot-encrypted-005b3c64",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vye45d",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-snapshots-public-prohibited-95e9bc7d",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-yw8cca",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-sql-server-logs-to-cloudwatch-8421c296",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cv9ngh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-sqlserver-encrypted-in-transit-6a58a562",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-utuuuf",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-rds-storage-encrypted-e96bdcbf",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nxvk6w",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-backup-enabled-f8cf043f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tgkya6",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-cluster-audit-logging-enabled-09ab811b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rdzdhv",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-cluster-kms-enabled-1e28df29",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-bbyshk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-cluster-maintenancesettings-check-4e346afb",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ni1xnr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-cluster-multi-az-enabled-30aa7002",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-5smhww",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-cluster-public-access-check-a4ddfac2",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-j0imty",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-default-admin-check-95bd30aa",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ypudmg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-enhanced-vpc-routing-enabled-395e9350",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-n7cyme",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-require-tls-ssl-e7812d42",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-9yc5ss",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-serverless-default-admin-check-40084a37",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jqahy8",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-serverless-publish-logs-to-cloudwatch-f3476591",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8zo9gk",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-serverless-workgroup-encrypted-in-transit-7b9344ef",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qbvyqc",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-serverless-workgroup-no-public-access-6cddcb69",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4zdz0g",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-serverless-workgroup-routes-within-vpc-8cba46be",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4huggz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-redshift-unrestricted-port-access-cffa4996",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-1hwbzm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-restricted-rdp-3d34c5b6",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-pkrgxx",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-restricted-ssh-35a5807e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ov6pxd",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-root-account-hardware-mfa-enabled-1543b4dd",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rd3k7w",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-root-account-mfa-enabled-9ed35205",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jxrsln",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-route53-query-logging-enabled-365f847e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-e5ivwo",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-access-point-public-access-blocks-08542b20",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-9zllw7",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-account-level-public-access-blocks-periodic-61826a4c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cmpp3n",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-bucket-acl-prohibited-5c06f050",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-eajvgn",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-bucket-blacklisted-actions-prohibited-1f594d23",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gp8sm6",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-bucket-level-public-access-prohibited-b3a7b73b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-griqfg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-bucket-logging-enabled-56fe580f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-yl5sjc",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-bucket-public-read-prohibited-53484a25",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xfngza",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-bucket-public-write-prohibited-13ffc06b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lltthl",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-bucket-ssl-requests-only-99436e2c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qasmlm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3-lifecycle-policy-check-3cae2069",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fmmza5",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-s3express-dir-bucket-lifecycle-rules-check-49d44c65",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4cmgr7",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-data-quality-job-encrypt-in-transit-e1ce98d1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-6wonmt",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-data-quality-job-isolation-4ecfc1f6",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-oyheo4",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-endpoint-config-prod-instance-count-e39afbf1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3xpxx3",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-featuregroup-encryption-at-rest-450dd3f7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-k4zhsy",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-model-bias-job-encrypt-in-transit-43c86d4a",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vp1aon",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-model-bias-job-isolation-95e92e38",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-9rya52",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-model-explainability-job-encrypt-in-transit-186b9338",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jwh0i0",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-model-isolation-enabled-aed266b1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vy6mlt",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-model-multicontainer-private-registry-68310043",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-s73imh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-model-private-registry-required-4b51f348",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-v7whqp",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-model-quality-job-encrypt-in-transit-7b7b16be",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-z5tama",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-monitoring-schedule-isolation-48856513",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ivgldg",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-notebook-instance-inside-vpc-05f048c5",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-g5cbj8",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-notebook-instance-platform-version-cac1eb33",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vudkoj",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-notebook-instance-root-access-check-8bbc5a42",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qqpmlm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sagemaker-notebook-no-direct-internet-access-df1f91c9",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zop0pr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-secretsmanager-rotation-enabled-check-577c10a1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mjwnvi",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-secretsmanager-scheduled-rotation-success-check-9e6734c1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-s8athr",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-secretsmanager-secret-periodic-rotation-a5488a97",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kscn0o",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-secretsmanager-secret-unused-43f209e9",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-znciyu",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-security-account-information-provided-17efbba0",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vitbtl",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-service-catalog-shared-within-organization-d3f2e312",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-k804it",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-service-vpc-endpoint-enabled-f407b899",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gh2z1c",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ses-sending-tls-required-c3dcbb86",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-t4hyle",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sns-topic-no-public-access-fd0ab44f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wvv1lz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sqs-queue-encrypted-acc6c9a1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xvjblt",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-sqs-queue-no-public-access-fa33acf7",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xehe3u",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ssm-automation-block-public-sharing-fc166217",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rxlgf8",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ssm-automation-logging-enabled-727a7d97",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jbbrqz",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-ssm-document-not-public-eb47c6ce",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mif7ut",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-step-functions-state-machine-logging-enabled-25bb7238",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-pkk5pf",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-subnet-auto-assign-public-ip-disabled-eadbfcbd",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fzcay3",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-transfer-connector-logging-enabled-5d1bbd52",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tlayko",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-transfer-family-server-no-ftp-3b96f8a1",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-1bmifm",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-default-security-group-closed-30147a0e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-h1vrqi",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-endpoint-enabled-ecr-api-43ff84fe",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0gqdid",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-endpoint-enabled-ecr-dkr-2689a95c",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rgzy7v",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-endpoint-enabled-ssm-contacts-e225e2f9",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kf9jd1",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-endpoint-enabled-ssm-dd5cfee6",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-sm7g1x",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-endpoint-enabled-ssm-incidents-859b449b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rebgdj",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-flow-logs-enabled-6a445072",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-bagvwa",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-network-acl-unused-check-24dfc0c2",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8otkqv",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-sg-open-only-to-authorized-ports-b3c3b153",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mfguoa",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-sg-restricted-common-ports-460f3f23",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kagrf2",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-vpn-2-tunnels-up-35189435",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dg2bjo",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-waf-classic-logging-enabled-cae7eb93",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tlam3n",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-waf-global-rule-not-empty-78812f74",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-msu0ad",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-waf-global-rulegroup-not-empty-d3f3de81",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3exgkf",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-waf-global-webacl-not-empty-4e047666",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-owkyn5",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-waf-regional-rule-not-empty-c50de3dd",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-bvek0s",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-waf-regional-rulegroup-not-empty-bed4a63f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dn3vez",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-waf-regional-webacl-not-empty-a7325a98",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gr9wdq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-wafv2-rulegroup-logging-enabled-b550142b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-oexpax",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-wafv2-webacl-not-empty-ce4098e9",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-194mjh",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-workspaces-root-volume-encryption-enabled-27b6399f",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-njxdw0",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-workspaces-user-volume-encryption-enabled-cba845f8",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "4ec9a0839d5d9970ad2106b93ec9ec6b",
+        "resource_type": "aws::guardduty::detector",
+        "resource_name": "4ec9a0839d5d9970ad2106b93ec9ec6b",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      }
+    ],
+    "edges": [],
+    "summary": {
+      "node_count": 411,
+      "public_subnet_count": 0,
+      "private_subnet_count": 0,
+      "edge_count": 0,
+      "connected_components": 411,
+      "internet_facing_count": 0
+    }
+  }
+]

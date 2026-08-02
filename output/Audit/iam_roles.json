@@ -1,0 +1,1861 @@
+[
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/service-role/AmazonSageMakerAdminIAMExecutionRole",
+    "resource_name": "AmazonSageMakerAdminIAMExecutionRole",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-04-20 21:59:12+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": [
+              "bedrock.amazonaws.com",
+              "scheduler.amazonaws.com",
+              "lakeformation.amazonaws.com",
+              "datazone.amazonaws.com",
+              "sagemaker.amazonaws.com",
+              "emr-serverless.amazonaws.com",
+              "airflow-serverless.amazonaws.com",
+              "glue.amazonaws.com",
+              "redshift.amazonaws.com",
+              "athena.amazonaws.com"
+            ]
+          },
+          "Action": [
+            "sts:AssumeRole",
+            "sts:TagSession",
+            "sts:SetContext",
+            "sts:SetSourceIdentity"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "aws:SourceAccount": "060795899335"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "airflow-serverless.amazonaws.com",
+      "athena.amazonaws.com",
+      "bedrock.amazonaws.com",
+      "datazone.amazonaws.com",
+      "emr-serverless.amazonaws.com",
+      "glue.amazonaws.com",
+      "lakeformation.amazonaws.com",
+      "redshift.amazonaws.com",
+      "sagemaker.amazonaws.com",
+      "scheduler.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "SageMakerStudioAdminIAMPermissiveExecutionPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/SageMakerStudioAdminIAMPermissiveExecutionPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/SageMakerStudioAdminIAMPermissiveExecutionPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:11.794466+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSPowerUserAccess_a000306c7b6b5bc4",
+    "resource_name": "AWSReservedSSO_AWSPowerUserAccess_a000306c7b6b5bc4",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "Provides full access to AWS services and resources, but does not allow management of Users and groups",
+    "max_session_duration": 43200,
+    "create_date": "2024-10-14 15:28:01+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::060795899335:saml-provider/AWSSSO_0488bc50114a2e7c_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "PowerUserAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/PowerUserAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/PowerUserAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:12.182547+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSReadOnlyAccess_0a3751ae3f316560",
+    "resource_name": "AWSReservedSSO_AWSReadOnlyAccess_0a3751ae3f316560",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "This policy grants permissions to view resources and basic metadata across all AWS services",
+    "max_session_duration": 43200,
+    "create_date": "2024-10-14 15:28:02+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::060795899335:saml-provider/AWSSSO_0488bc50114a2e7c_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "ViewOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/job-function/ViewOnlyAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:12.593399+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSAllAdm_21677a49dc514823",
+    "resource_name": "AWSReservedSSO_ItlAWSAllAdm_21677a49dc514823",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "global AWS administrator permission sets",
+    "max_session_duration": 43200,
+    "create_date": "2025-02-11 14:45:09+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::060795899335:saml-provider/AWSSSO_0488bc50114a2e7c_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "AwsSSOInlinePolicy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-07-12T19:49:12.992311+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/ops.athena.amazonaws.com/AWSServiceRoleForAmazonAthena",
+    "resource_name": "AWSServiceRoleForAmazonAthena",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/ops.athena.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-04-20 22:03:42+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ops.athena.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ops.athena.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonAthenaServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonAthenaServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonAthenaServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.378923+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDuty",
+    "resource_name": "AWSServiceRoleForAmazonGuardDuty",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/guardduty.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-18 20:46:59+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "guardduty.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "guardduty.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonGuardDutyServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.821455+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-controltower-ReadOnlyExecutionRole",
+    "resource_name": "aws-controltower-ReadOnlyExecutionRole",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:33:03+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditReadOnlyRole"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "060795899335"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.866691+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/AWSControlTowerExecution",
+    "resource_name": "AWSControlTowerExecution",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:27:05+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.870500+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-controltower-AdministratorExecutionRole",
+    "resource_name": "aws-controltower-AdministratorExecutionRole",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:33:03+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditAdministratorRole"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "060795899335"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.892353+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-controltower-AuditAdministratorRole",
+    "resource_name": "aws-controltower-AuditAdministratorRole",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:31:29+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaExecute",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSLambdaExecute"
+      }
+    ],
+    "inline_policy_names": [
+      "AssumeRole-aws-controltower-AuditAdministratorRole"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSLambdaExecute",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.904381+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/service-role/AmplifySSRLoggingRole-b30d7a7f-1fe5-4f02-99bc-4a5d348002ab",
+    "resource_name": "AmplifySSRLoggingRole-b30d7a7f-1fe5-4f02-99bc-4a5d348002ab",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "The service role that will be used by AWS Amplify for Web Compute app logging.",
+    "max_session_duration": 3600,
+    "create_date": "2026-06-21 03:55:42+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "amplify.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "amplify.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmplifySSRLoggingPolicy-b30d7a7f-1fe5-4f02-99bc-4a5d348002ab",
+        "PolicyArn": "arn:aws:iam::060795899335:policy/service-role/AmplifySSRLoggingPolicy-b30d7a7f-1fe5-4f02-99bc-4a5d348002ab"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::060795899335:policy/service-role/AmplifySSRLoggingPolicy-b30d7a7f-1fe5-4f02-99bc-4a5d348002ab",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.906211+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-controltower-ConfigRecorderRole",
+    "resource_name": "aws-controltower-ConfigRecorderRole",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:33:03+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "config.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "config.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
+      },
+      {
+        "PolicyName": "AWS_ConfigRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWS_ConfigRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWS_ConfigRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.910321+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-controltower-ForwardSnsNotificationRole",
+    "resource_name": "aws-controltower-ForwardSnsNotificationRole",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:33:03+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [
+      "sns"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.912550+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-controltower-AuditReadOnlyRole",
+    "resource_name": "aws-controltower-AuditReadOnlyRole",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:31:29+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaExecute",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSLambdaExecute"
+      }
+    ],
+    "inline_policy_names": [
+      "AssumeRole-aws-controltower-AuditReadOnlyRole"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSLambdaExecute",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.919914+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSAdministratorAccess_2cab7cfe506e1f65",
+    "resource_name": "AWSReservedSSO_AWSAdministratorAccess_2cab7cfe506e1f65",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "Provides full access to AWS services and resources",
+    "max_session_duration": 43200,
+    "create_date": "2024-10-14 15:28:01+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::060795899335:saml-provider/AWSSSO_0488bc50114a2e7c_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:13.950292+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/malware-protection.guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDutyMalwareProtection",
+    "resource_name": "AWSServiceRoleForAmazonGuardDutyMalwareProtection",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/malware-protection.guardduty.amazonaws.com/",
+    "description": "A service-linked role required for Amazon GuardDuty Malware Scan to access your resources. ",
+    "max_session_duration": 3600,
+    "create_date": "2025-04-14 15:03:37+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "malware-protection.guardduty.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "malware-protection.guardduty.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonGuardDutyMalwareProtectionServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyMalwareProtectionServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyMalwareProtectionServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.197795+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/agentless.inspector2.amazonaws.com/AWSServiceRoleForAmazonInspector2Agentless",
+    "resource_name": "AWSServiceRoleForAmazonInspector2Agentless",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/agentless.inspector2.amazonaws.com/",
+    "description": "Allowing Inspector to call AWS services on behalf of customers",
+    "max_session_duration": 3600,
+    "create_date": "2025-04-16 16:47:31+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "agentless.inspector2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "agentless.inspector2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonInspector2AgentlessServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonInspector2AgentlessServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonInspector2AgentlessServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.217219+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/inspector2.amazonaws.com/AWSServiceRoleForAmazonInspector2",
+    "resource_name": "AWSServiceRoleForAmazonInspector2",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/inspector2.amazonaws.com/",
+    "description": "Allowing Inspector to call AWS services on behalf of customers",
+    "max_session_duration": 3600,
+    "create_date": "2025-04-16 16:47:31+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "inspector2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "inspector2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonInspector2ServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonInspector2ServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonInspector2ServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.226288+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/sagemaker.amazonaws.com/AWSServiceRoleForAmazonSageMakerNotebooks",
+    "resource_name": "AWSServiceRoleForAmazonSageMakerNotebooks",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/sagemaker.amazonaws.com/",
+    "description": "AWS SageMaker Notebooks Service Linked Role",
+    "max_session_duration": 3600,
+    "create_date": "2026-04-20 22:01:58+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "sagemaker.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "sagemaker.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonSageMakerNotebooksServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonSageMakerNotebooksServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonSageMakerNotebooksServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.243613+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/macie.amazonaws.com/AWSServiceRoleForAmazonMacie",
+    "resource_name": "AWSServiceRoleForAmazonMacie",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/macie.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-05-14 21:44:01+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "macie.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "macie.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonMacieServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonMacieServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonMacieServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.263310+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "resource_name": "AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/",
+    "description": "Service linked role for CloudFormation StackSets (Organization Member)",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-25 16:38:31+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "member.org.stacksets.cloudformation.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "member.org.stacksets.cloudformation.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.266566+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+    "resource_name": "AWSServiceRoleForConfig",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/config.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:32:52+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "config.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "config.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSConfigServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSConfigServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSConfigServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.307027+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/cloudtrail.amazonaws.com/AWSServiceRoleForCloudTrail",
+    "resource_name": "AWSServiceRoleForCloudTrail",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/cloudtrail.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 16:44:49+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "cloudtrail.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "cloudtrail.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudTrailServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.322949+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/controltower.amazonaws.com/AWSServiceRoleForAWSControlTower",
+    "resource_name": "AWSServiceRoleForAWSControlTower",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/controltower.amazonaws.com/",
+    "description": "Provides access to AWS Resources managed or used by AWS Control Tower",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:33:01+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "controltower.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "controltower.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSControlTowerAccountServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.330650+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/fms.amazonaws.com/AWSServiceRoleForFMS",
+    "resource_name": "AWSServiceRoleForFMS",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/fms.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-12-23 15:38:41+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "fms.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "fms.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "FMSServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/FMSServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/FMSServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.346906+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+    "resource_name": "AWSServiceRoleForOrganizations",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/organizations.amazonaws.com/",
+    "description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:27:06+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "organizations.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "organizations.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSOrganizationsServiceTrustPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.565571+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+    "resource_name": "AWSServiceRoleForResourceExplorer",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/resource-explorer-2.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-27 21:16:11+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "resource-explorer-2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "resource-explorer-2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSResourceExplorerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.579395+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/AWSServiceRoleForReachabilityAnalyzer",
+    "resource_name": "AWSServiceRoleForReachabilityAnalyzer",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/",
+    "description": "The Service Linked Role used by Reachability Analyzer.",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-25 16:39:06+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "reachabilityanalyzer.networkinsights.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "reachabilityanalyzer.networkinsights.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSReachabilityAnalyzerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.597931+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/securityhub.amazonaws.com/AWSServiceRoleForSecurityHub",
+    "resource_name": "AWSServiceRoleForSecurityHub",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/securityhub.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-18 20:36:43+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "securityhub.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "securityhub.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSecurityHubServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.606358+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+    "resource_name": "AWSServiceRoleForSSO",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/sso.amazonaws.com/",
+    "description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:27:15+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "sso.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "sso.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSSOServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.618000+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/securityhubv2.amazonaws.com/AWSServiceRoleForSecurityHubV2",
+    "resource_name": "AWSServiceRoleForSecurityHubV2",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/securityhubv2.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-12-29 21:24:42+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "securityhubv2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "securityhubv2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSecurityHubV2ServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.653129+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+    "resource_name": "AWSServiceRoleForSupport",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/support.amazonaws.com/",
+    "description": "Enables resource access for AWS to provide billing, administrative and support services",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:27:05+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "support.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "support.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSupportServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.666095+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+    "resource_name": "AWSServiceRoleForTrustedAdvisor",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+    "description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-14 15:27:05+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "trustedadvisor.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSTrustedAdvisorServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.710948+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/cur-processor-role",
+    "resource_name": "cur-processor-role",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-06-14 19:07:10+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [
+      "cur-s3",
+      "finops-dynamodb-write"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.716748+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/finops-api-role",
+    "resource_name": "finops-api-role",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-06-21 18:42:12+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [
+      "finops-dynamo-read"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.748235+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/IAMRoleForReachabilityAnalyzerCrossAccountResourceAccess",
+    "resource_name": "IAMRoleForReachabilityAnalyzerCrossAccountResourceAccess",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "Enables console access role, which allows management and delegated admin accounts to discover cross account resources and switch roles between accounts.",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-25 16:38:57+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:AssumeRole"
+        },
+        {
+          "Sid": "SetSourceIdentity",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:SetSourceIdentity",
+          "Condition": {
+            "StringLike": {
+              "sts:SourceIdentity": "${aws:SourceIdentity}"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSDirectConnectReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSDirectConnectReadOnlyAccess"
+      },
+      {
+        "PolicyName": "AmazonEC2ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
+      },
+      {
+        "PolicyName": "AmazonVPCReachabilityAnalyzerPathComponentReadPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonVPCReachabilityAnalyzerPathComponentReadPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AWSDirectConnectReadOnlyAccess",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonVPCReachabilityAnalyzerPathComponentReadPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.948259+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/service-role/lambda_reviewer-role-7xat3d27",
+    "resource_name": "lambda_reviewer-role-7xat3d27",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-27 21:16:43+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole-33973e85-1f2e-4558-9814-4ccd8b1c3824",
+        "PolicyArn": "arn:aws:iam::060795899335:policy/service-role/AWSLambdaBasicExecutionRole-33973e85-1f2e-4558-9814-4ccd8b1c3824"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::060795899335:policy/service-role/AWSLambdaBasicExecutionRole-33973e85-1f2e-4558-9814-4ccd8b1c3824",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.948496+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/service-role/ilt-0008-waf-all-lambda-reviewer-role-hqqs6qjc",
+    "resource_name": "ilt-0008-waf-all-lambda-reviewer-role-hqqs6qjc",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-08-18 16:31:51+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole-6c56dd1c-a6f5-4704-b893-bfa08d94a7f1",
+        "PolicyArn": "arn:aws:iam::060795899335:policy/service-role/AWSLambdaBasicExecutionRole-6c56dd1c-a6f5-4704-b893-bfa08d94a7f1"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::060795899335:policy/service-role/AWSLambdaBasicExecutionRole-6c56dd1c-a6f5-4704-b893-bfa08d94a7f1",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.954949+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/OrganizationAccountAccessRole",
+    "resource_name": "OrganizationAccountAccessRole",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-08-12 17:20:49+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {}
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.958921+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::060795899335:role/stacksets-exec-a3c7510b0e65438900724098d066a8c0",
+    "resource_name": "stacksets-exec-a3c7510b0e65438900724098d066a8c0",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "global",
+    "path": "/",
+    "description": "Role created by AWSCloudFormation StackSets",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-25 16:38:42+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Id": "stacksets-exec-a3c7510b0e65438900724098d066a8c0-assume-role-policy",
+      "Statement": [
+        {
+          "Sid": "1",
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:role/aws-service-role/stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgAdmin"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-07-12T19:49:14.993549+00:00"
+  }
+]

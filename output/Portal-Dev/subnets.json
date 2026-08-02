@@ -1,0 +1,276 @@
+[
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-065c0d2ee544988f8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "cidr_block": "10.12.2.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 249,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "public",
+    "tags": {
+      "kubernetes.io/role/elb": "1",
+      "Name": "itl-0003-portal-dev-public-2b",
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:15.687200+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-00584f42d1e6f05a7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-086471f116a4c4c20",
+    "cidr_block": "172.31.0.0/20",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2c",
+    "availability_zone_id": "eus2-az3",
+    "available_ip_count": 4091,
+    "state": "available",
+    "is_default": true,
+    "map_public_ip_on_launch": true,
+    "subnet_type": "unknown",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-086471f116a4c4c20",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:15.687219+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0455a6c137238d0ec",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-086471f116a4c4c20",
+    "cidr_block": "172.31.32.0/20",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 4091,
+    "state": "available",
+    "is_default": true,
+    "map_public_ip_on_launch": true,
+    "subnet_type": "unknown",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-086471f116a4c4c20",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:15.687224+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0a244b304a580c5e3",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "cidr_block": "10.12.5.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 248,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "isolated",
+    "tags": {
+      "apid": "portal",
+      "Name": "itl-0003-portal-dev-restricted-2a",
+      "env": "dev",
+      "assetid": "0003",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:15.687231+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-085c2712bbea48a30",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "cidr_block": "10.12.6.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 246,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "isolated",
+    "tags": {
+      "coid": "itl",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-dev-restricted-2b",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:15.687237+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0c353ee340c3da15e",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "cidr_block": "10.12.3.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 139,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "private",
+    "tags": {
+      "kubernetes.io/role/internal-elb": "1",
+      "Name": "itl-0003-portal-dev-private-2a",
+      "coid": "itl",
+      "assetid": "0003",
+      "apid": "portal",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:15.687241+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0f7dbdc1d324142a6",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-086471f116a4c4c20",
+    "cidr_block": "172.31.16.0/20",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 4091,
+    "state": "available",
+    "is_default": true,
+    "map_public_ip_on_launch": true,
+    "subnet_type": "unknown",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-086471f116a4c4c20",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:15.687244+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-05c87676a0cbfce54",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "cidr_block": "10.12.4.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2b",
+    "availability_zone_id": "eus2-az2",
+    "available_ip_count": 108,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "private",
+    "tags": {
+      "assetid": "0003",
+      "apid": "portal",
+      "coid": "itl",
+      "Name": "itl-0003-portal-dev-private-2b",
+      "env": "dev",
+      "kubernetes.io/role/internal-elb": "1"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:15.687249+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::subnet",
+    "resource_id": "subnet-0c09cafe518adff09",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "cidr_block": "10.12.1.0/24",
+    "ipv6_cidr_block": "",
+    "availability_zone": "eu-south-2a",
+    "availability_zone_id": "eus2-az1",
+    "available_ip_count": 248,
+    "state": "available",
+    "is_default": false,
+    "map_public_ip_on_launch": false,
+    "subnet_type": "public",
+    "tags": {
+      "env": "dev",
+      "kubernetes.io/role/elb": "1",
+      "apid": "portal",
+      "Name": "itl-0003-portal-dev-public-2a",
+      "coid": "itl",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:15.687253+00:00"
+  }
+]

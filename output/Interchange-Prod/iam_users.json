@@ -1,0 +1,200 @@
+[
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::818835242461:user/itxbatch",
+    "resource_name": "itxbatch",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "create_date": "2023-10-19 01:52:35+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0004-itx-prd-copy-denver-landing-role-s3-pol",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/itl-0004-itx-prd-copy-denver-landing-role-s3-pol"
+      }
+    ],
+    "inline_policy_names": [],
+    "access_keys": [
+      {
+        "access_key_id": "AKIA35JTCHXOWOJNZDTB",
+        "status": "Active",
+        "create_date": "2023-10-19 01:52:51+00:00",
+        "age_days": 997,
+        "stale": true
+      }
+    ],
+    "tags": {
+      "Description": "User to move BTR files from denver to itl-0004-itx-prd-s3-landing-02"
+    },
+    "collected_at": "2026-07-12T19:38:32.339763+00:00"
+  },
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::818835242461:user/s3usr",
+    "resource_name": "s3usr",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "create_date": "2025-07-21 20:24:54+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "intelica-copy-from-denver-to-s3-policy",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/intelica-copy-from-denver-to-s3-policy"
+      },
+      {
+        "PolicyName": "AmazonS3FullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      }
+    ],
+    "inline_policy_names": [
+      "kms"
+    ],
+    "access_keys": [
+      {
+        "access_key_id": "AKIA35JTCHXOQRAYV5OF",
+        "status": "Active",
+        "create_date": "2025-07-21 20:25:40+00:00",
+        "age_days": 355,
+        "stale": true
+      }
+    ],
+    "tags": {
+      "AKIA35JTCHXOQRAYV5OF": "s3copytesting"
+    },
+    "collected_at": "2026-07-12T19:38:32.343400+00:00"
+  },
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::818835242461:user/opensearchsnapshot",
+    "resource_name": "opensearchsnapshot",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "create_date": "2025-10-17 20:10:27+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "opnsearch",
+      "s3"
+    ],
+    "access_keys": [
+      {
+        "access_key_id": "AKIA35JTCHXOROJDTOLI",
+        "status": "Inactive",
+        "create_date": "2025-10-17 20:12:03+00:00",
+        "age_days": 267,
+        "stale": true
+      }
+    ],
+    "tags": {},
+    "collected_at": "2026-07-12T19:38:32.366187+00:00"
+  },
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::818835242461:user/itx-notification-usr-prod",
+    "resource_name": "itx-notification-usr-prod",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "create_date": "2024-08-09 21:04:52+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "app-interchange-notification-usr-prod-policy",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/app-interchange-notification-usr-prod-policy"
+      }
+    ],
+    "inline_policy_names": [],
+    "access_keys": [
+      {
+        "access_key_id": "AKIA35JTCHXO43H2325V",
+        "status": "Inactive",
+        "create_date": "2024-08-09 21:05:19+00:00",
+        "age_days": 701,
+        "stale": true
+      }
+    ],
+    "tags": {},
+    "collected_at": "2026-07-12T19:38:32.378244+00:00"
+  },
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::818835242461:user/itx-orchestrator",
+    "resource_name": "itx-orchestrator",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "create_date": "2024-07-19 20:12:53+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      },
+      {
+        "PolicyName": "AWSCompromisedKeyQuarantineV3",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSCompromisedKeyQuarantineV3"
+      }
+    ],
+    "inline_policy_names": [],
+    "access_keys": [
+      {
+        "access_key_id": "AKIA35JTCHXOT4RKHYQR",
+        "status": "Active",
+        "create_date": "2024-07-19 20:13:11+00:00",
+        "age_days": 722,
+        "stale": true
+      }
+    ],
+    "tags": {},
+    "collected_at": "2026-07-12T19:38:32.378426+00:00"
+  },
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::818835242461:user/dev.s3.proy.intercambio",
+    "resource_name": "dev.s3.proy.intercambio",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "create_date": "2022-07-21 15:31:15+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "politica.s3.dev.intelica",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/politica.s3.dev.intelica"
+      }
+    ],
+    "inline_policy_names": [],
+    "access_keys": [
+      {
+        "access_key_id": "AKIA35JTCHXOQM7CZEHU",
+        "status": "Active",
+        "create_date": "2022-07-21 15:31:17+00:00",
+        "age_days": 1452,
+        "stale": true
+      }
+    ],
+    "tags": {},
+    "collected_at": "2026-07-12T19:38:32.382585+00:00"
+  }
+]

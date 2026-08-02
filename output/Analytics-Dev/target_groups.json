@@ -1,0 +1,131 @@
+[
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:221082197632:targetgroup/k8s-airflow-airflowd-c17252c09c/e29389fa7eca4b9c",
+    "resource_name": "k8s-airflow-airflowd-c17252c09c",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8080,
+    "vpc_id": "vpc-092dc05179287e08a",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/health",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:221082197632:loadbalancer/app/itl-0005-ana-dev-alb-apps-02/93d262d0c719355b"
+    ],
+    "targets": [
+      {
+        "id": "10.16.0.227",
+        "port": 8080,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:221082197632:loadbalancer/app/itl-0005-ana-dev-alb-apps-02/93d262d0c719355b",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:49.191026+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:221082197632:targetgroup/k8s-argocd-argocdse-17f0d76c67/8d24ec738adb1b21",
+    "resource_name": "k8s-argocd-argocdse-17f0d76c67",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8080,
+    "vpc_id": "vpc-092dc05179287e08a",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:221082197632:loadbalancer/app/itl-0005-ana-dev-alb-apps-02/93d262d0c719355b"
+    ],
+    "targets": [
+      {
+        "id": "10.16.2.116",
+        "port": 8080,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:221082197632:loadbalancer/app/itl-0005-ana-dev-alb-apps-02/93d262d0c719355b",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:49.425189+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:221082197632:targetgroup/k8s-argocd-argocdse-41469e3e0c/51ecde5dff7e3cf7",
+    "resource_name": "k8s-argocd-argocdse-41469e3e0c",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8080,
+    "vpc_id": "vpc-092dc05179287e08a",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/AWS.ALB/healthcheck",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:221082197632:loadbalancer/app/itl-0005-ana-dev-alb-apps-02/93d262d0c719355b"
+    ],
+    "targets": [
+      {
+        "id": "10.16.2.116",
+        "port": 8080,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-092dc05179287e08a",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:221082197632:loadbalancer/app/itl-0005-ana-dev-alb-apps-02/93d262d0c719355b",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:49.657104+00:00"
+  }
+]

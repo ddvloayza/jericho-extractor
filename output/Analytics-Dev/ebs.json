@@ -1,0 +1,48 @@
+[
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0d4cd59ae7de89ab2",
+    "resource_name": "itl-0005-ana-dev-ng-dags-02",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2c",
+    "state": "in-use",
+    "size_gb": 50,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:221082197632:key/a373bb63-6782-49ba-90f2-a95abc7cea2b",
+    "snapshot_id": "snap-09ab37fb81a7173c2",
+    "multi_attach": false,
+    "create_time": "2026-07-03 04:01:20.241000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0f520b8827e5b280e",
+        "device": "/dev/xvda",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0f520b8827e5b280e",
+    "attached_device": "/dev/xvda",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0005-ana-dev-ng-dags-02",
+      "apid": "ana",
+      "assetid": "0005",
+      "eks:cluster-name": "itl-0005-ana-dev-eks-af-02",
+      "coid": "itl",
+      "eks:nodegroup-name": "itl-0005-ana-dev-ng-dags-02-20251012040132923800000026",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0f520b8827e5b280e",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:45.147891+00:00"
+  }
+]

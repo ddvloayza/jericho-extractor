@@ -1,0 +1,58 @@
+[
+  {
+    "security_group_id": "sg-02006a6eae69e1737",
+    "security_group_name": "k8s-traffic-itl0005anadeveksaf02-75e4763a0f",
+    "description": "[k8s] Shared Backend SecurityGroup for LoadBalancer",
+    "vpc_id": "vpc-092dc05179287e08a",
+    "account_id": "221082197632",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-02e261864f7aaaf26",
+      "eni-02c510eb6c07fe606",
+      "eni-0b3a0c7e79c64c805",
+      "arn:aws:elasticloadbalancing:eu-south-2:221082197632:loadbalancer/app/itl-0005-ana-dev-alb-apps-02/93d262d0c719355b"
+    ],
+    "attached_count": 4,
+    "overall_risk": "critical",
+    "exposure_flags": [
+      "full_open_inbound",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "inbound",
+        "risk_level": "critical",
+        "risk_tags": [
+          "full_open_inbound"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  }
+]

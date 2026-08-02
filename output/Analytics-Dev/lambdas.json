@@ -1,0 +1,43 @@
+[
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:221082197632:function:aws-controltower-NotificationForwarder",
+    "resource_name": "aws-controltower-NotificationForwarder",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "runtime": "python3.13",
+    "memory_mb": 128,
+    "timeout_seconds": 60,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2025-09-02T19:55:34.995+0000",
+    "code_size_bytes": 473,
+    "handler": "index.lambda_handler",
+    "description": "SNS message forwarding function for aggregating account notifications.",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::221082197632:role/aws-controltower-ForwardSnsNotificationRole",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "sns_arn"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {
+      "aws:cloudformation:logical-id": "ForwardSnsNotification",
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:221082197632:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-9f1cd62a-8a65-49db-8a8e-1495f737f442/c74fe980-8836-11f0-9049-0a0c1e17e159",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-9f1cd62a-8a65-49db-8a8e-1495f737f442"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::221082197632:role/aws-controltower-ForwardSnsNotificationRole",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:52.794581+00:00"
+  }
+]

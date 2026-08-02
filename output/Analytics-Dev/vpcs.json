@@ -1,0 +1,58 @@
+[
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-0f4a2881864e2f145",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cidr_block": "172.31.0.0/16",
+    "cidr_block_associations": [
+      "172.31.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": true,
+    "dhcp_options_id": "dopt-0f626424cf4e9cd11",
+    "instance_tenancy": "default",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-0f626424cf4e9cd11",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:41.385348+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc",
+    "resource_id": "vpc-092dc05179287e08a",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "cidr_block": "10.16.0.0/16",
+    "cidr_block_associations": [
+      "10.16.0.0/16"
+    ],
+    "ipv6_cidr_blocks": [],
+    "state": "available",
+    "is_default": false,
+    "dhcp_options_id": "dopt-0f626424cf4e9cd11",
+    "instance_tenancy": "default",
+    "tags": {
+      "assetid": "0005",
+      "coid": "itl",
+      "Name": "itl-0005-ana-dev-vpc-02",
+      "apid": "ana",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::dhcp_options",
+        "resource_id": "dopt-0f626424cf4e9cd11",
+        "relation": "uses_dhcp"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:41.385360+00:00"
+  }
+]

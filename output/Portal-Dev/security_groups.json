@@ -1,0 +1,1730 @@
+[
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-07f51d4b2389dc8ca",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-sg-git-runner-03",
+    "description": "Grupo de segutridad de prubea par git runner",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527081+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-05d2473cae7a50fab",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-ec2-clickhouse-03-sg",
+    "description": "Security group for ClickHouse EC2 instance",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 9000,
+        "to_port": 9000,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6",
+          "sg-05975d35e046ca0bf",
+          "sg-01976563e41df450b",
+          "sg-076cc56f6b3e12257"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 5000,
+        "to_port": 5000,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0922640d2a80f5742"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 8123,
+        "to_port": 8123,
+        "ipv4_ranges": [
+          "10.10.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0922640d2a80f5742",
+          "sg-0aa6d55bd394447f6",
+          "sg-01976563e41df450b"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 9004,
+        "to_port": 9004,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0f97b556d1e01ca15"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "Name": "itl-0003-portal-dev-ec2-clickhouse-03-sg",
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527102+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-06717f2261d9bef36",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-lambda-sync-buk-absence-03-sg",
+    "description": "SG Lambda itl-0003-portal-dev-lambda-sync-buk-absence-03 - egress a VPC endpoints y DNS",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-02aab67c133afef91"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "assetid": "0003",
+      "apid": "portal",
+      "coid": "itl",
+      "Name": "itl-0003-portal-dev-lambda-sync-buk-absence-03-sg",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527111+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0820a1d6a00362086",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "k8s-appsmith-appsmith-bbe438dda7",
+    "description": "[k8s] Managed SecurityGroup for LoadBalancer",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "service.k8s.aws/stack": "appsmith/appsmith",
+      "elbv2.k8s.aws/cluster": "itl-0003-portal-dev-eks-apps-03",
+      "service.k8s.aws/resource": "ManagedLBSecurityGroup"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527117+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0964ec984f5d5efbc",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-rds-apps-03-sg",
+    "description": "Control traffic to/from RDS Aurora itl-0003-portal-dev-rds-apps-03",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "ipv4_ranges": [
+          "10.0.3.100/32",
+          "10.11.3.12/32"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-097a391d184cf49cd",
+          "sg-0aa6d55bd394447f6",
+          "sg-01976563e41df450b",
+          "sg-05975d35e046ca0bf",
+          "sg-0e8cd582b4803bcfc",
+          "sg-0f97b556d1e01ca15",
+          "sg-04aac9e78d6520b80",
+          "sg-0454300e4d0c1f411",
+          "sg-06717f2261d9bef36",
+          "sg-01f1fa4ca795113d8",
+          "sg-0a4a3d94379c8d963",
+          "sg-05d2473cae7a50fab"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "apid": "portal",
+      "env": "dev",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-dev-rds-apps-03-sg",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527124+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-01f1fa4ca795113d8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-lambda-sync-jira-03-sg",
+    "description": "SG Lambda itl-0003-portal-dev-lambda-sync-jira-03 - egress a VPC endpoints y DNS",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-02aab67c133afef91"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "Name": "itl-0003-portal-dev-lambda-sync-jira-03-sg",
+      "env": "dev",
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527132+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0693ad8e5b1345db6",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "k8s-intelicadevapps-b0429d02ac",
+    "description": "[k8s] Managed SecurityGroup for LoadBalancer",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "assetid": "0003",
+      "ingress.k8s.aws/stack": "intelica-dev-apps",
+      "env": "dev",
+      "coid": "itl",
+      "Name": "itl-0003-portal-dev-alb-apps-02-sg",
+      "ingress.k8s.aws/resource": "ManagedLBSecurityGroup",
+      "apid": "portal",
+      "elbv2.k8s.aws/cluster": "itl-0003-portal-dev-eks-apps-03"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527139+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-086fdd7e4b3d71f5f",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-vpc-endpoints-20260105202000202000000001",
+    "description": "Security group for VPC Interface Endpoints",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-054b6a28f76db503c"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "env": "dev",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-dev-vpc-endpoints-03-sg",
+      "coid": "itl",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527146+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-036eadb8fba73b4ac",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "eks-cluster-sg-itl-0003-portal-dev-eks-apps-03-1649377597",
+    "description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-036eadb8fba73b4ac"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-036eadb8fba73b4ac"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "kubernetes.io/cluster/itl-0003-portal-dev-eks-apps-03": "owned",
+      "Name": "eks-cluster-sg-itl-0003-portal-dev-eks-apps-03-1649377597",
+      "aws:eks:cluster-name": "itl-0003-portal-dev-eks-apps-03"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527151+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0454300e4d0c1f411",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-lambda-fee-external-custom-alert-03-sg",
+    "description": "SG Lambda itl-0003-portal-dev-lambda-fee-external-custom-alert-03 - egress a VPC endpoints y DNS",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-02aab67c133afef91"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-dev-lambda-fee-external-custom-alert-03-sg",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527159+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0f97b556d1e01ca15",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-quicksight-03-sg",
+    "description": "quicksh",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527163+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-025cc5598ac86146d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "fsx-shared-sg",
+    "description": "SG for shared FSx Windows File Server",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "10.18.3.147/32"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 445,
+        "to_port": 445,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0922640d2a80f5742",
+          "sg-067b9fd88018f9db1"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 5985,
+        "to_port": 5985,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0922640d2a80f5742"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "coid": "itl",
+      "assetid": "0003",
+      "apid": "portal",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527170+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-06156fd0135691547",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-086471f116a4c4c20",
+    "group_name": "default",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-06156fd0135691547"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-086471f116a4c4c20",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527175+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0922640d2a80f5742",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-denver-sg-0320251201183724115700000001",
+    "description": "Managed by Terraform",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 1433,
+        "to_port": 1433,
+        "ipv4_ranges": [
+          "10.0.3.100/32"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-097a391d184cf49cd",
+          "sg-0aa6d55bd394447f6",
+          "sg-036eadb8fba73b4ac",
+          "sg-0145ab9baeae304ea",
+          "sg-0964ec984f5d5efbc",
+          "sg-01976563e41df450b",
+          "sg-0e8cd582b4803bcfc",
+          "sg-075a4dc84874b3be0",
+          "sg-05975d35e046ca0bf",
+          "sg-076cc56f6b3e12257",
+          "sg-0f97b556d1e01ca15"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-076cc56f6b3e12257",
+          "sg-0e219160bc1d471cf"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 1435,
+        "to_port": 1435,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6",
+          "sg-05975d35e046ca0bf"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 2222,
+        "to_port": 2222,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6",
+          "sg-01976563e41df450b",
+          "sg-076cc56f6b3e12257"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 445,
+        "to_port": 445,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0e219160bc1d471cf",
+          "sg-076cc56f6b3e12257"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 3389,
+        "to_port": 3389,
+        "ipv4_ranges": [
+          "10.0.3.100/32"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 80,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "172.8.3.32/32",
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 25,
+        "to_port": 25,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 587,
+        "to_port": 587,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.12.0.0/16",
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 3389,
+        "to_port": 3389,
+        "ipv4_ranges": [
+          "10.18.4.81/32"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 1024,
+        "to_port": 65535,
+        "ipv4_ranges": [
+          "172.2.1.13/32"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "env": "dev",
+      "Name": "itl-0003-portal-dev-denver-sg-03",
+      "apid": "portal",
+      "coid": "itl",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527193+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0e9085264a5e2e241",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-inbound-resolv-sg-03",
+    "description": "Allows traffic dns to ad",
+    "inbound_rules": [
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-03bed10a7bf7da98d",
+          "sg-0f97b556d1e01ca15"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-03bed10a7bf7da98d",
+          "sg-0f97b556d1e01ca15"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527199+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0145ab9baeae304ea",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-eks-apps-03-sg",
+    "description": "EKS cluster security group",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-01976563e41df450b"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [],
+    "tags": {
+      "apid": "portal",
+      "Name": "itl-0003-portal-dev-eks-apps-03-sg",
+      "coid": "itl",
+      "assetid": "0003",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527203+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0ab9d694b7460644c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "k8s-intelicadevapps03-74550e9da8",
+    "description": "[k8s] Managed SecurityGroup for LoadBalancer",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "ingress.k8s.aws/stack": "intelica-dev-apps-03",
+      "elbv2.k8s.aws/cluster": "itl-0003-portal-dev-eks-apps-03",
+      "ingress.k8s.aws/resource": "ManagedLBSecurityGroup"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527208+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-01976563e41df450b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-ec2-apps-03-sg",
+    "description": "EKS node shared security group",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 6443,
+        "to_port": 6443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0145ab9baeae304ea"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 9443,
+        "to_port": 9443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0145ab9baeae304ea"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 1025,
+        "to_port": 65535,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-01976563e41df450b"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 8443,
+        "to_port": 8443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0145ab9baeae304ea"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 80,
+        "to_port": 31909,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0a19a117a93bc3291"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 10250,
+        "to_port": 10250,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0145ab9baeae304ea"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-01976563e41df450b"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-01976563e41df450b"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 445,
+        "to_port": 445,
+        "ipv4_ranges": [
+          "10.11.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 4443,
+        "to_port": 4443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0145ab9baeae304ea"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0145ab9baeae304ea"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "env": "dev",
+      "Name": "itl-0003-portal-dev-ec2-apps-03-sg",
+      "apid": "portal",
+      "kubernetes.io/cluster/itl-0003-portal-dev-eks-apps-03": "owned",
+      "coid": "itl",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527223+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0f030a669cff63734",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-vpc-endpoints-20260105202000209000000002",
+    "description": "Security group for VPC Interface Endpoints",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "apid": "portal",
+      "coid": "itl",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-dev-vpc-endpoints-03-sg",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527227+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-02aab67c133afef91",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-vpc-endpoints-20251010165538720100000002",
+    "description": "Security group for VPC Interface Endpoints",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 1024,
+        "to_port": 1064,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "apid": "portal",
+      "coid": "itl",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-dev-vpc-endpoints-03-sg",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527234+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0f42328f9bdaef0c7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "default",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0f42328f9bdaef0c7"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527238+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-05d047c1f6581e523",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "fsx-prueba-sg-2",
+    "description": "Security group testing from ad to fsx",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "10.18.3.147/32"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 445,
+        "to_port": 445,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0922640d2a80f5742"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527243+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-054b6a28f76db503c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-lambda-pg-audit-03-sg",
+    "description": "Security group for pg-audit Lambda function",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-02aab67c133afef91",
+          "sg-086fdd7e4b3d71f5f"
+        ],
+        "prefix_list_ids": [
+          "pl-64a5400d"
+        ]
+      }
+    ],
+    "tags": {
+      "Name": "itl-0003-portal-dev-lambda-pg-audit-03-sg",
+      "apid": "portal",
+      "env": "dev",
+      "assetid": "0003",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527249+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0a4a3d94379c8d963",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-lambda-sync-buk-organization-03-sg",
+    "description": "SG Lambda itl-0003-portal-dev-lambda-sync-buk-organization-03 - egress a VPC endpoints y DNS",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.12.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-02aab67c133afef91"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "Name": "itl-0003-portal-dev-lambda-sync-buk-organization-03-sg",
+      "env": "dev",
+      "assetid": "0003",
+      "coid": "itl",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527256+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-03be85899ca6402c1",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "itl-0003-portal-dev-vpc-endpoints-20260105202000215000000003",
+    "description": "Security group for VPC Interface Endpoints",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "assetid": "0003",
+      "apid": "portal",
+      "coid": "itl",
+      "env": "dev",
+      "Name": "itl-0003-portal-dev-vpc-endpoints-03-sg"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527260+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0a19a117a93bc3291",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "group_name": "k8s-traffic-itl0003portaldeveksapps03-b8480612fc",
+    "description": "[k8s] Shared Backend SecurityGroup for LoadBalancer",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "elbv2.k8s.aws/cluster": "itl-0003-portal-dev-eks-apps-03",
+      "elbv2.k8s.aws/resource": "backend-sg"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:17.527264+00:00"
+  }
+]

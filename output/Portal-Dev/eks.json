@@ -1,0 +1,257 @@
+[
+  {
+    "resource_type": "aws::eks::cluster",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "resource_name": "itl-0003-portal-dev-eks-apps-03",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "status": "ACTIVE",
+    "kubernetes_version": "1.34",
+    "endpoint": "https://0B114F7D32B6D82000C6877DCEDF40D1.gr7.eu-south-2.eks.amazonaws.com",
+    "certificate_authority": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJWHFlWEZUbEhBZXN3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TlRBNU1qWXlNekl5TkRKYUZ3MHpOVEE1TWpReU16STNOREphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUROVnk0MVAwa0NRUktubUVoQlViNXBtUnh1MEFUYlFlT3h6djE2MlkvSHZYNjVFMFdNSWlydVhsZHgKYmQ0V203QW4vckZ6S0pCTVVOdUlYeHg1UkdMTlg1MHNmYWxmTSs0UzZPd01aMGJNSUo2TUlvc2lTMG9VUGxtUQpKNER3eVVSb0JsZ1pEbGExUWVkcEwzRGVpN3hEYUpkcHg2K0ZWQmxCbWRpTW1sZFB3TkRHMTVTdTNlVS9IVWs4CjFDR2duQzVhOG44U2VOcWJTaElVazZKTFdCdmlCRlBka1dlQjc3c3BqVnhtQ2dNRkZWNjVEaWFjWkR4T3JTSkcKQzRMdnh1RmVORUgwMXB3L2VYbEFZUWNxUUxKazd1MG9PaXlhVWFuMTNBUkd4ZHRlRnRBVGRZaEdkSDhKc1FjawpNdzhya3ArMThBS1EyRHZpZVloWjg3bXdhWkpqQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJRdGNMM01RQ1BzSGZwR1BVN2M3ekNLaytldEpqQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRREJYRCtuWW5vRgpvL1hZNlpXYkF3ZFd5c2Nvc3lvSHpYZ3R6dnVDN3hUdzVTbjc4Q3VCMzdMU284NGpFY2pSUVltMGozaTY5UjYwClc5YVM5aDdSbmVHTDNHaEV5ZHNHSnlZb2lWR3U0bFhlU0oxUysxS083WXM1bzNoOG1RRll2SkpyQkpNYkRpam0KODNnSTFNUHoxWDRNNjRhbk5iK1MwR0JnVU9WYU5NUWRwVG5EbFIyZldDZzNpbktkVkFhWTk5bFNUbklJSkhjeApFZWVYbDV3RnpDZmw5RnVua2ZiNmtGekdaNWhRZGQrcXcxMytmOE53ejd5MktsWkptSk1XRWs4QldWSmlhMVBTCnBFcWYreUNOdmYycDRqbGtLQnNYalNsRlJaM1hEVzhPYWo4WDhHRERDVGlqZ21yODBSc3R3MXZyMVpGK3l3b2cKczVxTmFJQ2cyUHNYCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "subnet_ids": [
+      "subnet-0c353ee340c3da15e",
+      "subnet-05c87676a0cbfce54"
+    ],
+    "security_group_ids": [
+      "sg-0145ab9baeae304ea"
+    ],
+    "endpoint_public_access": true,
+    "endpoint_private_access": true,
+    "role_arn": "arn:aws:iam::891376942769:role/itl-0003-portal-dev-eks-apps-03-role",
+    "logging_enabled": [
+      "api",
+      "audit",
+      "authenticator"
+    ],
+    "tags": {
+      "coid": "itl",
+      "terraform-aws-modules": "eks",
+      "env": "dev",
+      "assetid": "0003",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0145ab9baeae304ea",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:35.899844+00:00"
+  },
+  {
+    "resource_type": "aws::eks::nodegroup",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:nodegroup/itl-0003-portal-dev-eks-apps-03/itl-0003-portal-dev-ec2-apps-03-airflow/26cf3856-11b7-a4d0-113a-5ef9f0407e62",
+    "resource_name": "itl-0003-portal-dev-ec2-apps-03-airflow",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "nodegroup_name": "itl-0003-portal-dev-ec2-apps-03-airflow",
+    "status": "ACTIVE",
+    "instance_types": [
+      "m5.xlarge"
+    ],
+    "ami_type": "AL2023_x86_64_STANDARD",
+    "capacity_type": "ON_DEMAND",
+    "subnet_ids": [
+      "subnet-0c353ee340c3da15e",
+      "subnet-05c87676a0cbfce54"
+    ],
+    "desired_size": 1,
+    "min_size": 1,
+    "max_size": 5,
+    "disk_size": 0,
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-dev-ec2-apps-03-airflow"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "uses_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:36.506238+00:00"
+  },
+  {
+    "resource_type": "aws::eks::nodegroup",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:nodegroup/itl-0003-portal-dev-eks-apps-03/itl-0003-portal-dev-ec2-apps-03-appsmith/aecd37cd-bdac-670c-dd4e-e9dbb1af9c67",
+    "resource_name": "itl-0003-portal-dev-ec2-apps-03-appsmith",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "nodegroup_name": "itl-0003-portal-dev-ec2-apps-03-appsmith",
+    "status": "ACTIVE",
+    "instance_types": [
+      "m5.2xlarge"
+    ],
+    "ami_type": "AL2023_x86_64_STANDARD",
+    "capacity_type": "ON_DEMAND",
+    "subnet_ids": [
+      "subnet-0c353ee340c3da15e",
+      "subnet-05c87676a0cbfce54"
+    ],
+    "desired_size": 1,
+    "min_size": 0,
+    "max_size": 2,
+    "disk_size": 0,
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-dev-ec2-apps-03-appsmith"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "uses_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:36.857962+00:00"
+  },
+  {
+    "resource_type": "aws::eks::nodegroup",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:nodegroup/itl-0003-portal-dev-eks-apps-03/itl-0003-portal-dev-ec2-apps-03-metabase/2eccc42f-29d1-7660-d25d-b0a331280f8e",
+    "resource_name": "itl-0003-portal-dev-ec2-apps-03-metabase",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "nodegroup_name": "itl-0003-portal-dev-ec2-apps-03-metabase",
+    "status": "ACTIVE",
+    "instance_types": [
+      "c5.large"
+    ],
+    "ami_type": "AL2023_x86_64_STANDARD",
+    "capacity_type": "ON_DEMAND",
+    "subnet_ids": [
+      "subnet-0c353ee340c3da15e",
+      "subnet-05c87676a0cbfce54"
+    ],
+    "desired_size": 1,
+    "min_size": 0,
+    "max_size": 2,
+    "disk_size": 0,
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-dev-ec2-apps-03-metabase"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "uses_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:37.185894+00:00"
+  },
+  {
+    "resource_type": "aws::eks::nodegroup",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:nodegroup/itl-0003-portal-dev-eks-apps-03/itl-0003-portal-dev-ec2-apps-03-portal/84ccc5d6-2b31-aab3-df05-1fb79870e662",
+    "resource_name": "itl-0003-portal-dev-ec2-apps-03-portal",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "nodegroup_name": "itl-0003-portal-dev-ec2-apps-03-portal",
+    "status": "ACTIVE",
+    "instance_types": [
+      "m5.large"
+    ],
+    "ami_type": "AL2023_x86_64_STANDARD",
+    "capacity_type": "ON_DEMAND",
+    "subnet_ids": [
+      "subnet-0c353ee340c3da15e",
+      "subnet-05c87676a0cbfce54"
+    ],
+    "desired_size": 2,
+    "min_size": 0,
+    "max_size": 2,
+    "disk_size": 0,
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-dev-ec2-apps-03-portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "uses_subnet"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:37.585550+00:00"
+  }
+]

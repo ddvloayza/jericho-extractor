@@ -1,0 +1,72 @@
+[
+  {
+    "resource_type": "aws::rds::dbinstance",
+    "resource_id": "arn:aws:rds:eu-south-2:221082197632:db:itl-0005-ana-dev-rds-dbaf-02",
+    "resource_name": "itl-0005-ana-dev-rds-dbaf-02",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "engine": "postgres",
+    "engine_version": "16.13",
+    "instance_class": "db.t3.micro",
+    "status": "available",
+    "allocated_storage_gb": 20,
+    "multi_az": false,
+    "publicly_accessible": false,
+    "storage_encrypted": false,
+    "kms_key_id": "",
+    "subnet_group_name": "itl-0005-ana-dev-rds-dbaf-02-dbsng",
+    "vpc_id": "vpc-092dc05179287e08a",
+    "subnet_ids": [
+      "subnet-013034a3fd02e9b17",
+      "subnet-03b22d8fce7ca6076",
+      "subnet-0b2520e045cf37cb0"
+    ],
+    "security_group_ids": [
+      "sg-085b5a07768a54d37"
+    ],
+    "endpoint_address": "itl-0005-ana-dev-rds-dbaf-02.clukawgwmnvf.eu-south-2.rds.amazonaws.com",
+    "endpoint_port": 5432,
+    "backup_retention_days": 0,
+    "deletion_protection": true,
+    "availability_zone": "eu-south-2c",
+    "secondary_az": "",
+    "auto_minor_version_upgrade": true,
+    "ca_certificate": "rds-ca-rsa2048-g1",
+    "instance_create_time": "2025-10-15 05:36:35.351000+00:00",
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0005",
+      "apid": "ana"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::rds::subnetgroup",
+        "resource_id": "itl-0005-ana-dev-rds-dbaf-02-dbsng",
+        "relation": "deployed_in_subnet_group"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-013034a3fd02e9b17",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03b22d8fce7ca6076",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0b2520e045cf37cb0",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-085b5a07768a54d37",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-07-12T19:45:54.355208+00:00"
+  }
+]

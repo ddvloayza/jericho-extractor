@@ -1,0 +1,45 @@
+[
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-05dcd2b4d7a7e8124",
+    "resource_name": "",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 80,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:861276092327:key/560dd37d-d216-49bb-90ff-8d21f03db55f",
+    "snapshot_id": "snap-08030bfd6d26dee1a",
+    "multi_attach": false,
+    "create_time": "2025-09-17 17:06:54.347000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08982a4115e1f13eb",
+        "device": "/dev/xvda",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08982a4115e1f13eb",
+    "attached_device": "/dev/xvda",
+    "attached_state": "attached",
+    "tags": {
+      "coid": "itl",
+      "assetid": "0004",
+      "env": "dev",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08982a4115e1f13eb",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:42.918168+00:00"
+  }
+]

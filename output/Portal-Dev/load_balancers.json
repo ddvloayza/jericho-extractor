@@ -1,0 +1,199 @@
+[
+  {
+    "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/net/k8s-appsmith-appsmith-65f856c687/3dc64f65cfc5c60d",
+    "resource_name": "k8s-appsmith-appsmith-65f856c687",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "dns_name": "k8s-appsmith-appsmith-65f856c687-3dc64f65cfc5c60d.elb.eu-south-2.amazonaws.com",
+    "scheme": "internal",
+    "lb_type": "network",
+    "state": "active",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "availability_zones": [
+      {
+        "ZoneName": "eu-south-2a",
+        "SubnetId": "subnet-0c353ee340c3da15e",
+        "LoadBalancerAddresses": []
+      },
+      {
+        "ZoneName": "eu-south-2b",
+        "SubnetId": "subnet-05c87676a0cbfce54",
+        "LoadBalancerAddresses": []
+      }
+    ],
+    "security_group_ids": [
+      "sg-0820a1d6a00362086",
+      "sg-0a19a117a93bc3291"
+    ],
+    "canonical_hosted_zone_id": "Z1011216NVTVYADP1SSV",
+    "created_time": "2025-11-05 21:41:06.034000+00:00",
+    "tags": {
+      "service.k8s.aws/stack": "appsmith/appsmith",
+      "service.k8s.aws/resource": "LoadBalancer",
+      "elbv2.k8s.aws/cluster": "itl-0003-portal-dev-eks-apps-03"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-05c87676a0cbfce54",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0820a1d6a00362086",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0a19a117a93bc3291",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:23.969853+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/app/itl-0003-portal-dev-alb-02/44cf6aae78cc8f09",
+    "resource_name": "itl-0003-portal-dev-alb-02",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "dns_name": "itl-0003-portal-dev-alb-02-1917574820.eu-south-2.elb.amazonaws.com",
+    "scheme": "internet-facing",
+    "lb_type": "application",
+    "state": "active",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "availability_zones": [
+      {
+        "ZoneName": "eu-south-2b",
+        "SubnetId": "subnet-065c0d2ee544988f8",
+        "LoadBalancerAddresses": []
+      },
+      {
+        "ZoneName": "eu-south-2a",
+        "SubnetId": "subnet-0c09cafe518adff09",
+        "LoadBalancerAddresses": []
+      }
+    ],
+    "security_group_ids": [
+      "sg-0693ad8e5b1345db6",
+      "sg-0a19a117a93bc3291"
+    ],
+    "canonical_hosted_zone_id": "Z0956581394HF5D5LXGAP",
+    "created_time": "2025-11-03 23:09:30.033000+00:00",
+    "tags": {
+      "ingress.k8s.aws/stack": "intelica-dev-apps",
+      "assetid": "0003",
+      "apid": "portal",
+      "coid": "itl",
+      "env": "dev",
+      "ingress.k8s.aws/resource": "LoadBalancer",
+      "Name": "itl-0003-portal-dev-alb-apps-02-sg",
+      "elbv2.k8s.aws/cluster": "itl-0003-portal-dev-eks-apps-03"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-065c0d2ee544988f8",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c09cafe518adff09",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0693ad8e5b1345db6",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0a19a117a93bc3291",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:24.194533+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/app/itl-0003-portal-dev-alb-03/e21e56659f3c0ae7",
+    "resource_name": "itl-0003-portal-dev-alb-03",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "dns_name": "itl-0003-portal-dev-alb-03-858794574.eu-south-2.elb.amazonaws.com",
+    "scheme": "internet-facing",
+    "lb_type": "application",
+    "state": "active",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "availability_zones": [
+      {
+        "ZoneName": "eu-south-2b",
+        "SubnetId": "subnet-065c0d2ee544988f8",
+        "LoadBalancerAddresses": []
+      },
+      {
+        "ZoneName": "eu-south-2a",
+        "SubnetId": "subnet-0c09cafe518adff09",
+        "LoadBalancerAddresses": []
+      }
+    ],
+    "security_group_ids": [
+      "sg-0a19a117a93bc3291",
+      "sg-0ab9d694b7460644c"
+    ],
+    "canonical_hosted_zone_id": "Z0956581394HF5D5LXGAP",
+    "created_time": "2025-11-05 21:41:06.551000+00:00",
+    "tags": {
+      "ingress.k8s.aws/resource": "LoadBalancer",
+      "ingress.k8s.aws/stack": "intelica-dev-apps-03",
+      "elbv2.k8s.aws/cluster": "itl-0003-portal-dev-eks-apps-03"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-065c0d2ee544988f8",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c09cafe518adff09",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0a19a117a93bc3291",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0ab9d694b7460644c",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-07-12T19:47:24.415348+00:00"
+  }
+]

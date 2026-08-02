@@ -1,0 +1,80 @@
+[
+  {
+    "resource_type": "aws::events::rule",
+    "resource_id": "arn:aws:events:eu-south-2:861276092327:rule/AWSControlTowerManagedRule",
+    "resource_name": "AWSControlTowerManagedRule",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "event_bus_name": "default",
+    "state": "ENABLED",
+    "description": "This rule is used to route Security Hub Control Findings to Control Tower",
+    "schedule_expression": "",
+    "event_pattern": "{  \"source\": [\"aws.securityhub\"],   \"detail-type\": [\"Security Hub Findings - Imported\"],  \"detail\": {    \"findings\": {      \"Compliance\": {        \"AssociatedStandards\": {          \"StandardsId\" : [            { \"prefix\": \"standards/service-managed-aws-control-tower\" }          ]        }      },      \"Region\" : [\"eu-south-2\"]    }  }}",
+    "target_count": 1,
+    "tags": {},
+    "collected_at": "2026-07-12T19:44:59.443897+00:00"
+  },
+  {
+    "resource_type": "aws::events::rule",
+    "resource_id": "arn:aws:events:eu-south-2:861276092327:rule/aws-controltower-ConfigComplianceChangeEventRule",
+    "resource_name": "aws-controltower-ConfigComplianceChangeEventRule",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "event_bus_name": "default",
+    "state": "ENABLED",
+    "description": "CloudWatch Event Rule to send notification on Config Rule compliance changes.",
+    "schedule_expression": "",
+    "event_pattern": "{\"detail-type\":[\"Config Rules Compliance Change\"],\"source\":[\"aws.config\"]}",
+    "target_count": 1,
+    "tags": {
+      "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-south-2:861276092327:stack/StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-13380e59-ecb9-463f-8b41-d2a8fa63a1b8/91f23b50-8839-11f0-8dca-06b78e07dfa3",
+      "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-13380e59-ecb9-463f-8b41-d2a8fa63a1b8",
+      "aws:cloudformation:logical-id": "CWEventRuleComplianceChangeEvent"
+    },
+    "collected_at": "2026-07-12T19:44:59.870442+00:00"
+  },
+  {
+    "resource_type": "aws::events::rule",
+    "resource_id": "arn:aws:events:eu-south-2:861276092327:rule/itl-0004-itx-dev-lmbd-file-load-02-sftp-rule",
+    "resource_name": "itl-0004-itx-dev-lmbd-file-load-02-sftp-rule",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "event_bus_name": "default",
+    "state": "ENABLED",
+    "description": "itl-0004-itx-dev-lmbd-file-load-02-sftp-rule",
+    "schedule_expression": "",
+    "event_pattern": "{\"detail\":{\"server-id\":[\"s-ec4a3c1bb3a04bb88\"]},\"detail-type\":[\"SFTP Server File Upload Failed\",\"SFTP Server File Upload Completed\"],\"source\":[\"aws.transfer\"]}",
+    "target_count": 1,
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "collected_at": "2026-07-12T19:45:00.294615+00:00"
+  },
+  {
+    "resource_type": "aws::events::rule",
+    "resource_id": "arn:aws:events:eu-south-2:861276092327:rule/itl-0004-itx-dev-rule-pg-audit-02",
+    "resource_name": "itl-0004-itx-dev-rule-pg-audit-02",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "event_bus_name": "default",
+    "state": "ENABLED",
+    "description": "Ejecuta la Lambda de forma peri\u00f3dica",
+    "schedule_expression": "rate(1 day)",
+    "event_pattern": "",
+    "target_count": 1,
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0004",
+      "apid": "itx"
+    },
+    "collected_at": "2026-07-12T19:45:00.718324+00:00"
+  }
+]

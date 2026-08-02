@@ -1,0 +1,3895 @@
+[
+  {
+    "resource_type": "aws::config::configurationrecorder",
+    "resource_id": "aws-controltower-BaselineConfigRecorder",
+    "resource_name": "aws-controltower-BaselineConfigRecorder",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "recording": true,
+    "last_status": "SUCCESS",
+    "all_supported": true,
+    "include_global_resource_types": false,
+    "delivery_channel_name": "aws-controltower-BaselineConfigDeliveryChannel",
+    "delivery_s3_bucket": "aws-controltower-logs-124355672973-us-east-1",
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:25.908479+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-pbkgpy",
+    "resource_name": "securityhub-acm-certificate-expiration-check-4c0f6b1d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Imported ACM certificates should be renewed within the number of days specified.",
+    "source_owner": "AWS",
+    "source_identifier": "ACM_CERTIFICATE_EXPIRATION_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971039+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-uf21bo",
+    "resource_name": "securityhub-acm-certificate-rsa-check-30694b94",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if RSA certificates managed by AWS Certificate Manager (ACM) have a key length of at least '2048' bits. The rule is NON_COMPLIANT if the minimum key length is less than 2048 bits.",
+    "source_owner": "AWS",
+    "source_identifier": "ACM_CERTIFICATE_RSA_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ACM::Certificate"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971052+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ps0ndh",
+    "resource_name": "securityhub-acm-pca-root-ca-disabled-6f8d4abe",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if AWS Private Certificate Authority (AWS Private CA) has a root CA that is disabled. The rule is NON_COMPLIANT for root CAs with status that is not DISABLED.",
+    "source_owner": "AWS",
+    "source_identifier": "ACM_PCA_ROOT_CA_DISABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971056+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-r3u5zo",
+    "resource_name": "securityhub-alb-desync-mode-check-a8f828ae",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether the Application Load Balancer is configured defensive or strictest de-sync mitigation mode. This control fails if the Application Load Balancer is not configured with defensive or strictest desync mitigation mode.",
+    "source_owner": "AWS",
+    "source_identifier": "ALB_DESYNC_MODE_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971060+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-y1l0dp",
+    "resource_name": "securityhub-alb-http-drop-invalid-header-enabled-35b26ebf",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if rule evaluates Application Load Balancers (ALBs) to ensure they are configured to drop http headers. The rule is NON_COMPLIANT if the value of routing.http.drop_invalid_header_fields.enabled is set to false.",
+    "source_owner": "AWS",
+    "source_identifier": "ALB_HTTP_DROP_INVALID_HEADER_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971063+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8sfymk",
+    "resource_name": "securityhub-alb-http-to-https-redirection-check-c43f40b5",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether HTTP to HTTPS redirection is configured on all HTTP listeners of Application Load Balancers. The rule is NON_COMPLIANT if one or more HTTP listeners of Application Load Balancers do not have HTTP to HTTPS redirection configured.",
+    "source_owner": "AWS",
+    "source_identifier": "ALB_HTTP_TO_HTTPS_REDIRECTION_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971066+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vfnh89",
+    "resource_name": "securityhub-api-gw-associated-with-waf-791bda50",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks to see if an API Gateway stage is using an AWS WAF Web ACL. This control fails if an AWS WAF Web ACL is not attached to a REST API Gateway stage.",
+    "source_owner": "AWS",
+    "source_identifier": "API_GW_ASSOCIATED_WITH_WAF",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971068+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-i3792t",
+    "resource_name": "securityhub-api-gw-cache-encrypted-99bd307d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether all methods in Amazon API Gateway REST API stages that have cache enabled are encrypted. The control fails if any method in API Gateway REST API stage is configured to cache and the cache is not encrypted.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ApiGateway::Stage"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971071+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ix8gri",
+    "resource_name": "securityhub-api-gw-execution-logging-enabled-6c776df6",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks that all stages in Amazon API Gateway REST and WebSocket APIs have logging enabled. The rule is NON_COMPLIANT if logging is not enabled. The rule is NON_COMPLIANT if loggingLevel is neither ERROR nor INFO.",
+    "source_owner": "AWS",
+    "source_identifier": "API_GW_EXECUTION_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971074+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-u0ql9h",
+    "resource_name": "securityhub-api-gw-ssl-enabled-d91098ce",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if a REST API stage uses an Secure Sockets Layer (SSL) certificate. This rule is NON_COMPLIANT if the REST API stage does not have an associated SSL certificate.",
+    "source_owner": "AWS",
+    "source_identifier": "API_GW_SSL_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971077+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-w0hsgg",
+    "resource_name": "securityhub-api-gw-xray-enabled-408d50fe",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if AWS X-Ray tracing is enabled on Amazon API Gateway REST APIs. The rule is COMPLIANT if X-Ray tracing is enabled and NON_COMPLIANT otherwise.",
+    "source_owner": "AWS",
+    "source_identifier": "API_GW_XRAY_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971080+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-sikt5c",
+    "resource_name": "securityhub-apigateway-domain-name-tls-check-c7b2b74f",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if API Gateway domain names use TLS 1.2 or later. The rule is NON_COMPLIANT if the security policy for a domain name is set to TLS 1.0.",
+    "source_owner": "AWS",
+    "source_identifier": "APIGATEWAY_DOMAIN_NAME_TLS_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ApiGateway::DomainName"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971083+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dapt13",
+    "resource_name": "securityhub-apigatewayv2-integration-private-https-enabled-5cc6803f",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if API Gateway V2 private integration traffic uses HTTPS. The rule is NON_COMPLIANT if a private integration uses HTTP instead of HTTPS.",
+    "source_owner": "AWS",
+    "source_identifier": "APIGATEWAYV2_INTEGRATION_PRIVATE_HTTPS_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ApiGatewayV2::Integration"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971086+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-s0ghwk",
+    "resource_name": "securityhub-appsync-authorization-check-ca1e5907",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an AWS AppSync API is using allowed authorization mechanisms. The rule is NON_COMPLIANT if an unapproved authorization mechanism is being used.",
+    "source_owner": "AWS",
+    "source_identifier": "APPSYNC_AUTHORIZATION_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::AppSync::GraphQLApi"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971090+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qnpssa",
+    "resource_name": "securityhub-appsync-logging-enabled-033ceefc",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an AWS AppSync API has logging enabled. The rule is NON_COMPLIANT if logging is not enabled, or 'fieldLogLevel' is neither ERROR nor ALL.",
+    "source_owner": "AWS",
+    "source_identifier": "APPSYNC_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::AppSync::GraphQLApi"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971093+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qdpxdt",
+    "resource_name": "securityhub-athena-workgroup-logging-enabled-574675df",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Athena WorkGroup has logging enabled. The rule is NON_COMPLIANT if Athena WorkGroup does not have logging enabled",
+    "source_owner": "AWS",
+    "source_identifier": "ATHENA_WORKGROUP_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Athena::WorkGroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971097+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tqi0nm",
+    "resource_name": "securityhub-aurora-mysql-cluster-audit-logging-46dc02b8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Aurora MySQL DB clusters have audit logging enabled. The rule is NON_COMPLIANT if a DB cluster does not have audit logging enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "AURORA_MYSQL_CLUSTER_AUDIT_LOGGING",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971100+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ybau4r",
+    "resource_name": "securityhub-autoscaling-group-elb-healthcheck-required-8af42bb0",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether your Auto Scaling groups that are associated with a Classic Load Balancer are using Elastic Load Balancing health checks.",
+    "source_owner": "AWS",
+    "source_identifier": "AUTOSCALING_GROUP_ELB_HEALTHCHECK_REQUIRED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::AutoScaling::AutoScalingGroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971103+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-pvyhwf",
+    "resource_name": "securityhub-autoscaling-launch-config-public-ip-disabled-30583431",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether Amazon EC2 Auto Scaling groups have public IP addresses enabled using launch configurations.",
+    "source_owner": "AWS",
+    "source_identifier": "AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971105+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-q5u4cc",
+    "resource_name": "securityhub-autoscaling-launch-template-024a14d7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether an Amazon EC2 Auto Scaling group is created from an EC2 launch template.",
+    "source_owner": "AWS",
+    "source_identifier": "AUTOSCALING_LAUNCH_TEMPLATE",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971107+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cyiufo",
+    "resource_name": "securityhub-autoscaling-launchconfig-requires-imdsv2-f8895d8c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether only IMDSv2 is enabled. This control fails if the Metadata version is not included in the launch configuration or if both Metadata V1 and V2 are enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "AUTOSCALING_LAUNCHCONFIG_REQUIRES_IMDSV2",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971109+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wrcpn0",
+    "resource_name": "securityhub-autoscaling-multiple-az-9744dc83",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether an Auto Scaling group spans multiple Availability Zones. The control fails if an Auto Scaling group does not span multiple availability zones.",
+    "source_owner": "AWS",
+    "source_identifier": "AUTOSCALING_MULTIPLE_AZ",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971111+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ocjvbd",
+    "resource_name": "securityhub-autoscaling-multiple-instance-types-373aeafa",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether an Amazon EC2 AutoScaling group uses multiple instance types. This control fails if the Amazon EC2 AutoScaling group has only one instance type defined.",
+    "source_owner": "AWS",
+    "source_identifier": "AUTOSCALING_MULTIPLE_INSTANCE_TYPES",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971114+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-iqq4hy",
+    "resource_name": "securityhub-clb-multiple-az-431e52e7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether a Classic Load Balancer has been configured to span multiple Availability Zones. The control fails if the Classic Load Balancer does not span multiple availability zones.",
+    "source_owner": "AWS",
+    "source_identifier": "CLB_MULTIPLE_AZ",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971116+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-j9t1ej",
+    "resource_name": "securityhub-cloud-trail-cloud-watch-logs-enabled-9bc5e9b4",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether AWS CloudTrail trails are configured to send logs to Amazon CloudWatch logs.",
+    "source_owner": "AWS",
+    "source_identifier": "CLOUD_TRAIL_CLOUD_WATCH_LOGS_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971118+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cxdgrm",
+    "resource_name": "securityhub-cloud-trail-encryption-enabled-102531ee",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Ensure CloudTrail logs are encrypted at rest using KMS CMKs",
+    "source_owner": "AWS",
+    "source_identifier": "CLOUD_TRAIL_ENCRYPTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971121+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-hbxzcv",
+    "resource_name": "securityhub-cloud-trail-log-file-validation-enabled-7485561f",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether AWS CloudTrail creates a signed digest file with logs.",
+    "source_owner": "AWS",
+    "source_identifier": "CLOUD_TRAIL_LOG_FILE_VALIDATION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971124+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tidljk",
+    "resource_name": "securityhub-cmk-backing-key-rotation-enabled-e9e74af4",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks that key rotation is enabled for customer created customer master key (CMK)",
+    "source_owner": "AWS",
+    "source_identifier": "CMK_BACKING_KEY_ROTATION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971127+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-okcdxw",
+    "resource_name": "securityhub-codebuild-project-envvar-awscred-check-93744c82",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the project contains environment variables AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY.",
+    "source_owner": "AWS",
+    "source_identifier": "CODEBUILD_PROJECT_ENVVAR_AWSCRED_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::CodeBuild::Project"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971130+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mvgcb6",
+    "resource_name": "securityhub-codebuild-project-logging-enabled-fb36905d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether a CodeBuild project environment has at least one log option enabled. This control fails if s3 or CloudWatch logs aren't present or in DISABLED status. The control passes if the status of either logs is ENABLED.",
+    "source_owner": "AWS",
+    "source_identifier": "CODEBUILD_PROJECT_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971133+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-38gays",
+    "resource_name": "securityhub-codebuild-project-s3-logs-encrypted-c03fc30c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if a AWS CodeBuild project configured with Amazon S3 Logs has encryption enabled for its logs. The rule is NON_COMPLIANT if `encryptionDisabled` is set to `true` in a S3LogsConfig of a CodeBuild project. ",
+    "source_owner": "AWS",
+    "source_identifier": "CODEBUILD_PROJECT_S3_LOGS_ENCRYPTED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971136+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wootv9",
+    "resource_name": "securityhub-codebuild-project-source-repo-url-check-e2b2c4ec",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the GitHub or Bitbucket source repository URL contains either personal access tokens or user name and password.",
+    "source_owner": "AWS",
+    "source_identifier": "CODEBUILD_PROJECT_SOURCE_REPO_URL_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::CodeBuild::Project"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971139+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-r6i3vj",
+    "resource_name": "securityhub-codebuild-report-group-encrypted-at-rest-3f274233",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if CodeBuild ReportGroup is encrypted at rest, The rule is NON_COMPLIANT if CodeBuild ReportGroup is not encrypted at rest",
+    "source_owner": "AWS",
+    "source_identifier": "CODEBUILD_REPORT_GROUP_ENCRYPTED_AT_REST",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::CodeBuild::ReportGroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971142+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-spfiyv",
+    "resource_name": "securityhub-cognito-user-pool-deletion-protection-enabled-0e152937",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Amazon Cognito user pools deletion protection enabled.This rule is NON_COMPLIANT if a user pool has deletion protection disabled.",
+    "source_owner": "AWS",
+    "source_identifier": "COGNITO_USER_POOL_DELETION_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Cognito::UserPool"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971145+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jovrvn",
+    "resource_name": "securityhub-cognito-user-pool-mfa-enabled-ed5f4cd4",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Cognito user pool configured with PASSWORD only sign in policy has MFA enabled. This rule is NON_COMPLIANT if the Cognito user pool configured with PASSWORD only sign in policy does not have MFA enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "COGNITO_USER_POOL_MFA_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Cognito::UserPool"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971147+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-g5u5ok",
+    "resource_name": "securityhub-cognito-user-pool-password-policy-check-99e2fd56",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the password policy for Amazon cognito user pool meets the specified requirements indicated in the parameters. The rule is NON_COMPLIANT if the user pool password policy does not meet the specified requirements.",
+    "source_owner": "AWS",
+    "source_identifier": "COGNITO_USER_POOL_PASSWORD_POLICY_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Cognito::UserPool"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971150+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xcgspp",
+    "resource_name": "securityhub-cognito-userpool-cust-auth-threat-full-check-5aa23e10",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Cognito user pools have threat protection enabled with full-function enforcement mode for custom authentication. This rule is NON_COMPLIANT if threat protection for custom authentication is not set to full-function enforcement mode.",
+    "source_owner": "AWS",
+    "source_identifier": "COGNITO_USERPOOL_CUST_AUTH_THREAT_FULL_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Cognito::UserPool"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971153+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vxb6kd",
+    "resource_name": "securityhub-custom-eventbus-policy-attached-01936fda",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon EventBridge custom event buses have a resource-based policy attached. The rule is NON_COMPLIANT if a custom event bus policy does not have an attached resource-based policy.",
+    "source_owner": "AWS",
+    "source_identifier": "CUSTOM_EVENTBUS_POLICY_ATTACHED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Events::EventBus"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971156+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-h47ikt",
+    "resource_name": "securityhub-datasync-task-logging-enabled-4fd7f1a2",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if DataSync Task has logging enabled. The rule is NON_COMPLIANT if DataSync Task does not have logging enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "DATASYNC_TASK_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::DataSync::Task"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971160+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qgq8ps",
+    "resource_name": "securityhub-db-instance-backup-enabled-5fc51887",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether RDS DB instances have backups enabled. Optionally, the rule checks the backup retention period and the backup window.",
+    "source_owner": "AWS",
+    "source_identifier": "DB_INSTANCE_BACKUP_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971162+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vxqftw",
+    "resource_name": "securityhub-dms-replication-not-public-d237cb33",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether AWS Database Migration Service replication instances are public. The rule is NON_COMPLIANT if PubliclyAccessible field is true.",
+    "source_owner": "AWS",
+    "source_identifier": "DMS_REPLICATION_NOT_PUBLIC",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971165+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-puv1ku",
+    "resource_name": "securityhub-dynamodb-autoscaling-enabled-73c2af71",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Auto Scaling or On-Demand is enabled on your DynamoDB tables and/or global secondary indexes. Optionally you can set the read and write capacity units for the table or global secondary index.",
+    "source_owner": "AWS",
+    "source_identifier": "DYNAMODB_AUTOSCALING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971168+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-n8kc8n",
+    "resource_name": "securityhub-dynamodb-pitr-enabled-fc83d7be",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks that point in time recovery (PITR) is enabled for Amazon DynamoDB tables. The rule is NON_COMPLIANT if point in time recovery is not enabled for Amazon DynamoDB tables",
+    "source_owner": "AWS",
+    "source_identifier": "DYNAMODB_PITR_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971170+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-o3oa5c",
+    "resource_name": "securityhub-dynamodb-table-deletion-protection-enabled-6f4d45bb",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon DynamoDB table have deletion protection set to enabled. The rule is NON_COMPLIANT if the table have deletion protection set to disabled.",
+    "source_owner": "AWS",
+    "source_identifier": "DYNAMODB_TABLE_DELETION_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::DynamoDB::Table"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971173+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-muezqj",
+    "resource_name": "securityhub-ebs-snapshot-block-public-access-1ef50cf7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the public access is blocked for Amazon EBS snapshots in an AWS Region. The rule is NON_COMPLIANT if public access for EBS snapshots in an AWS Region is not blocked.",
+    "source_owner": "AWS",
+    "source_identifier": "EBS_SNAPSHOT_BLOCK_PUBLIC_ACCESS",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::SnapshotBlockPublicAccess"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971176+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-b2cn5i",
+    "resource_name": "securityhub-ec2-ebs-encryption-by-default-7be4d997",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks that Amazon Elastic Block Store (EBS) encryption is enabled by default. The rule is NON_COMPLIANT if the encryption is not enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_EBS_ENCRYPTION_BY_DEFAULT",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971179+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-2g926p",
+    "resource_name": "securityhub-ec2-imdsv2-check-84598c32",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether your Amazon Elastic Compute Cloud (Amazon EC2) instance metadata version is configured with Instance Metadata Service Version 2 (IMDSv2).",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_IMDSV2_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971181+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-t5x3o4",
+    "resource_name": "securityhub-ec2-instance-managed-by-ssm-696797c0",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the Amazon EC2 instances in your account are managed by AWS Systems Manager.",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_INSTANCE_MANAGED_BY_SSM",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::Instance",
+        "AWS::SSM::ManagedInstanceInventory"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971184+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dep11k",
+    "resource_name": "securityhub-ec2-instance-multiple-eni-check-cb10d0a8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks to see if Amazon EC2 instance uses multiple ENI/EFA. This control will pass if single network adapters is used.",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_INSTANCE_MULTIPLE_ENI_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971186+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0bq3ei",
+    "resource_name": "securityhub-ec2-instance-no-public-ip-7b9cb847",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Amazon Elastic Compute Cloud (Amazon EC2) instances have a public IP association. The rule is NON_COMPLIANT if the publicIp field is present in the Amazon EC2 instance configuration item. This rule applies only to IPv4.",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_INSTANCE_NO_PUBLIC_IP",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971189+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ahlyjg",
+    "resource_name": "securityhub-ec2-managedinstance-association-compliance-status-check-3b0fa62b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the compliance status of the Amazon EC2 Systems Manager association compliance is COMPLIANT or NON_COMPLIANT after the association execution on the instance. The rule is COMPLIANT if the field status is COMPLIANT.",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_MANAGEDINSTANCE_ASSOCIATION_COMPLIANCE_STATUS_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::SSM::AssociationCompliance"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971192+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ggjfmu",
+    "resource_name": "securityhub-ec2-managedinstance-patch-compliance-cefc6768",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the compliance status of the Amazon EC2 Systems Manager patch compliance is COMPLIANT or NON_COMPLIANT after the patch installation on the instance.",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_MANAGEDINSTANCE_PATCH_COMPLIANCE_STATUS_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::SSM::PatchCompliance"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971194+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-2cehdf",
+    "resource_name": "securityhub-ec2-transit-gateway-auto-vpc-attach-disabled-a03940b7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if EC2 Transit Gateways are automatically accepting shared VPC attachments requests. This control will fail for a Transit Gateway that automatically accept shared VPC attachment requests.",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_TRANSIT_GATEWAY_AUTO_VPC_ATTACH_DISABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971198+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jetd76",
+    "resource_name": "securityhub-ec2-vpc-bpa-internet-gateway-blocked-1264888b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the EC2 VPC BPA options mode for Amazon VPCs is configured to block internet traffic. The rule is NON_COMPLIANT if the EC2 VPC BPA options mode is not configured to block traffic. Optionally, the rule can check the direction traffic is blocked.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::VPCBlockPublicAccessOptions"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971203+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qvxdf2",
+    "resource_name": "securityhub-ec2-vpn-connection-ike-version-check-7bbf4f85",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon EC2 VPN connection is configured to use only IKEv2 protocol. The rule is NON_COMPLIANT if the VPN connection's tunnel allows IKE versions other than IKEv2.",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_VPN_CONNECTION_IKE_VERSION_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::VPNConnection"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971208+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-sj94cn",
+    "resource_name": "securityhub-ec2-vpn-connection-logging-enabled-e9bbf5e4",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if AWS Site-to-Site VPN connections have Amazon CloudWatch logging enabled for both tunnels. The rule is NON_COMPLIANT if a Site-to-Site VPN connection does not have CloudWatch logging enabled for either or both tunnels.",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_VPN_CONNECTION_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::VPNConnection"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971215+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nlj1eq",
+    "resource_name": "securityhub-ecr-private-image-scanning-enabled-4f77ca74",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether a private ECR repository has image scanning enabled. This control fails if a private ECR repository has image scanning disabled.",
+    "source_owner": "AWS",
+    "source_identifier": "ECR_PRIVATE_IMAGE_SCANNING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971221+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-o20bzi",
+    "resource_name": "securityhub-ecr-private-lifecycle-policy-configured-61c9ebb1",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether a ECR repository has at least one lifecycle policy configured. This control fails if a ECR repository does not have any lifecycle policies configured.",
+    "source_owner": "AWS",
+    "source_identifier": "ECR_PRIVATE_LIFECYCLE_POLICY_CONFIGURED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971225+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ivtkxf",
+    "resource_name": "securityhub-ecr-private-tag-immutability-enabled-c54e5385",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether a private ECR repository has tag immutability enabled. This control fails if a private ECR repository has tag immutability disabled.",
+    "source_owner": "AWS",
+    "source_identifier": "ECR_PRIVATE_TAG_IMMUTABILITY_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971230+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ehxj3l",
+    "resource_name": "securityhub-ecs-capacity-provider-termination-check-78d59914",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon ECS Capacity provider has managed termination protection enabled. This rule is NON_COMPLIANT if managed termination protection is disabled on the ECS Capacity Provider.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_CAPACITY_PROVIDER_TERMINATION_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ECS::CapacityProvider"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971236+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lqvezr",
+    "resource_name": "securityhub-ecs-container-insights-enabled-7814f11c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if ECS clusters have container insights enabled. This control fails if container insights are disabled.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_CONTAINER_INSIGHTS_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971259+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-6jmzys",
+    "resource_name": "securityhub-ecs-containers-nonprivileged-58332ef2",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if the Privileged parameter in the container definition of Amazon ECS Task Definitions is set to 'true'. This control fails if the Privileged parameter is 'true'.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_CONTAINERS_NONPRIVILEGED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971266+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-bjeonk",
+    "resource_name": "securityhub-ecs-containers-readonly-access-15e8001a",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if ECS Containers are limited to read-only access to its mounted root filesystems. This control fails if the readonlyRootFilesystem parameter in the container definition of ECSTaskDefinitions is set to 'false'.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_CONTAINERS_READONLY_ACCESS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971270+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-oykqai",
+    "resource_name": "securityhub-ecs-fargate-latest-platform-version-d87b0a95",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if ECS Fargate Services is running on the latest Fargate platform version. This control fails if \"PlatformVersion\" is not set to \"LATEST\" ",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_FARGATE_LATEST_PLATFORM_VERSION",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971275+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-t1izun",
+    "resource_name": "securityhub-ecs-no-environment-secrets-3dff98b9",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if the key value of any variables in the 'environment' parameter of container definitions includes AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, or ECS_ENGINE_AUTH_DATA.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_NO_ENVIRONMENT_SECRETS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971279+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-51f8pe",
+    "resource_name": "securityhub-ecs-service-assign-public-ip-disabled-9decb883",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether ECS services are configured to automatically assign public IP addresses. This control fails if AssignPublicIP is ENABLED.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ECS::Service"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971285+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-28takw",
+    "resource_name": "securityhub-ecs-task-definition-efs-encryption-enabled-ee148b39",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon ECS Task Definitions with EFS volumes have in-transit encryption enabled. The rule is NON_COMPLIANT if an ECS Task Definition contains an EFS volume without transit encryption enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_TASK_DEFINITION_EFS_ENCRYPTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ECS::TaskDefinition"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971289+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8gztkq",
+    "resource_name": "securityhub-ecs-task-definition-linux-user-non-root-d82c739b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the latest active revision of an Amazon ECS task definition configures Linux containers to run as non-root users.The rule is NON_COMPLIANT if root user is specified or user configuration is absent for any container.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_TASK_DEFINITION_LINUX_USER_NON_ROOT",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ECS::TaskDefinition"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971294+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0j2dng",
+    "resource_name": "securityhub-ecs-task-definition-log-configuration-8f628184",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if active Amazon ECS task definitions have a logging configuration specified.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_TASK_DEFINITION_LOG_CONFIGURATION",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971298+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jpzh41",
+    "resource_name": "securityhub-ecs-task-definition-pid-mode-check-24f32182",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if Amazon ECS Task Definitions are configured to share a host's process namespace with its containers. This control fails if the pidMode parameter is set to 'host'.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_TASK_DEFINITION_PID_MODE_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971303+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-j3oumx",
+    "resource_name": "securityhub-ecs-task-definition-windows-user-non-admin-81be8ad7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the latest active revision of an Amazon ECS task definition configures Windows containers to run as non-administrator users. The rule is NON_COMPLIANT if default administrator user is specified or user configuration is absent for any container.",
+    "source_owner": "AWS",
+    "source_identifier": "ECS_TASK_DEFINITION_WINDOWS_USER_NON_ADMIN",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ECS::TaskDefinition"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971308+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mebkfj",
+    "resource_name": "securityhub-ecs-taskset-assign-public-ip-disabled-0ed109f9",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if ECS Taskset does not allow inbound connection to the resource. The rule is NON_COMPLIANT if ECS Taskset allows inbound connection to the resource.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ECS::TaskSet"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971312+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0d84aq",
+    "resource_name": "securityhub-efs-access-point-enforce-root-directory-a6560d7f",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if Amazon Elastic File System (Amazon EFS) access points are configured to enforce a root directory. This control fails if the value of 'Path' is set to '/' (default root directory of the file system).",
+    "source_owner": "AWS",
+    "source_identifier": "EFS_ACCESS_POINT_ENFORCE_ROOT_DIRECTORY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971315+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dgfumz",
+    "resource_name": "securityhub-efs-access-point-enforce-user-identity-75f4d790",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if Amazon Elastic File System (Amazon EFS) access points are configured to enforce a user identity. This control fails if 'PosixUser' is not defined or if parameters are provided and there is no match in the corresponding parameter.",
+    "source_owner": "AWS",
+    "source_identifier": "EFS_ACCESS_POINT_ENFORCE_USER_IDENTITY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971319+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-obhw5u",
+    "resource_name": "securityhub-efs-automatic-backups-enabled-3ed3c19a",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if EFS FileSystem has backup enabled, The rule is NON_COMPLIANT if EFS FileSystem does not have backup enabled",
+    "source_owner": "AWS",
+    "source_identifier": "EFS_AUTOMATIC_BACKUPS_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EFS::FileSystem"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971322+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qqa7gs",
+    "resource_name": "securityhub-efs-filesystem-ct-encrypted-5231c488",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Elastic File System (Amazon EFS) encrypts data with AWS Key Management Service (AWS KMS). The rule is NON_COMPLIANT if a file system is not encrypted. Optionally, you can check if a file system is not encrypted with specified KMS keys",
+    "source_owner": "AWS",
+    "source_identifier": "EFS_FILESYSTEM_CT_ENCRYPTED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EFS::FileSystem"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971327+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fybsyk",
+    "resource_name": "securityhub-efs-mount-target-public-accessible-6b86b369",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Elastic File System (Amazon EFS) mount target is not associated with a public subnet. The rule is NON-COMPLIANT if the Amazon EFS mount target is associated with a public subnet.",
+    "source_owner": "AWS",
+    "source_identifier": "EFS_MOUNT_TARGET_PUBLIC_ACCESSIBLE",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971331+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ivi7sw",
+    "resource_name": "securityhub-eks-cluster-log-enabled-ffc47572",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Elastic Kubernetes Service (Amazon EKS) cluster is configured with logging enabled. The rule is NON_COMPLIANT if logging for Amazon EKS clusters is not enabled or if logging is not enabled with the log type mentioned.",
+    "source_owner": "AWS",
+    "source_identifier": "EKS_CLUSTER_LOG_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EKS::Cluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971337+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cmttfb",
+    "resource_name": "securityhub-eks-cluster-secrets-encrypted-7ee79356",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon EKS clusters are configured to have Kubernetes secrets encrypted using AWS KMS. The rule is NON_COMPLIANT if an EKS cluster does not have an encryptionConfig resource or if encryptionConfig does not name secrets as a resource.",
+    "source_owner": "AWS",
+    "source_identifier": "EKS_CLUSTER_SECRETS_ENCRYPTED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971342+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fqbw8e",
+    "resource_name": "securityhub-eks-cluster-supported-version-492404a5",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if an Amazon Elastic Kubernetes Service (EKS) cluster is running a supported Kubernetes version. This control fails if an EKS cluster is running an unsupported version (less than the parameter 'oldestVersionSupported').",
+    "source_owner": "AWS",
+    "source_identifier": "EKS_CLUSTER_SUPPORTED_VERSION",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971346+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-bespuk",
+    "resource_name": "securityhub-eks-endpoint-no-public-access-259bcb49",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Amazon Elastic Kubernetes Service (Amazon EKS) endpoint is not publicly accessible.",
+    "source_owner": "AWS",
+    "source_identifier": "EKS_ENDPOINT_NO_PUBLIC_ACCESS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971350+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-oa7rmz",
+    "resource_name": "securityhub-eks-nodegroup-supported-version-check-1b196e74",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Elastic Kubernetes Service (EKS) nodegroup is running the oldest supported version. This rule is NON_COMPLIANT if an EKS cluster is running an unsupported version (less than the parameter 'oldestVersionSupported')",
+    "source_owner": "AWS",
+    "source_identifier": "EKS_NODEGROUP_SUPPORTED_VERSION_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EKS::Nodegroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971354+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cmago1",
+    "resource_name": "securityhub-elasticache-auto-minor-version-upgrade-check-840c75fa",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control evaluates whether auto minor version upgrades are enabled for ElastiCache for Redis cache clusters.",
+    "source_owner": "AWS",
+    "source_identifier": "ELASTICACHE_AUTO_MINOR_VERSION_UPGRADE_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971356+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-s4vr7u",
+    "resource_name": "securityhub-elasticache-repl-grp-auto-failover-enabled-b6108e54",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if replication groups for Amazon ElastiCache for Redis have automatic failover enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "ELASTICACHE_REPL_GRP_AUTO_FAILOVER_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971360+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xybj8x",
+    "resource_name": "securityhub-elasticache-repl-grp-encrypted-at-rest-f3cf5b19",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether ElastiCache replication groups have encryption-at-rest enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "ELASTICACHE_REPL_GRP_ENCRYPTED_AT_REST",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971363+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ydpf6p",
+    "resource_name": "securityhub-elasticache-repl-grp-encrypted-in-transit-c2cc2952",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether ElastiCache replication groups have encryption-in-transit enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "ELASTICACHE_REPL_GRP_ENCRYPTED_IN_TRANSIT",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971367+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jkpbfl",
+    "resource_name": "securityhub-elasticsearch-audit-logging-enabled-289346e8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether Elasticsearch domains have audit logging enabled. This control fails if an Elasticsearch domain does not have audit logging enabled.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Elasticsearch::Domain"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971370+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vtoce0",
+    "resource_name": "securityhub-elasticsearch-data-node-fault-tolerance-874ceb6b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether Elasticsearch domains are configured with at least three data nodes and zoneAwarenessEnabled is true.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Elasticsearch::Domain"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971373+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lwj7xb",
+    "resource_name": "securityhub-elasticsearch-encrypted-at-rest-f28bd50d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Elasticsearch domains have encryption at rest configuration enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "ELASTICSEARCH_ENCRYPTED_AT_REST",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971377+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xponah",
+    "resource_name": "securityhub-elasticsearch-https-required-5552866c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether connections to an Elasticsearch domain are using the latest TLS security policy.  The check fails if the Elasticsearch domain isn't using the latest supported policy or if HTTPs isn't enabled.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Elasticsearch::Domain"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971380+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wli6pg",
+    "resource_name": "securityhub-elasticsearch-in-vpc-only-538db2ef",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Elasticsearch domains are in Amazon Virtual Private Cloud (Amazon VPC).",
+    "source_owner": "AWS",
+    "source_identifier": "ELASTICSEARCH_IN_VPC_ONLY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971383+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-idda8s",
+    "resource_name": "securityhub-elasticsearch-node-to-node-encryption-check-2b40673d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Check that Elasticsearch nodes are encrypted end to end. The rule is NON_COMPLIANT if the node-to-node encryption is disabled on the domain.",
+    "source_owner": "AWS",
+    "source_identifier": "ELASTICSEARCH_NODE_TO_NODE_ENCRYPTION_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971387+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-euo1iv",
+    "resource_name": "securityhub-elasticsearch-primary-node-fault-tolerance-5224cd44",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether Elasticsearch domains are configured with at least three dedicated master nodes. This control fails if dedicatedMasterEnabled is not true.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Elasticsearch::Domain"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971390+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xxsims",
+    "resource_name": "securityhub-elb-connection-draining-enabled-270c1ac4",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether AWS Classic Load Balancers have connection draining enabled.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ElasticLoadBalancing::LoadBalancer"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971395+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tzppqm",
+    "resource_name": "securityhub-elb-cross-zone-load-balancing-enabled-b5150bd5",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether cross-zone load balancing is enabled for Classic Load Balancers. This control fails if cross-zone load balancing is not enabled for a Classic Load Balancer.",
+    "source_owner": "AWS",
+    "source_identifier": "ELB_CROSS_ZONE_LOAD_BALANCING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971398+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zcdykf",
+    "resource_name": "securityhub-elb-deletion-protection-enabled-56b9f56c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Elastic Load Balancing has deletion protection enabled. The rule is NON_COMPLIANT if deletion_protection.enabled is false.",
+    "source_owner": "AWS",
+    "source_identifier": "ELB_DELETION_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971401+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-q86gsg",
+    "resource_name": "securityhub-elb-logging-enabled-5f7b8321",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the Application Load Balancer and the Classic Load Balancer have logging enabled. The rule is NON_COMPLIANT if the access_logs.s3.enabled is false or access_logs.S3.bucket is not equal to the s3BucketName that you provided.",
+    "source_owner": "AWS",
+    "source_identifier": "ELB_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971405+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ydpgzh",
+    "resource_name": "securityhub-elb-predefined-security-policy-ssl-check-3edfbe3b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether your Classic Load Balancer SSL listeners use the predefined policy ELBSecurityPolicy-TLS-1-2-2017-01.",
+    "source_owner": "AWS",
+    "source_identifier": "ELB_PREDEFINED_SECURITY_POLICY_SSL_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971408+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xcsmd8",
+    "resource_name": "securityhub-elb-tls-https-listeners-only-f69565d9",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Check whether your Classic Load Balancer listeners are configured with HTTPS or SSL protocol for front-end (client to load balancer).",
+    "source_owner": "AWS",
+    "source_identifier": "ELB_TLS_HTTPS_LISTENERS_ONLY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971412+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nkwhw0",
+    "resource_name": "securityhub-elbv2-multiple-az-4cc2ad80",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if an Elastic Load Balancer V2 has registered instances from multiple Availability Zones (AZ's). This control fails if an Elastic Load Balancer V2 has instances registered in less than 2 AZ's.",
+    "source_owner": "AWS",
+    "source_identifier": "ELBV2_MULTIPLE_AZ",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971415+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-crtrqo",
+    "resource_name": "securityhub-elbv2-targetgroup-healthcheck-protocol-encrypted-d550d8a8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Elastic Load Balancing target group health checks use an encrypted protocol (HTTPS). The rule is NON_COMPLIANT if the health check protocol is HTTP or TCP.",
+    "source_owner": "AWS",
+    "source_identifier": "ELBV2_TARGETGROUP_HEALTHCHECK_PROTOCOL_ENCRYPTED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ElasticLoadBalancingV2::TargetGroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971418+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4innui",
+    "resource_name": "securityhub-elbv2-targetgroup-protocol-encrypted-06c398df",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks the target groups for application and network load balancers use an encrypted transport protocol. The rule is NON_COMPLIANT if configuration.protocol is not HTTPS, TLS, or QUIC. Lambda and ALB target types are not applicable.",
+    "source_owner": "AWS",
+    "source_identifier": "ELBV2_TARGETGROUP_PROTOCOL_ENCRYPTED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ElasticLoadBalancingV2::TargetGroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971424+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lmpx75",
+    "resource_name": "securityhub-emr-block-public-access-833ecc66",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an account with Amazon EMR has block public access settings enabled. The rule is NON_COMPLIANT if BlockPublicSecurityGroupRules is false, or if true, ports other than Port 22 are listed in PermittedPublicSecurityGroupRuleRanges.",
+    "source_owner": "AWS",
+    "source_identifier": "EMR_BLOCK_PUBLIC_ACCESS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971429+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-eg4xk6",
+    "resource_name": "securityhub-emr-security-configuration-encryption-rest-167ba7bb",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if EMR SecurityConfiguration is encrypted at rest. The rule is NON_COMPLIANT if EMR SecurityConfiguration is not encrypted at rest.",
+    "source_owner": "AWS",
+    "source_identifier": "EMR_SECURITY_CONFIGURATION_ENCRYPTION_REST",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EMR::SecurityConfiguration"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971434+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cfcq7m",
+    "resource_name": "securityhub-emr-security-configuration-encryption-transit-d266f189",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if EMR SecurityConfiguration is encrypted in transit. The rule is NON_COMPLIANT if EMR SecurityConfiguration is not encrypted in transit.",
+    "source_owner": "AWS",
+    "source_identifier": "EMR_SECURITY_CONFIGURATION_ENCRYPTION_TRANSIT",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EMR::SecurityConfiguration"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971438+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-riqtwe",
+    "resource_name": "securityhub-encrypted-volumes-11eab96b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the EBS volumes that are in an attached state are encrypted. If you specify the ID of a KMS key for encryption using the kmsId parameter, the rule checks if the EBS volumes in an attached state are encrypted with that KMS key.",
+    "source_owner": "AWS",
+    "source_identifier": "ENCRYPTED_VOLUMES",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::Volume"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971442+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4ovkh6",
+    "resource_name": "securityhub-fsx-lustre-copy-tags-to-backups-e38516b0",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the Amazon FSx for Lustre file systems are configured to copy tags to backups. The rule is NON_COMPLIANT if Lustre file systems are not configured to copy tags to backups.",
+    "source_owner": "AWS",
+    "source_identifier": "FSX_LUSTRE_COPY_TAGS_TO_BACKUPS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971445+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-y6dx6u",
+    "resource_name": "securityhub-fsx-ontap-deployment-type-check-6f697b9b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the Amazon FSx for NetAPP ONTAP file systems are configured with certain deployment types. The rule is NON_COMPLIANT if FSx for NetAPP ONTAP file systems are not configured with the deployment types you specify.",
+    "source_owner": "AWS",
+    "source_identifier": "FSX_ONTAP_DEPLOYMENT_TYPE_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971449+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ctao64",
+    "resource_name": "securityhub-fsx-openzfs-copy-tags-enabled-e6143585",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the Amazon FSx for OpenZFS file systems are configured to copy tags to backups and volumes. The rule is NON_COMPLIANT if FSx for OpenZFS file systems are not configured to copy tags to backups and volumes.",
+    "source_owner": "AWS",
+    "source_identifier": "FSX_OPENZFS_COPY_TAGS_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971452+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-5z3lwz",
+    "resource_name": "securityhub-fsx-openzfs-deployment-type-check-1f76b1e0",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the Amazon FSx for OpenZFS file systems are configured with certain deployment types. The rule is NON_COMPLIANT if FSx for OpenZFS file systems are not configured with the deployment types you specify.",
+    "source_owner": "AWS",
+    "source_identifier": "FSX_OPENZFS_DEPLOYMENT_TYPE_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971456+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nolhed",
+    "resource_name": "securityhub-fsx-windows-deployment-type-check-8dcc79de",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the Amazon FSx for Windows File Server file systems are configured with certain deployment types. The rule is NON_COMPLIANT if Amazon FSx for Windows File Server file systems are not configured with the deployment types you specify.",
+    "source_owner": "AWS",
+    "source_identifier": "FSX_WINDOWS_DEPLOYMENT_TYPE_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971459+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xe8tim",
+    "resource_name": "securityhub-glue-ml-transform-encrypted-at-rest-188980e8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Glue MLTransform is encrypted at rest, The rule is NON_COMPLIANT if Glue MLTransform is not encrypted at rest",
+    "source_owner": "AWS",
+    "source_identifier": "GLUE_ML_TRANSFORM_ENCRYPTED_AT_REST",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Glue::MLTransform"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971462+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nzsi58",
+    "resource_name": "securityhub-guardduty-ec2-protection-runtime-enabled-dea5a74c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if ECS Runtime Monitoring with automated agent management is enabled for Amazon GuardDuty detector. The rule is NON_COMPLIANT if the feature is not enabled for your account or at least one member account in your organization.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_EC2_PROTECTION_RUNTIME_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971465+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-s0umom",
+    "resource_name": "securityhub-guardduty-ecs-protection-runtime-enabled-4348ae79",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if ECS Runtime Monitoring with automated agent management is enabled for Amazon GuardDuty detector. The rule is NON_COMPLIANT if the feature is not enabled for your account or at least one member account in your organization.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_ECS_PROTECTION_RUNTIME_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971469+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-htesvi",
+    "resource_name": "securityhub-guardduty-eks-protection-audit-enabled-08ee5a1b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Audit Log Monitoring for Amazon Elastic Kubernetes Service (Amazon EKS) is enabled for an Amazon GuardDuty detector in your account. The rule is NON_COMPLIANT if the EKS Audit Log Monitoring feature is not enabled for your account.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_EKS_PROTECTION_AUDIT_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971472+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kn069d",
+    "resource_name": "securityhub-guardduty-eks-protection-runtime-enabled-a8af8752",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon EKS Runtime Monitoring with automated agent management is enabled for an Amazon GuardDuty detector in your account. The rule is NON_COMPLIANT if the EKS Runtime Monitoring with automated agent management is not enabled for your account.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_EKS_PROTECTION_RUNTIME_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971475+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-loedyr",
+    "resource_name": "securityhub-guardduty-enabled-centralized-d47efe25",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This AWS control checks whether Amazon GuardDuty is enabled in your AWS account and region.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_ENABLED_CENTRALIZED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971478+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-eyvnqk",
+    "resource_name": "securityhub-guardduty-lambda-protection-enabled-fc0adbde",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Lambda Protection is enabled for an Amazon GuardDuty detector in your account. The rule is NON_COMPLIANT if the Lambda Protection feature in Amazon GuardDuty is not enabled for your account.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_LAMBDA_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971482+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-os74lk",
+    "resource_name": "securityhub-guardduty-malware-protection-enabled-8774961f",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Malware Protection is enabled for an Amazon GuardDuty detector in your account. The rule is NON_COMPLIANT if the Malware Protection feature in Amazon GuardDuty is not enabled for your account.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_MALWARE_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971486+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xjs5p5",
+    "resource_name": "securityhub-guardduty-rds-protection-enabled-d9a2237d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Relational Database Service (Amazon RDS) protection is enabled for an Amazon GuardDuty detector in your account. The rule is NON_COMPLIANT if the Amazon RDS protection feature in Amazon GuardDuty is not enabled for you account.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_RDS_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971489+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gmba9y",
+    "resource_name": "securityhub-guardduty-runtime-monitoring-enabled-41264051",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Runtime Monitoring is enabled for Amazon GuardDuty detector in your account or organization. The rule is NON_COMPLIANT if Runtime Monitoring in GuardDuty is not enabled for your account or at least one member account in your organization.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_RUNTIME_MONITORING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971492+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-pnbust",
+    "resource_name": "securityhub-guardduty-s3-protection-enabled-0e49cf0a",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if S3 Protection is enabled for an Amazon GuardDuty Detector in your account. The rule is NON_COMPLIANT if the S3 Protection feature in Amazon GuardDuty is not enabled for your account.",
+    "source_owner": "AWS",
+    "source_identifier": "GUARDDUTY_S3_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971495+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-molilq",
+    "resource_name": "securityhub-iam-password-policy-ensure-expires-752705cd",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the account password policy for IAM users expires passwords within certain days",
+    "source_owner": "AWS",
+    "source_identifier": "IAM_PASSWORD_POLICY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971499+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-dhmcww",
+    "resource_name": "securityhub-iam-password-policy-lowercase-letter-check-5b49bab8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the account password policy for IAM users requires at least one lowercase character in password.",
+    "source_owner": "AWS",
+    "source_identifier": "IAM_PASSWORD_POLICY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971502+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ntqtsn",
+    "resource_name": "securityhub-iam-password-policy-minimum-length-check-0c5dc8af",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the account password policy for IAM users requires minimum password length.",
+    "source_owner": "AWS",
+    "source_identifier": "IAM_PASSWORD_POLICY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971505+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-uon3bz",
+    "resource_name": "securityhub-iam-password-policy-number-check-142229c3",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the account password policy for IAM users requires at least one number in password.",
+    "source_owner": "AWS",
+    "source_identifier": "IAM_PASSWORD_POLICY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971509+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rb3w8a",
+    "resource_name": "securityhub-iam-password-policy-prevent-reuse-check-c70f9e1d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the account password policy for IAM users prevents password reuse.",
+    "source_owner": "AWS",
+    "source_identifier": "IAM_PASSWORD_POLICY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971513+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ihzqcj",
+    "resource_name": "securityhub-iam-password-policy-recommended-defaults-8475889a",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the account password policy for IAM users meets the specified requirements.",
+    "source_owner": "AWS",
+    "source_identifier": "IAM_PASSWORD_POLICY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971518+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-oxvffp",
+    "resource_name": "securityhub-iam-password-policy-symbol-check-29f8dd11",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the account password policy for IAM users requires at least one symbol in password.",
+    "source_owner": "AWS",
+    "source_identifier": "IAM_PASSWORD_POLICY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971521+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-sc02pc",
+    "resource_name": "securityhub-iam-password-policy-uppercase-letter-check-a038c13c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the account password policy for IAM users requires at least one uppercase character in password.",
+    "source_owner": "AWS",
+    "source_identifier": "IAM_PASSWORD_POLICY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971525+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vjodkv",
+    "resource_name": "securityhub-kinesis-firehose-delivery-stream-encrypted-d8a77dfd",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Kinesis Data Firehose delivery streams are encrypted at rest with server-side encryption. The rule is NON_COMPLIANT if a Kinesis Data Firehose delivery stream is not encrypted at rest with server-side encryption.",
+    "source_owner": "AWS",
+    "source_identifier": "KINESIS_FIREHOSE_DELIVERY_STREAM_ENCRYPTED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971528+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tb5jzo",
+    "resource_name": "securityhub-kinesis-stream-backup-retention-check-f4409a8d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Kinesis Data Stream has its data record retention period set to a specific number of hours. The rule is NON_COMPLIANT if the property 'RetentionPeriodHours' is set to a value less than the value specified by the parameter.",
+    "source_owner": "AWS",
+    "source_identifier": "KINESIS_STREAM_BACKUP_RETENTION_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Kinesis::Stream"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971532+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-crmnf0",
+    "resource_name": "securityhub-kinesis-stream-encrypted-f83dc0b9",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if Amazon Kinesis streams are encrypted at rest with server-side encryption. This control fails for a Kinesis stream if 'StreamEncryption' is not present.",
+    "source_owner": "AWS",
+    "source_identifier": "KINESIS_STREAM_ENCRYPTED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971535+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0ks8ae",
+    "resource_name": "securityhub-kms-cmk-not-scheduled-for-deletion-2-96ffa163",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether AWS Key Management Service (KMS) customer managed keys (CMK) are scheduled for deletion. The control fails if a KMS CMK is scheduled for deletion.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::KMS::Key"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971538+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wxsfv6",
+    "resource_name": "securityhub-kms-key-policy-no-public-access-166bdabf",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the AWS KMS key policy allows public access. The rule is NON_COMPLIANT if the KMS key policy allows public access to the KMS key.",
+    "source_owner": "AWS",
+    "source_identifier": "KMS_KEY_POLICY_NO_PUBLIC_ACCESS",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::KMS::Key"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971541+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kxfprq",
+    "resource_name": "securityhub-lambda-function-settings-check-20f08c37",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks that the AWS Lambda function settings for runtime, role, timeout, and memory size match the expected values.",
+    "source_owner": "AWS",
+    "source_identifier": "LAMBDA_FUNCTION_SETTINGS_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Lambda::Function"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971545+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kzerku",
+    "resource_name": "securityhub-lambda-vpc-multi-az-check-5d0029af",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if Lambda has more than one Availability Zone (AZ) associated. The rule fails if only one AZ is associated with the Lambda or the number of availability zones associated is less than number specified in the optional parameter.",
+    "source_owner": "AWS",
+    "source_identifier": "LAMBDA_VPC_MULTI_AZ_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971548+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3tzhz4",
+    "resource_name": "securityhub-mariadb-publish-logs-to-cloudwatch-logs-ac3c140e",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon MariaDB database instances are configured to publish logs to Amazon CloudWatch Logs. The rule is NON_COMPLIANT if a database instance is not configured to publish logs to CloudWatch Logs.",
+    "source_owner": "AWS",
+    "source_identifier": "MARIADB_PUBLISH_LOGS_TO_CLOUDWATCH_LOGS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971551+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zsh1ov",
+    "resource_name": "securityhub-msk-in-cluster-node-require-tls-044ef1d3",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon MSK cluster enforces encryption in transit using HTTPS (TLS) with the broker nodes of the cluster. The rule is NON_COMPLIANT if plain text communication is enabled for in-cluster broker node connections.",
+    "source_owner": "AWS",
+    "source_identifier": "MSK_IN_CLUSTER_NODE_REQUIRE_TLS",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::MSK::Cluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971554+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fod7wv",
+    "resource_name": "securityhub-multi-region-cloud-trail-enabled-ad97d753",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether AWS CloudTrail is enabled in your AWS account. Optionally, you can specify which S3 bucket, SNS topic, and Amazon CloudWatch Logs ARN to use.",
+    "source_owner": "AWS",
+    "source_identifier": "MULTI_REGION_CLOUD_TRAIL_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971556+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-g3ntvv",
+    "resource_name": "securityhub-nacl-no-unrestricted-ssh-rdp-e0fa93d2",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if default ports for SSH/RDP ingress traffic for network access control lists (NACLs) is unrestricted. The rule fails if a NACL inbound entry allows a source CIDR block of '0.0.0.0/0' or '::/0' for ports 22 or 3389",
+    "source_owner": "AWS",
+    "source_identifier": "NACL_NO_UNRESTRICTED_SSH_RDP",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971559+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cesrij",
+    "resource_name": "securityhub-netfw-deletion-protection-enabled-0852e474",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if AWS Network Firewall has deletion protection enabled. The rule is NON_COMPLIANT if Network Firewall does not have deletion protection enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "NETFW_DELETION_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::NetworkFirewall::Firewall"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971562+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-7jylhf",
+    "resource_name": "securityhub-netfw-logging-enabled-47d7baa9",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if AWS Network Firewall firewalls have logging enabled. The rule is NON_COMPLIANT if a logging type is not configured. You can specify which logging type you want the rule to check.",
+    "source_owner": "AWS",
+    "source_identifier": "NETFW_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971565+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ykpl8v",
+    "resource_name": "securityhub-netfw-policy-default-action-fragment-packets-e8ed0477",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether the default stateless action for fragmented packets for a Network Firewall policy is DROP or FORWARD. The control fails if PASS is selected.",
+    "source_owner": "AWS",
+    "source_identifier": "NETFW_POLICY_DEFAULT_ACTION_FRAGMENT_PACKETS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971568+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ol6fhg",
+    "resource_name": "securityhub-netfw-policy-default-action-full-packets-33e673ed",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether the default stateless action for full packets for a Network Firewall policy is DROP or FORWARD. This control fails if DROP or FORWARD is not selected.",
+    "source_owner": "AWS",
+    "source_identifier": "NETFW_POLICY_DEFAULT_ACTION_FULL_PACKETS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971572+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-yv1gjp",
+    "resource_name": "securityhub-netfw-policy-rule-group-associated-8011ebcf",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether there are any stateful or stateless rule groups associated with a given firewall policy. The control fails if no stateful or stateless rule groups are assigned.",
+    "source_owner": "AWS",
+    "source_identifier": "NETFW_POLICY_RULE_GROUP_ASSOCIATED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971575+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zmwst5",
+    "resource_name": "securityhub-netfw-stateless-rule-group-not-empty-17798cce",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if a Stateless Network Firewall Rule Group contains rules. The rule will fail if there are no rules in a Stateless Network Firewall Rule Group.",
+    "source_owner": "AWS",
+    "source_identifier": "NETFW_STATELESS_RULE_GROUP_NOT_EMPTY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971579+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qal3gr",
+    "resource_name": "securityhub-netfw-subnet-change-protection-enabled-6d787933",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if AWS Network Firewall has subnet change protection enabled. The rule is NON_COMPLIANT if subnet change protection is not enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "NETFW_SUBNET_CHANGE_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::NetworkFirewall::Firewall"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971583+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-o4uw0p",
+    "resource_name": "securityhub-rds-aurora-mysql-audit-logging-enabled-1a5206a9",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Aurora MySQL-Compatible Edition clusters are configured to publish audit logs to Amazon CloudWatch Logs. The rule is NON_COMPLIANT if Aurora MySQL-Compatible Edition clusters do not have audit log publishing configured.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_AURORA_MYSQL_AUDIT_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBCluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971586+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wqr2m8",
+    "resource_name": "securityhub-rds-automatic-minor-version-upgrade-enabled-e8e7a044",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if automatic minor version upgrades are enabled for the Amazon RDS database instance.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_AUTOMATIC_MINOR_VERSION_UPGRADE_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971591+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-1fpeoo",
+    "resource_name": "securityhub-rds-cluster-backup-retention-check-53c138b2",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon RDS DB clusters have a backup retention period of at least 7 days (or parameter value). The rule is NON_COMPLIANT if the backup retention period is less than the specified value.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_CLUSTER_BACKUP_RETENTION_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBCluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971595+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0xwchs",
+    "resource_name": "securityhub-rds-cluster-copy-tags-to-snapshots-enabled-e95b94bc",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether RDS DB clusters are configured to copy all tags to snapshots when the snapshots are created.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBCluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971598+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3jnivl",
+    "resource_name": "securityhub-rds-cluster-default-admin-check-0cbf57db",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether an RDS database cluster has changed the admin username from its default value. This rule will fail if the admin username is set to the default value.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_CLUSTER_DEFAULT_ADMIN_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971602+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gb6kek",
+    "resource_name": "securityhub-rds-cluster-deletion-protection-enabled-cb4385e4",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Relational Database Service (Amazon RDS) cluster has deletion protection enabled. This rule is NON_COMPLIANT if an RDS cluster does not have deletion protection enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_CLUSTER_DELETION_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971605+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-1jo7ai",
+    "resource_name": "securityhub-rds-cluster-encrypted-at-rest-895ca457",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Relational Database Service (Amazon RDS) cluster is encrypted at rest. The rule is NON_COMPLIANT if an Amazon RDS cluster is not encrypted at rest.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_CLUSTER_ENCRYPTED_AT_REST",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBCluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971609+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fmrax4",
+    "resource_name": "securityhub-rds-cluster-event-notifications-configured-21aec6cb",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether an Amazon RDS Event subscription for RDS clusters is configured to notify on event categories of both \"maintenance\" and \"failure\".",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::EventSubscription"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971612+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-iprcax",
+    "resource_name": "securityhub-rds-cluster-iam-authentication-enabled-8f9dbc9b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon RDS Cluster has AWS Identity and Access Management (IAM) authentication enabled. The rule is NON_COMPLIANT if an RDS Cluster does not have IAM authentication enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_CLUSTER_IAM_AUTHENTICATION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971617+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-2r5aob",
+    "resource_name": "securityhub-rds-cluster-multi-az-enabled-0df73743",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if RDS DB clusters are configured with multi-az.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_CLUSTER_MULTI_AZ_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971621+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zzy03p",
+    "resource_name": "securityhub-rds-enhanced-monitoring-enabled-57bb9d38",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether enhanced monitoring is enabled for Amazon Relational Database Service (Amazon RDS) instances.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_ENHANCED_MONITORING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971624+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-u9dvi6",
+    "resource_name": "securityhub-rds-global-cluster-aurora-mysql-supported-version-de13bdc3",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Aurora MySQL global database is running on a specified minimum supported engine version. The rule is NON_COMPLIANT if the database is not running on the minimum supported engine version that you specify.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_GLOBAL_CLUSTER_AURORA_MYSQL_SUPPORTED_VERSION",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::GlobalCluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971628+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-bskuha",
+    "resource_name": "securityhub-rds-instance-copy-tags-to-snapshots-enabled-c1cdbecb",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether RDS DB instances are configured to copy all tags to snapshots when the snapshots are created.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBInstance"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971632+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8wewfc",
+    "resource_name": "securityhub-rds-instance-default-admin-check-96418ed2",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether an Amazon RDS database instance has changed the admin username from its default value. This rule will only run on RDS database instances. The rule will fail if the admin username is set to the default value.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_INSTANCE_DEFAULT_ADMIN_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971635+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-oivaif",
+    "resource_name": "securityhub-rds-instance-deletion-protection-enabled-cd7f6a91",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Relational Database Service (Amazon RDS) instance has deletion protection enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_INSTANCE_DELETION_PROTECTION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971639+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gwa3lm",
+    "resource_name": "securityhub-rds-instance-event-notifications-configured-d5aae4cf",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether an Amazon RDS Event subscription for RDS instances is configured to notify on event categories of both \"maintenance\", \"configuration change\", and \"failure\".",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::EventSubscription"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971642+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3hduat",
+    "resource_name": "securityhub-rds-instance-iam-authentication-enabled-96b42ff6",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Relational Database Service (Amazon RDS) instance has AWS Identity and Access Management (IAM) authentication enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_INSTANCE_IAM_AUTHENTICATION_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971645+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ipopwz",
+    "resource_name": "securityhub-rds-instance-public-access-check-bac314d3",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Check whether the Amazon Relational Database Service instances are not publicly accessible.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_INSTANCE_PUBLIC_ACCESS_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBInstance"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971648+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tz5tsj",
+    "resource_name": "securityhub-rds-instance-subnet-igw-check-424c9d69",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if RDS DB instances are deployed in a public subnet with a route to the internet gateway. The rule is NON_COMPLIANT if RDS DB instances is deployed in a public subnet",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_INSTANCE_SUBNET_IGW_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971652+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ika2b4",
+    "resource_name": "securityhub-rds-logging-enabled-a8f78f2e",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks that respective logs of Amazon Relational Database Service (Amazon RDS) are enabled. The rule is NON_COMPLIANT if any log types are not enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971655+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rukdoe",
+    "resource_name": "securityhub-rds-mariadb-instance-encrypted-in-transit-496a0f51",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if connections to Amazon RDS for MariaDB DB instances with engine version greater than or equal to 10.5 use encryption in transit. The rule is NON_COMPLIANT if the DB parameter group is not in-sync or if require_secure_transport is not set to ON.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_MARIADB_INSTANCE_ENCRYPTED_IN_TRANSIT",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971658+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zh15g0",
+    "resource_name": "securityhub-rds-multi-az-support-5652d573",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether high availability is enabled for your RDS DB instances.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_MULTI_AZ_SUPPORT",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971661+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0evdok",
+    "resource_name": "securityhub-rds-mysql-cluster-copy-tags-to-snapshot-check-1238eebf",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Relational Database Service (Amazon RDS) MySQL DB clusters are configured to copy tags to snapshots. The rule is NON_COMPLIANT if an Amazon RDS MySQL DB cluster is not configured to copy tags to snapshots.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_MYSQL_CLUSTER_COPY_TAGS_TO_SNAPSHOT_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBCluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971665+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kthd0r",
+    "resource_name": "securityhub-rds-mysql-instance-encrypted-in-transit-24f35a6b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if connections to Amazon RDS for MySQL database instances are configured to use encryption in transit. The rule is NON_COMPLIANT if the associated database parameter group is not in-sync or if the require_secure_transport parameter is not set to ON",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_MYSQL_INSTANCE_ENCRYPTED_IN_TRANSIT",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971668+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-kfhvm1",
+    "resource_name": "securityhub-rds-no-default-ports-925fdf69",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether RDS instances use the default port of that database engine.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBInstance"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971671+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-28md5l",
+    "resource_name": "securityhub-rds-pg-event-notifications-configured-45d8a41a",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether an Amazon RDS Event subscription for RDS parameter groups is configured to notify on event category of \"configuration change\".",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::EventSubscription"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971676+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-zfwyog",
+    "resource_name": "securityhub-rds-pgsql-cluster-copy-tags-to-snapshot-check-6c00076c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Relational Database Service (Amazon RDS) PostgreSQL DB clusters are configured to copy tags to snapshots. The rule is NON_COMPLIANT if an RDS PostgreSQL DB cluster's CopyTagsToSnapshot property is set to false.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_PGSQL_CLUSTER_COPY_TAGS_TO_SNAPSHOT_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBCluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971679+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0hspnn",
+    "resource_name": "securityhub-rds-postgres-instance-encrypted-in-transit-f52f6fbb",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if connections to Amazon RDS PostgreSQL database instances are configured to use encryption in transit. The rule is NON_COMPLIANT if the associated database parameter group is not in-sync or if the rds.force_ssl parameter is not set to ON.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_POSTGRES_INSTANCE_ENCRYPTED_IN_TRANSIT",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971683+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-w4xm9n",
+    "resource_name": "securityhub-rds-postgresql-logs-to-cloudwatch-a8940d3c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon PostgreSQL DB instance is configured to publish logs to Amazon CloudWatch Logs. The rule is NON_COMPLIANT if the DB instance is not configured to publish logs to Amazon CloudWatch Logs.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_POSTGRESQL_LOGS_TO_CLOUDWATCH",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBInstance"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971687+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-klj5sg",
+    "resource_name": "securityhub-rds-proxy-tls-encryption-e7740e6e",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon RDS proxies enforce TLS for all connections. The rule is NON_COMPLIANT if an Amazon RDS proxy does not have TLS enforced for all connections.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_PROXY_TLS_ENCRYPTION",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971690+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rzy1rt",
+    "resource_name": "securityhub-rds-sg-event-notifications-configured-432f1fa4",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether an Amazon RDS Event subscription for RDS security groups is configured to notify on event categories of both \"configuration change\" and \"failure\".",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::EventSubscription"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971693+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jzixxl",
+    "resource_name": "securityhub-rds-snapshot-encrypted-0656cce6",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Amazon Relational Database Service (Amazon RDS) DB snapshots are encrypted. The rule is NON_COMPLIANT, if Amazon RDS DB snapshots are not encrypted.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_SNAPSHOT_ENCRYPTED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971697+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-tnfqrc",
+    "resource_name": "securityhub-rds-sql-server-logs-to-cloudwatch-0b98cfe7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon SQL Server DB instance is configured to publish logs to Amazon CloudWatch Logs. This rule is NON_COMPLIANT if the DB instance is not configured to publish logs to Amazon CloudWatch Logs.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_SQL_SERVER_LOGS_TO_CLOUDWATCH",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBInstance"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971700+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lucr5p",
+    "resource_name": "securityhub-rds-sqlserver-encrypted-in-transit-910ddca8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if connections to Amazon RDS SQL server database instances are configured to use encryption in transit. The rule is NON_COMPLIANT if the DB parameter force_ssl for the parameter group is not set to 1 or the ApplyStatus parameter is not 'in-sync'.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_SQLSERVER_ENCRYPTED_IN_TRANSIT",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971703+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-lzr15l",
+    "resource_name": "securityhub-rds-storage-encrypted-2fa26ac8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether storage encryption is enabled for your RDS DB instances.",
+    "source_owner": "AWS",
+    "source_identifier": "RDS_STORAGE_ENCRYPTED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::RDS::DBInstance"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971707+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-n6bpsb",
+    "resource_name": "securityhub-redshift-backup-enabled-9561b5a8",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks that Amazon Redshift automated snapshots are enabled for clusters. The rule is NON_COMPLIANT if the value for automatedSnapshotRetentionPeriod is greater than MaxRetentionPeriod or less than MinRetentionPeriod or the value is 0.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_BACKUP_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971710+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qpbnr1",
+    "resource_name": "securityhub-redshift-cluster-audit-logging-enabled-6eec81ce",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether the Amazon Redshift cluster has audit logging enabled.",
+    "source_owner": "CUSTOM_LAMBDA",
+    "source_identifier": "arn:aws:lambda:eu-south-2:902453817800:function:SecurityHubConfigRule",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Redshift::Cluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971713+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-nhrjo1",
+    "resource_name": "securityhub-redshift-cluster-maintenancesettings-check-7e4dcc8c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Amazon Redshift clusters have the specified maintenance settings.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_CLUSTER_MAINTENANCESETTINGS_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971716+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ojmuax",
+    "resource_name": "securityhub-redshift-cluster-public-access-check-d5350607",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Amazon Redshift clusters are not publicly accessible.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_CLUSTER_PUBLIC_ACCESS_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::Redshift::Cluster"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971719+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qolvn3",
+    "resource_name": "securityhub-redshift-default-admin-check-f4cbc729",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether a Redshift cluster has changed the Admin username from its default value. This control will fail if the admin username for a Redshift cluster is set to 'awsuser', or if the username does not match the provided parameter(s).",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_DEFAULT_ADMIN_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971723+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-6muuc6",
+    "resource_name": "securityhub-redshift-enhanced-vpc-routing-enabled-a362b49a",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether a Redshift cluster has EnhancedVpcRouting enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_ENHANCED_VPC_ROUTING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971727+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-pymepv",
+    "resource_name": "securityhub-redshift-require-tls-ssl-9c32e50b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Amazon Redshift clusters require TLS/SSL encryption to connect to SQL clients. The rule is NON_COMPLIANT if any Amazon Redshift cluster has parameter require_SSL not set to true.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_REQUIRE_TLS_SSL",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971730+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ppp9nj",
+    "resource_name": "securityhub-redshift-serverless-default-admin-check-25660223",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if an Amazon Redshift Serverless Namespace has changed the admin username from its default value. The rule is NON_COMPLIANT if the admin username for a Redshift Serverless Namespace is set to 'admin'.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_SERVERLESS_DEFAULT_ADMIN_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971733+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xp926k",
+    "resource_name": "securityhub-redshift-serverless-publish-logs-to-cloudwatch-fae0223b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Redshift Serverless Namespace is configured to publish the following logs to Amazon CloudWatch Logs. This rule is NON_COMPLIANT if the Namespace is not configured to publish the following logs to Amazon CloudWatch Logs.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_SERVERLESS_PUBLISH_LOGS_TO_CLOUDWATCH",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971736+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rrdw5a",
+    "resource_name": "securityhub-redshift-serverless-workgroup-encrypted-in-transit-06fcc210",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if AWS Redshift Serverless workgroups have the require_ssl config parameter set to true. The rule is NON_COMPLIANT if require_ssl is set to false.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_SERVERLESS_WORKGROUP_ENCRYPTED_IN_TRANSIT",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971739+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-btttef",
+    "resource_name": "securityhub-redshift-serverless-workgroup-no-public-access-21a088dd",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Redshift Serverless workgroups do not allow public access. The rule is NON_COMPLIANT if a workgroup has 'Turn on Public Accessible' enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_SERVERLESS_WORKGROUP_NO_PUBLIC_ACCESS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971742+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-diiput",
+    "resource_name": "securityhub-redshift-serverless-workgroup-routes-within-vpc-bd78cc5d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Redshift Serverless Workgroups does not route the network traffic through a VPC. This rule is NON_COMPLIANT if Workgroups have \"Turn on Enhanced VPC routing\" disabled.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_SERVERLESS_WORKGROUP_ROUTES_WITHIN_VPC",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971745+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ssfq8x",
+    "resource_name": "securityhub-redshift-unrestricted-port-access-6fa70394",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if security groups associated with an Amazon Redshift cluster have inbound rules that allow unrestricted incoming traffic. The rule is NON_COMPLIANT if there are inbound rules that allow unrestricted incoming traffic to the Redshift cluster port.",
+    "source_owner": "AWS",
+    "source_identifier": "REDSHIFT_UNRESTRICTED_PORT_ACCESS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971749+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ki9f4h",
+    "resource_name": "securityhub-restricted-ssh-4bc38d74",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the incoming SSH traffic for the security groups is accessible. The rule is compliant when the IP addresses of the incoming SSH traffic in the security groups are restricted. This rule applies only to IPv4.",
+    "source_owner": "AWS",
+    "source_identifier": "INCOMING_SSH_DISABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971752+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-0okevh",
+    "resource_name": "securityhub-root-account-hardware-mfa-enabled-38724df3",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether users of your AWS account require a hardware multi-factor authentication (MFA) device to sign in with root credentials.",
+    "source_owner": "AWS",
+    "source_identifier": "ROOT_ACCOUNT_HARDWARE_MFA_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971755+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-v08fis",
+    "resource_name": "securityhub-root-account-mfa-enabled-0c329b1c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether users of your AWS account require a multi-factor authentication (MFA) device to sign in with root credentials.",
+    "source_owner": "AWS",
+    "source_identifier": "ROOT_ACCOUNT_MFA_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971757+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gsmdsy",
+    "resource_name": "securityhub-s3-access-point-public-access-blocks-bb569a97",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon S3 access points have block public access settings enabled. The rule is NON_COMPLIANT if block public access settings are not enabled for S3 access points.",
+    "source_owner": "AWS",
+    "source_identifier": "S3_ACCESS_POINT_PUBLIC_ACCESS_BLOCKS",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::S3::AccessPoint"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971759+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-4nusbi",
+    "resource_name": "securityhub-s3-account-level-public-access-blocks-periodic-0b6bee56",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the required public access block settings are configured from account level.",
+    "source_owner": "AWS",
+    "source_identifier": "S3_ACCOUNT_LEVEL_PUBLIC_ACCESS_BLOCKS_PERIODIC",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971762+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xymlsh",
+    "resource_name": "securityhub-s3-bucket-acl-prohibited-3e77a37e",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks to ensure that your Amazon S3 buckets does not allow user permissions via access control lists. This control fails if ACLs are configured for user access on S3 Bucket.",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_ACL_PROHIBITED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::S3::Bucket"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971765+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-2ysvok",
+    "resource_name": "securityhub-s3-bucket-blacklisted-actions-prohibited-8306ebeb",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks that the Amazon Simple Storage Service bucket policy does not allow blacklisted bucket-level and object-level actions on resources in the bucket for principals from other AWS accounts.",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_BLACKLISTED_ACTIONS_PROHIBITED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971767+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qrng9m",
+    "resource_name": "securityhub-s3-bucket-level-public-access-prohibited-07f1a32c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if Amazon S3 buckets have bucket level public access blocks applied. This control fails if any of the bucket level settings are set to \"false\" public: ignorePublicAcls, blockPublicPolicy, blockPublicAcls, restrictPublicBuckets.",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_LEVEL_PUBLIC_ACCESS_PROHIBITED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971769+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-seeuy8",
+    "resource_name": "securityhub-s3-bucket-logging-enabled-2d16d07e",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if an Amazon S3 Bucket has server access logging enabled to a chosen target bucket.",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::S3::Bucket"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971771+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wpshnm",
+    "resource_name": "securityhub-s3-bucket-public-read-prohibited-3be3ada0",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks to see if S3 buckets are publicly readable.",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_PUBLIC_READ_PROHIBITED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971774+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ykkufm",
+    "resource_name": "securityhub-s3-bucket-public-write-prohibited-209c46be",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks to see if S3 buckets allow public write.",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_PUBLIC_WRITE_PROHIBITED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971776+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-moivff",
+    "resource_name": "securityhub-s3-bucket-ssl-requests-only-bc0cf599",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether S3 buckets have policies that require requests to use Secure Socket Layer (SSL).",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_SSL_REQUESTS_ONLY",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::S3::Bucket"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971778+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-i6xmbt",
+    "resource_name": "securityhub-s3-lifecycle-policy-check-6d44c16e",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if a lifecycle policy is configured for an Amazon S3 bucket. This control fails if the lifecycle policy is not configured for an Amazon S3 bucket.",
+    "source_owner": "AWS",
+    "source_identifier": "S3_LIFECYCLE_POLICY_CHECK",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::S3::Bucket"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971780+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-5ozkqt",
+    "resource_name": "securityhub-sagemaker-endpoint-config-prod-instance-count-bafea69a",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon SageMaker endpoint configurations have production variants `InitialInstanceCount` set to a value greater than 1. The rule is NON_COMPLIANT if production variants `InitialInstanceCount` is equal to 1.",
+    "source_owner": "AWS",
+    "source_identifier": "SAGEMAKER_ENDPOINT_CONFIG_PROD_INSTANCE_COUNT",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971782+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qvhqlt",
+    "resource_name": "securityhub-sagemaker-featuregroup-encryption-at-rest-ddb9e5d9",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if SageMaker feature groups have KMS encryption for OfflineStore. The rule is NON_COMPLIANT if offline store S3 storage does not have customer-managed KMS key encryption.",
+    "source_owner": "AWS",
+    "source_identifier": "SAGEMAKER_FEATUREGROUP_ENCRYPTION_AT_REST",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::SageMaker::FeatureGroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971784+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-v9wyxb",
+    "resource_name": "securityhub-sagemaker-notebook-instance-platform-version-d97ea97e",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if a Sagemaker Notebook Instance is configured to use a supported platform identifier version. The rule is NON_COMPLIANT if a Notebook Instance is not using the specified supported platform identifier version as specified in the parameter.",
+    "source_owner": "AWS",
+    "source_identifier": "SAGEMAKER_NOTEBOOK_INSTANCE_PLATFORM_VERSION",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971787+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-rnas6v",
+    "resource_name": "securityhub-secretsmanager-rotation-enabled-check-2af2a4bc",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether AWS Secrets Manager secret has rotation enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "SECRETSMANAGER_ROTATION_ENABLED_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971789+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-jpwqte",
+    "resource_name": "securityhub-secretsmanager-scheduled-rotation-success-check-52e6ca4b",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks and verifies whether AWS Secrets Manager secret rotation has rotated successfully as per the rotation schedule. The rule is NON_COMPLIANT if RotationOccurringAsScheduled is false.",
+    "source_owner": "AWS",
+    "source_identifier": "SECRETSMANAGER_SCHEDULED_ROTATION_SUCCESS_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971791+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-c81nhs",
+    "resource_name": "securityhub-secretsmanager-secret-periodic-rotation-276fa5fa",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if your secrets have rotated at least once within 90 days. ",
+    "source_owner": "AWS",
+    "source_identifier": "SECRETSMANAGER_SECRET_PERIODIC_ROTATION",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971793+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-p3gfjw",
+    "resource_name": "securityhub-secretsmanager-secret-unused-29b999ee",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether your secrets have been accessed within a specified number of days. The default value is 90 days. Secrets that have not been accessed even once within the number days you define, fail this check.",
+    "source_owner": "AWS",
+    "source_identifier": "SECRETSMANAGER_SECRET_UNUSED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971795+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-d0sslf",
+    "resource_name": "securityhub-security-account-information-provided-aa270b90",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if customer has provided security contact information within the account contacts. This rule is NON_COMPLIANT if security contact information within the account is not provided.",
+    "source_owner": "AWS",
+    "source_identifier": "SECURITY_ACCOUNT_INFORMATION_PROVIDED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971797+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-cdzbrf",
+    "resource_name": "securityhub-service-catalog-shared-within-organization-919f7a92",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if AWS Service Catalog shares portfolios with an AWS organization when integration is enabled with AWS Organizations.",
+    "source_owner": "AWS",
+    "source_identifier": "SERVICE_CATALOG_SHARED_WITHIN_ORGANIZATION",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::ServiceCatalog::Portfolio"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971800+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-27sabi",
+    "resource_name": "securityhub-service-vpc-endpoint-enabled-c96766c1",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Service Endpoint for the service provided in rule parameter is created for each Amazon VPC. The rule returns NON_COMPLIANT if an Amazon VPC doesn't have a VPC endpoint created for the service.",
+    "source_owner": "AWS",
+    "source_identifier": "SERVICE_VPC_ENDPOINT_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971802+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xbm4ps",
+    "resource_name": "securityhub-sns-topic-no-public-access-44daa02d",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if the SNS topic access policy allows public access. The rule is NON_COMPLIANT if the SNS topic access policy allows public access.",
+    "source_owner": "AWS",
+    "source_identifier": "SNS_TOPIC_NO_PUBLIC_ACCESS",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::SNS::Topic"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971804+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-v6wtgc",
+    "resource_name": "securityhub-ssm-document-not-public-1517da1f",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether AWS Systems Manager documents that the account owns are public. This control fails if SSM documents that have \"Self\" as the owner are public.",
+    "source_owner": "AWS",
+    "source_identifier": "SSM_DOCUMENT_NOT_PUBLIC",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971806+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wmevwi",
+    "resource_name": "securityhub-step-functions-state-machine-logging-enabled-352605cd",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if AWS Step Functions machine has logging enabled. The rule is NON_COMPLIANT if a state machine does not have logging enabled or the logging configuration is not at the minimum level provided.",
+    "source_owner": "AWS",
+    "source_identifier": "STEP_FUNCTIONS_STATE_MACHINE_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::StepFunctions::StateMachine"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971808+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-i81opy",
+    "resource_name": "securityhub-subnet-auto-assign-public-ip-disabled-79263775",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon Virtual Private Cloud (Amazon VPC) subnets are assigned a public IP address. This rule is NON_COMPLIANT if Amazon VPC has subnets that are assigned a public IP address.",
+    "source_owner": "AWS",
+    "source_identifier": "SUBNET_AUTO_ASSIGN_PUBLIC_IP_DISABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971811+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-3tqp7c",
+    "resource_name": "securityhub-transfer-family-server-no-ftp-ee4339a1",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if a server created with AWS Transfer Family uses FTP for endpoint connection. The rule is NON_COMPLIANT if the server protocol for endpoint connection is FTP-enabled.",
+    "source_owner": "AWS",
+    "source_identifier": "TRANSFER_FAMILY_SERVER_NO_FTP",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971813+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-hrgmva",
+    "resource_name": "securityhub-vpc-default-security-group-closed-f03e0116",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the default security group for VPC is closed.",
+    "source_owner": "AWS",
+    "source_identifier": "VPC_DEFAULT_SECURITY_GROUP_CLOSED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::SecurityGroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971815+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-xdvwm7",
+    "resource_name": "securityhub-vpc-endpoint-enabled-ecr-api-15b0c0b0",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if each service specified in the parameter has an Amazon VPC endpoint. The rule is NON_COMPLIANT if Amazon VPC does not have a VPC endpoint created for each specified service. Optionally, you can specify certain VPCs for the rule to check.",
+    "source_owner": "AWS",
+    "source_identifier": "VPC_ENDPOINT_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971817+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-5fn8zt",
+    "resource_name": "securityhub-vpc-endpoint-enabled-ecr-dkr-4e06899f",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if each service specified in the parameter has an Amazon VPC endpoint. The rule is NON_COMPLIANT if Amazon VPC does not have a VPC endpoint created for each specified service. Optionally, you can specify certain VPCs for the rule to check.",
+    "source_owner": "AWS",
+    "source_identifier": "VPC_ENDPOINT_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971819+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-bl2fvt",
+    "resource_name": "securityhub-vpc-endpoint-enabled-ssm-c14d3680",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if each service specified in the parameter has an Amazon VPC endpoint. The rule is NON_COMPLIANT if Amazon VPC does not have a VPC endpoint created for each specified service. Optionally, you can specify certain VPCs for the rule to check.",
+    "source_owner": "AWS",
+    "source_identifier": "VPC_ENDPOINT_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971821+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-ttpkeg",
+    "resource_name": "securityhub-vpc-flow-logs-enabled-2f18cc7f",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether Amazon Virtual Private Cloud flow logs are found and enabled for Amazon VPC.",
+    "source_owner": "AWS",
+    "source_identifier": "VPC_FLOW_LOGS_ENABLED",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971824+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vj6zcu",
+    "resource_name": "securityhub-vpc-network-acl-unused-check-c78691da",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if there are unused Network Access Control Lists (NACLs). The rule is NON_COMPLIANT if an NACL is not associated with a subnet.",
+    "source_owner": "AWS",
+    "source_identifier": "VPC_NETWORK_ACL_UNUSED_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971826+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-8gq6nf",
+    "resource_name": "securityhub-vpc-sg-open-only-to-authorized-ports-4f30c7d3",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether the security groups allow unrestricted incoming traffic. The control fails if ports allow unrestricted traffic on ports other than 80 and 443, which are default values for parameter authorizedTcpPorts.",
+    "source_owner": "AWS",
+    "source_identifier": "VPC_SG_OPEN_ONLY_TO_AUTHORIZED_PORTS",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971828+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-gaqvjh",
+    "resource_name": "securityhub-vpc-sg-restricted-common-ports-6e85c70e",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks whether the security groups in use do not allow unrestricted incoming TCP traffic to the specified ports. The rule is NON_COMPLIANT if a security group allows inbound traffic from 0.0.0.0/0 or ::/0 to the specified ports.",
+    "source_owner": "AWS",
+    "source_identifier": "RESTRICTED_INCOMING_TRAFFIC",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::SecurityGroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971830+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-r6bbvc",
+    "resource_name": "securityhub-vpc-vpn-2-tunnels-up-f3b23610",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks that both VPN tunnels provided by AWS Site-to-Site VPN are in UP status. The control fails if one or both tunnels are in DOWN status.",
+    "source_owner": "AWS",
+    "source_identifier": "VPC_VPN_2_TUNNELS_UP",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971832+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fhjw9n",
+    "resource_name": "securityhub-waf-regional-rule-not-empty-cd6c0cf7",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks if WAF regional rule contains conditions. This control fails if the regional rule does not contain atleast one condition.",
+    "source_owner": "AWS",
+    "source_identifier": "WAF_REGIONAL_RULE_NOT_EMPTY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971834+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-fgzsbe",
+    "resource_name": "securityhub-waf-regional-webacl-not-empty-4391dc37",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "This control checks whether WAF regional Web ACL contains any WAF rules or rule groups. This control fails if if there are no WAF rules or rule groups present within a Web ACL.",
+    "source_owner": "AWS",
+    "source_identifier": "WAF_REGIONAL_WEBACL_NOT_EMPTY",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971837+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:891376942769:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vlyngt",
+    "resource_name": "securityhub-wafv2-rulegroup-logging-enabled-0714d159",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "description": "Checks if Amazon CloudWatch security metrics collection on AWS WAFv2 rule groups is enabled. The rule is NON_COMPLIANT if the 'VisibilityConfig.CloudWatchMetricsEnabled' field is set to false.",
+    "source_owner": "AWS",
+    "source_identifier": "WAFV2_RULEGROUP_LOGGING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::WAFv2::RuleGroup"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:48:27.971838+00:00"
+  }
+]

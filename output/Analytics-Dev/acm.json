@@ -1,0 +1,26 @@
+[
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:221082197632:certificate/48cbd7ee-9670-4367-bc13-db4601ee6c30",
+    "resource_name": "dev.analytics.intelica.com",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-10-10 19:00:00-05:00",
+    "not_after": "2026-11-09 18:59:59-05:00",
+    "subject_alternative_names": [
+      "dev.analytics.intelica.com",
+      "*.dev.analytics.intelica.com"
+    ],
+    "in_use": true,
+    "in_use_by": [
+      "arn:aws:elasticloadbalancing:eu-south-2:221082197632:loadbalancer/app/itl-0005-ana-dev-alb-apps-02/93d262d0c719355b"
+    ],
+    "renewal_eligibility": "ELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-07-12T19:46:22.238341+00:00"
+  }
+]

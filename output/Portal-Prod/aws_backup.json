@@ -1,0 +1,101 @@
+[
+  {
+    "resource_type": "aws::backup::vault",
+    "resource_id": "arn:aws:backup:eu-south-2:610944808410:backup-vault:Default",
+    "resource_name": "Default",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-11-07 06:00:23.788000-05:00",
+    "encryption_key_arn": "arn:aws:kms:eu-south-2:610944808410:key/cd579042-b05e-4855-a39d-56ae43b4bb01",
+    "number_of_recovery_points": 0,
+    "locked": false,
+    "min_retention_days": null,
+    "max_retention_days": null,
+    "total_backup_size_bytes": 0,
+    "total_backup_size_gb": 0.0,
+    "est_cost_per_month": 0.0,
+    "tags": {},
+    "collected_at": "2026-07-12T19:36:33.879021+00:00"
+  },
+  {
+    "resource_type": "aws::backup::vault",
+    "resource_id": "arn:aws:backup:eu-south-2:610944808410:backup-vault:itl-0003-portal-prd-bck-vault-02",
+    "resource_name": "itl-0003-portal-prd-bck-vault-02",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "creation_date": "2025-11-12 09:24:55.202000-05:00",
+    "encryption_key_arn": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "number_of_recovery_points": 48,
+    "locked": false,
+    "min_retention_days": null,
+    "max_retention_days": null,
+    "total_backup_size_bytes": 53926535626752,
+    "total_backup_size_gb": 50223.0,
+    "est_cost_per_month": 2511.15,
+    "tags": {},
+    "collected_at": "2026-07-12T19:36:34.488518+00:00"
+  },
+  {
+    "resource_type": "aws::backup::plan",
+    "resource_id": "arn:aws:backup:eu-south-2:610944808410:backup-plan:72342710-7aa4-41c5-98c7-62e43c59e671",
+    "resource_name": "itl-0003-portal-prd-bck-plan-02",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "plan_id": "72342710-7aa4-41c5-98c7-62e43c59e671",
+    "version_id": "ZjQ1MDUwOTktYjg5Zi00ZjFlLTlmNWYtMWRmMDg0OWUyNWFl",
+    "creation_date": "2026-01-13 14:24:26.636000-05:00",
+    "last_execution_date": "2026-07-12 03:07:31.103000-05:00",
+    "rules": [
+      {
+        "rule_name": "itl-0003-portal-prd-bck-rule-02",
+        "target_vault": "itl-0003-portal-prd-bck-vault-02",
+        "schedule_expression": "cron(00 03 * * ? *)",
+        "start_window_minutes": 60,
+        "completion_window_minutes": 180,
+        "move_to_cold_storage_after_days": null,
+        "delete_after_days": 3,
+        "enable_continuous_backup": false
+      }
+    ],
+    "selections": [
+      {
+        "selection_name": "itl-0003-portal-prd-bck-selection-02",
+        "iam_role_arn": "arn:aws:iam::610944808410:role/itl-0003-portal-prd-role-backup-02",
+        "resources": [
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0193ac549c342e28a",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0256672cd9175f542"
+        ],
+        "tag_conditions": []
+      },
+      {
+        "selection_name": "itl-0003-portal-prd-bck-selection-02",
+        "iam_role_arn": "arn:aws:iam::610944808410:role/itl-0003-portal-prd-role-backup-02",
+        "resources": [
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0016a8bc9ee8b94c7",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-00afea735bae53a21",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-012a3868351997756",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-015be3164b51150ce",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-01cb91eb9e0f491f9",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-03616a16b6492e56d",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0541fd50781a206dd",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-05fe64ce8acf9f57a",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0677abd83cd084b80",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0698f3c88cde16dd0",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0735b969853ae3772",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-075110d2fa5a3ef1c",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0772db056ff6e5368",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-08ed071c3cbe599da",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0db3e691e1fb75936",
+          "arn:aws:ec2:eu-south-2:610944808410:instance/i-0f76f23449c42c4dc"
+        ],
+        "tag_conditions": []
+      }
+    ],
+    "protected_resource_count": 18,
+    "tags": {},
+    "collected_at": "2026-07-12T19:36:35.576361+00:00"
+  }
+]

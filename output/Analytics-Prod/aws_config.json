@@ -1,0 +1,128 @@
+[
+  {
+    "resource_type": "aws::config::configurationrecorder",
+    "resource_id": "aws-controltower-BaselineConfigRecorder",
+    "resource_name": "aws-controltower-BaselineConfigRecorder",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "recording": true,
+    "last_status": "SUCCESS",
+    "all_supported": true,
+    "include_global_resource_types": false,
+    "delivery_channel_name": "aws-controltower-BaselineConfigDeliveryChannel",
+    "delivery_s3_bucket": "aws-controltower-logs-124355672973-us-east-1",
+    "tags": {},
+    "collected_at": "2026-07-12T19:42:28.622390+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:831926623233:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-vktidh",
+    "resource_name": "AWSControlTower_AWS-GR_EC2_INSTANCE_NO_PUBLIC_IP",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "description": "Rule managed by AWS Control Tower",
+    "source_owner": "AWS",
+    "source_identifier": "EC2_INSTANCE_NO_PUBLIC_IP",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::Instance"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:42:28.840610+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:831926623233:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-rzphxi",
+    "resource_name": "AWSControlTower_AWS-GR_ENCRYPTED_VOLUMES",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "description": "Rule managed by AWS Control Tower",
+    "source_owner": "AWS",
+    "source_identifier": "ENCRYPTED_VOLUMES",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::EC2::Volume"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:42:28.840622+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:831926623233:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-tbvgj0",
+    "resource_name": "AWSControlTower_AWS-GR_S3_BUCKET_PUBLIC_READ_PROHIBITED",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "description": "Rule managed by AWS Control Tower",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_PUBLIC_READ_PROHIBITED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::S3::Bucket"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:42:28.840626+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:831926623233:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-8jc3sw",
+    "resource_name": "AWSControlTower_AWS-GR_S3_BUCKET_PUBLIC_WRITE_PROHIBITED",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "description": "Rule managed by AWS Control Tower",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_PUBLIC_WRITE_PROHIBITED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::S3::Bucket"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:42:28.840629+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:831926623233:config-rule/aws-service-rule/controltower.amazonaws.com/config-rule-4it9r9",
+    "resource_name": "AWSControlTower_AWS-GR_S3_VERSIONING_ENABLED",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "description": "Rule managed by AWS Control Tower",
+    "source_owner": "AWS",
+    "source_identifier": "S3_BUCKET_VERSIONING_ENABLED",
+    "state": "ACTIVE",
+    "scope": {
+      "ComplianceResourceTypes": [
+        "AWS::S3::Bucket"
+      ]
+    },
+    "tags": {},
+    "collected_at": "2026-07-12T19:42:28.840634+00:00"
+  },
+  {
+    "resource_type": "aws::config::configrule",
+    "resource_id": "arn:aws:config:eu-south-2:831926623233:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-qpiouo",
+    "resource_name": "securityhub-s3-version-lifecycle-policy-check-3161c789",
+    "account_id": "831926623233",
+    "account_name": "Analytics-Prod",
+    "region": "eu-south-2",
+    "description": "This control checks if Amazon Simple Storage Service (Amazon S3) version enabled buckets have lifecycle policy configured. This rule fails if Amazon S3 lifecycle policy is not enabled",
+    "source_owner": "AWS",
+    "source_identifier": "S3_VERSION_LIFECYCLE_POLICY_CHECK",
+    "state": "ACTIVE",
+    "scope": {},
+    "tags": {},
+    "collected_at": "2026-07-12T19:42:28.840636+00:00"
+  }
+]

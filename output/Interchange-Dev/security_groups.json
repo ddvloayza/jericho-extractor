@@ -1,0 +1,936 @@
+[
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0d5f3e2f49b4a1999",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-029134477d2a41610",
+    "group_name": "default",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0d5f3e2f49b4a1999"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-029134477d2a41610",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899501+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0867d4c2525947cec",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-nlb-sftp-02-sg",
+    "description": "itl-0004-itx-dev-nlb-sftp-02-sg",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 2222,
+        "to_port": 2222,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "Name": "itl-0004-itx-dev-nlb-sftp-02-sg",
+      "coid": "itl",
+      "assetid": "0004",
+      "apid": "itx",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899513+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-08d415670e927e878",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-intchg-02-lambda-sg",
+    "description": "Security group for PoC interchange lambdas",
+    "inbound_rules": [],
+    "outbound_rules": [],
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "project": "datalake",
+      "env": "dev",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899516+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-08e80112c0389743c",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-lmbd-sendmail-02-sg",
+    "description": "itl-0004-itx-dev-lmbd-sendmail-02-sg",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "coid": "itl",
+      "Name": "itl-0004-itx-dev-lmbd-sendmail-02-sg",
+      "apid": "itx",
+      "env": "dev",
+      "assetid": "0004"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899520+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0b8b779c168840f49",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-lmbd-sbsa-preprocess-02-sg",
+    "description": "itl-0004-itx-dev-lmbd-sbsa-preprocess-02-sg",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "coid": "itl",
+      "assetid": "0004",
+      "project": "sbsa-preprocess",
+      "apid": "itx",
+      "Name": "itl-0004-itx-dev-lmbd-sbsa-preprocess-02",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899523+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-07e312942585606d5",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "GuardDutyManagedSecurityGroup-vpc-0101d2c447b67e9db",
+    "description": "Associated with VPC-vpc-0101d2c447b67e9db and tagged as GuardDutyManaged",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [],
+    "tags": {
+      "GuardDutyManaged": "true"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899525+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0e1edda6ab1eed290",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-lambda-pg-audit-02-sg",
+    "description": "Security group for pg-audit Lambda function",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "udp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 53,
+        "to_port": 53,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": [
+          "pl-64a5400d"
+        ]
+      }
+    ],
+    "tags": {
+      "Name": "itl-0004-itx-dev-lambda-pg-audit-02-sg",
+      "env": "dev",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899530+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-07565e1ecf3294bf9",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-exchange-rates-sg",
+    "description": "Security group for Mastercard exchange rates lambda - allows HTTPS outbound to internet",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 50100,
+        "to_port": 50100,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "apid": "itx",
+      "coid": "itl",
+      "assetid": "0004",
+      "project": "datalake",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899535+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0d9bb259e3a608ad0",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-intchg-02-lmbd-mc-sg",
+    "description": "Security group for PoC MC interchange lambdas",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": [
+          "pl-64a5400d",
+          "pl-68a74201"
+        ]
+      }
+    ],
+    "tags": {
+      "env": "dev",
+      "assetid": "0004",
+      "coid": "itl",
+      "apid": "itx",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899540+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0f93fba3d7978e8d6",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-lmbd-app-02-sg",
+    "description": "itl-0004-itx-dev-lmbd-app-02-sg",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "coid": "itl",
+      "assetid": "0004",
+      "Name": "itl-0004-itx-dev-lmbd-app-02-sg",
+      "env": "dev",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899543+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-077c487b85cadb62e",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-tf-sftp-02-sg",
+    "description": "itl-0004-itx-dev-tf-sftp-02-sg",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [],
+    "tags": {
+      "assetid": "0004",
+      "apid": "itx",
+      "Name": "itl-0004-itx-dev-tf-sftp-02-sg",
+      "coid": "itl",
+      "env": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899546+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0c47cd45dc147a892",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "default",
+    "description": "default VPC security group",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0c47cd45dc147a892"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899549+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0ad22b09c390c7209",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-lmbd-file-load-02-sg",
+    "description": "itl-0004-itx-dev-lmbd-file-load-02-sg",
+    "inbound_rules": [],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "Name": "itl-0004-itx-dev-lmbd-file-load-02-sg",
+      "apid": "itx",
+      "assetid": "0004",
+      "env": "dev",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899552+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-07040d29e788f886d",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-rds-app-02-sg",
+    "description": "Control traffic to/from RDS Aurora itl-0004-itx-dev-rds-app-02",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 5432,
+        "to_port": 5432,
+        "ipv4_ranges": [
+          "10.0.3.100/32",
+          "172.8.3.51/32",
+          "172.2.3.211/32"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0ad22b09c390c7209",
+          "sg-08b45de2d52e4a925",
+          "sg-097a391d184cf49cd",
+          "sg-0aa6d55bd394447f6",
+          "sg-0922640d2a80f5742"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "env": "dev",
+      "Name": "itl-0004-itx-dev-rds-app-02-sg",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899556+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0671b8f0fb5aa27ca",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-sg",
+    "description": "Security group for PoC interchange lambdas",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": [
+          "pl-64a5400d",
+          "pl-68a74201"
+        ]
+      }
+    ],
+    "tags": {
+      "coid": "itl",
+      "assetid": "0004",
+      "env": "dev",
+      "project": "datalake",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899560+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-08b45de2d52e4a925",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-ec2-app-02-sg",
+    "description": "itl-0004-itx-dev-ec2-app-02-sg",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "10.0.4.0/24",
+          "100.0.4.38/32",
+          "10.0.3.100/32"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 22,
+        "to_port": 22,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0dc99291db78d868a"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "coid": "itl",
+      "Name": "itl-0004-itx-dev-ec2-app-02-sg",
+      "apid": "itx",
+      "env": "dev",
+      "assetid": "0004"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899565+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0dc99291db78d868a",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-02-sg-vpc-endpoints",
+    "description": "Security group for VPC endpoints",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-0d9bb259e3a608ad0",
+          "sg-0671b8f0fb5aa27ca",
+          "sg-07565e1ecf3294bf9",
+          "sg-0ea832a8a272949c3",
+          "sg-08b45de2d52e4a925"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [],
+    "tags": {
+      "coid": "itl",
+      "Name": "itl-0004-itx-dev-02-sg-vpc-endpoints",
+      "apid": "itx",
+      "env": "dev",
+      "assetid": "0004"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899568+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-03ed2a33cb1126201",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-intchg-02-glue-sg",
+    "description": "Security group for PoC interchange glue resources",
+    "inbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-03ed2a33cb1126201"
+        ],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [
+          "sg-03ed2a33cb1126201"
+        ],
+        "prefix_list_ids": [
+          "pl-64a5400d",
+          "pl-68a74201"
+        ]
+      }
+    ],
+    "tags": {
+      "coid": "itl",
+      "assetid": "0004",
+      "env": "dev",
+      "apid": "itx",
+      "project": "datalake"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899571+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::security_group",
+    "resource_id": "sg-0ea832a8a272949c3",
+    "account_id": "861276092327",
+    "account_name": "Interchange-Dev",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0101d2c447b67e9db",
+    "group_name": "itl-0004-itx-dev-intchg-02-lmbd-vi-exchange-rates-sg",
+    "description": "Security group for Visa exchange rates lambda - allows HTTPS outbound to internet",
+    "inbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "10.14.0.0/16"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "outbound_rules": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "ipv4_ranges": [
+          "0.0.0.0/0"
+        ],
+        "ipv6_ranges": [],
+        "referenced_group_ids": [],
+        "prefix_list_ids": []
+      }
+    ],
+    "tags": {
+      "env": "dev",
+      "assetid": "0004",
+      "coid": "itl",
+      "project": "datalake",
+      "apid": "itx"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0101d2c447b67e9db",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-07-12T19:43:40.899575+00:00"
+  }
+]
