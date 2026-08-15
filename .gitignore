@@ -225,3 +225,8 @@ config.json
 # Salida del generador de conocimiento: se regenera con build_knowledge.py,
 # y su version curada vive en el repo intelica-brain-ia. No se versiona aca.
 knowledge-base/
+
+# Copias manuales del inventario crudo (output-2026-07-12/ y parecidas).
+# No hacen falta: output/ SI esta versionado, asi que el commit anterior a
+# cada extraccion preserva ese estado. Cada copia son ~85 MB al pedo.
+output-*/
