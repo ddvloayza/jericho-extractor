@@ -1,0 +1,473 @@
+[
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-09dda18f7294231e7",
+    "resource_name": "denver-qa-18-02-26-ami",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "denver-qa-18-02-26-ami",
+    "description": "",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-02-18T22:04:48.000Z",
+    "age_days": 177,
+    "total_size_gb": 3910,
+    "est_cost_per_month": 195.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0348f2849118900f3",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-098a1c1490dd4aa62",
+        "size_gb": 250,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-0c3b99d8c14b2678b",
+        "size_gb": 3560,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0348f2849118900f3",
+      "snap-098a1c1490dd4aa62",
+      "snap-0c3b99d8c14b2678b"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:55:13.299213+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0851b39090e42b81f",
+    "resource_name": "qa-ec2-denver-04-02-2026",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "qa-ec2-denver-04-02-2026",
+    "description": "Backup para denver 04-02-2026",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-02-04T21:18:41.000Z",
+    "age_days": 191,
+    "total_size_gb": 3910,
+    "est_cost_per_month": 195.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-02cfa2f8890c4e3a5",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-0de96b7613b38ce02",
+        "size_gb": 250,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-0f29f0468c05aeae4",
+        "size_gb": 3560,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-02cfa2f8890c4e3a5",
+      "snap-0de96b7613b38ce02",
+      "snap-0f29f0468c05aeae4"
+    ],
+    "tags": {
+      "Name": "qa-denver-manual-04-02-2026"
+    },
+    "collected_at": "2026-08-15T07:55:13.299258+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-053fed26e22e37661",
+    "resource_name": "denver-backup-20251108-061043-copy-eu-south-2",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "denver-backup-20251108-061043-copy-eu-south-2",
+    "description": "Copia de ami-02a6709b05b5da79b desde us-east-1 - 2025-11-08",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2025-11-08T11:13:59.000Z",
+    "age_days": 279,
+    "total_size_gb": 3910,
+    "est_cost_per_month": 195.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0b2ae52a7897d2758",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-0e4117b142f2743a3",
+        "size_gb": 250,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-062d882b795daaffe",
+        "size_gb": 3560,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0b2ae52a7897d2758",
+      "snap-0e4117b142f2743a3",
+      "snap-062d882b795daaffe"
+    ],
+    "tags": {
+      "CreatedAt": "2025-11-08",
+      "SourceRegion": "us-east-1",
+      "SourceInstance": "i-04cb5e53e14a35d2f",
+      "CreatedBy": "CLI-Script-Copy",
+      "Name": "denver-backup-20251108-061043-copy-eu-south-2",
+      "Environment": "QA",
+      "SourceInstanceName": "itl-0009-prtlgy-qa-ec2-denver-01",
+      "SourceAMI": "ami-02a6709b05b5da79b",
+      "Timestamp": "20251108-061043"
+    },
+    "collected_at": "2026-08-15T07:55:13.299289+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0b26b9c0398b59dc9",
+    "resource_name": "QA-denver-ami-20-02-26",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "QA-denver-ami-20-02-26",
+    "description": "Backups para servidor denver 5:00pm",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-02-20T22:38:59.000Z",
+    "age_days": 175,
+    "total_size_gb": 3910,
+    "est_cost_per_month": 195.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0c2329562a18bfda9",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-02130d73e02641e90",
+        "size_gb": 250,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-018f47eea617a9908",
+        "size_gb": 3560,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0c2329562a18bfda9",
+      "snap-02130d73e02641e90",
+      "snap-018f47eea617a9908"
+    ],
+    "tags": {
+      "Name": "QA-denver-ami-20-02-26"
+    },
+    "collected_at": "2026-08-15T07:55:13.299312+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-00e62e285941ada63",
+    "resource_name": "itl-0009-prtlgy-qa-ec2-vienna-01-2025-11-07-1",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "itl-0009-prtlgy-qa-ec2-vienna-01-2025-11-07-1",
+    "description": "[Copied ami-049ef8bcf849f36bb from us-east-1] itl-0009-prtlgy-qa-ec2-vienna-01-2025-11-07-1",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2025-11-07T14:59:45.000Z",
+    "age_days": 280,
+    "total_size_gb": 1550,
+    "est_cost_per_month": 77.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-06687826adeb81aeb",
+        "size_gb": 50,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/xvdh",
+        "snapshot_id": "snap-0b015496ca041cde0",
+        "size_gb": 1500,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-06687826adeb81aeb",
+      "snap-0b015496ca041cde0"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:55:13.299334+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0a113d52080f1f8e9",
+    "resource_name": "AwsBackup_i-058d0b20e7dc47da3_6F66488E-0CA7-9AD2-C55E-DA0FAC4C9009",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "AwsBackup_i-058d0b20e7dc47da3_6F66488E-0CA7-9AD2-C55E-DA0FAC4C9009",
+    "description": "[Copied ami-0534b232adb187149 (itl-0009-prtlgy-qa-ec2-vienna-01) from us-east-1] AwsBackup_i-058d0b20e7dc47da3_6F66488E-0CA7-9AD2-C55E-DA0FAC4C9009",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2025-10-03T21:56:38.000Z",
+    "age_days": 315,
+    "total_size_gb": 1550,
+    "est_cost_per_month": 77.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-053470ebc7d0402d6",
+        "size_gb": 50,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/xvdh",
+        "snapshot_id": "snap-027877d6a02fcccf5",
+        "size_gb": 1500,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-053470ebc7d0402d6",
+      "snap-027877d6a02fcccf5"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:55:13.299355+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0c2b1cc655fb33000",
+    "resource_name": "qa-ec2-vienna-04-02-2026",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "qa-ec2-vienna-04-02-2026",
+    "description": "Backup manual para QA-vienna",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-02-04T21:17:05.000Z",
+    "age_days": 191,
+    "total_size_gb": 1550,
+    "est_cost_per_month": 77.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0a2d8af376e0cbb9c",
+        "size_gb": 50,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/xvdh",
+        "snapshot_id": "snap-0cd65ee87ef677f9b",
+        "size_gb": 1500,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0a2d8af376e0cbb9c",
+      "snap-0cd65ee87ef677f9b"
+    ],
+    "tags": {
+      "Name": "qa-vienna-manual-04-02-2026"
+    },
+    "collected_at": "2026-08-15T07:55:13.299376+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0f9c4ab7c84e2d39c",
+    "resource_name": "denver-backup-20251108-021717-copy-eu-south-2",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "denver-backup-20251108-021717-copy-eu-south-2",
+    "description": "Copia de ami-000e290b0714a3546 desde us-east-1 - 2025-11-08",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2025-11-08T07:19:18.000Z",
+    "age_days": 280,
+    "total_size_gb": 3910,
+    "est_cost_per_month": 195.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-06e665303914411f9",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-02383693c887e3995",
+        "size_gb": 250,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-03b72909056bf4244",
+        "size_gb": 3560,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-06e665303914411f9",
+      "snap-02383693c887e3995",
+      "snap-03b72909056bf4244"
+    ],
+    "tags": {
+      "CreatedBy": "CLI-Script-Copy",
+      "SourceInstanceName": "itl-0009-prtlgy-qa-ec2-denver-01",
+      "SourceInstance": "i-04cb5e53e14a35d2f",
+      "Environment": "QA",
+      "CreatedAt": "2025-11-08",
+      "SourceAMI": "ami-000e290b0714a3546",
+      "Timestamp": "20251108-021717",
+      "SourceRegion": "us-east-1",
+      "Name": "denver-backup-20251108-021717-copy-eu-south-2"
+    },
+    "collected_at": "2026-08-15T07:55:13.299417+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-06d873975760a89ce",
+    "resource_name": "IMAGE-VIENA-06-37",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "IMAGE-VIENA-06-37",
+    "description": "",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2025-11-08T11:37:50.000Z",
+    "age_days": 279,
+    "total_size_gb": 1550,
+    "est_cost_per_month": 77.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-09a83dc45d5a62a6b",
+        "size_gb": 50,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/xvdh",
+        "snapshot_id": "snap-04beefe73ba1cde3b",
+        "size_gb": 1500,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-09a83dc45d5a62a6b",
+      "snap-04beefe73ba1cde3b"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:55:13.299438+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0d4381cec45c9288e",
+    "resource_name": "VIENNA QA PCI",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "VIENNA QA PCI",
+    "description": "VIENNA QA PCI",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-08-11T20:36:30.000Z",
+    "age_days": 3,
+    "total_size_gb": 1550,
+    "est_cost_per_month": 77.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0b59b29ec82b7d3c8",
+        "size_gb": 50,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/xvdh",
+        "snapshot_id": "snap-0a00a2c36fc6cd114",
+        "size_gb": 1500,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0b59b29ec82b7d3c8",
+      "snap-0a00a2c36fc6cd114"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:55:13.299467+00:00"
+  }
+]

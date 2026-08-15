@@ -1,53 +1,6 @@
 [
   {
     "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0240ab0dfc3d1b299",
-    "resource_name": "itl-0003-portal-prd-eks-apps-02-dynamic-pvc-e620c82b-c4ed-498b-888a-76d644a4c15b",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 8,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": false,
-    "kms_key_id": "",
-    "snapshot_id": "",
-    "multi_attach": false,
-    "create_time": "2025-11-14 17:55:10.109000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0f511c964d109c447",
-        "device": "/dev/xvdaa",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0f511c964d109c447",
-    "attached_device": "/dev/xvdaa",
-    "attached_state": "attached",
-    "tags": {
-      "ebs.csi.aws.com/cluster": "true",
-      "kubernetes.io/created-for/pvc/namespace": "appsmith",
-      "Name": "itl-0003-portal-prd-eks-apps-02-dynamic-pvc-e620c82b-c4ed-498b-888a-76d644a4c15b",
-      "kubernetes.io/created-for/pv/name": "pvc-e620c82b-c4ed-498b-888a-76d644a4c15b",
-      "kubernetes.io/cluster/itl-0003-portal-prd-eks-apps-02": "owned",
-      "CSIVolumeName": "pvc-e620c82b-c4ed-498b-888a-76d644a4c15b",
-      "kubernetes.io/created-for/pvc/name": "datadir-appsmith-mongodb-1",
-      "KubernetesCluster": "itl-0003-portal-prd-eks-apps-02"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0f511c964d109c447",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.313980+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
     "resource_id": "vol-0fa56d6dd4478d84f",
     "resource_name": "VM-8-root",
     "account_id": "610944808410",
@@ -90,7 +43,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.313992+00:00"
+    "collected_at": "2026-08-15T07:35:17.913057+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -136,139 +89,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.313999+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0624c5a6a011ac4b4",
-    "resource_name": "",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 200,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-0a18d710486c9e61a",
-    "multi_attach": false,
-    "create_time": "2025-11-28 11:45:50.857000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0016a8bc9ee8b94c7",
-        "device": "/dev/sda1",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0016a8bc9ee8b94c7",
-    "attached_device": "/dev/sda1",
-    "attached_state": "attached",
-    "tags": {
-      "apid": "portal",
-      "env": "prd",
-      "assetid": "0003",
-      "coid": "itl"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0016a8bc9ee8b94c7",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314004+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0df54b24f5b910fe2",
-    "resource_name": "VM11-root",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 110,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0b9c29a7c9d2cb9a2",
-    "multi_attach": false,
-    "create_time": "2025-11-15 07:15:35.644000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0db3e691e1fb75936",
-        "device": "/dev/sda1",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0db3e691e1fb75936",
-    "attached_device": "/dev/sda1",
-    "attached_state": "attached",
-    "tags": {
-      "Type": "root-volume",
-      "coid": "itl",
-      "env": "prd",
-      "Name": "VM11-root",
-      "assetid": "0003",
-      "apid": "portal",
-      "schedule": "vms"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0db3e691e1fb75936",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314010+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-049756f68145f0c80",
-    "resource_name": "",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 100,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-0d8f51dc10b4d3f46",
-    "multi_attach": false,
-    "create_time": "2025-11-19 11:54:18.763000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-077cf51cfedfde095",
-        "device": "/dev/sda1",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-077cf51cfedfde095",
-    "attached_device": "/dev/sda1",
-    "attached_state": "attached",
-    "tags": {
-      "coid": "itl",
-      "assetid": "0003",
-      "apid": "portal",
-      "env": "prd"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-077cf51cfedfde095",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314015+00:00"
+    "collected_at": "2026-08-15T07:35:17.913080+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -314,7 +135,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314021+00:00"
+    "collected_at": "2026-08-15T07:35:17.913094+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -360,53 +181,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314028+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0916447e057f3ec1b",
-    "resource_name": "itl-0003-portal-prd-ec2-apps-02-portal",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 20,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0a95fc9690bd3d15c",
-    "multi_attach": false,
-    "create_time": "2025-11-20 17:48:58.399000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-01e9582ac4bbd2d75",
-        "device": "/dev/xvda",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-01e9582ac4bbd2d75",
-    "attached_device": "/dev/xvda",
-    "attached_state": "attached",
-    "tags": {
-      "apid": "portal",
-      "coid": "itl",
-      "Name": "itl-0003-portal-prd-ec2-apps-02-portal",
-      "env": "prd",
-      "assetid": "0003",
-      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-portal",
-      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-01e9582ac4bbd2d75",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314035+00:00"
+    "collected_at": "2026-08-15T07:35:17.913105+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -450,7 +225,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314039+00:00"
+    "collected_at": "2026-08-15T07:35:17.913115+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -493,50 +268,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314044+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-09ccfe1022b891bfd",
-    "resource_name": "",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 1500,
-    "volume_type": "gp3",
-    "iops": 4500,
-    "throughput": 250,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-0da275b387c047b6b",
-    "multi_attach": false,
-    "create_time": "2025-11-15 07:37:15.747000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-03616a16b6492e56d",
-        "device": "/dev/xvdh",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-03616a16b6492e56d",
-    "attached_device": "/dev/xvdh",
-    "attached_state": "attached",
-    "tags": {
-      "apid": "portal",
-      "assetid": "0003",
-      "env": "prd",
-      "coid": "itl"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-03616a16b6492e56d",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314048+00:00"
+    "collected_at": "2026-08-15T07:35:17.913124+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -582,7 +314,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314053+00:00"
+    "collected_at": "2026-08-15T07:35:17.913134+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -592,7 +324,7 @@
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
     "availability_zone": "eu-south-2b",
-    "state": "in-use",
+    "state": "available",
     "size_gb": 200,
     "volume_type": "gp3",
     "iops": 3000,
@@ -602,76 +334,18 @@
     "snapshot_id": "snap-0af87ed490de4ce65",
     "multi_attach": false,
     "create_time": "2025-11-15 07:37:15.657000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-03616a16b6492e56d",
-        "device": "/dev/xvdg",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-03616a16b6492e56d",
-    "attached_device": "/dev/xvdg",
-    "attached_state": "attached",
+    "attached_instances": [],
+    "attached_instance_id": "",
+    "attached_device": "",
+    "attached_state": "",
     "tags": {
       "env": "prd",
       "assetid": "0003",
       "apid": "portal",
       "coid": "itl"
     },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-03616a16b6492e56d",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314058+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-01189713c87f3b368",
-    "resource_name": "VM13-root",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 45,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0e7a3d20ca4a5fc52",
-    "multi_attach": false,
-    "create_time": "2025-11-19 19:55:15.646000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0f76f23449c42c4dc",
-        "device": "/dev/sda1",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0f76f23449c42c4dc",
-    "attached_device": "/dev/sda1",
-    "attached_state": "attached",
-    "tags": {
-      "Type": "root-volume",
-      "env": "prd",
-      "apid": "portal",
-      "schedule": "vmsoff",
-      "assetid": "0003",
-      "coid": "itl",
-      "Name": "VM13-root"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0f76f23449c42c4dc",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314062+00:00"
+    "relationships": [],
+    "collected_at": "2026-08-15T07:35:17.913143+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -682,7 +356,7 @@
     "region": "eu-south-2",
     "availability_zone": "eu-south-2b",
     "state": "in-use",
-    "size_gb": 1836,
+    "size_gb": 1936,
     "volume_type": "gp3",
     "iops": 3000,
     "throughput": 125,
@@ -715,53 +389,45 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314066+00:00"
+    "collected_at": "2026-08-15T07:35:17.913153+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0cbe8ea3d9b77675b",
-    "resource_name": "VM12-root",
+    "resource_id": "vol-00f6e247a1df445b9",
+    "resource_name": "",
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
+    "availability_zone": "eu-south-2b",
     "state": "in-use",
-    "size_gb": 110,
+    "size_gb": 1500,
     "volume_type": "gp3",
     "iops": 3000,
     "throughput": 125,
     "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0dfa4ae4584db763a",
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-05d2408acefe9768a",
     "multi_attach": false,
-    "create_time": "2025-11-15 07:15:35.476000+00:00",
+    "create_time": "2026-07-20 19:46:24.941000+00:00",
     "attached_instances": [
       {
-        "instance_id": "i-08ed071c3cbe599da",
-        "device": "/dev/sda1",
+        "instance_id": "i-03616a16b6492e56d",
+        "device": "/dev/xvdh",
         "state": "attached"
       }
     ],
-    "attached_instance_id": "i-08ed071c3cbe599da",
-    "attached_device": "/dev/sda1",
+    "attached_instance_id": "i-03616a16b6492e56d",
+    "attached_device": "/dev/xvdh",
     "attached_state": "attached",
-    "tags": {
-      "coid": "itl",
-      "Type": "root-volume",
-      "assetid": "0003",
-      "schedule": "vms",
-      "Name": "VM12-root",
-      "apid": "portal",
-      "env": "prd"
-    },
+    "tags": {},
     "relationships": [
       {
         "resource_type": "aws::ec2::instance",
-        "resource_id": "i-08ed071c3cbe599da",
+        "resource_id": "i-03616a16b6492e56d",
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314071+00:00"
+    "collected_at": "2026-08-15T07:35:17.913162+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -807,53 +473,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314076+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0a3d55cdf31c60e36",
-    "resource_name": "VM-9-root",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 110,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0d2af690ef6367f9f",
-    "multi_attach": false,
-    "create_time": "2025-11-15 07:15:35.747000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0541fd50781a206dd",
-        "device": "/dev/sda1",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0541fd50781a206dd",
-    "attached_device": "/dev/sda1",
-    "attached_state": "attached",
-    "tags": {
-      "Type": "root-volume",
-      "assetid": "0003",
-      "schedule": "vms",
-      "coid": "itl",
-      "Name": "VM-9-root",
-      "apid": "portal",
-      "env": "prd"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0541fd50781a206dd",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314080+00:00"
+    "collected_at": "2026-08-15T07:35:17.913171+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -899,7 +519,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314085+00:00"
+    "collected_at": "2026-08-15T07:35:17.913181+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -945,96 +565,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314089+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-09ea7cffbbf211725",
-    "resource_name": "",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 700,
-    "volume_type": "gp3",
-    "iops": 6000,
-    "throughput": 250,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-0f2557c82ebfb4f8f",
-    "multi_attach": false,
-    "create_time": "2025-11-28 11:45:51.742000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0016a8bc9ee8b94c7",
-        "device": "xvdo",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0016a8bc9ee8b94c7",
-    "attached_device": "xvdo",
-    "attached_state": "attached",
-    "tags": {
-      "apid": "portal",
-      "assetid": "0003",
-      "env": "prd",
-      "coid": "itl"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0016a8bc9ee8b94c7",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314093+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0468148ab5ff2fdac",
-    "resource_name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 20,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0a95fc9690bd3d15c",
-    "multi_attach": false,
-    "create_time": "2026-01-16 17:26:10.414000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0f511c964d109c447",
-        "device": "/dev/xvda",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0f511c964d109c447",
-    "attached_device": "/dev/xvda",
-    "attached_state": "attached",
-    "tags": {
-      "Name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
-      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
-      "env": "prd",
-      "coid": "itl",
-      "apid": "portal",
-      "assetid": "0003",
-      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-appsmith"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0f511c964d109c447",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314098+00:00"
+    "collected_at": "2026-08-15T07:35:17.913190+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1077,53 +608,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314102+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-07116862e22a18570",
-    "resource_name": "VM-7-root",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 110,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0ac3747c6b4c988ab",
-    "multi_attach": false,
-    "create_time": "2025-11-15 07:15:35.589000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-012a3868351997756",
-        "device": "/dev/sda1",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-012a3868351997756",
-    "attached_device": "/dev/sda1",
-    "attached_state": "attached",
-    "tags": {
-      "apid": "portal",
-      "coid": "itl",
-      "Name": "VM-7-root",
-      "assetid": "0003",
-      "Type": "root-volume",
-      "env": "prd",
-      "schedule": "vms"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-012a3868351997756",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314107+00:00"
+    "collected_at": "2026-08-15T07:35:17.913199+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1170,7 +655,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314111+00:00"
+    "collected_at": "2026-08-15T07:35:17.913209+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1214,7 +699,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314116+00:00"
+    "collected_at": "2026-08-15T07:35:17.913218+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1257,50 +742,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314120+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0cf8c0f1a907f77e0",
-    "resource_name": "",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 230,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-0ba49d436c82c9b69",
-    "multi_attach": false,
-    "create_time": "2025-11-19 19:55:15.776000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0f76f23449c42c4dc",
-        "device": "xvdb",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0f76f23449c42c4dc",
-    "attached_device": "xvdb",
-    "attached_state": "attached",
-    "tags": {
-      "coid": "itl",
-      "assetid": "0003",
-      "apid": "portal",
-      "env": "prd"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0f76f23449c42c4dc",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314125+00:00"
+    "collected_at": "2026-08-15T07:35:17.913226+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1343,7 +785,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314129+00:00"
+    "collected_at": "2026-08-15T07:35:17.913235+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1386,99 +828,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314133+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0772b4f4fbd2471c7",
-    "resource_name": "itl-0003-portal-prd-ec2-apps-02-portal",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 20,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0a95fc9690bd3d15c",
-    "multi_attach": false,
-    "create_time": "2025-11-20 17:48:58.448000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0ca700ac20d9a9555",
-        "device": "/dev/xvda",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0ca700ac20d9a9555",
-    "attached_device": "/dev/xvda",
-    "attached_state": "attached",
-    "tags": {
-      "apid": "portal",
-      "env": "prd",
-      "coid": "itl",
-      "Name": "itl-0003-portal-prd-ec2-apps-02-portal",
-      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
-      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-portal",
-      "assetid": "0003"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0ca700ac20d9a9555",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314137+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-063c6e638eb9f0cae",
-    "resource_name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 20,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0a95fc9690bd3d15c",
-    "multi_attach": false,
-    "create_time": "2026-01-15 20:43:41.461000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-018a33a99b7b3fe7a",
-        "device": "/dev/xvda",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-018a33a99b7b3fe7a",
-    "attached_device": "/dev/xvda",
-    "attached_state": "attached",
-    "tags": {
-      "apid": "portal",
-      "coid": "itl",
-      "assetid": "0003",
-      "Name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
-      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
-      "env": "prd",
-      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-appsmith"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-018a33a99b7b3fe7a",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314142+00:00"
+    "collected_at": "2026-08-15T07:35:17.913244+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1521,50 +871,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314146+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-02524f531b5dabc4a",
-    "resource_name": "",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 60,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-02fb6f1931dac804d",
-    "multi_attach": false,
-    "create_time": "2025-11-26 22:36:34.306000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0edf6af8a92dc5a07",
-        "device": "/dev/sdc",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0edf6af8a92dc5a07",
-    "attached_device": "/dev/sdc",
-    "attached_state": "attached",
-    "tags": {
-      "coid": "itl",
-      "env": "prd",
-      "assetid": "0003",
-      "apid": "portal"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0edf6af8a92dc5a07",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314150+00:00"
+    "collected_at": "2026-08-15T07:35:17.913253+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1610,95 +917,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314157+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0a608e25fde3b3d45",
-    "resource_name": "ITL-Server-FortiSIEM-root",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 100,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
-    "snapshot_id": "snap-0a91fa05cbcc72fe5",
-    "multi_attach": false,
-    "create_time": "2025-11-26 22:36:34.060000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0edf6af8a92dc5a07",
-        "device": "/dev/sda1",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0edf6af8a92dc5a07",
-    "attached_device": "/dev/sda1",
-    "attached_state": "attached",
-    "tags": {
-      "apid": "portal",
-      "env": "prd",
-      "coid": "itl",
-      "Type": "root-volume",
-      "assetid": "0003",
-      "Name": "ITL-Server-FortiSIEM-root"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0edf6af8a92dc5a07",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314160+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0cb1dab40eab771be",
-    "resource_name": "",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 250,
-    "volume_type": "io2",
-    "iops": 3500,
-    "throughput": 0,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-006dd066a2518723d",
-    "multi_attach": false,
-    "create_time": "2025-11-28 11:45:51.265000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0016a8bc9ee8b94c7",
-        "device": "xvdi",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0016a8bc9ee8b94c7",
-    "attached_device": "xvdi",
-    "attached_state": "attached",
-    "tags": {
-      "apid": "portal",
-      "env": "prd",
-      "coid": "itl",
-      "assetid": "0003"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0016a8bc9ee8b94c7",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314164+00:00"
+    "collected_at": "2026-08-15T07:35:17.913261+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1744,50 +963,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314168+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-04020d19da0cef918",
-    "resource_name": "",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
-    "state": "in-use",
-    "size_gb": 60,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-0af4eee40a1c8e54f",
-    "multi_attach": false,
-    "create_time": "2025-11-26 22:36:34.411000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0edf6af8a92dc5a07",
-        "device": "/dev/sdd",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0edf6af8a92dc5a07",
-    "attached_device": "/dev/sdd",
-    "attached_state": "attached",
-    "tags": {
-      "env": "prd",
-      "coid": "itl",
-      "apid": "portal",
-      "assetid": "0003"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0edf6af8a92dc5a07",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314172+00:00"
+    "collected_at": "2026-08-15T07:35:17.913272+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1834,7 +1010,1096 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314176+00:00"
+    "collected_at": "2026-08-15T07:35:17.913288+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-067b36518888cad8e",
+    "resource_name": "DENVER_P",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 1424,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-05d37570f800af36d",
+    "multi_attach": false,
+    "create_time": "2025-11-28 11:45:51.861000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0016a8bc9ee8b94c7",
+        "device": "xvdp",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0016a8bc9ee8b94c7",
+    "attached_device": "xvdp",
+    "attached_state": "attached",
+    "tags": {
+      "assetid": "0003",
+      "Name": "DENVER_P",
+      "coid": "itl",
+      "apid": "portal",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0016a8bc9ee8b94c7",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913332+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0bb062094bed41692",
+    "resource_name": "itl-0003-portal-prd-denver-audit-data",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 100,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2026-04-20 20:16:24.875000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0016a8bc9ee8b94c7",
+        "device": "xvds",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0016a8bc9ee8b94c7",
+    "attached_device": "xvds",
+    "attached_state": "attached",
+    "tags": {
+      "coid": "itl",
+      "Name": "itl-0003-portal-prd-denver-audit-data",
+      "assetid": "0003",
+      "env": "prd",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0016a8bc9ee8b94c7",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913370+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-07c1f119a97119c60",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 50,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-00c8381589b08f60f",
+    "multi_attach": false,
+    "create_time": "2026-07-20 19:46:20.284000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-03616a16b6492e56d",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-03616a16b6492e56d",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-03616a16b6492e56d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913394+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0ecde5381a29b9c20",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 200,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-0b9193a70857aefbe",
+    "multi_attach": false,
+    "create_time": "2026-07-20 19:46:21.286000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-03616a16b6492e56d",
+        "device": "/dev/xvdg",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-03616a16b6492e56d",
+    "attached_device": "/dev/xvdg",
+    "attached_state": "attached",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-03616a16b6492e56d",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913423+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0f822038b2b717ee8",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 400,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-034583428d8c11157",
+    "multi_attach": false,
+    "create_time": "2025-11-28 11:45:51.958000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0016a8bc9ee8b94c7",
+        "device": "xvdq",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0016a8bc9ee8b94c7",
+    "attached_device": "xvdq",
+    "attached_state": "attached",
+    "tags": {
+      "assetid": "0003",
+      "coid": "itl",
+      "apid": "portal",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0016a8bc9ee8b94c7",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913440+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-05c515bd6017f4c53",
+    "resource_name": "itl-0003-portal-prd-denver-dashboard-ext-data",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 680,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2026-03-18 18:45:30.522000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0016a8bc9ee8b94c7",
+        "device": "xvdr",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0016a8bc9ee8b94c7",
+    "attached_device": "xvdr",
+    "attached_state": "attached",
+    "tags": {
+      "env": "prd",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-denver-dashboard-ext-data",
+      "coid": "itl",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0016a8bc9ee8b94c7",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913454+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0240ab0dfc3d1b299",
+    "resource_name": "itl-0003-portal-prd-eks-apps-02-dynamic-pvc-e620c82b-c4ed-498b-888a-76d644a4c15b",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 8,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": false,
+    "kms_key_id": "",
+    "snapshot_id": "",
+    "multi_attach": false,
+    "create_time": "2025-11-14 17:55:10.109000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0f511c964d109c447",
+        "device": "/dev/xvdaa",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0f511c964d109c447",
+    "attached_device": "/dev/xvdaa",
+    "attached_state": "attached",
+    "tags": {
+      "ebs.csi.aws.com/cluster": "true",
+      "kubernetes.io/created-for/pvc/namespace": "appsmith",
+      "Name": "itl-0003-portal-prd-eks-apps-02-dynamic-pvc-e620c82b-c4ed-498b-888a-76d644a4c15b",
+      "kubernetes.io/created-for/pv/name": "pvc-e620c82b-c4ed-498b-888a-76d644a4c15b",
+      "kubernetes.io/cluster/itl-0003-portal-prd-eks-apps-02": "owned",
+      "CSIVolumeName": "pvc-e620c82b-c4ed-498b-888a-76d644a4c15b",
+      "kubernetes.io/created-for/pvc/name": "datadir-appsmith-mongodb-1",
+      "KubernetesCluster": "itl-0003-portal-prd-eks-apps-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0f511c964d109c447",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913469+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0624c5a6a011ac4b4",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 200,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-0a18d710486c9e61a",
+    "multi_attach": false,
+    "create_time": "2025-11-28 11:45:50.857000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0016a8bc9ee8b94c7",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0016a8bc9ee8b94c7",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "apid": "portal",
+      "env": "prd",
+      "assetid": "0003",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0016a8bc9ee8b94c7",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913489+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0df54b24f5b910fe2",
+    "resource_name": "VM11-root",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 110,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0b9c29a7c9d2cb9a2",
+    "multi_attach": false,
+    "create_time": "2025-11-15 07:15:35.644000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0db3e691e1fb75936",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0db3e691e1fb75936",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "Type": "root-volume",
+      "coid": "itl",
+      "env": "prd",
+      "Name": "VM11-root",
+      "assetid": "0003",
+      "apid": "portal",
+      "schedule": "vms"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0db3e691e1fb75936",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913532+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-049756f68145f0c80",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 100,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-0d8f51dc10b4d3f46",
+    "multi_attach": false,
+    "create_time": "2025-11-19 11:54:18.763000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-077cf51cfedfde095",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-077cf51cfedfde095",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "coid": "itl",
+      "assetid": "0003",
+      "apid": "portal",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-077cf51cfedfde095",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913546+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-042685305a9d5923b",
+    "resource_name": "itl-0003-portal-prd-ec2-apps-02-portal",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 20,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0a95fc9690bd3d15c",
+    "multi_attach": false,
+    "create_time": "2026-08-05 19:37:11.246000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0e668f016b43ab82f",
+        "device": "/dev/xvda",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0e668f016b43ab82f",
+    "attached_device": "/dev/xvda",
+    "attached_state": "attached",
+    "tags": {
+      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "coid": "itl",
+      "assetid": "0003",
+      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-portal",
+      "apid": "portal",
+      "Name": "itl-0003-portal-prd-ec2-apps-02-portal",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0e668f016b43ab82f",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913560+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-09ccfe1022b891bfd",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "available",
+    "size_gb": 1500,
+    "volume_type": "gp3",
+    "iops": 4500,
+    "throughput": 250,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-0da275b387c047b6b",
+    "multi_attach": false,
+    "create_time": "2025-11-15 07:37:15.747000+00:00",
+    "attached_instances": [],
+    "attached_instance_id": "",
+    "attached_device": "",
+    "attached_state": "",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "env": "prd",
+      "coid": "itl"
+    },
+    "relationships": [],
+    "collected_at": "2026-08-15T07:35:17.913572+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-01189713c87f3b368",
+    "resource_name": "VM13-root",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 45,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0e7a3d20ca4a5fc52",
+    "multi_attach": false,
+    "create_time": "2025-11-19 19:55:15.646000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0f76f23449c42c4dc",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0f76f23449c42c4dc",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "Type": "root-volume",
+      "env": "prd",
+      "apid": "portal",
+      "schedule": "vmsoff",
+      "assetid": "0003",
+      "coid": "itl",
+      "Name": "VM13-root"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0f76f23449c42c4dc",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913585+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0cbe8ea3d9b77675b",
+    "resource_name": "VM12-root",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 110,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0dfa4ae4584db763a",
+    "multi_attach": false,
+    "create_time": "2025-11-15 07:15:35.476000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08ed071c3cbe599da",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08ed071c3cbe599da",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "coid": "itl",
+      "Type": "root-volume",
+      "assetid": "0003",
+      "schedule": "vms",
+      "Name": "VM12-root",
+      "apid": "portal",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08ed071c3cbe599da",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913599+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0a3d55cdf31c60e36",
+    "resource_name": "VM-9-root",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 110,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0d2af690ef6367f9f",
+    "multi_attach": false,
+    "create_time": "2025-11-15 07:15:35.747000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0541fd50781a206dd",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0541fd50781a206dd",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "Type": "root-volume",
+      "assetid": "0003",
+      "schedule": "vms",
+      "coid": "itl",
+      "Name": "VM-9-root",
+      "apid": "portal",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0541fd50781a206dd",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913613+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-09ea7cffbbf211725",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 700,
+    "volume_type": "gp3",
+    "iops": 6000,
+    "throughput": 250,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-0f2557c82ebfb4f8f",
+    "multi_attach": false,
+    "create_time": "2025-11-28 11:45:51.742000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0016a8bc9ee8b94c7",
+        "device": "xvdo",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0016a8bc9ee8b94c7",
+    "attached_device": "xvdo",
+    "attached_state": "attached",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "env": "prd",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0016a8bc9ee8b94c7",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913627+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0468148ab5ff2fdac",
+    "resource_name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 20,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0a95fc9690bd3d15c",
+    "multi_attach": false,
+    "create_time": "2026-01-16 17:26:10.414000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0f511c964d109c447",
+        "device": "/dev/xvda",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0f511c964d109c447",
+    "attached_device": "/dev/xvda",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
+      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "env": "prd",
+      "coid": "itl",
+      "apid": "portal",
+      "assetid": "0003",
+      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-appsmith"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0f511c964d109c447",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913646+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-07116862e22a18570",
+    "resource_name": "VM-7-root",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 110,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0ac3747c6b4c988ab",
+    "multi_attach": false,
+    "create_time": "2025-11-15 07:15:35.589000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-012a3868351997756",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-012a3868351997756",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "apid": "portal",
+      "coid": "itl",
+      "Name": "VM-7-root",
+      "assetid": "0003",
+      "Type": "root-volume",
+      "env": "prd",
+      "schedule": "vms"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-012a3868351997756",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913666+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0c6d0d07f88f0c3b7",
+    "resource_name": "itl-0003-portal-prd-ec2-apps-02-portal",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 20,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0a95fc9690bd3d15c",
+    "multi_attach": false,
+    "create_time": "2026-08-05 22:00:11.623000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-04fb1781f2efa2fc0",
+        "device": "/dev/xvda",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-04fb1781f2efa2fc0",
+    "attached_device": "/dev/xvda",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "itl-0003-portal-prd-ec2-apps-02-portal",
+      "apid": "portal",
+      "coid": "itl",
+      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "env": "prd",
+      "assetid": "0003",
+      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-04fb1781f2efa2fc0",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913681+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0cf8c0f1a907f77e0",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 230,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-0ba49d436c82c9b69",
+    "multi_attach": false,
+    "create_time": "2025-11-19 19:55:15.776000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0f76f23449c42c4dc",
+        "device": "xvdb",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0f76f23449c42c4dc",
+    "attached_device": "xvdb",
+    "attached_state": "attached",
+    "tags": {
+      "coid": "itl",
+      "assetid": "0003",
+      "apid": "portal",
+      "env": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0f76f23449c42c4dc",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913694+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-063c6e638eb9f0cae",
+    "resource_name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 20,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0a95fc9690bd3d15c",
+    "multi_attach": false,
+    "create_time": "2026-01-15 20:43:41.461000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-018a33a99b7b3fe7a",
+        "device": "/dev/xvda",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-018a33a99b7b3fe7a",
+    "attached_device": "/dev/xvda",
+    "attached_state": "attached",
+    "tags": {
+      "apid": "portal",
+      "coid": "itl",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-prd-ec2-apps-02-appsmith",
+      "eks:cluster-name": "itl-0003-portal-prd-eks-apps-02",
+      "env": "prd",
+      "eks:nodegroup-name": "itl-0003-portal-prd-ec2-apps-02-appsmith"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-018a33a99b7b3fe7a",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913711+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-02524f531b5dabc4a",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 60,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-02fb6f1931dac804d",
+    "multi_attach": false,
+    "create_time": "2025-11-26 22:36:34.306000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0edf6af8a92dc5a07",
+        "device": "/dev/sdc",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0edf6af8a92dc5a07",
+    "attached_device": "/dev/sdc",
+    "attached_state": "attached",
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0003",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0edf6af8a92dc5a07",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913725+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0a608e25fde3b3d45",
+    "resource_name": "ITL-Server-FortiSIEM-root",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 100,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2c0f162d-26d5-4799-8c84-033bf5204000",
+    "snapshot_id": "snap-0a91fa05cbcc72fe5",
+    "multi_attach": false,
+    "create_time": "2025-11-26 22:36:34.060000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0edf6af8a92dc5a07",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0edf6af8a92dc5a07",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {
+      "apid": "portal",
+      "env": "prd",
+      "coid": "itl",
+      "Type": "root-volume",
+      "assetid": "0003",
+      "Name": "ITL-Server-FortiSIEM-root"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0edf6af8a92dc5a07",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913739+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0cb1dab40eab771be",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2b",
+    "state": "in-use",
+    "size_gb": 250,
+    "volume_type": "io2",
+    "iops": 3500,
+    "throughput": 0,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-006dd066a2518723d",
+    "multi_attach": false,
+    "create_time": "2025-11-28 11:45:51.265000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0016a8bc9ee8b94c7",
+        "device": "xvdi",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0016a8bc9ee8b94c7",
+    "attached_device": "xvdi",
+    "attached_state": "attached",
+    "tags": {
+      "apid": "portal",
+      "env": "prd",
+      "coid": "itl",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0016a8bc9ee8b94c7",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913751+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-04020d19da0cef918",
+    "resource_name": "",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 60,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
+    "snapshot_id": "snap-0af4eee40a1c8e54f",
+    "multi_attach": false,
+    "create_time": "2025-11-26 22:36:34.411000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0edf6af8a92dc5a07",
+        "device": "/dev/sdd",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0edf6af8a92dc5a07",
+    "attached_device": "/dev/sdd",
+    "attached_state": "attached",
+    "tags": {
+      "env": "prd",
+      "coid": "itl",
+      "apid": "portal",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0edf6af8a92dc5a07",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:17.913764+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1881,182 +2146,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314180+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-067b36518888cad8e",
-    "resource_name": "DENVER_P",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 1424,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-05d37570f800af36d",
-    "multi_attach": false,
-    "create_time": "2025-11-28 11:45:51.861000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0016a8bc9ee8b94c7",
-        "device": "xvdp",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0016a8bc9ee8b94c7",
-    "attached_device": "xvdp",
-    "attached_state": "attached",
-    "tags": {
-      "assetid": "0003",
-      "Name": "DENVER_P",
-      "coid": "itl",
-      "apid": "portal",
-      "env": "prd"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0016a8bc9ee8b94c7",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314184+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0bb062094bed41692",
-    "resource_name": "itl-0003-portal-prd-denver-audit-data",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 100,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "",
-    "multi_attach": false,
-    "create_time": "2026-04-20 20:16:24.875000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0016a8bc9ee8b94c7",
-        "device": "/dev/xvdo",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0016a8bc9ee8b94c7",
-    "attached_device": "/dev/xvdo",
-    "attached_state": "attached",
-    "tags": {
-      "coid": "itl",
-      "Name": "itl-0003-portal-prd-denver-audit-data",
-      "assetid": "0003",
-      "env": "prd",
-      "apid": "portal"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0016a8bc9ee8b94c7",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314188+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0f822038b2b717ee8",
-    "resource_name": "",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 400,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "snap-034583428d8c11157",
-    "multi_attach": false,
-    "create_time": "2025-11-28 11:45:51.958000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0016a8bc9ee8b94c7",
-        "device": "xvdq",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0016a8bc9ee8b94c7",
-    "attached_device": "xvdq",
-    "attached_state": "attached",
-    "tags": {
-      "assetid": "0003",
-      "coid": "itl",
-      "apid": "portal",
-      "env": "prd"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0016a8bc9ee8b94c7",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314192+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-05c515bd6017f4c53",
-    "resource_name": "itl-0003-portal-prd-denver-dashboard-ext-data",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "eu-south-2",
-    "availability_zone": "eu-south-2b",
-    "state": "in-use",
-    "size_gb": 600,
-    "volume_type": "gp3",
-    "iops": 3000,
-    "throughput": 125,
-    "encrypted": true,
-    "kms_key_id": "arn:aws:kms:eu-south-2:610944808410:key/2a3239e7-2ffa-47de-ba5c-13c9ae6a04b7",
-    "snapshot_id": "",
-    "multi_attach": false,
-    "create_time": "2026-03-18 18:45:30.522000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-0016a8bc9ee8b94c7",
-        "device": "/dev/xvdn",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-0016a8bc9ee8b94c7",
-    "attached_device": "/dev/xvdn",
-    "attached_state": "attached",
-    "tags": {
-      "env": "prd",
-      "apid": "portal",
-      "Name": "itl-0003-portal-prd-denver-dashboard-ext-data",
-      "coid": "itl",
-      "assetid": "0003"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-0016a8bc9ee8b94c7",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314196+00:00"
+    "collected_at": "2026-08-15T07:35:17.913778+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -2066,7 +2156,7 @@
     "account_name": "Portal-Prod",
     "region": "eu-south-2",
     "availability_zone": "eu-south-2b",
-    "state": "in-use",
+    "state": "available",
     "size_gb": 50,
     "volume_type": "gp3",
     "iops": 3000,
@@ -2076,30 +2166,18 @@
     "snapshot_id": "snap-04b4efd542c737092",
     "multi_attach": false,
     "create_time": "2025-11-15 07:37:15.547000+00:00",
-    "attached_instances": [
-      {
-        "instance_id": "i-03616a16b6492e56d",
-        "device": "/dev/sda1",
-        "state": "attached"
-      }
-    ],
-    "attached_instance_id": "i-03616a16b6492e56d",
-    "attached_device": "/dev/sda1",
-    "attached_state": "attached",
+    "attached_instances": [],
+    "attached_instance_id": "",
+    "attached_device": "",
+    "attached_state": "",
     "tags": {
       "coid": "itl",
       "assetid": "0003",
       "env": "prd",
       "apid": "portal"
     },
-    "relationships": [
-      {
-        "resource_type": "aws::ec2::instance",
-        "resource_id": "i-03616a16b6492e56d",
-        "relation": "attached_to_instance"
-      }
-    ],
-    "collected_at": "2026-07-12T19:36:31.314200+00:00"
+    "relationships": [],
+    "collected_at": "2026-08-15T07:35:17.913790+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -2145,6 +2223,6 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:36:31.314203+00:00"
+    "collected_at": "2026-08-15T07:35:17.913804+00:00"
   }
 ]

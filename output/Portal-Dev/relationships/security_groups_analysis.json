@@ -195,8 +195,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-0ea72e9ff045e9813",
       "eni-09e927ca8bf915e61",
+      "eni-0ea72e9ff045e9813",
       "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-sync-buk-absence-03"
     ],
     "attached_count": 3,
@@ -283,8 +283,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-02845475555aea1eb",
       "eni-0b7a0b81368b37f7b",
+      "eni-02845475555aea1eb",
       "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/net/k8s-appsmith-appsmith-65f856c687/3dc64f65cfc5c60d"
     ],
     "attached_count": 3,
@@ -406,8 +406,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-066bdd55f4666f118",
       "eni-0d430997f9e654c50",
+      "eni-066bdd55f4666f118",
       "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-sync-jira-03"
     ],
     "attached_count": 3,
@@ -487,6 +487,94 @@
     ]
   },
   {
+    "security_group_id": "sg-0cf6e420e8e8bea15",
+    "security_group_name": "itl-0003-portal-dev-denver-test-sg",
+    "description": "Test replica de Denver Dev - acceso via Pritunl VPN",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "account_id": "891376942769",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-02263ad22bf75216a",
+      "i-08c771a5ae702bb2c"
+    ],
+    "attached_count": 2,
+    "overall_risk": "low",
+    "exposure_flags": [
+      "sg_reference",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 3,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 1433,
+        "to_port": 1433,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-0aa6d55bd394447f6",
+          "sg-0f97b556d1e01ca15",
+          "sg-0e8cd582b4803bcfc",
+          "sg-076cc56f6b3e12257",
+          "sg-05975d35e046ca0bf"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 1435,
+        "to_port": 1435,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      },
+      {
+        "protocol": "tcp",
+        "from_port": 3389,
+        "to_port": 3389,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-0aa6d55bd394447f6"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
     "security_group_id": "sg-0693ad8e5b1345db6",
     "security_group_name": "k8s-intelicadevapps-b0429d02ac",
     "description": "[k8s] Managed SecurityGroup for LoadBalancer",
@@ -494,8 +582,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-00cb0b4b27b8131ea",
-      "eni-0c7acf158107ec6c8",
+      "eni-0f12c6f2acdc0042a",
+      "eni-02dd6de387a5a44ce",
       "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/app/itl-0003-portal-dev-alb-02/44cf6aae78cc8f09"
     ],
     "attached_count": 3,
@@ -558,60 +646,6 @@
     ]
   },
   {
-    "security_group_id": "sg-086fdd7e4b3d71f5f",
-    "security_group_name": "itl-0003-portal-dev-vpc-endpoints-20260105202000202000000001",
-    "description": "Security group for VPC Interface Endpoints",
-    "vpc_id": "vpc-0fbd191d169cc9efb",
-    "account_id": "891376942769",
-    "region": "eu-south-2",
-    "attached_resources": [
-      "eni-042a75ccc566d1a3d",
-      "eni-0cf0e32a369614fff"
-    ],
-    "attached_count": 2,
-    "overall_risk": "low",
-    "exposure_flags": [
-      "sg_reference",
-      "unrestricted_egress"
-    ],
-    "inbound_rule_count": 1,
-    "outbound_rule_count": 1,
-    "inbound_analysis": [
-      {
-        "protocol": "tcp",
-        "from_port": 443,
-        "to_port": 443,
-        "cidrs": [],
-        "referenced_sgs": [
-          "sg-054b6a28f76db503c"
-        ],
-        "is_public": false,
-        "direction": "inbound",
-        "risk_level": "info",
-        "risk_tags": [
-          "sg_reference"
-        ]
-      }
-    ],
-    "outbound_analysis": [
-      {
-        "protocol": "-1",
-        "from_port": null,
-        "to_port": null,
-        "cidrs": [
-          "0.0.0.0/0"
-        ],
-        "referenced_sgs": [],
-        "is_public": true,
-        "direction": "outbound",
-        "risk_level": "low",
-        "risk_tags": [
-          "unrestricted_egress"
-        ]
-      }
-    ]
-  },
-  {
     "security_group_id": "sg-036eadb8fba73b4ac",
     "security_group_name": "eks-cluster-sg-itl-0003-portal-dev-eks-apps-03-1649377597",
     "description": "EKS created security group applied to ENI that is attached to EKS Control Plane master nodes, as well as any managed workloads.",
@@ -619,8 +653,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-048d7a405edd581f2",
-      "eni-04b53aa1bea513be3"
+      "eni-0a790279fa77457f3",
+      "eni-0cb7ac4032416dd50"
     ],
     "attached_count": 2,
     "overall_risk": "low",
@@ -676,8 +710,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-052141adeb962539a",
       "eni-0f5d1a8ac35324cdc",
+      "eni-052141adeb962539a",
       "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-fee-external-custom-alert-03"
     ],
     "attached_count": 3,
@@ -764,10 +798,10 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-08d367b9a14eee306",
-      "eni-08acb82feea7f485d",
+      "eni-087cf26b341be00bf",
       "eni-0c7d625d95615d00d",
-      "eni-087cf26b341be00bf"
+      "eni-08acb82feea7f485d",
+      "eni-08d367b9a14eee306"
     ],
     "attached_count": 4,
     "overall_risk": "low",
@@ -1180,8 +1214,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-073949e44fdb28c39",
-      "eni-07eb16c680c937fc1"
+      "eni-07eb16c680c937fc1",
+      "eni-073949e44fdb28c39"
     ],
     "attached_count": 2,
     "overall_risk": "low",
@@ -1251,8 +1285,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-048d7a405edd581f2",
-      "eni-04b53aa1bea513be3",
+      "eni-0a790279fa77457f3",
+      "eni-0cb7ac4032416dd50",
       "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03"
     ],
     "attached_count": 3,
@@ -1282,6 +1316,61 @@
     "outbound_analysis": []
   },
   {
+    "security_group_id": "sg-086fdd7e4b3d71f5f",
+    "security_group_name": "itl-0003-portal-dev-vpc-endpoints-20260105202000202000000001",
+    "description": "Security group for VPC Interface Endpoints",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "account_id": "891376942769",
+    "region": "eu-south-2",
+    "attached_resources": [
+      "eni-0cf0e32a369614fff",
+      "eni-042a75ccc566d1a3d"
+    ],
+    "attached_count": 2,
+    "overall_risk": "low",
+    "exposure_flags": [
+      "sg_reference",
+      "unrestricted_egress"
+    ],
+    "inbound_rule_count": 1,
+    "outbound_rule_count": 1,
+    "inbound_analysis": [
+      {
+        "protocol": "tcp",
+        "from_port": 443,
+        "to_port": 443,
+        "cidrs": [],
+        "referenced_sgs": [
+          "sg-054b6a28f76db503c",
+          "sg-01976563e41df450b"
+        ],
+        "is_public": false,
+        "direction": "inbound",
+        "risk_level": "info",
+        "risk_tags": [
+          "sg_reference"
+        ]
+      }
+    ],
+    "outbound_analysis": [
+      {
+        "protocol": "-1",
+        "from_port": null,
+        "to_port": null,
+        "cidrs": [
+          "0.0.0.0/0"
+        ],
+        "referenced_sgs": [],
+        "is_public": true,
+        "direction": "outbound",
+        "risk_level": "low",
+        "risk_tags": [
+          "unrestricted_egress"
+        ]
+      }
+    ]
+  },
+  {
     "security_group_id": "sg-0ab9d694b7460644c",
     "security_group_name": "k8s-intelicadevapps03-74550e9da8",
     "description": "[k8s] Managed SecurityGroup for LoadBalancer",
@@ -1289,8 +1378,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-08bf5f32d09c35ea1",
-      "eni-071cc75ed3dc3d360",
+      "eni-0d90500b3f3c007c7",
+      "eni-0fb8f4456c1638bdf",
       "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/app/itl-0003-portal-dev-alb-03/e21e56659f3c0ae7"
     ],
     "attached_count": 3,
@@ -1344,11 +1433,11 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-05cd0333a051d3921",
-      "eni-030f041ed76428a12",
+      "eni-08fd1f729b1b0c17f",
       "eni-06e3fc311db94d8e1",
       "eni-028a45a148a5d3a69",
-      "eni-08fd1f729b1b0c17f",
+      "eni-05cd0333a051d3921",
+      "eni-030f041ed76428a12",
       "i-0f00ad7d00abb720a",
       "i-0fc98a5df2139eb4f",
       "i-03b267a3ad9e6ff4d",
@@ -1591,8 +1680,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-0ef41d5faa4adf630",
-      "eni-090dbb17c947b1181"
+      "eni-090dbb17c947b1181",
+      "eni-0ef41d5faa4adf630"
     ],
     "attached_count": 2,
     "overall_risk": "low",
@@ -1780,8 +1869,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-05da08119f12ebae3",
       "eni-0e578a97595513c59",
+      "eni-05da08119f12ebae3",
       "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-pg-audit-03"
     ],
     "attached_count": 3,
@@ -1850,8 +1939,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-0564faff658b297c9",
       "eni-0c9ae6583d839aae0",
+      "eni-0564faff658b297c9",
       "arn:aws:lambda:eu-south-2:891376942769:function:itl-0003-portal-dev-lambda-sync-buk-organization-03"
     ],
     "attached_count": 3,
@@ -1938,8 +2027,8 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-048aaca762a1f9c79",
-      "eni-02a56a520d688f6cc"
+      "eni-02a56a520d688f6cc",
+      "eni-048aaca762a1f9c79"
     ],
     "attached_count": 2,
     "overall_risk": "low",
@@ -1975,12 +2064,12 @@
     "account_id": "891376942769",
     "region": "eu-south-2",
     "attached_resources": [
-      "eni-08bf5f32d09c35ea1",
-      "eni-00cb0b4b27b8131ea",
-      "eni-02845475555aea1eb",
-      "eni-071cc75ed3dc3d360",
-      "eni-0c7acf158107ec6c8",
+      "eni-0d90500b3f3c007c7",
+      "eni-0f12c6f2acdc0042a",
       "eni-0b7a0b81368b37f7b",
+      "eni-0fb8f4456c1638bdf",
+      "eni-02dd6de387a5a44ce",
+      "eni-02845475555aea1eb",
       "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/net/k8s-appsmith-appsmith-65f856c687/3dc64f65cfc5c60d",
       "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/app/itl-0003-portal-dev-alb-02/44cf6aae78cc8f09",
       "arn:aws:elasticloadbalancing:eu-south-2:891376942769:loadbalancer/app/itl-0003-portal-dev-alb-03/e21e56659f3c0ae7"

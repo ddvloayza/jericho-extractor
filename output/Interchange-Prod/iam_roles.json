@@ -1,35 +1,41 @@
 [
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/service-role/app-interchange-lambda-fileload-dev-role-14gv3vwo",
-    "resource_name": "app-interchange-lambda-fileload-dev-role-14gv3vwo",
+    "resource_id": "arn:aws:iam::818835242461:role/service-role/Amazon_EventBridge_Invoke_Sns_1577001469",
+    "resource_name": "Amazon_EventBridge_Invoke_Sns_1577001469",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
     "path": "/service-role/",
     "description": "",
     "max_session_duration": 3600,
-    "create_date": "2024-06-26 05:11:30+00:00",
+    "create_date": "2026-07-20 16:02:25+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "lambda.amazonaws.com"
+            "Service": "events.amazonaws.com"
           },
-          "Action": "sts:AssumeRole"
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "aws:SourceAccount": "818835242461",
+              "aws:SourceArn": "arn:aws:events:eu-south-2:818835242461:rule/itl-guardduty-findings-medium-plus"
+            }
+          }
         }
       ]
     },
     "trusted_services": [
-      "lambda.amazonaws.com"
+      "events.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSLambdaBasicExecutionRole-12d7bf48-16b0-463f-8574-dff534a5d4ba",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-12d7bf48-16b0-463f-8574-dff534a5d4ba"
+        "PolicyName": "Amazon_EventBridge_Invoke_Sns_1577001469",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/service-role/Amazon_EventBridge_Invoke_Sns_1577001469"
       }
     ],
     "inline_policy_names": [],
@@ -37,551 +43,11 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-12d7bf48-16b0-463f-8574-dff534a5d4ba",
+        "resource_id": "arn:aws:iam::818835242461:policy/service-role/Amazon_EventBridge_Invoke_Sns_1577001469",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:24.596508+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-lambda-execution-dev",
-    "resource_name": "app-interchange-role-lambda-execution-dev",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2023-02-08 21:02:27+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "lambda.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "lambda.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSLambdaBasicExecutionRole",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-      }
-    ],
-    "inline_policy_names": [
-      "app-interchange-app-policy-s3-dev",
-      "app-interchange-app-policy-sqs-dev"
-    ],
-    "tags": {
-      "coid": "itl",
-      "env": "dev",
-      "assetid": "0004",
-      "apid": "itx",
-      "Project": "AppInterchange",
-      "Environment": "dev"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:25.021922+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-lambda-execution-prd",
-    "resource_name": "app-interchange-role-lambda-execution-prd",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2023-02-08 22:52:44+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "lambda.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "lambda.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSLambdaBasicExecutionRole",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-      }
-    ],
-    "inline_policy_names": [
-      "app-interchange-app-policy-s3-prd",
-      "app-interchange-app-policy-sqs-prd"
-    ],
-    "tags": {
-      "coid": "itl",
-      "env": "prd",
-      "assetid": "0004",
-      "apid": "itx",
-      "Project": "AppInterchange",
-      "Environment": "prd"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:25.506329+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-rds-dev",
-    "resource_name": "app-interchange-role-rds-dev",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2023-02-08 21:02:26+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "rds.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "rds.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "app-interchange-rds-policy-s3-dev"
-    ],
-    "tags": {
-      "coid": "itl",
-      "env": "dev",
-      "assetid": "0004",
-      "apid": "itx",
-      "Project": "AppInterchange",
-      "Environment": "dev"
-    },
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:25.913738+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-rds-prd",
-    "resource_name": "app-interchange-role-rds-prd",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2023-02-08 22:52:44+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "rds.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "rds.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "app-interchange-rds-policy-s3-prd"
-    ],
-    "tags": {
-      "coid": "itl",
-      "env": "prd",
-      "assetid": "0004",
-      "apid": "itx",
-      "Project": "AppInterchange",
-      "Environment": "prd"
-    },
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:26.287660+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-lambda-fileload-prod-role",
-    "resource_name": "app-interchange-lambda-fileload-prod-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "app-interchange-lambda-fileload-prod-role",
-    "max_session_duration": 3600,
-    "create_date": "2024-08-08 21:39:45+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "lambda.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "lambda.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "app-interchange-lambda-fileload-prod-policy",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/app-interchange-lambda-fileload-prod-policy"
-      },
-      {
-        "PolicyName": "AWSLambdaBasicExecutionRole",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/app-interchange-lambda-fileload-prod-policy",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:26.696043+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-ec2-dev",
-    "resource_name": "app-interchange-role-ec2-dev",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2023-02-08 21:02:26+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "ec2.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "ec2.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "CloudWatchAgentServerPolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
-      },
-      {
-        "PolicyName": "AmazonSSMManagedInstanceCore",
-        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
-      }
-    ],
-    "inline_policy_names": [
-      "app-interchange-app-policy-s3-dev",
-      "app-interchange-app-policy-secretmanager-dev",
-      "app-interchange-app-policy-sqs-dev",
-      "app-interchange-devops-policy-s3-dev"
-    ],
-    "tags": {
-      "coid": "itl",
-      "env": "dev",
-      "assetid": "0004",
-      "apid": "itx",
-      "Project": "AppInterchange",
-      "Environment": "dev"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:26.704928+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-export-s3",
-    "resource_name": "app-interchange-role-export-s3",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "Allows you to grant RDS access to additional resources on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2023-01-02 21:34:20+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Sid": "",
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "rds.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "rds.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "app-interchange-role-rds-export-s3",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/app-interchange-role-rds-export-s3"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/app-interchange-role-rds-export-s3",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:26.706046+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-controltower-AdministratorExecutionRole",
-    "resource_name": "aws-controltower-AdministratorExecutionRole",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:55:50+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditAdministratorRole"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [
-      "060795899335"
-    ],
-    "attached_policies": [
-      {
-        "PolicyName": "AdministratorAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:26.716546+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/service-role/app-interchange-lambda-send_email-dev-role-n1bqvit1",
-    "resource_name": "app-interchange-lambda-send_email-dev-role-n1bqvit1",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/service-role/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-07-12 20:51:11+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "lambda.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "lambda.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSLambdaBasicExecutionRole-06969d10-9a60-4f65-8a4e-246a91510b81",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-06969d10-9a60-4f65-8a4e-246a91510b81"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-06969d10-9a60-4f65-8a4e-246a91510b81",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:26.717688+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/service-role/app-interchange-lambda-fileload-dev-role-wlokah8j",
-    "resource_name": "app-interchange-lambda-fileload-dev-role-wlokah8j",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/service-role/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-06-26 05:41:49+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "lambda.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "lambda.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSLambdaBasicExecutionRole-f768eb84-06ff-460c-ba91-f346fed26ddb",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-f768eb84-06ff-460c-ba91-f346fed26ddb"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-f768eb84-06ff-460c-ba91-f346fed26ddb",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:26.728963+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-lambda-sbsa-upload-prd-role",
-    "resource_name": "app-interchange-lambda-sbsa-upload-prd-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "Allows Lambda functions to call AWS services on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2025-08-11 20:41:22+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "lambda.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "lambda.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "app-interchange-lambda-upload-prd-role",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/app-interchange-lambda-upload-prd-role"
-      },
-      {
-        "PolicyName": "AWSLambdaBasicExecutionRole",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/app-interchange-lambda-upload-prd-role",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:26.730232+00:00"
+    "collected_at": "2026-08-15T07:37:41.289213+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -646,39 +112,40 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:26.731505+00:00"
+    "collected_at": "2026-08-15T07:37:41.715213+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/service-role/app-interchange-lambda-fileload-dev-role-wujayiyr",
-    "resource_name": "app-interchange-lambda-fileload-dev-role-wujayiyr",
+    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-export-s3",
+    "resource_name": "app-interchange-role-export-s3",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
-    "path": "/service-role/",
-    "description": "",
+    "path": "/",
+    "description": "Allows you to grant RDS access to additional resources on your behalf.",
     "max_session_duration": 3600,
-    "create_date": "2024-06-26 05:42:26+00:00",
+    "create_date": "2023-01-02 21:34:20+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
+          "Sid": "",
           "Effect": "Allow",
           "Principal": {
-            "Service": "lambda.amazonaws.com"
+            "Service": "rds.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "lambda.amazonaws.com"
+      "rds.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSLambdaBasicExecutionRole-4bfa6fc0-9368-44a6-af78-ceaf4f5087ce",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-4bfa6fc0-9368-44a6-af78-ceaf4f5087ce"
+        "PolicyName": "app-interchange-role-rds-export-s3",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/app-interchange-role-rds-export-s3"
       }
     ],
     "inline_policy_names": [],
@@ -686,23 +153,23 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-4bfa6fc0-9368-44a6-af78-ceaf4f5087ce",
+        "resource_id": "arn:aws:iam::818835242461:policy/app-interchange-role-rds-export-s3",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:26.732367+00:00"
+    "collected_at": "2026-08-15T07:37:42.134435+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-lambda-send-email-prod-role",
-    "resource_name": "app-interchange-lambda-send-email-prod-role",
+    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-lambda-execution-dev",
+    "resource_name": "app-interchange-role-lambda-execution-dev",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
     "path": "/",
-    "description": "app-interchange-lambda-send-email-prod-role",
+    "description": "",
     "max_session_duration": 3600,
-    "create_date": "2024-08-08 22:02:56+00:00",
+    "create_date": "2023-02-08 21:02:27+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
@@ -720,49 +187,188 @@
     ],
     "trusted_accounts": [],
     "attached_policies": [
-      {
-        "PolicyName": "app-interchange-lambda-send-email-prod-policy",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/app-interchange-lambda-send-email-prod-policy"
-      },
       {
         "PolicyName": "AWSLambdaBasicExecutionRole",
         "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
       }
     ],
-    "inline_policy_names": [],
-    "tags": {},
+    "inline_policy_names": [
+      "app-interchange-app-policy-s3-dev",
+      "app-interchange-app-policy-sqs-dev"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0004",
+      "apid": "itx",
+      "Project": "AppInterchange",
+      "Environment": "dev"
+    },
     "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/app-interchange-lambda-send-email-prod-policy",
-        "relation": "has_attached_policy"
-      },
       {
         "resource_type": "aws::iam::policy",
         "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:26.744802+00:00"
+    "collected_at": "2026-08-15T07:37:42.569388+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-controltower-ReadOnlyExecutionRole",
-    "resource_name": "aws-controltower-ReadOnlyExecutionRole",
+    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-lambda-execution-prd",
+    "resource_name": "app-interchange-role-lambda-execution-prd",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
     "path": "/",
     "description": "",
     "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:55:49+00:00",
+    "create_date": "2023-02-08 22:52:44+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditReadOnlyRole"
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [
+      "app-interchange-app-policy-s3-prd",
+      "app-interchange-app-policy-sqs-prd"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx",
+      "Project": "AppInterchange",
+      "Environment": "prd"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:42.992785+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-rds-dev",
+    "resource_name": "app-interchange-role-rds-dev",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2023-02-08 21:02:26+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "app-interchange-rds-policy-s3-dev"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0004",
+      "apid": "itx",
+      "Project": "AppInterchange",
+      "Environment": "dev"
+    },
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:43.367506+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-rds-prd",
+    "resource_name": "app-interchange-role-rds-prd",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2023-02-08 22:52:44+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "app-interchange-rds-policy-s3-prd"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "assetid": "0004",
+      "apid": "itx",
+      "Project": "AppInterchange",
+      "Environment": "prd"
+    },
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:43.750551+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-controltower-AdministratorExecutionRole",
+    "resource_name": "aws-controltower-AdministratorExecutionRole",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-27 15:55:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditAdministratorRole"
           },
           "Action": "sts:AssumeRole"
         }
@@ -774,8 +380,8 @@
     ],
     "attached_policies": [
       {
-        "PolicyName": "ReadOnlyAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
       }
     ],
     "inline_policy_names": [],
@@ -783,54 +389,11 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/ReadOnlyAccess",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.087308+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/AWS-QuickSetup-SSM-LocalAdministrationRole",
-    "resource_name": "AWS-QuickSetup-SSM-LocalAdministrationRole",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-05-14 15:14:35+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "cloudformation.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole",
-          "Condition": {
-            "StringEquals": {
-              "aws:SourceAccount": "818835242461"
-            },
-            "StringLike": {
-              "aws:SourceArn": "arn:aws:cloudformation:*:818835242461:stackset/AWS-QuickSetup-*"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [
-      "cloudformation.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "AssumeExecutionRolePermissions"
-    ],
-    "tags": {},
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:27.088891+00:00"
+    "collected_at": "2026-08-15T07:37:44.161671+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -883,7 +446,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.089776+00:00"
+    "collected_at": "2026-08-15T07:37:44.585422+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -929,39 +492,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.095591+00:00"
+    "collected_at": "2026-08-15T07:37:45.020314+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/service-role/AWSApplicationMigrationConversionServerRole",
-    "resource_name": "AWSApplicationMigrationConversionServerRole",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-controltower-ReadOnlyExecutionRole",
+    "resource_name": "aws-controltower-ReadOnlyExecutionRole",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
-    "path": "/service-role/",
+    "path": "/",
     "description": "",
     "max_session_duration": 3600,
-    "create_date": "2025-07-21 21:30:55+00:00",
+    "create_date": "2024-11-27 15:55:49+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "ec2.amazonaws.com"
+            "AWS": "arn:aws:iam::060795899335:role/aws-controltower-AuditReadOnlyRole"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
-    "trusted_services": [
-      "ec2.amazonaws.com"
+    "trusted_services": [],
+    "trusted_accounts": [
+      "060795899335"
     ],
-    "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSApplicationMigrationConversionServerPolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationConversionServerPolicy"
+        "PolicyName": "ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/ReadOnlyAccess"
       }
     ],
     "inline_policy_names": [],
@@ -969,11 +532,54 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationConversionServerPolicy",
+        "resource_id": "arn:aws:iam::aws:policy/ReadOnlyAccess",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.110014+00:00"
+    "collected_at": "2026-08-15T07:37:45.426975+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/AWS-QuickSetup-SSM-LocalAdministrationRole",
+    "resource_name": "AWS-QuickSetup-SSM-LocalAdministrationRole",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-05-14 15:14:35+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "cloudformation.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "aws:SourceAccount": "818835242461"
+            },
+            "StringLike": {
+              "aws:SourceArn": "arn:aws:cloudformation:*:818835242461:stackset/AWS-QuickSetup-*"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "cloudformation.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "AssumeExecutionRolePermissions"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:45.839668+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1026,7 +632,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.114262+00:00"
+    "collected_at": "2026-08-15T07:37:46.224590+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1109,7 +715,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.120647+00:00"
+    "collected_at": "2026-08-15T07:37:46.617839+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1162,7 +768,51 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.131909+00:00"
+    "collected_at": "2026-08-15T07:37:47.006697+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/service-role/AWSApplicationMigrationConversionServerRole",
+    "resource_name": "AWSApplicationMigrationConversionServerRole",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-21 21:30:55+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSApplicationMigrationConversionServerPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationConversionServerPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationConversionServerPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:47.417857+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1215,7 +865,442 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.156840+00:00"
+    "collected_at": "2026-08-15T07:37:47.817729+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/service-role/app-interchange-lambda-fileload-dev-role-14gv3vwo",
+    "resource_name": "app-interchange-lambda-fileload-dev-role-14gv3vwo",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-06-26 05:11:30+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole-12d7bf48-16b0-463f-8574-dff534a5d4ba",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-12d7bf48-16b0-463f-8574-dff534a5d4ba"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-12d7bf48-16b0-463f-8574-dff534a5d4ba",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:47.826082+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-lambda-sbsa-upload-prd-role",
+    "resource_name": "app-interchange-lambda-sbsa-upload-prd-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "Allows Lambda functions to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2025-08-11 20:41:22+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "app-interchange-lambda-upload-prd-role",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/app-interchange-lambda-upload-prd-role"
+      },
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/app-interchange-lambda-upload-prd-role",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:47.831522+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/service-role/app-interchange-lambda-fileload-dev-role-wlokah8j",
+    "resource_name": "app-interchange-lambda-fileload-dev-role-wlokah8j",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-06-26 05:41:49+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole-f768eb84-06ff-460c-ba91-f346fed26ddb",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-f768eb84-06ff-460c-ba91-f346fed26ddb"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-f768eb84-06ff-460c-ba91-f346fed26ddb",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:47.837587+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/Amazon_EventBridge_Invoke_Sns_SecurityAlerts02",
+    "resource_name": "Amazon_EventBridge_Invoke_Sns_SecurityAlerts02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-07-21 15:58:08+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "events.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "events.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "SNSPublishAndKMS"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:47.840185+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-role-ec2-dev",
+    "resource_name": "app-interchange-role-ec2-dev",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2023-02-08 21:02:26+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudWatchAgentServerPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+      },
+      {
+        "PolicyName": "AmazonSSMManagedInstanceCore",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      }
+    ],
+    "inline_policy_names": [
+      "app-interchange-app-policy-s3-dev",
+      "app-interchange-app-policy-secretmanager-dev",
+      "app-interchange-app-policy-sqs-dev",
+      "app-interchange-devops-policy-s3-dev"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0004",
+      "apid": "itx",
+      "Project": "AppInterchange",
+      "Environment": "dev"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:47.844900+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/service-role/app-interchange-lambda-fileload-dev-role-wujayiyr",
+    "resource_name": "app-interchange-lambda-fileload-dev-role-wujayiyr",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-06-26 05:42:26+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole-4bfa6fc0-9368-44a6-af78-ceaf4f5087ce",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-4bfa6fc0-9368-44a6-af78-ceaf4f5087ce"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-4bfa6fc0-9368-44a6-af78-ceaf4f5087ce",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:47.847380+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-lambda-fileload-prod-role",
+    "resource_name": "app-interchange-lambda-fileload-prod-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "app-interchange-lambda-fileload-prod-role",
+    "max_session_duration": 3600,
+    "create_date": "2024-08-08 21:39:45+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "app-interchange-lambda-fileload-prod-policy",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/app-interchange-lambda-fileload-prod-policy"
+      },
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/app-interchange-lambda-fileload-prod-policy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:47.852575+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/app-interchange-lambda-send-email-prod-role",
+    "resource_name": "app-interchange-lambda-send-email-prod-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "app-interchange-lambda-send-email-prod-role",
+    "max_session_duration": 3600,
+    "create_date": "2024-08-08 22:02:56+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "app-interchange-lambda-send-email-prod-policy",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/app-interchange-lambda-send-email-prod-policy"
+      },
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/app-interchange-lambda-send-email-prod-policy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:47.856717+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/service-role/app-interchange-lambda-send_email-dev-role-n1bqvit1",
+    "resource_name": "app-interchange-lambda-send_email-dev-role-n1bqvit1",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-07-12 20:51:11+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole-06969d10-9a60-4f65-8a4e-246a91510b81",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-06969d10-9a60-4f65-8a4e-246a91510b81"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/service-role/AWSLambdaBasicExecutionRole-06969d10-9a60-4f65-8a4e-246a91510b81",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:47.875321+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1259,39 +1344,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.200619+00:00"
+    "collected_at": "2026-08-15T07:37:48.216860+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/service-role/AWSApplicationMigrationMGHRole",
-    "resource_name": "AWSApplicationMigrationMGHRole",
+    "resource_id": "arn:aws:iam::818835242461:role/AWSControlTowerExecution",
+    "resource_name": "AWSControlTowerExecution",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
-    "path": "/service-role/",
+    "path": "/",
     "description": "",
     "max_session_duration": 3600,
-    "create_date": "2025-07-21 21:30:57+00:00",
+    "create_date": "2024-11-27 15:49:16+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "mgn.amazonaws.com"
+            "AWS": "arn:aws:iam::664418961607:root"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
-    "trusted_services": [
-      "mgn.amazonaws.com"
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
     ],
-    "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSApplicationMigrationMGHAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationMGHAccess"
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
       }
     ],
     "inline_policy_names": [],
@@ -1299,11 +1384,55 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationMGHAccess",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.445134+00:00"
+    "collected_at": "2026-08-15T07:37:48.226147+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/service-role/AWSApplicationMigrationReplicationServerRole",
+    "resource_name": "AWSApplicationMigrationReplicationServerRole",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-21 21:30:55+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSApplicationMigrationReplicationServerPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationReplicationServerPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationReplicationServerPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:48.230531+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1356,7 +1485,51 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.472730+00:00"
+    "collected_at": "2026-08-15T07:37:48.233613+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/service-role/AWSApplicationMigrationMGHRole",
+    "resource_name": "AWSApplicationMigrationMGHRole",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-07-21 21:30:57+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "mgn.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "mgn.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSApplicationMigrationMGHAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationMGHAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationMGHAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:48.241969+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1401,83 +1574,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.473759+00:00"
+    "collected_at": "2026-08-15T07:37:48.244487+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/AWSControlTowerExecution",
-    "resource_name": "AWSControlTowerExecution",
+    "resource_id": "arn:aws:iam::818835242461:role/AWSGlueServiceRole-MigracionPostgres",
+    "resource_name": "AWSGlueServiceRole-MigracionPostgres",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
     "path": "/",
-    "description": "",
+    "description": "Rol de servicio para AWS Glue: prueba JDBC con PostgreSQL RDS y lectura de Parquet desde S3.",
     "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:49:16+00:00",
+    "create_date": "2026-08-04 15:53:01+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "AWS": "arn:aws:iam::664418961607:root"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [
-      "664418961607"
-    ],
-    "attached_policies": [
-      {
-        "PolicyName": "AdministratorAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:27.495126+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/service-role/AWSApplicationMigrationReplicationServerRole",
-    "resource_name": "AWSApplicationMigrationReplicationServerRole",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/service-role/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-07-21 21:30:55+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "ec2.amazonaws.com"
+            "Service": "glue.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "ec2.amazonaws.com"
+      "glue.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSApplicationMigrationReplicationServerPolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationReplicationServerPolicy"
+        "PolicyName": "AWSGlueServiceRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole"
       }
     ],
     "inline_policy_names": [],
@@ -1485,61 +1614,11 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSApplicationMigrationReplicationServerPolicy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.498500+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSPowerUserAccess_442f699abca41687",
-    "resource_name": "AWSReservedSSO_AWSPowerUserAccess_442f699abca41687",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-reserved/sso.amazonaws.com/",
-    "description": "Provides full access to AWS services and resources, but does not allow management of Users and groups",
-    "max_session_duration": 43200,
-    "create_date": "2024-11-27 15:54:49+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::818835242461:saml-provider/AWSSSO_75e8970d5f8311d7_DO_NOT_DELETE"
-          },
-          "Action": [
-            "sts:AssumeRoleWithSAML",
-            "sts:TagSession"
-          ],
-          "Condition": {
-            "StringEquals": {
-              "SAML:aud": "https://signin.aws.amazon.com/saml"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "PowerUserAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/PowerUserAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/PowerUserAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:27.516952+00:00"
+    "collected_at": "2026-08-15T07:37:48.249121+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1589,7 +1668,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.518478+00:00"
+    "collected_at": "2026-08-15T07:37:48.263284+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1639,7 +1718,57 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.527060+00:00"
+    "collected_at": "2026-08-15T07:37:48.265787+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSPowerUserAccess_442f699abca41687",
+    "resource_name": "AWSReservedSSO_AWSPowerUserAccess_442f699abca41687",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "Provides full access to AWS services and resources, but does not allow management of Users and groups",
+    "max_session_duration": 43200,
+    "create_date": "2024-11-27 15:54:49+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::818835242461:saml-provider/AWSSSO_75e8970d5f8311d7_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "PowerUserAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/PowerUserAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/PowerUserAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:48.318836+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1689,7 +1818,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.547153+00:00"
+    "collected_at": "2026-08-15T07:37:48.599898+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1730,19 +1859,19 @@
     ],
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:27.571867+00:00"
+    "collected_at": "2026-08-15T07:37:48.610422+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSIntercambioPrdOps_ea2a9b424e127acd",
-    "resource_name": "AWSReservedSSO_ItlAWSIntercambioPrdOps_ea2a9b424e127acd",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSIntercambioPrdAna_7c72ea75bf761697",
+    "resource_name": "AWSReservedSSO_ItlAWSIntercambioPrdAna_7c72ea75bf761697",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
     "path": "/aws-reserved/sso.amazonaws.com/",
     "description": "AWS Prd analyst permission sets",
     "max_session_duration": 43200,
-    "create_date": "2025-02-11 14:44:47+00:00",
+    "create_date": "2025-02-11 14:45:21+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
@@ -1771,7 +1900,48 @@
     ],
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:27.816630+00:00"
+    "collected_at": "2026-08-15T07:37:48.623638+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSIntercambioPrdQs_432b1eb2c46893bf",
+    "resource_name": "AWSReservedSSO_ItlAWSIntercambioPrdQs_432b1eb2c46893bf",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "AWS Prd QuickSight embedding integration permission sets",
+    "max_session_duration": 43200,
+    "create_date": "2026-05-08 15:02:32+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::818835242461:saml-provider/AWSSSO_75e8970d5f8311d7_DO_NOT_DELETE"
+          },
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "AwsSSOInlinePolicy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:48.631983+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1823,19 +1993,19 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.817466+00:00"
+    "collected_at": "2026-08-15T07:37:48.634722+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSIntercambioPrdAna_7c72ea75bf761697",
-    "resource_name": "AWSReservedSSO_ItlAWSIntercambioPrdAna_7c72ea75bf761697",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSIntercambioPrdOps_ea2a9b424e127acd",
+    "resource_name": "AWSReservedSSO_ItlAWSIntercambioPrdOps_ea2a9b424e127acd",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
     "path": "/aws-reserved/sso.amazonaws.com/",
     "description": "AWS Prd analyst permission sets",
     "max_session_duration": 43200,
-    "create_date": "2025-02-11 14:45:21+00:00",
+    "create_date": "2025-02-11 14:44:47+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
@@ -1864,136 +2034,7 @@
     ],
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:27.833630+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/access-analyzer.amazonaws.com/AWSServiceRoleForAccessAnalyzer",
-    "resource_name": "AWSServiceRoleForAccessAnalyzer",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/access-analyzer.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-10-30 23:31:00+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "access-analyzer.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "access-analyzer.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AccessAnalyzerServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AccessAnalyzerServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AccessAnalyzerServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:27.880600+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_ItlAWSIntercambioPrdQs_432b1eb2c46893bf",
-    "resource_name": "AWSReservedSSO_ItlAWSIntercambioPrdQs_432b1eb2c46893bf",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-reserved/sso.amazonaws.com/",
-    "description": "AWS Prd QuickSight embedding integration permission sets",
-    "max_session_duration": 43200,
-    "create_date": "2026-05-08 15:02:32+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::818835242461:saml-provider/AWSSSO_75e8970d5f8311d7_DO_NOT_DELETE"
-          },
-          "Action": [
-            "sts:AssumeRoleWithSAML",
-            "sts:TagSession"
-          ],
-          "Condition": {
-            "StringEquals": {
-              "SAML:aud": "https://signin.aws.amazon.com/saml"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "AwsSSOInlinePolicy"
-    ],
-    "tags": {},
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:27.881627+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/elasticfilesystem.amazonaws.com/AWSServiceRoleForAmazonElasticFileSystem",
-    "resource_name": "AWSServiceRoleForAmazonElasticFileSystem",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/elasticfilesystem.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2022-09-12 00:52:19+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "elasticfilesystem.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "elasticfilesystem.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonElasticFileSystemServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonElasticFileSystemServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonElasticFileSystemServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:27.893929+00:00"
+    "collected_at": "2026-08-15T07:37:48.642961+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2037,7 +2078,95 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.917821+00:00"
+    "collected_at": "2026-08-15T07:37:48.663746+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/access-analyzer.amazonaws.com/AWSServiceRoleForAccessAnalyzer",
+    "resource_name": "AWSServiceRoleForAccessAnalyzer",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/access-analyzer.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-30 23:31:00+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "access-analyzer.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "access-analyzer.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AccessAnalyzerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AccessAnalyzerServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AccessAnalyzerServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:48.673624+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/elasticfilesystem.amazonaws.com/AWSServiceRoleForAmazonElasticFileSystem",
+    "resource_name": "AWSServiceRoleForAmazonElasticFileSystem",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/elasticfilesystem.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2022-09-12 00:52:19+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "elasticfilesystem.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "elasticfilesystem.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonElasticFileSystemServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonElasticFileSystemServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonElasticFileSystemServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:48.692148+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2081,51 +2210,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.918730+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService",
-    "resource_name": "AWSServiceRoleForAmazonOpenSearchService",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/opensearchservice.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2022-09-19 21:06:08+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "opensearchservice.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "opensearchservice.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonOpenSearchServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonOpenSearchServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonOpenSearchServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:27.941979+00:00"
+    "collected_at": "2026-08-15T07:37:48.717505+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2169,39 +2254,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:27.959532+00:00"
+    "collected_at": "2026-08-15T07:37:48.980102+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
-    "resource_name": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/opensearchservice.amazonaws.com/AWSServiceRoleForAmazonOpenSearchService",
+    "resource_name": "AWSServiceRoleForAmazonOpenSearchService",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
-    "path": "/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/",
+    "path": "/aws-service-role/opensearchservice.amazonaws.com/",
     "description": "",
     "max_session_duration": 3600,
-    "create_date": "2024-11-08 23:19:35+00:00",
+    "create_date": "2022-09-19 21:06:08+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "dynamodb.application-autoscaling.amazonaws.com"
+            "Service": "opensearchservice.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "dynamodb.application-autoscaling.amazonaws.com"
+      "opensearchservice.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSApplicationAutoscalingDynamoDBTablePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSApplicationAutoscalingDynamoDBTablePolicy"
+        "PolicyName": "AmazonOpenSearchServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonOpenSearchServiceRolePolicy"
       }
     ],
     "inline_policy_names": [],
@@ -2209,55 +2294,11 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSApplicationAutoscalingDynamoDBTablePolicy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonOpenSearchServiceRolePolicy",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:28.180350+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/ssm.amazonaws.com/AWSServiceRoleForAmazonSSM",
-    "resource_name": "AWSServiceRoleForAmazonSSM",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/ssm.amazonaws.com/",
-    "description": "Provides access to AWS Resources managed or used by Amazon SSM.",
-    "max_session_duration": 3600,
-    "create_date": "2022-10-11 18:34:37+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "ssm.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "ssm.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonSSMServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonSSMServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonSSMServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.186744+00:00"
+    "collected_at": "2026-08-15T07:37:48.996151+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2301,227 +2342,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:28.187991+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/controltower.amazonaws.com/AWSServiceRoleForAWSControlTower",
-    "resource_name": "AWSServiceRoleForAWSControlTower",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/controltower.amazonaws.com/",
-    "description": "Provides access to AWS Resources managed or used by AWS Control Tower",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:55:48+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "controltower.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "controltower.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSControlTowerAccountServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.272794+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgMember",
-    "resource_name": "AWSServiceRoleForCloudFormationStackSetsOrgMember",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/",
-    "description": "Service linked role for CloudFormation StackSets (Organization Member)",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:01:03+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "member.org.stacksets.cloudformation.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "member.org.stacksets.cloudformation.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "CloudFormationStackSetsOrgMemberServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.280645+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/license-manager.amazonaws.com/AWSServiceRoleForAWSLicenseManagerRole",
-    "resource_name": "AWSServiceRoleForAWSLicenseManagerRole",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/license-manager.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2022-12-06 19:04:37+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "license-manager.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "license-manager.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSLicenseManagerServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSLicenseManagerServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSLicenseManagerServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.285328+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/backup.amazonaws.com/AWSServiceRoleForBackup",
-    "resource_name": "AWSServiceRoleForBackup",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/backup.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2022-11-09 23:52:50+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "backup.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "backup.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSBackupServiceLinkedRolePolicyForBackup",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSBackupServiceLinkedRolePolicyForBackup"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSBackupServiceLinkedRolePolicyForBackup",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.303339+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/cloudtrail.amazonaws.com/AWSServiceRoleForCloudTrail",
-    "resource_name": "AWSServiceRoleForCloudTrail",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/cloudtrail.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:01:03+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "cloudtrail.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "cloudtrail.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "CloudTrailServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.304124+00:00"
+    "collected_at": "2026-08-15T07:37:49.027572+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2565,7 +2386,271 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:28.306394+00:00"
+    "collected_at": "2026-08-15T07:37:49.041724+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/ssm.amazonaws.com/AWSServiceRoleForAmazonSSM",
+    "resource_name": "AWSServiceRoleForAmazonSSM",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/ssm.amazonaws.com/",
+    "description": "Provides access to AWS Resources managed or used by Amazon SSM.",
+    "max_session_duration": 3600,
+    "create_date": "2022-10-11 18:34:37+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ssm.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ssm.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonSSMServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonSSMServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonSSMServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.045007+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+    "resource_name": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/dynamodb.application-autoscaling.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-08 23:19:35+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "dynamodb.application-autoscaling.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "dynamodb.application-autoscaling.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSApplicationAutoscalingDynamoDBTablePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSApplicationAutoscalingDynamoDBTablePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSApplicationAutoscalingDynamoDBTablePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.050218+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/controltower.amazonaws.com/AWSServiceRoleForAWSControlTower",
+    "resource_name": "AWSServiceRoleForAWSControlTower",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/controltower.amazonaws.com/",
+    "description": "Provides access to AWS Resources managed or used by AWS Control Tower",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-27 15:55:48+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "controltower.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "controltower.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSControlTowerAccountServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.052176+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/license-manager.amazonaws.com/AWSServiceRoleForAWSLicenseManagerRole",
+    "resource_name": "AWSServiceRoleForAWSLicenseManagerRole",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/license-manager.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2022-12-06 19:04:37+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "license-manager.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "license-manager.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLicenseManagerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSLicenseManagerServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSLicenseManagerServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.060883+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/backup.amazonaws.com/AWSServiceRoleForBackup",
+    "resource_name": "AWSServiceRoleForBackup",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/backup.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2022-11-09 23:52:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "backup.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "backup.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSBackupServiceLinkedRolePolicyForBackup",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSBackupServiceLinkedRolePolicyForBackup"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSBackupServiceLinkedRolePolicyForBackup",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.096105+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "resource_name": "AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/",
+    "description": "Service linked role for CloudFormation StackSets (Organization Member)",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-27 15:01:03+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "member.org.stacksets.cloudformation.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "member.org.stacksets.cloudformation.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.131997+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2609,7 +2694,51 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:28.346946+00:00"
+    "collected_at": "2026-08-15T07:37:49.377725+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/cloudtrail.amazonaws.com/AWSServiceRoleForCloudTrail",
+    "resource_name": "AWSServiceRoleForCloudTrail",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/cloudtrail.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-27 15:01:03+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "cloudtrail.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "cloudtrail.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudTrailServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.384467+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2653,51 +2782,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:28.548495+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
-    "resource_name": "AWSServiceRoleForElasticLoadBalancing",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
-    "description": "Allows ELB to call AWS services on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2022-09-12 00:52:08+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "elasticloadbalancing.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "elasticloadbalancing.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSElasticLoadBalancingServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.563187+00:00"
+    "collected_at": "2026-08-15T07:37:49.418302+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2741,39 +2826,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:28.593449+00:00"
+    "collected_at": "2026-08-15T07:37:49.434239+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/license-management.marketplace.amazonaws.com/AWSServiceRoleForMarketplaceLicenseManagement",
-    "resource_name": "AWSServiceRoleForMarketplaceLicenseManagement",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+    "resource_name": "AWSServiceRoleForElasticLoadBalancing",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
-    "path": "/aws-service-role/license-management.marketplace.amazonaws.com/",
-    "description": "",
+    "path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+    "description": "Allows ELB to call AWS services on your behalf.",
     "max_session_duration": 3600,
-    "create_date": "2022-12-06 19:04:37+00:00",
+    "create_date": "2022-09-12 00:52:08+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "license-management.marketplace.amazonaws.com"
+            "Service": "elasticloadbalancing.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "license-management.marketplace.amazonaws.com"
+      "elasticloadbalancing.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSMarketplaceLicenseManagementServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSMarketplaceLicenseManagementServiceRolePolicy"
+        "PolicyName": "AWSElasticLoadBalancingServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
       }
     ],
     "inline_policy_names": [],
@@ -2781,187 +2866,11 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSMarketplaceLicenseManagementServiceRolePolicy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:28.648722+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
-    "resource_name": "AWSServiceRoleForRDS",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/rds.amazonaws.com/",
-    "description": "Allows Amazon RDS to manage AWS resources on your behalf",
-    "max_session_duration": 3600,
-    "create_date": "2022-07-21 05:50:08+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "rds.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "rds.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonRDSServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.660910+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
-    "resource_name": "AWSServiceRoleForOrganizations",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/organizations.amazonaws.com/",
-    "description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:01:01+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "organizations.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "organizations.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSOrganizationsServiceTrustPolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.668722+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/imagebuilder.amazonaws.com/AWSServiceRoleForImageBuilder",
-    "resource_name": "AWSServiceRoleForImageBuilder",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/imagebuilder.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-08-25 15:46:46+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "imagebuilder.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "imagebuilder.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSServiceRoleForImageBuilder",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForImageBuilder"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForImageBuilder",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.680228+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/AWSServiceRoleForReachabilityAnalyzer",
-    "resource_name": "AWSServiceRoleForReachabilityAnalyzer",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/",
-    "description": "The Service Linked Role used by Reachability Analyzer.",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:01:22+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "reachabilityanalyzer.networkinsights.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "reachabilityanalyzer.networkinsights.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSReachabilityAnalyzerServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.685780+00:00"
+    "collected_at": "2026-08-15T07:37:49.449378+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3005,7 +2914,227 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:28.708096+00:00"
+    "collected_at": "2026-08-15T07:37:49.452699+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/license-management.marketplace.amazonaws.com/AWSServiceRoleForMarketplaceLicenseManagement",
+    "resource_name": "AWSServiceRoleForMarketplaceLicenseManagement",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/license-management.marketplace.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2022-12-06 19:04:37+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "license-management.marketplace.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "license-management.marketplace.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSMarketplaceLicenseManagementServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSMarketplaceLicenseManagementServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSMarketplaceLicenseManagementServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.456206+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/imagebuilder.amazonaws.com/AWSServiceRoleForImageBuilder",
+    "resource_name": "AWSServiceRoleForImageBuilder",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/imagebuilder.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-08-25 15:46:46+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "imagebuilder.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "imagebuilder.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSServiceRoleForImageBuilder",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForImageBuilder"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForImageBuilder",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.458181+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/organizations.amazonaws.com/AWSServiceRoleForOrganizations",
+    "resource_name": "AWSServiceRoleForOrganizations",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/organizations.amazonaws.com/",
+    "description": "Service-linked role used by AWS Organizations to enable integration of other AWS services with Organizations.",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-27 15:01:01+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "organizations.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "organizations.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSOrganizationsServiceTrustPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSOrganizationsServiceTrustPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.511918+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+    "resource_name": "AWSServiceRoleForRDS",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/rds.amazonaws.com/",
+    "description": "Allows Amazon RDS to manage AWS resources on your behalf",
+    "max_session_duration": 3600,
+    "create_date": "2022-07-21 05:50:08+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonRDSServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.546028+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/AWSServiceRoleForReachabilityAnalyzer",
+    "resource_name": "AWSServiceRoleForReachabilityAnalyzer",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/",
+    "description": "The Service Linked Role used by Reachability Analyzer.",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-27 15:01:22+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "reachabilityanalyzer.networkinsights.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "reachabilityanalyzer.networkinsights.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSReachabilityAnalyzerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.767484+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3049,227 +3178,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:28.722751+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/securityhub.amazonaws.com/AWSServiceRoleForSecurityHub",
-    "resource_name": "AWSServiceRoleForSecurityHub",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/securityhub.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:38:26+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "securityhub.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "securityhub.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSSecurityHubServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.899382+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/servicequotas.amazonaws.com/AWSServiceRoleForServiceQuotas",
-    "resource_name": "AWSServiceRoleForServiceQuotas",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/servicequotas.amazonaws.com/",
-    "description": "A service-linked role is required for Service Quotas to access your service limits.",
-    "max_session_duration": 3600,
-    "create_date": "2026-07-06 12:52:51+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "servicequotas.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "servicequotas.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "ServiceQuotasServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.940667+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/securityhubv2.amazonaws.com/AWSServiceRoleForSecurityHubV2",
-    "resource_name": "AWSServiceRoleForSecurityHubV2",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/securityhubv2.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-12-29 21:26:15+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "securityhubv2.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "securityhubv2.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSSecurityHubV2ServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:28.944712+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
-    "resource_name": "AWSServiceRoleForSSO",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/sso.amazonaws.com/",
-    "description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2024-11-27 15:01:13+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "sso.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "sso.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSSSOServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:29.027085+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
-    "resource_name": "AWSServiceRoleForSupport",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/support.amazonaws.com/",
-    "description": "Enables resource access for AWS to provide billing, administrative and support services",
-    "max_session_duration": 3600,
-    "create_date": "2022-04-20 14:03:35+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "support.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "support.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSSupportServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:29.040704+00:00"
+    "collected_at": "2026-08-15T07:37:49.769907+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3313,7 +3222,227 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.050590+00:00"
+    "collected_at": "2026-08-15T07:37:49.817846+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/securityhubv2.amazonaws.com/AWSServiceRoleForSecurityHubV2",
+    "resource_name": "AWSServiceRoleForSecurityHubV2",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/securityhubv2.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-12-29 21:26:15+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "securityhubv2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "securityhubv2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSecurityHubV2ServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.828097+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/support.amazonaws.com/AWSServiceRoleForSupport",
+    "resource_name": "AWSServiceRoleForSupport",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/support.amazonaws.com/",
+    "description": "Enables resource access for AWS to provide billing, administrative and support services",
+    "max_session_duration": 3600,
+    "create_date": "2022-04-20 14:03:35+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "support.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "support.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSupportServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSupportServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.831858+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/securityhub.amazonaws.com/AWSServiceRoleForSecurityHub",
+    "resource_name": "AWSServiceRoleForSecurityHub",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/securityhub.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-27 15:38:26+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "securityhub.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "securityhub.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSecurityHubServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.834052+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/sso.amazonaws.com/AWSServiceRoleForSSO",
+    "resource_name": "AWSServiceRoleForSSO",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/sso.amazonaws.com/",
+    "description": "Service-linked role used by AWS SSO to manage AWS resources, including IAM roles, policies and SAML IdP on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2024-11-27 15:01:13+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "sso.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "sso.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSSSOServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSSOServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.840493+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/servicequotas.amazonaws.com/AWSServiceRoleForServiceQuotas",
+    "resource_name": "AWSServiceRoleForServiceQuotas",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/servicequotas.amazonaws.com/",
+    "description": "A service-linked role is required for Service Quotas to access your service limits.",
+    "max_session_duration": 3600,
+    "create_date": "2026-07-06 12:52:51+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "servicequotas.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "servicequotas.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "ServiceQuotasServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/ServiceQuotasServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:49.852386+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3357,51 +3486,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.067925+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway",
-    "resource_name": "AWSServiceRoleForVPCTransitGateway",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/aws-service-role/transitgateway.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2023-07-02 01:57:10+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "transitgateway.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "transitgateway.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSVPCTransitGatewayServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:29.076550+00:00"
+    "collected_at": "2026-08-15T07:37:49.915992+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3445,7 +3530,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.077423+00:00"
+    "collected_at": "2026-08-15T07:37:49.951102+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3489,7 +3574,136 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.090200+00:00"
+    "collected_at": "2026-08-15T07:37:50.155393+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway",
+    "resource_name": "AWSServiceRoleForVPCTransitGateway",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/aws-service-role/transitgateway.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2023-07-02 01:57:10+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "transitgateway.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "transitgateway.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSVPCTransitGatewayServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:50.159208+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/service-role/CognitoAccessForAmazonOpenSearch",
+    "resource_name": "CognitoAccessForAmazonOpenSearch",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/service-role/",
+    "description": "Amazon OpenSearch Service role for Dashboards authentication.",
+    "max_session_duration": 3600,
+    "create_date": "2022-09-28 16:19:42+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "es.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "es.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonOpenSearchServiceCognitoAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonOpenSearchServiceCognitoAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonOpenSearchServiceCognitoAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:50.202013+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/Cognito_OpensearchAuth_Role",
+    "resource_name": "Cognito_OpensearchAuth_Role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2022-09-28 16:18:43+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "cognito-identity.amazonaws.com"
+          },
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {
+            "StringEquals": {
+              "cognito-identity.amazonaws.com:aud": "us-east-1:68461a37-18ca-4ae6-8ce4-3b7b711877b6"
+            },
+            "ForAnyValue:StringLike": {
+              "cognito-identity.amazonaws.com:amr": "authenticated"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "oneClick_Cognito_OpensearchAuth_Role_1664381920364"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:50.207896+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3543,92 +3757,42 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.257868+00:00"
+    "collected_at": "2026-08-15T07:37:50.210787+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/service-role/CognitoAccessForAmazonOpenSearch",
-    "resource_name": "CognitoAccessForAmazonOpenSearch",
+    "resource_id": "arn:aws:iam::818835242461:role/CustomAWSServiceRoleForBackup",
+    "resource_name": "CustomAWSServiceRoleForBackup",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
-    "path": "/service-role/",
-    "description": "Amazon OpenSearch Service role for Dashboards authentication.",
+    "path": "/",
+    "description": "Allows AWS Backup to access AWS resources on your behalf based on the permissions you define.",
     "max_session_duration": 3600,
-    "create_date": "2022-09-28 16:19:42+00:00",
+    "create_date": "2022-11-22 15:58:36+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "es.amazonaws.com"
+            "Service": "backup.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "es.amazonaws.com"
+      "backup.amazonaws.com"
     ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonOpenSearchServiceCognitoAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AmazonOpenSearchServiceCognitoAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AmazonOpenSearchServiceCognitoAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:29.302518+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/Cognito_OpensearchAuth_Role",
-    "resource_name": "Cognito_OpensearchAuth_Role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2022-09-28 16:18:43+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "cognito-identity.amazonaws.com"
-          },
-          "Action": "sts:AssumeRoleWithWebIdentity",
-          "Condition": {
-            "StringEquals": {
-              "cognito-identity.amazonaws.com:aud": "us-east-1:68461a37-18ca-4ae6-8ce4-3b7b711877b6"
-            },
-            "ForAnyValue:StringLike": {
-              "cognito-identity.amazonaws.com:amr": "authenticated"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
     "trusted_accounts": [],
     "attached_policies": [],
     "inline_policy_names": [
-      "oneClick_Cognito_OpensearchAuth_Role_1664381920364"
+      "CustomAWSBackupServiceLinkedRolePolicyForBackup"
     ],
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:29.311133+00:00"
+    "collected_at": "2026-08-15T07:37:50.231536+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3669,42 +3833,7 @@
     ],
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:29.383982+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/CustomAWSServiceRoleForBackup",
-    "resource_name": "CustomAWSServiceRoleForBackup",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "Allows AWS Backup to access AWS resources on your behalf based on the permissions you define.",
-    "max_session_duration": 3600,
-    "create_date": "2022-11-22 15:58:36+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "backup.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "backup.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "CustomAWSBackupServiceLinkedRolePolicyForBackup"
-    ],
-    "tags": {},
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:29.394095+00:00"
+    "collected_at": "2026-08-15T07:37:50.235417+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3749,7 +3878,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.449697+00:00"
+    "collected_at": "2026-08-15T07:37:50.237358+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3794,7 +3923,87 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.450734+00:00"
+    "collected_at": "2026-08-15T07:37:50.321279+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/dms-s3-source-interchange-dev-role",
+    "resource_name": "dms-s3-source-interchange-dev-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "Rol para DMS S3 source endpoint cross-account hacia Interchange-Dev",
+    "max_session_duration": 3600,
+    "create_date": "2026-07-30 19:59:42+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "dms.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "dms.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "dms-s3-source-interchange-dev-policy"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:50.352980+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/dms-vpc-role",
+    "resource_name": "dms-vpc-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-02-27 21:31:05+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "",
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "dms.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "dms.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonDMSVPCManagementRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonDMSVPCManagementRole"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AmazonDMSVPCManagementRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:50.540694+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3844,7 +4053,51 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.472614+00:00"
+    "collected_at": "2026-08-15T07:37:50.561416+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/DMS_Role_Full_S3",
+    "resource_name": "DMS_Role_Full_S3",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "Allows S3 to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2024-02-29 02:29:55+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "dms.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "dms.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonS3FullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonS3FullAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:50.571472+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3898,52 +4151,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.491663+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/dms-vpc-role",
-    "resource_name": "dms-vpc-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-02-27 21:31:05+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Sid": "",
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "dms.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "dms.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonDMSVPCManagementRole",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AmazonDMSVPCManagementRole"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AmazonDMSVPCManagementRole",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:29.507740+00:00"
+    "collected_at": "2026-08-15T07:37:50.587599+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -3997,51 +4205,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.617015+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/DMS_Role_Full_S3",
-    "resource_name": "DMS_Role_Full_S3",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "Allows S3 to call AWS services on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2024-02-29 02:29:55+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "dms.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "dms.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonS3FullAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AmazonS3FullAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:29.669552+00:00"
+    "collected_at": "2026-08-15T07:37:50.590415+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4124,7 +4288,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.698968+00:00"
+    "collected_at": "2026-08-15T07:37:50.624146+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4186,7 +4350,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.730532+00:00"
+    "collected_at": "2026-08-15T07:37:50.630485+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4231,7 +4395,46 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.769113+00:00"
+    "collected_at": "2026-08-15T07:37:50.642718+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/IAMLimitedUserRole",
+    "resource_name": "IAMLimitedUserRole",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "Usuario limitado Opensearch",
+    "max_session_duration": 3600,
+    "create_date": "2022-09-28 16:07:30+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "cognito-identity.amazonaws.com"
+          },
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {
+            "StringEquals": {
+              "cognito-identity.amazonaws.com:aud": "us-east-1_lx9nz1KPc"
+            },
+            "ForAnyValue:StringLike": {
+              "cognito-identity.amazonaws.com:amr": "authenticated"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:50.735230+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4290,97 +4493,52 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.824639+00:00"
+    "collected_at": "2026-08-15T07:37:50.754793+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/IAMLimitedUserRole",
-    "resource_name": "IAMLimitedUserRole",
+    "resource_id": "arn:aws:iam::818835242461:role/intelica-transfer-sftp-pre-role",
+    "resource_name": "intelica-transfer-sftp-pre-role",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
     "path": "/",
-    "description": "Usuario limitado Opensearch",
+    "description": "Allow AWS Transfer to call AWS services on your behalf.",
     "max_session_duration": 3600,
-    "create_date": "2022-09-28 16:07:30+00:00",
+    "create_date": "2023-11-08 15:28:47+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
+          "Sid": "",
           "Effect": "Allow",
           "Principal": {
-            "Federated": "cognito-identity.amazonaws.com"
+            "Service": "transfer.amazonaws.com"
           },
-          "Action": "sts:AssumeRoleWithWebIdentity",
-          "Condition": {
-            "StringEquals": {
-              "cognito-identity.amazonaws.com:aud": "us-east-1_lx9nz1KPc"
-            },
-            "ForAnyValue:StringLike": {
-              "cognito-identity.amazonaws.com:amr": "authenticated"
-            }
-          }
+          "Action": "sts:AssumeRole"
         }
       ]
     },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:29.842054+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/intelica-copy-from-denver-to-s3-role",
-    "resource_name": "intelica-copy-from-denver-to-s3-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2024-10-02 00:32:56+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::610944808410:user/s3usr"
-          },
-          "Action": "sts:AssumeRole",
-          "Condition": {
-            "StringEquals": {
-              "sts:ExternalId": "WITLSBSJCUITXNGF"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [
-      "610944808410"
+    "trusted_services": [
+      "transfer.amazonaws.com"
     ],
+    "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "intelica-copy-from-denver-to-s3-policy",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/intelica-copy-from-denver-to-s3-policy"
+        "PolicyName": "intelica-transfer-sftp-policy-pre",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/intelica-transfer-sftp-policy-pre"
       }
     ],
-    "inline_policy_names": [
-      "itl-interchange-dynamo-put-policy"
-    ],
+    "inline_policy_names": [],
     "tags": {},
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/intelica-copy-from-denver-to-s3-policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/intelica-transfer-sftp-policy-pre",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.856619+00:00"
+    "collected_at": "2026-08-15T07:37:50.925184+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4455,40 +4613,44 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.869958+00:00"
+    "collected_at": "2026-08-15T07:37:50.935306+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/intelica-transfer-sftp-pre-role",
-    "resource_name": "intelica-transfer-sftp-pre-role",
+    "resource_id": "arn:aws:iam::818835242461:role/itl-0000-gen-all-applying-architect-role",
+    "resource_name": "itl-0000-gen-all-applying-architect-role",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
     "path": "/",
-    "description": "Allow AWS Transfer to call AWS services on your behalf.",
+    "description": "",
     "max_session_duration": 3600,
-    "create_date": "2023-11-08 15:28:47+00:00",
+    "create_date": "2025-01-29 22:57:17+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
-          "Sid": "",
           "Effect": "Allow",
           "Principal": {
-            "Service": "transfer.amazonaws.com"
+            "AWS": "arn:aws:iam::100344733245:root"
           },
-          "Action": "sts:AssumeRole"
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "Bool": {
+              "aws:MultiFactorAuthPresent": "true"
+            }
+          }
         }
       ]
     },
-    "trusted_services": [
-      "transfer.amazonaws.com"
+    "trusted_services": [],
+    "trusted_accounts": [
+      "100344733245"
     ],
-    "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "intelica-transfer-sftp-policy-pre",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/intelica-transfer-sftp-policy-pre"
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
       }
     ],
     "inline_policy_names": [],
@@ -4496,11 +4658,62 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/intelica-transfer-sftp-policy-pre",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.873455+00:00"
+    "collected_at": "2026-08-15T07:37:50.949724+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/intelica-copy-from-denver-to-s3-role",
+    "resource_name": "intelica-copy-from-denver-to-s3-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2024-10-02 00:32:56+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::610944808410:user/s3usr"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "StringEquals": {
+              "sts:ExternalId": "WITLSBSJCUITXNGF"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "610944808410"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "intelica-copy-from-denver-to-s3-policy",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/intelica-copy-from-denver-to-s3-policy"
+      }
+    ],
+    "inline_policy_names": [
+      "itl-interchange-dynamo-put-policy"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/intelica-copy-from-denver-to-s3-policy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:50.953476+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4545,7 +4758,47 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:29.973675+00:00"
+    "collected_at": "2026-08-15T07:37:50.974941+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-dms-etl-02-role",
+    "resource_name": "itl-0004-itx-prd-dms-etl-02-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-20 01:35:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "dms.eu-south-2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "dms.eu-south-2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-prd-dms-etl-02-secrets-pol"
+    ],
+    "tags": {
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "prd",
+      "apid": "itx"
+    },
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:50.996817+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4596,96 +4849,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.058022+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/itl-0000-gen-all-applying-architect-role",
-    "resource_name": "itl-0000-gen-all-applying-architect-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-29 22:57:17+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::100344733245:root"
-          },
-          "Action": "sts:AssumeRole",
-          "Condition": {
-            "Bool": {
-              "aws:MultiFactorAuthPresent": "true"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [
-      "100344733245"
-    ],
-    "attached_policies": [
-      {
-        "PolicyName": "AdministratorAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:30.059291+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-dms-etl-02-role",
-    "resource_name": "itl-0004-itx-prd-dms-etl-02-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-10-20 01:35:50+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "dms.eu-south-2.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "dms.eu-south-2.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "itl-0004-itx-prd-dms-etl-02-secrets-pol"
-    ],
-    "tags": {
-      "assetid": "0004",
-      "coid": "itl",
-      "env": "prd",
-      "apid": "itx"
-    },
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.090702+00:00"
+    "collected_at": "2026-08-15T07:37:51.030420+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4725,7 +4889,7 @@
       "env": "prd"
     },
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.138985+00:00"
+    "collected_at": "2026-08-15T07:37:51.036066+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4788,7 +4952,49 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.186635+00:00"
+    "collected_at": "2026-08-15T07:37:51.137611+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-iam-devops-02",
+    "resource_name": "itl-0004-itx-prd-iam-devops-02",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-18 21:00:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::423623846320:root"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "423623846320"
+    ],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "deploy",
+      "s3-devops-artifact-pol",
+      "s3-terraform-state-pol"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "apid": "itx",
+      "assetid": "0004"
+    },
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:51.141184+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4828,7 +5034,52 @@
       "env": "prd"
     },
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.228299+00:00"
+    "collected_at": "2026-08-15T07:37:51.302990+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role",
+    "resource_name": "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2026-06-24 16:34:43+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role-cloudwatch-pol",
+      "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role-kms-pol",
+      "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role-s3-pol",
+      "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role-vpc-pol"
+    ],
+    "tags": {
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "prd",
+      "project": "sbsa-preprocess",
+      "Name": "itl-0004-itx-prd-lmbd-sbsa-preprocess-02",
+      "apid": "itx"
+    },
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:51.314501+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4882,7 +5133,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.242445+00:00"
+    "collected_at": "2026-08-15T07:37:51.318308+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -4925,94 +5176,7 @@
       "assetid": "0004"
     },
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.251841+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-iam-devops-02",
-    "resource_name": "itl-0004-itx-prd-iam-devops-02",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-10-18 21:00:50+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::423623846320:root"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [
-      "423623846320"
-    ],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "deploy",
-      "s3-devops-artifact-pol",
-      "s3-terraform-state-pol"
-    ],
-    "tags": {
-      "coid": "itl",
-      "env": "prd",
-      "apid": "itx",
-      "assetid": "0004"
-    },
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.266710+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role",
-    "resource_name": "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2026-06-24 16:34:43+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "lambda.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "lambda.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role-cloudwatch-pol",
-      "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role-kms-pol",
-      "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role-s3-pol",
-      "itl-0004-itx-prd-lmbd-sbsa-preprocess-02-role-vpc-pol"
-    ],
-    "tags": {
-      "assetid": "0004",
-      "coid": "itl",
-      "env": "prd",
-      "project": "sbsa-preprocess",
-      "Name": "itl-0004-itx-prd-lmbd-sbsa-preprocess-02",
-      "apid": "itx"
-    },
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.336708+00:00"
+    "collected_at": "2026-08-15T07:37:51.329480+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5047,7 +5211,7 @@
     ],
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.402560+00:00"
+    "collected_at": "2026-08-15T07:37:51.363249+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5089,7 +5253,47 @@
       "env": "prd"
     },
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.410664+00:00"
+    "collected_at": "2026-08-15T07:37:51.366244+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-rds-app-02-s3-export-role",
+    "resource_name": "itl-0004-itx-prd-rds-app-02-s3-export-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-17 09:18:34+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "rds.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "rds.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "s3-export-buckets"
+    ],
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl",
+      "env": "prd"
+    },
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:51.416010+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5138,87 +5342,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.447093+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-rds-app-02-s3-export-role",
-    "resource_name": "itl-0004-itx-prd-rds-app-02-s3-export-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-10-17 09:18:34+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "rds.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "rds.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "s3-export-buckets"
-    ],
-    "tags": {
-      "apid": "itx",
-      "assetid": "0004",
-      "coid": "itl",
-      "env": "prd"
-    },
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.498529+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-rds-app-02-s3-import-role",
-    "resource_name": "itl-0004-itx-prd-rds-app-02-s3-import-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-10-17 09:18:34+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "rds.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "rds.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "s3-import-buckets"
-    ],
-    "tags": {
-      "apid": "itx",
-      "assetid": "0004",
-      "coid": "itl",
-      "env": "prd"
-    },
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.579252+00:00"
+    "collected_at": "2026-08-15T07:37:51.423336+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5267,105 +5391,47 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.602393+00:00"
+    "collected_at": "2026-08-15T07:37:51.523524+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-tf-sftp-02-landing-pre-role",
-    "resource_name": "itl-0004-itx-prd-tf-sftp-02-landing-pre-role",
+    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-rds-app-02-s3-import-role",
+    "resource_name": "itl-0004-itx-prd-rds-app-02-s3-import-role",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "global",
     "path": "/",
     "description": "",
     "max_session_duration": 3600,
-    "create_date": "2025-10-18 06:00:46+00:00",
+    "create_date": "2025-10-17 09:18:34+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "transfer.amazonaws.com"
+            "Service": "rds.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "transfer.amazonaws.com"
+      "rds.amazonaws.com"
     ],
     "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "itl-0004-itx-prd-tf-sftp-02-landing-pre-role-s3-pol",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/itl-0004-itx-prd-tf-sftp-02-landing-pre-role-s3-pol"
-      }
+    "attached_policies": [],
+    "inline_policy_names": [
+      "s3-import-buckets"
     ],
-    "inline_policy_names": [],
     "tags": {
-      "env": "prd",
       "apid": "itx",
       "assetid": "0004",
-      "coid": "itl"
-    },
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/itl-0004-itx-prd-tf-sftp-02-landing-pre-role-s3-pol",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:30.632174+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-tf-sftp-02-landing-role",
-    "resource_name": "itl-0004-itx-prd-tf-sftp-02-landing-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-10-17 08:46:00+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "transfer.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "transfer.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "itl-0004-itx-prd-tf-sftp-02-landing-role-s3-pol",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/itl-0004-itx-prd-tf-sftp-02-landing-role-s3-pol"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {
       "coid": "itl",
-      "env": "prd",
-      "apid": "itx",
-      "assetid": "0004"
+      "env": "prd"
     },
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/itl-0004-itx-prd-tf-sftp-02-landing-role-s3-pol",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:30.660520+00:00"
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:51.539419+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5414,7 +5480,105 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.662198+00:00"
+    "collected_at": "2026-08-15T07:37:51.690286+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-tf-sftp-02-landing-role",
+    "resource_name": "itl-0004-itx-prd-tf-sftp-02-landing-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-17 08:46:00+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "transfer.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "transfer.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0004-itx-prd-tf-sftp-02-landing-role-s3-pol",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/itl-0004-itx-prd-tf-sftp-02-landing-role-s3-pol"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "coid": "itl",
+      "env": "prd",
+      "apid": "itx",
+      "assetid": "0004"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/itl-0004-itx-prd-tf-sftp-02-landing-role-s3-pol",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:51.696615+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/itl-0004-itx-prd-tf-sftp-02-landing-pre-role",
+    "resource_name": "itl-0004-itx-prd-tf-sftp-02-landing-pre-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-18 06:00:46+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "transfer.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "transfer.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0004-itx-prd-tf-sftp-02-landing-pre-role-s3-pol",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/itl-0004-itx-prd-tf-sftp-02-landing-pre-role-s3-pol"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "env": "prd",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/itl-0004-itx-prd-tf-sftp-02-landing-pre-role-s3-pol",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:51.698995+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5461,52 +5625,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.702504+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/itl-access-all-secrets-role",
-    "resource_name": "itl-access-all-secrets-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "Allows Database Migration Service to call AWS services on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2024-02-28 14:26:58+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Sid": "",
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "dms.us-east-1.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "dms.us-east-1.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "itl-access-all-secrets-policy",
-        "PolicyArn": "arn:aws:iam::818835242461:policy/itl-access-all-secrets-policy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::818835242461:policy/itl-access-all-secrets-policy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:30.776933+00:00"
+    "collected_at": "2026-08-15T07:37:51.715024+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5551,7 +5670,52 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.785004+00:00"
+    "collected_at": "2026-08-15T07:37:51.748415+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/itl-access-all-secrets-role",
+    "resource_name": "itl-access-all-secrets-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "Allows Database Migration Service to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2024-02-28 14:26:58+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "",
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "dms.us-east-1.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "dms.us-east-1.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-access-all-secrets-policy",
+        "PolicyArn": "arn:aws:iam::818835242461:policy/itl-access-all-secrets-policy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::818835242461:policy/itl-access-all-secrets-policy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:51.750936+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5595,7 +5759,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.831111+00:00"
+    "collected_at": "2026-08-15T07:37:51.806259+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5639,7 +5803,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.877331+00:00"
+    "collected_at": "2026-08-15T07:37:51.820580+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5681,7 +5845,7 @@
       "Environment": "prd"
     },
     "relationships": [],
-    "collected_at": "2026-07-12T19:38:30.964438+00:00"
+    "collected_at": "2026-08-15T07:37:51.931372+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5729,7 +5893,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:30.966214+00:00"
+    "collected_at": "2026-08-15T07:37:51.934655+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5784,7 +5948,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.014395+00:00"
+    "collected_at": "2026-08-15T07:37:52.062104+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5832,7 +5996,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.056908+00:00"
+    "collected_at": "2026-08-15T07:37:52.080682+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5877,7 +6041,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.058680+00:00"
+    "collected_at": "2026-08-15T07:37:52.082606+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5922,7 +6086,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.066188+00:00"
+    "collected_at": "2026-08-15T07:37:52.098948+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -5993,7 +6157,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.128894+00:00"
+    "collected_at": "2026-08-15T07:37:52.129158+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -6037,7 +6201,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.140597+00:00"
+    "collected_at": "2026-08-15T07:37:52.137377+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -6081,7 +6245,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.202536+00:00"
+    "collected_at": "2026-08-15T07:37:52.200739+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -6125,51 +6289,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.250228+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/system-manager-role",
-    "resource_name": "system-manager-role",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "Allows EC2 instances to call AWS services on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2023-10-12 15:49:32+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "ec2.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "ec2.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonSSMManagedInstanceCore",
-        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:38:31.351117+00:00"
+    "collected_at": "2026-08-15T07:37:52.218840+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -6215,7 +6335,51 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.359006+00:00"
+    "collected_at": "2026-08-15T07:37:52.332835+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/system-manager-role",
+    "resource_name": "system-manager-role",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "Allows EC2 instances to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2023-10-12 15:49:32+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "ec2.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "ec2.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonSSMManagedInstanceCore",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:37:52.333589+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -6277,44 +6441,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.367230+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::818835242461:role/vmimport",
-    "resource_name": "vmimport",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "global",
-    "path": "/",
-    "description": "Allows S3 to call AWS services on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2025-08-25 15:24:52+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "vmie.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "vmie.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [],
-    "inline_policy_names": [
-      "kms",
-      "s3-permissions",
-      "vmimport"
-    ],
-    "tags": {},
-    "relationships": [],
-    "collected_at": "2026-07-12T19:38:31.441020+00:00"
+    "collected_at": "2026-08-15T07:37:52.426341+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -6358,6 +6485,43 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:38:31.441234+00:00"
+    "collected_at": "2026-08-15T07:37:52.451353+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::818835242461:role/vmimport",
+    "resource_name": "vmimport",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "global",
+    "path": "/",
+    "description": "Allows S3 to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2025-08-25 15:24:52+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "vmie.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "vmie.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [],
+    "inline_policy_names": [
+      "kms",
+      "s3-permissions",
+      "vmimport"
+    ],
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-08-15T07:37:52.452284+00:00"
   }
 ]

@@ -1,41 +1,38 @@
 [
   {
     "resource_type": "aws::iam::user",
-    "resource_id": "arn:aws:iam::610944808410:user/githubaction",
-    "resource_name": "githubaction",
+    "resource_id": "arn:aws:iam::610944808410:user/fortiELB",
+    "resource_name": "fortiELB",
     "account_id": "610944808410",
     "account_name": "Portal-Prod",
     "region": "global",
     "path": "/",
-    "create_date": "2025-06-05 15:50:21+00:00",
+    "create_date": "2024-05-14 22:02:13+00:00",
     "password_last_used": "",
     "mfa_enabled": false,
     "groups": [],
     "attached_policies": [
       {
-        "PolicyName": "itl-0003-portal-prd-githubactions-portal-pol-01",
-        "PolicyArn": "arn:aws:iam::610944808410:policy/itl-0003-portal-prd-githubactions-portal-pol-01"
+        "PolicyName": "AmazonSQSFullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSQSFullAccess"
       },
       {
-        "PolicyName": "github-eks-policy",
-        "PolicyArn": "arn:aws:iam::610944808410:policy/github-eks-policy"
+        "PolicyName": "AmazonS3ReadOnlyAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
       }
     ],
-    "inline_policy_names": [
-      "accesstos3",
-      "ECR-permissions"
-    ],
+    "inline_policy_names": [],
     "access_keys": [
       {
-        "access_key_id": "AKIAY4PZF6XNHVFZVRSH",
+        "access_key_id": "AKIAY4PZF6XNGTJA5WYX",
         "status": "Active",
-        "create_date": "2025-08-07 21:50:12+00:00",
-        "age_days": 338,
+        "create_date": "2024-05-14 22:02:27+00:00",
+        "age_days": 822,
         "stale": true
       }
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:35:33.142547+00:00"
+    "collected_at": "2026-08-15T07:33:45.374490+00:00"
   },
   {
     "resource_type": "aws::iam::user",
@@ -61,12 +58,12 @@
         "access_key_id": "AKIAY4PZF6XNJ73E3HBD",
         "status": "Active",
         "create_date": "2024-05-14 21:25:27+00:00",
-        "age_days": 788,
+        "age_days": 822,
         "stale": true
       }
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:35:33.571672+00:00"
+    "collected_at": "2026-08-15T07:33:45.511156+00:00"
   },
   {
     "resource_type": "aws::iam::user",
@@ -112,47 +109,12 @@
         "access_key_id": "AKIAY4PZF6XNKI6LQBH7",
         "status": "Active",
         "create_date": "2024-05-07 23:04:50+00:00",
-        "age_days": 795,
+        "age_days": 829,
         "stale": true
       }
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:35:33.621606+00:00"
-  },
-  {
-    "resource_type": "aws::iam::user",
-    "resource_id": "arn:aws:iam::610944808410:user/fortiELB",
-    "resource_name": "fortiELB",
-    "account_id": "610944808410",
-    "account_name": "Portal-Prod",
-    "region": "global",
-    "path": "/",
-    "create_date": "2024-05-14 22:02:13+00:00",
-    "password_last_used": "",
-    "mfa_enabled": false,
-    "groups": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonSQSFullAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSQSFullAccess"
-      },
-      {
-        "PolicyName": "AmazonS3ReadOnlyAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "access_keys": [
-      {
-        "access_key_id": "AKIAY4PZF6XNGTJA5WYX",
-        "status": "Active",
-        "create_date": "2024-05-14 22:02:27+00:00",
-        "age_days": 788,
-        "stale": true
-      }
-    ],
-    "tags": {},
-    "collected_at": "2026-07-12T19:35:33.659593+00:00"
+    "collected_at": "2026-08-15T07:33:45.851976+00:00"
   },
   {
     "resource_type": "aws::iam::user",
@@ -182,7 +144,7 @@
         "access_key_id": "AKIAY4PZF6XNPTTSYOWI",
         "status": "Active",
         "create_date": "2026-03-24 17:16:24+00:00",
-        "age_days": 110,
+        "age_days": 143,
         "stale": true
       }
     ],
@@ -191,6 +153,44 @@
       "AKIAY4PZF6XNJMNOQHFP": "s3-copy",
       "Description": "this is to access fully all bucket s3"
     },
-    "collected_at": "2026-07-12T19:35:33.894999+00:00"
+    "collected_at": "2026-08-15T07:33:46.322720+00:00"
+  },
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::610944808410:user/githubaction",
+    "resource_name": "githubaction",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "global",
+    "path": "/",
+    "create_date": "2025-06-05 15:50:21+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0003-portal-prd-githubactions-portal-pol-01",
+        "PolicyArn": "arn:aws:iam::610944808410:policy/itl-0003-portal-prd-githubactions-portal-pol-01"
+      },
+      {
+        "PolicyName": "github-eks-policy",
+        "PolicyArn": "arn:aws:iam::610944808410:policy/github-eks-policy"
+      }
+    ],
+    "inline_policy_names": [
+      "accesstos3",
+      "ECR-permissions"
+    ],
+    "access_keys": [
+      {
+        "access_key_id": "AKIAY4PZF6XNHVFZVRSH",
+        "status": "Active",
+        "create_date": "2025-08-07 21:50:12+00:00",
+        "age_days": 372,
+        "stale": true
+      }
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:33:46.424153+00:00"
   }
 ]

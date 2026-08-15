@@ -1,0 +1,130 @@
+[
+  {
+    "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-lb-main-02/7706291b67e6b7f9",
+    "resource_name": "itl-0003-portal-qa-lb-main-02",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "dns_name": "itl-0003-portal-qa-lb-main-02-377880081.eu-south-2.elb.amazonaws.com",
+    "scheme": "internet-facing",
+    "lb_type": "application",
+    "state": "active",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "availability_zones": [
+      {
+        "ZoneName": "eu-south-2a",
+        "SubnetId": "subnet-003b41da72b2e337e",
+        "LoadBalancerAddresses": []
+      },
+      {
+        "ZoneName": "eu-south-2b",
+        "SubnetId": "subnet-0e634deaa740f21d5",
+        "LoadBalancerAddresses": []
+      }
+    ],
+    "security_group_ids": [
+      "sg-044350dfd22cc81f7"
+    ],
+    "canonical_hosted_zone_id": "Z0956581394HF5D5LXGAP",
+    "created_time": "2025-10-06 16:26:17.210000+00:00",
+    "tags": {
+      "coid": "itl",
+      "env": "qa",
+      "assetid": "0003",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-003b41da72b2e337e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0e634deaa740f21d5",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-044350dfd22cc81f7",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:18.405913+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+    "resource_name": "itl-0003-portal-qa-alb-02",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "dns_name": "itl-0003-portal-qa-alb-02-461263667.eu-south-2.elb.amazonaws.com",
+    "scheme": "internet-facing",
+    "lb_type": "application",
+    "state": "active",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "availability_zones": [
+      {
+        "ZoneName": "eu-south-2a",
+        "SubnetId": "subnet-003b41da72b2e337e",
+        "LoadBalancerAddresses": []
+      },
+      {
+        "ZoneName": "eu-south-2b",
+        "SubnetId": "subnet-0e634deaa740f21d5",
+        "LoadBalancerAddresses": []
+      }
+    ],
+    "security_group_ids": [
+      "sg-092c553e25f11a09e",
+      "sg-0b44d41457c601672"
+    ],
+    "canonical_hosted_zone_id": "Z0956581394HF5D5LXGAP",
+    "created_time": "2025-10-17 15:07:19.575000+00:00",
+    "tags": {
+      "ingress.k8s.aws/stack": "intelica-qa-apps",
+      "assetid": "0003",
+      "apid": "portal",
+      "coid": "itl",
+      "env": "qa",
+      "ingress.k8s.aws/resource": "LoadBalancer",
+      "Name": "itl-0003-portal-qa-alb-apps-02-sg",
+      "elbv2.k8s.aws/cluster": "itl-0003-portal-qa-eks-apps-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-003b41da72b2e337e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0e634deaa740f21d5",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-092c553e25f11a09e",
+        "relation": "protected_by_sg"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0b44d41457c601672",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:18.627793+00:00"
+  }
+]

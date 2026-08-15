@@ -22,7 +22,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505605+00:00"
+    "collected_at": "2026-08-15T07:52:25.913657+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -47,7 +47,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505616+00:00"
+    "collected_at": "2026-08-15T07:52:25.913683+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -72,7 +72,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505619+00:00"
+    "collected_at": "2026-08-15T07:52:25.913693+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -97,7 +97,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505622+00:00"
+    "collected_at": "2026-08-15T07:52:25.913701+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -122,7 +122,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505625+00:00"
+    "collected_at": "2026-08-15T07:52:25.913708+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -150,7 +150,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505629+00:00"
+    "collected_at": "2026-08-15T07:52:25.913717+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -176,7 +176,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505632+00:00"
+    "collected_at": "2026-08-15T07:52:25.913724+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -204,7 +204,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505635+00:00"
+    "collected_at": "2026-08-15T07:52:25.913731+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -229,7 +229,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505638+00:00"
+    "collected_at": "2026-08-15T07:52:25.913737+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -254,7 +254,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505641+00:00"
+    "collected_at": "2026-08-15T07:52:25.913744+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -279,7 +279,7 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505644+00:00"
+    "collected_at": "2026-08-15T07:52:25.913751+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_namespace",
@@ -304,7 +304,32 @@
         "relation": "belongs_to_cluster"
       }
     ],
-    "collected_at": "2026-07-12T19:49:07.505646+00:00"
+    "collected_at": "2026-08-15T07:52:25.913756+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_namespace",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/project-a",
+    "resource_name": "project-a",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "79f997f5-f8d6-41c8-8d00-2e1f29371451",
+    "namespace": "",
+    "status": "Active",
+    "labels": {
+      "kubernetes.io/metadata.name": "project-a"
+    },
+    "annotations": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:25.913763+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -349,7 +374,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605674+00:00"
+    "collected_at": "2026-08-15T07:52:27.411706+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -393,7 +418,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605691+00:00"
+    "collected_at": "2026-08-15T07:52:27.411738+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -439,7 +464,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605700+00:00"
+    "collected_at": "2026-08-15T07:52:27.411756+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -484,7 +509,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605707+00:00"
+    "collected_at": "2026-08-15T07:52:27.411771+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -529,7 +554,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605714+00:00"
+    "collected_at": "2026-08-15T07:52:27.411784+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -574,7 +599,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605721+00:00"
+    "collected_at": "2026-08-15T07:52:27.411799+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -619,7 +644,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605728+00:00"
+    "collected_at": "2026-08-15T07:52:27.411811+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -661,7 +686,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605733+00:00"
+    "collected_at": "2026-08-15T07:52:27.411823+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -699,7 +724,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605740+00:00"
+    "collected_at": "2026-08-15T07:52:27.411834+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -743,7 +768,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605746+00:00"
+    "collected_at": "2026-08-15T07:52:27.411846+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -788,7 +813,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605752+00:00"
+    "collected_at": "2026-08-15T07:52:27.411859+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -832,7 +857,118 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605759+00:00"
+    "collected_at": "2026-08-15T07:52:27.411871+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_deployment/default/backend",
+    "resource_name": "backend",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "11a397b0-3bba-43cf-8f3b-07ecd9e03e54",
+    "namespace": "default",
+    "replicas": 2,
+    "available_replicas": null,
+    "ready_replicas": null,
+    "labels": {
+      "app": "backend"
+    },
+    "selector": {
+      "app": "backend"
+    },
+    "containers": [
+      "hasicorp/http-echo"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/default",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:27.411883+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_deployment/default/frontend",
+    "resource_name": "frontend",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "3469b4c7-aa2c-4f47-ae52-beae0bee33b9",
+    "namespace": "default",
+    "replicas": 2,
+    "available_replicas": 2,
+    "ready_replicas": 2,
+    "labels": {
+      "app": "frontend"
+    },
+    "selector": {
+      "app": "frontend"
+    },
+    "containers": [
+      "nginx"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/default",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:27.411894+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_deployment/default/redis",
+    "resource_name": "redis",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "9567d4db-e044-4e89-b60d-1f9e46cb87e4",
+    "namespace": "default",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {
+      "app": "redis"
+    },
+    "selector": {
+      "app": "redis"
+    },
+    "containers": [
+      "redis:latest"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/default",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:27.411905+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -874,7 +1010,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605764+00:00"
+    "collected_at": "2026-08-15T07:52:27.411917+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -916,7 +1052,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605770+00:00"
+    "collected_at": "2026-08-15T07:52:27.411928+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -958,7 +1094,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605775+00:00"
+    "collected_at": "2026-08-15T07:52:27.411939+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -979,7 +1115,7 @@
       "app": "api-authentication"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-authentication-03:1.0.298"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-authentication-03:1.0.301"
     ],
     "relationships": [
       {
@@ -993,7 +1129,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605781+00:00"
+    "collected_at": "2026-08-15T07:52:27.411951+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1014,7 +1150,7 @@
       "app": "api-authentication-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-authentication-new-03:1.0.95"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-authentication-new-03:1.0.106"
     ],
     "relationships": [
       {
@@ -1028,7 +1164,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605786+00:00"
+    "collected_at": "2026-08-15T07:52:27.411962+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1063,7 +1199,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605791+00:00"
+    "collected_at": "2026-08-15T07:52:27.411972+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1084,7 +1220,7 @@
       "app": "api-fee"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-fee-external-03:1.0.764"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-fee-external-03:1.0.771"
     ],
     "relationships": [
       {
@@ -1098,7 +1234,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605797+00:00"
+    "collected_at": "2026-08-15T07:52:27.411983+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1119,7 +1255,7 @@
       "app": "api-fee-external-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-fee-external-new-03:1.0.380"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-fee-external-new-03:1.0.419"
     ],
     "relationships": [
       {
@@ -1133,7 +1269,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605802+00:00"
+    "collected_at": "2026-08-15T07:52:27.411995+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1154,7 +1290,7 @@
       "app": "api-gateway"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-gateway-03:1.0.205"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-gateway-03:1.0.212"
     ],
     "relationships": [
       {
@@ -1168,7 +1304,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605807+00:00"
+    "collected_at": "2026-08-15T07:52:27.412006+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1189,7 +1325,7 @@
       "app": "api-interchange"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-interchange-external-03:1.0.152"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-interchange-external-03:1.0.159"
     ],
     "relationships": [
       {
@@ -1203,7 +1339,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605812+00:00"
+    "collected_at": "2026-08-15T07:52:27.412016+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1224,7 +1360,7 @@
       "app": "api-notification"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-notification-03:1.0.184"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-notification-03:1.0.187"
     ],
     "relationships": [
       {
@@ -1238,7 +1374,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605817+00:00"
+    "collected_at": "2026-08-15T07:52:27.412027+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1259,7 +1395,7 @@
       "app": "api-security"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-security-03:1.0.531"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-security-03:1.0.546"
     ],
     "relationships": [
       {
@@ -1273,7 +1409,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605823+00:00"
+    "collected_at": "2026-08-15T07:52:27.412039+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1294,7 +1430,7 @@
       "app": "api-security-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-security-03:1.0.95"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-security-03:1.0.104"
     ],
     "relationships": [
       {
@@ -1308,7 +1444,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605828+00:00"
+    "collected_at": "2026-08-15T07:52:27.412050+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1329,7 +1465,7 @@
       "app": "api-shared-external"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-shared-external-03:1.0.65"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-shared-external-03:1.0.71"
     ],
     "relationships": [
       {
@@ -1343,7 +1479,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605833+00:00"
+    "collected_at": "2026-08-15T07:52:27.412061+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1364,7 +1500,7 @@
       "app": "api-signal"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-signal-03:1.0.96"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-signal-03:1.0.102"
     ],
     "relationships": [
       {
@@ -1378,7 +1514,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605839+00:00"
+    "collected_at": "2026-08-15T07:52:27.412073+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1399,7 +1535,7 @@
       "app": "mcp-security"
     },
     "containers": [
-      "arquitecturaintelica/mcp-security:1.0.531-development"
+      "arquitecturaintelica/mcp-security:1.0.545-development"
     ],
     "relationships": [
       {
@@ -1413,7 +1549,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605845+00:00"
+    "collected_at": "2026-08-15T07:52:27.412085+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1434,7 +1570,7 @@
       "app": "mf-authentication"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-authentication-03:1.0.115"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-authentication-03:1.0.116"
     ],
     "relationships": [
       {
@@ -1448,7 +1584,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605850+00:00"
+    "collected_at": "2026-08-15T07:52:27.412096+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1469,7 +1605,7 @@
       "app": "mf-authentication-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-authentication-new-03:1.0.133"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-authentication-new-03:1.0.184"
     ],
     "relationships": [
       {
@@ -1483,7 +1619,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605856+00:00"
+    "collected_at": "2026-08-15T07:52:27.412123+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1518,7 +1654,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605861+00:00"
+    "collected_at": "2026-08-15T07:52:27.412135+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1553,7 +1689,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605866+00:00"
+    "collected_at": "2026-08-15T07:52:27.412147+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1574,7 +1710,7 @@
       "app": "mf-container"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-container-external-03:1.0.104"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-container-external-03:1.0.110"
     ],
     "relationships": [
       {
@@ -1588,7 +1724,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605871+00:00"
+    "collected_at": "2026-08-15T07:52:27.412158+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1609,7 +1745,7 @@
       "app": "mf-container-external-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-container-external-new-03:1.0.61"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-container-external-new-03:1.0.75"
     ],
     "relationships": [
       {
@@ -1623,7 +1759,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605877+00:00"
+    "collected_at": "2026-08-15T07:52:27.412171+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1658,7 +1794,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605882+00:00"
+    "collected_at": "2026-08-15T07:52:27.412186+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1693,7 +1829,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605887+00:00"
+    "collected_at": "2026-08-15T07:52:27.412201+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1728,7 +1864,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605892+00:00"
+    "collected_at": "2026-08-15T07:52:27.412216+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1749,7 +1885,7 @@
       "app": "mf-fee"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-fee-external-03:1.0.655"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-fee-external-03:1.0.671"
     ],
     "relationships": [
       {
@@ -1763,7 +1899,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605897+00:00"
+    "collected_at": "2026-08-15T07:52:27.412231+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1784,7 +1920,7 @@
       "app": "mf-fee-external-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-fee-external-new-03:1.0.519"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-fee-external-new-03:1.0.688"
     ],
     "relationships": [
       {
@@ -1798,7 +1934,42 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605901+00:00"
+    "collected_at": "2026-08-15T07:52:27.412247+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_deployment/external/mf-footer",
+    "resource_name": "mf-footer",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "6ae076a8-e289-409e-b8ef-508e9030935d",
+    "namespace": "external",
+    "replicas": 1,
+    "available_replicas": 1,
+    "ready_replicas": 1,
+    "labels": {},
+    "selector": {
+      "app": "mf-footer"
+    },
+    "containers": [
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-footer-03:1.0.10"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/external",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:27.412261+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1819,7 +1990,7 @@
       "app": "mf-header"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-header-03:1.0.114"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-header-03:1.0.117"
     ],
     "relationships": [
       {
@@ -1833,7 +2004,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605906+00:00"
+    "collected_at": "2026-08-15T07:52:27.412277+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1854,7 +2025,7 @@
       "app": "mf-header-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-header-new-03:1.0.184"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-header-new-03:1.0.218"
     ],
     "relationships": [
       {
@@ -1868,7 +2039,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605911+00:00"
+    "collected_at": "2026-08-15T07:52:27.412293+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1889,7 +2060,7 @@
       "app": "mf-interchange"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-interchange-external-03:1.0.106"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-interchange-external-03:1.0.110"
     ],
     "relationships": [
       {
@@ -1903,7 +2074,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605917+00:00"
+    "collected_at": "2026-08-15T07:52:27.412306+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1938,7 +2109,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605922+00:00"
+    "collected_at": "2026-08-15T07:52:27.412320+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -1973,7 +2144,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605927+00:00"
+    "collected_at": "2026-08-15T07:52:27.412334+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2008,7 +2179,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605932+00:00"
+    "collected_at": "2026-08-15T07:52:27.412348+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2043,7 +2214,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605938+00:00"
+    "collected_at": "2026-08-15T07:52:27.412362+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2064,7 +2235,7 @@
       "app": "mf-menu"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-menu-03:1.0.105"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-menu-03:1.0.110"
     ],
     "relationships": [
       {
@@ -2078,7 +2249,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605943+00:00"
+    "collected_at": "2026-08-15T07:52:27.412377+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2099,7 +2270,7 @@
       "app": "mf-menu-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-menu-new-03:1.0.98"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-menu-new-03:1.0.117"
     ],
     "relationships": [
       {
@@ -2113,7 +2284,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605948+00:00"
+    "collected_at": "2026-08-15T07:52:27.412393+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2148,7 +2319,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605953+00:00"
+    "collected_at": "2026-08-15T07:52:27.412408+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2183,7 +2354,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605958+00:00"
+    "collected_at": "2026-08-15T07:52:27.412420+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2204,7 +2375,7 @@
       "app": "mf-security-external-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-security-external-new-03:1.0.137"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-security-external-new-03:1.0.150"
     ],
     "relationships": [
       {
@@ -2218,7 +2389,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605963+00:00"
+    "collected_at": "2026-08-15T07:52:27.412431+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2253,7 +2424,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605968+00:00"
+    "collected_at": "2026-08-15T07:52:27.412442+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2274,7 +2445,7 @@
       "app": "mf-styleguide"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-styleguide-03:1.0.290"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-styleguide-03:1.0.298"
     ],
     "relationships": [
       {
@@ -2288,7 +2459,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605973+00:00"
+    "collected_at": "2026-08-15T07:52:27.412453+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2309,7 +2480,7 @@
       "app": "mf-styleguide-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-styleguide-new-03:1.0.465"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-styleguide-new-03:1.0.522"
     ],
     "relationships": [
       {
@@ -2323,7 +2494,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605978+00:00"
+    "collected_at": "2026-08-15T07:52:27.412465+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2344,7 +2515,7 @@
       "app": "notification-consumer"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-notification-consumer-03:1.0.184"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-notification-consumer-03:1.0.187"
     ],
     "relationships": [
       {
@@ -2358,7 +2529,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605983+00:00"
+    "collected_at": "2026-08-15T07:52:27.412478+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2395,7 +2566,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605988+00:00"
+    "collected_at": "2026-08-15T07:52:27.412491+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2432,7 +2603,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605994+00:00"
+    "collected_at": "2026-08-15T07:52:27.412503+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2467,7 +2638,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.605999+00:00"
+    "collected_at": "2026-08-15T07:52:27.412515+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2488,7 +2659,7 @@
       "app": "api-fee"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-fee-internal-03:1.0.376"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-fee-internal-03:1.0.379"
     ],
     "relationships": [
       {
@@ -2502,7 +2673,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606004+00:00"
+    "collected_at": "2026-08-15T07:52:27.412527+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2523,7 +2694,7 @@
       "app": "api-fee-internal-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-fee-internal-03:1.0.181"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-fee-internal-03:1.0.215"
     ],
     "relationships": [
       {
@@ -2537,7 +2708,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606009+00:00"
+    "collected_at": "2026-08-15T07:52:27.413167+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2572,7 +2743,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606015+00:00"
+    "collected_at": "2026-08-15T07:52:27.413186+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2593,7 +2764,7 @@
       "app": "api-shared-internal"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-shared-internal-03:1.0.51"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-api-shared-internal-03:1.0.52"
     ],
     "relationships": [
       {
@@ -2607,7 +2778,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606020+00:00"
+    "collected_at": "2026-08-15T07:52:27.413204+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2642,7 +2813,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606024+00:00"
+    "collected_at": "2026-08-15T07:52:27.413217+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2677,7 +2848,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606029+00:00"
+    "collected_at": "2026-08-15T07:52:27.413229+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2712,7 +2883,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606034+00:00"
+    "collected_at": "2026-08-15T07:52:27.413241+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2747,7 +2918,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606040+00:00"
+    "collected_at": "2026-08-15T07:52:27.413253+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2782,7 +2953,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606045+00:00"
+    "collected_at": "2026-08-15T07:52:27.413265+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2817,7 +2988,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606050+00:00"
+    "collected_at": "2026-08-15T07:52:27.413276+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2838,7 +3009,7 @@
       "app": "mf-fee-internal-new"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-fee-internal-new-03:1.0.157"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-fee-internal-new-03:1.0.199"
     ],
     "relationships": [
       {
@@ -2852,28 +3023,28 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606055+00:00"
+    "collected_at": "2026-08-15T07:52:27.413288+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
-    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_deployment/internal/mf-header",
-    "resource_name": "mf-header",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_deployment/internal/mf-footer",
+    "resource_name": "mf-footer",
     "account_id": "891376942769",
     "account_name": "Portal-Dev",
     "region": "eu-south-2",
     "cluster_name": "itl-0003-portal-dev-eks-apps-03",
     "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
-    "uid": "04b76dc1-5abb-4989-b5a6-214c9777cee3",
+    "uid": "dec26f96-277c-4478-aaa9-560f0ced6509",
     "namespace": "internal",
     "replicas": 1,
-    "available_replicas": 1,
-    "ready_replicas": 1,
+    "available_replicas": null,
+    "ready_replicas": null,
     "labels": {},
     "selector": {
-      "app": "mf-header"
+      "app": "mf-footer"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-header-03:1.0.114"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-footer-03:1.0.10"
     ],
     "relationships": [
       {
@@ -2887,7 +3058,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606060+00:00"
+    "collected_at": "2026-08-15T07:52:27.413301+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2922,42 +3093,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606065+00:00"
-  },
-  {
-    "resource_type": "aws::eks::k8s_deployment",
-    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_deployment/internal/mf-menu",
-    "resource_name": "mf-menu",
-    "account_id": "891376942769",
-    "account_name": "Portal-Dev",
-    "region": "eu-south-2",
-    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
-    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
-    "uid": "3aabfd6a-b6d5-4945-ad87-41fc3bf9b5ac",
-    "namespace": "internal",
-    "replicas": 1,
-    "available_replicas": 1,
-    "ready_replicas": 1,
-    "labels": {},
-    "selector": {
-      "app": "mf-menu"
-    },
-    "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-menu-03:1.0.105"
-    ],
-    "relationships": [
-      {
-        "resource_type": "aws::eks::cluster",
-        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
-        "relation": "belongs_to_cluster"
-      },
-      {
-        "resource_type": "aws::eks::k8s_namespace",
-        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/internal",
-        "relation": "in_namespace"
-      }
-    ],
-    "collected_at": "2026-07-12T19:49:08.606070+00:00"
+    "collected_at": "2026-08-15T07:52:27.413312+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -2992,7 +3128,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606074+00:00"
+    "collected_at": "2026-08-15T07:52:27.413322+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -3013,7 +3149,7 @@
       "app": "mf-shared-internal"
     },
     "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-shared-internal-03:1.0.19"
+      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-shared-internal-03:1.0.23"
     ],
     "relationships": [
       {
@@ -3027,42 +3163,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606079+00:00"
-  },
-  {
-    "resource_type": "aws::eks::k8s_deployment",
-    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_deployment/internal/mf-styleguide",
-    "resource_name": "mf-styleguide",
-    "account_id": "891376942769",
-    "account_name": "Portal-Dev",
-    "region": "eu-south-2",
-    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
-    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
-    "uid": "bc24c87c-cba4-402a-96f0-b929fae9ef14",
-    "namespace": "internal",
-    "replicas": 1,
-    "available_replicas": 1,
-    "ready_replicas": 1,
-    "labels": {},
-    "selector": {
-      "app": "mf-styleguide"
-    },
-    "containers": [
-      "891376942769.dkr.ecr.eu-south-2.amazonaws.com/itl-0003-portal-dev-ecr-mf-styleguide-03:1.0.290"
-    ],
-    "relationships": [
-      {
-        "resource_type": "aws::eks::cluster",
-        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
-        "relation": "belongs_to_cluster"
-      },
-      {
-        "resource_type": "aws::eks::k8s_namespace",
-        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/internal",
-        "relation": "in_namespace"
-      }
-    ],
-    "collected_at": "2026-07-12T19:49:08.606084+00:00"
+    "collected_at": "2026-08-15T07:52:27.413333+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -3104,7 +3205,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606089+00:00"
+    "collected_at": "2026-08-15T07:52:27.413346+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -3144,7 +3245,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606095+00:00"
+    "collected_at": "2026-08-15T07:52:27.413358+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -3190,7 +3291,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606102+00:00"
+    "collected_at": "2026-08-15T07:52:27.413374+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -3232,7 +3333,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606106+00:00"
+    "collected_at": "2026-08-15T07:52:27.413386+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_deployment",
@@ -3269,7 +3370,44 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.606110+00:00"
+    "collected_at": "2026-08-15T07:52:27.413396+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_deployment",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_deployment/project-a/nginx",
+    "resource_name": "nginx",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "c0261757-2440-429b-9f6a-1d11bfb51c4d",
+    "namespace": "project-a",
+    "replicas": 2,
+    "available_replicas": 2,
+    "ready_replicas": 2,
+    "labels": {
+      "app": "nginx"
+    },
+    "selector": {
+      "app": "nginx"
+    },
+    "containers": [
+      "nginx:1.25"
+    ],
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/project-a",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:27.413405+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3318,7 +3456,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837033+00:00"
+    "collected_at": "2026-08-15T07:52:27.689774+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3367,7 +3505,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837046+00:00"
+    "collected_at": "2026-08-15T07:52:27.689809+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3413,7 +3551,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837053+00:00"
+    "collected_at": "2026-08-15T07:52:27.689827+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3481,7 +3619,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837060+00:00"
+    "collected_at": "2026-08-15T07:52:27.689846+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3550,7 +3688,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837066+00:00"
+    "collected_at": "2026-08-15T07:52:27.689869+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3600,7 +3738,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837071+00:00"
+    "collected_at": "2026-08-15T07:52:27.689884+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3668,7 +3806,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837077+00:00"
+    "collected_at": "2026-08-15T07:52:27.689901+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3718,7 +3856,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837082+00:00"
+    "collected_at": "2026-08-15T07:52:27.689916+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3787,7 +3925,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837088+00:00"
+    "collected_at": "2026-08-15T07:52:27.689934+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3837,7 +3975,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837093+00:00"
+    "collected_at": "2026-08-15T07:52:27.689949+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3889,7 +4027,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837098+00:00"
+    "collected_at": "2026-08-15T07:52:27.689963+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3941,7 +4079,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837103+00:00"
+    "collected_at": "2026-08-15T07:52:27.689977+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -3984,7 +4122,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837108+00:00"
+    "collected_at": "2026-08-15T07:52:27.689990+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4033,7 +4171,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837118+00:00"
+    "collected_at": "2026-08-15T07:52:27.690015+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4082,7 +4220,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837123+00:00"
+    "collected_at": "2026-08-15T07:52:27.690029+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4131,7 +4269,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837128+00:00"
+    "collected_at": "2026-08-15T07:52:27.690043+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4178,7 +4316,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837133+00:00"
+    "collected_at": "2026-08-15T07:52:27.690057+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4227,7 +4365,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837138+00:00"
+    "collected_at": "2026-08-15T07:52:27.690070+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4276,7 +4414,91 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837142+00:00"
+    "collected_at": "2026-08-15T07:52:27.690083+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_service/default/api",
+    "resource_name": "api",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "91abb718-7077-4abd-a271-14e809d030bb",
+    "namespace": "default",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.155.216",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 80,
+        "target_port": "5678",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app": "api"
+    },
+    "labels": {
+      "app": "api"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/default",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:27.690096+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_service/default/frontend",
+    "resource_name": "frontend",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "20098bdf-ce8d-47de-a31d-0953b41c09ad",
+    "namespace": "default",
+    "service_type": "NodePort",
+    "cluster_ip": "172.20.38.21",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 80,
+        "target_port": "80",
+        "protocol": "TCP",
+        "node_port": 31905
+      }
+    ],
+    "selector": {
+      "app": "frontend"
+    },
+    "labels": {
+      "app": "frontend"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/default",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:27.690110+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4317,7 +4539,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837147+00:00"
+    "collected_at": "2026-08-15T07:52:27.690124+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4357,7 +4579,49 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837152+00:00"
+    "collected_at": "2026-08-15T07:52:27.690138+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_service/default/redis",
+    "resource_name": "redis",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "a6e319d1-2205-47ca-98f0-f08718c5170b",
+    "namespace": "default",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.71.194",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 6379,
+        "target_port": "6379",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app": "redis"
+    },
+    "labels": {
+      "app": "redis"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/default",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:27.690151+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4405,7 +4669,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837157+00:00"
+    "collected_at": "2026-08-15T07:52:27.690164+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4445,7 +4709,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837166+00:00"
+    "collected_at": "2026-08-15T07:52:27.690177+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4485,7 +4749,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837173+00:00"
+    "collected_at": "2026-08-15T07:52:27.690190+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4525,7 +4789,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837178+00:00"
+    "collected_at": "2026-08-15T07:52:27.690203+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4565,7 +4829,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837183+00:00"
+    "collected_at": "2026-08-15T07:52:27.690217+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4605,7 +4869,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837187+00:00"
+    "collected_at": "2026-08-15T07:52:27.690230+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4645,7 +4909,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837192+00:00"
+    "collected_at": "2026-08-15T07:52:27.690244+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4685,7 +4949,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837196+00:00"
+    "collected_at": "2026-08-15T07:52:27.690256+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4725,7 +4989,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837200+00:00"
+    "collected_at": "2026-08-15T07:52:27.690268+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4765,7 +5029,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837204+00:00"
+    "collected_at": "2026-08-15T07:52:27.690280+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4805,7 +5069,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837209+00:00"
+    "collected_at": "2026-08-15T07:52:27.690293+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4845,7 +5109,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837213+00:00"
+    "collected_at": "2026-08-15T07:52:27.690307+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4885,7 +5149,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837217+00:00"
+    "collected_at": "2026-08-15T07:52:27.690319+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4925,7 +5189,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837222+00:00"
+    "collected_at": "2026-08-15T07:52:27.690332+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -4965,7 +5229,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837226+00:00"
+    "collected_at": "2026-08-15T07:52:27.690343+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5005,7 +5269,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837230+00:00"
+    "collected_at": "2026-08-15T07:52:27.690354+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5045,7 +5309,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837234+00:00"
+    "collected_at": "2026-08-15T07:52:27.690368+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5085,7 +5349,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837239+00:00"
+    "collected_at": "2026-08-15T07:52:27.690381+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5125,7 +5389,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837243+00:00"
+    "collected_at": "2026-08-15T07:52:27.690393+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5165,7 +5429,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837247+00:00"
+    "collected_at": "2026-08-15T07:52:27.690406+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5205,7 +5469,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837251+00:00"
+    "collected_at": "2026-08-15T07:52:27.690420+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5245,7 +5509,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837255+00:00"
+    "collected_at": "2026-08-15T07:52:27.690432+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5285,7 +5549,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837259+00:00"
+    "collected_at": "2026-08-15T07:52:27.690444+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5325,7 +5589,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837263+00:00"
+    "collected_at": "2026-08-15T07:52:27.690457+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5365,7 +5629,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837267+00:00"
+    "collected_at": "2026-08-15T07:52:27.690469+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5405,7 +5669,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837271+00:00"
+    "collected_at": "2026-08-15T07:52:27.690481+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5445,7 +5709,47 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837275+00:00"
+    "collected_at": "2026-08-15T07:52:27.690493+00:00"
+  },
+  {
+    "resource_type": "aws::eks::k8s_service",
+    "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_service/external/mf-footer",
+    "resource_name": "mf-footer",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-dev-eks-apps-03",
+    "cluster_arn": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+    "uid": "01793696-d3bf-45e3-acba-e5dfe2f3e761",
+    "namespace": "external",
+    "service_type": "ClusterIP",
+    "cluster_ip": "172.20.192.40",
+    "lb_hostname": "",
+    "ports": [
+      {
+        "port": 80,
+        "target_port": "80",
+        "protocol": "TCP",
+        "node_port": null
+      }
+    ],
+    "selector": {
+      "app": "mf-footer"
+    },
+    "labels": {},
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::eks::k8s_namespace",
+        "resource_id": "arn:aws:eks:eu-south-2:891376942769:cluster/itl-0003-portal-dev-eks-apps-03/aws::eks::k8s_namespace/external",
+        "relation": "in_namespace"
+      }
+    ],
+    "collected_at": "2026-08-15T07:52:27.690505+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5485,7 +5789,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837278+00:00"
+    "collected_at": "2026-08-15T07:52:27.690518+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5525,7 +5829,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837282+00:00"
+    "collected_at": "2026-08-15T07:52:27.690529+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5565,7 +5869,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837286+00:00"
+    "collected_at": "2026-08-15T07:52:27.690541+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5605,7 +5909,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837290+00:00"
+    "collected_at": "2026-08-15T07:52:27.690552+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5645,7 +5949,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837294+00:00"
+    "collected_at": "2026-08-15T07:52:27.690565+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5685,7 +5989,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837298+00:00"
+    "collected_at": "2026-08-15T07:52:27.690577+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5725,7 +6029,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837302+00:00"
+    "collected_at": "2026-08-15T07:52:27.690589+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5765,7 +6069,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837305+00:00"
+    "collected_at": "2026-08-15T07:52:27.690600+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5805,7 +6109,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837309+00:00"
+    "collected_at": "2026-08-15T07:52:27.690610+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5845,7 +6149,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837313+00:00"
+    "collected_at": "2026-08-15T07:52:27.690620+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5885,7 +6189,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837317+00:00"
+    "collected_at": "2026-08-15T07:52:27.690631+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5925,7 +6229,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837320+00:00"
+    "collected_at": "2026-08-15T07:52:27.690641+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -5965,7 +6269,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837324+00:00"
+    "collected_at": "2026-08-15T07:52:27.690650+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6005,7 +6309,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837328+00:00"
+    "collected_at": "2026-08-15T07:52:27.690661+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6045,7 +6349,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837331+00:00"
+    "collected_at": "2026-08-15T07:52:27.690671+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6085,7 +6389,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837334+00:00"
+    "collected_at": "2026-08-15T07:52:27.690681+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6125,7 +6429,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837338+00:00"
+    "collected_at": "2026-08-15T07:52:27.690691+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6165,7 +6469,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837342+00:00"
+    "collected_at": "2026-08-15T07:52:27.690701+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6205,7 +6509,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837346+00:00"
+    "collected_at": "2026-08-15T07:52:27.690711+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6245,7 +6549,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837350+00:00"
+    "collected_at": "2026-08-15T07:52:27.690720+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6285,7 +6589,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837353+00:00"
+    "collected_at": "2026-08-15T07:52:27.690731+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6325,7 +6629,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837357+00:00"
+    "collected_at": "2026-08-15T07:52:27.690741+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6365,7 +6669,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837360+00:00"
+    "collected_at": "2026-08-15T07:52:27.690750+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6405,7 +6709,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837364+00:00"
+    "collected_at": "2026-08-15T07:52:27.690760+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6445,7 +6749,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837367+00:00"
+    "collected_at": "2026-08-15T07:52:27.690770+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6485,7 +6789,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837370+00:00"
+    "collected_at": "2026-08-15T07:52:27.690781+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6525,7 +6829,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837373+00:00"
+    "collected_at": "2026-08-15T07:52:27.690791+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6565,7 +6869,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837377+00:00"
+    "collected_at": "2026-08-15T07:52:27.690802+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6605,7 +6909,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837380+00:00"
+    "collected_at": "2026-08-15T07:52:27.690812+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6645,7 +6949,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837384+00:00"
+    "collected_at": "2026-08-15T07:52:27.690822+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6685,7 +6989,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837387+00:00"
+    "collected_at": "2026-08-15T07:52:27.690832+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6725,7 +7029,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837391+00:00"
+    "collected_at": "2026-08-15T07:52:27.690841+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6765,7 +7069,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837394+00:00"
+    "collected_at": "2026-08-15T07:52:27.690851+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6805,7 +7109,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837398+00:00"
+    "collected_at": "2026-08-15T07:52:27.690868+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6845,7 +7149,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837401+00:00"
+    "collected_at": "2026-08-15T07:52:27.690877+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6885,7 +7189,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837404+00:00"
+    "collected_at": "2026-08-15T07:52:27.690887+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6925,7 +7229,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837407+00:00"
+    "collected_at": "2026-08-15T07:52:27.690896+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -6974,7 +7278,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837411+00:00"
+    "collected_at": "2026-08-15T07:52:27.690906+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -7012,7 +7316,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837414+00:00"
+    "collected_at": "2026-08-15T07:52:27.690916+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -7059,7 +7363,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837418+00:00"
+    "collected_at": "2026-08-15T07:52:27.690926+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -7116,7 +7420,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837422+00:00"
+    "collected_at": "2026-08-15T07:52:27.690938+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_service",
@@ -7158,7 +7462,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:08.837425+00:00"
+    "collected_at": "2026-08-15T07:52:27.690950+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_ingress",
@@ -7221,7 +7525,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:09.049451+00:00"
+    "collected_at": "2026-08-15T07:52:27.904314+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_ingress",
@@ -7282,7 +7586,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:09.049466+00:00"
+    "collected_at": "2026-08-15T07:52:27.904353+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_ingress",
@@ -7424,6 +7728,12 @@
             "service_port": "80"
           },
           {
+            "path": "/mf-footer",
+            "path_type": "Prefix",
+            "service_name": "mf-footer",
+            "service_port": "80"
+          },
+          {
             "path": "/mf-menu",
             "path_type": "Prefix",
             "service_name": "mf-menu-new",
@@ -7521,7 +7831,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:09.049492+00:00"
+    "collected_at": "2026-08-15T07:52:27.904428+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_ingress",
@@ -7544,24 +7854,6 @@
             "path": "/",
             "path_type": "Prefix",
             "service_name": "mf-container",
-            "service_port": "80"
-          },
-          {
-            "path": "/mf-menu",
-            "path_type": "Prefix",
-            "service_name": "mf-menu",
-            "service_port": "80"
-          },
-          {
-            "path": "/mf-header",
-            "path_type": "Prefix",
-            "service_name": "mf-header",
-            "service_port": "80"
-          },
-          {
-            "path": "/mf-styleguide",
-            "path_type": "Prefix",
-            "service_name": "mf-styleguide",
             "service_port": "80"
           },
           {
@@ -7651,7 +7943,7 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:09.049506+00:00"
+    "collected_at": "2026-08-15T07:52:27.904463+00:00"
   },
   {
     "resource_type": "aws::eks::k8s_ingress",
@@ -7707,6 +7999,6 @@
         "relation": "in_namespace"
       }
     ],
-    "collected_at": "2026-07-12T19:49:09.049511+00:00"
+    "collected_at": "2026-08-15T07:52:27.904481+00:00"
   }
 ]

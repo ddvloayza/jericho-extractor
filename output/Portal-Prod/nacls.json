@@ -75,7 +75,7 @@
         "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:29.088762+00:00"
+    "collected_at": "2026-08-15T07:35:15.424635+00:00"
   },
   {
     "resource_type": "aws::ec2::network_acl",
@@ -159,7 +159,7 @@
         "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:29.088780+00:00"
+    "collected_at": "2026-08-15T07:35:15.424667+00:00"
   },
   {
     "resource_type": "aws::ec2::network_acl",
@@ -169,7 +169,11 @@
     "region": "eu-south-2",
     "vpc_id": "vpc-0626d66632373c892",
     "is_default": true,
-    "associated_subnet_ids": [],
+    "associated_subnet_ids": [
+      "subnet-012631c98f20cc41a",
+      "subnet-089c4b5c6600f9d1b",
+      "subnet-0ca5521bb442a411e"
+    ],
     "inbound_rules": [
       {
         "rule_number": 100,
@@ -216,9 +220,24 @@
         "resource_type": "aws::ec2::vpc",
         "resource_id": "vpc-0626d66632373c892",
         "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-012631c98f20cc41a",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-089c4b5c6600f9d1b",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0ca5521bb442a411e",
+        "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:29.088787+00:00"
+    "collected_at": "2026-08-15T07:35:15.424682+00:00"
   },
   {
     "resource_type": "aws::ec2::network_acl",
@@ -302,7 +321,7 @@
         "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:29.088795+00:00"
+    "collected_at": "2026-08-15T07:35:15.424697+00:00"
   },
   {
     "resource_type": "aws::ec2::network_acl",
@@ -386,6 +405,6 @@
         "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:29.088802+00:00"
+    "collected_at": "2026-08-15T07:35:15.424709+00:00"
   }
 ]

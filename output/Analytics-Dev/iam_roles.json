@@ -41,7 +41,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:14.438671+00:00"
+    "collected_at": "2026-08-15T07:47:20.079595+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -82,7 +82,7 @@
     ],
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:45:14.838699+00:00"
+    "collected_at": "2026-08-15T07:47:20.466792+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -134,7 +134,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:15.231989+00:00"
+    "collected_at": "2026-08-15T07:47:20.879110+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -175,7 +175,7 @@
     ],
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:45:15.609864+00:00"
+    "collected_at": "2026-08-15T07:47:21.270793+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -219,7 +219,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:16.001592+00:00"
+    "collected_at": "2026-08-15T07:47:21.624376+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -263,7 +263,491 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:16.394289+00:00"
+    "collected_at": "2026-08-15T07:47:22.031165+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup",
+    "resource_name": "AWSServiceRoleForAmazonEKSNodegroup",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/eks-nodegroup.amazonaws.com/",
+    "description": "This policy allows Amazon EKS to create and manage Nodegroups",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-07 16:16:45+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "eks-nodegroup.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "eks-nodegroup.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSServiceRoleForAmazonEKSNodegroup",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForAmazonEKSNodegroup"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForAmazonEKSNodegroup",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:22.532169+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDuty",
+    "resource_name": "AWSServiceRoleForAmazonGuardDuty",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/guardduty.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:31:16+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "guardduty.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "guardduty.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonGuardDutyServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:22.915907+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/malware-protection.guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDutyMalwareProtection",
+    "resource_name": "AWSServiceRoleForAmazonGuardDutyMalwareProtection",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/malware-protection.guardduty.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-04-16 16:35:39+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "malware-protection.guardduty.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "malware-protection.guardduty.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonGuardDutyMalwareProtectionServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyMalwareProtectionServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyMalwareProtectionServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:23.296686+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
+    "resource_name": "AWSServiceRoleForAutoScaling",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/autoscaling.amazonaws.com/",
+    "description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-07 16:16:59+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "autoscaling.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "autoscaling.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AutoScalingServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:23.659294+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/controltower.amazonaws.com/AWSServiceRoleForAWSControlTower",
+    "resource_name": "AWSServiceRoleForAWSControlTower",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/controltower.amazonaws.com/",
+    "description": "Provides access to AWS Resources managed or used by AWS Control Tower",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:31:58+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "controltower.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "controltower.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSControlTowerAccountServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:24.030508+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "resource_name": "AWSServiceRoleForCloudFormationStackSetsOrgMember",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/",
+    "description": "Service linked role for CloudFormation StackSets (Organization Member)",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:29:23+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "member.org.stacksets.cloudformation.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "member.org.stacksets.cloudformation.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:24.398449+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/cloudtrail.amazonaws.com/AWSServiceRoleForCloudTrail",
+    "resource_name": "AWSServiceRoleForCloudTrail",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/cloudtrail.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:32:16+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "cloudtrail.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "cloudtrail.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "CloudTrailServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:24.772363+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
+    "resource_name": "AWSServiceRoleForConfig",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/config.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:31:39+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "config.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "config.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSConfigServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSConfigServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSConfigServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:25.138458+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
+    "resource_name": "AWSServiceRoleForElasticLoadBalancing",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
+    "description": "Allows ELB to call AWS services on your behalf.",
+    "max_session_duration": 3600,
+    "create_date": "2025-02-12 18:37:23+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "elasticloadbalancing.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "elasticloadbalancing.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSElasticLoadBalancingServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:25.523495+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/fms.amazonaws.com/AWSServiceRoleForFMS",
+    "resource_name": "AWSServiceRoleForFMS",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/fms.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:29:46+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "fms.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "fms.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "FMSServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/FMSServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/FMSServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:25.889065+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/globalaccelerator.amazonaws.com/AWSServiceRoleForGlobalAccelerator",
+    "resource_name": "AWSServiceRoleForGlobalAccelerator",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/globalaccelerator.amazonaws.com/",
+    "description": "Allows Global Accelerator to call AWS services on customer's behalf",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-11 18:05:25+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "globalaccelerator.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "globalaccelerator.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSGlobalAcceleratorSLRPolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSGlobalAcceleratorSLRPolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSGlobalAcceleratorSLRPolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:26.267165+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -316,57 +800,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:16.584356+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSOrganizationsFullAccess_dbbb6d9e1c817e65",
-    "resource_name": "AWSReservedSSO_AWSOrganizationsFullAccess_dbbb6d9e1c817e65",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-reserved/sso.amazonaws.com/",
-    "description": "Provides full access to AWS Organizations",
-    "max_session_duration": 43200,
-    "create_date": "2025-01-21 20:30:57+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::221082197632:saml-provider/AWSSSO_12680bc399f2aa90_DO_NOT_DELETE"
-          },
-          "Action": [
-            "sts:AssumeRoleWithSAML",
-            "sts:TagSession"
-          ],
-          "Condition": {
-            "StringEquals": {
-              "SAML:aud": "https://signin.aws.amazon.com/saml"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSOrganizationsFullAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:16.593687+00:00"
+    "collected_at": "2026-08-15T07:47:26.427204+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -410,7 +844,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:16.603036+00:00"
+    "collected_at": "2026-08-15T07:47:26.457582+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -460,97 +894,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:16.622287+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/AWSControlTowerExecution",
-    "resource_name": "AWSControlTowerExecution",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:29:14+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "AWS": "arn:aws:iam::664418961607:root"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [
-      "664418961607"
-    ],
-    "attached_policies": [
-      {
-        "PolicyName": "AdministratorAccess",
-        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:16.637081+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-controltower-ForwardSnsNotificationRole",
-    "resource_name": "aws-controltower-ForwardSnsNotificationRole",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:32:00+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "lambda.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "lambda.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSLambdaBasicExecutionRole",
-        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
-      }
-    ],
-    "inline_policy_names": [
-      "sns"
-    ],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:16.653214+00:00"
+    "collected_at": "2026-08-15T07:47:26.459564+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -600,7 +944,97 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:16.660337+00:00"
+    "collected_at": "2026-08-15T07:47:26.461623+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/AWSControlTowerExecution",
+    "resource_name": "AWSControlTowerExecution",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:29:14+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "AWS": "arn:aws:iam::664418961607:root"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [
+      "664418961607"
+    ],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AdministratorAccess",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:26.468291+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-controltower-ForwardSnsNotificationRole",
+    "resource_name": "aws-controltower-ForwardSnsNotificationRole",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:32:00+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "lambda.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "lambda.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSLambdaBasicExecutionRole",
+        "PolicyArn": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+      }
+    ],
+    "inline_policy_names": [
+      "sns"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:26.480280+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -644,7 +1078,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:16.661273+00:00"
+    "collected_at": "2026-08-15T07:47:26.483201+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -694,39 +1128,45 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:16.661878+00:00"
+    "collected_at": "2026-08-15T07:47:26.486817+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/eks-nodegroup.amazonaws.com/AWSServiceRoleForAmazonEKSNodegroup",
-    "resource_name": "AWSServiceRoleForAmazonEKSNodegroup",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-reserved/sso.amazonaws.com/AWSReservedSSO_AWSOrganizationsFullAccess_dbbb6d9e1c817e65",
+    "resource_name": "AWSReservedSSO_AWSOrganizationsFullAccess_dbbb6d9e1c817e65",
     "account_id": "221082197632",
     "account_name": "Analytics-Dev",
     "region": "global",
-    "path": "/aws-service-role/eks-nodegroup.amazonaws.com/",
-    "description": "This policy allows Amazon EKS to create and manage Nodegroups",
-    "max_session_duration": 3600,
-    "create_date": "2025-02-07 16:16:45+00:00",
+    "path": "/aws-reserved/sso.amazonaws.com/",
+    "description": "Provides full access to AWS Organizations",
+    "max_session_duration": 43200,
+    "create_date": "2025-01-21 20:30:57+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "eks-nodegroup.amazonaws.com"
+            "Federated": "arn:aws:iam::221082197632:saml-provider/AWSSSO_12680bc399f2aa90_DO_NOT_DELETE"
           },
-          "Action": "sts:AssumeRole"
+          "Action": [
+            "sts:AssumeRoleWithSAML",
+            "sts:TagSession"
+          ],
+          "Condition": {
+            "StringEquals": {
+              "SAML:aud": "https://signin.aws.amazon.com/saml"
+            }
+          }
         }
       ]
     },
-    "trusted_services": [
-      "eks-nodegroup.amazonaws.com"
-    ],
+    "trusted_services": [],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSServiceRoleForAmazonEKSNodegroup",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForAmazonEKSNodegroup"
+        "PolicyName": "AWSOrganizationsFullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess"
       }
     ],
     "inline_policy_names": [],
@@ -734,539 +1174,11 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSServiceRoleForAmazonEKSNodegroup",
+        "resource_id": "arn:aws:iam::aws:policy/AWSOrganizationsFullAccess",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:16.749074+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDuty",
-    "resource_name": "AWSServiceRoleForAmazonGuardDuty",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/guardduty.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:31:16+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "guardduty.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "guardduty.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonGuardDutyServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:16.951895+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/malware-protection.guardduty.amazonaws.com/AWSServiceRoleForAmazonGuardDutyMalwareProtection",
-    "resource_name": "AWSServiceRoleForAmazonGuardDutyMalwareProtection",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/malware-protection.guardduty.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-04-16 16:35:39+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "malware-protection.guardduty.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "malware-protection.guardduty.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonGuardDutyMalwareProtectionServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyMalwareProtectionServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonGuardDutyMalwareProtectionServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:16.959680+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling",
-    "resource_name": "AWSServiceRoleForAutoScaling",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/autoscaling.amazonaws.com/",
-    "description": "Default Service-Linked Role enables access to AWS Services and Resources used or managed by Auto Scaling",
-    "max_session_duration": 3600,
-    "create_date": "2025-02-07 16:16:59+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "autoscaling.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "autoscaling.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AutoScalingServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AutoScalingServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:16.971119+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/AWSServiceRoleForCloudFormationStackSetsOrgMember",
-    "resource_name": "AWSServiceRoleForCloudFormationStackSetsOrgMember",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/member.org.stacksets.cloudformation.amazonaws.com/",
-    "description": "Service linked role for CloudFormation StackSets (Organization Member)",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:29:23+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "member.org.stacksets.cloudformation.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "member.org.stacksets.cloudformation.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "CloudFormationStackSetsOrgMemberServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudFormationStackSetsOrgMemberServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.002692+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/controltower.amazonaws.com/AWSServiceRoleForAWSControlTower",
-    "resource_name": "AWSServiceRoleForAWSControlTower",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/controltower.amazonaws.com/",
-    "description": "Provides access to AWS Resources managed or used by AWS Control Tower",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:31:58+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "controltower.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "controltower.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSControlTowerAccountServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSControlTowerAccountServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.017764+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/cloudtrail.amazonaws.com/AWSServiceRoleForCloudTrail",
-    "resource_name": "AWSServiceRoleForCloudTrail",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/cloudtrail.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:32:16+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "cloudtrail.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "cloudtrail.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "CloudTrailServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/CloudTrailServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.050792+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/elasticloadbalancing.amazonaws.com/AWSServiceRoleForElasticLoadBalancing",
-    "resource_name": "AWSServiceRoleForElasticLoadBalancing",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/elasticloadbalancing.amazonaws.com/",
-    "description": "Allows ELB to call AWS services on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2025-02-12 18:37:23+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "elasticloadbalancing.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "elasticloadbalancing.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSElasticLoadBalancingServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSElasticLoadBalancingServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.075492+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/fms.amazonaws.com/AWSServiceRoleForFMS",
-    "resource_name": "AWSServiceRoleForFMS",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/fms.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:29:46+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "fms.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "fms.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "FMSServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/FMSServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/FMSServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.093739+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/config.amazonaws.com/AWSServiceRoleForConfig",
-    "resource_name": "AWSServiceRoleForConfig",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/config.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:31:39+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "config.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "config.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSConfigServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSConfigServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSConfigServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.095021+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/globalaccelerator.amazonaws.com/AWSServiceRoleForGlobalAccelerator",
-    "resource_name": "AWSServiceRoleForGlobalAccelerator",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/globalaccelerator.amazonaws.com/",
-    "description": "Allows Global Accelerator to call AWS services on customer's behalf",
-    "max_session_duration": 3600,
-    "create_date": "2025-10-11 18:05:25+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "globalaccelerator.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "globalaccelerator.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSGlobalAcceleratorSLRPolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSGlobalAcceleratorSLRPolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSGlobalAcceleratorSLRPolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.107257+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
-    "resource_name": "AWSServiceRoleForRDS",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/rds.amazonaws.com/",
-    "description": "Allows Amazon RDS to manage AWS resources on your behalf",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 22:47:23+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "rds.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "rds.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonRDSServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.323499+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/AWSServiceRoleForReachabilityAnalyzer",
-    "resource_name": "AWSServiceRoleForReachabilityAnalyzer",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/",
-    "description": "The Service Linked Role used by Reachability Analyzer.",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:29:36+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "reachabilityanalyzer.networkinsights.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "reachabilityanalyzer.networkinsights.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSReachabilityAnalyzerServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.338726+00:00"
+    "collected_at": "2026-08-15T07:47:26.489027+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1310,39 +1222,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.358259+00:00"
+    "collected_at": "2026-08-15T07:47:26.628133+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
-    "resource_name": "AWSServiceRoleForResourceExplorer",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS",
+    "resource_name": "AWSServiceRoleForRDS",
     "account_id": "221082197632",
     "account_name": "Analytics-Dev",
     "region": "global",
-    "path": "/aws-service-role/resource-explorer-2.amazonaws.com/",
-    "description": "",
+    "path": "/aws-service-role/rds.amazonaws.com/",
+    "description": "Allows Amazon RDS to manage AWS resources on your behalf",
     "max_session_duration": 3600,
-    "create_date": "2025-09-30 19:49:50+00:00",
+    "create_date": "2025-01-21 22:47:23+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "resource-explorer-2.amazonaws.com"
+            "Service": "rds.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "resource-explorer-2.amazonaws.com"
+      "rds.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSResourceExplorerServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy"
+        "PolicyName": "AmazonRDSServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy"
       }
     ],
     "inline_policy_names": [],
@@ -1350,11 +1262,55 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AmazonRDSServiceRolePolicy",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.365331+00:00"
+    "collected_at": "2026-08-15T07:47:26.771667+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/AWSServiceRoleForReachabilityAnalyzer",
+    "resource_name": "AWSServiceRoleForReachabilityAnalyzer",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/reachabilityanalyzer.networkinsights.amazonaws.com/",
+    "description": "The Service Linked Role used by Reachability Analyzer.",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:29:36+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "reachabilityanalyzer.networkinsights.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "reachabilityanalyzer.networkinsights.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSReachabilityAnalyzerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSReachabilityAnalyzerServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:26.830517+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1398,39 +1354,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.426570+00:00"
+    "collected_at": "2026-08-15T07:47:26.838250+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/securityhubv2.amazonaws.com/AWSServiceRoleForSecurityHubV2",
-    "resource_name": "AWSServiceRoleForSecurityHubV2",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/resource-explorer-2.amazonaws.com/AWSServiceRoleForResourceExplorer",
+    "resource_name": "AWSServiceRoleForResourceExplorer",
     "account_id": "221082197632",
     "account_name": "Analytics-Dev",
     "region": "global",
-    "path": "/aws-service-role/securityhubv2.amazonaws.com/",
+    "path": "/aws-service-role/resource-explorer-2.amazonaws.com/",
     "description": "",
     "max_session_duration": 3600,
-    "create_date": "2025-12-29 21:26:14+00:00",
+    "create_date": "2025-09-30 19:49:50+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "securityhubv2.amazonaws.com"
+            "Service": "resource-explorer-2.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "securityhubv2.amazonaws.com"
+      "resource-explorer-2.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSSecurityHubV2ServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy"
+        "PolicyName": "AWSResourceExplorerServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy"
       }
     ],
     "inline_policy_names": [],
@@ -1438,55 +1394,11 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSResourceExplorerServiceRolePolicy",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.427889+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway",
-    "resource_name": "AWSServiceRoleForVPCTransitGateway",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/aws-service-role/transitgateway.amazonaws.com/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-27 18:01:11+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "transitgateway.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "transitgateway.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AWSVPCTransitGatewayServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.479402+00:00"
+    "collected_at": "2026-08-15T07:47:26.852766+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1530,39 +1442,39 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.486493+00:00"
+    "collected_at": "2026-08-15T07:47:26.861270+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
-    "resource_name": "AWSServiceRoleForTrustedAdvisor",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/securityhubv2.amazonaws.com/AWSServiceRoleForSecurityHubV2",
+    "resource_name": "AWSServiceRoleForSecurityHubV2",
     "account_id": "221082197632",
     "account_name": "Analytics-Dev",
     "region": "global",
-    "path": "/aws-service-role/trustedadvisor.amazonaws.com/",
-    "description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+    "path": "/aws-service-role/securityhubv2.amazonaws.com/",
+    "description": "",
     "max_session_duration": 3600,
-    "create_date": "2025-01-21 20:29:14+00:00",
+    "create_date": "2025-12-29 21:26:14+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "trustedadvisor.amazonaws.com"
+            "Service": "securityhubv2.amazonaws.com"
           },
           "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "trustedadvisor.amazonaws.com"
+      "securityhubv2.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AWSTrustedAdvisorServiceRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+        "PolicyName": "AWSSecurityHubV2ServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy"
       }
     ],
     "inline_policy_names": [],
@@ -1570,11 +1482,11 @@
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSSecurityHubV2ServiceRolePolicy",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.505646+00:00"
+    "collected_at": "2026-08-15T07:47:26.874054+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1618,7 +1530,181 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.510917+00:00"
+    "collected_at": "2026-08-15T07:47:26.889213+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/transitgateway.amazonaws.com/AWSServiceRoleForVPCTransitGateway",
+    "resource_name": "AWSServiceRoleForVPCTransitGateway",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/transitgateway.amazonaws.com/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-27 18:01:11+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "transitgateway.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "transitgateway.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSVPCTransitGatewayServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSVPCTransitGatewayServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:26.897515+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/aws-service-role/trustedadvisor.amazonaws.com/AWSServiceRoleForTrustedAdvisor",
+    "resource_name": "AWSServiceRoleForTrustedAdvisor",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/aws-service-role/trustedadvisor.amazonaws.com/",
+    "description": "Access for the AWS Trusted Advisor Service to help reduce cost, increase performance, and improve security of your AWS environment.",
+    "max_session_duration": 3600,
+    "create_date": "2025-01-21 20:29:14+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "trustedadvisor.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole"
+        }
+      ]
+    },
+    "trusted_services": [
+      "trustedadvisor.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AWSTrustedAdvisorServiceRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/aws-service-role/AWSTrustedAdvisorServiceRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:26.912879+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/itl-0005-ana-dev-eks-af-02-airflowdev-role",
+    "resource_name": "itl-0005-ana-dev-eks-af-02-airflowdev-role",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-12 04:07:50+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Federated": "arn:aws:iam::221082197632:oidc-provider/oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544"
+          },
+          "Action": "sts:AssumeRoleWithWebIdentity",
+          "Condition": {
+            "StringEquals": {
+              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:aud": "sts.amazonaws.com",
+              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:sub": "system:serviceaccount:airflow:airflowdev"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-interchange-pol",
+        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-interchange-pol"
+      },
+      {
+        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-reports-pol",
+        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-reports-pol"
+      },
+      {
+        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-incontrol-pol",
+        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-incontrol-pol"
+      },
+      {
+        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-static-pol",
+        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-static-pol"
+      },
+      {
+        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-logs-read-write-pol",
+        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-logs-read-write-pol"
+      }
+    ],
+    "inline_policy_names": [
+      "assume-interchange-dev-glue-role"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-interchange-pol",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-reports-pol",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-incontrol-pol",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-static-pol",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-logs-read-write-pol",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:26.999818+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1642,8 +1728,8 @@
           "Action": "sts:AssumeRoleWithWebIdentity",
           "Condition": {
             "StringEquals": {
-              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:sub": "system:serviceaccount:kube-system:aws-elb",
-              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:aud": "sts.amazonaws.com"
+              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:aud": "sts.amazonaws.com",
+              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:sub": "system:serviceaccount:kube-system:aws-elb"
             }
           }
         }
@@ -1693,91 +1779,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.692468+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/itl-0005-ana-dev-eks-af-02-airflowdev-role",
-    "resource_name": "itl-0005-ana-dev-eks-af-02-airflowdev-role",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/",
-    "description": "",
-    "max_session_duration": 3600,
-    "create_date": "2025-10-12 04:07:50+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Federated": "arn:aws:iam::221082197632:oidc-provider/oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544"
-          },
-          "Action": "sts:AssumeRoleWithWebIdentity",
-          "Condition": {
-            "StringEquals": {
-              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:sub": "system:serviceaccount:airflow:airflowdev",
-              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:aud": "sts.amazonaws.com"
-            }
-          }
-        }
-      ]
-    },
-    "trusted_services": [],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-interchange-pol",
-        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-interchange-pol"
-      },
-      {
-        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-reports-pol",
-        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-reports-pol"
-      },
-      {
-        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-incontrol-pol",
-        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-incontrol-pol"
-      },
-      {
-        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-static-pol",
-        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-static-pol"
-      },
-      {
-        "PolicyName": "itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-logs-read-write-pol",
-        "PolicyArn": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-logs-read-write-pol"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-interchange-pol",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-reports-pol",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-incontrol-pol",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-static-pol",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::221082197632:policy/itl-0005-ana-dev-eks-af-02-airflowdev-role-airflow-bucket-logs-read-write-pol",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:17.699739+00:00"
+    "collected_at": "2026-08-15T07:47:27.128381+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1801,8 +1803,8 @@
           "Action": "sts:AssumeRoleWithWebIdentity",
           "Condition": {
             "StringEquals": {
-              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:sub": "system:serviceaccount:kube-system:cluster-autoscaler",
-              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:aud": "sts.amazonaws.com"
+              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:aud": "sts.amazonaws.com",
+              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:sub": "system:serviceaccount:kube-system:cluster-autoscaler"
             }
           }
         }
@@ -1843,7 +1845,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.729135+00:00"
+    "collected_at": "2026-08-15T07:47:27.189038+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1867,8 +1869,8 @@
           "Action": "sts:AssumeRoleWithWebIdentity",
           "Condition": {
             "StringEquals": {
-              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:sub": "system:serviceaccount:kube-system:external-dns",
-              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:aud": "sts.amazonaws.com"
+              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:aud": "sts.amazonaws.com",
+              "oidc.eks.eu-south-2.amazonaws.com/id/5612C2738856C5B04643863B41FE1544:sub": "system:serviceaccount:kube-system:external-dns"
             }
           }
         }
@@ -1909,7 +1911,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.763046+00:00"
+    "collected_at": "2026-08-15T07:47:27.224543+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -1989,7 +1991,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.811063+00:00"
+    "collected_at": "2026-08-15T07:47:27.250918+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2052,7 +2054,70 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.839036+00:00"
+    "collected_at": "2026-08-15T07:47:27.261996+00:00"
+  },
+  {
+    "resource_type": "aws::iam::role",
+    "resource_id": "arn:aws:iam::221082197632:role/itl-0005-ana-dev-fp-default-02-role-20251012040017721500000016",
+    "resource_name": "itl-0005-ana-dev-fp-default-02-role-20251012040017721500000016",
+    "account_id": "221082197632",
+    "account_name": "Analytics-Dev",
+    "region": "global",
+    "path": "/",
+    "description": "Fargate profile IAM role",
+    "max_session_duration": 3600,
+    "create_date": "2025-10-12 04:00:19+00:00",
+    "trust_policy": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Effect": "Allow",
+          "Principal": {
+            "Service": "eks-fargate-pods.amazonaws.com"
+          },
+          "Action": "sts:AssumeRole",
+          "Condition": {
+            "ArnLike": {
+              "aws:SourceArn": "arn:aws:eks:eu-south-2:221082197632:fargateprofile/itl-0005-ana-dev-eks-af-02/*"
+            }
+          }
+        }
+      ]
+    },
+    "trusted_services": [
+      "eks-fargate-pods.amazonaws.com"
+    ],
+    "trusted_accounts": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonEKS_CNI_Policy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
+      },
+      {
+        "PolicyName": "AmazonEKSFargatePodExecutionRolePolicy",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+      }
+    ],
+    "inline_policy_names": [],
+    "tags": {
+      "apid": "ana",
+      "coid": "itl",
+      "env": "dev",
+      "assetid": "0005"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
+        "relation": "has_attached_policy"
+      },
+      {
+        "resource_type": "aws::iam::policy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+        "relation": "has_attached_policy"
+      }
+    ],
+    "collected_at": "2026-08-15T07:47:27.269111+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2115,7 +2180,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.851466+00:00"
+    "collected_at": "2026-08-15T07:47:27.279353+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2178,7 +2243,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.880283+00:00"
+    "collected_at": "2026-08-15T07:47:27.286250+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2255,70 +2320,51 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.898897+00:00"
+    "collected_at": "2026-08-15T07:47:27.316174+00:00"
   },
   {
     "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/itl-0005-ana-dev-fp-default-02-role-20251012040017721500000016",
-    "resource_name": "itl-0005-ana-dev-fp-default-02-role-20251012040017721500000016",
+    "resource_id": "arn:aws:iam::221082197632:role/itl-0005-ana-dev-role-ec2-ssm-01",
+    "resource_name": "itl-0005-ana-dev-role-ec2-ssm-01",
     "account_id": "221082197632",
     "account_name": "Analytics-Dev",
     "region": "global",
     "path": "/",
-    "description": "Fargate profile IAM role",
+    "description": "Allows EC2 instances to call AWS services on your behalf.",
     "max_session_duration": 3600,
-    "create_date": "2025-10-12 04:00:19+00:00",
+    "create_date": "2025-01-27 16:20:17+00:00",
     "trust_policy": {
       "Version": "2012-10-17",
       "Statement": [
         {
           "Effect": "Allow",
           "Principal": {
-            "Service": "eks-fargate-pods.amazonaws.com"
+            "Service": "ec2.amazonaws.com"
           },
-          "Action": "sts:AssumeRole",
-          "Condition": {
-            "ArnLike": {
-              "aws:SourceArn": "arn:aws:eks:eu-south-2:221082197632:fargateprofile/itl-0005-ana-dev-eks-af-02/*"
-            }
-          }
+          "Action": "sts:AssumeRole"
         }
       ]
     },
     "trusted_services": [
-      "eks-fargate-pods.amazonaws.com"
+      "ec2.amazonaws.com"
     ],
     "trusted_accounts": [],
     "attached_policies": [
       {
-        "PolicyName": "AmazonEKS_CNI_Policy",
-        "PolicyArn": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy"
-      },
-      {
-        "PolicyName": "AmazonEKSFargatePodExecutionRolePolicy",
-        "PolicyArn": "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy"
+        "PolicyName": "AmazonSSMManagedInstanceCore",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
       }
     ],
     "inline_policy_names": [],
-    "tags": {
-      "apid": "ana",
-      "coid": "itl",
-      "env": "dev",
-      "assetid": "0005"
-    },
+    "tags": {},
     "relationships": [
       {
         "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy",
-        "relation": "has_attached_policy"
-      },
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy",
+        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:17.899160+00:00"
+    "collected_at": "2026-08-15T07:47:27.387543+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2363,51 +2409,7 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:18.042130+00:00"
-  },
-  {
-    "resource_type": "aws::iam::role",
-    "resource_id": "arn:aws:iam::221082197632:role/itl-0005-ana-dev-role-ec2-ssm-01",
-    "resource_name": "itl-0005-ana-dev-role-ec2-ssm-01",
-    "account_id": "221082197632",
-    "account_name": "Analytics-Dev",
-    "region": "global",
-    "path": "/",
-    "description": "Allows EC2 instances to call AWS services on your behalf.",
-    "max_session_duration": 3600,
-    "create_date": "2025-01-27 16:20:17+00:00",
-    "trust_policy": {
-      "Version": "2012-10-17",
-      "Statement": [
-        {
-          "Effect": "Allow",
-          "Principal": {
-            "Service": "ec2.amazonaws.com"
-          },
-          "Action": "sts:AssumeRole"
-        }
-      ]
-    },
-    "trusted_services": [
-      "ec2.amazonaws.com"
-    ],
-    "trusted_accounts": [],
-    "attached_policies": [
-      {
-        "PolicyName": "AmazonSSMManagedInstanceCore",
-        "PolicyArn": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
-      }
-    ],
-    "inline_policy_names": [],
-    "tags": {},
-    "relationships": [
-      {
-        "resource_type": "aws::iam::policy",
-        "resource_id": "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore",
-        "relation": "has_attached_policy"
-      }
-    ],
-    "collected_at": "2026-07-12T19:45:18.045190+00:00"
+    "collected_at": "2026-08-15T07:47:27.485928+00:00"
   },
   {
     "resource_type": "aws::iam::role",
@@ -2453,6 +2455,6 @@
         "relation": "has_attached_policy"
       }
     ],
-    "collected_at": "2026-07-12T19:45:18.102894+00:00"
+    "collected_at": "2026-08-15T07:47:27.549497+00:00"
   }
 ]

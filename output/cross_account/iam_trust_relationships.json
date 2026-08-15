@@ -40,8 +40,8 @@
     "relationship": "cross_account_iam_trust"
   },
   {
-    "role_arn": "arn:aws:iam::954976322048:role/aws-controltower-AdministratorExecutionRole",
-    "role_name": "aws-controltower-AdministratorExecutionRole",
+    "role_arn": "arn:aws:iam::954976322048:role/aws-controltower-ReadOnlyExecutionRole",
+    "role_name": "aws-controltower-ReadOnlyExecutionRole",
     "owner_account_id": "954976322048",
     "owner_account_name": "Intelica-Network",
     "trusted_account_id": "060795899335",
@@ -50,8 +50,8 @@
     "relationship": "cross_account_iam_trust"
   },
   {
-    "role_arn": "arn:aws:iam::954976322048:role/aws-controltower-ReadOnlyExecutionRole",
-    "role_name": "aws-controltower-ReadOnlyExecutionRole",
+    "role_arn": "arn:aws:iam::954976322048:role/aws-controltower-AdministratorExecutionRole",
+    "role_name": "aws-controltower-AdministratorExecutionRole",
     "owner_account_id": "954976322048",
     "owner_account_name": "Intelica-Network",
     "trusted_account_id": "060795899335",
@@ -86,6 +86,16 @@
     "owner_account_name": "Interchange-Dev",
     "trusted_account_id": "060795899335",
     "trusted_account_name": "Audit",
+    "trusted_services": [],
+    "relationship": "cross_account_iam_trust"
+  },
+  {
+    "role_arn": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-airflow-glue-crossaccount-role",
+    "role_name": "itl-0004-itx-dev-airflow-glue-crossaccount-role",
+    "owner_account_id": "861276092327",
+    "owner_account_name": "Interchange-Dev",
+    "trusted_account_id": "221082197632",
+    "trusted_account_name": "Analytics-Dev",
     "trusted_services": [],
     "relationship": "cross_account_iam_trust"
   },
@@ -150,6 +160,16 @@
     "relationship": "cross_account_iam_trust"
   },
   {
+    "role_arn": "arn:aws:iam::891376942769:role/finops-ec2-readonly",
+    "role_name": "finops-ec2-readonly",
+    "owner_account_id": "891376942769",
+    "owner_account_name": "Portal-Dev",
+    "trusted_account_id": "060795899335",
+    "trusted_account_name": "Audit",
+    "trusted_services": [],
+    "relationship": "cross_account_iam_trust"
+  },
+  {
     "role_arn": "arn:aws:iam::610944808410:role/aws-controltower-ReadOnlyExecutionRole",
     "role_name": "aws-controltower-ReadOnlyExecutionRole",
     "owner_account_id": "610944808410",
@@ -164,6 +184,36 @@
     "role_name": "aws-controltower-AdministratorExecutionRole",
     "owner_account_id": "610944808410",
     "owner_account_name": "Portal-Prod",
+    "trusted_account_id": "060795899335",
+    "trusted_account_name": "Audit",
+    "trusted_services": [],
+    "relationship": "cross_account_iam_trust"
+  },
+  {
+    "role_arn": "arn:aws:iam::610944808410:role/finops-ec2-readonly",
+    "role_name": "finops-ec2-readonly",
+    "owner_account_id": "610944808410",
+    "owner_account_name": "Portal-Prod",
+    "trusted_account_id": "060795899335",
+    "trusted_account_name": "Audit",
+    "trusted_services": [],
+    "relationship": "cross_account_iam_trust"
+  },
+  {
+    "role_arn": "arn:aws:iam::396608799622:role/aws-controltower-AdministratorExecutionRole",
+    "role_name": "aws-controltower-AdministratorExecutionRole",
+    "owner_account_id": "396608799622",
+    "owner_account_name": "Portal-QA",
+    "trusted_account_id": "060795899335",
+    "trusted_account_name": "Audit",
+    "trusted_services": [],
+    "relationship": "cross_account_iam_trust"
+  },
+  {
+    "role_arn": "arn:aws:iam::396608799622:role/aws-controltower-ReadOnlyExecutionRole",
+    "role_name": "aws-controltower-ReadOnlyExecutionRole",
+    "owner_account_id": "396608799622",
+    "owner_account_name": "Portal-QA",
     "trusted_account_id": "060795899335",
     "trusted_account_name": "Audit",
     "trusted_services": [],

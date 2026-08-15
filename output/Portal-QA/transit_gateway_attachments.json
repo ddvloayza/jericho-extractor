@@ -1,0 +1,35 @@
+[
+  {
+    "resource_type": "aws::ec2::transit_gateway_attachment",
+    "resource_id": "tgw-attach-0efdd0c4be3dda9a1",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "transit_gateway_id": "tgw-042a72cb246bebf1e",
+    "transit_gateway_owner_id": "954976322048",
+    "attachment_type": "vpc",
+    "state": "available",
+    "resource_id_ref": "vpc-0943c2ad6ac2aeb29",
+    "resource_owner_id": "396608799622",
+    "tags": {
+      "coid": "itl",
+      "env": "qa",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-qa-tgw-vpc-attachment-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::transit_gateway",
+        "resource_id": "tgw-042a72cb246bebf1e",
+        "relation": "attached_to_tgw"
+      },
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "attachment_resource"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:10.591009+00:00"
+  }
+]

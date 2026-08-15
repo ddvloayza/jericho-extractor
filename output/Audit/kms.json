@@ -24,7 +24,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:49:42.453096+00:00"
+    "collected_at": "2026-08-15T07:53:26.681746+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -51,7 +51,34 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:49:42.779314+00:00"
+    "collected_at": "2026-08-15T07:53:27.012772+00:00"
+  },
+  {
+    "resource_type": "aws::kms::key",
+    "resource_id": "arn:aws:kms:us-east-1:060795899335:key/53195cce-f915-4852-bd9a-8036bab9fd7a",
+    "resource_name": "alias/aws/secretsmanager",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "us-east-1",
+    "key_id": "53195cce-f915-4852-bd9a-8036bab9fd7a",
+    "key_state": "Enabled",
+    "key_usage": "ENCRYPT_DECRYPT",
+    "key_spec": "SYMMETRIC_DEFAULT",
+    "key_manager": "AWS",
+    "enabled": true,
+    "multi_region": false,
+    "multi_region_key_type": "",
+    "description": "Default key that protects my Secrets Manager data when no other key is defined",
+    "creation_date": "2026-07-23 17:30:12.125000-05:00",
+    "deletion_date": "",
+    "rotation_enabled": true,
+    "aliases": [
+      "alias/aws/secretsmanager"
+    ],
+    "origin": "AWS_KMS",
+    "tags": {},
+    "relationships": [],
+    "collected_at": "2026-08-15T07:53:27.351004+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -78,7 +105,7 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:49:43.211957+00:00"
+    "collected_at": "2026-08-15T07:53:27.794108+00:00"
   },
   {
     "resource_type": "aws::kms::key",
@@ -105,6 +132,6 @@
     "origin": "AWS_KMS",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:49:43.534854+00:00"
+    "collected_at": "2026-08-15T07:53:28.124745+00:00"
   }
 ]

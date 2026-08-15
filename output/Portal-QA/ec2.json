@@ -1,0 +1,218 @@
+[
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-05300bab90acfdab5",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "instance_type": "t3.xlarge",
+    "state": "stopped",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "subnet_id": "subnet-086c5860741c77434",
+    "private_ip": "10.11.3.12",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-00e62e285941ada63",
+    "key_name": "itl-0003-prtlgy-qa-vienna-key-pair",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-05975d35e046ca0bf"
+    ],
+    "iam_instance_profile": "arn:aws:iam::396608799622:instance-profile/itl-0003-portal-qa-ec2-vienna-02-role-profile",
+    "launch_time": "2026-08-13 11:50:03+00:00",
+    "tags": {
+      "apid": "portal",
+      "coid": "itl",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-qa-ec2-vienna-02",
+      "schedule": "portal-qa",
+      "env": "qa",
+      "Type": "ec2"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-086c5860741c77434",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-05975d35e046ca0bf",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:12.437620+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-05b4915221f18a3cc",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "instance_type": "t3.micro",
+    "state": "stopped",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "subnet_id": "subnet-086c5860741c77434",
+    "private_ip": "10.11.3.205",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-073422177b6b3ed22",
+    "key_name": "itl-0003-prtlgy-qa-denver-key-pair",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0e2fbe135b75b6004"
+    ],
+    "iam_instance_profile": "arn:aws:iam::396608799622:instance-profile/itl-0003-portal-qa-ec2-git-runner-02-profile",
+    "launch_time": "2026-08-13 11:50:03+00:00",
+    "tags": {
+      "assetid": "0003",
+      "Name": "itl-0003-portal-qa-ec2-git-runner-02",
+      "coid": "itl",
+      "Type": "restored-vm",
+      "env": "qa",
+      "schedule": "portal-qa",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-086c5860741c77434",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0e2fbe135b75b6004",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:12.437644+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-049c5da25586152f3",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "instance_type": "m5.large",
+    "state": "running",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "subnet_id": "subnet-0f4b2fb29f418048b",
+    "private_ip": "10.11.4.73",
+    "public_ip": "",
+    "availability_zone": "eu-south-2b",
+    "ami_id": "ami-051ccbf0f8a1c6b5d",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-076cc56f6b3e12257"
+    ],
+    "iam_instance_profile": "arn:aws:iam::396608799622:instance-profile/eks-32cd2e04-d63f-3c42-adcd-ce654121a450",
+    "launch_time": "2026-03-24 22:43:14+00:00",
+    "tags": {
+      "aws:autoscaling:groupName": "eks-itl-0003-portal-qa-ec2-apps-02-portal-32cd2e04-d63f-3c42-adcd-ce654121a450",
+      "coid": "itl",
+      "eks:nodegroup-name": "itl-0003-portal-qa-ec2-apps-02-portal",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "kubernetes.io/cluster/itl-0003-portal-qa-eks-apps-02": "owned",
+      "Name": "itl-0003-portal-qa-ec2-apps-02-portal",
+      "apid": "portal",
+      "aws:ec2launchtemplate:id": "lt-090891a5f0c8e7803",
+      "aws:ec2launchtemplate:version": "3",
+      "env": "qa",
+      "k8s.io/cluster-autoscaler/itl-0003-portal-qa-eks-apps-02": "owned",
+      "assetid": "0003",
+      "aws:eks:cluster-name": "itl-0003-portal-qa-eks-apps-02",
+      "eks:cluster-name": "itl-0003-portal-qa-eks-apps-02",
+      "aws:ec2:fleet-id": "fleet-fe1c3184-d587-cebe-ac12-2f287bad6ede"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0f4b2fb29f418048b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-076cc56f6b3e12257",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:12.437662+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-047b335d9c4351de1",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "instance_type": "m5.large",
+    "state": "running",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "subnet_id": "subnet-086c5860741c77434",
+    "private_ip": "10.11.3.183",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-051ccbf0f8a1c6b5d",
+    "key_name": "",
+    "platform": "linux",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-076cc56f6b3e12257"
+    ],
+    "iam_instance_profile": "arn:aws:iam::396608799622:instance-profile/eks-32cd2e04-d63f-3c42-adcd-ce654121a450",
+    "launch_time": "2026-03-25 17:09:11+00:00",
+    "tags": {
+      "Name": "itl-0003-portal-qa-ec2-apps-02-portal",
+      "eks:nodegroup-name": "itl-0003-portal-qa-ec2-apps-02-portal",
+      "assetid": "0003",
+      "k8s.io/cluster-autoscaler/itl-0003-portal-qa-eks-apps-02": "owned",
+      "aws:ec2:fleet-id": "fleet-5c94b12e-7fa7-4434-243a-afa82f0b8385",
+      "coid": "itl",
+      "aws:autoscaling:groupName": "eks-itl-0003-portal-qa-ec2-apps-02-portal-32cd2e04-d63f-3c42-adcd-ce654121a450",
+      "eks:cluster-name": "itl-0003-portal-qa-eks-apps-02",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "apid": "portal",
+      "env": "qa",
+      "aws:ec2launchtemplate:id": "lt-090891a5f0c8e7803",
+      "aws:ec2launchtemplate:version": "3",
+      "aws:eks:cluster-name": "itl-0003-portal-qa-eks-apps-02",
+      "kubernetes.io/cluster/itl-0003-portal-qa-eks-apps-02": "owned"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-086c5860741c77434",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-076cc56f6b3e12257",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:12.437677+00:00"
+  }
+]

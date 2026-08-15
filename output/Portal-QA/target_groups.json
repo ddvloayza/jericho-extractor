@@ -1,0 +1,1529 @@
+[
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/itl-0003-portal-qa-tg-vn8081-02/ab1700f7478e100a",
+    "resource_name": "itl-0003-portal-qa-tg-vn8081-02",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8081,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "instance",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/en/",
+    "health_check_interval": 30,
+    "healthy_threshold": 3,
+    "unhealthy_threshold": 3,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-lb-main-02/7706291b67e6b7f9"
+    ],
+    "targets": [
+      {
+        "id": "i-05300bab90acfdab5",
+        "port": 8081,
+        "health_state": "unused",
+        "health_reason": "Target.InvalidState"
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-lb-main-02/7706291b67e6b7f9",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:19.304334+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/itl-0003-portal-qa-tg-vn8082-02/dafe7106759f27fd",
+    "resource_name": "itl-0003-portal-qa-tg-vn8082-02",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8082,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "instance",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 30,
+    "healthy_threshold": 3,
+    "unhealthy_threshold": 3,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-lb-main-02/7706291b67e6b7f9"
+    ],
+    "targets": [
+      {
+        "id": "i-05300bab90acfdab5",
+        "port": 8082,
+        "health_state": "unused",
+        "health_reason": "Target.InvalidState"
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-lb-main-02/7706291b67e6b7f9",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:19.534345+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/itl-0003-portal-qa-tg-vna80-02/1ed9bbd1fe37fd94",
+    "resource_name": "itl-0003-portal-qa-tg-vna80-02",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "instance",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/login",
+    "health_check_interval": 30,
+    "healthy_threshold": 3,
+    "unhealthy_threshold": 3,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-lb-main-02/7706291b67e6b7f9"
+    ],
+    "targets": [
+      {
+        "id": "i-05300bab90acfdab5",
+        "port": 80,
+        "health_state": "unused",
+        "health_reason": "Target.InvalidState"
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-lb-main-02/7706291b67e6b7f9",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:19.764086+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-apigatew-03c5f8c9b6/d06c969b23636ec6",
+    "resource_name": "k8s-external-apigatew-03c5f8c9b6",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8080,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.22",
+        "port": 8080,
+        "health_state": "unhealthy",
+        "health_reason": "Target.ResponseCodeMismatch"
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:19.996969+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-apisigna-3b0fcc186a/6017882173111da1",
+    "resource_name": "k8s-external-apisigna-3b0fcc186a",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8080,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.196",
+        "port": 8080,
+        "health_state": "unhealthy",
+        "health_reason": "Target.ResponseCodeMismatch"
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:20.234792+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mcpshare-6f3e917cb4/ec5433bbbabcd99b",
+    "resource_name": "k8s-external-mcpshare-6f3e917cb4",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8000,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:20.442330+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfauthen-76d97c1f84/825d509d028b48f8",
+    "resource_name": "k8s-external-mfauthen-76d97c1f84",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.194",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:20.667087+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfauthen-9198d52325/df9b5a0fd9dc6dcc",
+    "resource_name": "k8s-external-mfauthen-9198d52325",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.199",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:20.892492+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfconfig-fb9f4bda84/9c602faf1741f1d4",
+    "resource_name": "k8s-external-mfconfig-fb9f4bda84",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.198",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:21.115066+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfcontai-9ec3e55ca1/03eb15aa9406ab18",
+    "resource_name": "k8s-external-mfcontai-9ec3e55ca1",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.30",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:21.339709+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfcontai-eb7e740376/889d7e1fb64f3bc1",
+    "resource_name": "k8s-external-mfcontai-eb7e740376",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.100",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:21.563256+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfdashbo-489b08bd2b/752a85cc3596c3f9",
+    "resource_name": "k8s-external-mfdashbo-489b08bd2b",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.67",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:21.784702+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mffee-fa00b267b4/83e6c4bb15b767cf",
+    "resource_name": "k8s-external-mffee-fa00b267b4",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.16",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:22.001347+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mffeeext-6bd3bf84e9/bf06f30ca31520c4",
+    "resource_name": "k8s-external-mffeeext-6bd3bf84e9",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.163",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:22.224969+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mffooter-edbe1a4e4f/4e99e99fd74305da",
+    "resource_name": "k8s-external-mffooter-edbe1a4e4f",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.99",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:22.448461+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfheader-1516290756/939c13989f52b4f7",
+    "resource_name": "k8s-external-mfheader-1516290756",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.64",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:22.667720+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfheader-9e58debda0/972a3f44c97fe538",
+    "resource_name": "k8s-external-mfheader-9e58debda0",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.19",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:22.891012+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfinterc-b28c59ba33/31398e740dec2eed",
+    "resource_name": "k8s-external-mfinterc-b28c59ba33",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.54",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:23.110505+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mflogout-33ba833cf2/46fa4870cf48de36",
+    "resource_name": "k8s-external-mflogout-33ba833cf2",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.27",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:23.335584+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfmenu-de0d5db83a/3ae5a9c64ede7a77",
+    "resource_name": "k8s-external-mfmenu-de0d5db83a",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.168",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:23.558257+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfmenune-5f0d3d797d/a6ac56bb4a7f86bc",
+    "resource_name": "k8s-external-mfmenune-5f0d3d797d",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.65",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:23.780032+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfnotifi-baeaa6ea33/a3b8052640a306a1",
+    "resource_name": "k8s-external-mfnotifi-baeaa6ea33",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:23.989317+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfsecuri-83a256a552/04af99af33458494",
+    "resource_name": "k8s-external-mfsecuri-83a256a552",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.166",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:24.213168+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfsecuri-a65dc86177/4992e581801adaaa",
+    "resource_name": "k8s-external-mfsecuri-a65dc86177",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.96",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:24.438616+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfshared-197816b4d9/8dbbd64f45f6bdbb",
+    "resource_name": "k8s-external-mfshared-197816b4d9",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.182",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:24.661220+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfstyleg-5dc9967b10/4d7514a766c8d8b0",
+    "resource_name": "k8s-external-mfstyleg-5dc9967b10",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.173",
+        "port": 80,
+        "health_state": "unhealthy",
+        "health_reason": "Target.ResponseCodeMismatch"
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:24.885990+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-mfstyleg-b2307a5457/866712318e3156e2",
+    "resource_name": "k8s-external-mfstyleg-b2307a5457",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.48",
+        "port": 80,
+        "health_state": "unhealthy",
+        "health_reason": "Target.ResponseCodeMismatch"
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:25.111374+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-external-redisins-f07f01bf47/d097a128bff29dc5",
+    "resource_name": "k8s-external-redisins-f07f01bf47",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 5540,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.19",
+        "port": 5540,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:25.333311+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-internal-mcpshare-689b590162/53740ff772f34dca",
+    "resource_name": "k8s-internal-mcpshare-689b590162",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 8000,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:25.552280+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-internal-mfcontai-114ebe1846/2029ef14e84e0c91",
+    "resource_name": "k8s-internal-mfcontai-114ebe1846",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.167",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:25.771644+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-internal-mfcontai-c6f0939d94/fe29689308336852",
+    "resource_name": "k8s-internal-mfcontai-c6f0939d94",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.25",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:25.999735+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-internal-mffee-7a41e93328/dff5ef7338729ee4",
+    "resource_name": "k8s-internal-mffee-7a41e93328",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.192",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:26.220346+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-internal-mffeeint-34b9cce259/cab6dea1d18d66d9",
+    "resource_name": "k8s-internal-mffeeint-34b9cce259",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.68",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:26.446098+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-internal-mfinterc-7cc0ea3947/8c3539ae7f17762d",
+    "resource_name": "k8s-internal-mfinterc-7cc0ea3947",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.50",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:26.666162+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-internal-mfsecuri-0c0d3e0a96/232647cfe80f8e7f",
+    "resource_name": "k8s-internal-mfsecuri-0c0d3e0a96",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.4.162",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:26.892063+00:00"
+  },
+  {
+    "resource_type": "aws::elasticloadbalancingv2::targetgroup",
+    "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:targetgroup/k8s-internal-mfshared-93a88ddb4e/cffb61f0b2e7ac45",
+    "resource_name": "k8s-internal-mfshared-93a88ddb4e",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "protocol": "HTTP",
+    "port": 80,
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "target_type": "ip",
+    "health_check_enabled": true,
+    "health_check_protocol": "HTTP",
+    "health_check_path": "/",
+    "health_check_interval": 15,
+    "healthy_threshold": 2,
+    "unhealthy_threshold": 2,
+    "load_balancer_arns": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8"
+    ],
+    "targets": [
+      {
+        "id": "10.11.3.21",
+        "port": 80,
+        "health_state": "healthy",
+        "health_reason": ""
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::elasticloadbalancingv2::loadbalancer",
+        "resource_id": "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+        "relation": "registered_on_lb"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:27.117956+00:00"
+  }
+]

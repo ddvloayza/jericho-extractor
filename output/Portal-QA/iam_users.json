@@ -1,0 +1,111 @@
+[
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::396608799622:user/jmartinez",
+    "resource_name": "jmartinez",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "global",
+    "path": "/",
+    "create_date": "2026-03-13 21:26:47+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AdministratorAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AdministratorAccess"
+      }
+    ],
+    "inline_policy_names": [],
+    "access_keys": [
+      {
+        "access_key_id": "AKIAVYV52AODADMTZW7O",
+        "status": "Active",
+        "create_date": "2026-03-13 21:27:00+00:00",
+        "age_days": 154,
+        "stale": true
+      }
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:54:12.245535+00:00"
+  },
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::396608799622:user/s3usr",
+    "resource_name": "s3usr",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "global",
+    "path": "/",
+    "create_date": "2025-10-20 19:36:25+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "AmazonS3FullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      }
+    ],
+    "inline_policy_names": [
+      "KMSPolicy"
+    ],
+    "access_keys": [
+      {
+        "access_key_id": "AKIAVYV52AODKSELANGP",
+        "status": "Active",
+        "create_date": "2025-10-20 19:36:41+00:00",
+        "age_days": 298,
+        "stale": true
+      }
+    ],
+    "tags": {
+      "AKIAVYV52AODKSELANGP": "s3usr"
+    },
+    "collected_at": "2026-08-15T07:54:12.288792+00:00"
+  },
+  {
+    "resource_type": "aws::iam::user",
+    "resource_id": "arn:aws:iam::396608799622:user/githubaction",
+    "resource_name": "githubaction",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "global",
+    "path": "/",
+    "create_date": "2025-04-07 18:32:06+00:00",
+    "password_last_used": "",
+    "mfa_enabled": false,
+    "groups": [],
+    "attached_policies": [
+      {
+        "PolicyName": "itl-0003-portal-qa-githubactions-portal-pol-01",
+        "PolicyArn": "arn:aws:iam::396608799622:policy/itl-0003-portal-qa-githubactions-portal-pol-01"
+      },
+      {
+        "PolicyName": "github-eks-policy",
+        "PolicyArn": "arn:aws:iam::396608799622:policy/github-eks-policy"
+      },
+      {
+        "PolicyName": "AmazonS3FullAccess",
+        "PolicyArn": "arn:aws:iam::aws:policy/AmazonS3FullAccess"
+      }
+    ],
+    "inline_policy_names": [
+      "ECR-permissions",
+      "kms-accesss-github",
+      "Secrets-Manager"
+    ],
+    "access_keys": [
+      {
+        "access_key_id": "AKIAVYV52AODGWZ7UEJX",
+        "status": "Active",
+        "create_date": "2025-04-07 18:32:26+00:00",
+        "age_days": 494,
+        "stale": true
+      }
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:54:12.316317+00:00"
+  }
+]

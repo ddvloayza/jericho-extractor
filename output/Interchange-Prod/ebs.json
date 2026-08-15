@@ -28,7 +28,8 @@
     "attached_device": "xvdp",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-GeneralDB"
+      "Name": "itl-0004-itx-prod-ec2-london-01-GeneralDB",
+      "Unit": "A"
     },
     "relationships": [
       {
@@ -37,7 +38,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372734+00:00"
+    "collected_at": "2026-08-15T07:39:07.408249+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -80,7 +81,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372742+00:00"
+    "collected_at": "2026-08-15T07:39:07.408273+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -91,7 +92,7 @@
     "region": "eu-south-2",
     "availability_zone": "eu-south-2a",
     "state": "in-use",
-    "size_gb": 5000,
+    "size_gb": 6500,
     "volume_type": "sc1",
     "iops": 0,
     "throughput": 0,
@@ -111,7 +112,8 @@
     "attached_device": "xvdu",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-Backups"
+      "Name": "itl-0004-itx-prod-ec2-london-01-Backups",
+      "Unit": "X"
     },
     "relationships": [
       {
@@ -120,7 +122,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372746+00:00"
+    "collected_at": "2026-08-15T07:39:07.408287+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -131,7 +133,7 @@
     "region": "eu-south-2",
     "availability_zone": "eu-south-2a",
     "state": "in-use",
-    "size_gb": 3500,
+    "size_gb": 3900,
     "volume_type": "gp3",
     "iops": 4000,
     "throughput": 1000,
@@ -151,6 +153,7 @@
     "attached_device": "xvdg",
     "attached_state": "attached",
     "tags": {
+      "Unit": "I",
       "Name": "itl-0004-itx-prod-ec2-london-01-BRD-Data"
     },
     "relationships": [
@@ -160,7 +163,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372750+00:00"
+    "collected_at": "2026-08-15T07:39:07.408298+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -191,6 +194,7 @@
     "attached_device": "xvde",
     "attached_state": "attached",
     "tags": {
+      "Unit": "J1",
       "Name": "DYNAMIC_J_1"
     },
     "relationships": [
@@ -200,7 +204,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372754+00:00"
+    "collected_at": "2026-08-15T07:39:07.408309+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -231,6 +235,7 @@
     "attached_device": "xvdq",
     "attached_state": "attached",
     "tags": {
+      "Unit": "B",
       "Name": "itl-0004-itx-prod-ec2-london-01-GeneralIndexes"
     },
     "relationships": [
@@ -240,7 +245,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372758+00:00"
+    "collected_at": "2026-08-15T07:39:07.408320+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -271,6 +276,7 @@
     "attached_device": "xvdj",
     "attached_state": "attached",
     "tags": {
+      "Unit": "K",
       "Name": "itl-0004-itx-prod-ec2-london-01-BT-Indexes"
     },
     "relationships": [
@@ -280,7 +286,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372762+00:00"
+    "collected_at": "2026-08-15T07:39:07.408331+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -311,6 +317,7 @@
     "attached_device": "xvdm",
     "attached_state": "attached",
     "tags": {
+      "Unit": "W",
       "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-03"
     },
     "relationships": [
@@ -320,7 +327,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372766+00:00"
+    "collected_at": "2026-08-15T07:39:07.408341+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -351,6 +358,7 @@
     "attached_device": "/dev/sdi",
     "attached_state": "attached",
     "tags": {
+      "Unit": "E",
       "Name": "itl-0004-itx-prod-ec2-london-01-SQLAudit"
     },
     "relationships": [
@@ -360,7 +368,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372770+00:00"
+    "collected_at": "2026-08-15T07:39:07.408352+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -391,6 +399,7 @@
     "attached_device": "xvdn",
     "attached_state": "attached",
     "tags": {
+      "Unit": "U",
       "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-01"
     },
     "relationships": [
@@ -400,7 +409,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372774+00:00"
+    "collected_at": "2026-08-15T07:39:07.408363+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -431,7 +440,8 @@
     "attached_device": "xvdv",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-XTP"
+      "Name": "itl-0004-itx-prod-ec2-london-01-XTP",
+      "Unit": "M"
     },
     "relationships": [
       {
@@ -440,7 +450,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372778+00:00"
+    "collected_at": "2026-08-15T07:39:07.408374+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -471,7 +481,8 @@
     "attached_device": "xvdo",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-04"
+      "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-04",
+      "Unit": "Y"
     },
     "relationships": [
       {
@@ -480,7 +491,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372782+00:00"
+    "collected_at": "2026-08-15T07:39:07.408385+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -511,7 +522,8 @@
     "attached_device": "xvdr",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-GeneralData"
+      "Name": "itl-0004-itx-prod-ec2-london-01-GeneralData",
+      "Unit": "D"
     },
     "relationships": [
       {
@@ -520,7 +532,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372787+00:00"
+    "collected_at": "2026-08-15T07:39:07.408395+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -551,7 +563,8 @@
     "attached_device": "xvdl",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-02"
+      "Name": "itl-0004-itx-prod-ec2-london-01-TempDB-02",
+      "Unit": "V"
     },
     "relationships": [
       {
@@ -560,7 +573,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372790+00:00"
+    "collected_at": "2026-08-15T07:39:07.408406+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -592,6 +605,7 @@
     "attached_state": "attached",
     "tags": {
       "Name": "itl-0004-itx-prod-ec2-london-01-RBC-Indexes",
+      "Unit": "S",
       "name": "RBC-INDEX"
     },
     "relationships": [
@@ -601,7 +615,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372794+00:00"
+    "collected_at": "2026-08-15T07:39:07.408418+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -632,7 +646,8 @@
     "attached_device": "/dev/sdg",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-Logs"
+      "Name": "itl-0004-itx-prod-ec2-london-01-Logs",
+      "Unit": "G"
     },
     "relationships": [
       {
@@ -641,7 +656,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372797+00:00"
+    "collected_at": "2026-08-15T07:39:07.408430+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -672,7 +687,8 @@
     "attached_device": "/dev/sda1",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-System"
+      "Name": "itl-0004-itx-prod-ec2-london-01-System",
+      "Unit": "C"
     },
     "relationships": [
       {
@@ -681,7 +697,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372802+00:00"
+    "collected_at": "2026-08-15T07:39:07.408441+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -692,7 +708,7 @@
     "region": "eu-south-2",
     "availability_zone": "eu-south-2a",
     "state": "in-use",
-    "size_gb": 2600,
+    "size_gb": 2675,
     "volume_type": "gp3",
     "iops": 4000,
     "throughput": 1000,
@@ -713,7 +729,8 @@
     "attached_state": "attached",
     "tags": {
       "Name": "itl-0004-itx-prod-ec2-london-01-ERSTHU-Data",
-      "name": "ERSTHU-DATA"
+      "name": "ERSTHU-DATA",
+      "Unit": "N"
     },
     "relationships": [
       {
@@ -722,7 +739,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372806+00:00"
+    "collected_at": "2026-08-15T07:39:07.408453+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -754,7 +771,8 @@
     "attached_state": "attached",
     "tags": {
       "Name": "itl-0004-itx-prod-ec2-london-01-ERSTHU-Indexes",
-      "name": "ERSTHU-INDEX"
+      "name": "ERSTHU-INDEX",
+      "Unit": "R"
     },
     "relationships": [
       {
@@ -763,7 +781,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372810+00:00"
+    "collected_at": "2026-08-15T07:39:07.408465+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -794,6 +812,7 @@
     "attached_device": "xvds",
     "attached_state": "attached",
     "tags": {
+      "Unit": "T",
       "Name": "itl-0004-itx-prod-ec2-london-01-EUR-Data"
     },
     "relationships": [
@@ -803,7 +822,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372813+00:00"
+    "collected_at": "2026-08-15T07:39:07.408477+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -814,7 +833,7 @@
     "region": "eu-south-2",
     "availability_zone": "eu-south-2a",
     "state": "in-use",
-    "size_gb": 4200,
+    "size_gb": 4800,
     "volume_type": "gp3",
     "iops": 4000,
     "throughput": 1000,
@@ -834,7 +853,8 @@
     "attached_device": "xvdw",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-BT-Data"
+      "Name": "itl-0004-itx-prod-ec2-london-01-BT-Data",
+      "Unit": "Q"
     },
     "relationships": [
       {
@@ -843,7 +863,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372817+00:00"
+    "collected_at": "2026-08-15T07:39:07.408488+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -875,6 +895,7 @@
     "attached_state": "attached",
     "tags": {
       "Name": "itl-0004-itx-prod-ec2-london-01-RBC-Data",
+      "Unit": "O",
       "name": "RBC-DATA"
     },
     "relationships": [
@@ -884,7 +905,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372820+00:00"
+    "collected_at": "2026-08-15T07:39:07.408499+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -915,6 +936,7 @@
     "attached_device": "/dev/sdf",
     "attached_state": "attached",
     "tags": {
+      "Unit": "H",
       "Name": "itl-0004-itx-prod-ec2-london-01-AuditLogs"
     },
     "relationships": [
@@ -924,7 +946,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372824+00:00"
+    "collected_at": "2026-08-15T07:39:07.408510+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -955,6 +977,7 @@
     "attached_device": "xvdt",
     "attached_state": "attached",
     "tags": {
+      "Unit": "Z",
       "Name": "itl-0004-itx-prod-ec2-london-01-EUR-Indexes"
     },
     "relationships": [
@@ -964,7 +987,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372828+00:00"
+    "collected_at": "2026-08-15T07:39:07.408527+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -975,7 +998,7 @@
     "region": "eu-south-2",
     "availability_zone": "eu-south-2a",
     "state": "in-use",
-    "size_gb": 400,
+    "size_gb": 490,
     "volume_type": "gp3",
     "iops": 3000,
     "throughput": 125,
@@ -995,6 +1018,7 @@
     "attached_device": "xvdd",
     "attached_state": "attached",
     "tags": {
+      "Unit": "J2",
       "Name": "DYNAMIC_J_2"
     },
     "relationships": [
@@ -1004,7 +1028,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372831+00:00"
+    "collected_at": "2026-08-15T07:39:07.408545+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -1035,7 +1059,8 @@
     "attached_device": "xvdb",
     "attached_state": "attached",
     "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01-BRD-Indexes"
+      "Name": "itl-0004-itx-prod-ec2-london-01-BRD-Indexes",
+      "Unit": "P"
     },
     "relationships": [
       {
@@ -1044,6 +1069,6 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:39:20.372835+00:00"
+    "collected_at": "2026-08-15T07:39:07.408562+00:00"
   }
 ]

@@ -17,7 +17,7 @@
       "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-bc3c93ad-bdd3-49b9-a367-a7e0b0fea39a",
       "aws:cloudformation:logical-id": "LocalSecurityTopic"
     },
-    "collected_at": "2026-07-12T19:37:33.685142+00:00"
+    "collected_at": "2026-08-15T07:36:40.425626+00:00"
   },
   {
     "resource_type": "aws::sns::topic",
@@ -33,7 +33,7 @@
     "subscription_count": 1,
     "kms_master_key_id": "",
     "tags": {},
-    "collected_at": "2026-07-12T19:37:34.288134+00:00"
+    "collected_at": "2026-08-15T07:36:41.045703+00:00"
   },
   {
     "resource_type": "aws::sns::topic",
@@ -56,6 +56,22 @@
       "apid": "portal",
       "Name": "itl-0003-portal-prd-sns-security-alerts-02"
     },
-    "collected_at": "2026-07-12T19:37:34.890340+00:00"
+    "collected_at": "2026-08-15T07:36:41.668470+00:00"
+  },
+  {
+    "resource_type": "aws::sns::topic",
+    "resource_id": "arn:aws:sns:eu-south-2:610944808410:qs-reader-cleanup-alerts",
+    "resource_name": "qs-reader-cleanup-alerts",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "display_name": "",
+    "fifo_topic": false,
+    "subscriptions_confirmed": 2,
+    "subscriptions_pending": 0,
+    "subscription_count": 2,
+    "kms_master_key_id": "",
+    "tags": {},
+    "collected_at": "2026-08-15T07:36:42.293298+00:00"
   }
 ]

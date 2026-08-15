@@ -47,7 +47,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:50.716994+00:00"
+    "collected_at": "2026-08-15T07:45:27.405539+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -62,8 +62,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-11T16:01:54.000+0000",
-    "code_size_bytes": 6598,
+    "last_modified": "2026-08-12T20:25:06.000+0000",
+    "code_size_bytes": 7516,
     "handler": "handler.lambda_handler",
     "description": "",
     "vpc_id": "vpc-0101d2c447b67e9db",
@@ -113,7 +113,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:50.947808+00:00"
+    "collected_at": "2026-08-15T07:45:27.618093+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -180,7 +180,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:51.175035+00:00"
+    "collected_at": "2026-08-15T07:45:27.820873+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -195,8 +195,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-11T16:02:00.000+0000",
-    "code_size_bytes": 9500,
+    "last_modified": "2026-08-11T15:55:52.000+0000",
+    "code_size_bytes": 11092,
     "handler": "handler.lambda_handler",
     "description": "Transformer de campos del archivo fuente",
     "vpc_id": "vpc-0101d2c447b67e9db",
@@ -251,7 +251,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:51.403438+00:00"
+    "collected_at": "2026-08-15T07:45:28.021699+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -312,7 +312,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:51.635488+00:00"
+    "collected_at": "2026-08-15T07:45:28.239411+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -383,7 +383,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:51.862732+00:00"
+    "collected_at": "2026-08-15T07:45:28.465955+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -424,7 +424,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:52.079482+00:00"
+    "collected_at": "2026-08-15T07:45:28.682418+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -459,7 +459,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:52.304640+00:00"
+    "collected_at": "2026-08-15T07:45:28.897870+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -524,7 +524,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:52.522374+00:00"
+    "collected_at": "2026-08-15T07:45:29.103608+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -565,7 +565,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:52.749966+00:00"
+    "collected_at": "2026-08-15T07:45:29.319250+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -615,7 +615,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:52.967996+00:00"
+    "collected_at": "2026-08-15T07:45:29.522824+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -625,13 +625,13 @@
     "account_name": "Interchange-Dev",
     "region": "eu-south-2",
     "runtime": "python3.11",
-    "memory_mb": 512,
-    "timeout_seconds": 60,
+    "memory_mb": 2048,
+    "timeout_seconds": 120,
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-06-10T17:02:06.840+0000",
-    "code_size_bytes": 161,
+    "last_modified": "2026-08-13T17:08:42.000+0000",
+    "code_size_bytes": 11440,
     "handler": "handler.lambda_handler",
     "description": "",
     "vpc_id": "vpc-0101d2c447b67e9db",
@@ -644,7 +644,10 @@
     ],
     "execution_role": "arn:aws:iam::861276092327:role/itl-0004-itx-dev-intchg-02-lmbd-vi-role",
     "kms_key_arn": "",
-    "environment_keys": [],
+    "environment_keys": [
+      "RULES_MIN_ROW_RATIO",
+      "S3_BUCKET_REFERENCE"
+    ],
     "tracing_mode": "PassThrough",
     "dead_letter_target": "",
     "tags": {
@@ -676,7 +679,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:53.195552+00:00"
+    "collected_at": "2026-08-15T07:45:29.733873+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -717,7 +720,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:53.424483+00:00"
+    "collected_at": "2026-08-15T07:45:29.946260+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -732,8 +735,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-11T16:01:51.000+0000",
-    "code_size_bytes": 16996,
+    "last_modified": "2026-08-12T20:43:05.000+0000",
+    "code_size_bytes": 21664,
     "handler": "handler.lambda_handler",
     "description": "Router de clasificacion de archivos",
     "vpc_id": "vpc-0101d2c447b67e9db",
@@ -756,6 +759,7 @@
       "MASTERCARD_IAR_FUNCTION_NAME",
       "DYNAMODB_TABLE_FILE_CONTROL",
       "S3_BUCKET_LANDING",
+      "S3_BUCKET_ARCHIVE",
       "DYNAMODB_TABLE_FILE_PATTERN"
     ],
     "tracing_mode": "PassThrough",
@@ -794,7 +798,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:53.647354+00:00"
+    "collected_at": "2026-08-15T07:45:30.146678+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -855,7 +859,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:53.866250+00:00"
+    "collected_at": "2026-08-15T07:45:30.360127+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -926,7 +930,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:54.093012+00:00"
+    "collected_at": "2026-08-15T07:45:30.575656+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -967,7 +971,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:54.344062+00:00"
+    "collected_at": "2026-08-15T07:45:30.786568+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -1037,7 +1041,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:54.560630+00:00"
+    "collected_at": "2026-08-15T07:45:30.997609+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -1047,13 +1051,13 @@
     "account_name": "Interchange-Dev",
     "region": "eu-south-2",
     "runtime": "python3.11",
-    "memory_mb": 1024,
+    "memory_mb": 6144,
     "timeout_seconds": 300,
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-11T16:02:37.000+0000",
-    "code_size_bytes": 20394,
+    "last_modified": "2026-08-05T19:30:06.000+0000",
+    "code_size_bytes": 23088,
     "handler": "handler.lambda_handler",
     "description": "",
     "vpc_id": "",
@@ -1087,7 +1091,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:54.776355+00:00"
+    "collected_at": "2026-08-15T07:45:31.199967+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -1132,7 +1136,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:55.009791+00:00"
+    "collected_at": "2026-08-15T07:45:31.402919+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -1200,7 +1204,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:55.232501+00:00"
+    "collected_at": "2026-08-15T07:45:31.607612+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -1270,7 +1274,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:55.447876+00:00"
+    "collected_at": "2026-08-15T07:45:31.807416+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -1285,7 +1289,7 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-07T15:22:31.000+0000",
+    "last_modified": "2026-08-11T20:43:06.000+0000",
     "code_size_bytes": 27346219,
     "handler": "trigger_app.lambda_handler",
     "description": "",
@@ -1337,7 +1341,7 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:55.669381+00:00"
+    "collected_at": "2026-08-15T07:45:32.007222+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -1398,7 +1402,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:55.887955+00:00"
+    "collected_at": "2026-08-15T07:45:32.209564+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -1435,7 +1439,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:43:56.106617+00:00"
+    "collected_at": "2026-08-15T07:45:32.413736+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -1506,6 +1510,6 @@
         "relation": "encrypted_by_kms"
       }
     ],
-    "collected_at": "2026-07-12T19:43:56.324080+00:00"
+    "collected_at": "2026-08-15T07:45:32.615609+00:00"
   }
 ]

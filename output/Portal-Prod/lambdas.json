@@ -1,6 +1,56 @@
 [
   {
     "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:eu-south-2:610944808410:function:qs-reader-cleanup",
+    "resource_name": "qs-reader-cleanup",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "runtime": "python3.12",
+    "memory_mb": 256,
+    "timeout_seconds": 300,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-08-01T04:35:23.000+0000",
+    "code_size_bytes": 3510,
+    "handler": "lambda_function.lambda_handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::610944808410:role/qs-reader-cleanup-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "NAMESPACE",
+      "AUDIT_BUCKET",
+      "QS_ASSET_REGION",
+      "ACCOUNT_ID",
+      "FORCE_RUN",
+      "DRY_RUN",
+      "EXCLUDE_USERS",
+      "SNS_TOPIC_ARN",
+      "QS_IDENTITY_REGION",
+      "ATHENA_DB",
+      "ATHENA_TABLE",
+      "ATHENA_OUTPUT",
+      "AUDIT_PREFIX",
+      "ADMIN_USERNAME"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::610944808410:role/qs-reader-cleanup-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:40.719305+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
     "resource_id": "arn:aws:lambda:eu-south-2:610944808410:function:itl-0003-portal-prd-lambda-sync-jira-02",
     "resource_name": "itl-0003-portal-prd-lambda-sync-jira-02",
     "account_id": "610944808410",
@@ -12,8 +62,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-10T16:36:20.000+0000",
-    "code_size_bytes": 48717033,
+    "last_modified": "2026-08-12T19:40:48.000+0000",
+    "code_size_bytes": 63707815,
     "handler": "Intelica.Shared.Internal.Lambda::Intelica.Shared.Internal.Lambda.SyncJiraTrigger::FunctionHandler",
     "description": "Lambda sync - jira",
     "vpc_id": "vpc-0626d66632373c892",
@@ -61,7 +111,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:36:51.608373+00:00"
+    "collected_at": "2026-08-15T07:35:40.940469+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -76,8 +126,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-10T16:31:39.000+0000",
-    "code_size_bytes": 50336252,
+    "last_modified": "2026-08-13T18:04:36.000+0000",
+    "code_size_bytes": 52591426,
     "handler": "Intelica.Fee.External.Lambda::Intelica.Fee.External.Lambda.FeeExternalCustomAlertTrigger::FunctionHandler",
     "description": "Lambda fee-external - custom-alert",
     "vpc_id": "vpc-0626d66632373c892",
@@ -130,7 +180,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:36:51.813339+00:00"
+    "collected_at": "2026-08-15T07:35:41.157824+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -196,7 +246,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:36:52.019891+00:00"
+    "collected_at": "2026-08-15T07:35:41.379394+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -261,7 +311,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:36:52.236619+00:00"
+    "collected_at": "2026-08-15T07:35:41.590162+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -302,7 +352,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:36:52.457446+00:00"
+    "collected_at": "2026-08-15T07:35:41.815963+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -317,8 +367,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-10T16:36:23.000+0000",
-    "code_size_bytes": 48717033,
+    "last_modified": "2026-08-12T19:40:51.000+0000",
+    "code_size_bytes": 63707815,
     "handler": "Intelica.Shared.Internal.Lambda::Intelica.Shared.Internal.Lambda.SyncBukAbsenceTrigger::FunctionHandler",
     "description": "Lambda sync-buk - absence",
     "vpc_id": "vpc-0626d66632373c892",
@@ -366,7 +416,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:36:52.675152+00:00"
+    "collected_at": "2026-08-15T07:35:42.025657+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -381,8 +431,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-10T16:36:26.000+0000",
-    "code_size_bytes": 48717033,
+    "last_modified": "2026-08-12T19:40:55.000+0000",
+    "code_size_bytes": 63707815,
     "handler": "Intelica.Shared.Internal.Lambda::Intelica.Shared.Internal.Lambda.SyncBukOrganizationTrigger::FunctionHandler",
     "description": "Lambda sync-buk - organization",
     "vpc_id": "vpc-0626d66632373c892",
@@ -430,7 +480,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:36:52.889937+00:00"
+    "collected_at": "2026-08-15T07:35:42.243330+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -485,6 +535,6 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:36:53.102670+00:00"
+    "collected_at": "2026-08-15T07:35:42.449150+00:00"
   }
 ]

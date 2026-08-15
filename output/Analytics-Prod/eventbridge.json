@@ -13,7 +13,7 @@
     "event_pattern": "{  \"source\": [\"aws.securityhub\"],   \"detail-type\": [\"Security Hub Findings - Imported\"],  \"detail\": {    \"findings\": {      \"Compliance\": {        \"AssociatedStandards\": {          \"StandardsId\" : [            { \"prefix\": \"standards/service-managed-aws-control-tower\" }          ]        }      },      \"Region\" : [\"eu-south-2\"]    }  }}",
     "target_count": 1,
     "tags": {},
-    "collected_at": "2026-07-12T19:42:24.150733+00:00"
+    "collected_at": "2026-08-15T07:43:27.889236+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -33,6 +33,6 @@
       "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-22c62b0e-c0a7-4b50-afac-0ede35a9e824",
       "aws:cloudformation:logical-id": "CWEventRuleComplianceChangeEvent"
     },
-    "collected_at": "2026-07-12T19:42:24.581491+00:00"
+    "collected_at": "2026-08-15T07:43:28.306202+00:00"
   }
 ]

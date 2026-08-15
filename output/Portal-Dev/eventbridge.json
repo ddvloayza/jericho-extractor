@@ -13,7 +13,7 @@
     "event_pattern": "{  \"source\": [\"aws.securityhub\"],   \"detail-type\": [\"Security Hub Findings - Imported\"],  \"detail\": {    \"findings\": {      \"Compliance\": {        \"AssociatedStandards\": {          \"StandardsId\" : [            { \"prefix\": \"standards/service-managed-aws-control-tower\" }          ]        }      },      \"Region\" : [\"eu-south-2\"]    }  }}",
     "target_count": 1,
     "tags": {},
-    "collected_at": "2026-07-12T19:48:18.022340+00:00"
+    "collected_at": "2026-08-15T07:51:32.867949+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -29,7 +29,7 @@
     "event_pattern": "{\"source\": [\"aws.ec2\"], \"detail-type\": [\"EC2 Instance State-change Notification\"], \"detail\": {\"state\":[\"running\", \"stopped\", \"terminated\"]}}",
     "target_count": 1,
     "tags": {},
-    "collected_at": "2026-07-12T19:48:18.421148+00:00"
+    "collected_at": "2026-08-15T07:51:33.277589+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -45,7 +45,7 @@
     "event_pattern": "{\"source\": [\"aws.tag\"], \"detail-type\": [\"Tag Change on Resource\"], \"detail\": {\"service\":[\"ec2\"], \"resource-type\":[\"instance\"]}}",
     "target_count": 1,
     "tags": {},
-    "collected_at": "2026-07-12T19:48:18.817091+00:00"
+    "collected_at": "2026-08-15T07:51:33.687408+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -61,7 +61,7 @@
     "event_pattern": "{\"source\": [\"aws.ecr\", \"aws.ecs\"], \"account\": [\"891376942769\"],\"detail-type\": [\"ECR Image Action\", \"ECR Scan Resource Change\", \"ECS Task State Change\"]}",
     "target_count": 1,
     "tags": {},
-    "collected_at": "2026-07-12T19:48:19.214122+00:00"
+    "collected_at": "2026-08-15T07:51:34.106852+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -77,7 +77,7 @@
     "event_pattern": "{\"source\": [\"aws.lambda\"], \"detail-type\": [\"AWS API Call via CloudTrail\"], \"detail\": {\"eventSource\":[\"lambda.amazonaws.com\"], \"managementEvent\": [true]}}",
     "target_count": 1,
     "tags": {},
-    "collected_at": "2026-07-12T19:48:19.613545+00:00"
+    "collected_at": "2026-08-15T07:51:34.519977+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -93,7 +93,7 @@
     "event_pattern": "{\"source\": [\"aws.tag\"], \"detail-type\": [\"Tag Change on Resource\"], \"detail\": {\"service\":[\"lambda\"]}}",
     "target_count": 1,
     "tags": {},
-    "collected_at": "2026-07-12T19:48:20.010544+00:00"
+    "collected_at": "2026-08-15T07:51:34.935460+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -113,7 +113,7 @@
       "aws:cloudformation:stack-name": "StackSet-AWSControlTowerBP-BASELINE-CLOUDWATCH-a3b3a07b-a521-42b0-9c39-d07d9845958a",
       "aws:cloudformation:logical-id": "CWEventRuleComplianceChangeEvent"
     },
-    "collected_at": "2026-07-12T19:48:20.421407+00:00"
+    "collected_at": "2026-08-15T07:51:35.355349+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -134,7 +134,7 @@
       "assetid": "0003",
       "apid": "portal"
     },
-    "collected_at": "2026-07-12T19:48:20.824128+00:00"
+    "collected_at": "2026-08-15T07:51:35.772140+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -155,7 +155,7 @@
       "assetid": "0003",
       "apid": "portal"
     },
-    "collected_at": "2026-07-12T19:48:21.225495+00:00"
+    "collected_at": "2026-08-15T07:51:36.187992+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -176,7 +176,7 @@
       "assetid": "0003",
       "apid": "portal"
     },
-    "collected_at": "2026-07-12T19:48:21.625599+00:00"
+    "collected_at": "2026-08-15T07:51:36.602071+00:00"
   },
   {
     "resource_type": "aws::events::rule",
@@ -197,6 +197,6 @@
       "assetid": "0003",
       "apid": "portal"
     },
-    "collected_at": "2026-07-12T19:48:22.029296+00:00"
+    "collected_at": "2026-08-15T07:51:37.019130+00:00"
   }
 ]

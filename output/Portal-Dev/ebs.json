@@ -41,7 +41,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550002+00:00"
+    "collected_at": "2026-08-15T07:50:21.562444+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -69,7 +69,7 @@
       "denver-dev-testing": "denver-dev-testing-vol"
     },
     "relationships": [],
-    "collected_at": "2026-07-12T19:47:19.550009+00:00"
+    "collected_at": "2026-08-15T07:50:21.562467+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -116,7 +116,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550015+00:00"
+    "collected_at": "2026-08-15T07:50:21.562485+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -151,7 +151,7 @@
       "CSIVolumeName": "pvc-0f0f71c4-60c4-42cb-a1ba-5bc9ee1999b7"
     },
     "relationships": [],
-    "collected_at": "2026-07-12T19:47:19.550020+00:00"
+    "collected_at": "2026-08-15T07:50:21.562499+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -198,7 +198,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550024+00:00"
+    "collected_at": "2026-08-15T07:50:21.562513+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -244,7 +244,45 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550028+00:00"
+    "collected_at": "2026-08-15T07:50:21.562527+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-054bad81f6610a817",
+    "resource_name": "",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 250,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:891376942769:key/10bd7146-163a-4657-9113-a8485b49498f",
+    "snapshot_id": "snap-065b8972da6a80357",
+    "multi_attach": false,
+    "create_time": "2026-08-12 15:17:40.598000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08c771a5ae702bb2c",
+        "device": "xvdf",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08c771a5ae702bb2c",
+    "attached_device": "xvdf",
+    "attached_state": "attached",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08c771a5ae702bb2c",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:50:21.562538+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -287,7 +325,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550033+00:00"
+    "collected_at": "2026-08-15T07:50:21.562549+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -333,7 +371,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550037+00:00"
+    "collected_at": "2026-08-15T07:50:21.562561+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -376,7 +414,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550041+00:00"
+    "collected_at": "2026-08-15T07:50:21.562573+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -419,7 +457,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550045+00:00"
+    "collected_at": "2026-08-15T07:50:21.562586+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -466,7 +504,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550050+00:00"
+    "collected_at": "2026-08-15T07:50:21.562600+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -509,7 +547,83 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550053+00:00"
+    "collected_at": "2026-08-15T07:50:21.562612+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-08f0a5b3dc11f3dbd",
+    "resource_name": "",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 1800,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:891376942769:key/10bd7146-163a-4657-9113-a8485b49498f",
+    "snapshot_id": "snap-0442854f824ff3eaa",
+    "multi_attach": false,
+    "create_time": "2026-08-12 15:17:40.598000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08c771a5ae702bb2c",
+        "device": "/dev/sdh",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08c771a5ae702bb2c",
+    "attached_device": "/dev/sdh",
+    "attached_state": "attached",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08c771a5ae702bb2c",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:50:21.562624+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-02affb2d250f2ad69",
+    "resource_name": "",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 100,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:891376942769:key/10bd7146-163a-4657-9113-a8485b49498f",
+    "snapshot_id": "snap-08a2b8eac73ab2c4c",
+    "multi_attach": false,
+    "create_time": "2026-08-12 15:17:41.637000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08c771a5ae702bb2c",
+        "device": "/dev/sda1",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08c771a5ae702bb2c",
+    "attached_device": "/dev/sda1",
+    "attached_state": "attached",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08c771a5ae702bb2c",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:50:21.562635+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -556,7 +670,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550057+00:00"
+    "collected_at": "2026-08-15T07:50:21.562649+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -582,7 +696,7 @@
     "attached_state": "",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:47:19.550061+00:00"
+    "collected_at": "2026-08-15T07:50:21.562659+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -593,7 +707,7 @@
     "region": "eu-south-2",
     "availability_zone": "eu-south-2a",
     "state": "in-use",
-    "size_gb": 1800,
+    "size_gb": 2200,
     "volume_type": "gp3",
     "iops": 3000,
     "throughput": 125,
@@ -626,7 +740,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550065+00:00"
+    "collected_at": "2026-08-15T07:50:21.562671+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -672,7 +786,45 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550070+00:00"
+    "collected_at": "2026-08-15T07:50:21.562685+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-02cd8f7c51cf07f97",
+    "resource_name": "",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 200,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:891376942769:key/10bd7146-163a-4657-9113-a8485b49498f",
+    "snapshot_id": "snap-072b1d60eed7436eb",
+    "multi_attach": false,
+    "create_time": "2026-08-12 15:17:40.599000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08c771a5ae702bb2c",
+        "device": "/dev/sdi",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08c771a5ae702bb2c",
+    "attached_device": "/dev/sdi",
+    "attached_state": "attached",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08c771a5ae702bb2c",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:50:21.562696+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -698,7 +850,7 @@
     "attached_state": "",
     "tags": {},
     "relationships": [],
-    "collected_at": "2026-07-12T19:47:19.550073+00:00"
+    "collected_at": "2026-08-15T07:50:21.562705+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -744,7 +896,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550077+00:00"
+    "collected_at": "2026-08-15T07:50:21.562718+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -790,6 +942,44 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.550081+00:00"
+    "collected_at": "2026-08-15T07:50:21.562731+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-066b24d1034299cdc",
+    "resource_name": "",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 3560,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": true,
+    "kms_key_id": "arn:aws:kms:eu-south-2:891376942769:key/10bd7146-163a-4657-9113-a8485b49498f",
+    "snapshot_id": "snap-0a1807ef1f882c3e0",
+    "multi_attach": false,
+    "create_time": "2026-08-12 15:17:40.598000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-08c771a5ae702bb2c",
+        "device": "xvdg",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-08c771a5ae702bb2c",
+    "attached_device": "xvdg",
+    "attached_state": "attached",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-08c771a5ae702bb2c",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:50:21.562742+00:00"
   }
 ]

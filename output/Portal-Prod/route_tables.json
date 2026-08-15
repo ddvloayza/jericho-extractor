@@ -8,9 +8,9 @@
     "vpc_id": "vpc-0626d66632373c892",
     "is_main": false,
     "associated_subnet_ids": [
-      "subnet-0362f83b46f047126",
       "subnet-0588eba1879cd168c",
-      "subnet-043e3fb731d433446"
+      "subnet-043e3fb731d433446",
+      "subnet-0362f83b46f047126"
     ],
     "routes": [
       {
@@ -170,6 +170,19 @@
         "origin": "CreateRoute"
       },
       {
+        "destination_cidr": "10.22.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "local",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRouteTable"
+      },
+      {
         "destination_cidr": "100.0.0.0/16",
         "destination_ipv6_cidr": "",
         "destination_prefix_list_id": "",
@@ -211,11 +224,6 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0362f83b46f047126",
-        "relation": "associated_with_subnet"
-      },
-      {
-        "resource_type": "aws::ec2::subnet",
         "resource_id": "subnet-0588eba1879cd168c",
         "relation": "associated_with_subnet"
       },
@@ -223,9 +231,14 @@
         "resource_type": "aws::ec2::subnet",
         "resource_id": "subnet-043e3fb731d433446",
         "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0362f83b46f047126",
+        "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:27.343655+00:00"
+    "collected_at": "2026-08-15T07:35:13.398467+00:00"
   },
   {
     "resource_type": "aws::ec2::route_table",
@@ -236,13 +249,26 @@
     "vpc_id": "vpc-0626d66632373c892",
     "is_main": false,
     "associated_subnet_ids": [
-      "subnet-0268210322395563d",
       "subnet-0c54894493d118e63",
+      "subnet-0268210322395563d",
       "subnet-03d18c5b1df70087a"
     ],
     "routes": [
       {
         "destination_cidr": "10.10.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "local",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRouteTable"
+      },
+      {
+        "destination_cidr": "10.22.0.0/16",
         "destination_ipv6_cidr": "",
         "destination_prefix_list_id": "",
         "gateway_id": "local",
@@ -283,12 +309,12 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0268210322395563d",
+        "resource_id": "subnet-0c54894493d118e63",
         "relation": "associated_with_subnet"
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-0c54894493d118e63",
+        "resource_id": "subnet-0268210322395563d",
         "relation": "associated_with_subnet"
       },
       {
@@ -297,7 +323,7 @@
         "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:27.343670+00:00"
+    "collected_at": "2026-08-15T07:35:13.398495+00:00"
   },
   {
     "resource_type": "aws::ec2::route_table",
@@ -309,6 +335,9 @@
     "is_main": false,
     "associated_subnet_ids": [
       "subnet-00fec6232d3dc188d",
+      "subnet-012631c98f20cc41a",
+      "subnet-089c4b5c6600f9d1b",
+      "subnet-0ca5521bb442a411e",
       "subnet-042f934568c455b4c",
       "subnet-0c396a6c940028849"
     ],
@@ -470,6 +499,19 @@
         "origin": "CreateRoute"
       },
       {
+        "destination_cidr": "10.22.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "local",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRouteTable"
+      },
+      {
         "destination_cidr": "0.0.0.0/0",
         "destination_ipv6_cidr": "",
         "destination_prefix_list_id": "",
@@ -503,6 +545,21 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-012631c98f20cc41a",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-089c4b5c6600f9d1b",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0ca5521bb442a411e",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
         "resource_id": "subnet-042f934568c455b4c",
         "relation": "associated_with_subnet"
       },
@@ -512,7 +569,7 @@
         "relation": "associated_with_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:27.343682+00:00"
+    "collected_at": "2026-08-15T07:35:13.398521+00:00"
   },
   {
     "resource_type": "aws::ec2::route_table",
@@ -559,7 +616,7 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-07-12T19:36:27.343685+00:00"
+    "collected_at": "2026-08-15T07:35:13.398528+00:00"
   },
   {
     "resource_type": "aws::ec2::route_table",
@@ -583,6 +640,19 @@
         "instance_id": "",
         "state": "active",
         "origin": "CreateRouteTable"
+      },
+      {
+        "destination_cidr": "10.22.0.0/16",
+        "destination_ipv6_cidr": "",
+        "destination_prefix_list_id": "",
+        "gateway_id": "local",
+        "nat_gateway_id": "",
+        "transit_gateway_id": "",
+        "vpc_peering_connection_id": "",
+        "network_interface_id": "",
+        "instance_id": "",
+        "state": "active",
+        "origin": "CreateRouteTable"
       }
     ],
     "tags": {},
@@ -593,6 +663,6 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-07-12T19:36:27.343689+00:00"
+    "collected_at": "2026-08-15T07:35:13.398536+00:00"
   }
 ]

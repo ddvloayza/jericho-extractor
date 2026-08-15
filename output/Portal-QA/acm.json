@@ -1,0 +1,71 @@
+[
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:396608799622:certificate/1a34a094-d4c6-4fd8-9939-88aa783d37d7",
+    "resource_name": "qa.intelica.com",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-10-05 19:00:00-05:00",
+    "not_after": "2026-11-04 18:59:59-05:00",
+    "subject_alternative_names": [
+      "qa.intelica.com",
+      "*.qa.intelica.com"
+    ],
+    "in_use": true,
+    "in_use_by": [
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-alb-02/74adcb0683f9a8b8",
+      "arn:aws:elasticloadbalancing:eu-south-2:396608799622:loadbalancer/app/itl-0003-portal-qa-lb-main-02/7706291b67e6b7f9"
+    ],
+    "renewal_eligibility": "ELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-08-15T07:56:35.844172+00:00"
+  },
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:396608799622:certificate/0208d4b9-fbaf-4f75-8c7d-239ab3b3cfa5",
+    "resource_name": "temporal.qa.intelica.com",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-10-15 19:00:00-05:00",
+    "not_after": "2026-11-14 18:59:59-05:00",
+    "subject_alternative_names": [
+      "temporal.qa.intelica.com",
+      "*.temporal.qa.intelica.com"
+    ],
+    "in_use": false,
+    "in_use_by": [],
+    "renewal_eligibility": "INELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-08-15T07:56:36.291354+00:00"
+  },
+  {
+    "resource_type": "aws::acm::certificate",
+    "resource_id": "arn:aws:acm:eu-south-2:396608799622:certificate/f6a277d2-e44d-43f6-ad97-65cce27c31ec",
+    "resource_name": "incontrol.temporal.qa.intelica.com",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "status": "ISSUED",
+    "type": "AMAZON_ISSUED",
+    "key_algorithm": "RSA-2048",
+    "not_before": "2025-10-16 19:00:00-05:00",
+    "not_after": "2026-11-15 18:59:59-05:00",
+    "subject_alternative_names": [
+      "incontrol.temporal.qa.intelica.com",
+      "*.incontrol.temporal.qa.intelica.com"
+    ],
+    "in_use": false,
+    "in_use_by": [],
+    "renewal_eligibility": "INELIGIBLE",
+    "tags": {},
+    "collected_at": "2026-08-15T07:56:36.729322+00:00"
+  }
+]

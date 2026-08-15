@@ -1,37 +1,37 @@
 [
   {
     "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-0c13c11bd859daaf4",
-    "resource_name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
+    "resource_id": "ami-02275d5dabfdbb1c0",
+    "resource_name": "AD PCI",
     "account_id": "954976322048",
     "account_name": "Intelica-Network",
     "region": "eu-south-2",
     "state": "available",
-    "name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
-    "description": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
+    "name": "AD PCI",
+    "description": "AD PCI",
     "architecture": "x86_64",
     "platform": "windows",
     "virtualization": "hvm",
     "root_device_type": "ebs",
     "root_device_name": "/dev/sda1",
     "public": false,
-    "creation_date": "2026-03-24T20:58:18.000Z",
-    "age_days": 109,
+    "creation_date": "2026-07-22T15:57:06.000Z",
+    "age_days": 23,
     "total_size_gb": 70,
     "est_cost_per_month": 3.5,
     "snapshots": [
       {
         "device": "/dev/sda1",
-        "snapshot_id": "snap-0b0436b24fdf74ef2",
+        "snapshot_id": "snap-04ab69877670005ea",
         "size_gb": 70,
         "volume_type": "gp2"
       }
     ],
     "snapshot_ids": [
-      "snap-0b0436b24fdf74ef2"
+      "snap-04ab69877670005ea"
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:40:45.176617+00:00"
+    "collected_at": "2026-08-15T07:41:07.710352+00:00"
   },
   {
     "resource_type": "aws::ec2::ami",
@@ -50,7 +50,7 @@
     "root_device_name": "/dev/sda1",
     "public": false,
     "creation_date": "2025-12-01T23:22:19.000Z",
-    "age_days": 222,
+    "age_days": 256,
     "total_size_gb": 70,
     "est_cost_per_month": 3.5,
     "snapshots": [
@@ -65,6 +65,74 @@
       "snap-080942f9957ee1c6d"
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:40:45.176639+00:00"
+    "collected_at": "2026-08-15T07:41:07.710419+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-00351fea7313ff5c1",
+    "resource_name": "AD-BF-UPGRADE",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "AD-BF-UPGRADE",
+    "description": "ad antes del upgrade",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-08-03T21:16:59.000Z",
+    "age_days": 11,
+    "total_size_gb": 70,
+    "est_cost_per_month": 3.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0fd227a6eb2915994",
+        "size_gb": 70,
+        "volume_type": "gp2"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0fd227a6eb2915994"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:41:07.710443+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0c13c11bd859daaf4",
+    "resource_name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
+    "description": "itl-0002-shared-network-all-ec2-directory-all-ec2-02-manual",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-03-24T20:58:18.000Z",
+    "age_days": 143,
+    "total_size_gb": 70,
+    "est_cost_per_month": 3.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0b0436b24fdf74ef2",
+        "size_gb": 70,
+        "volume_type": "gp2"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0b0436b24fdf74ef2"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:41:07.710463+00:00"
   }
 ]

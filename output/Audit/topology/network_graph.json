@@ -11,6 +11,15 @@
         "subnet_type": ""
       },
       {
+        "id": "arn:aws:lambda:us-east-1:060795899335:function:intelica-brain-mcp",
+        "resource_type": "aws::lambda::function",
+        "resource_name": "intelica-brain-mcp",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
         "id": "arn:aws:lambda:us-east-1:060795899335:function:ilt-0008-waf-all-lambda-reviewer",
         "resource_type": "aws::lambda::function",
         "resource_name": "ilt-0008-waf-all-lambda-reviewer",
@@ -38,9 +47,18 @@
         "subnet_type": ""
       },
       {
-        "id": "arn:aws:lambda:us-east-1:060795899335:function:finops-api",
+        "id": "arn:aws:lambda:us-east-1:060795899335:function:resource-name-resolver",
         "resource_type": "aws::lambda::function",
-        "resource_name": "finops-api",
+        "resource_name": "resource-name-resolver",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:lambda:us-east-1:060795899335:function:intelica-brain-mcp-token-issuer",
+        "resource_type": "aws::lambda::function",
+        "resource_name": "intelica-brain-mcp-token-issuer",
         "account_id": "060795899335",
         "region": "us-east-1",
         "vpc_id": "",
@@ -65,6 +83,15 @@
         "subnet_type": ""
       },
       {
+        "id": "arn:aws:kms:us-east-1:060795899335:key/53195cce-f915-4852-bd9a-8036bab9fd7a",
+        "resource_type": "aws::kms::key",
+        "resource_name": "alias/aws/secretsmanager",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
         "id": "arn:aws:kms:us-east-1:060795899335:key/59158a6b-9b24-45bd-9daf-3d85a3fc3472",
         "resource_type": "aws::kms::key",
         "resource_name": "alias/alias/itl-0008-audit-kms-general-01",
@@ -77,6 +104,15 @@
         "id": "arn:aws:kms:us-east-1:060795899335:key/c51af703-549d-4ef8-8953-e78fabbfbdc7",
         "resource_type": "aws::kms::key",
         "resource_name": "alias/aws/s3",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:secretsmanager:us-east-1:060795899335:secret:intelica-brain-mcp/credentials-8ghUP7",
+        "resource_type": "aws::secretsmanager::secret",
+        "resource_name": "intelica-brain-mcp/credentials",
         "account_id": "060795899335",
         "region": "us-east-1",
         "vpc_id": "",
@@ -128,6 +164,33 @@
         "subnet_type": ""
       },
       {
+        "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/lambda/intelica-brain-mcp:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/lambda/intelica-brain-mcp",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/lambda/intelica-brain-mcp-token-issuer:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/lambda/intelica-brain-mcp-token-issuer",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/lambda/resource-name-resolver:*",
+        "resource_type": "aws::logs::loggroup",
+        "resource_name": "/aws/lambda/resource-name-resolver",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
         "id": "arn:aws:logs:us-east-1:060795899335:log-group:/aws/macie/classificationjobs:*",
         "resource_type": "aws::logs::loggroup",
         "resource_name": "/aws/macie/classificationjobs",
@@ -137,9 +200,27 @@
         "subnet_type": ""
       },
       {
-        "id": "arn:aws:dynamodb:us-east-1:060795899335:table/intelica-finops-daily",
+        "id": "arn:aws:dynamodb:us-east-1:060795899335:table/intelica-brain-mcp-oauth-clients",
         "resource_type": "aws::dynamodb::table",
-        "resource_name": "intelica-finops-daily",
+        "resource_name": "intelica-brain-mcp-oauth-clients",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:dynamodb:us-east-1:060795899335:table/intelica-brain-mcp-oauth-codes",
+        "resource_type": "aws::dynamodb::table",
+        "resource_name": "intelica-brain-mcp-oauth-codes",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:dynamodb:us-east-1:060795899335:table/intelica-brain-mcp-tokens",
+        "resource_type": "aws::dynamodb::table",
+        "resource_name": "intelica-brain-mcp-tokens",
         "account_id": "060795899335",
         "region": "us-east-1",
         "vpc_id": "",
@@ -1514,15 +1595,6 @@
         "subnet_type": ""
       },
       {
-        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-x7mjzn",
-        "resource_type": "aws::config::configrule",
-        "resource_name": "securityhub-efs-mount-target-public-accessible-dac60548",
-        "account_id": "060795899335",
-        "region": "us-east-1",
-        "vpc_id": "",
-        "subnet_type": ""
-      },
-      {
         "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-krbsqs",
         "resource_type": "aws::config::configrule",
         "resource_name": "securityhub-eks-cluster-log-enabled-4f914816",
@@ -2225,9 +2297,9 @@
         "subnet_type": ""
       },
       {
-        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vpjutq",
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-yoxvau",
         "resource_type": "aws::config::configrule",
-        "resource_name": "securityhub-lambda-function-settings-check-8b10ce1a",
+        "resource_name": "securityhub-lambda-function-settings-check-b6da2f8e",
         "account_id": "060795899335",
         "region": "us-east-1",
         "vpc_id": "",
@@ -3305,9 +3377,9 @@
         "subnet_type": ""
       },
       {
-        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-g5cbj8",
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-wwoopc",
         "resource_type": "aws::config::configrule",
-        "resource_name": "securityhub-sagemaker-notebook-instance-platform-version-cac1eb33",
+        "resource_name": "securityhub-sagemaker-notebook-instance-platform-version-b1de5d5c",
         "account_id": "060795899335",
         "region": "us-east-1",
         "vpc_id": "",
@@ -3380,15 +3452,6 @@
         "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-vitbtl",
         "resource_type": "aws::config::configrule",
         "resource_name": "securityhub-service-catalog-shared-within-organization-d3f2e312",
-        "account_id": "060795899335",
-        "region": "us-east-1",
-        "vpc_id": "",
-        "subnet_type": ""
-      },
-      {
-        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-k804it",
-        "resource_type": "aws::config::configrule",
-        "resource_name": "securityhub-service-vpc-endpoint-enabled-f407b899",
         "account_id": "060795899335",
         "region": "us-east-1",
         "vpc_id": "",
@@ -3497,6 +3560,15 @@
         "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-1bmifm",
         "resource_type": "aws::config::configrule",
         "resource_name": "securityhub-vpc-default-security-group-closed-30147a0e",
+        "account_id": "060795899335",
+        "region": "us-east-1",
+        "vpc_id": "",
+        "subnet_type": ""
+      },
+      {
+        "id": "arn:aws:config:us-east-1:060795899335:config-rule/aws-service-rule/securityhub.amazonaws.com/config-rule-mcwekq",
+        "resource_type": "aws::config::configrule",
+        "resource_name": "securityhub-vpc-endpoint-enabled-ec2-f863c256",
         "account_id": "060795899335",
         "region": "us-east-1",
         "vpc_id": "",
@@ -3703,11 +3775,11 @@
     ],
     "edges": [],
     "summary": {
-      "node_count": 411,
+      "node_count": 419,
       "public_subnet_count": 0,
       "private_subnet_count": 0,
       "edge_count": 0,
-      "connected_components": 411,
+      "connected_components": 419,
       "internet_facing_count": 0
     }
   }

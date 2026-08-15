@@ -44,7 +44,47 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:40:44.690395+00:00"
+    "collected_at": "2026-08-15T07:41:07.185700+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::volume",
+    "resource_id": "vol-0f8c86df8ce3c318a",
+    "resource_name": "WindowsISO2022",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "availability_zone": "eu-south-2a",
+    "state": "in-use",
+    "size_gb": 6,
+    "volume_type": "gp3",
+    "iops": 3000,
+    "throughput": 125,
+    "encrypted": false,
+    "kms_key_id": "",
+    "snapshot_id": "snap-04415a184c72de2b3",
+    "multi_attach": false,
+    "create_time": "2026-08-03 21:15:22.810000+00:00",
+    "attached_instances": [
+      {
+        "instance_id": "i-0a10f15b976bc2a70",
+        "device": "xvdb",
+        "state": "attached"
+      }
+    ],
+    "attached_instance_id": "i-0a10f15b976bc2a70",
+    "attached_device": "xvdb",
+    "attached_state": "attached",
+    "tags": {
+      "Name": "WindowsISO2022"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::instance",
+        "resource_id": "i-0a10f15b976bc2a70",
+        "relation": "attached_to_instance"
+      }
+    ],
+    "collected_at": "2026-08-15T07:41:07.185723+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -87,7 +127,7 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:40:44.690407+00:00"
+    "collected_at": "2026-08-15T07:41:07.185736+00:00"
   },
   {
     "resource_type": "aws::ec2::volume",
@@ -133,6 +173,6 @@
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:40:44.690415+00:00"
+    "collected_at": "2026-08-15T07:41:07.185750+00:00"
   }
 ]

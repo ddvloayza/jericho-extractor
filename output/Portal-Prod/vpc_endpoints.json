@@ -50,7 +50,7 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:30.400064+00:00"
+    "collected_at": "2026-08-15T07:35:16.857684+00:00"
   },
   {
     "resource_type": "aws::ec2::vpc_endpoint",
@@ -102,7 +102,7 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:30.400075+00:00"
+    "collected_at": "2026-08-15T07:35:16.857710+00:00"
   },
   {
     "resource_type": "aws::ec2::vpc_endpoint",
@@ -157,7 +157,7 @@
         "relation": "deployed_in_subnet"
       }
     ],
-    "collected_at": "2026-07-12T19:36:30.400079+00:00"
+    "collected_at": "2026-08-15T07:35:16.857723+00:00"
   },
   {
     "resource_type": "aws::ec2::vpc_endpoint",
@@ -190,6 +190,198 @@
         "relation": "belongs_to_vpc"
       }
     ],
-    "collected_at": "2026-07-12T19:36:30.400082+00:00"
+    "collected_at": "2026-08-15T07:35:16.857731+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc_endpoint",
+    "resource_id": "vpce-07c374f5d41bc36e9",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0a2328aacb75cfc60",
+    "service_name": "com.amazonaws.eu-south-2.guardduty-data",
+    "endpoint_type": "Interface",
+    "state": "available",
+    "associated_subnet_ids": [
+      "subnet-03a0a390d332a497b",
+      "subnet-0d4d210f456e5c247",
+      "subnet-0c69299494134215d"
+    ],
+    "associated_route_table_ids": [],
+    "dns_entries": [
+      "vpce-07c374f5d41bc36e9-0i5z01w2.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "vpce-07c374f5d41bc36e9-0i5z01w2-eu-south-2b.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "vpce-07c374f5d41bc36e9-0i5z01w2-eu-south-2c.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "vpce-07c374f5d41bc36e9-0i5z01w2-eu-south-2a.guardduty-data.eu-south-2.vpce.amazonaws.com",
+      "guardduty-data.eu-south-2.amazonaws.com"
+    ],
+    "network_interface_ids": [
+      "eni-0fc6b9246e5a77e4b",
+      "eni-0b9f2f551ba60d63c",
+      "eni-0ec44aae24903eb2d"
+    ],
+    "tags": {
+      "GuardDutyManaged": "true"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0a2328aacb75cfc60",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-03a0a390d332a497b",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0d4d210f456e5c247",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c69299494134215d",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:16.857739+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc_endpoint",
+    "resource_id": "vpce-0a2506ff6a4e994b0",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "service_name": "com.amazonaws.eu-south-2.ssm",
+    "endpoint_type": "Interface",
+    "state": "available",
+    "associated_subnet_ids": [
+      "subnet-042f934568c455b4c",
+      "subnet-0c396a6c940028849"
+    ],
+    "associated_route_table_ids": [],
+    "dns_entries": [
+      "vpce-0a2506ff6a4e994b0-skudigcr.ssm.eu-south-2.vpce.amazonaws.com",
+      "vpce-0a2506ff6a4e994b0-skudigcr-eu-south-2b.ssm.eu-south-2.vpce.amazonaws.com",
+      "vpce-0a2506ff6a4e994b0-skudigcr-eu-south-2a.ssm.eu-south-2.vpce.amazonaws.com",
+      "ssm.eu-south-2.amazonaws.com",
+      "ssm.eu-south-2.api.aws"
+    ],
+    "network_interface_ids": [
+      "eni-07e1171c691edc6ca",
+      "eni-055b1be8e3f6cd1af"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:16.857747+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc_endpoint",
+    "resource_id": "vpce-02265ba6150841fb4",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "service_name": "com.amazonaws.eu-south-2.ec2messages",
+    "endpoint_type": "Interface",
+    "state": "available",
+    "associated_subnet_ids": [
+      "subnet-042f934568c455b4c",
+      "subnet-0c396a6c940028849"
+    ],
+    "associated_route_table_ids": [],
+    "dns_entries": [
+      "vpce-02265ba6150841fb4-gbj6n3nv.ec2messages.eu-south-2.vpce.amazonaws.com",
+      "vpce-02265ba6150841fb4-gbj6n3nv-eu-south-2a.ec2messages.eu-south-2.vpce.amazonaws.com",
+      "vpce-02265ba6150841fb4-gbj6n3nv-eu-south-2b.ec2messages.eu-south-2.vpce.amazonaws.com",
+      "ec2messages.eu-south-2.amazonaws.com"
+    ],
+    "network_interface_ids": [
+      "eni-0a3c800ff30cc2e11",
+      "eni-02c5d8ca9a99073c9"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:16.857753+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::vpc_endpoint",
+    "resource_id": "vpce-07dd0f12ffa1dfdd2",
+    "account_id": "610944808410",
+    "account_name": "Portal-Prod",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0626d66632373c892",
+    "service_name": "com.amazonaws.eu-south-2.ssmmessages",
+    "endpoint_type": "Interface",
+    "state": "available",
+    "associated_subnet_ids": [
+      "subnet-042f934568c455b4c",
+      "subnet-0c396a6c940028849"
+    ],
+    "associated_route_table_ids": [],
+    "dns_entries": [
+      "vpce-07dd0f12ffa1dfdd2-dd0yh4ua.ssmmessages.eu-south-2.vpce.amazonaws.com",
+      "vpce-07dd0f12ffa1dfdd2-dd0yh4ua-eu-south-2a.ssmmessages.eu-south-2.vpce.amazonaws.com",
+      "vpce-07dd0f12ffa1dfdd2-dd0yh4ua-eu-south-2b.ssmmessages.eu-south-2.vpce.amazonaws.com",
+      "ssmmessages.eu-south-2.amazonaws.com",
+      "ssmmessages.eu-south-2.api.aws"
+    ],
+    "network_interface_ids": [
+      "eni-08f5a974daf00f26f",
+      "eni-08328f585f9673b0d"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0626d66632373c892",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-042f934568c455b4c",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c396a6c940028849",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:35:16.857760+00:00"
   }
 ]

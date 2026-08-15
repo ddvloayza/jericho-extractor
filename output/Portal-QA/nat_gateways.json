@@ -1,0 +1,35 @@
+[
+  {
+    "resource_type": "aws::ec2::nat_gateway",
+    "resource_id": "nat-05f2a1bbfa1e49410",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "subnet_id": "subnet-003b41da72b2e337e",
+    "state": "available",
+    "connectivity_type": "public",
+    "public_ip": "51.48.30.131",
+    "private_ip": "10.11.1.22",
+    "tags": {
+      "coid": "itl",
+      "env": "qa",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-qa-nat-2a-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-003b41da72b2e337e",
+        "relation": "deployed_in_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:10.099844+00:00"
+  }
+]

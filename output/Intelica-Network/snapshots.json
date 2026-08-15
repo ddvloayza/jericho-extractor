@@ -15,14 +15,14 @@
     "kms_key_id": "arn:aws:kms:eu-south-2:954976322048:key/43d0aab5-6794-4c7f-becd-3eb7ab5f320f",
     "storage_tier": "standard",
     "start_time": "2025-12-26T19:29:21.210000+00:00",
-    "age_days": 198,
+    "age_days": 231,
     "est_cost_per_month": 0.5,
     "volume_exists": true,
     "volume_name": "itl-0002-shared-network-all-eks-pritunl-02-dynamic-pvc-a5017763-9df5-4bbd-a380-267cd9a4de28",
     "attached_ec2_name": "itl-0002-shared-network-all-ec2-pritunl-02",
     "ami_ids": [],
     "tags": {},
-    "collected_at": "2026-07-12T19:40:44.946256+00:00"
+    "collected_at": "2026-08-15T07:41:07.453654+00:00"
   },
   {
     "resource_type": "aws::ec2::snapshot",
@@ -40,7 +40,7 @@
     "kms_key_id": "arn:aws:kms:eu-south-2:954976322048:key/43d0aab5-6794-4c7f-becd-3eb7ab5f320f",
     "storage_tier": "standard",
     "start_time": "2025-09-16T21:14:25.290000+00:00",
-    "age_days": 298,
+    "age_days": 332,
     "est_cost_per_month": 0.5,
     "volume_exists": false,
     "volume_name": "",
@@ -49,7 +49,61 @@
     "tags": {
       "Name": "pvc from pritunl backup"
     },
-    "collected_at": "2026-07-12T19:40:44.946264+00:00"
+    "collected_at": "2026-08-15T07:41:07.453704+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::snapshot",
+    "resource_id": "snap-0fd227a6eb2915994",
+    "resource_name": "",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "state": "completed",
+    "progress": "100%",
+    "description": "Created by CreateImage(i-0a10f15b976bc2a70) for ami-00351fea7313ff5c1",
+    "volume_id": "vol-03c6fafb54470231a",
+    "volume_size_gb": 70,
+    "encrypted": false,
+    "kms_key_id": "",
+    "storage_tier": "standard",
+    "start_time": "2026-08-03T21:18:29.935000+00:00",
+    "age_days": 11,
+    "est_cost_per_month": 3.5,
+    "volume_exists": true,
+    "volume_name": "",
+    "attached_ec2_name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02",
+    "ami_ids": [
+      "ami-00351fea7313ff5c1"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:41:07.453739+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::snapshot",
+    "resource_id": "snap-04ab69877670005ea",
+    "resource_name": "",
+    "account_id": "954976322048",
+    "account_name": "Intelica-Network",
+    "region": "eu-south-2",
+    "state": "completed",
+    "progress": "100%",
+    "description": "Created by CreateImage(i-0a10f15b976bc2a70) for ami-02275d5dabfdbb1c0",
+    "volume_id": "vol-03c6fafb54470231a",
+    "volume_size_gb": 70,
+    "encrypted": false,
+    "kms_key_id": "",
+    "storage_tier": "standard",
+    "start_time": "2026-07-22T15:57:06.352000+00:00",
+    "age_days": 23,
+    "est_cost_per_month": 3.5,
+    "volume_exists": true,
+    "volume_name": "",
+    "attached_ec2_name": "itl-0002-shared-network-all-ec2-directory-all-ec2-02",
+    "ami_ids": [
+      "ami-02275d5dabfdbb1c0"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:41:07.453764+00:00"
   },
   {
     "resource_type": "aws::ec2::snapshot",
@@ -67,7 +121,7 @@
     "kms_key_id": "",
     "storage_tier": "standard",
     "start_time": "2026-03-24T20:58:18.802000+00:00",
-    "age_days": 109,
+    "age_days": 143,
     "est_cost_per_month": 3.5,
     "volume_exists": true,
     "volume_name": "",
@@ -76,7 +130,7 @@
       "ami-0c13c11bd859daaf4"
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:40:44.946270+00:00"
+    "collected_at": "2026-08-15T07:41:07.453838+00:00"
   },
   {
     "resource_type": "aws::ec2::snapshot",
@@ -94,7 +148,7 @@
     "kms_key_id": "",
     "storage_tier": "standard",
     "start_time": "2025-12-01T23:22:19.741000+00:00",
-    "age_days": 222,
+    "age_days": 256,
     "est_cost_per_month": 3.5,
     "volume_exists": true,
     "volume_name": "",
@@ -103,6 +157,6 @@
       "ami-04dd621385b1e6937"
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:40:44.946275+00:00"
+    "collected_at": "2026-08-15T07:41:07.453860+00:00"
   }
 ]

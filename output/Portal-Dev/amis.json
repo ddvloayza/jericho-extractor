@@ -1,6 +1,68 @@
 [
   {
     "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-004f2ad8ce53d3b16",
+    "resource_name": "DenverDev_030326",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "DenverDev_030326",
+    "description": "",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-03-03T21:21:14.000Z",
+    "age_days": 164,
+    "total_size_gb": 5910,
+    "est_cost_per_month": 295.5,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0aa65d2b552ac33f6",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdh",
+        "snapshot_id": "snap-06c4303d75a4722c4",
+        "size_gb": 1800,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdi",
+        "snapshot_id": "snap-01daa80efe060dc85",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-03aa201d48b55c516",
+        "size_gb": 250,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-07cde332aed245e31",
+        "size_gb": 3560,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0aa65d2b552ac33f6",
+      "snap-06c4303d75a4722c4",
+      "snap-01daa80efe060dc85",
+      "snap-03aa201d48b55c516",
+      "snap-07cde332aed245e31"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:50:22.100551+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
     "resource_id": "ami-03b39bd0528770172",
     "resource_name": "AwsBackup_i-051dc0197ed453c8c_7980E668-8DA0-F999-9027-D9E6F0F1C000",
     "account_id": "891376942769",
@@ -16,7 +78,7 @@
     "root_device_name": "/dev/sda1",
     "public": false,
     "creation_date": "2025-10-02T21:26:30.000Z",
-    "age_days": 282,
+    "age_days": 316,
     "total_size_gb": 3910,
     "est_cost_per_month": 195.5,
     "snapshots": [
@@ -45,75 +107,78 @@
       "snap-0f86bc2b3c33c5c88"
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:47:20.090512+00:00"
+    "collected_at": "2026-08-15T07:50:22.100605+00:00"
   },
   {
     "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-0cbc623edce0f481e",
-    "resource_name": "itl-0003-portal-dev-ec2-ami-clickhouse-01",
+    "resource_id": "ami-067771cfe5eeb7905",
+    "resource_name": "AwsBackup_i-05194347248b47521_91A7FA97-8E00-49FB-80F0-C91C41CB5B7B",
     "account_id": "891376942769",
     "account_name": "Portal-Dev",
     "region": "eu-south-2",
     "state": "available",
-    "name": "itl-0003-portal-dev-ec2-ami-clickhouse-01",
-    "description": "[Copied ami-03d17a6103553956e from us-east-1] itl-0003-portal-dev-ec2-ami-clickhouse-01",
+    "name": "AwsBackup_i-05194347248b47521_91A7FA97-8E00-49FB-80F0-C91C41CB5B7B",
+    "description": "This image is created by the AWS Backup service.",
     "architecture": "x86_64",
-    "platform": "linux",
+    "platform": "windows",
     "virtualization": "hvm",
     "root_device_type": "ebs",
     "root_device_name": "/dev/sda1",
     "public": false,
-    "creation_date": "2025-09-27T18:57:07.000Z",
-    "age_days": 288,
-    "total_size_gb": 100,
-    "est_cost_per_month": 5.0,
+    "creation_date": "2026-08-14T08:19:56.000Z",
+    "age_days": 0,
+    "total_size_gb": 5910,
+    "est_cost_per_month": 295.5,
     "snapshots": [
       {
         "device": "/dev/sda1",
-        "snapshot_id": "snap-0340eef287cdec87c",
+        "snapshot_id": "snap-0d45b0846dd00d5f9",
         "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-01e838b5e76920a74",
+        "size_gb": 250,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-059cb5a5df16275d4",
+        "size_gb": 3560,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdh",
+        "snapshot_id": "snap-048e8009c4eac4507",
+        "size_gb": 1800,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdi",
+        "snapshot_id": "snap-0ba567f5b3eda1604",
+        "size_gb": 200,
         "volume_type": "gp3"
       }
     ],
     "snapshot_ids": [
-      "snap-0340eef287cdec87c"
+      "snap-0d45b0846dd00d5f9",
+      "snap-01e838b5e76920a74",
+      "snap-059cb5a5df16275d4",
+      "snap-048e8009c4eac4507",
+      "snap-0ba567f5b3eda1604"
     ],
-    "tags": {},
-    "collected_at": "2026-07-12T19:47:20.090529+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-0e29634e6ab86f2a8",
-    "resource_name": "AMI-CLICKHOUSE-10-16",
-    "account_id": "891376942769",
-    "account_name": "Portal-Dev",
-    "region": "eu-south-2",
-    "state": "available",
-    "name": "AMI-CLICKHOUSE-10-16",
-    "description": "[Copied ami-0bc1c986d0a5d1c83 from us-east-1] AMI-CLICKHOUSE-10-16",
-    "architecture": "x86_64",
-    "platform": "linux",
-    "virtualization": "hvm",
-    "root_device_type": "ebs",
-    "root_device_name": "/dev/sda1",
-    "public": false,
-    "creation_date": "2025-11-06T03:23:31.000Z",
-    "age_days": 248,
-    "total_size_gb": 100,
-    "est_cost_per_month": 5.0,
-    "snapshots": [
-      {
-        "device": "/dev/sda1",
-        "snapshot_id": "snap-0a2e2e09a2716f049",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      }
-    ],
-    "snapshot_ids": [
-      "snap-0a2e2e09a2716f049"
-    ],
-    "tags": {},
-    "collected_at": "2026-07-12T19:47:20.090537+00:00"
+    "tags": {
+      "assetid": "0003",
+      "Type": "ec2",
+      "env": "dev",
+      "apid": "portal",
+      "aws:backup:source-resource": "i-05194347248b47521:91A7FA97-8E00-49FB-80F0-C91C41CB5B7B",
+      "coid": "itl",
+      "Name": "itl-0003-portal-dev-ec2-denver-03",
+      "schedule": "portal"
+    },
+    "collected_at": "2026-08-15T07:50:22.100648+00:00"
   },
   {
     "resource_type": "aws::ec2::ami",
@@ -132,7 +197,7 @@
     "root_device_name": "/dev/sda1",
     "public": false,
     "creation_date": "2026-03-16T21:10:04.000Z",
-    "age_days": 117,
+    "age_days": 151,
     "total_size_gb": 5910,
     "est_cost_per_month": 295.5,
     "snapshots": [
@@ -177,7 +242,75 @@
     "tags": {
       "Name": "manual-backup-20260316"
     },
-    "collected_at": "2026-07-12T19:47:20.090561+00:00"
+    "collected_at": "2026-08-15T07:50:22.100684+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0cbc623edce0f481e",
+    "resource_name": "itl-0003-portal-dev-ec2-ami-clickhouse-01",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "itl-0003-portal-dev-ec2-ami-clickhouse-01",
+    "description": "[Copied ami-03d17a6103553956e from us-east-1] itl-0003-portal-dev-ec2-ami-clickhouse-01",
+    "architecture": "x86_64",
+    "platform": "linux",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2025-09-27T18:57:07.000Z",
+    "age_days": 321,
+    "total_size_gb": 100,
+    "est_cost_per_month": 5.0,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0340eef287cdec87c",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0340eef287cdec87c"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:50:22.100706+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0e29634e6ab86f2a8",
+    "resource_name": "AMI-CLICKHOUSE-10-16",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "AMI-CLICKHOUSE-10-16",
+    "description": "[Copied ami-0bc1c986d0a5d1c83 from us-east-1] AMI-CLICKHOUSE-10-16",
+    "architecture": "x86_64",
+    "platform": "linux",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2025-11-06T03:23:31.000Z",
+    "age_days": 282,
+    "total_size_gb": 100,
+    "est_cost_per_month": 5.0,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0a2e2e09a2716f049",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0a2e2e09a2716f049"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:50:22.100725+00:00"
   },
   {
     "resource_type": "aws::ec2::ami",
@@ -196,7 +329,7 @@
     "root_device_name": "/dev/sda1",
     "public": false,
     "creation_date": "2026-02-04T21:31:47.000Z",
-    "age_days": 157,
+    "age_days": 191,
     "total_size_gb": 5910,
     "est_cost_per_month": 295.5,
     "snapshots": [
@@ -241,139 +374,6 @@
     "tags": {
       "Name": "manual-backups-denver-04-02-2026"
     },
-    "collected_at": "2026-07-12T19:47:20.090585+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-004f2ad8ce53d3b16",
-    "resource_name": "DenverDev_030326",
-    "account_id": "891376942769",
-    "account_name": "Portal-Dev",
-    "region": "eu-south-2",
-    "state": "available",
-    "name": "DenverDev_030326",
-    "description": "",
-    "architecture": "x86_64",
-    "platform": "windows",
-    "virtualization": "hvm",
-    "root_device_type": "ebs",
-    "root_device_name": "/dev/sda1",
-    "public": false,
-    "creation_date": "2026-03-03T21:21:14.000Z",
-    "age_days": 130,
-    "total_size_gb": 5910,
-    "est_cost_per_month": 295.5,
-    "snapshots": [
-      {
-        "device": "/dev/sda1",
-        "snapshot_id": "snap-0aa65d2b552ac33f6",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdh",
-        "snapshot_id": "snap-06c4303d75a4722c4",
-        "size_gb": 1800,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdi",
-        "snapshot_id": "snap-01daa80efe060dc85",
-        "size_gb": 200,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdf",
-        "snapshot_id": "snap-03aa201d48b55c516",
-        "size_gb": 250,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdg",
-        "snapshot_id": "snap-07cde332aed245e31",
-        "size_gb": 3560,
-        "volume_type": "gp3"
-      }
-    ],
-    "snapshot_ids": [
-      "snap-0aa65d2b552ac33f6",
-      "snap-06c4303d75a4722c4",
-      "snap-01daa80efe060dc85",
-      "snap-03aa201d48b55c516",
-      "snap-07cde332aed245e31"
-    ],
-    "tags": {},
-    "collected_at": "2026-07-12T19:47:20.090606+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-0c3b224c79c827148",
-    "resource_name": "AwsBackup_i-05194347248b47521_05741124-D1DC-9564-B9C7-14C21999AAF8",
-    "account_id": "891376942769",
-    "account_name": "Portal-Dev",
-    "region": "eu-south-2",
-    "state": "available",
-    "name": "AwsBackup_i-05194347248b47521_05741124-D1DC-9564-B9C7-14C21999AAF8",
-    "description": "This image is created by the AWS Backup service.",
-    "architecture": "x86_64",
-    "platform": "windows",
-    "virtualization": "hvm",
-    "root_device_type": "ebs",
-    "root_device_name": "/dev/sda1",
-    "public": false,
-    "creation_date": "2026-07-12T08:22:06.000Z",
-    "age_days": 0,
-    "total_size_gb": 5910,
-    "est_cost_per_month": 295.5,
-    "snapshots": [
-      {
-        "device": "/dev/sda1",
-        "snapshot_id": "snap-0fc419fe4448bbee4",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdf",
-        "snapshot_id": "snap-06d21eaeac05d9488",
-        "size_gb": 250,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdg",
-        "snapshot_id": "snap-00dc1b59e979e5856",
-        "size_gb": 3560,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdh",
-        "snapshot_id": "snap-02c87a80e5fbc85be",
-        "size_gb": 1800,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdi",
-        "snapshot_id": "snap-028118bae36d46587",
-        "size_gb": 200,
-        "volume_type": "gp3"
-      }
-    ],
-    "snapshot_ids": [
-      "snap-0fc419fe4448bbee4",
-      "snap-06d21eaeac05d9488",
-      "snap-00dc1b59e979e5856",
-      "snap-02c87a80e5fbc85be",
-      "snap-028118bae36d46587"
-    ],
-    "tags": {
-      "Name": "itl-0003-portal-dev-ec2-denver-03",
-      "coid": "itl",
-      "assetid": "0003",
-      "env": "dev",
-      "schedule": "portal",
-      "Type": "ec2",
-      "apid": "portal",
-      "aws:backup:source-resource": "i-05194347248b47521:05741124-D1DC-9564-B9C7-14C21999AAF8"
-    },
-    "collected_at": "2026-07-12T19:47:20.090628+00:00"
+    "collected_at": "2026-08-15T07:50:22.100759+00:00"
   }
 ]

@@ -1,17 +1,17 @@
 [
   {
     "resource_type": "aws::ec2::instance",
-    "resource_id": "i-0f520b8827e5b280e",
+    "resource_id": "i-02123a9ad784cf594",
     "account_id": "221082197632",
     "account_name": "Analytics-Dev",
     "region": "eu-south-2",
     "instance_type": "c7i.large",
     "state": "running",
     "vpc_id": "vpc-092dc05179287e08a",
-    "subnet_id": "subnet-03b22d8fce7ca6076",
-    "private_ip": "10.16.2.180",
+    "subnet_id": "subnet-013034a3fd02e9b17",
+    "private_ip": "10.16.1.22",
     "public_ip": "",
-    "availability_zone": "eu-south-2c",
+    "availability_zone": "eu-south-2b",
     "ami_id": "ami-0e268ccfbd4d57dec",
     "key_name": "",
     "platform": "linux",
@@ -20,22 +20,22 @@
       "sg-08a170933bb288237"
     ],
     "iam_instance_profile": "arn:aws:iam::221082197632:instance-profile/eks-f6cceb4a-5c1f-715a-7c3f-656369cce635",
-    "launch_time": "2026-07-03 04:01:19+00:00",
+    "launch_time": "2026-07-14 22:04:19+00:00",
     "tags": {
+      "apid": "ana",
       "aws:ec2launchtemplate:version": "3",
+      "k8s.io/cluster-autoscaler/enabled": "true",
+      "env": "dev",
+      "eks:nodegroup-name": "itl-0005-ana-dev-ng-dags-02-20251012040132923800000026",
+      "Name": "itl-0005-ana-dev-ng-dags-02",
+      "kubernetes.io/cluster/itl-0005-ana-dev-eks-af-02": "owned",
+      "aws:ec2launchtemplate:id": "lt-0b5a0183f2c805d48",
+      "aws:ec2:fleet-id": "fleet-5e34bbac-f5ad-4c3e-a492-87208b332514",
+      "k8s.io/cluster-autoscaler/itl-0005-ana-dev-eks-af-02": "owned",
       "aws:eks:cluster-name": "itl-0005-ana-dev-eks-af-02",
       "assetid": "0005",
-      "k8s.io/cluster-autoscaler/enabled": "true",
-      "Name": "itl-0005-ana-dev-ng-dags-02",
-      "aws:ec2:fleet-id": "fleet-fe07b22e-a596-4b94-06ba-260087754075",
-      "eks:nodegroup-name": "itl-0005-ana-dev-ng-dags-02-20251012040132923800000026",
-      "kubernetes.io/cluster/itl-0005-ana-dev-eks-af-02": "owned",
-      "env": "dev",
-      "aws:ec2launchtemplate:id": "lt-0b5a0183f2c805d48",
-      "k8s.io/cluster-autoscaler/itl-0005-ana-dev-eks-af-02": "owned",
       "coid": "itl",
       "eks:cluster-name": "itl-0005-ana-dev-eks-af-02",
-      "apid": "ana",
       "aws:autoscaling:groupName": "eks-itl-0005-ana-dev-ng-dags-02-20251012040132923800000026-f6cceb4a-5c1f-715a-7c3f-656369cce635"
     },
     "relationships": [
@@ -46,7 +46,7 @@
       },
       {
         "resource_type": "aws::ec2::subnet",
-        "resource_id": "subnet-03b22d8fce7ca6076",
+        "resource_id": "subnet-013034a3fd02e9b17",
         "relation": "deployed_in_subnet"
       },
       {
@@ -55,6 +55,6 @@
         "relation": "protected_by_sg"
       }
     ],
-    "collected_at": "2026-07-12T19:45:44.855039+00:00"
+    "collected_at": "2026-08-15T07:48:07.412651+00:00"
   }
 ]

@@ -1,0 +1,48 @@
+[
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-08c04bea8e1a255ab",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-0943c2ad6ac2aeb29"
+    ],
+    "tags": {
+      "coid": "itl",
+      "env": "qa",
+      "apid": "portal",
+      "assetid": "0003",
+      "Name": "itl-0003-portal-qa-igw-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:09.869041+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::internet_gateway",
+    "resource_id": "igw-0aeb4fd307777a209",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "state": "available",
+    "attached_vpc_ids": [
+      "vpc-0d2021cfeeaf34c89"
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0d2021cfeeaf34c89",
+        "relation": "attached_to_vpc"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:09.869065+00:00"
+  }
+]

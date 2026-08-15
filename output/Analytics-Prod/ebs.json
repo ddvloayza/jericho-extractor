@@ -1,12 +1,12 @@
 [
   {
     "resource_type": "aws::ec2::volume",
-    "resource_id": "vol-0091f0453f59e0899",
+    "resource_id": "vol-0b740fc457d53c813",
     "resource_name": "itl-0005-ana-prd-ng-dags-02",
     "account_id": "831926623233",
     "account_name": "Analytics-Prod",
     "region": "eu-south-2",
-    "availability_zone": "eu-south-2a",
+    "availability_zone": "eu-south-2c",
     "state": "in-use",
     "size_gb": 50,
     "volume_type": "gp3",
@@ -16,33 +16,33 @@
     "kms_key_id": "arn:aws:kms:eu-south-2:831926623233:key/746658b3-5dd0-4c98-b05d-2ace2021dc74",
     "snapshot_id": "snap-05c19efe05d96d7e7",
     "multi_attach": false,
-    "create_time": "2026-07-11 00:35:26.812000+00:00",
+    "create_time": "2026-08-12 22:23:21.525000+00:00",
     "attached_instances": [
       {
-        "instance_id": "i-07c8177d4d71f8d0e",
+        "instance_id": "i-026c1b8b4851dc70c",
         "device": "/dev/xvda",
         "state": "attached"
       }
     ],
-    "attached_instance_id": "i-07c8177d4d71f8d0e",
+    "attached_instance_id": "i-026c1b8b4851dc70c",
     "attached_device": "/dev/xvda",
     "attached_state": "attached",
     "tags": {
-      "apid": "ana",
       "env": "prd",
-      "coid": "itl",
       "Name": "itl-0005-ana-prd-ng-dags-02",
+      "apid": "ana",
+      "eks:nodegroup-name": "itl-0005-ana-prd-ng-dags-02-20251017032808088700000026",
       "assetid": "0005",
       "eks:cluster-name": "itl-0005-ana-prd-eks-af-02",
-      "eks:nodegroup-name": "itl-0005-ana-prd-ng-dags-02-20251017032808088700000026"
+      "coid": "itl"
     },
     "relationships": [
       {
         "resource_type": "aws::ec2::instance",
-        "resource_id": "i-07c8177d4d71f8d0e",
+        "resource_id": "i-026c1b8b4851dc70c",
         "relation": "attached_to_instance"
       }
     ],
-    "collected_at": "2026-07-12T19:41:54.197524+00:00"
+    "collected_at": "2026-08-15T07:42:48.528860+00:00"
   }
 ]

@@ -1,0 +1,373 @@
+[
+  {
+    "resource_type": "aws::ec2::network_acl",
+    "resource_id": "acl-0cd5d3ba679652b00",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "is_default": false,
+    "associated_subnet_ids": [
+      "subnet-003b41da72b2e337e",
+      "subnet-0e634deaa740f21d5"
+    ],
+    "inbound_rules": [
+      {
+        "rule_number": 99,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "rule_number": 99,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "qa",
+      "Name": "itl-0003-portal-qa-nacl-public-02"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-003b41da72b2e337e",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0e634deaa740f21d5",
+        "relation": "associated_with_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:11.217486+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_acl",
+    "resource_id": "acl-03a08a2bda3d09a9c",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "is_default": false,
+    "associated_subnet_ids": [
+      "subnet-0125239b932cf8ed8",
+      "subnet-0ce53475544328ea4"
+    ],
+    "inbound_rules": [
+      {
+        "rule_number": 99,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "rule_number": 99,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "tags": {
+      "env": "qa",
+      "coid": "itl",
+      "Name": "itl-0003-portal-qa-nacl-restricted-02",
+      "apid": "portal",
+      "assetid": "0003"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0125239b932cf8ed8",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0ce53475544328ea4",
+        "relation": "associated_with_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:11.217517+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_acl",
+    "resource_id": "acl-0a141766da021f87d",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "is_default": false,
+    "associated_subnet_ids": [
+      "subnet-086c5860741c77434",
+      "subnet-0f4b2fb29f418048b"
+    ],
+    "inbound_rules": [
+      {
+        "rule_number": 99,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "rule_number": 99,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "tags": {
+      "Name": "itl-0003-portal-qa-nacl-private-02",
+      "apid": "portal",
+      "assetid": "0003",
+      "coid": "itl",
+      "env": "qa"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-086c5860741c77434",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0f4b2fb29f418048b",
+        "relation": "associated_with_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:11.217530+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_acl",
+    "resource_id": "acl-093f905f852916177",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "is_default": true,
+    "associated_subnet_ids": [],
+    "inbound_rules": [
+      {
+        "rule_number": 100,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "rule_number": 100,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "belongs_to_vpc"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:11.217541+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::network_acl",
+    "resource_id": "acl-00c57d00389e05b84",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "vpc_id": "vpc-0d2021cfeeaf34c89",
+    "is_default": true,
+    "associated_subnet_ids": [
+      "subnet-00451f1ff2a77117c",
+      "subnet-0163665e58390141f",
+      "subnet-08ab921c32d71a0bc"
+    ],
+    "inbound_rules": [
+      {
+        "rule_number": 100,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "outbound_rules": [
+      {
+        "rule_number": 100,
+        "protocol": "-1",
+        "rule_action": "allow",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      },
+      {
+        "rule_number": 32767,
+        "protocol": "-1",
+        "rule_action": "deny",
+        "cidr_block": "0.0.0.0/0",
+        "ipv6_cidr_block": "",
+        "from_port": null,
+        "to_port": null
+      }
+    ],
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0d2021cfeeaf34c89",
+        "relation": "belongs_to_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-00451f1ff2a77117c",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0163665e58390141f",
+        "relation": "associated_with_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-08ab921c32d71a0bc",
+        "relation": "associated_with_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:11.217554+00:00"
+  }
+]

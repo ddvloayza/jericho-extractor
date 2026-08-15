@@ -1,0 +1,110 @@
+[
+  {
+    "resource_type": "aws::eks::cluster",
+    "resource_id": "arn:aws:eks:eu-south-2:396608799622:cluster/itl-0003-portal-qa-eks-apps-02",
+    "resource_name": "itl-0003-portal-qa-eks-apps-02",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "cluster_name": "itl-0003-portal-qa-eks-apps-02",
+    "status": "ACTIVE",
+    "kubernetes_version": "1.34",
+    "endpoint": "https://28FE0D59AAD23992CDA27FD7D95732DA.gr7.eu-south-2.eks.amazonaws.com",
+    "certificate_authority": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJRXp3OFV5cnRyOVV3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TlRFeE1EY3dNVFE1TURKYUZ3MHpOVEV4TURVd01UVTBNREphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURTTjl3NWRFTSt6d0dVb0pGQ085OWNTOW11RXFTbmF5YzE0QzE1Mk9qZ05iNW51QjZaKzJLbkV5SHIKamQwRE9kUFVlUVpSNS94bG1zODRIWENkbjFvUnpENFh4UW1lU29UUVAxT05ZUWcrVFd0ODhFekxISURiNHVFMwpkZGF0ZWtFMVphR3FkQ3l6K09MS2l2MGtkcEhvNjVibGF6dkpZLzFDT3hIKzBvTDBtVllDM3E2c1R1eGgvditCCkdpT3cvRFY3K2ZlYmliQlpRWnhUbjRxWUU5VUFDTDJnK2FKeXB5TnBMeXQ5TzA4czAyM2wxTkM4SjBDQ3JJcVcKVElaRTNCbHJ4ajhoblFMWmprWncwcXBOeS9XN1FUT0U3NmdRWU5iWG1WTmtZcnBrdGFZRVBIOC9kQmpXc0puNApKekQ4MWFFM1JwdVJxQTBCa3VicGRLRlExazFyQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJTOVljOWc5S2tSOENRSzVKc2tyT2g4dDV1VHl6QVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQVN5ZWJnZFZLQwovbENrQm8rZjM3eVFJM04zSmhpd2M3NUhUY0NUSGJPd2drWnUrblkvTSt1dWoyeGduRWpRKytRUjBvL2Mzekh6CjJHUWlpZEwyTHAybG0xQlgzbkNCR05KaWtpa1BBR1BZSHRiTnJaSHkvT2xiSnhhajlnY2JzSzhZd2d6TTcrQmEKeU9jZFlOcDFzQm93U0lHamhaQ2ZEVVYyUWlBT3M0dktFSUVuUExBSnBNbzVHT2pGV1N0TTF3Y2FjUWUybFFOdgpUUVd4RnQ3ZU9YdCsvSjZIOWhGZlI3clVoK0dxUXRYQ2R1SW1Ea3BkZnpxbGN0Y2s4c29Rckljb3N0U1FtR0ZPCjZZSkRnc1JURktBanNnYWlReWMraDlvTjIwVnFVUnpLcHFCbzNCcTFvWjZqdmJmeVRTdFJyL0lTbXViMlZwN3AKRTBWRmc4TWMwNjI0Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+    "vpc_id": "vpc-0943c2ad6ac2aeb29",
+    "subnet_ids": [
+      "subnet-086c5860741c77434",
+      "subnet-0f4b2fb29f418048b"
+    ],
+    "security_group_ids": [
+      "sg-0fe8427e932343e9e"
+    ],
+    "endpoint_public_access": true,
+    "endpoint_private_access": true,
+    "role_arn": "arn:aws:iam::396608799622:role/itl-0003-portal-qa-eks-apps-02-role",
+    "logging_enabled": [
+      "api",
+      "audit",
+      "authenticator"
+    ],
+    "tags": {
+      "coid": "itl",
+      "terraform-aws-modules": "eks",
+      "env": "qa",
+      "assetid": "0003",
+      "apid": "portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0943c2ad6ac2aeb29",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-086c5860741c77434",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0f4b2fb29f418048b",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0fe8427e932343e9e",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:28.933145+00:00"
+  },
+  {
+    "resource_type": "aws::eks::nodegroup",
+    "resource_id": "arn:aws:eks:eu-south-2:396608799622:nodegroup/itl-0003-portal-qa-eks-apps-02/itl-0003-portal-qa-ec2-apps-02-portal/32cd2e04-d63f-3c42-adcd-ce654121a450",
+    "resource_name": "itl-0003-portal-qa-ec2-apps-02-portal",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "cluster_arn": "arn:aws:eks:eu-south-2:396608799622:cluster/itl-0003-portal-qa-eks-apps-02",
+    "nodegroup_name": "itl-0003-portal-qa-ec2-apps-02-portal",
+    "status": "ACTIVE",
+    "instance_types": [
+      "m5.large"
+    ],
+    "ami_type": "AL2023_x86_64_STANDARD",
+    "capacity_type": "ON_DEMAND",
+    "subnet_ids": [
+      "subnet-086c5860741c77434",
+      "subnet-0f4b2fb29f418048b"
+    ],
+    "desired_size": 2,
+    "min_size": 2,
+    "max_size": 3,
+    "disk_size": 0,
+    "tags": {
+      "coid": "itl",
+      "env": "qa",
+      "assetid": "0003",
+      "apid": "portal",
+      "Name": "itl-0003-portal-qa-ec2-apps-02-portal"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::eks::cluster",
+        "resource_id": "arn:aws:eks:eu-south-2:396608799622:cluster/itl-0003-portal-qa-eks-apps-02",
+        "relation": "belongs_to_cluster"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-086c5860741c77434",
+        "relation": "uses_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0f4b2fb29f418048b",
+        "relation": "uses_subnet"
+      }
+    ],
+    "collected_at": "2026-08-15T07:55:29.569221+00:00"
+  }
+]

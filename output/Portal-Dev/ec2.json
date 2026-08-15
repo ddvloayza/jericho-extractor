@@ -6,7 +6,7 @@
     "account_name": "Portal-Dev",
     "region": "eu-south-2",
     "instance_type": "m5.2xlarge",
-    "state": "running",
+    "state": "stopped",
     "vpc_id": "vpc-0fbd191d169cc9efb",
     "subnet_id": "subnet-0c353ee340c3da15e",
     "private_ip": "10.12.3.127",
@@ -20,7 +20,7 @@
       "sg-0922640d2a80f5742"
     ],
     "iam_instance_profile": "arn:aws:iam::891376942769:instance-profile/itl-0003-portal-dev-ec2-denver-03-role-profile",
-    "launch_time": "2026-07-12 11:50:36+00:00",
+    "launch_time": "2026-08-14 11:50:36+00:00",
     "tags": {
       "apid": "portal",
       "assetid": "0003",
@@ -47,7 +47,7 @@
         "relation": "protected_by_sg"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.232696+00:00"
+    "collected_at": "2026-08-15T07:50:21.218700+00:00"
   },
   {
     "resource_type": "aws::ec2::instance",
@@ -105,7 +105,7 @@
         "relation": "protected_by_sg"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.232709+00:00"
+    "collected_at": "2026-08-15T07:50:21.218728+00:00"
   },
   {
     "resource_type": "aws::ec2::instance",
@@ -163,7 +163,7 @@
         "relation": "protected_by_sg"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.232719+00:00"
+    "collected_at": "2026-08-15T07:50:21.218746+00:00"
   },
   {
     "resource_type": "aws::ec2::instance",
@@ -211,7 +211,7 @@
         "relation": "protected_by_sg"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.232726+00:00"
+    "collected_at": "2026-08-15T07:50:21.218760+00:00"
   },
   {
     "resource_type": "aws::ec2::instance",
@@ -269,7 +269,7 @@
         "relation": "protected_by_sg"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.232734+00:00"
+    "collected_at": "2026-08-15T07:50:21.218775+00:00"
   },
   {
     "resource_type": "aws::ec2::instance",
@@ -327,7 +327,55 @@
         "relation": "protected_by_sg"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.232741+00:00"
+    "collected_at": "2026-08-15T07:50:21.218791+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::instance",
+    "resource_id": "i-08c771a5ae702bb2c",
+    "account_id": "891376942769",
+    "account_name": "Portal-Dev",
+    "region": "eu-south-2",
+    "instance_type": "m5.2xlarge",
+    "state": "stopped",
+    "vpc_id": "vpc-0fbd191d169cc9efb",
+    "subnet_id": "subnet-0c353ee340c3da15e",
+    "private_ip": "10.12.3.229",
+    "public_ip": "",
+    "availability_zone": "eu-south-2a",
+    "ami_id": "ami-0fe859c27163aa2e3",
+    "key_name": "itl-0003-portal-dev-denver-test-kp",
+    "platform": "windows",
+    "architecture": "x86_64",
+    "security_group_ids": [
+      "sg-0cf6e420e8e8bea15"
+    ],
+    "iam_instance_profile": "arn:aws:iam::891376942769:instance-profile/itl-0003-portal-dev-ec2-denver-03-role-profile",
+    "launch_time": "2026-08-13 14:35:00+00:00",
+    "tags": {
+      "apid": "portal",
+      "assetid": "0003",
+      "env": "dev",
+      "coid": "itl",
+      "Name": "itl-0003-portal-dev-ec2-denver-test"
+    },
+    "relationships": [
+      {
+        "resource_type": "aws::ec2::vpc",
+        "resource_id": "vpc-0fbd191d169cc9efb",
+        "relation": "deployed_in_vpc"
+      },
+      {
+        "resource_type": "aws::ec2::subnet",
+        "resource_id": "subnet-0c353ee340c3da15e",
+        "relation": "deployed_in_subnet"
+      },
+      {
+        "resource_type": "aws::ec2::security_group",
+        "resource_id": "sg-0cf6e420e8e8bea15",
+        "relation": "protected_by_sg"
+      }
+    ],
+    "collected_at": "2026-08-15T07:50:21.218804+00:00"
   },
   {
     "resource_type": "aws::ec2::instance",
@@ -385,6 +433,6 @@
         "relation": "protected_by_sg"
       }
     ],
-    "collected_at": "2026-07-12T19:47:19.232748+00:00"
+    "collected_at": "2026-08-15T07:50:21.218820+00:00"
   }
 ]

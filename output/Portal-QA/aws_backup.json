@@ -1,0 +1,58 @@
+[
+  {
+    "resource_type": "aws::backup::vault",
+    "resource_id": "arn:aws:backup:eu-south-2:396608799622:backup-vault:itl-0003-portal-qa-bck-vault-02",
+    "resource_name": "itl-0003-portal-qa-bck-vault-02",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "creation_date": "2025-10-06 11:26:15.197000-05:00",
+    "encryption_key_arn": "arn:aws:kms:eu-south-2:396608799622:key/dff24d06-e107-44c2-a1b2-f008dc149a1c",
+    "number_of_recovery_points": 0,
+    "locked": false,
+    "min_retention_days": null,
+    "max_retention_days": null,
+    "total_backup_size_bytes": 0,
+    "total_backup_size_gb": 0.0,
+    "est_cost_per_month": 0.0,
+    "tags": {},
+    "collected_at": "2026-08-15T07:55:15.545911+00:00"
+  },
+  {
+    "resource_type": "aws::backup::plan",
+    "resource_id": "arn:aws:backup:eu-south-2:396608799622:backup-plan:141fc459-4bec-4026-b013-007ddd3a0650",
+    "resource_name": "itl-0003-portal-qa-bck-plan-02",
+    "account_id": "396608799622",
+    "account_name": "Portal-QA",
+    "region": "eu-south-2",
+    "plan_id": "141fc459-4bec-4026-b013-007ddd3a0650",
+    "version_id": "OGEwYjQ5YmQtM2E1Yy00NDU3LTkzMDUtYWY1YWVkYzllNmIw",
+    "creation_date": "2026-01-13 15:50:36.191000-05:00",
+    "last_execution_date": "2026-08-14 03:06:35.215000-05:00",
+    "rules": [
+      {
+        "rule_name": "itl-0003-portal-qa-bck-rule-02",
+        "target_vault": "itl-0003-portal-qa-bck-vault-02",
+        "schedule_expression": "cron(00 03 * * ? *)",
+        "start_window_minutes": 60,
+        "completion_window_minutes": 180,
+        "move_to_cold_storage_after_days": null,
+        "delete_after_days": 1,
+        "enable_continuous_backup": false
+      }
+    ],
+    "selections": [
+      {
+        "selection_name": "itl-0003-portal-qa-bck-selection-02",
+        "iam_role_arn": "arn:aws:iam::396608799622:role/itl-0003-portal-qa-role-backup-02",
+        "resources": [
+          "arn:aws:ec2:eu-south-2:396608799622:instance/i-05300bab90acfdab5"
+        ],
+        "tag_conditions": []
+      }
+    ],
+    "protected_resource_count": 1,
+    "tags": {},
+    "collected_at": "2026-08-15T07:55:16.460367+00:00"
+  }
+]

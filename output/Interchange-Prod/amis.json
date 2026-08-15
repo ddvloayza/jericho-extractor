@@ -1,13 +1,13 @@
 [
   {
     "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-016d5ec041da8c440",
-    "resource_name": "AwsBackup_i-08385ff7dbbc37b9d_95F7B3DD-58E3-5BFE-7785-589D5FF45306",
+    "resource_id": "ami-0ed3fd23d990d8048",
+    "resource_name": "AwsBackup_i-08385ff7dbbc37b9d_85110648-3E25-CDEB-0CEE-49DBFD34C353",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "eu-south-2",
     "state": "available",
-    "name": "AwsBackup_i-08385ff7dbbc37b9d_95F7B3DD-58E3-5BFE-7785-589D5FF45306",
+    "name": "AwsBackup_i-08385ff7dbbc37b9d_85110648-3E25-CDEB-0CEE-49DBFD34C353",
     "description": "This image is created by the AWS Backup service.",
     "architecture": "x86_64",
     "platform": "windows",
@@ -15,194 +15,645 @@
     "root_device_type": "ebs",
     "root_device_name": "/dev/sda1",
     "public": false,
-    "creation_date": "2026-07-11T08:11:53.000Z",
-    "age_days": 1,
-    "total_size_gb": 29077,
-    "est_cost_per_month": 1453.85,
+    "creation_date": "2026-08-14T08:11:54.000Z",
+    "age_days": 0,
+    "total_size_gb": 31742,
+    "est_cost_per_month": 1587.1,
     "snapshots": [
       {
         "device": "/dev/sda1",
-        "snapshot_id": "snap-0faa52f329d2a39e6",
+        "snapshot_id": "snap-0ecc108f9967badad",
         "size_gb": 170,
         "volume_type": "gp3"
       },
       {
         "device": "/dev/sdf",
-        "snapshot_id": "snap-007aab922425f869b",
+        "snapshot_id": "snap-0e8c9d8395b123520",
         "size_gb": 400,
         "volume_type": "gp3"
       },
       {
         "device": "/dev/sdg",
-        "snapshot_id": "snap-09333f7dc57f42357",
+        "snapshot_id": "snap-01f3974d0faadd26d",
         "size_gb": 1536,
         "volume_type": "gp3"
       },
       {
         "device": "/dev/sdi",
-        "snapshot_id": "snap-04b5425f92573ff4a",
+        "snapshot_id": "snap-06ed6f51adaed6ee9",
         "size_gb": 200,
         "volume_type": "gp3"
       },
       {
         "device": "xvdd",
-        "snapshot_id": "snap-04e6393ee58dca9aa",
-        "size_gb": 400,
+        "snapshot_id": "snap-0f36b746a18e00ae3",
+        "size_gb": 490,
         "volume_type": "gp3"
       },
       {
         "device": "xvde",
-        "snapshot_id": "snap-05d3678a758751081",
+        "snapshot_id": "snap-043554f8eee447da6",
         "size_gb": 800,
         "volume_type": "gp3"
       },
       {
         "device": "xvdf",
-        "snapshot_id": "snap-018bbfe8be7a72e9b",
+        "snapshot_id": "snap-03405c847b70f4a5d",
         "size_gb": 530,
         "volume_type": "gp3"
       },
       {
         "device": "xvdc",
-        "snapshot_id": "snap-011e595e3076e401b",
-        "size_gb": 2600,
+        "snapshot_id": "snap-04eb0ab08c3fe87e5",
+        "size_gb": 2675,
         "volume_type": "gp3"
       },
       {
         "device": "xvdh",
-        "snapshot_id": "snap-023a8744b0f47ca13",
+        "snapshot_id": "snap-01214f11238e8f413",
         "size_gb": 1100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdi",
-        "snapshot_id": "snap-01be548607fb065b2",
+        "snapshot_id": "snap-0b1400559fbdb36db",
         "size_gb": 2500,
         "volume_type": "gp3"
       },
       {
         "device": "xvdl",
-        "snapshot_id": "snap-08ee7031ec6296296",
+        "snapshot_id": "snap-0869a7be3323e2dfe",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdm",
-        "snapshot_id": "snap-0ef8a062c12845100",
+        "snapshot_id": "snap-02f80d70e19d0c1ce",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdn",
-        "snapshot_id": "snap-098a077ec4d876dee",
+        "snapshot_id": "snap-09e99c3db2070092b",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdo",
-        "snapshot_id": "snap-0aa25c054335e35d5",
+        "snapshot_id": "snap-0c3442a3d80e3ba11",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdp",
-        "snapshot_id": "snap-0d775f4523b9e658a",
+        "snapshot_id": "snap-0e48a5197e4d1873d",
         "size_gb": 270,
         "volume_type": "gp3"
       },
       {
         "device": "xvdq",
-        "snapshot_id": "snap-0ee6046c673cf583a",
+        "snapshot_id": "snap-0b15534a5aea58ffb",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdr",
-        "snapshot_id": "snap-014bf9b4d4e7266fb",
+        "snapshot_id": "snap-09a7325137637c7bb",
         "size_gb": 1420,
         "volume_type": "gp3"
       },
       {
         "device": "xvds",
-        "snapshot_id": "snap-02f802916739372bc",
+        "snapshot_id": "snap-004c8676fc96c5cf7",
         "size_gb": 2300,
         "volume_type": "gp3"
       },
       {
         "device": "xvdt",
-        "snapshot_id": "snap-039cc197e2b552939",
+        "snapshot_id": "snap-00ea67a17977c31e1",
         "size_gb": 750,
         "volume_type": "gp3"
       },
       {
         "device": "xvdu",
-        "snapshot_id": "snap-01fbe7f7f6d56c603",
-        "size_gb": 5000,
+        "snapshot_id": "snap-0875bb04d94d8ac8c",
+        "size_gb": 6500,
         "volume_type": "sc1"
       },
       {
         "device": "xvdw",
-        "snapshot_id": "snap-0dbbd49dffbb3971d",
-        "size_gb": 4200,
+        "snapshot_id": "snap-07d3866a6af546b84",
+        "size_gb": 4800,
         "volume_type": "gp3"
       },
       {
         "device": "xvdj",
-        "snapshot_id": "snap-0aab5909b10c08e66",
+        "snapshot_id": "snap-0ef61dae8528a6966",
         "size_gb": 700,
         "volume_type": "gp3"
       },
       {
         "device": "xvdv",
-        "snapshot_id": "snap-0c54214bc62c996a7",
+        "snapshot_id": "snap-01e6eb352cc1088c9",
         "size_gb": 1,
         "volume_type": "gp3"
       },
       {
         "device": "xvdg",
-        "snapshot_id": "snap-0fbda9693a916b6bf",
-        "size_gb": 3500,
+        "snapshot_id": "snap-01970517ef1110cc1",
+        "size_gb": 3900,
         "volume_type": "gp3"
       },
       {
         "device": "xvdb",
-        "snapshot_id": "snap-036129b6f5c7f774a",
+        "snapshot_id": "snap-0b2dda359c519ee59",
         "size_gb": 200,
         "volume_type": "gp3"
       }
     ],
     "snapshot_ids": [
-      "snap-0faa52f329d2a39e6",
-      "snap-007aab922425f869b",
-      "snap-09333f7dc57f42357",
-      "snap-04b5425f92573ff4a",
-      "snap-04e6393ee58dca9aa",
-      "snap-05d3678a758751081",
-      "snap-018bbfe8be7a72e9b",
-      "snap-011e595e3076e401b",
-      "snap-023a8744b0f47ca13",
-      "snap-01be548607fb065b2",
-      "snap-08ee7031ec6296296",
-      "snap-0ef8a062c12845100",
-      "snap-098a077ec4d876dee",
-      "snap-0aa25c054335e35d5",
-      "snap-0d775f4523b9e658a",
-      "snap-0ee6046c673cf583a",
-      "snap-014bf9b4d4e7266fb",
-      "snap-02f802916739372bc",
-      "snap-039cc197e2b552939",
-      "snap-01fbe7f7f6d56c603",
-      "snap-0dbbd49dffbb3971d",
-      "snap-0aab5909b10c08e66",
-      "snap-0c54214bc62c996a7",
-      "snap-0fbda9693a916b6bf",
-      "snap-036129b6f5c7f774a"
+      "snap-0ecc108f9967badad",
+      "snap-0e8c9d8395b123520",
+      "snap-01f3974d0faadd26d",
+      "snap-06ed6f51adaed6ee9",
+      "snap-0f36b746a18e00ae3",
+      "snap-043554f8eee447da6",
+      "snap-03405c847b70f4a5d",
+      "snap-04eb0ab08c3fe87e5",
+      "snap-01214f11238e8f413",
+      "snap-0b1400559fbdb36db",
+      "snap-0869a7be3323e2dfe",
+      "snap-02f80d70e19d0c1ce",
+      "snap-09e99c3db2070092b",
+      "snap-0c3442a3d80e3ba11",
+      "snap-0e48a5197e4d1873d",
+      "snap-0b15534a5aea58ffb",
+      "snap-09a7325137637c7bb",
+      "snap-004c8676fc96c5cf7",
+      "snap-00ea67a17977c31e1",
+      "snap-0875bb04d94d8ac8c",
+      "snap-07d3866a6af546b84",
+      "snap-0ef61dae8528a6966",
+      "snap-01e6eb352cc1088c9",
+      "snap-01970517ef1110cc1",
+      "snap-0b2dda359c519ee59"
     ],
     "tags": {
-      "aws:backup:source-resource": "i-08385ff7dbbc37b9d:95F7B3DD-58E3-5BFE-7785-589D5FF45306",
+      "aws:backup:source-resource": "i-08385ff7dbbc37b9d:85110648-3E25-CDEB-0CEE-49DBFD34C353",
       "Name": "itl-0004-itx-prod-ec2-london-01"
     },
-    "collected_at": "2026-07-12T19:39:21.367452+00:00"
+    "collected_at": "2026-08-15T07:39:08.509907+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-08d64b84133e77f5b",
+    "resource_name": "AwsBackup_i-08385ff7dbbc37b9d_8D9109D0-6CFA-3F80-5F4E-70E9D9D27174",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "AwsBackup_i-08385ff7dbbc37b9d_8D9109D0-6CFA-3F80-5F4E-70E9D9D27174",
+    "description": "This image is created by the AWS Backup service.",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-08-12T08:11:11.000Z",
+    "age_days": 2,
+    "total_size_gb": 31742,
+    "est_cost_per_month": 1587.1,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-01044aca9b00190ae",
+        "size_gb": 170,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdf",
+        "snapshot_id": "snap-00a4055016ed24bd3",
+        "size_gb": 400,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdg",
+        "snapshot_id": "snap-021e7eaebc186c5f8",
+        "size_gb": 1536,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdi",
+        "snapshot_id": "snap-093b155813de73d30",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdd",
+        "snapshot_id": "snap-0787ef5db9f8d3084",
+        "size_gb": 490,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvde",
+        "snapshot_id": "snap-0e344f919c7893576",
+        "size_gb": 800,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-0471294ab7dbaac3d",
+        "size_gb": 530,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdc",
+        "snapshot_id": "snap-0b0d8adea294dce1a",
+        "size_gb": 2675,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdh",
+        "snapshot_id": "snap-02f09cbbd840abd8c",
+        "size_gb": 1100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdi",
+        "snapshot_id": "snap-01014fb1000593120",
+        "size_gb": 2500,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdl",
+        "snapshot_id": "snap-0220f93acee8192bd",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdm",
+        "snapshot_id": "snap-017c6271fc59914e3",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdn",
+        "snapshot_id": "snap-0df3c0a3653273d76",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdo",
+        "snapshot_id": "snap-086b0bc436860daf7",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdp",
+        "snapshot_id": "snap-0d627fa6e8acb2bbf",
+        "size_gb": 270,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdq",
+        "snapshot_id": "snap-04e7db09b5003ec47",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdr",
+        "snapshot_id": "snap-0348a26e2b3ca3704",
+        "size_gb": 1420,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvds",
+        "snapshot_id": "snap-041affc9f72d90d6c",
+        "size_gb": 2300,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdt",
+        "snapshot_id": "snap-08d548d97d82acb5a",
+        "size_gb": 750,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdu",
+        "snapshot_id": "snap-05d1b3d07903db482",
+        "size_gb": 6500,
+        "volume_type": "sc1"
+      },
+      {
+        "device": "xvdw",
+        "snapshot_id": "snap-07dd96a1b06e928cd",
+        "size_gb": 4800,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdj",
+        "snapshot_id": "snap-0907bac328268c551",
+        "size_gb": 700,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdv",
+        "snapshot_id": "snap-0df739e54b8bd53b7",
+        "size_gb": 1,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-032d568ccd455f117",
+        "size_gb": 3900,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdb",
+        "snapshot_id": "snap-0b88f43c8c11cb460",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-01044aca9b00190ae",
+      "snap-00a4055016ed24bd3",
+      "snap-021e7eaebc186c5f8",
+      "snap-093b155813de73d30",
+      "snap-0787ef5db9f8d3084",
+      "snap-0e344f919c7893576",
+      "snap-0471294ab7dbaac3d",
+      "snap-0b0d8adea294dce1a",
+      "snap-02f09cbbd840abd8c",
+      "snap-01014fb1000593120",
+      "snap-0220f93acee8192bd",
+      "snap-017c6271fc59914e3",
+      "snap-0df3c0a3653273d76",
+      "snap-086b0bc436860daf7",
+      "snap-0d627fa6e8acb2bbf",
+      "snap-04e7db09b5003ec47",
+      "snap-0348a26e2b3ca3704",
+      "snap-041affc9f72d90d6c",
+      "snap-08d548d97d82acb5a",
+      "snap-05d1b3d07903db482",
+      "snap-07dd96a1b06e928cd",
+      "snap-0907bac328268c551",
+      "snap-0df739e54b8bd53b7",
+      "snap-032d568ccd455f117",
+      "snap-0b88f43c8c11cb460"
+    ],
+    "tags": {
+      "aws:backup:source-resource": "i-08385ff7dbbc37b9d:8D9109D0-6CFA-3F80-5F4E-70E9D9D27174",
+      "Name": "itl-0004-itx-prod-ec2-london-01"
+    },
+    "collected_at": "2026-08-15T07:39:08.509974+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-005f3b4eb11256cee",
+    "resource_name": "AwsBackup_i-0912b617340cb9eb4_781E8B71-9D64-3CE4-19FD-C4939AD5090C",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "AwsBackup_i-0912b617340cb9eb4_781E8B71-9D64-3CE4-19FD-C4939AD5090C",
+    "description": "This image is created by the AWS Backup service.",
+    "architecture": "arm64",
+    "platform": "linux",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/xvda",
+    "public": false,
+    "creation_date": "2026-08-12T08:20:01.000Z",
+    "age_days": 2,
+    "total_size_gb": 80,
+    "est_cost_per_month": 4.0,
+    "snapshots": [
+      {
+        "device": "/dev/xvda",
+        "snapshot_id": "snap-00a162c8a43d931a9",
+        "size_gb": 80,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-00a162c8a43d931a9"
+    ],
+    "tags": {
+      "apid": "itx",
+      "assetid": "0004",
+      "aws:backup:source-resource": "i-0912b617340cb9eb4:781E8B71-9D64-3CE4-19FD-C4939AD5090C",
+      "coid": "itl",
+      "env": "prd",
+      "Name": "itl-0004-itx-prd-ec2-app-02"
+    },
+    "collected_at": "2026-08-15T07:39:08.509998+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-007808d95a6c00043",
+    "resource_name": "AwsBackup_i-08385ff7dbbc37b9d_55E840BE-757D-A1C8-C9A0-212C83711284",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "AwsBackup_i-08385ff7dbbc37b9d_55E840BE-757D-A1C8-C9A0-212C83711284",
+    "description": "This image is created by the AWS Backup service.",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-08-13T08:11:16.000Z",
+    "age_days": 1,
+    "total_size_gb": 31742,
+    "est_cost_per_month": 1587.1,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0dec7b48dd5707354",
+        "size_gb": 170,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdf",
+        "snapshot_id": "snap-06985adfdf80f4bd3",
+        "size_gb": 400,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdg",
+        "snapshot_id": "snap-01635930526df6a6e",
+        "size_gb": 1536,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdi",
+        "snapshot_id": "snap-0ff705f0867af8a73",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdd",
+        "snapshot_id": "snap-0f782148893dbaf7e",
+        "size_gb": 490,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvde",
+        "snapshot_id": "snap-0a00ba4d173e7f512",
+        "size_gb": 800,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-0488231895c38993b",
+        "size_gb": 530,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdc",
+        "snapshot_id": "snap-059f28fb735792a24",
+        "size_gb": 2675,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdh",
+        "snapshot_id": "snap-095272c66c94252d3",
+        "size_gb": 1100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdi",
+        "snapshot_id": "snap-042529c4ec154eda5",
+        "size_gb": 2500,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdl",
+        "snapshot_id": "snap-05e7b3975ffb8abdd",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdm",
+        "snapshot_id": "snap-066b3a4ef6b26c729",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdn",
+        "snapshot_id": "snap-08666238ad22ae54d",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdo",
+        "snapshot_id": "snap-06080734f63f54369",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdp",
+        "snapshot_id": "snap-00ccb39c638b1d0e2",
+        "size_gb": 270,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdq",
+        "snapshot_id": "snap-0fda0317fa53973e0",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdr",
+        "snapshot_id": "snap-03cd4432414c333b0",
+        "size_gb": 1420,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvds",
+        "snapshot_id": "snap-08105b3e6acee3160",
+        "size_gb": 2300,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdt",
+        "snapshot_id": "snap-0d63d2d0242ba70b0",
+        "size_gb": 750,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdu",
+        "snapshot_id": "snap-0a1fce8133f3f52dd",
+        "size_gb": 6500,
+        "volume_type": "sc1"
+      },
+      {
+        "device": "xvdw",
+        "snapshot_id": "snap-0af4021ce5206f423",
+        "size_gb": 4800,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdj",
+        "snapshot_id": "snap-0780d791f08c39b06",
+        "size_gb": 700,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdv",
+        "snapshot_id": "snap-0aae479c461fb27cf",
+        "size_gb": 1,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-009346416f93cc06e",
+        "size_gb": 3900,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdb",
+        "snapshot_id": "snap-04ede0a8b733bd7d0",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0dec7b48dd5707354",
+      "snap-06985adfdf80f4bd3",
+      "snap-01635930526df6a6e",
+      "snap-0ff705f0867af8a73",
+      "snap-0f782148893dbaf7e",
+      "snap-0a00ba4d173e7f512",
+      "snap-0488231895c38993b",
+      "snap-059f28fb735792a24",
+      "snap-095272c66c94252d3",
+      "snap-042529c4ec154eda5",
+      "snap-05e7b3975ffb8abdd",
+      "snap-066b3a4ef6b26c729",
+      "snap-08666238ad22ae54d",
+      "snap-06080734f63f54369",
+      "snap-00ccb39c638b1d0e2",
+      "snap-0fda0317fa53973e0",
+      "snap-03cd4432414c333b0",
+      "snap-08105b3e6acee3160",
+      "snap-0d63d2d0242ba70b0",
+      "snap-0a1fce8133f3f52dd",
+      "snap-0af4021ce5206f423",
+      "snap-0780d791f08c39b06",
+      "snap-0aae479c461fb27cf",
+      "snap-009346416f93cc06e",
+      "snap-04ede0a8b733bd7d0"
+    ],
+    "tags": {
+      "aws:backup:source-resource": "i-08385ff7dbbc37b9d:55E840BE-757D-A1C8-C9A0-212C83711284",
+      "Name": "itl-0004-itx-prod-ec2-london-01"
+    },
+    "collected_at": "2026-08-15T07:39:08.510045+00:00"
   },
   {
     "resource_type": "aws::ec2::ami",
@@ -221,7 +672,7 @@
     "root_device_name": "/dev/sda1",
     "public": false,
     "creation_date": "2026-05-13T01:32:17.000Z",
-    "age_days": 60,
+    "age_days": 94,
     "total_size_gb": 28057,
     "est_cost_per_month": 1402.85,
     "snapshots": [
@@ -404,294 +855,209 @@
       "snap-098ea9d1ad26ffd5d"
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:39:21.367490+00:00"
+    "collected_at": "2026-08-15T07:39:08.510088+00:00"
   },
   {
     "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-03b46f25e460a795d",
-    "resource_name": "AwsBackup_i-0912b617340cb9eb4_B45D5A64-5604-4B0C-915F-5B5902934621",
+    "resource_id": "ami-0c5bdf6fac59d975f",
+    "resource_name": "LONDON AMI PCI",
     "account_id": "818835242461",
     "account_name": "Interchange-Prod",
     "region": "eu-south-2",
     "state": "available",
-    "name": "AwsBackup_i-0912b617340cb9eb4_B45D5A64-5604-4B0C-915F-5B5902934621",
-    "description": "This image is created by the AWS Backup service.",
-    "architecture": "arm64",
-    "platform": "linux",
-    "virtualization": "hvm",
-    "root_device_type": "ebs",
-    "root_device_name": "/dev/xvda",
-    "public": false,
-    "creation_date": "2026-07-11T08:19:51.000Z",
-    "age_days": 1,
-    "total_size_gb": 80,
-    "est_cost_per_month": 4.0,
-    "snapshots": [
-      {
-        "device": "/dev/xvda",
-        "snapshot_id": "snap-02605a65facf63514",
-        "size_gb": 80,
-        "volume_type": "gp3"
-      }
-    ],
-    "snapshot_ids": [
-      "snap-02605a65facf63514"
-    ],
-    "tags": {
-      "env": "prd",
-      "Name": "itl-0004-itx-prd-ec2-app-02",
-      "apid": "itx",
-      "assetid": "0004",
-      "aws:backup:source-resource": "i-0912b617340cb9eb4:B45D5A64-5604-4B0C-915F-5B5902934621",
-      "coid": "itl"
-    },
-    "collected_at": "2026-07-12T19:39:21.367509+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-040e9166b9c31382c",
-    "resource_name": "AwsBackup_i-0912b617340cb9eb4_B94EC94B-2285-B050-49BC-97957F67C6D4",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "eu-south-2",
-    "state": "available",
-    "name": "AwsBackup_i-0912b617340cb9eb4_B94EC94B-2285-B050-49BC-97957F67C6D4",
-    "description": "This image is created by the AWS Backup service.",
-    "architecture": "arm64",
-    "platform": "linux",
-    "virtualization": "hvm",
-    "root_device_type": "ebs",
-    "root_device_name": "/dev/xvda",
-    "public": false,
-    "creation_date": "2026-07-10T08:20:32.000Z",
-    "age_days": 2,
-    "total_size_gb": 80,
-    "est_cost_per_month": 4.0,
-    "snapshots": [
-      {
-        "device": "/dev/xvda",
-        "snapshot_id": "snap-0a1064287526ff58e",
-        "size_gb": 80,
-        "volume_type": "gp3"
-      }
-    ],
-    "snapshot_ids": [
-      "snap-0a1064287526ff58e"
-    ],
-    "tags": {
-      "aws:backup:source-resource": "i-0912b617340cb9eb4:B94EC94B-2285-B050-49BC-97957F67C6D4",
-      "env": "prd",
-      "Name": "itl-0004-itx-prd-ec2-app-02",
-      "apid": "itx",
-      "coid": "itl",
-      "assetid": "0004"
-    },
-    "collected_at": "2026-07-12T19:39:21.367520+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-05eceed045b2eabec",
-    "resource_name": "AwsBackup_i-08385ff7dbbc37b9d_76B53312-7450-43C0-7E42-ADE982DDC138",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "eu-south-2",
-    "state": "available",
-    "name": "AwsBackup_i-08385ff7dbbc37b9d_76B53312-7450-43C0-7E42-ADE982DDC138",
-    "description": "This image is created by the AWS Backup service.",
+    "name": "LONDON AMI PCI",
+    "description": "LONDON AMI PCI",
     "architecture": "x86_64",
     "platform": "windows",
     "virtualization": "hvm",
     "root_device_type": "ebs",
     "root_device_name": "/dev/sda1",
     "public": false,
-    "creation_date": "2026-07-10T08:11:40.000Z",
-    "age_days": 2,
+    "creation_date": "2026-07-15T15:43:48.000Z",
+    "age_days": 30,
     "total_size_gb": 29077,
     "est_cost_per_month": 1453.85,
     "snapshots": [
       {
         "device": "/dev/sda1",
-        "snapshot_id": "snap-04fa370b1dc93ad02",
+        "snapshot_id": "snap-0868fd733a2e997aa",
         "size_gb": 170,
         "volume_type": "gp3"
       },
       {
         "device": "/dev/sdf",
-        "snapshot_id": "snap-0741d97dc623204df",
+        "snapshot_id": "snap-04ca737385db01085",
         "size_gb": 400,
         "volume_type": "gp3"
       },
       {
         "device": "/dev/sdg",
-        "snapshot_id": "snap-0a77768c7e8cfdb41",
+        "snapshot_id": "snap-0f357068c86a1b201",
         "size_gb": 1536,
         "volume_type": "gp3"
       },
       {
         "device": "/dev/sdi",
-        "snapshot_id": "snap-02218c5af9a84e56a",
+        "snapshot_id": "snap-0f3f344f5f4e15c4f",
         "size_gb": 200,
         "volume_type": "gp3"
       },
       {
+        "device": "xvdb",
+        "snapshot_id": "snap-01310181200d6a883",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdc",
+        "snapshot_id": "snap-0204997c02c04e6bc",
+        "size_gb": 2600,
+        "volume_type": "gp3"
+      },
+      {
         "device": "xvdd",
-        "snapshot_id": "snap-0a8025ad6b059a02b",
+        "snapshot_id": "snap-03c7475d20c5fa4fa",
         "size_gb": 400,
         "volume_type": "gp3"
       },
       {
         "device": "xvde",
-        "snapshot_id": "snap-09de49f70a1a1e2ad",
+        "snapshot_id": "snap-0bd96fc62d6ed1c5b",
         "size_gb": 800,
         "volume_type": "gp3"
       },
       {
         "device": "xvdf",
-        "snapshot_id": "snap-0c72abc60612f32f8",
+        "snapshot_id": "snap-00d357b7c2c20e33f",
         "size_gb": 530,
         "volume_type": "gp3"
       },
       {
-        "device": "xvdc",
-        "snapshot_id": "snap-01711d116433aecac",
-        "size_gb": 2600,
+        "device": "xvdg",
+        "snapshot_id": "snap-0f5881048f7efeada",
+        "size_gb": 3500,
         "volume_type": "gp3"
       },
       {
         "device": "xvdh",
-        "snapshot_id": "snap-0344e87de8a004ba8",
+        "snapshot_id": "snap-0b8331c5b68396941",
         "size_gb": 1100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdi",
-        "snapshot_id": "snap-0749db04ff8bb8dc6",
+        "snapshot_id": "snap-0949b92742569604a",
         "size_gb": 2500,
         "volume_type": "gp3"
       },
       {
+        "device": "xvdj",
+        "snapshot_id": "snap-05a7b877d7bef4646",
+        "size_gb": 700,
+        "volume_type": "gp3"
+      },
+      {
         "device": "xvdl",
-        "snapshot_id": "snap-063489973c6b73f5f",
+        "snapshot_id": "snap-0d42cce26e7dc0c57",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdm",
-        "snapshot_id": "snap-04c29b40ecfa9b4f3",
+        "snapshot_id": "snap-042f29d24d4033341",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdn",
-        "snapshot_id": "snap-08efe6c68a7427d54",
+        "snapshot_id": "snap-017a6f17bb70ff5bb",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdo",
-        "snapshot_id": "snap-052a5b75c201beb7e",
+        "snapshot_id": "snap-03279ace82b51a6df",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdp",
-        "snapshot_id": "snap-0a38796c90b4fd83d",
+        "snapshot_id": "snap-0fb99c1c0d2b2a130",
         "size_gb": 270,
         "volume_type": "gp3"
       },
       {
         "device": "xvdq",
-        "snapshot_id": "snap-089f03ea333a40e8d",
+        "snapshot_id": "snap-0f9c2b81c749674c9",
         "size_gb": 100,
         "volume_type": "gp3"
       },
       {
         "device": "xvdr",
-        "snapshot_id": "snap-08897d77a1803a778",
+        "snapshot_id": "snap-0cc6e46c66bbe5d30",
         "size_gb": 1420,
         "volume_type": "gp3"
       },
       {
         "device": "xvds",
-        "snapshot_id": "snap-0a59d87da73d3dba5",
+        "snapshot_id": "snap-05af1b74488c8b5d1",
         "size_gb": 2300,
         "volume_type": "gp3"
       },
       {
         "device": "xvdt",
-        "snapshot_id": "snap-058b77b4734835181",
+        "snapshot_id": "snap-0bdb2ac22227ba778",
         "size_gb": 750,
         "volume_type": "gp3"
       },
       {
         "device": "xvdu",
-        "snapshot_id": "snap-0d5233db0e4e82615",
+        "snapshot_id": "snap-0f8833d5b68af0f97",
         "size_gb": 5000,
         "volume_type": "sc1"
       },
       {
-        "device": "xvdw",
-        "snapshot_id": "snap-0a2b3d668a7b0d3d7",
-        "size_gb": 4200,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdj",
-        "snapshot_id": "snap-02001413b8354c015",
-        "size_gb": 700,
-        "volume_type": "gp3"
-      },
-      {
         "device": "xvdv",
-        "snapshot_id": "snap-02c1490e81e695893",
+        "snapshot_id": "snap-05dafe7ffe6516563",
         "size_gb": 1,
         "volume_type": "gp3"
       },
       {
-        "device": "xvdg",
-        "snapshot_id": "snap-037a741468e594e7a",
-        "size_gb": 3500,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdb",
-        "snapshot_id": "snap-0fc8fd41fba76db15",
-        "size_gb": 200,
+        "device": "xvdw",
+        "snapshot_id": "snap-0fd2f0454970ec958",
+        "size_gb": 4200,
         "volume_type": "gp3"
       }
     ],
     "snapshot_ids": [
-      "snap-04fa370b1dc93ad02",
-      "snap-0741d97dc623204df",
-      "snap-0a77768c7e8cfdb41",
-      "snap-02218c5af9a84e56a",
-      "snap-0a8025ad6b059a02b",
-      "snap-09de49f70a1a1e2ad",
-      "snap-0c72abc60612f32f8",
-      "snap-01711d116433aecac",
-      "snap-0344e87de8a004ba8",
-      "snap-0749db04ff8bb8dc6",
-      "snap-063489973c6b73f5f",
-      "snap-04c29b40ecfa9b4f3",
-      "snap-08efe6c68a7427d54",
-      "snap-052a5b75c201beb7e",
-      "snap-0a38796c90b4fd83d",
-      "snap-089f03ea333a40e8d",
-      "snap-08897d77a1803a778",
-      "snap-0a59d87da73d3dba5",
-      "snap-058b77b4734835181",
-      "snap-0d5233db0e4e82615",
-      "snap-0a2b3d668a7b0d3d7",
-      "snap-02001413b8354c015",
-      "snap-02c1490e81e695893",
-      "snap-037a741468e594e7a",
-      "snap-0fc8fd41fba76db15"
+      "snap-0868fd733a2e997aa",
+      "snap-04ca737385db01085",
+      "snap-0f357068c86a1b201",
+      "snap-0f3f344f5f4e15c4f",
+      "snap-01310181200d6a883",
+      "snap-0204997c02c04e6bc",
+      "snap-03c7475d20c5fa4fa",
+      "snap-0bd96fc62d6ed1c5b",
+      "snap-00d357b7c2c20e33f",
+      "snap-0f5881048f7efeada",
+      "snap-0b8331c5b68396941",
+      "snap-0949b92742569604a",
+      "snap-05a7b877d7bef4646",
+      "snap-0d42cce26e7dc0c57",
+      "snap-042f29d24d4033341",
+      "snap-017a6f17bb70ff5bb",
+      "snap-03279ace82b51a6df",
+      "snap-0fb99c1c0d2b2a130",
+      "snap-0f9c2b81c749674c9",
+      "snap-0cc6e46c66bbe5d30",
+      "snap-05af1b74488c8b5d1",
+      "snap-0bdb2ac22227ba778",
+      "snap-0f8833d5b68af0f97",
+      "snap-05dafe7ffe6516563",
+      "snap-0fd2f0454970ec958"
     ],
-    "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01",
-      "aws:backup:source-resource": "i-08385ff7dbbc37b9d:76B53312-7450-43C0-7E42-ADE982DDC138"
-    },
-    "collected_at": "2026-07-12T19:39:21.367541+00:00"
+    "tags": {},
+    "collected_at": "2026-08-15T07:39:08.510130+00:00"
   },
   {
     "resource_type": "aws::ec2::ami",
@@ -710,7 +1076,7 @@
     "root_device_name": "/dev/sda1",
     "public": false,
     "creation_date": "2026-06-02T18:40:35.000Z",
-    "age_days": 40,
+    "age_days": 73,
     "total_size_gb": 29077,
     "est_cost_per_month": 1453.85,
     "snapshots": [
@@ -893,7 +1259,7 @@
       "snap-0e29488ae03d38f31"
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:39:21.367560+00:00"
+    "collected_at": "2026-08-15T07:39:08.510172+00:00"
   },
   {
     "resource_type": "aws::ec2::ami",
@@ -912,7 +1278,7 @@
     "root_device_name": "/dev/sda1",
     "public": false,
     "creation_date": "2026-06-02T12:25:32.000Z",
-    "age_days": 40,
+    "age_days": 73,
     "total_size_gb": 29077,
     "est_cost_per_month": 1453.85,
     "snapshots": [
@@ -1095,455 +1461,7 @@
       "snap-07b87de3155bdf1de"
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:39:21.367576+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-06e69998ec372198a",
-    "resource_name": "AwsBackup_i-08385ff7dbbc37b9d_75122AD8-8864-5C41-623B-F70694A77012",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "eu-south-2",
-    "state": "available",
-    "name": "AwsBackup_i-08385ff7dbbc37b9d_75122AD8-8864-5C41-623B-F70694A77012",
-    "description": "This image is created by the AWS Backup service.",
-    "architecture": "x86_64",
-    "platform": "windows",
-    "virtualization": "hvm",
-    "root_device_type": "ebs",
-    "root_device_name": "/dev/sda1",
-    "public": false,
-    "creation_date": "2026-07-12T08:12:05.000Z",
-    "age_days": 0,
-    "total_size_gb": 29077,
-    "est_cost_per_month": 1453.85,
-    "snapshots": [
-      {
-        "device": "/dev/sda1",
-        "snapshot_id": "snap-090799a60e258c319",
-        "size_gb": 170,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdf",
-        "snapshot_id": "snap-007e264f908802e53",
-        "size_gb": 400,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdg",
-        "snapshot_id": "snap-0fc52e24e9ec4f0c9",
-        "size_gb": 1536,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdi",
-        "snapshot_id": "snap-05ee7a59fc834a166",
-        "size_gb": 200,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdd",
-        "snapshot_id": "snap-098f05df1bb53a34d",
-        "size_gb": 400,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvde",
-        "snapshot_id": "snap-07eb3174675c57019",
-        "size_gb": 800,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdf",
-        "snapshot_id": "snap-09e763a518b717b9e",
-        "size_gb": 530,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdc",
-        "snapshot_id": "snap-0d395393fbf9345f9",
-        "size_gb": 2600,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdh",
-        "snapshot_id": "snap-0c184d2e1c16e0e58",
-        "size_gb": 1100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdi",
-        "snapshot_id": "snap-0d021144a8a5c6664",
-        "size_gb": 2500,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdl",
-        "snapshot_id": "snap-04cecdc1d40d35a56",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdm",
-        "snapshot_id": "snap-0e44e34bc075a99d6",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdn",
-        "snapshot_id": "snap-020c9a5f3eb1be781",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdo",
-        "snapshot_id": "snap-08ad125feb45fae01",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdp",
-        "snapshot_id": "snap-0c856687b495dd79f",
-        "size_gb": 270,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdq",
-        "snapshot_id": "snap-018e631f4e3ade5b4",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdr",
-        "snapshot_id": "snap-0eb38dac6fd892093",
-        "size_gb": 1420,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvds",
-        "snapshot_id": "snap-0a64081c87b3a4a1c",
-        "size_gb": 2300,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdt",
-        "snapshot_id": "snap-050a333b13af94633",
-        "size_gb": 750,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdu",
-        "snapshot_id": "snap-00f60d0248288ee65",
-        "size_gb": 5000,
-        "volume_type": "sc1"
-      },
-      {
-        "device": "xvdw",
-        "snapshot_id": "snap-0df2877399b2e4bc5",
-        "size_gb": 4200,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdj",
-        "snapshot_id": "snap-06c09a339d898964c",
-        "size_gb": 700,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdv",
-        "snapshot_id": "snap-05600d42136c8af7a",
-        "size_gb": 1,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdg",
-        "snapshot_id": "snap-03e824bc37715bf71",
-        "size_gb": 3500,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdb",
-        "snapshot_id": "snap-0ba720140735738a1",
-        "size_gb": 200,
-        "volume_type": "gp3"
-      }
-    ],
-    "snapshot_ids": [
-      "snap-090799a60e258c319",
-      "snap-007e264f908802e53",
-      "snap-0fc52e24e9ec4f0c9",
-      "snap-05ee7a59fc834a166",
-      "snap-098f05df1bb53a34d",
-      "snap-07eb3174675c57019",
-      "snap-09e763a518b717b9e",
-      "snap-0d395393fbf9345f9",
-      "snap-0c184d2e1c16e0e58",
-      "snap-0d021144a8a5c6664",
-      "snap-04cecdc1d40d35a56",
-      "snap-0e44e34bc075a99d6",
-      "snap-020c9a5f3eb1be781",
-      "snap-08ad125feb45fae01",
-      "snap-0c856687b495dd79f",
-      "snap-018e631f4e3ade5b4",
-      "snap-0eb38dac6fd892093",
-      "snap-0a64081c87b3a4a1c",
-      "snap-050a333b13af94633",
-      "snap-00f60d0248288ee65",
-      "snap-0df2877399b2e4bc5",
-      "snap-06c09a339d898964c",
-      "snap-05600d42136c8af7a",
-      "snap-03e824bc37715bf71",
-      "snap-0ba720140735738a1"
-    ],
-    "tags": {
-      "Name": "itl-0004-itx-prod-ec2-london-01",
-      "aws:backup:source-resource": "i-08385ff7dbbc37b9d:75122AD8-8864-5C41-623B-F70694A77012"
-    },
-    "collected_at": "2026-07-12T19:39:21.367601+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-0ca3452988967d010",
-    "resource_name": "AwsBackup_i-0912b617340cb9eb4_5931B857-EB49-7DCA-13D5-9D63BAD02AEA",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "eu-south-2",
-    "state": "available",
-    "name": "AwsBackup_i-0912b617340cb9eb4_5931B857-EB49-7DCA-13D5-9D63BAD02AEA",
-    "description": "This image is created by the AWS Backup service.",
-    "architecture": "arm64",
-    "platform": "linux",
-    "virtualization": "hvm",
-    "root_device_type": "ebs",
-    "root_device_name": "/dev/xvda",
-    "public": false,
-    "creation_date": "2026-07-12T08:20:08.000Z",
-    "age_days": 0,
-    "total_size_gb": 80,
-    "est_cost_per_month": 4.0,
-    "snapshots": [
-      {
-        "device": "/dev/xvda",
-        "snapshot_id": "snap-0397d193408d20eb0",
-        "size_gb": 80,
-        "volume_type": "gp3"
-      }
-    ],
-    "snapshot_ids": [
-      "snap-0397d193408d20eb0"
-    ],
-    "tags": {
-      "env": "prd",
-      "apid": "itx",
-      "aws:backup:source-resource": "i-0912b617340cb9eb4:5931B857-EB49-7DCA-13D5-9D63BAD02AEA",
-      "Name": "itl-0004-itx-prd-ec2-app-02",
-      "assetid": "0004",
-      "coid": "itl"
-    },
-    "collected_at": "2026-07-12T19:39:21.367611+00:00"
-  },
-  {
-    "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-017c93472c2934c69",
-    "resource_name": "Backup2London",
-    "account_id": "818835242461",
-    "account_name": "Interchange-Prod",
-    "region": "eu-south-2",
-    "state": "available",
-    "name": "Backup2London",
-    "description": "Backup2London",
-    "architecture": "x86_64",
-    "platform": "windows",
-    "virtualization": "hvm",
-    "root_device_type": "ebs",
-    "root_device_name": "/dev/sda1",
-    "public": false,
-    "creation_date": "2026-06-02T12:46:21.000Z",
-    "age_days": 40,
-    "total_size_gb": 29077,
-    "est_cost_per_month": 1453.85,
-    "snapshots": [
-      {
-        "device": "/dev/sda1",
-        "snapshot_id": "snap-04a56a899dbec536d",
-        "size_gb": 170,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdf",
-        "snapshot_id": "snap-063fd92bc13bc0222",
-        "size_gb": 400,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdg",
-        "snapshot_id": "snap-0a29b7a6d3f9636d7",
-        "size_gb": 1536,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "/dev/sdi",
-        "snapshot_id": "snap-0dcfd27d9646773dd",
-        "size_gb": 200,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdb",
-        "snapshot_id": "snap-0cd1e41026898563d",
-        "size_gb": 200,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdc",
-        "snapshot_id": "snap-03e27cebee299e44b",
-        "size_gb": 2600,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdd",
-        "snapshot_id": "snap-0720e86b9708238b4",
-        "size_gb": 400,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvde",
-        "snapshot_id": "snap-08b15798e2857792e",
-        "size_gb": 800,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdf",
-        "snapshot_id": "snap-01a27fdcf47d5e3f4",
-        "size_gb": 530,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdg",
-        "snapshot_id": "snap-0965a3a808f763eed",
-        "size_gb": 3500,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdh",
-        "snapshot_id": "snap-0c20130d64070435f",
-        "size_gb": 1100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdi",
-        "snapshot_id": "snap-06eace800de970b7b",
-        "size_gb": 2500,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdj",
-        "snapshot_id": "snap-09a720304af765c43",
-        "size_gb": 700,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdl",
-        "snapshot_id": "snap-0121e8044a53aba89",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdm",
-        "snapshot_id": "snap-0b676bfac909bf9a8",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdn",
-        "snapshot_id": "snap-0fbef6838ea4d5618",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdo",
-        "snapshot_id": "snap-09ba384d152550f1e",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdp",
-        "snapshot_id": "snap-083bbf3ad5a745049",
-        "size_gb": 270,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdq",
-        "snapshot_id": "snap-069e300139ad4d0e2",
-        "size_gb": 100,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdr",
-        "snapshot_id": "snap-05ebca000564d54e8",
-        "size_gb": 1420,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvds",
-        "snapshot_id": "snap-0a0b352da508f4666",
-        "size_gb": 2300,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdt",
-        "snapshot_id": "snap-0cb845c6f911e7a0f",
-        "size_gb": 750,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdu",
-        "snapshot_id": "snap-023c0275a4dddce0d",
-        "size_gb": 5000,
-        "volume_type": "sc1"
-      },
-      {
-        "device": "xvdv",
-        "snapshot_id": "snap-0246e95356ee3acfb",
-        "size_gb": 1,
-        "volume_type": "gp3"
-      },
-      {
-        "device": "xvdw",
-        "snapshot_id": "snap-0d50d4c0c11f17535",
-        "size_gb": 4200,
-        "volume_type": "gp3"
-      }
-    ],
-    "snapshot_ids": [
-      "snap-04a56a899dbec536d",
-      "snap-063fd92bc13bc0222",
-      "snap-0a29b7a6d3f9636d7",
-      "snap-0dcfd27d9646773dd",
-      "snap-0cd1e41026898563d",
-      "snap-03e27cebee299e44b",
-      "snap-0720e86b9708238b4",
-      "snap-08b15798e2857792e",
-      "snap-01a27fdcf47d5e3f4",
-      "snap-0965a3a808f763eed",
-      "snap-0c20130d64070435f",
-      "snap-06eace800de970b7b",
-      "snap-09a720304af765c43",
-      "snap-0121e8044a53aba89",
-      "snap-0b676bfac909bf9a8",
-      "snap-0fbef6838ea4d5618",
-      "snap-09ba384d152550f1e",
-      "snap-083bbf3ad5a745049",
-      "snap-069e300139ad4d0e2",
-      "snap-05ebca000564d54e8",
-      "snap-0a0b352da508f4666",
-      "snap-0cb845c6f911e7a0f",
-      "snap-023c0275a4dddce0d",
-      "snap-0246e95356ee3acfb",
-      "snap-0d50d4c0c11f17535"
-    ],
-    "tags": {},
-    "collected_at": "2026-07-12T19:39:21.367632+00:00"
+    "collected_at": "2026-08-15T07:39:08.510230+00:00"
   },
   {
     "resource_type": "aws::ec2::ami",
@@ -1562,7 +1480,7 @@
     "root_device_name": "/dev/sda1",
     "public": false,
     "creation_date": "2026-05-13T20:53:56.000Z",
-    "age_days": 59,
+    "age_days": 93,
     "total_size_gb": 28057,
     "est_cost_per_month": 1402.85,
     "snapshots": [
@@ -1745,6 +1663,492 @@
       "snap-0787d00af2aed5c3e"
     ],
     "tags": {},
-    "collected_at": "2026-07-12T19:39:21.367650+00:00"
+    "collected_at": "2026-08-15T07:39:08.510282+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0f93565f4bd8da70b",
+    "resource_name": "AwsBackup_i-0912b617340cb9eb4_36DC607D-E3D4-4947-CCFD-2F65B494EACC",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "AwsBackup_i-0912b617340cb9eb4_36DC607D-E3D4-4947-CCFD-2F65B494EACC",
+    "description": "This image is created by the AWS Backup service.",
+    "architecture": "arm64",
+    "platform": "linux",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/xvda",
+    "public": false,
+    "creation_date": "2026-08-14T08:19:14.000Z",
+    "age_days": 0,
+    "total_size_gb": 80,
+    "est_cost_per_month": 4.0,
+    "snapshots": [
+      {
+        "device": "/dev/xvda",
+        "snapshot_id": "snap-0c35a7c96a5523200",
+        "size_gb": 80,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0c35a7c96a5523200"
+    ],
+    "tags": {
+      "apid": "itx",
+      "Name": "itl-0004-itx-prd-ec2-app-02",
+      "env": "prd",
+      "coid": "itl",
+      "aws:backup:source-resource": "i-0912b617340cb9eb4:36DC607D-E3D4-4947-CCFD-2F65B494EACC",
+      "assetid": "0004"
+    },
+    "collected_at": "2026-08-15T07:39:08.510299+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-017c93472c2934c69",
+    "resource_name": "Backup2London",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "Backup2London",
+    "description": "Backup2London",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-06-02T12:46:21.000Z",
+    "age_days": 73,
+    "total_size_gb": 29077,
+    "est_cost_per_month": 1453.85,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-04a56a899dbec536d",
+        "size_gb": 170,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdf",
+        "snapshot_id": "snap-063fd92bc13bc0222",
+        "size_gb": 400,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdg",
+        "snapshot_id": "snap-0a29b7a6d3f9636d7",
+        "size_gb": 1536,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdi",
+        "snapshot_id": "snap-0dcfd27d9646773dd",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdb",
+        "snapshot_id": "snap-0cd1e41026898563d",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdc",
+        "snapshot_id": "snap-03e27cebee299e44b",
+        "size_gb": 2600,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdd",
+        "snapshot_id": "snap-0720e86b9708238b4",
+        "size_gb": 400,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvde",
+        "snapshot_id": "snap-08b15798e2857792e",
+        "size_gb": 800,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-01a27fdcf47d5e3f4",
+        "size_gb": 530,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-0965a3a808f763eed",
+        "size_gb": 3500,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdh",
+        "snapshot_id": "snap-0c20130d64070435f",
+        "size_gb": 1100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdi",
+        "snapshot_id": "snap-06eace800de970b7b",
+        "size_gb": 2500,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdj",
+        "snapshot_id": "snap-09a720304af765c43",
+        "size_gb": 700,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdl",
+        "snapshot_id": "snap-0121e8044a53aba89",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdm",
+        "snapshot_id": "snap-0b676bfac909bf9a8",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdn",
+        "snapshot_id": "snap-0fbef6838ea4d5618",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdo",
+        "snapshot_id": "snap-09ba384d152550f1e",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdp",
+        "snapshot_id": "snap-083bbf3ad5a745049",
+        "size_gb": 270,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdq",
+        "snapshot_id": "snap-069e300139ad4d0e2",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdr",
+        "snapshot_id": "snap-05ebca000564d54e8",
+        "size_gb": 1420,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvds",
+        "snapshot_id": "snap-0a0b352da508f4666",
+        "size_gb": 2300,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdt",
+        "snapshot_id": "snap-0cb845c6f911e7a0f",
+        "size_gb": 750,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdu",
+        "snapshot_id": "snap-023c0275a4dddce0d",
+        "size_gb": 5000,
+        "volume_type": "sc1"
+      },
+      {
+        "device": "xvdv",
+        "snapshot_id": "snap-0246e95356ee3acfb",
+        "size_gb": 1,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdw",
+        "snapshot_id": "snap-0d50d4c0c11f17535",
+        "size_gb": 4200,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-04a56a899dbec536d",
+      "snap-063fd92bc13bc0222",
+      "snap-0a29b7a6d3f9636d7",
+      "snap-0dcfd27d9646773dd",
+      "snap-0cd1e41026898563d",
+      "snap-03e27cebee299e44b",
+      "snap-0720e86b9708238b4",
+      "snap-08b15798e2857792e",
+      "snap-01a27fdcf47d5e3f4",
+      "snap-0965a3a808f763eed",
+      "snap-0c20130d64070435f",
+      "snap-06eace800de970b7b",
+      "snap-09a720304af765c43",
+      "snap-0121e8044a53aba89",
+      "snap-0b676bfac909bf9a8",
+      "snap-0fbef6838ea4d5618",
+      "snap-09ba384d152550f1e",
+      "snap-083bbf3ad5a745049",
+      "snap-069e300139ad4d0e2",
+      "snap-05ebca000564d54e8",
+      "snap-0a0b352da508f4666",
+      "snap-0cb845c6f911e7a0f",
+      "snap-023c0275a4dddce0d",
+      "snap-0246e95356ee3acfb",
+      "snap-0d50d4c0c11f17535"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:39:08.510338+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0446272690111945a",
+    "resource_name": "LONDON PCI 21-07-2026",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "LONDON PCI 21-07-2026",
+    "description": "LONDON PCI 21-07-2026",
+    "architecture": "x86_64",
+    "platform": "windows",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/sda1",
+    "public": false,
+    "creation_date": "2026-07-21T16:37:14.000Z",
+    "age_days": 24,
+    "total_size_gb": 31742,
+    "est_cost_per_month": 1587.1,
+    "snapshots": [
+      {
+        "device": "/dev/sda1",
+        "snapshot_id": "snap-0501dd3c29237f870",
+        "size_gb": 170,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdf",
+        "snapshot_id": "snap-09d05d02ebac1efec",
+        "size_gb": 400,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdg",
+        "snapshot_id": "snap-02e42f0241411d7b5",
+        "size_gb": 1536,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "/dev/sdi",
+        "snapshot_id": "snap-016a45a8d4a6bb305",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdb",
+        "snapshot_id": "snap-00568fc3bbc1064ab",
+        "size_gb": 200,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdc",
+        "snapshot_id": "snap-04d034152e3226796",
+        "size_gb": 2675,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdd",
+        "snapshot_id": "snap-0a6546b1cd98c7740",
+        "size_gb": 490,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvde",
+        "snapshot_id": "snap-0e9dbba7ebb6d4fb8",
+        "size_gb": 800,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdf",
+        "snapshot_id": "snap-0b791f6e0c10bf948",
+        "size_gb": 530,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdg",
+        "snapshot_id": "snap-031fad98202a07d88",
+        "size_gb": 3900,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdh",
+        "snapshot_id": "snap-05d9c28278f9688ec",
+        "size_gb": 1100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdi",
+        "snapshot_id": "snap-019a9faec9a1dad0f",
+        "size_gb": 2500,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdj",
+        "snapshot_id": "snap-011f54457293de667",
+        "size_gb": 700,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdl",
+        "snapshot_id": "snap-02ce43190efc5d503",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdm",
+        "snapshot_id": "snap-0845e382cae5efcd2",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdn",
+        "snapshot_id": "snap-0b6c42f0dbf4bbc55",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdo",
+        "snapshot_id": "snap-084ab410b7789efe7",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdp",
+        "snapshot_id": "snap-02a48bb85b3ab5a7e",
+        "size_gb": 270,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdq",
+        "snapshot_id": "snap-066277d43aaec92f4",
+        "size_gb": 100,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdr",
+        "snapshot_id": "snap-06f5d79dd3d9c9f3b",
+        "size_gb": 1420,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvds",
+        "snapshot_id": "snap-0d4253d0ff84c712a",
+        "size_gb": 2300,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdt",
+        "snapshot_id": "snap-09b6fed8083169ec7",
+        "size_gb": 750,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdu",
+        "snapshot_id": "snap-0c89fcd8265a783d1",
+        "size_gb": 6500,
+        "volume_type": "sc1"
+      },
+      {
+        "device": "xvdv",
+        "snapshot_id": "snap-078b773afcf404b42",
+        "size_gb": 1,
+        "volume_type": "gp3"
+      },
+      {
+        "device": "xvdw",
+        "snapshot_id": "snap-0e04a8ca1aacf8413",
+        "size_gb": 4800,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0501dd3c29237f870",
+      "snap-09d05d02ebac1efec",
+      "snap-02e42f0241411d7b5",
+      "snap-016a45a8d4a6bb305",
+      "snap-00568fc3bbc1064ab",
+      "snap-04d034152e3226796",
+      "snap-0a6546b1cd98c7740",
+      "snap-0e9dbba7ebb6d4fb8",
+      "snap-0b791f6e0c10bf948",
+      "snap-031fad98202a07d88",
+      "snap-05d9c28278f9688ec",
+      "snap-019a9faec9a1dad0f",
+      "snap-011f54457293de667",
+      "snap-02ce43190efc5d503",
+      "snap-0845e382cae5efcd2",
+      "snap-0b6c42f0dbf4bbc55",
+      "snap-084ab410b7789efe7",
+      "snap-02a48bb85b3ab5a7e",
+      "snap-066277d43aaec92f4",
+      "snap-06f5d79dd3d9c9f3b",
+      "snap-0d4253d0ff84c712a",
+      "snap-09b6fed8083169ec7",
+      "snap-0c89fcd8265a783d1",
+      "snap-078b773afcf404b42",
+      "snap-0e04a8ca1aacf8413"
+    ],
+    "tags": {},
+    "collected_at": "2026-08-15T07:39:08.510370+00:00"
+  },
+  {
+    "resource_type": "aws::ec2::ami",
+    "resource_id": "ami-0841b17a3766f21dc",
+    "resource_name": "AwsBackup_i-0912b617340cb9eb4_6EAC8862-7CA4-8653-ED14-71EC3701BE25",
+    "account_id": "818835242461",
+    "account_name": "Interchange-Prod",
+    "region": "eu-south-2",
+    "state": "available",
+    "name": "AwsBackup_i-0912b617340cb9eb4_6EAC8862-7CA4-8653-ED14-71EC3701BE25",
+    "description": "This image is created by the AWS Backup service.",
+    "architecture": "arm64",
+    "platform": "linux",
+    "virtualization": "hvm",
+    "root_device_type": "ebs",
+    "root_device_name": "/dev/xvda",
+    "public": false,
+    "creation_date": "2026-08-13T08:20:35.000Z",
+    "age_days": 1,
+    "total_size_gb": 80,
+    "est_cost_per_month": 4.0,
+    "snapshots": [
+      {
+        "device": "/dev/xvda",
+        "snapshot_id": "snap-0f9cf811d6f929725",
+        "size_gb": 80,
+        "volume_type": "gp3"
+      }
+    ],
+    "snapshot_ids": [
+      "snap-0f9cf811d6f929725"
+    ],
+    "tags": {
+      "env": "prd",
+      "Name": "itl-0004-itx-prd-ec2-app-02",
+      "aws:backup:source-resource": "i-0912b617340cb9eb4:6EAC8862-7CA4-8653-ED14-71EC3701BE25",
+      "apid": "itx",
+      "assetid": "0004",
+      "coid": "itl"
+    },
+    "collected_at": "2026-08-15T07:39:08.510383+00:00"
   }
 ]

@@ -38,7 +38,50 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:49:40.158365+00:00"
+    "collected_at": "2026-08-15T07:53:23.138228+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:us-east-1:060795899335:function:intelica-brain-mcp",
+    "resource_name": "intelica-brain-mcp",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "us-east-1",
+    "runtime": "python3.12",
+    "memory_mb": 256,
+    "timeout_seconds": 30,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-08-08T06:17:24.000+0000",
+    "code_size_bytes": 13003912,
+    "handler": "src.lambda_handler.handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::060795899335:role/intelica-brain-mcp-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "PYTHONPATH",
+      "GITHUB_TARGET_REPO",
+      "MCP_TOKENS_TABLE_NAME",
+      "MCP_ALLOWED_HOST",
+      "MCP_SECRET_ARN",
+      "MCP_GRAPH_BUCKET",
+      "AUTHORIZATION_SERVER_URL"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::060795899335:role/intelica-brain-mcp-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-08-15T07:53:23.272013+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -73,7 +116,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:49:40.305782+00:00"
+    "collected_at": "2026-08-15T07:53:23.415306+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -108,7 +151,7 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:49:40.436096+00:00"
+    "collected_at": "2026-08-15T07:53:23.552247+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
@@ -123,8 +166,8 @@
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-07-11T01:07:06.000+0000",
-    "code_size_bytes": 20320752,
+    "last_modified": "2026-07-27T07:28:26.000+0000",
+    "code_size_bytes": 20321371,
     "handler": "handler.handler",
     "description": "Processes CUR v2 (BCM Data Exports) files from all AWS accounts and generates FinOps dashboard JSON reports in S3",
     "vpc_id": "",
@@ -149,33 +192,33 @@
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:49:40.566455+00:00"
+    "collected_at": "2026-08-15T07:53:23.686994+00:00"
   },
   {
     "resource_type": "aws::lambda::function",
-    "resource_id": "arn:aws:lambda:us-east-1:060795899335:function:finops-api",
-    "resource_name": "finops-api",
+    "resource_id": "arn:aws:lambda:us-east-1:060795899335:function:resource-name-resolver",
+    "resource_name": "resource-name-resolver",
     "account_id": "060795899335",
     "account_name": "Audit",
     "region": "us-east-1",
     "runtime": "python3.12",
-    "memory_mb": 512,
-    "timeout_seconds": 90,
+    "memory_mb": 256,
+    "timeout_seconds": 120,
     "architectures": [
       "x86_64"
     ],
-    "last_modified": "2026-06-29T06:53:44.000+0000",
-    "code_size_bytes": 4517,
+    "last_modified": "2026-07-14T14:47:00.000+0000",
+    "code_size_bytes": 2376,
     "handler": "handler.handler",
     "description": "",
     "vpc_id": "",
     "subnet_ids": [],
     "security_group_ids": [],
-    "execution_role": "arn:aws:iam::060795899335:role/finops-api-role",
+    "execution_role": "arn:aws:iam::060795899335:role/resource-name-resolver-role",
     "kms_key_arn": "",
     "environment_keys": [
-      "SKIP_AUTH",
-      "COGNITO_USER_POOL_ID"
+      "RPT_PREFIX",
+      "RPT_BUCKET"
     ],
     "tracing_mode": "PassThrough",
     "dead_letter_target": "",
@@ -183,10 +226,54 @@
     "relationships": [
       {
         "resource_type": "aws::iam::role",
-        "resource_id": "arn:aws:iam::060795899335:role/finops-api-role",
+        "resource_id": "arn:aws:iam::060795899335:role/resource-name-resolver-role",
         "relation": "uses_iam_role"
       }
     ],
-    "collected_at": "2026-07-12T19:49:40.699738+00:00"
+    "collected_at": "2026-08-15T07:53:23.826148+00:00"
+  },
+  {
+    "resource_type": "aws::lambda::function",
+    "resource_id": "arn:aws:lambda:us-east-1:060795899335:function:intelica-brain-mcp-token-issuer",
+    "resource_name": "intelica-brain-mcp-token-issuer",
+    "account_id": "060795899335",
+    "account_name": "Audit",
+    "region": "us-east-1",
+    "runtime": "python3.12",
+    "memory_mb": 256,
+    "timeout_seconds": 15,
+    "architectures": [
+      "x86_64"
+    ],
+    "last_modified": "2026-08-08T06:24:51.000+0000",
+    "code_size_bytes": 5514482,
+    "handler": "src.handler.handler",
+    "description": "",
+    "vpc_id": "",
+    "subnet_ids": [],
+    "security_group_ids": [],
+    "execution_role": "arn:aws:iam::060795899335:role/intelica-brain-mcp-token-issuer-role",
+    "kms_key_arn": "",
+    "environment_keys": [
+      "AUTHORIZE_REDIRECT_BASE_URL",
+      "AUTH_CODES_TABLE_NAME",
+      "PYTHONPATH",
+      "TOKENS_TABLE_NAME",
+      "COGNITO_REGION",
+      "OAUTH_CLIENTS_TABLE_NAME",
+      "COGNITO_USER_POOL_ID",
+      "FINOPS_APP_CLIENT_ID"
+    ],
+    "tracing_mode": "PassThrough",
+    "dead_letter_target": "",
+    "tags": {},
+    "relationships": [
+      {
+        "resource_type": "aws::iam::role",
+        "resource_id": "arn:aws:iam::060795899335:role/intelica-brain-mcp-token-issuer-role",
+        "relation": "uses_iam_role"
+      }
+    ],
+    "collected_at": "2026-08-15T07:53:23.964571+00:00"
   }
 ]

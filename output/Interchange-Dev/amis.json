@@ -1,13 +1,13 @@
 [
   {
     "resource_type": "aws::ec2::ami",
-    "resource_id": "ami-02382786066253c7e",
-    "resource_name": "AwsBackup_i-08982a4115e1f13eb_A21F6F21-B553-F9B7-2693-4C8F5538FB37",
+    "resource_id": "ami-02719abe49b060e8c",
+    "resource_name": "AwsBackup_i-08982a4115e1f13eb_BFE0493A-AED7-E5F5-A28A-9163D26B9D91",
     "account_id": "861276092327",
     "account_name": "Interchange-Dev",
     "region": "eu-south-2",
     "state": "available",
-    "name": "AwsBackup_i-08982a4115e1f13eb_A21F6F21-B553-F9B7-2693-4C8F5538FB37",
+    "name": "AwsBackup_i-08982a4115e1f13eb_BFE0493A-AED7-E5F5-A28A-9163D26B9D91",
     "description": "This image is created by the AWS Backup service.",
     "architecture": "arm64",
     "platform": "linux",
@@ -15,29 +15,29 @@
     "root_device_type": "ebs",
     "root_device_name": "/dev/xvda",
     "public": false,
-    "creation_date": "2026-07-12T08:21:28.000Z",
+    "creation_date": "2026-08-14T08:25:59.000Z",
     "age_days": 0,
     "total_size_gb": 80,
     "est_cost_per_month": 4.0,
     "snapshots": [
       {
         "device": "/dev/xvda",
-        "snapshot_id": "snap-07754782d2922df7e",
+        "snapshot_id": "snap-04615e9e64a454720",
         "size_gb": 80,
         "volume_type": "gp3"
       }
     ],
     "snapshot_ids": [
-      "snap-07754782d2922df7e"
+      "snap-04615e9e64a454720"
     ],
     "tags": {
-      "coid": "itl",
-      "env": "dev",
-      "apid": "itx",
+      "Name": "itl-0004-itx-dev-ec2-app-02",
       "assetid": "0004",
-      "aws:backup:source-resource": "i-08982a4115e1f13eb:A21F6F21-B553-F9B7-2693-4C8F5538FB37",
-      "Name": "itl-0004-itx-dev-ec2-app-02"
+      "coid": "itl",
+      "aws:backup:source-resource": "i-08982a4115e1f13eb:BFE0493A-AED7-E5F5-A28A-9163D26B9D91",
+      "env": "dev",
+      "apid": "itx"
     },
-    "collected_at": "2026-07-12T19:43:43.427016+00:00"
+    "collected_at": "2026-08-15T07:45:18.267687+00:00"
   }
 ]
