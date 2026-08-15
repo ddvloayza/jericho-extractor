@@ -2,7 +2,7 @@
 """Genera la base de conocimiento en Markdown a partir de la salida de
 jericho-extractor.
 
-Por cada cuenta escribe 5 documentos con frontmatter tipado (entidades y
+Por cada cuenta escribe 6 documentos con frontmatter tipado (entidades y
 relaciones segun KNOWLEDGE_MODEL.md):
 
     overview.md    resumen e indice de la cuenta
@@ -11,6 +11,23 @@ relaciones segun KNOWLEDGE_MODEL.md):
     data.md        RDS, S3, DynamoDB, EBS, ECR (cifrado y exposicion)
     workloads.md   Lambda, EKS, balanceadores, colas, APIs
     security.md    roles IAM, KMS, secretos, certificados, GuardDuty
+
+Y, cuando hay una generacion anterior contra la cual comparar, un septimo:
+
+    changes.md     que aparecio, desaparecio y cambio desde la extraccion
+                   anterior. En la primera corrida no se escribe: sin estado
+                   previo todo seria "nuevo", que es ruido y no informacion.
+
+Los recursos que dejan de aparecer NO se borran del grafo: se arrastran como
+lapidas (`status: deleted` + `deleted_detected`) junto con sus relaciones. Sin
+eso un recurso borrado en AWS se evaporaria del repo como si nunca hubiera
+existido, y las relaciones de las conversaciones que lo referenciaban
+quedarian colgando.
+
+La fecha de los documentos es la de RECOLECCION de los datos (`collected_at`),
+no la de generacion, que va aparte en `generated`. Son cosas distintas y se
+venian confundiendo: los datos de Portal-Prod eran del 2026-07-12 y el
+documento decia 2026-08-02.
 
 A diferencia de knowledge_builder.py, las reglas de los security groups quedan
 completas en el documento (protocolo, puertos y origen), con los SGs
@@ -29,7 +46,7 @@ import sys
 from pathlib import Path
 
 from knowledge import compute, data, network, overview, security, workloads
-from knowledge.common import global_index
+from knowledge.common import begin_account, collected_date, global_index, write_changes
 
 DEFAULT_OUTPUT = "output"
 DEFAULT_DEST = "knowledge-base"
@@ -42,9 +59,16 @@ def build_account(
     sg_index: dict[str, tuple[str, str]],
     kms_index: dict[str, tuple[str, str]],
     vpc_index: dict[str, tuple[str, str]],
+    allow_shrink: bool = False,
 ) -> list[Path]:
     written: list[Path] = []
     account_dest = dest / account
+
+    # La fecha real de los datos, no la de hoy. write_doc la toma de aca via
+    # el contexto de corrida, y es tambien contra la que se fechan las lapidas.
+    collected_at = collected_date(src)
+    run = begin_account(collected_at, allow_shrink=allow_shrink)
+    print(f"  datos recolectados el {collected_at}")
 
     for label, result in (
         ("overview", overview.build(account, src, account_dest)),
@@ -60,6 +84,16 @@ def build_account(
         size_kb = result.stat().st_size / 1024
         print(f"  {label:10s} — {result.name} ({size_kb:.1f} KB)")
         written.append(result)
+
+    cambios = write_changes(account_dest, account, collected_at, run.changes)
+    if cambios is not None:
+        totales = {
+            k: sum(len(d.get(k, [])) for d in run.changes)
+            for k in ("nuevos", "borrados", "modificados", "reaparecidos")
+        }
+        resumen = ", ".join(f"{v} {k}" for k, v in totales.items() if v)
+        print(f"  {'changes':10s} — {cambios.name} ({resumen})")
+        written.append(cambios)
 
     return written
 
@@ -80,6 +114,12 @@ def main() -> int:
     parser.add_argument(
         "--account", action="append", dest="accounts",
         help="procesar solo esta cuenta (se puede repetir). Por defecto, todas.",
+    )
+    parser.add_argument(
+        "--allow-shrink", action="store_true",
+        help="permitir que las entidades vivas caigan a menos de la mitad. Por "
+             "defecto se aborta: una extraccion fallida devuelve listas vacias "
+             "y es indistinguible de un borrado masivo.",
     )
     args = parser.parse_args()
 
@@ -120,7 +160,15 @@ def main() -> int:
     total = 0
     for account in accounts:
         print(f"{account}")
-        total += len(build_account(account, root / account, dest, sg_index, kms_index, vpc_index))
+        try:
+            total += len(build_account(
+                account, root / account, dest,
+                sg_index, kms_index, vpc_index, args.allow_shrink,
+            ))
+        except RuntimeError as exc:
+            # Se aborta la cuenta, no la corrida entera: las demas pueden estar
+            # bien, y dejarlas sin generar por una sola no ayuda a nadie.
+            print(f"  ABORTADA — {exc}", file=sys.stderr)
         print()
 
     print(f"Listo — {total} documentos en {dest}")

@@ -7,6 +7,8 @@ KNOWLEDGE_MODEL.md del repo intelica-brain-plugin.
 from __future__ import annotations
 
 import json
+import re
+from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 from typing import Any, Iterable
@@ -165,6 +167,17 @@ class GraphBuilder:
             return
         self._entities[entity_id] = {"type": entity_type, "id": entity_id, **clean}
 
+    def carry_over(self, entity: dict[str, Any]) -> None:
+        """Inserta una entidad ya armada, tal cual, sin fusionar con nada.
+
+        La usa el arrastre de lapidas: un recurso borrado no se vuelve a
+        derivar del inventario (justamente porque ya no esta), asi que entra
+        con las propiedades que tenia la ultima vez que se lo vio.
+        """
+        eid = entity.get("id")
+        if eid and eid not in self._entities:
+            self._entities[eid] = dict(entity)
+
     def relation(self, source: str, rel_type: str, target: str) -> None:
         if not source or not target or source == target:
             return
@@ -227,6 +240,187 @@ class GraphBuilder:
 
 # ── escritura del documento ───────────────────────────────────────────────────
 
+# ── historial: lapidas y changelog ───────────────────────────────────────────
+# El generador es sin estado: lee el JSON crudo y escribe. Sin esto, un recurso
+# borrado en AWS simplemente desaparece del repo como si nunca hubiera
+# existido, y las relaciones de las conversaciones que lo referenciaban quedan
+# colgando. Lo que hay aca compara contra lo que ya estaba escrito en `dest`.
+
+# Si de una corrida a otra se pierde mas de esta fraccion de las entidades
+# vivas, se aborta: una extraccion que fallo devuelve listas vacias, y eso es
+# indistinguible de "se borro toda la cuenta" salvo por el tamano del salto.
+SHRINK_ABORT_RATIO = 0.5
+SHRINK_MIN_ENTITIES = 10
+
+# Propiedades que agrega el historial y no vienen del inventario. Se excluyen
+# al comparar, o toda lapida figuraria como "modificada" en cada corrida.
+_HISTORY_PROPS = ("status", "deleted_detected")
+
+
+@dataclass
+class RunContext:
+    """Datos de la corrida que `write_doc` necesita y los 6 generadores no
+    tienen. Es estado de modulo a proposito: el script hace una sola pasada,
+    de a una cuenta por vez, asi que no hay concurrencia que lo vuelva
+    ambiguo, y la alternativa era enhebrar dos parametros por seis firmas que
+    no los usan para nada."""
+
+    collected_at: str
+    allow_shrink: bool = False
+    changes: list[dict[str, Any]] = field(default_factory=list)
+
+
+_run: RunContext | None = None
+
+
+def begin_account(collected_at: str, allow_shrink: bool = False) -> RunContext:
+    global _run
+    _run = RunContext(collected_at=collected_at, allow_shrink=allow_shrink)
+    return _run
+
+
+def collected_date(src: Path) -> str:
+    """Fecha real de recoleccion de los datos, no la de hoy.
+
+    Importa porque son cosas distintas y se venian confundiendo: los datos de
+    Portal-Prod tenian collected_at 2026-07-12 y el documento decia
+    2026-08-02, la fecha en que corrio el script. Tres semanas de diferencia,
+    mostrando la mas nueva -- que es la direccion peligrosa.
+
+    Toma la MAS VIEJA de la cuenta: si la extraccion quedo a medias y hay
+    archivos de dos corridas, lo honesto es reportar hasta donde llega lo peor.
+    """
+    preferidos = ("ec2", "vpcs", "security_groups", "subnets", "s3_buckets", "iam_roles")
+    candidatos = [src / f"{n}.json" for n in preferidos]
+    candidatos += [p for p in sorted(src.glob("*.json")) if p not in candidatos]
+
+    fechas: set[str] = set()
+    for path in candidatos:
+        for item in load(path)[:1]:
+            stamp = item.get("collected_at") if isinstance(item, dict) else None
+            if stamp:
+                fechas.add(str(stamp)[:10])
+    return min(fechas) if fechas else date.today().isoformat()
+
+
+def read_graph_file(path: Path) -> tuple[dict[str, dict[str, Any]], list[dict[str, str]]]:
+    """Lee un .graph.yaml previo. Solo entiende la forma exacta que emite
+    `to_yaml` de este mismo modulo -- no es un parser de YAML general."""
+    if not path.exists():
+        return {}, []
+
+    entidades: dict[str, dict[str, Any]] = {}
+    relaciones: list[dict[str, str]] = []
+    seccion: str | None = None
+    actual: dict[str, Any] | None = None
+
+    for linea in path.read_text(encoding="utf-8").splitlines():
+        if not linea.strip():
+            continue
+        if not linea.startswith(" ") and linea.rstrip().endswith(":"):
+            seccion = linea.rstrip()[:-1]
+            actual = None
+            continue
+        if not linea.startswith(" "):
+            seccion = None
+            continue
+
+        item = re.match(r"^\s+-\s+(\w+):\s*(.*)$", linea)
+        prop = re.match(r"^\s+(\w+):\s*(.*)$", linea)
+        if item:
+            actual = {item.group(1): _unquote(item.group(2))}
+            if seccion == "entities":
+                if actual.get("id"):
+                    entidades[actual["id"]] = actual
+            elif seccion == "relations":
+                relaciones.append(actual)
+        elif prop and actual is not None:
+            actual[prop.group(1)] = _unquote(prop.group(2))
+            # `id` puede venir despues de `type`, asi que se registra al verlo.
+            if seccion == "entities" and prop.group(1) == "id":
+                entidades[prop.group(2).strip().strip('"')] = actual
+
+    return entidades, relaciones
+
+
+def _unquote(text: str) -> str:
+    text = text.strip()
+    if len(text) >= 2 and text[0] == text[-1] and text[0] in "\"'":
+        return text[1:-1]
+    return text
+
+
+def _comparable(entity: dict[str, Any]) -> dict[str, Any]:
+    return {k: str(v) for k, v in entity.items() if k not in _HISTORY_PROPS}
+
+
+def apply_history(
+    graph: GraphBuilder,
+    previas: dict[str, dict[str, Any]],
+    relaciones_previas: list[dict[str, str]],
+    collected_at: str,
+    allow_shrink: bool,
+    origen: str,
+) -> dict[str, list]:
+    """Arrastra como lapidas las entidades que ya no aparecen, y devuelve el
+    delta contra la corrida anterior."""
+    actuales = {e["id"]: e for e in graph.entities}
+    vivas_antes = {i: e for i, e in previas.items() if e.get("status") != "deleted"}
+
+    if (
+        not allow_shrink
+        and len(vivas_antes) >= SHRINK_MIN_ENTITIES
+        and len(actuales) < len(vivas_antes) * SHRINK_ABORT_RATIO
+    ):
+        raise RuntimeError(
+            f"{origen}: las entidades vivas cayeron de {len(vivas_antes)} a "
+            f"{len(actuales)}. Una extraccion que fallo devuelve listas vacias y "
+            "es indistinguible de un borrado masivo. Este documento NO se "
+            "escribio, pero los que se generaron antes que el en esta cuenta si, "
+            "asi que quedo a medio regenerar: revisa la extraccion y volve a "
+            "correr la cuenta entera. Si el borrado es real, --allow-shrink."
+        )
+
+    nuevos, borrados, modificados, reaparecidos = [], [], [], []
+
+    for eid, actual in actuales.items():
+        previa = previas.get(eid)
+        if previa is None:
+            nuevos.append(actual)
+        elif previa.get("status") == "deleted":
+            reaparecidos.append(actual)
+        elif _comparable(previa) != _comparable(actual):
+            cambios = {
+                k: (previa.get(k), actual.get(k))
+                for k in set(_comparable(previa)) | set(_comparable(actual))
+                if str(previa.get(k, "")) != str(actual.get(k, ""))
+            }
+            modificados.append({"entity": actual, "campos": cambios})
+
+    for eid, previa in previas.items():
+        if eid in actuales:
+            continue
+        lapida = dict(previa)
+        if previa.get("status") != "deleted":
+            # Se detecto ahora. Es "detected" y no "at" a proposito: sabemos
+            # cuando dejo de aparecer, no cuando se borro de verdad -- entre
+            # dos extracciones pueden pasar semanas.
+            lapida["status"] = "deleted"
+            lapida["deleted_detected"] = collected_at
+            borrados.append(lapida)
+        graph.carry_over(lapida)
+        for rel in relaciones_previas:
+            if rel.get("from") == eid:
+                graph.relation(rel["from"], rel.get("type", ""), rel.get("to", ""))
+
+    return {
+        "nuevos": nuevos,
+        "borrados": borrados,
+        "modificados": modificados,
+        "reaparecidos": reaparecidos,
+    }
+
+
 def write_doc(
     dest: Path,
     filename: str,
@@ -249,6 +443,22 @@ def write_doc(
     documenta `X.md`, asi que la relacion DOCUMENTED_IN se deriva sola.
     """
     dest.mkdir(parents=True, exist_ok=True)
+    graph_path = dest / filename.replace(".md", ".graph.yaml")
+
+    # Antes de pisar: comparar contra lo que ya estaba, arrastrar las lapidas
+    # y anotar el delta. Sin RunContext (uso suelto del modulo) se salta todo
+    # y se comporta como antes.
+    collected_at = _run.collected_at if _run else date.today().isoformat()
+    if _run is not None:
+        previas, relaciones_previas = read_graph_file(graph_path)
+        delta = apply_history(
+            graph, previas, relaciones_previas,
+            collected_at, _run.allow_shrink, f"{account}/{filename}",
+        )
+        # Sin estado previo es un bootstrap, no un delta: reportar las 539
+        # entidades iniciales como "nuevas" seria ruido, no informacion.
+        if previas and any(delta.values()):
+            _run.changes.append({"documento": filename, **delta})
 
     frontmatter = {
         "title": title,
@@ -257,7 +467,11 @@ def write_doc(
         # conocimiento para armar la columna Category del INDEX.md.
         "category_raw": category,
         "category_confirmed": True,
-        "date": date.today().isoformat(),
+        # La fecha de RECOLECCION, no la de hoy: el documento afirma como
+        # estaba AWS ese dia, y decir la de generacion lo hace parecer mas
+        # fresco de lo que es.
+        "date": collected_at,
+        "generated": date.today().isoformat(),
         "tags": tags,
         "source": "jericho-extractor",
         "graph": filename.replace(".md", ".graph.yaml"),
@@ -268,7 +482,6 @@ def write_doc(
         encoding="utf-8",
     )
 
-    graph_path = dest / filename.replace(".md", ".graph.yaml")
     graph_path.write_text(
         to_yaml({
             "documents": filename,
@@ -276,6 +489,88 @@ def write_doc(
             "entities": graph.entities,
             "relations": graph.relations,
         }),
+        encoding="utf-8",
+    )
+    return path
+
+
+def write_changes(dest: Path, account: str, collected_at: str, changes: list[dict]) -> Path | None:
+    """Antepone al changelog de la cuenta el delta de esta corrida.
+
+    Va en un documento y no en el grafo a proposito: el grafo modela el estado
+    ACTUAL, y un cambio es un evento entre dos estados. Modelarlo como nodos
+    haria crecer el grafo sin techo (un SG que cambia por semana son 52 nodos
+    al ano); como documento queda acotado, es una sola entrada en el indice, y
+    se lee con las tools que ya existen.
+    """
+    if not changes:
+        return None
+
+    lineas = [f"## {collected_at}", ""]
+    for doc in changes:
+        etiquetas = (
+            ("nuevos", "Nuevos"),
+            ("reaparecidos", "Reaparecidos"),
+            ("borrados", "Borrados"),
+            ("modificados", "Modificados"),
+        )
+        bloques = [(t, doc[k]) for k, t in etiquetas if doc.get(k)]
+        if not bloques:
+            continue
+        lineas.append(f"### {doc['documento']}")
+        lineas.append("")
+        for titulo, items in bloques:
+            lineas.append(f"**{titulo} ({len(items)})**")
+            lineas.append("")
+            for item in items[:40]:
+                if titulo == "Modificados":
+                    ent = item["entity"]
+                    detalle = ", ".join(
+                        f"{k}: {a or '—'} → {b or '—'}" for k, (a, b) in sorted(item["campos"].items())
+                    )
+                    lineas.append(f"- `{ent['id']}` · {ent.get('resource_type', ent.get('type'))} · {detalle}")
+                else:
+                    rt = item.get("resource_type", item.get("type", ""))
+                    extra = f" · visto por ultima vez {item.get('deleted_detected')}" if titulo == "Borrados" else ""
+                    nombre = f" · {item['name']}" if item.get("name") else ""
+                    lineas.append(f"- `{item['id']}` · {rt}{nombre}{extra}")
+            if len(items) > 40:
+                lineas.append(f"- … y {len(items) - 40} mas")
+            lineas.append("")
+
+    path = dest / "changes.md"
+    previo = ""
+    if path.exists():
+        texto = path.read_text(encoding="utf-8")
+        # Se conserva solo el historial: el frontmatter se reescribe entero
+        # para que la fecha del documento sea la de la corrida mas reciente.
+        previo = texto.split("\n---\n\n", 1)[-1] if texto.startswith("---") else texto
+        previo = previo.split("\n", 2)[-1] if previo.startswith("# ") else previo
+
+    frontmatter = {
+        "title": f"{account} — Cambios detectados en el inventario",
+        "account": account,
+        "category_raw": "Historial de inventario",
+        "category_confirmed": True,
+        "date": collected_at,
+        "generated": date.today().isoformat(),
+        "summary": (
+            f"Que aparecio, desaparecio y cambio en el inventario de {account} "
+            "entre extracciones. Las fechas son de deteccion, no de cuando "
+            "ocurrio el cambio en AWS."
+        ),
+        "tags": ["aws", "inventario", "cambios", "historial", "drift", account.lower()],
+        "source": "jericho-extractor",
+    }
+    encabezado = (
+        f"# {account} — Cambios detectados en el inventario\n\n"
+        "Cada seccion es una extraccion, la mas reciente arriba. La fecha es "
+        "**cuando se detecto** el cambio, no cuando ocurrio en AWS: entre dos "
+        "extracciones pueden pasar semanas.\n\n"
+    )
+    path.write_text(
+        "---\n" + to_yaml(frontmatter) + "---\n\n" + encabezado
+        + "\n".join(lineas).rstrip() + "\n\n" + previo.strip() + "\n",
         encoding="utf-8",
     )
     return path
